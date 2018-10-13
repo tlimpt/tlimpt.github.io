@@ -10,39 +10,38 @@ body {
 	line-height: 1.6em;
 	margin: 0 auto;
 	max-width: 42em;
-	padding: 0em;}
+	padding: 0; }
 
 article, footer {
 	max-width: 38em;
-	padding: 1.5em;}
+	padding: 1.5em; }
 
 h2 {
-	font-size: 1.2em;}
+	font-size: 1.2em; }
 
 h3 {
-	font-size: 1em;}
+	font-size: 1em; }
 
 p, li {
 	margin: 1.75em 0; }
 
 p.tranca:after {
 	content: "●";
-	color: #008000; }
+	color: green; }
 
 small {
 	font-size: 0.9em;
 	opacity: 0.75; }
 
 article ul, article ol {
-	margin: 0em;
-	padding: 0 0 0 3em;
-}
+	margin: 0;
+	padding: 0 0 0 3em; }
 
 article ul li {
 	list-style: square; }
 
 a {
-	color: #008000;
+	color: green;
 	text-decoration: none; }
 
 
@@ -50,18 +49,13 @@ table  {
 	border-collapse: collapse;
 	border: 0;
 	margin: 0;
-	padding: 0;
-
-
-}
+	padding: 0; }
 
 table caption {
-	 text-align: center;
-}
+	 text-align: center; }
 
 th {
-	font-weight: 700;
-}
+	font-weight: 700; }
 
 tr { 
 	border-bottom-width: .1em;
@@ -72,27 +66,23 @@ th, td, caption {
 	padding: 1em 1em 1em 0;
 	text-align: left;
 	vertical-align: top;
-	font-size: 0.9em;
-}
+	font-size: 0.9em; }
 
 tfoot tr {
-	border: 0;
-}
+	border: 0; }
 
 article aside, article blockquote {
 	margin: 0 0 1.75em -1.5em;
 	padding-left: 1.5em;
-	color: #008000 ;
-	border-left: 0.2em solid #008000;
-}
+	color: green;
+	border-left: .2em solid green; }
 
 input {
 	padding: .2em;
 	border: .2em solid inherit;
 	font-family: 'Roboto Mono', monospace;
-	font-size: .9em;
-}
+	font-size: .9em; }
 
 aside input {
-	color: #008000;
-	border-color: #008000; }
+	color: green;
+	border-color: green; }
