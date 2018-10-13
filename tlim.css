@@ -44,11 +44,8 @@ article ul li {
 aside, blockquote {
 	margin: 0 0 1.75em -1.5em;
 	padding-left: 1.5em;
-	color: #008000;
+	color: #008000 !important;
 	border-left: 0.2em solid #008000;
-}
-article blockquote p {
-	padding-bottom: 0;
 }
 
 a {
