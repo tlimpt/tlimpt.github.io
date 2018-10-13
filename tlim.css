@@ -88,8 +88,11 @@ article aside, article blockquote {
 
 input {
 	padding: .2em;
-	border: .2em solid #008000;
-	color: #008000;
+	border: .2em solid inherit;
 	font-family: 'Roboto Mono', monospace;
 	font-size: .9em;
 }
+
+aside input {
+	color: #008000;
+	border-color: #008000; }
