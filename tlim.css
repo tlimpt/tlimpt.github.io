@@ -41,13 +41,6 @@ article ul, article ol {
 article ul li {
 	list-style: square; }
 
-aside, blockquote {
-	margin: 0 0 1.75em -1.5em;
-	padding-left: 1.5em;
-	color: #008000 !important;
-	border-left: 0.2em solid #008000;
-}
-
 a {
 	color: #008000;
 	text-decoration: none; }
@@ -84,6 +77,13 @@ th, td, caption {
 
 tfoot tr {
 	border: 0;
+}
+
+article aside, article blockquote {
+	margin: 0 0 1.75em -1.5em;
+	padding-left: 1.5em;
+	color: #008000 ;
+	border-left: 0.2em solid #008000;
 }
 
 input {
