@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('roboto-mono.woff2') format('woff2'); }
+
+body {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 1em;
+	line-height: 1.6em;
+	margin: 0 auto;
+	max-width: 42em;
+	padding: 0em;}
+
+article, footer {
+	max-width: 38em;
+	padding: 1.5em;}
+
+h2 {
+	font-size: 1.2em;}
+
+h3 {
+	font-size: 1em;}
+
+p, li {
+	margin: 1.75em 0; }
+
+p.tranca:after {
+	content: "●";
+	color: #008000; }
+
+small {
+	font-size: 0.9em;
+	opacity: 0.75; }
+
+article ul, article ol {
+	margin: 0em;
+	padding: 0 0 0 3em;
+}
+
+article ul li {
+	list-style: square; }
+
+blockquote {
+	margin: 0 0 1.5em -1.5em;
+	padding-left: 1.5em;
+	color: #008000;
+	border-left: 0.2em solid #008000;
+}
+article blockquote p {
+	padding-bottom: 0;
+}
+
+a {
+	color: #008000;
+	text-decoration: none; }
+
+
+table {
+	border-collapse: collapse;
+	border: 0;
+	margin: 0;
+	padding: 0;
+
+
+}
+
+table caption {
+	 text-align: center;
+}
+
+th {
+	font-weight: 700;
+}
+
+tr { 
+	border-bottom-width: .1em;
+	border-bottom-style: solid;
+}
+
+th, td, caption {
+	padding: 1em 0;
+	text-align: left;
+	vertical-align: top;
+	font-size: 0.9em;
+}
+
+tfoot tr {
+	border: 0;
+}
+
