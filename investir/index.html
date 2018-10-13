@@ -76,17 +76,17 @@
 
 <p>A Conta Poupança Livre do Banco CTT é provavelmente o melhor candidato para os aforradores que têm menos de mil euros para amealhar em 2018. Porém, não conte com uma elevada remuneração. Mesmo que cumpra os critérios para receber a taxa anual nominal bruta de 1% (domiciliação de vencimento ou pensão a partir de 250 euros ou três débitos diretos de despesas domésticas), receberá 72 cêntimos por cada 100 euros investidos ao fim de um ano, assumindo o reinvestimento dos juros trimestrais.
 
-<aside>
+<blockquote>
 <p><strong>Calcule quanto rende o seu depósito a prazo</strong>
 <p>Escolha o montante, a taxa de juro e o prazo para descobrir quanto receberá no final do prazo num depósito simples, depois de descontar os impostos.
 
-<p>Montante a aplicar (em euros): <input type="number" value="500" style="width:7em;" id="montante" onchange="juro();" onkeyup="juro();"></input>
+<p>Montante a aplicar (em euros): <input type="number" value="500" style="width:7em;" id="montante" onchange="juro();" onkeyup="juro();">
 
-<p>Taxa anual nominal bruta (em %): <input type="number" value="0.25"  style="width:7em;" step="0.05" id="tanb" onchange="juro();" onkeyup="juro();"></input>
+<p>Taxa anual nominal bruta (em %): <input type="number" value="0.25"  style="width:7em;" step="0.05" id="tanb" onchange="juro();" onkeyup="juro();">
 
-<p>Prazo (em dias): <input type="number" value="365"  style="width:7em;" id="prazo" onchange="juro();" onkeyup="juro();"></input>
+<p>Prazo (em dias): <input type="number" value="365"  style="width:7em;" id="prazo" onchange="juro();" onkeyup="juro();">
 
-<p>Juro líquido no final do prazo (em euros): <input type="text" value="0.91" style="width:7em; font-weight: 700;" readonly id="juroliquido"></input>
+<p>Juro líquido no final do prazo (em euros): <input type="text" value="0.91" style="width:7em; font-weight: 700;" readonly id="juroliquido">
 
 <p><small>Assume taxa de retenção de IRS de 28%.</small>
 
@@ -94,7 +94,7 @@
 function juro(){1>document.getElementById("montante").value&&(document.getElementById("montante").value=500);.01>document.getElementById("tanb").value&&(document.getElementById("tanb").value=0.65);1>document.getElementById("prazo").value&&(document.getElementById("prazo").value=365);var a=Math.round(.72*Math.round(document.getElementById("montante").value*document.getElementById("tanb").value*document.getElementById("prazo").value/360))/100;document.getElementById("juroliquido").value=a};
 </script>
 
-</aside>
+</blockquote>
 
 <p>Mesmo que contrate um depósito promocional, que normalmente anunciam taxas mais elevadas para seduzir os depositantes, os ganhos serão parcos. Se aplicar o mínimo, 500 euros, no DP Boas Vindas do Atlântico Europa, recebe 2,35 euros após 92 dias.
 
@@ -267,7 +267,7 @@ function juro(){1>document.getElementById("montante").value&&(document.getElemen
 <tr><td>SIAS<td>Milão<td>97,88%
 <tr><td>Snap-on<td>Nova Iorque<td>-10,17%
 <tr><td>Skyworks Solutions<td>Nasdaq<td>9,31%
-<tfoot><tr><td colspan="2">Fonte: Bloomberg. Rentabilidade, em euros, entre 29 de dezembro de 2016 e 29 de dezembro de 2017.
+<tfoot><tr><td colspan="3">Fonte: Bloomberg. Rentabilidade, em euros, entre 29 de dezembro de 2016 e 29 de dezembro de 2017.
 </table>
 
 <p>Para 2018, voltamos a criar uma carteira composta por uma dezena de ações. Aconselhamos esta carteira apenas aos investidores que tenham mais de 20 mil euros para aplicar durante alguns anos: cinco é bom, mas dez é melhor. Não tem de ficar com estas ações todos esses anos; deve é dedicar essa fatia do seu património ao mercado acionista.
