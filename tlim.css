@@ -41,8 +41,8 @@ article ul, article ol {
 article ul li {
 	list-style: square; }
 
-blockquote {
-	margin: 0 0 1.5em -1.5em;
+aside, blockquote {
+	margin: 0 0 1.75em -1.5em;
 	padding-left: 1.5em;
 	color: #008000;
 	border-left: 0.2em solid #008000;
@@ -56,7 +56,7 @@ a {
 	text-decoration: none; }
 
 
-table {
+table  {
 	border-collapse: collapse;
 	border: 0;
 	margin: 0;
@@ -79,7 +79,7 @@ tr {
 }
 
 th, td, caption {
-	padding: 1em 0;
+	padding: 1em 1em 1em 0;
 	text-align: left;
 	vertical-align: top;
 	font-size: 0.9em;
@@ -89,3 +89,10 @@ tfoot tr {
 	border: 0;
 }
 
+input {
+	padding: .2em;
+	border: .2em solid #008000;
+	color: #008000;
+	font-family: 'Roboto Mono', monospace;
+	font-size: .9em;
+}
