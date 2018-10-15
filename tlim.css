@@ -1,8 +1,20 @@
 @font-face {
-  font-family: 'Roboto Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: url('roboto-mono.woff2') format('woff2'); }
+	font-family: 'Roboto Mono';
+	src: local('Roboto Mono'), local('RobotoMono-Regular'), url('roboto-mono-regular.woff2') format('woff2'), url('roboto-mono-regular.woff'), url(https://fonts.gstatic.com/s/robotomono/v5/L0x5DF4xlVMF-BfR8bXMIjhFq3-OXg.woff2) format('woff');
+	font-weight: 400;
+	font-style: normal; }
+
+@font-face {
+	font-family: 'Roboto Mono';
+	src: local('Roboto Mono Bold'), local('RobotoMono-Bold'), url('roboto-mono-bold.woff2') format('woff2'), url('roboto-mono-bold.woff'), url(https://fonts.gstatic.com/s/robotomono/v5/L0xkDF4xlVMF-BfR8bXMIjDwjmq_f7-7Ag.woff2) format('woff');
+	font-weight: 700;
+	font-style: normal; }
+
+@font-face {
+	font-family: 'Roboto Mono';
+	src: local('Roboto Mono Italic'), local('RobotoMono-Italic'), url('roboto-mono-italic.woff2') format('woff2'), url('roboto-mono-italic.woff'), url(https://fonts.gstatic.com/s/robotomono/v5/L0x7DF4xlVMF-BfR8bXMIjhOm3OWWoKC.woff2) format('woff');
+	font-weight: 400;
+	font-style: italic; }
 
 body {
 	font-family: 'Roboto Mono', monospace;
@@ -15,6 +27,16 @@ body {
 article, footer {
 	max-width: 38em;
 	padding: 1.5em; }
+
+article:after {
+	content: "";
+	display: block;
+	width: 100%;
+	min-width: 100%;
+	border-bottom-width: .15em;
+	border-bottom-style: solid;
+	border-bottom-color: green;
+	padding-top: 1.5em;}
 
 h2 {
 	font-size: 1.2em; }
@@ -39,6 +61,18 @@ article ul, article ol {
 
 article ul li {
 	list-style: square; }
+
+footer ul {
+	padding: 0 0 1.5em;
+	margin:0;
+}
+
+footer ul li {
+	list-style: none; 
+	margin: 0;
+	display:inline-block;
+	padding-right: 5em;
+}
 
 a {
 	color: green;
@@ -75,11 +109,11 @@ article aside, article blockquote {
 	margin: 0 0 1.75em -1.5em;
 	padding-left: 1.5em;
 	color: green;
-	border-left: .2em solid green; }
+	border-left: .15em solid green; }
 
 input {
 	padding: .2em;
-	border: .2em solid inherit;
+	border-width: .2em;
 	font-family: 'Roboto Mono', monospace;
 	font-size: .9em; }
 
