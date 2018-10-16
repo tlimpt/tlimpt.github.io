@@ -62,21 +62,6 @@ footer ul li {
 	padding-right: 2em;
 }
 
-a {
-	color: green;
-	text-decoration: none; }
-
-header p a:first-child {
-	color: #fff;
-	background-color: green; 
-	padding: .5em;
-	border: .1em solid green; }
-
-header p a:first-child:hover {
-	color: green;
-	background-color: inherit; }
-
-
 table  {
 	border-collapse: collapse;
 	border: 0;
@@ -119,3 +104,20 @@ input {
 aside p input {
 	color: green;
 	border-color: green; }
+
+a {
+	color: green;
+	text-decoration: none; }
+
+header p a:first-child {
+	color: #fff;
+	background-color: green; 
+	padding: .5em;
+	border: .1em solid green; }
+
+header p a:first-child:hover {
+	color: green;
+	background-color: inherit; }
+
+article aside a, article blockquote a {
+	border-bottom: .15em solid green; }
