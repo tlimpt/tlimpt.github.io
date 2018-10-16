@@ -43,6 +43,9 @@ small {
 	font-size: 0.9em;
 	opacity: 0.75; }
 
+ul li small {
+	display: block; }
+
 article ul, article ol {
 	margin: 0;
 	padding: 0 0 0 3em; }
