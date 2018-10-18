@@ -15,8 +15,8 @@ header, article, footer {
 article:after {
 	content: "";
 	display: block;
-	width: 100%;
-	min-width: 100%;
+	width: 4em;
+	//min-width: 100%;
 	border-bottom-width: .2em;
 	border-bottom-style: solid;
 	border-bottom-color: green;
