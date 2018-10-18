@@ -31,8 +31,7 @@ p, li {
 	margin: 1.75em 0; }
 
 p.tranca:after {
-	content: "■";
-	color: green; }
+	content: "■"; }
 
 header p {
 	margin: 0 0 -1.5em; 
