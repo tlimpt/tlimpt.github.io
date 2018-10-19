@@ -19,7 +19,7 @@ article:after {
 	border-bottom-width: .2em;
 	border-bottom-style: solid;
 	border-bottom-color: green;
-	padding-top: 1.5em; }
+	padding-top: 1.7em; }
 
 h1, h2 {
 	font-size: 1.2em; }
@@ -33,6 +33,10 @@ p, li {
 p.tranca:after {
 	content: "■"; 
 	color: green; }
+
+header h2 {
+	padding: 2.5em 0 0;
+	margin-bottom: -1.5em; }
 
 header p {
 	margin: 0 0 -1.5em; 
