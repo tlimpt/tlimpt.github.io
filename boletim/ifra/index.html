@@ -44,6 +44,7 @@ input {
 	text-align: right;
 	border-width: 0 0 3px;
 	border-color: #173f5f;
+	outline: none;
 
 }
 
@@ -61,7 +62,7 @@ div { background-color:#c0d6df; padding: .5em 2em; margin: 2em 0; }
 
 <h2>A principal meta financeira dos portugueses deveria ser acumular o suficiente para poder deixar de trabalhar. Depois, só deixa a lida profissional quem quer.</h2>
 
-<h3 style="font-weight: 400;">Por <strong>David Almas</strong></h3>
+<h3 style="font-weight: 400; font-size:1em;">Por <strong style="color:#173f5f;">David Almas</strong> a 1 de abril de 2019</h3>
 
 <p>Não é por acaso que a palavra “trabalho” deriva do latim “tripalium”, que significa “tripálio”, um instrumento de tortura usado para forçar os escravos a produzir.
 
@@ -73,7 +74,7 @@ div { background-color:#c0d6df; padding: .5em 2em; margin: 2em 0; }
 
 <p>Não confunda independência financeira com <strong>reforma antecipada</strong>, embora a moda mais recente as posicione na mesma página. Há quem fale do movimento FIRE — do inglês <em>financial independence, retire early</em> —, mas eu prefiro escrever sobre IFRA — independência financeira e reforma antecipada.
 
-<p>Quando se chega à independência financeira, trabalhar passa a ser uma opção. Quando se deixa de trabalhar efetivamente — em simultâneo com o registo da independência financeira ou após essa marca ter sido atingida —, opta-se pela reforma antecipada, caso ainda não se tenha chegado à idade estatutária para receber uma pensão.
+<p>Quando se chega à independência financeira, trabalhar passa a ser opcional. Quando se deixa de trabalhar efetivamente — em simultâneo com o registo da independência financeira ou após essa marca ter sido atingida —, opta-se pela reforma antecipada, caso ainda não se tenha chegado à idade estatutária para receber uma pensão.
 
 <p>Este artigo não deseja aconselhar sobre a reforma antecipada — essa decisão é demasiado pessoal —, mas quer ajudar os leitores a chegar à independência financeira.
 
@@ -86,13 +87,13 @@ div { background-color:#c0d6df; padding: .5em 2em; margin: 2em 0; }
 <p>Se tiver um pé-de-meia de <input type="text" value="1000000" id="pedemeia" onkeyup="document.getElementById('rendimento').innerHTML=Math.floor(document.getElementById('pedemeia').value*((1+.05)**(1/12)-1));"></input> euros, conseguirá retirar rendimentos mensais de <strong id="rendimento">4074</strong> <strong>euros</strong>, assumindo uma rentabilidade anual de 5%. Não será muito? Talvez se consiga viver com menos.
 
 <div>
-<p><strong>Este artigo é interativo</strong>. Todos os números que estiverem sublinhado, como o milhão de euros no parágrafo anterior, podem ser alterados. Experimente mudar para meio milhão de euros para perceber que esse novo montante permite viver mensalmente com 2037 euros.
+<p><strong>Este artigo é interativo</strong>. Todos os números que estiverem sublinhados, como o milhão de euros no parágrafo anterior, podem ser alterados. Experimente mudar para meio milhão de euros para perceber que esse novo montante permite viver mensalmente com 2037 euros.
 <noscript><p>Infelizmente, o seu programa de navegação é dos poucos que não permite ou bloqueia JavaScript. Para si, este artigo não será interativo. Não vale a pena mudar os números.</noscript>
 </div>
 
 <p>Talvez seja mais intuitivo descobrir quanto dinheiro teria de acumular para conseguir garantir um determinado montante mensal.
 
-<p>Se precisa de <input type="text" value="1500" id="mensalidade" onkeyup="document.getElementById('pedemeia2').innerHTML=100*Math.ceil(document.getElementById('mensalidade').value/((1+.05)**(1/12)-1)/100);"></input> euros por mês, então tem de acumular cerca de <strong id="pedemeia2">368200
+<p>Se precisa de <input type="text" value="1500" id="mensalidade" onkeyup="document.getElementById('pedemeia2').innerHTML=100*Math.ceil(document.getElementById('mensalidade').value/((1+.05)**(1/12)-1)/100);" style="width:3em;"></input> euros por mês, então tem de acumular cerca de <strong id="pedemeia2">368200
 </strong> <strong>euros</strong>, assumindo uma rentabilidade anual de 5%. (A maioria dos resultados interativos neste artigo são arredondados e aproximados. Pode usar decimais, se quiser. O marcador de decimais depende do seu programa de navegação, mas provavelmente é o ponto.)
 
 <p>Mesmo assim, o número que encontrou no parágrafo anterior pode ser exagerado. Até agora, as simulações assumem que nunca toca no capital durante a independência financeira; vive apenas dos rendimentos. Além disso, usa uma rentabilidade anual de 5%. Será correto?
@@ -101,7 +102,7 @@ div { background-color:#c0d6df; padding: .5em 2em; margin: 2em 0; }
 
 <p>A taxa de retorno que consegue nos seus investimentos é crucial. Em algumas circustâncias, é tão ou mais importante do que a própria poupança.
 
-<p>Como vimos atrás, consegue um retorno mensal de <input type="text" value="1500" id="mensalidade2" onkeyup="document.getElementById('pedemeia3').innerHTML=100*Math.ceil(document.getElementById('mensalidade2').value/((1+.05)**(1/12)-1)/100); document.getElementById('pedemeia4').innerHTML=100*Math.ceil(document.getElementById('mensalidade2').value/((1+.025)**(1/12)-1)/100); document.getElementById('pedemeia5').innerHTML=100*Math.ceil(document.getElementById('mensalidade2').value/((1+ document.getElementById('taxa').value/100)**(1/12)-1)/100); document.getElementById('mensalidade3').innerHTML=document.getElementById('mensalidade2').value;"></input> euros se puser <strong id="pedemeia3">368200</strong> <strong>euros</strong> a render à taxa anual de 5%, mas precisaria de <strong id="pedemeia4">728300</strong> <strong>euros</strong> com uma rentabilidade anual de 2,5%. E à sua taxa? Com uma rentabilidade anual de <input type="text" value="3" id="taxa" onkeyup="document.getElementById('pedemeia5').innerHTML=100*Math.ceil(document.getElementById('mensalidade2').value/((1+ document.getElementById('taxa').value/100)**(1/12)-1)/100);" style="width:2em;"></input>, consegue um rendimento mensal de <span id="mensalidade3">1500</span> euros se tiver um pé-de-meia de <strong id="pedemeia5">608300</strong> <strong>euros</strong>.
+<p>Como vimos atrás, consegue um retorno mensal de <input type="text" value="1500" id="mensalidade2"  style="width:3em;" onkeyup="document.getElementById('pedemeia3').innerHTML=100*Math.ceil(document.getElementById('mensalidade2').value/((1+.05)**(1/12)-1)/100); document.getElementById('pedemeia4').innerHTML=100*Math.ceil(document.getElementById('mensalidade2').value/((1+.025)**(1/12)-1)/100); document.getElementById('pedemeia5').innerHTML=100*Math.ceil(document.getElementById('mensalidade2').value/((1+ document.getElementById('taxa').value/100)**(1/12)-1)/100); document.getElementById('mensalidade3').innerHTML=document.getElementById('mensalidade2').value;"></input> euros se puser <strong id="pedemeia3">368200</strong> <strong>euros</strong> a render à taxa anual de 5%, mas precisaria de <strong id="pedemeia4">728300</strong> <strong>euros</strong> com uma rentabilidade anual de 2,5%. E à sua taxa? Com uma rentabilidade anual de <input type="text" value="3" id="taxa" onkeyup="document.getElementById('pedemeia5').innerHTML=100*Math.ceil(document.getElementById('mensalidade2').value/((1+ document.getElementById('taxa').value/100)**(1/12)-1)/100);" style="width:2em;"></input>, consegue um rendimento mensal de <span id="mensalidade3">1500</span> euros se tiver um pé-de-meia de <strong id="pedemeia5">608300</strong> <strong>euros</strong>.
 
 <p>Portanto, se cortar a sua rentabilidade anual para metade, precisará de quase o dobro da poupança para manter o rendimento mensal. 
 
@@ -115,33 +116,55 @@ div { background-color:#c0d6df; padding: .5em 2em; margin: 2em 0; }
 
 <p>Se aplicasse o meu dinheiro num fundo de ações caro — uma taxa de encargos correntes de 2%, que é frequente entre os fundos de ações da banca portuguesa, é muito elevada —, a rentabilidade real que esperaria seria menor. (A taxa de encargos correntes do fundo que escolhi para a minha carteira é de 0,2%, como indiquei na primeira edição do <a href="/boletim/">boletim <strong>tlim</strong></a>.)
 
-<p>Infelizmente, isso quer dizer que a expectativa que tenho para as restantes aplicações — seguros de capitalização, planos de poupança-reforma, fundos de pensões, Certificados de Aforro, Certificados do Tesouro, Certificados de Reforma, depósitos a prazo, contas de poupança, fundos de obrigações, fundos mistos, obrigações, empréstimos colaborativos, entre outros — é de rentabilidades reais muito reduzidas ou, mesmo, negativas. Pouco ajudam a aumentar o poder de compra do património no longo prazo e até o podem destruir.
+<p>Infelizmente, isso quer dizer que a expectativa que tenho para as restantes aplicações — seguros de capitalização, planos de poupança-reforma, fundos de pensões, Certificados de Aforro, Certificados do Tesouro, Certificados de Reforma, depósitos a prazo, contas de poupança, fundos de obrigações, fundos mistos, obrigações, empréstimos colaborativos, entre outros — é de rentabilidades reais muito reduzidas ou, mesmo, negativas. Pouco ajudam a aumentar o poder de compra do património no longo prazo e, até, o podem destruir.
 
-<p>Veja noutro prisma: assumindo que a alternativa a investir em ações ou num fundo de ações alcançará metade do retorno, então quem optar pela alternativa terá de trabalhar aproximadamente o dobro do tempo para conseguir alcançar um pé-de-meia que produza o mesmo rendimento mensal.
+<p>Veja noutro prisma: assumindo que a alternativa a investir em ações ou num fundo de ações alcançará metade do retorno, então quem optar por essa alternativa terá de trabalhar aproximadamente o dobro do tempo para conseguir alcançar um pé-de-meia que produza o mesmo rendimento mensal.
 
-<p>É verdade que as ações são mais voláteis que a maioria dos produtos de aforro no curto prazo, mas esse é o preço que se tem de suportar no curto prazo para receber um potencial de retorno mais elevado no longo prazo.
+<p>É verdade que as ações são mais voláteis do que a maioria dos produtos de aforro no curto prazo, mas esse é o preço que se tem de suportar no curto prazo para receber um potencial de retorno mais elevado no longo prazo.
 
-<p>Não é o objetivo deste artigo
+<p>Não é o objetivo deste artigo convencer os leitores a exporem-se ao mercado acionista. Isso fica reservado para outras edições do boletim <strong>tlim</strong>. O importante é que esteja confortável com as suas escolhas.
 
-<h3>dçsjfls</h3>
+<h3>Não viva só dos rendimentos</h3>
 
-<p>sdkljf
+<p>Até agora assumimos que nunca mobilizaria o seu pé-de-meia. É uma estratégia possível: viver apenas dos rendimentos e deixar a poupança para os herdeiros. Contudo, chega-se mais depressa à independência financeira se planear gastar progressivamente o que acumulou durante a vida.
+
+<p>O planeamento da independência financeira com recurso aos rendimentos e à própria poupança é mais traiçoeiro e desagradável: é preciso ter uma ideia de quando morreremos. Só assim é possível traçar uma previsão da longevidade do património.
+
+<script>
+var lxh = [100000, 99646, 99621, 99598, 99583, 99570, 99557, 99547, 99539, 99533, 99524, 99511, 99505, 99499, 99489, 99478, 99458, 99428, 99408, 99370, 99325, 99265, 99228, 99174, 99124, 99085, 99035, 98982, 98929, 98863, 98796, 98745, 98680, 98618, 98556, 98477, 98393, 98297, 98197, 98100, 97982, 97838, 97683, 97498, 97295, 97074, 96816, 96553, 96242, 95902, 95506, 95091, 94620, 94101, 93553, 92963, 92326, 91620, 90873, 90062, 89209, 88331, 87362, 86351, 85253, 84199, 83062, 81856, 80519, 79108, 77619, 76042, 74396, 72517, 70525, 68425, 66183, 63739, 61079, 58220, 55197, 52019, 48626, 45062, 41114, 36782, 31979, 27108, 22331, 17854, 13812, 10267, 7335, 5015, 3266, 2015, 1171, 637, 322, 150, 64];
+var lxm = [100000, 99740, 99728, 99714, 99699, 99685, 99677, 99662, 99656, 99651, 99647, 99637, 99631, 99625, 99618, 99612, 99605, 99591, 99578, 99560, 99546, 99528, 99509, 99486, 99469, 99444, 99431, 99422, 99392, 99371, 99345, 99320, 99289, 99262, 99240, 99209, 99168, 99122, 99071, 99011, 98941, 98861, 98789, 98691, 98609, 98496, 98392, 98264, 98119, 97968, 97803, 97623, 97428, 97212, 96981, 96746, 96489, 96244, 95939, 95637, 95304, 94935, 94546, 94117, 93640, 93149, 92634, 92051, 91436, 90721, 89944, 89093, 88113, 87031, 85855, 84515, 83092, 81451, 79662, 77541, 75137, 72505, 69562, 66312, 62487, 57935, 52469, 46518, 40256, 33954, 27834, 22027, 16831, 12364, 8691, 5815, 3682, 2193, 1220, 629, 298];
+</script>
+
+
+<p>Recorrendo às <a href="https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_indicadores&indOcorrCod=0001742&contexto=bd&selTab=tab2">tábuas de mortalidade</a> publicadas pelo Instituto Nacional de Estatística, posso dar uma ajuda. 
+
+
+A probabilidade de um homem de <input type="text" value="40" id="idade" style="width:2em;" onkeyup="document.getElementById('prob').innerHTML=Math.round(lxh[(document.getElementById('idadef').value*1+document.getElementById('idade').value*1)]/lxh[document.getElementById('idade').value]*100);"></input> anos viver mais <input type="text" value="48" id="idadef" style="width:2em;" onkeyup="document.getElementById('prob').innerHTML=Math.round(lxh[(document.getElementById('idadef').value*1+document.getElementById('idade').value*1)]/lxh[document.getElementById('idade').value]*100);"></input> anos é de <strong id="prob">23</strong><strong>%</strong>.
+
+A probabilidade de uma mulher de <input type="text" value="40" id="idadem" style="width:2em;" onkeyup="document.getElementById('probm').innerHTML=Math.round(lxm[(document.getElementById('idademf').value*1+document.getElementById('idadem').value*1)]/lxm[document.getElementById('idadem').value]*100);"></input> anos viver mais <input type="text" value="51" id="idademf" style="width:2em;" onkeyup="document.getElementById('probm').innerHTML=Math.round(lxm[(document.getElementById('idademf').value*1+document.getElementById('idadem').value*1)]/lxm[document.getElementById('idadem').value]*100);"></input> anos é de <strong id="probm">22</strong><strong>%</strong>. (As tábuas do INE não permitem o cálculo da probabilidade de alcançar uma idade superior a 100 anos.)
+
+<p>Adapte a longevidade que inclui na sua estratégia de independência financeira ao seu estado de saúde e aos seus hábitos. No entanto, sugiro que não faça um plano financeiro em que a probabilidade de sobrevivência após o ano final seja superior a 25%. Seria muito mau viver os último trecho da vida sem dinheiro.
+
+<p>Está agora mais informado para desenhar um plano de independência financeira. Assumindo que viverá financeiramente independente durante <input type="text" value="50" id="longevidade" style="width:2em;" onkeyup="document.getElementById('acumulacao').innerHTML=100*Math.ceil(document.getElementById('rmensal').value*( 1 - (1+((1+ document.getElementById('rentabilidade').value/100)**(1/12)-1))**(-12*document.getElementById('longevidade').value) )/((1+ document.getElementById('rentabilidade').value/100)**(1/12)-1)/100);"></input> anos, que terá uma rentabilidade anual efetiva de <input type="text" value="3.5" id="rentabilidade" style="width:2em;" onkeyup="document.getElementById('acumulacao').innerHTML=100*Math.ceil(document.getElementById('rmensal').value*( 1 - (1+((1+ document.getElementById('rentabilidade').value/100)**(1/12)-1))**(-12*document.getElementById('longevidade').value) )/((1+ document.getElementById('rentabilidade').value/100)**(1/12)-1)/100);"></input>% para obter um rendimento mensal de <input type="text" value="1500" id="rmensal" style="width:3em;" onkeyup="document.getElementById('acumulacao').innerHTML=100*Math.ceil(document.getElementById('rmensal').value*( 1 - (1+((1+ document.getElementById('rentabilidade').value/100)**(1/12)-1))**(-12*document.getElementById('longevidade').value) )/((1+ document.getElementById('rentabilidade').value/100)**(1/12)-1)/100);"></input> euros, então tem de acumular uma fortuna de cerca de <strong id="acumulacao">429000</strong> <strong>euros</strong> para gastar ao longo desse prazo.
 
 
 
-<p> http://openexchangerates.github.io/accounting.js/
-
-<p>
+<h3>O truque não é só poupar; é não gastar</h3>
 
 
+
+
+<p>erewrwe
+
+<h3>çldsjfaçdls</h3>
+
+volatildiae
 
 1. O dinheiro que tenho dá-me para quanto tempo?
 
-Quanto euros acumulou:
+2. 
 
-Qual a rentabilidade anual esperada? xxx
-ações 5%, obrigações 1,9%, bilhetes do Tesouro 0,8%
-
+o truque da independência financeira não é ganhar muito dinheiro, mas gastar pouco. A frugalidade tem dois benefícios: consegue poupar mais agora para o futuro e, nesse futuro, precisará de menos dinheiro.
 
 
 <h3>carreira longa</h3>
@@ -158,29 +181,7 @@ ações 5%, obrigações 1,9%, bilhetes do Tesouro 0,8%
 
 <p>Que prever da Segurança Social? O melhor é esperar o melhor — uma pensão equivalente a mais de 90% do último vencimento —, mas preparar-se para o pior.
 
-<h3>dsçfsdlç</h3>
 
-<p>sdlfkhlskd
-
-
-<p>
-
-
-
-
-2. 
-
-
-
-simulação
-
-salário atual
-
-proporção do último vencimento que receberá como pensão
-... apartir de ,,,
-
-
-
-</script>
+&marker;
 </body>
 </html>
