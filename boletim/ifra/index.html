@@ -1,1 +1,226 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Independência financeira e reforma antecipada: guia para o trabalho ser é uma opção</title>
+<style>
+body {
+	font: 1.25em/1.5em Arial, Helvetica, sans-serif; 
+	margin: 0 auto;
+	max-width: 32em;
+	padding: .25em 1.5em;
+	color: #323232; }
 
+h1, h2 { line-height: 1.25em; color: #173f5f; letter-spacing:-.033em; }
+
+h2 { color: #20639b; }
+
+header p a:first-child {
+	color: #173f5f;
+	background-color: inherit; 
+	padding: .5em;
+	border: 2px solid #20639b; }
+
+header p a:first-child:hover {
+	color: #fff;
+	background-color: #173f5f; 
+	text-decoration: none; 
+	border: 2px solid #173f5f; }
+
+p, li { margin: 1.5em 0; }
+
+li { list-style: square; }
+
+li ul li { margin: 1em 0; }
+
+a { color: #1e90ff; text-decoration: none; }
+
+a:hover { text-decoration: underline; }
+
+input { 
+	font-family: inherit;
+	font-size: 1em;
+	width: 4em;
+	text-align: right;
+	border-width: 0 0 3px;
+	border-color: #173f5f;
+
+}
+</style>
+<script>
+
+
+</script>
+</head>
+<body">
+<header><p><a href="/">tlim.pt</a></header>
+
+<h1>Independência financeira e reforma antecipada: guia para o trabalho ser é uma opção</h1>
+
+<h2>A principal meta financeira dos portugueses deveria ser acumular o suficiente para poder deixar de trabalhar. Depois, só deixa a lida profissional quem quer.</h2>
+
+<h3 style="font-weight: 400;">Por <strong>David Almas</strong></h3>
+
+<p>Não é por acaso que a palavra “trabalho” deriva do latim “tripalium”, que significa “tripálio”, um instrumento de tortura usado para forçar os escravos a produzir.
+
+<p>A <strong>independência financeira</strong> deveria ser o principal objetivo das finanças pessoais dos portugueses. Mesmo quem adore a sua profissão e não queira deixar de trabalhar, essa independência deveria estar no topo das suas metas.
+
+<p>A independência financeira não é sinónimo de <strong>reforma antecipada</strong>, embora a moda mais recente as posicione na mesma página. Há quem fale do movimento FIRE — do inglês <em>financial independence, retire early</em> —, mas eu prefiro escrever sobre IFRA — independência financeira e reforma antecipada.
+
+<p>Atinge-se a independência financeira quando se pode deixar de trabalhar por opção, vivendo-se apenas com as poupanças. Não é obrigatório deixar de trabalhar: nessa altura, sabe-se que é possível viver o resto da vida sem ganhar um tostão. Quando se deixa de trabalhar — em simultâneo com o registo da independência financeira ou após essa marca ter sido atingida —, opta-se pela reforma antecipada, caso ainda não se tenha chegado à idade estatutária para receber uma pensão.
+
+<p>Este artigo não deseja aconselhar sobre a reforma antecipada, mas quer ajudar os leitores a chegar à independência. A decisão sobre o que fazer depois de chegar a esse objetivo é exclusivamente pessoal.
+
+<h3>Quanto dinheiro é necessário para viver dos rendimentos?</h3>
+
+<p>“Um milhão de euros” é a resposta mais frequente que oiço quando pergunto a alguém qual seria o montante a partir do qual se sentiriam financeiramente independentes. Como vamos ver, para a maioria, é um montante exagerado.
+
+<p>Quando, a seguir, pergunto o que fariam com esse milhão, dizem quase sempre que viveriam dos rendimentos.
+
+<p>Será possível?
+
+<p>Se tiver um pé-de-meia de <input type="text" value="1000000" id="pedemeia" onkeyup="document.getElementById('rendimento').innerHTML=Math.round(document.getElementById('pedemeia').value*((1+.05)**(1/12)-1));"></input> euros, conseguirá retirar rendimentos mensais de <strong id="rendimento">4074</strong> <strong>euros</strong>, assumindo uma rentabilidade anual de 5%. Não será muito? Talvez se consiga viver com menos.
+
+<p><strong>Este artigo é interativo</strong>. Todos os números que estiverem sublinhado a azul, como o milhão de euros na parágrafo anterior, podem ser alterados. Experimente mudar para meio milhão de euros para perceber que esse novo montante permite viver mensalmente com 2037 euros.
+
+<p>Talvez seja mais intuitivo descobrir quanto dinheiro teria de acumular para conseguir garantir um determinado montante mensal.
+
+<p>Se precisa de <input type="text" value="1500" id="mensalidade" onkeyup="document.getElementById('pedemeia2').innerHTML=Math.round(document.getElementById('mensalidade').value/((1+.05)**(1/12)-1));"></input> euros por mês, então tem de acumular <strong id="pedemeia2">368177
+</strong> <strong>euros</strong>, assumindo uma rentabilidade anual de 5%. (A maioria dos resultados interativos neste artigo são arredondados. Pode usar decimais, se quiser. O marcador de decimais depende do seu programa de navegação, mas provavelmente é o ponto.)
+
+<p>Mesmo assim, o número que encontrou no parágrafo anterior pode ser exagerado. Até agora, as simulações assumem que nunca toca no capital durante a independência financeira; vive apenas dos rendimentos. Além disso, usa uma rentabilidade anual de 5%. Será correto?
+
+<h3>A importância da rentabilidade</h3>
+
+<p>A taxa de retorno que consegue nos seus investimentos é crucial. Em algumas circustâncias, é tão ou mais importante do que a própria poupança.
+
+<p>Como vimos atrás, consegue um retorno mensal de <input type="text" value="1500" id="mensalidade2" onkeyup="document.getElementById('pedemeia3').innerHTML=Math.round(document.getElementById('mensalidade2').value/((1+.05)**(1/12)-1)); document.getElementById('pedemeia4').innerHTML=Math.round(document.getElementById('mensalidade2').value/((1+.025)**(1/12)-1)); document.getElementById('pedemeia5').innerHTML=Math.round(document.getElementById('mensalidade2').value/((1+ document.getElementById('taxa').value/100)**(1/12)-1)); document.getElementById('mensalidade3').innerHTML=document.getElementById('mensalidade2').value;"></input> euros se puser <strong id="pedemeia3">368177</strong> <strong>euros</strong> a render à taxa anual de 5%, mas precisaria de <strong id="pedemeia4">728213</strong> <strong>euros</strong> com uma rentabilidade anual de 2,5%. E à sua taxa? Com uma rentabilidade anual de <input type="text" value="3" id="taxa" onkeyup="document.getElementById('pedemeia5').innerHTML=Math.round(document.getElementById('mensalidade2').value/((1+ document.getElementById('taxa').value/100)**(1/12)-1));" style="width:2em;"></input>, consegue um rendimento mensal de <span id="mensalidade3">1500</span> euros se tiver um pé-de-meia de <strong id="pedemeia5">608206</strong> <strong>euros</strong>.
+
+<p>Portanto, se cortar a sua rentabilidade anual para metade, precisará de quase o dobro da poupança para manter o rendimento mensal. 
+
+<p>Mal qual será a rentabilidade que deve esperar das suas aplicações? Elroy Dimson, Paul Marsh and Mike Staunton, investigadores da London Business School, compilaram os desempenhos dos principais ativos financeiros de 23 países aos longo de 119 anos. O <a href="https://www.credit-suisse.com/corporate/en/research/research-institute/publications.html"><em>Global Investment Returns Yearbook</em></a> de 2019, que publicaram através da unidade de análise financeira do Credit Suisse, indica que as ações renderam 9,4% por ano, as obrigações ganharam 4,9% e os bilhetes do Tesouro 2,9%.
+
+<p>Todavia, não são esses retornos que interessam. Para aferir a evolução do poder de compra do património, o que deve ser analisado é a rentabilidade real, isto é, o ganho acima da inflação. Em termos reais, as ações renderam 6,4% por ano, as obrigações 1,9% e os bilhetes do Tesouro 0,8%.
+
+<p>Em edições passadas do <em>Global Investment Returns Yearbook</em>, Dimson e Marsh avisaram que usar estes retornos nos planos financeiros é muito otimista, porque não têm em consideração os impostos e os encargos da carteira de investimentos.
+
+<p>Nas minhas projeções pessoais, assumo uma rentabilidade real efetiva entre 3,5% e 5% por ano na componente acionista. Para me proteger, <strong>procuro ser pessimista e uso frequentemente 3,5% nos meus cálculos de longo prazo</strong>. Sei que não tenho qualquer garantia de obter este retorno, porque o futuro é incerto, mas é a melhor estimativa que consigo fazer com a informação que tenho hoje.
+
+<p>Se aplicasse o meu dinheiro num fundo de ações caro — uma taxa de encargos correntes de 2%, que é frequente entre os fundos de ações da banca portuguesa, é muito elevada —, a rentabilidade real que esperaria seria menor. (A taxa de encargos correntes do fundo que escolhi para a minha carteira é de 0,2%.)
+
+<p>Infelizmente, isso quer dizer que a expectativa que tenho para as restantes aplicações — seguros de capitalização, planos de poupança-reforma, fundos de pensões, Certificados de Aforro, Certificados do Tesouro, Certificados de Reforma, depósitos a prazo, contas de poupança, fundos de obrigações, fundos mistos, obrigações, empréstimos colaborativos, entre outros — é de rentabilidades reais muito reduzidas ou, mesmo, negativas. Pouco ajudam a aumentar o poder de compra do património no longo prazo e até o podem destruir.
+
+<p>Veja noutro prisma: assumindo que a alternativa a investir em ações ou num fundo de ações alcançará metade do retorno, então quem optar pela alternativa terá de trabalhar aproximadamente o dobro do tempo para conseguir alcançar um pé-de-meia que produza o mesmo rendimento mensal.
+
+<p>É verdade que as ações são mais voláteis que a maioria dos produtos de aforro no curto prazo, mas esse é o preço que se tem de suportar para receber um potencial de retorno mais elevado no longo prazo.
+
+<h3>dçsjfls</h3>
+
+<p>sdkljf
+
+
+
+<p> http://openexchangerates.github.io/accounting.js/
+
+<p>
+
+
+
+1. O dinheiro que tenho dá-me para quanto tempo?
+
+Quanto euros acumulou:
+
+Qual a rentabilidade anual esperada? xxx
+ações 5%, obrigações 1,9%, bilhetes do Tesouro 0,8%
+
+
+
+<h3>carreira longa</h3>
+
+<p>Em 2009, a Organização para a Cooperação e Desenvolvimento Económico (OCDE) previa uma taxa de substituição líquida — a proporção do último salário que é coberto pela primeira pensão, depois de descontados os impostos e contribuições sociais  — de 68% para quem tivesse entrado recentemente no mercado de trabalho. Ou seja, após uma carreira contributiva completa, quem se reformasse com um vencimento líquido de 1000 euros poderia esperar receber uma pensão líquida de 680 euros.
+
+<p>Previa-se uma catástrofe social. Essa foi uma das razões que me levaram a escrever o livro <em>Como Salvar a Minha Reforma</em>, com o Joaquim Madrinha, em 2010.
+
+<p>Porém, algo mudou — e para melhor. A OCDE <a href="http://www.oecd.org/els/public-pensions/PAG2017-country-profile-Portugal.pdf">calcula</a> agora uma taxa de substituição líquida de 90% a 95% para quem se aposentar em 2064 com 68 anos e uma carreira completa de descontos para a Segurança Social. Se os trabalhadores mais novos conseguirão manter o nível de vida na aposentação, então os mais velhos também deverão, por uma questão de justiça intergeracional.
+
+<p>O Governo não confirma: as últimas projeções do Ministério das Finanças apontam para “saldos negativos do sistema previdencial a partir de meados da década de 2020”, segundo o <a href="https://www.dgo.pt/politicaorcamental/OrcamentodeEstado/2018/Proposta%20do%20Or%C3%A7amento/Documentos%20do%20OE/Rel-2018.pdf">Relatório do Orçamento do Estado para 2018</a>. O Fundo de Estabilização Financeira da Segurança Social, que foi criado para socorrer défices previdenciais, será ativado nessa altura, “projetando-se para a segunda metade da década de 2040 o seu esgotamento”.
+
+<p>Se o Governo diz que a Segurança Social ficará sem dinheiro antes de 2050, algo terá de mudar para a realidade projetada pela OCDE se confirmar. Provavelmente, serão canalizados mais impostos para a Segurança Social ou aumentada a idade estatutária de aposentação — ou uma combinação das duas medidas.
+
+<p>Que prever da Segurança Social? O melhor é esperar o melhor — uma pensão equivalente a mais de 90% do último vencimento —, mas preparar-se para o pior.
+
+<h3>dsçfsdlç</h3>
+
+<p>sdlfkhlskd
+
+
+<p>
+
+
+
+
+2. 
+
+
+
+simulação
+
+salário atual
+
+proporção do último vencimento que receberá como pensão
+... apartir de ,,,
+
+
+
+
+
+<p>Idade máxima dos agregado familiar: <input type="text" value="30" id="idade" onchange="ch();"></input> anos.
+
+<p>Rendimento mensal líquido do agregado familiar: <input type="text" value="1000" id="rendimento" onchange="ch();"></input> euros.
+
+<p>Prestações mensais com outros créditos: <input type="text" value="0" id="presta" onchange="ch();"></input> euros.
+
+<p><strong>Recomendação:</strong>
+
+<p>Empréstimo máximo: <span id="emprestimomaximo">129599</span> euros.
+
+<p>Prestação máxima: <span id="prestacaomaxima">400</span> euros.
+
+<p>Prazo máximo: <span id="prazomaximo">40</span> anos.
+
+
+<script>
+function ch(){
+18<=document.getElementById("idade").value&&70>document.getElementById("idade").value&&!isNaN(document.getElementById("idade").value)||(document.getElementById("idade").value=30);
+
+100<=document.getElementById("rendimento").value&&1E6>=document.getElementById("rendimento").value&&!isNaN(document.getElementById("rendimento").value)||(document.getElementById("rendimento").value=1000);
+
+0<=document.getElementById("presta").value&&!isNaN(document.getElementById("presta").value)||(document.getElementById("presta").value=0);
+
+if (document.getElementById("rendimento").value * 1 <= document.getElementById("presta").value * 1 ) { document.getElementById("presta").value=0; }
+
+var taeg = 2.11 / 100 / 12; //  https://www.bportugal.pt/Mobile/BPStat/Pesquisa.aspx?flt=taeg%20habita%C3%A7%C3%A3o
+
+var pmax = 70; // idade máxima na maturidade 
+
+var prazo;
+
+prazo = 30 > document.getElementById("idade").value ? 40 : pmax - document.getElementById("idade").value;
+
+var taxaesforco = .4;
+
+var emprestimo = Math.round((taxaesforco * document.getElementById("rendimento").value - document.getElementById("presta").value) * (1 - Math.pow(1 + taeg, 12 * -prazo)) / taeg);
+
+var prestacao = Math.round(emprestimo / ((1 - Math.pow(1 + taeg, 12 * -prazo)) / taeg));
+
+document.getElementById("emprestimomaximo").innerHTML=emprestimo;
+
+document.getElementById("prestacaomaxima").innerHTML=prestacao;
+
+document.getElementById("prazomaximo").innerHTML=prazo};
+
+window.onload = function() { ch(); }
+</script>
+</body>
+</html>
