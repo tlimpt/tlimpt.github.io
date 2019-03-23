@@ -5,27 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Independência financeira e reforma antecipada: o guia para o trabalho ser facultativo</title>
 <style>
-body {
-	font: 1.25em/1.5em Arial, Helvetica, sans-serif; 
-	margin: 0 auto;
-	max-width: 32em;
-	padding: .25em 1.5em;
-	color: #323232; }
+body { font: 1.25em/1.5em Arial, Helvetica, sans-serif; margin: 0 auto; max-width: 32em; padding: .25em 1.5em; color: #323232; }
 
 h1, h2 { line-height: 1.25em; color: #173f5f; letter-spacing:-.033em; }
 
 h2 { color: #4a6fa5; }
 
-header p a:first-child {
-	color: #4a6fa5;
-	background-color: inherit; 
-	padding: .5em;
-	border: 2px solid #4a6fa5; }
+header p a:first-child { color: #4a6fa5; background-color: inherit; padding: .5em; border: 2px solid #4a6fa5; }
 
-header p a:first-child:hover {
-	color: #fff;
-	background-color: #4a6fa5; 
-	text-decoration: none; }
+header p a:first-child:hover { color: #fff; background-color: #4a6fa5; text-decoration: none; }
 
 p, li { margin: 1.5em 0; }
 
@@ -37,17 +25,7 @@ a { color: #4a6fa5; text-decoration: none; }
 
 a:hover { text-decoration: underline; }
 
-input { 
-	font-family: inherit;
-	font-size: 1em;
-	width: 4em;
-	text-align: right;
-	border-width: 0 0 3px;
-	border-color: #173f5f;
-	outline: none;
-
-}
-
+input { font-family: inherit; font-size: 1em; width: 4em; text-align: right; border-width: 0 0 3px; border-color: #173f5f; outline: none; }
 </style>
 </head>
 <body onload="f()">
@@ -57,7 +35,7 @@ input {
 
 <h2>A principal meta financeira dos portugueses deveria ser acumular o suficiente para poder deixar de trabalhar. Depois, só deixa a lida profissional quem quer.</h2>
 
-<p>Por <strong style="color:#173f5f; white-space: nowrap;">David Almas</strong> <span style="white-space: nowrap;">a 1 de abril de 2019</span>
+<p style="font-style: italic;">Por <strong style="color:#173f5f; white-space: nowrap;">David Almas</strong> <span style="white-space: nowrap;">a 1 de abril de 2019</span>
 
 <p>Não é por acaso que a palavra “trabalho” deriva do latim “tripalium”, que significa “tripálio”, um instrumento de tortura usado para forçar os escravos a produzir.
 
@@ -178,8 +156,6 @@ document.getElementById('pedemeia3').innerHTML=100*Math.ceil(document.getElement
 
 document.getElementById('pedemeia5').innerHTML=100*Math.ceil(document.getElementById('despesa2').value/((1+ document.getElementById('taxa').value/100)**(1/12)-1)/100);
 
-
-
 var d4 = document.getElementById('despesa4').value;
 var r4 = (1 + document.getElementById("rentabilidade").value/100)**(1/12)-1;
 var mif4 = (document.getElementById("ev").value - document.getElementById("if").value) * 12;
@@ -188,8 +164,6 @@ var m4 = (document.getElementById("if").value - document.getElementById("anos").
 var pm4 = pif4 / ( ( 1 - (1+r4)**(-m4))/ r4    );	
 document.getElementById('precisa').innerHTML= pif4;
 document.getElementById('poupa').innerHTML= Math.ceil(pm4);
-
-
 
 var ev = document.getElementById("f-ev").value;								// esperança de vida
 var m = (document.getElementById("f-iif").value - document.getElementById("f-i").value) * 12; 		// meses até IF
@@ -205,7 +179,9 @@ var pm = (pif - p * (1 + r)**m) / ( ( 1 - (1+r)**(-m))/ r    );						// poupanç
 if (pm > 0) {
 	document.getElementById("f-tcharam").innerHTML = "<strong>deve amealhar mensalmente cerca de " + Math.ceil( pm ) + " euros até à independência financeira</strong>. Assim, terá aproximadamente " + 100 * Math.ceil( pif /100) + " euros, a preços de hoje, quando atingir essa meta";
 }
-else document.getElementById("f-tcharam").innerHTML = "não precisa de fazer nada: <strong>já amealhou o suficiente</strong>! Terá aproximadamente " + 100 * Math.ceil( pif /100) + " euros, a preços de hoje, quando atingir a sua data de independência financeira";
+else {
+	document.getElementById("f-tcharam").innerHTML = "não precisa de fazer nada: <strong>já amealhou o suficiente</strong>! Terá aproximadamente " + 100 * Math.ceil( pif /100) + " euros, a preços de hoje, quando atingir a sua data de independência financeira";
+}
 }
 </script>
 </body>
