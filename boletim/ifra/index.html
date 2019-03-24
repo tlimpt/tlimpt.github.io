@@ -131,7 +131,7 @@ Se começar agora, aos <input type="text" value="40" id="anos" style="width:2em;
 
 <p>Com uma estimativa de pensão consegue traçar um plano de independência financeira mais completo:
 
-<div style="border-left: .33em solid #4a6fa5; padding: 0 0 0 1em;">
+<div id="r" style="border-left: .33em solid #4a6fa5; padding: 0 0 0 1em;">
 
 <p>Tem agora, aos <input type="text" value="40" id="f-i" style="width:2em;" onkeyup="document.getElementById('anos').value=this.value;f();"> anos, uma poupança de <input type="text" value="100000" id="f-p" style="width:5em;" onkeyup="f();"> euros. Calcula que, quando atingir a independência financeira, aos <input type="text" value="55" id="f-iif" style="width:2em;" onkeyup="document.getElementById('if').value=this.value;f();"> anos, terá uma despesa mensal de <input type="text" value="1200" id="f-d" style="width:3em;" onkeyup="document.getElementById('despesa1').value=this.value;document.getElementById('despesa2').value=this.value;document.getElementById('despesa3').value=this.value;document.getElementById('despesa4').value=this.value;f();"> euros, a preços de hoje.
 
@@ -142,9 +142,9 @@ Se começar agora, aos <input type="text" value="40" id="anos" style="width:2em;
 <p>Para que nunca lhe falte dinheiro (espera viver até aos <input type="text" value="94" id="f-ev" style="width:2em;" onkeyup="document.getElementById('ev').value=this.value;f();"> anos), <span id="f-tcharam"><strong>deve amealhar mensalmente cerca de 750 euros até à independência financeira</strong>. Assim, terá aproximadamente de 272800 euros, a preços de hoje, quando atingir essa meta</span>.
 </div>
 
-<p>Normalmente, quando as pessoas poupam uma parte dos seus rendimentos pensam apenas em como esse dinheiro capitalizará para o futuro. Mas há outro benefício: ao poupar, estão também a baixar o seu consumo, habituando-se a viver com menos dinheiro. Essa hábito conduzirá a menos necessidades financeiras no resto da vida. Logo, o pé-de-meia essencial para a independência financeira será menor.
+<p>Normalmente, quando as pessoas poupam uma parte dos seus rendimentos pensam apenas em como esse dinheiro capitalizará para o futuro. Mas há outro benefício: ao poupar, estão também a baixar o seu consumo, habituando-se a viver com menos dinheiro. Esse hábito conduzirá a menos necessidades financeiras no resto da vida. Logo, o pé-de-meia essencial para a independência financeira será menor.
 
-<p>Experimente reduzir a despesa mensal durante a independência financeira na simulação anterior: muita vezes, basta <a href="javascript:void(0);" onclick="document.getElementById('f-d').value=document.getElementById('f-d').value*.9;f();">reduzir em 10%</a> para baixar o esforço mensal de poupança em um terço.
+<p>Experimente reduzir a despesa mensal durante a independência financeira na simulação anterior: muita vezes, basta <a href="#r" onclick="document.getElementById('f-d').value=Math.round(document.getElementById('f-d').value*.9);f();">reduzir em 10%</a> para baixar o esforço mensal de poupança em um terço.
 
 <p>Afine os campos da simulação até encontrar um plano que lhe seja confortável. Porém, não se esqueça: é apenas um plano. Muitas das previsões provavelmente revelar-se-ão erradas. Será preciso corrigir a tragetória do seu projeto várias vezes ao longo da vida. &marker;
 
