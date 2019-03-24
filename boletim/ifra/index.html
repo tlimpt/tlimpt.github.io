@@ -5,37 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Independência financeira e reforma antecipada: o guia para o trabalho ser facultativo</title>
 <style>
-body { font: 1.25em/1.5em Arial, Helvetica, sans-serif; margin: 0 auto; max-width: 32em; padding: .25em .75em; color: #323232; }
+body { font: 1.25em/1.5em Arial, Helvetica, sans-serif; margin: 0 auto; max-width: 32em; padding: .5em .75em; color: #323232 }
 
-h1, h2 { line-height: 1.25em; color: #173f5f; letter-spacing:-.033em; }
+h1, h2 { line-height: 1.25em; color: #173f5f; letter-spacing:-.033em }
 
-h2 { color: #4a6fa5; }
+h2 { color: #4a6fa5 }
 
-header p a:first-child { color: #4a6fa5; background-color: inherit; padding: .5em; border: 2px solid #4a6fa5; }
+header p a:first-child { color: #4a6fa5; background-color: inherit; padding: .5em; border: 2px solid #4a6fa5 }
 
-header p a:first-child:hover { color: #fff; background-color: #4a6fa5; text-decoration: none; }
+header p a:first-child:hover { color: #fff; background-color: #4a6fa5; text-decoration: none }
 
-p, li { margin: 1.5em 0; }
+p, li { margin: 1.5em 0 }
 
-li { list-style: square; }
+li { list-style: square }
 
-li ul li { margin: 1em 0; }
+li ul li { margin: 1em 0 }
 
-a { color: #4a6fa5; text-decoration: none; }
+a { color: #4a6fa5; text-decoration: none }
 
-a:hover { text-decoration: underline; }
+a:hover { text-decoration: underline }
 
-input { font-family: inherit; font-size: 1em; width: 4em; text-align: right; border-width: 0 0 3px; border-color: #173f5f; outline: none; }
+input { font-family: inherit; font-size: 1em; width: 4em; text-align: right; border-width: 0 0 3px; border-color: #173f5f; outline: none }
 </style>
 </head>
-<body onload="g()">
+<body>
 <header><p><a href="/">tlim.pt</a></header>
 
 <h1>Independência financeira e reforma antecipada: o guia para o trabalho ser facultativo</h1>
 
 <h2>A principal meta financeira dos portugueses deveria ser acumular o suficiente para poder deixar de trabalhar. Depois, só deixa a lida profissional quem quer.</h2>
 
-<p style="font-style: italic;">Por <strong style="color:#173f5f; white-space: nowrap;">David Almas</strong> <span style="white-space: nowrap;">a 1 de abril de 2019</span>
+<p style="font-style: italic">Por <strong style="color:#173f5f; white-space: nowrap">David Almas</strong> <span style="white-space: nowrap">a 1 de abril de 2019</span>
+
 
 <p>Não é por acaso que a palavra “trabalho” deriva do latim “tripalium”, que significa “tripálio”, um instrumento de tortura usado para forçar os escravos a produzir.
 
@@ -53,6 +54,7 @@ input { font-family: inherit; font-size: 1em; width: 4em; text-align: right; bor
 
 <p>Este artigo não deseja aconselhar sobre a reforma antecipada — essa decisão é demasiado pessoal —, mas quer ajudar os leitores a chegar à independência financeira.
 
+
 <h3>Quanto dinheiro é necessário para viver dos rendimentos?</h3>
 
 <p>“Um milhão de euros” é a resposta mais frequente que oiço quando pergunto a alguém qual seria o montante a partir do qual se sentiriam financeiramente independentes. Como veremos, para a maioria, é um montante exagerado.
@@ -61,22 +63,23 @@ input { font-family: inherit; font-size: 1em; width: 4em; text-align: right; bor
 
 <p>Se tiver um pé-de-meia de <input type="text" value="1000000" id="pedemeia" onkeyup="document.getElementById('rendimento').innerHTML=Math.floor(document.getElementById('pedemeia').value*((1+.05)**(1/12)-1));"> euros, conseguirá retirar rendimentos mensais de <strong id="rendimento">4074</strong> <strong>euros</strong>, assumindo uma rentabilidade anual de 5%. Não será muito? Talvez se consiga viver com menos.
 
-<div style="background-color:#c0d6df; padding: .5em 2em; margin: 2em 0;">
+<div style="background-color:#c0d6df; padding: .25em 1.75em">
 <p><strong>Este artigo é interativo</strong>. Todos os números sublinhados, como o milhão de euros no parágrafo anterior, podem ser alterados. Experimente mudar para meio milhão de euros para perceber que esse novo montante permite viver mensalmente com 2037 euros.
 <p><noscript>Infelizmente, o seu programa de navegação é dos poucos que não permite ou bloqueia JavaScript. Para si, este artigo não será interativo. Não vale a pena mudar os números.</noscript>
 </div>
 
 <p>Talvez seja mais intuitivo descobrir quanto dinheiro teria de acumular para conseguir garantir um determinado montante mensal.
 
-<p>Se precisa de <input type="text" value="1200" id="despesa1" onkeyup="document.getElementById('despesa2').value=this.value;document.getElementById('despesa3').value=this.value;document.getElementById('despesa4').value=this.value;document.getElementById('f-d').value=this.value;f();" style="width:3em;"> euros por mês, então tem de acumular cerca de <strong id="pedemeia2">294600</strong> <strong>euros</strong>, assumindo uma rentabilidade anual de 5%. (Os resultados interativos são arredondados e aproximados. Pode usar decimais, se quiser. O separador decimal depende do seu programa de navegação, mas provavelmente é o ponto.)
+<p>Se precisa de <input type="text" value="1200" id="despesa1" onkeyup="document.getElementById('despesa2').value=this.value;document.getElementById('despesa3').value=this.value;document.getElementById('despesa4').value=this.value;document.getElementById('f-d').value=this.value;f();" style="width:3em"> euros por mês, então tem de acumular cerca de <strong id="pedemeia2">294600</strong> <strong>euros</strong>, assumindo uma rentabilidade anual de 5%. (Os resultados interativos são arredondados e aproximados. Pode usar decimais, se quiser. O separador decimal depende do seu programa de navegação, mas provavelmente é o ponto.)
 
 <p>Mesmo assim, o número que encontrou no parágrafo anterior pode ser exagerado. Até agora, as simulações assumem que nunca toca no capital durante a independência financeira; vive apenas dos rendimentos. Além disso, usa uma rentabilidade anual de 5%. Será correto?
+
 
 <h3>A importância da rentabilidade</h3>
 
 <p>A taxa de retorno que consegue nos seus investimentos é crucial. Em algumas circustâncias, é tão ou mais importante do que a própria poupança.
 
-<p>Como vimos atrás, consegue um retorno mensal de <input type="text" value="1200" id="despesa2"  style="width:3em;" onkeyup="document.getElementById('despesa1').value=this.value;document.getElementById('despesa3').value=this.value;document.getElementById('despesa4').value=this.value;document.getElementById('f-d').value=this.value;f();"> euros se puser <strong id="pedemeia3">294600</strong> <strong>euros</strong> a render à taxa anual de 5%, mas precisaria de <strong id="pedemeia4">582600</strong> <strong>euros</strong> com uma rentabilidade anual de 2,5%. E à sua taxa? Com uma rentabilidade anual de <input type="text" value="3.5" id="taxa" onkeyup="document.getElementById('rentabilidade').value=this.value;document.getElementById('f-r').value=this.value;f();" style="width:2em;">%, consegue um rendimento mensal de <span id="despesa3">1500</span> euros se tiver um pé-de-meia de <strong id="pedemeia5">418000</strong> <strong>euros</strong>.
+<p>Como vimos atrás, consegue um retorno mensal de <input type="text" value="1200" id="despesa2"  style="width:3em" onkeyup="document.getElementById('despesa1').value=this.value;document.getElementById('despesa3').value=this.value;document.getElementById('despesa4').value=this.value;document.getElementById('f-d').value=this.value;f();"> euros se puser <strong id="pedemeia3">294600</strong> <strong>euros</strong> a render à taxa anual de 5%, mas precisaria de <strong id="pedemeia4">582600</strong> <strong>euros</strong> com uma rentabilidade anual de 2,5%. E à sua taxa? Com uma rentabilidade anual de <input type="text" value="3.5" id="taxa" onkeyup="document.getElementById('rentabilidade').value=this.value;document.getElementById('f-r').value=this.value;f();" style="width:2em">%, consegue um rendimento mensal de <span id="despesa3">1500</span> euros se tiver um pé-de-meia de <strong id="pedemeia5">418000</strong> <strong>euros</strong>.
 
 <p>Portanto, se cortar a sua rentabilidade anual para metade, precisará de quase o dobro da poupança para manter o rendimento mensal. 
 
@@ -100,6 +103,7 @@ input { font-family: inherit; font-size: 1em; width: 4em; text-align: right; bor
 
 <p>Não é o objetivo deste artigo convencer os leitores a exporem-se ao mercado acionista. Isso fica reservado para futuras edições do boletim <strong>tlim</strong>. Mais importante do que isso é que esteja confortável com as suas escolhas.
 
+
 <h3>Não viva só dos rendimentos</h3>
 
 <p>Até agora assumimos que nunca mobilizaria o seu pé-de-meia. É uma estratégia possível: viver apenas dos rendimentos e deixar o património para os herdeiros. Contudo, chega-se mais depressa à independência financeira se planear gastar progressivamente o que acumulou durante a vida.
@@ -110,11 +114,10 @@ input { font-family: inherit; font-size: 1em; width: 4em; text-align: right; bor
 
 <p>E se for um dos que viverá além dos 94 anos? Não há problema: pode sempre ir ajustado o seu plano financeiro à medida que o tempo passa e que as suas previsões se aproximam de certezas, aumentando a poupança mensal, adiando a independência financeira ou reduzindo a despesa mensal na “aposentação”, por exemplo.
 
-<p>Assim, se planeia gastar <input type="text" value="1200" id="despesa4"  style="width:3em;" onkeyup="document.getElementById('despesa1').value=this.value;document.getElementById('despesa2').value=this.value;document.getElementById('despesa3').value=this.value;document.getElementById('f-d').value=this.value;f();"> euros por mês, a preços de hoje, durante a sua independência financeira, entre os <input type="text" value="55" id="if" style="width:2em;" onkeyup="document.getElementById('f-iif').value=this.value;f();"> anos e os <input type="text" value="94" id="ev" style="width:2em;" onkeyup="document.getElementById('f-ev').value=this.value;f();"> anos, então <strong>precisa de acumular cerca de <span id="precisa">308800</span> euros</strong>, assumindo uma rentabilidade real efetiva (acima da inflação e líquida de encargos) de <input type="text" value="3.5" id="rentabilidade" style="width:3em;" onkeyup="document.getElementById('taxa').value=this.value;document.getElementById('f-r').value=this.value;f();">% por ano.
-
-Se começar agora, aos <input type="text" value="40" id="anos" style="width:2em;" onkeyup="document.getElementById('f-i').value=this.value;f();"> anos, do zero, precisa de amealhar mensalmente <strong><span id="poupa">2200</span> euros</strong> para chegar a esse montante, assumindo a mesma rentabilidade anual.
+<p>Assim, se planeia gastar <input type="text" value="1200" id="despesa4"  style="width:3em;" onkeyup="document.getElementById('despesa1').value=this.value;document.getElementById('despesa2').value=this.value;document.getElementById('despesa3').value=this.value;document.getElementById('f-d').value=this.value;f();"> euros por mês, a preços de hoje, durante a sua independência financeira, entre os <input type="text" value="55" id="if" style="width:2em;" onkeyup="document.getElementById('f-iif').value=this.value;f();"> anos e os <input type="text" value="94" id="ev" style="width:2em;" onkeyup="document.getElementById('f-ev').value=this.value;f();"> anos, então <strong>precisa de acumular cerca de <span id="precisa">308800</span> euros</strong>, assumindo uma rentabilidade real efetiva (acima da inflação e líquida de encargos) de <input type="text" value="3.5" id="rentabilidade" style="width:3em;" onkeyup="document.getElementById('taxa').value=this.value;document.getElementById('f-r').value=this.value;f();">% por ano. Se começar agora, aos <input type="text" value="40" id="anos" style="width:2em;" onkeyup="document.getElementById('f-i').value=this.value;f();"> anos, do zero, precisa de amealhar mensalmente <strong><span id="poupa">2200</span> euros</strong> para chegar a esse montante, assumindo a mesma rentabilidade anual.
 
 <p>No entanto, se calhar já tem uma poupança reservada para a independência financeira. E, talvez, tenha direito a uma pensão de velhice.
+
 
 <h3>Quanto esperar de pensão?</h3>
 
@@ -131,19 +134,21 @@ Se começar agora, aos <input type="text" value="40" id="anos" style="width:2em;
 
 <p>Com uma estimativa de pensão consegue traçar um plano de independência financeira mais completo:
 
-<div id="r" style="border-left: .33em solid #4a6fa5; padding: 0 0 0 1em;">
 
-<p>Tem agora, aos <input type="text" value="40" id="f-i" style="width:2em;" onkeyup="document.getElementById('anos').value=this.value;f();"> anos, uma poupança de <input type="text" value="100000" id="f-p" style="width:5em;" onkeyup="f();"> euros. Calcula que, quando atingir a independência financeira, aos <input type="text" value="55" id="f-iif" style="width:2em;" onkeyup="document.getElementById('if').value=this.value;f();"> anos, terá uma despesa mensal de <input type="text" value="1200" id="f-d" style="width:3em;" onkeyup="document.getElementById('despesa1').value=this.value;document.getElementById('despesa2').value=this.value;document.getElementById('despesa3').value=this.value;document.getElementById('despesa4').value=this.value;f();"> euros, a preços de hoje.
+<div id="r" style="border-left: .33em solid #4a6fa5; padding: 0 0 0 1em">
+
+<p>Tem agora, aos <input type="text" value="40" id="f-i" style="width:2em" onkeyup="document.getElementById('anos').value=this.value;f();"> anos, uma poupança de <input type="text" value="100000" id="f-p" style="width:5em" onkeyup="f();"> euros. Calcula que, quando atingir a independência financeira, aos <input type="text" value="55" id="f-iif" style="width:2em" onkeyup="document.getElementById('if').value=this.value;f();"> anos, terá uma despesa mensal de <input type="text" value="1200" id="f-d" style="width:3em" onkeyup="document.getElementById('despesa1').value=this.value;document.getElementById('despesa2').value=this.value;document.getElementById('despesa3').value=this.value;document.getElementById('despesa4').value=this.value;f();"> euros, a preços de hoje.
 
 <p>Espera que as suas aplicações financeiras rendam <input type="text" value="3.5" id="f-r" style="width:3em;" onkeyup="document.getElementById('taxa').value=this.value;document.getElementById('rentabilidade').value=this.value;f();">% por ano, depois de descontar a inflação e os encargos (impostos e comissões).
 
-<p>Entretanto, conta receber, a partir dos <input type="text" value="68" id="f-iss" style="width:2em;" onkeyup="f();"> anos, uma pensão mensal de <input type="text" value="273.39" id="f-ss" style="width:5em;" onkeyup="f();"> euros, a preços de hoje.
+<p>Entretanto, conta receber, a partir dos <input type="text" value="68" id="f-iss" style="width:2em" onkeyup="f();"> anos, uma pensão mensal de <input type="text" value="273.39" id="f-ss" style="width:5em" onkeyup="f();"> euros, a preços de hoje.
 
-<p>Para que nunca lhe falte dinheiro (espera viver até aos <input type="text" value="94" id="f-ev" style="width:2em;" onkeyup="document.getElementById('ev').value=this.value;f();"> anos), <span id="f-tcharam"><strong>deve amealhar mensalmente cerca de 750 euros até à independência financeira</strong>. Assim, terá aproximadamente de 272800 euros, a preços de hoje, quando atingir essa meta</span>.
+<p>Para que nunca lhe falte dinheiro (espera viver até aos <input type="text" value="94" id="f-ev" style="width:2em" onkeyup="document.getElementById('ev').value=this.value;f();"> anos), <span id="f-tcharam"><strong>deve amealhar mensalmente cerca de 750 euros até à independência financeira</strong>. Assim, terá aproximadamente de 272800 euros, a preços de hoje, quando atingir essa meta</span>.
 
-<p>Se quiser retomar esta simulação, guarde esta <a href="#r" id="hiper">hiperligação</a>.
+<p>Se quiser retomar ou partilhar este cálculos, use esta <a href="#r" id="hiper">hiperligação</a>.
 
 </div>
+
 
 <p>Normalmente, quando as pessoas poupam uma parte dos seus rendimentos pensam apenas em como esse dinheiro capitalizará para o futuro. Mas há outro benefício: ao poupar, estão também a baixar o seu consumo, habituando-se a viver com menos dinheiro. Esse hábito conduzirá a menos necessidades financeiras no resto da vida. Logo, o pé-de-meia essencial para a independência financeira será menor.
 
@@ -151,72 +156,65 @@ Se começar agora, aos <input type="text" value="40" id="anos" style="width:2em;
 
 <p>Afine os campos da simulação até encontrar um plano que lhe seja confortável. Porém, não se esqueça: é apenas um plano. Muitas das previsões provavelmente revelar-se-ão erradas. Será preciso corrigir a tragetória do seu projeto várias vezes ao longo da vida. &marker;
 
+<div style="background-color:#c0d6df; padding: .25em 1.75em">
+<p><strong>Este artigo é experimental</strong>. Está em constante melhoria. Se encontrar falhas ou se tiver sugestões para o melhorar, escreva-me para <a href="mailto:davidalmas@gmail.com?subject=IFRA">davidalmas@gmail.com</a>.
+</div>
+
 <script>
-function g(){
-if (window.location.href.split("?")[1] !== undefined) {
+// Dúvidas? → davidalmas@gmail.com
 
-var h = window.location.href.split("?")[1].split("=")[1].split("#")[0].split("+");
+window.onload = function(){
+	if (void 0 !== window.location.href.split("?")[1]) {
+		var h = window.location.href.split("?")[1].split("=")[1].split("#")[0].split("+");
+		document.getElementById("f-i").value = h[0];
+		document.getElementById("f-p").value = h[1];
+		document.getElementById("f-iif").value = h[2];
+		document.getElementById("f-d").value = h[3];
+		document.getElementById("f-r").value = h[4];
+		document.getElementById("f-iss").value = h[5];
+		document.getElementById("f-ss").value = h[6];
+		document.getElementById("f-ev").value = h[7];
+	}
+	f();
+};
 
-document.getElementById("f-i").value = h[0];
-document.getElementById("f-p").value = h[1];
-document.getElementById("f-iif").value = h[2];
-document.getElementById("f-d").value = h[3];
-document.getElementById("f-r").value = h[4];
-document.getElementById("f-iss").value = h[5];
-document.getElementById("f-ss").value = h[6];
-document.getElementById("f-ev").value = h[7];
- }
-
-f();
-}
-
-
-function f() {
-    document.getElementById('pedemeia2').innerHTML = 100 * Math.ceil(document.getElementById('despesa1').value / ((1 + .05) ** (1 / 12) - 1) / 100);
-
-    document.getElementById('pedemeia3').innerHTML = 100 * Math.ceil(document.getElementById('despesa2').value / ((1 + .05) ** (1 / 12) - 1) / 100);
-    document.getElementById('pedemeia4').innerHTML = 100 * Math.ceil(document.getElementById('despesa2').value / ((1 + .025) ** (1 / 12) - 1) / 100);
-    document.getElementById('pedemeia5').innerHTML = 100 * Math.ceil(document.getElementById('despesa2').value / ((1 + document.getElementById('taxa').value / 100) ** (1 / 12) - 1) / 100);
-    document.getElementById('despesa3').innerHTML = document.getElementById('despesa2').value;
-
-    document.getElementById('pedemeia5').innerHTML = 100 * Math.ceil(document.getElementById('despesa2').value / ((1 + document.getElementById('taxa').value / 100) ** (1 / 12) - 1) / 100);
-
-    var d4 = document.getElementById('despesa4').value;
-    var r4 = (1 + document.getElementById("rentabilidade").value / 100) ** (1 / 12) - 1;
-    var mif4 = (document.getElementById("ev").value - document.getElementById("if").value) * 12;
-    var pif4 = 100 * Math.ceil(d4 * (1 - (1 + r4) ** (-mif4)) / r4 / 100);
-    var m4 = (document.getElementById("if").value - document.getElementById("anos").value) * 12;
-    var pm4 = pif4 / ((1 - (1 + r4) ** (-m4)) / r4);
-    document.getElementById('precisa').innerHTML = pif4;
-    document.getElementById('poupa').innerHTML = Math.ceil(pm4);
-
-    var i = document.getElementById("f-i").value;
-    var iif = document.getElementById("f-iif").value;
-    var tx = document.getElementById("f-r").value;
-    var iss = document.getElementById("f-iss").value;
-
-    var ev = document.getElementById("f-ev").value; // esperança de vida
-    var m = (iif - i) * 12; // meses até IF
-    var mif = (ev - document.getElementById("f-iif").value) * 12; // meses após IF
-    var p = document.getElementById("f-p").value; // poupança acumulada
-    var r = (1 + tx / 100) ** (1 / 12) - 1; // rentabilidade mensal
-    var d = document.getElementById("f-d").value; // despesa mensal na IF
-    var ss = document.getElementById("f-ss").value; // pensão
-    var mss = (ev - iss) * 12; // meses após pensão
-    var pif = (d - ss) * (1 - (1 + r) ** (-mif)) / r + ss * (1 - (1 + r) ** (-(mif - mss))) / r; // património necessário na data de IF2
-    var pm = (pif - p * (1 + r) ** m) / ((1 - (1 + r) ** (-m)) / r); // poupança mensal
-
-    if (pm > 0) {
-        document.getElementById("f-tcharam").innerHTML = "<strong>deve amealhar mensalmente cerca de " + Math.ceil(pm) + " euros até à independência financeira</strong>. Assim, terá aproximadamente " + 100 * Math.ceil(pif / 100) + " euros, a preços de hoje, quando atingir essa meta";
-    } else {
-        document.getElementById("f-tcharam").innerHTML = "não precisa de fazer nada: <strong>já amealhou o suficiente</strong>! Terá aproximadamente " + 100 * Math.ceil(pif / 100) + " euros, a preços de hoje, quando atingir a sua data de independência financeira";
-    }
-
-hiper = window.location.href.split("?")[0] + "?r=" + i + "+" + p + "+" + iif + "+" + d + "+" + tx + "+" + iss + "+" + ss + "+" + ev + "#r";
-
-document.getElementById("hiper").href = hiper;
-
-}
+function f(){
+	document.getElementById('pedemeia2').innerHTML = 100*Math.ceil(document.getElementById('despesa1').value/((1.05)**(1/12)-1)/100);
+	document.getElementById('pedemeia3').innerHTML = 100*Math.ceil(document.getElementById('despesa2').value/((1.05)**(1/12)-1)/100);
+	document.getElementById('pedemeia4').innerHTML = 100*Math.ceil(document.getElementById('despesa2').value/((1.025)**(1/12)-1)/100);
+	document.getElementById('pedemeia5').innerHTML = 100*Math.ceil(document.getElementById('despesa2').value/((1+document.getElementById('taxa').value/100)**(1/12)-1)/100);
+	document.getElementById('despesa3').innerHTML = document.getElementById('despesa2').value;
+	document.getElementById('pedemeia5').innerHTML = 100*Math.ceil(document.getElementById('despesa2').value/((1+document.getElementById('taxa').value/100)**(1/12)-1)/100);
+	var d4 = document.getElementById('despesa4').value;
+	var r4 = (1 + document.getElementById("rentabilidade").value / 100) ** (1 / 12) - 1;
+	var mif4 = (document.getElementById("ev").value - document.getElementById("if").value) * 12;
+	var pif4 = 100 * Math.ceil(d4 * (1 - (1 + r4) ** (-mif4)) / r4 / 100);
+	var m4 = (document.getElementById("if").value - document.getElementById("anos").value) * 12;
+	var pm4 = pif4 / ((1 - (1 + r4) ** (-m4)) / r4);
+	document.getElementById('precisa').innerHTML = pif4;
+	document.getElementById('poupa').innerHTML = Math.ceil(pm4);
+	var i = document.getElementById("f-i").value;
+	var iif = document.getElementById("f-iif").value;
+	var tx = document.getElementById("f-r").value;
+	var iss = document.getElementById("f-iss").value;
+	var ev = document.getElementById("f-ev").value; // esperança de vida
+	var m = (iif - i) * 12; // meses até IF
+	var mif = (ev - document.getElementById("f-iif").value) * 12; // meses após IF
+	var p = document.getElementById("f-p").value; // poupança acumulada
+	var r = (1 + tx / 100) ** (1 / 12) - 1; // rentabilidade mensal
+	var d = document.getElementById("f-d").value; // despesa mensal na IF
+	var ss = document.getElementById("f-ss").value; // pensão
+	var mss = (ev - iss) * 12; // meses após pensão
+	var pif = (d - ss) * (1 - (1 + r) ** (-mif)) / r + ss * (1 - (1 + r) ** (-(mif - mss))) / r; // património necessário na data de IF2
+	var pm = (pif - p * (1 + r) ** m) / ((1 - (1 + r) ** (-m)) / r); // poupança mensal
+	if (pm > 0){
+		document.getElementById("f-tcharam").innerHTML = "<strong>deve amealhar mensalmente cerca de " + Math.ceil(pm) + " euros até à independência financeira</strong>. Assim, terá aproximadamente " + 100 * Math.ceil(pif / 100) + " euros, a preços de hoje, quando atingir essa meta";
+	} else {
+		document.getElementById("f-tcharam").innerHTML = "não precisa de fazer nada: <strong>já amealhou o suficiente</strong>! Terá aproximadamente " + 100 * Math.ceil(pif / 100) + " euros, a preços de hoje, quando atingir a sua data de independência financeira";
+	};
+	hiper = window.location.href.split("?")[0] + "?r=" + i + "+" + p + "+" + iif + "+" + d + "+" + tx + "+" + iss + "+" + ss + "+" + ev + "#r";
+	document.getElementById("hiper").href = hiper;
+};
 </script>
 </body>
 </html>
