@@ -28,7 +28,7 @@ a:hover { text-decoration: underline; }
 input { font-family: inherit; font-size: 1em; width: 4em; text-align: right; border-width: 0 0 3px; border-color: #173f5f; outline: none; }
 </style>
 </head>
-<body onload="f()">
+<body onload="g()">
 <header><p><a href="/">tlim.pt</a></header>
 
 <h1>Independência financeira e reforma antecipada: o guia para o trabalho ser facultativo</h1>
@@ -140,6 +140,9 @@ Se começar agora, aos <input type="text" value="40" id="anos" style="width:2em;
 <p>Entretanto, conta receber, a partir dos <input type="text" value="68" id="f-iss" style="width:2em;" onkeyup="f();"> anos, uma pensão mensal de <input type="text" value="273.39" id="f-ss" style="width:5em;" onkeyup="f();"> euros, a preços de hoje.
 
 <p>Para que nunca lhe falte dinheiro (espera viver até aos <input type="text" value="94" id="f-ev" style="width:2em;" onkeyup="document.getElementById('ev').value=this.value;f();"> anos), <span id="f-tcharam"><strong>deve amealhar mensalmente cerca de 750 euros até à independência financeira</strong>. Assim, terá aproximadamente de 272800 euros, a preços de hoje, quando atingir essa meta</span>.
+
+<p>Se quiser retomar esta simulação, guarde esta <a href="#r" id="hiper">hiperligação</a>.
+
 </div>
 
 <p>Normalmente, quando as pessoas poupam uma parte dos seus rendimentos pensam apenas em como esse dinheiro capitalizará para o futuro. Mas há outro benefício: ao poupar, estão também a baixar o seu consumo, habituando-se a viver com menos dinheiro. Esse hábito conduzirá a menos necessidades financeiras no resto da vida. Logo, o pé-de-meia essencial para a independência financeira será menor.
@@ -149,6 +152,25 @@ Se começar agora, aos <input type="text" value="40" id="anos" style="width:2em;
 <p>Afine os campos da simulação até encontrar um plano que lhe seja confortável. Porém, não se esqueça: é apenas um plano. Muitas das previsões provavelmente revelar-se-ão erradas. Será preciso corrigir a tragetória do seu projeto várias vezes ao longo da vida. &marker;
 
 <script>
+function g(){
+if (window.location.href.split("?")[1] !== undefined) {
+
+var h = window.location.href.split("?")[1].split("=")[1].split("#")[0].split("|");
+
+document.getElementById("f-i").value = h[0];
+document.getElementById("f-p").value = h[1];
+document.getElementById("f-iif").value = h[2];
+document.getElementById("f-d").value = h[3];
+document.getElementById("f-r").value = h[4];
+document.getElementById("f-iss").value = h[5];
+document.getElementById("f-ss").value = h[6];
+document.getElementById("f-ev").value = h[7];
+ }
+
+f();
+}
+
+
 function f() {
     document.getElementById('pedemeia2').innerHTML = 100 * Math.ceil(document.getElementById('despesa1').value / ((1 + .05) ** (1 / 12) - 1) / 100);
 
@@ -168,14 +190,19 @@ function f() {
     document.getElementById('precisa').innerHTML = pif4;
     document.getElementById('poupa').innerHTML = Math.ceil(pm4);
 
+    var i = document.getElementById("f-i").value;
+    var iif = document.getElementById("f-iif").value;
+    var tx = document.getElementById("f-r").value;
+    var iss = document.getElementById("f-iss").value;
+
     var ev = document.getElementById("f-ev").value; // esperança de vida
-    var m = (document.getElementById("f-iif").value - document.getElementById("f-i").value) * 12; // meses até IF
+    var m = (iif - i) * 12; // meses até IF
     var mif = (ev - document.getElementById("f-iif").value) * 12; // meses após IF
     var p = document.getElementById("f-p").value; // poupança acumulada
-    var r = (1 + document.getElementById("f-r").value / 100) ** (1 / 12) - 1; // rentabilidade mensal
+    var r = (1 + tx / 100) ** (1 / 12) - 1; // rentabilidade mensal
     var d = document.getElementById("f-d").value; // despesa mensal na IF
     var ss = document.getElementById("f-ss").value; // pensão
-    var mss = (ev - document.getElementById("f-iss").value) * 12; // meses após pensão
+    var mss = (ev - iss) * 12; // meses após pensão
     var pif = (d - ss) * (1 - (1 + r) ** (-mif)) / r + ss * (1 - (1 + r) ** (-(mif - mss))) / r; // património necessário na data de IF2
     var pm = (pif - p * (1 + r) ** m) / ((1 - (1 + r) ** (-m)) / r); // poupança mensal
 
@@ -184,6 +211,11 @@ function f() {
     } else {
         document.getElementById("f-tcharam").innerHTML = "não precisa de fazer nada: <strong>já amealhou o suficiente</strong>! Terá aproximadamente " + 100 * Math.ceil(pif / 100) + " euros, a preços de hoje, quando atingir a sua data de independência financeira";
     }
+
+hiper = window.location.href.split("?")[0] + "?r=" + i + "|" + p + "|" + iif + "|" + d + "|" + tx + "|" + iss + "|" + ss + "|" + ev + "#r";
+
+document.getElementById("hiper").href = hiper;
+
 }
 </script>
 </body>
