@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Independência financeira e reforma antecipada: o guia para o trabalho ser facultativo</title>
 <style>
-body { font: 1.25em/1.5em Arial, Helvetica, sans-serif; margin: 0 auto; max-width: 32em; padding: .5em .75em; color: #323232 }
+body { font: 1.25em/1.5em Arial, Helvetica, sans-serif; margin: 0 auto; max-width: 30em; padding: .5em .75em; color: #323232 }
 
 h1, h2 { line-height: 1.25em; color: #173f5f; letter-spacing:-.033em }
 
@@ -55,7 +55,7 @@ input { font-family: inherit; font-size: 1em; width: 4em; text-align: right; bor
 <p>Este artigo não deseja aconselhar sobre a reforma antecipada — essa decisão é demasiado pessoal —, mas quer ajudar os leitores a chegar à independência financeira.
 
 
-<h3>Quanto dinheiro é necessário para viver dos rendimentos?</h3>
+<h3>Quanto é necessário para viver dos rendimentos?</h3>
 
 <p>“Um milhão de euros” é a resposta mais frequente que oiço quando pergunto a alguém qual seria o montante a partir do qual se sentiriam financeiramente independentes. Como veremos, para a maioria, é um montante exagerado.
 
@@ -79,7 +79,7 @@ input { font-family: inherit; font-size: 1em; width: 4em; text-align: right; bor
 
 <p>A taxa de retorno que consegue nos seus investimentos é crucial. Em algumas circunstâncias, é tão ou mais importante do que a própria poupança.
 
-<p>Como vimos atrás, consegue um retorno mensal de <input type="text" value="1200" id="despesa2"  style="width:3em" onkeyup="document.getElementById('despesa1').value=this.value;document.getElementById('despesa3').value=this.value;document.getElementById('despesa4').value=this.value;document.getElementById('f-d').value=this.value;f();"> euros se puser <strong id="pedemeia3">294600</strong> <strong>euros</strong> a render à taxa anual de 5%, mas precisaria de <strong id="pedemeia4">582600</strong> <strong>euros</strong> com uma rentabilidade anual de 2,5%. E à sua taxa? Com uma rentabilidade anual de <input type="text" value="3.5" id="taxa" onkeyup="document.getElementById('rentabilidade').value=this.value;document.getElementById('f-r').value=this.value;f();" style="width:2em">%, consegue um rendimento mensal de <span id="despesa3">1500</span> euros se tiver um pé-de-meia de <strong id="pedemeia5">418000</strong> <strong>euros</strong>.
+<p>Como vimos atrás, consegue um retorno mensal de <input type="text" value="1200" id="despesa2"  style="width:3em" onkeyup="document.getElementById('despesa1').value=this.value;document.getElementById('despesa3').value=this.value;document.getElementById('despesa4').value=this.value;document.getElementById('f-d').value=this.value;f();"> euros se puser <strong id="pedemeia3">294600</strong> <strong>euros</strong> a render à taxa anual de 5%, mas precisaria de <strong id="pedemeia4">582600</strong> <strong>euros</strong> com uma rentabilidade anual de 2,5%. E à sua taxa? Com uma rentabilidade anual de <input type="text" value="3.5" id="taxa" onkeyup="document.getElementById('rentabilidade').value=this.value;document.getElementById('f-r').value=this.value;f();" style="width:3em">%, consegue um rendimento mensal de <span id="despesa3">1500</span> euros se tiver um pé-de-meia de <strong id="pedemeia5">418000</strong> <strong>euros</strong>.
 
 <p>Portanto, se cortar a sua rentabilidade anual para metade, precisará de quase o dobro da poupança para manter o rendimento mensal. 
 
@@ -106,7 +106,9 @@ input { font-family: inherit; font-size: 1em; width: 4em; text-align: right; bor
 <p>Não é o objetivo deste artigo convencer os leitores a exporem-se ao mercado acionista. Isso fica reservado para futuras edições do boletim <strong>tlim</strong>. Mais importante do que isso é que esteja confortável com as suas escolhas.
 
 <div style="background-color:#c0d6df; padding: .25em 1.75em">
-<p>Em 1998, três académicos — Philip Cooley, Carl Hubbard e Daniel Walz — procuraram encontrar uma “taxa segura de resgate” que funcionasse para a maioria dos aforradores. A investigação, que ficou conhecida por <strong>Estudo de Trinity</strong>, concluiu que uma pessoa tem poupanças de reforma suficientes — em ações e obrigações — se 4% dos seus ativos cobrirem as suas despesas anuais. Graças à sua simplicidade, a “regra dos 4%” tornou-se  muito popular, em particular nos Estados Unidos da América.
+<p>Em 1998, três académicos — Philip Cooley, Carl Hubbard e Daniel Walz — procuraram encontrar uma “taxa segura de resgate” que funcionasse para a maioria dos aforradores.
+<p>A investigação, que ficou conhecida por <strong>Estudo de Trinity</strong>, concluiu que uma pessoa tem poupanças de reforma suficientes — em ações e obrigações — se 4% dos seus ativos cobrirem as suas despesas anuais. Isto quer dizer que, na aposentação, deve ter 25 vezes os gastos anuais ou 300 vezes as despesas mensais.
+<p>Graças à sua simplicidade, a “regra dos 4%” tornou-se  muito popular, em particular nos Estados Unidos da América.
 </div>
 
 
@@ -147,7 +149,7 @@ input { font-family: inherit; font-size: 1em; width: 4em; text-align: right; bor
 
 <p>Espera que as suas aplicações financeiras rendam <input type="text" value="3.5" id="f-r" style="width:3em;" onkeyup="document.getElementById('taxa').value=this.value;document.getElementById('rentabilidade').value=this.value;f();">% por ano, depois de descontar a inflação e os encargos (impostos e comissões).
 
-<p>Entretanto, conta receber, a partir dos <input type="text" value="68" id="f-iss" style="width:2em" onkeyup="f();"> anos, uma pensão mensal de <input type="text" value="273.39" id="f-ss" style="width:5em" onkeyup="f();"> euros, a preços de hoje.
+<p>Entretanto, conta receber, a partir dos <input type="text" value="68" id="f-iss" style="width:2em" onkeyup="f();"> anos, uma pensão mensal de <input type="text" value="273.39" id="f-ss" style="width:4em" onkeyup="f();"> euros, a preços de hoje.
 
 <p>Para que nunca lhe falte dinheiro (espera viver até aos <input type="text" value="94" id="f-ev" style="width:2em" onkeyup="document.getElementById('ev').value=this.value;f();"> anos), <span id="f-tcharam"><strong>deve amealhar mensalmente cerca de 750 euros até à independência financeira</strong>. Assim, terá aproximadamente de 272800 euros, a preços de hoje, quando atingir essa meta</span>.
 
