@@ -1,1 +1,295 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nem sempre os PPR pagam menos impostos. Às vezes, mais vale subscrever um fundo de investimento</title>
+<style>
+body { font: 1.25em/1.5em Arial, Helvetica, sans-serif; margin: 0 auto; max-width: 30em; padding: .5em .75em; color: #323232 }
 
+h1, h2 { line-height: 1.25em; color: #173f5f; letter-spacing:-.033em }
+
+h2 { color: #4a6fa5 }
+
+header p a:first-child { color: #4a6fa5; background-color: inherit; padding: .5em; border: 2px solid #4a6fa5 }
+
+header p a:first-child:hover { color: #fff; background-color: #4a6fa5; text-decoration: none }
+
+p, li { margin: 1.5em 0 }
+
+li { list-style: square }
+
+li ul li { margin: 1em 0 }
+
+a { color: #4a6fa5; text-decoration: none }
+
+a:hover { text-decoration: underline }
+
+input, select { font-family: inherit; font-size: 1em; width: 3em; text-align: right; border-width: 0 0 3px; border-color: #173f5f; outline: none; background-color: inherit }
+
+td { border-bottom: .1em solid #173f5f; padding: 1em 1em 1em 0;  vertical-align: top; text-align:left; width: 50%;}
+td li { margin: 0 0 .5em; }
+</style>
+</head>
+<body>
+<header><p><a href="/">tlim.pt</a></header>
+
+<h1>Nem sempre os PPR pagam menos impostos. Às vezes, mais vale subscrever um fundo de investimento</h1>
+
+<h2>Para alguns investidores de longo prazo, em particular os que buscam a reforma antecipada, os fundos de investimento podem ser a opção fiscalmente mais económica.</h2>
+
+<p style="font-style: italic">Por <strong style="color:#173f5f; white-space: nowrap">David Almas</strong> <span style="white-space: nowrap">a 1 de junho de 2019</span>
+
+<p>A banca, com o alto patrocínio dos governos, continua a convencer os aforradores que a fiscalidade dos planos de poupança-reforma (PPR) é muito melhor do que a dos fundos de investimento. Nem sempre é verdade.
+
+<p>Esta é a informação fiscal que é normalmente apresentada aos clientes bancários:
+
+<table style="border-collapse: collapse; border: 0; font-size: 90%">
+<tr>
+<td><strong>PPR</strong>
+<td><strong>Fundos</strong>
+</tr>
+<tr>
+<td>
+<ul>
+<li>Se o reembolso for na forma de capital e dentro das condições previstas na lei, a taxa efetiva é de 8%.
+<li>Se o reembolso for na forma de capital e fora das condições previstas na lei, a taxa efetiva é de 21,5% até 5 anos de investimento, de 17,2% até 8 anos ou de 8,6% após 8 anos.
+<li>Se o reembolso for feito na forma de renda, os rendimentos do PPR são tributados como se fossem uma pensão.
+</ul>
+<td>
+<ul>
+<li>Os dividendos são alvo de uma taxa de retenção na fonte de 28%.
+<li>As mais-valias dos fundos de investimento nacionais são alvo de uma taxa de retenção na fonte de 28%.
+<li>As mais-valias dos fundos de investimento estrangeiros são tributados à taxa autónoma de 28%, mas não há retenção na fonte.
+</ul>
+</tr>
+</table>
+
+<p>As condições previstas na legislação para o reembolso dos PPR são reforma por velhice, após os 60 anos, desemprego de longa duração, incapacidade permanente para o trabalho, doença grave, morte e pagamento de prestações de crédito para habitação própria e permanente e sempre após cinco anos da subscrição.
+
+<p>Resumidamente, diz a banca, os PPR são tributados a cerca de 8% no longo prazo e os fundos a 28%. Não é bem assim.
+
+<p>Há duas informações fiscais que podem desenviesar a decisão de aforro de longo prazo dos PPR para os fundos de investimento: a possibilidade de englobamento e a aplicação de coeficientes de correção monetária.
+
+<h3>Reveja os seus cálculos</h3>
+
+<p>É uma opção dos contribuintes: os rendimentos dos fundos de investimento podem ser englobados na declaração de IRS. Isto quer dizer que esses rendimentos podem ser adicionados aos restantes rendimentos do agregado familiar — como os do trabalho e as pensões — para se descobrir o escalão e, logo, a taxa efetiva de tributação.
+
+<p>Mas, segundo as últimas estatísticas (de <a href="http://info.portaldasfinancas.gov.pt/pt/dgci/divulgacao/estatisticas/estatisticas_ir/Pages/Estatisticas_IRS.aspx">2017</a>), a taxa de tributação efetiva dos agregados familiares é, em média, <strong>de cerca de 13%</strong>. Logo, para muitos, é possível pagar menos de 28% sobre as mais-valias de fundos através do englobamento.
+
+<p>Adicionalmente, se o investimento no fundo ocorreu há mais de dois anos, o cálculo das mais-valias dos fundos beneficia de uma correção monetária: o preço de aquisição é multiplicado por um coeficiente definido por portaria governamental. Grosso modo, <strong>apenas há tributação sobre o retorno acima da inflação</strong>.
+
+<p>Nas alienações de fundos em 2018, por exemplo, o preço de uma aquisição em <select id="s-a" style="width:3.5em; text-align:center;display:inline-block;" onchange="coef();">
+<option value="1.01" selected>2016</option>
+<option value="1.02">2015</option>
+<option value="1.02">2014</option>
+<option value="1.02">2013</option>
+<option value="1.02">2012</option>
+<option value="1.05">2011</option>
+<option value="1.09">2010</option>
+<option value="1.11">2009</option>
+<option value="1.09">2008</option>
+<option value="1.13">2007</option>
+<option value="1.15">2006</option>
+<option value="1.19">2005</option>
+<option value="1.21">2004</option>
+<option value="1.23">2003</option>
+<option value="1.27">2002</option>
+<option value="1.32">2001</option>
+<option value="1.41">2000</option>
+<option value="1.44">1999</option>
+<option value="1.46">1998</option>
+<option value="1.51">1997</option>
+<option value="1.53">1996</option>
+<option value="1.57">1995</option>
+<option value="1.63">1994</option>
+<option value="1.71">1993</option>
+<option value="1.85">1992</option>
+<option value="2.01">1991</option>
+<option value="2.27">1990</option>
+<option value="2.54">1989</option>
+<option value="2.82">1988</option>
+<option value="3.14">1987</option>
+<option value="3.43">1986</option>
+<option value="3.79">1985</option>
+<option value="4.53">1984</option>
+<option value="5.84">1983</option>
+<option value="7.29">1982</option>
+<option value="8.79">1981</option>
+<option value="10.75">1980</option>
+</select>
+é multiplicado por <span id="coeficiente">1,01</span>, de acordo com a <a href="https://dre.pt/application/conteudo/117343900">Portaria n.º 317/2018</a>.
+
+<p>Excluindo os encargos das operações (que podem ser abatidos), isso quer dizer que a mais-valia fiscal para quem teve uma ganho anual de <input type="text" value="5.50" id="rrr" onkeyup="coef();">% desde esse ano é inferior à mais-valia efetiva <span id="coeficiente-reduz">entre 8% e 19%</span>.
+
+<script>
+function coef(){
+var coeficiente = document.getElementById('s-a').value;
+var ordem = document.getElementById('s-a').selectedIndex;
+var rrr = document.getElementById('rrr').value / 100;
+
+var minimo = Math.min(100, -1 * Math.ceil( (1 - coeficiente) / ( (1+rrr)**( (365*(ordem+2)-1) / 365) -1) * 100));
+var maximo = Math.min(100, -1 * Math.floor( (1 - coeficiente) / ( (1+rrr)**( (365*(ordem+1)+1) / 365) -1) * 100));
+
+document.getElementById('coeficiente').innerHTML = coeficiente.replace(".",",");
+
+if(minimo == maximo) {
+	document.getElementById('coeficiente-reduz').innerHTML = "em " + minimo + "%"; }
+else {
+	document.getElementById('coeficiente-reduz').innerHTML = "entre " + minimo + "% e " + maximo + "%"; }
+
+};
+</script>
+
+<div style="background-color:#c0d6df; padding: .25em 1.75em">
+<p><strong>Este artigo é interativo</strong>. Todos os números sublinhados podem ser alterados. O separador decimal depende do seu programa de navegação, mas provavelmente é o ponto. Os resultados interativos são aproximados. 
+<p><noscript>Infelizmente, o seu programa de navegação é dos poucos que não permite ou bloqueia JavaScript. Para si, este artigo não será interativo. Não vale a pena mudar os números.</noscript>
+</div>
+
+<p>Ao contrário dos fundos, os PPR não podem ser englobados nem são alvo do coeficiente de correção monetária. Aliás, apenas são declarados no IRS quando se tem de pagar a multa pelo resgate fora das condições legais quando se obteve uma dedução fiscal pela subscrição. (Resumidamente, quem declarou e beneficiou fiscalmente da subscrição de PPR tem de devolver esse benefício fiscal acrescido de 10% por cada ano desde a subscrição.)
+
+
+<h3>Reforma antecipada: pague até zero</h3>
+
+<p>Para simplificar a análise, vamos assumir que um investidor procurou uma aplicação para o longo prazo — logo não escolheu um fundo que distribuísse dividendos — e que planeava resgatar o dinheiro progressivamente à medida das suas necessidades — não optando, por isso, pelo reembolso do PPR na forma de renda.
+
+<p>Imagine que, em <input type="text" value="1998" id="a-s" onkeyup="document.getElementById('a-a-s').innerHTML=this.value;c();">, o investidor aplicou <input type="text" value="4500" id="m-s" onkeyup="c();" style="width:5em"> euros num fundo de investimento a pensar na independência financeira e na reforma antecipada. Em 2018, depois de se reformar antecipadamente, resgatou o dinheiro que tinha aplicado em <span id="a-a-s">1998</span>. 
+
+<p>Após registar uma rentabilidade anual de <input type="text" value="5.53" id="rentabilidade" onkeyup="c();">%, o seu encaixe foi de <input type="text" value="13200" id="m-r" onkeyup="t();" style="width:5em"> euros. As operações de investimento e desinvestimento tiveram despesas e encargos de <input type="text" value="40.20" id="despesas" onkeyup="f();"> euros.
+
+<div id="menosvalias" style="display: none;">
+<p style="font-weight:700;">Como não teve mais-valias, não pagou impostos.
+</div>
+
+<div id="maisvalias" style="display: block;">
+<p>A sua mais-valia foi de <span id="mv">8659,80</span> euros, mas, após aplicar o coeficiente de correção monetária de <span id="fcm">1,46</span> ao valor de aquisição, a mais-valia fiscal ficou em <span id="mvf">6589,80</span> euros.
+
+<p id="x1">Por defeito, as Finanças tributam as mais-valias de fundos de investimento à taxa de 28%, logo o investidor teria de pagar <span id="imposto28">1845,14</span> euros, o que se traduz numa taxa efetiva de IRS de <span id="txe">21,31</span>%. Todavia, como o contribuinte não teve outros rendimentos ao longo de 2018 (porque se reformou antecipadamente), calculou quanto teria de pagar se englobasse as mais-valias.
+
+<p id="x2">No caso de englobamento, as mais-valias fiscais são consideradas o seu rendimento coletável, encaixando-se no <span id="escalao">primeiro</span> escalão de IRS, que tem uma taxa de <span id="txeng">14,5</span>%, assumindo que é residente no continente. Porém, graças às suas deduções à coleta de <input type="text" value="726.45" id="deducoes" onkeyup="f();" style="width:5em"> euros em 2018 e ao benefício municipal de <input type="text" value="1" id="municipal" onkeyup="f();" style="width:2em">%, o seu imposto a pagar seria de <span id="imposto">172,95</span> euros.
+
+<p style="font-weight:700;">A sua taxa efetiva de imposto sobre as mais-valias do fundo seria de <span id="txeeng">2</span>%<span id="tcharam"></span>.
+</div>
+
+<script>
+// Dúvidas? → davidalmas@gmail.com
+window.onload = function(){
+	f();
+};
+
+function c() {
+var m1 = document.getElementById("m-s").value;
+var i = document.getElementById("rentabilidade").value / 100;
+var t = 2018 - document.getElementById("a-s").value;
+var m2 = m1 * ( 1 + i )**t;
+document.getElementById("m-r").value = Math.round(m2*100)/100;
+f();
+};
+
+function t(){
+var m1 = document.getElementById("m-s").value;
+var m2 = document.getElementById("m-r").value;
+var t = 2018 - document.getElementById("a-s").value;
+var i = (m2/m1)**(1/t)-1;
+document.getElementById("rentabilidade").value = Math.round(i*10000)/100;
+f();
+};
+
+
+// Fator de correção monetária
+var anos = [2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004, 2003, 2002, 2001, 2000, 1999, 1998, 1997, 1996, 1995, 1994, 1993, 1992, 1991, 1990, 1989, 1988, 1987, 1986, 1985, 1984, 1983, 1982, 1981, 1980, 1979, 1978, 1977, 1976, 1975, 1974, 1973, 1972, 1971, 1970, 1969, 1968, 1967, 1966, 1965, 1964, 1963, 1962, 1961, 1960, 1959, 1958, 1957, 1956, 1955, 1954, 1953, 1952, 1951, 1950, 1949, 1948, 1947, 1946, 1945, 1944, 1943, 1942, 1941, 1940, 1939, 1938, 1937, 1936, 1935, 1934, 1933, 1932, 1931, 1930, 1929, 1928, 1927, 1926, 1925, 1924, 1923, 1922, 1921, 1920, 1919, 1918, 1917, 1916, 1915, 1914, 1913, 1912, 1911, 1910, 1909, 1908, 1907, 1906, 1905, 1904, 1903]
+var fcm = [1, 1.01, 1.02, 1.02, 1.02, 1.02, 1.05, 1.09, 1.11, 1.09, 1.13, 1.15, 1.19, 1.21, 1.23, 1.27, 1.32, 1.41, 1.44, 1.46, 1.51, 1.53, 1.57, 1.63, 1.71, 1.85, 2.01, 2.27, 2.54, 2.82, 3.14, 3.43, 3.79, 4.53, 5.84, 7.29, 8.79, 10.75, 11.92, 15.11, 19.29, 25.16, 30.04, 35.17, 45.85, 50.44, 53.95, 56.68, 61.21, 61.21, 61.21, 65.46, 68.50, 71.12, 74.41, 74.41, 74.41, 74.41, 74.41, 74.41, 79.14, 79.14, 79.14, 79.14, 79.14, 79.14, 79.14, 86.26, 86.26, 86.26, 86.26, 86.26, 86.26, 86.26, 101.62, 119.34, 138.23, 155.63, 184.95, 184.95, 184.95, 190.45, 190.45, 190.45, 190.45, 190.45, 190.45, 190.45, 190.45, 190.45, 190.45, 190.45, 190.45, 220.96, 262.49, 428.92, 579.16, 887.65, 1343.39, 1752.88, 2456.83, 3077.58, 3760.01, 4226.18, 4226.18, 4226.18, 4226.18, 4406.35, 4406.35, 4406.35, 4406.35, 4406.35, 4406.35, 4406.35, 4733.52]
+
+// Tabela de IRS de 2018
+var rendimento = [7091, 10700, 20261, 25000, 36856, 80640];
+var escalao = ["primeiro", "segundo", "terceiro", "quarto", "quinto", "sexto", "sétimo"];
+var taxa = [14.5, 23, 28.5, 35, 37, 45, 48];
+var parcela = [0, 602.74, 1191.24, 2508.20, 3008.20, 5956.68, 8375.88];
+
+function f(){
+var m1 = document.getElementById("m-s").value;
+var m2 = document.getElementById("m-r").value;
+var d = document.getElementById("despesas").value;
+var ano = document.getElementById("a-s").value;
+
+var mv = m2 - m1 - d; // mais-valia
+
+if (mv <=0 ){
+	document.getElementById("menosvalias").style.display = "block";
+	document.getElementById("maisvalias").style.display = "none"; }
+else {
+	document.getElementById("menosvalias").style.display = "none";
+	document.getElementById("maisvalias").style.display = "block"; 
+};
+
+document.getElementById("mv").innerHTML = (Math.round(mv*100)/100).toString().replace(".",",");
+
+for(var cm=1, b = 0; b < anos.length; b++) anos[b] == ano && ( cm = fcm[b] ); // fator de correção monetária
+if( ano < 1903) { cm = 4733.52; };
+document.getElementById("fcm").innerHTML = cm.toString().replace(".",",");
+
+var mvf = m2 - m1 * cm -d; // mais-valia fiscal
+
+if (mvf <=0 ){
+	document.getElementById("x1").style.display = "none";
+	document.getElementById("x2").style.display = "none"; }
+else {
+	document.getElementById("x1").style.display = "block";
+	document.getElementById("x2").style.display = "block"; 
+};
+
+document.getElementById("mvf").innerHTML = (Math.round(mvf*100)/100).toString().replace(".",",");
+
+var imposto28 = 0.28 * mvf;
+document.getElementById("imposto28").innerHTML = (Math.round(imposto28*100)/100).toString().replace(".",",");
+
+var txe = imposto28 / mv;
+document.getElementById("txe").innerHTML = (Math.round(txe * 10000)/100).toString().replace(".",",");
+
+for(var escal = escalao[0], txeng = taxa[0], par = parcela[0], c = 0; c < rendimento.length; c++) rendimento[c] < mvf && (escal = escalao[c+1], txeng = taxa[c+1], par=parcela[c+1]); // escalão e taxa de IRS
+document.getElementById("escalao").innerHTML = escal;
+document.getElementById("txeng").innerHTML = txeng.toString().replace(".",",");
+
+var dc = document.getElementById("deducoes").value;
+var muni = document.getElementById("municipal").value / 100;
+
+var coletaliquida = ( mvf * txeng/100 - par - dc ) * (1 - muni/100);
+if (coletaliquida<0) coletaliquida = 0;
+document.getElementById("imposto").innerHTML = (Math.round(coletaliquida*100)/100).toString().replace(".",",");
+
+var txeeng = coletaliquida / mv;
+document.getElementById("txeeng").innerHTML = (Math.round(txeeng * 10000)/100).toString().replace(".",",");
+
+if(txeeng < .08) { document.getElementById("tcharam").innerHTML = ", inferior aos 8% dos PPR"; } else { document.getElementById("tcharam").innerHTML = ""; }
+
+};
+</script>
+
+<div style="background-color:#c0d6df; padding: .25em 1.75em">
+<p>Em 2016, a <strong>dedução à coleta</strong> média dos agregados familiares foi de 726,45 euros. Consulte a sua última nota de liquidação de IRS para descobrir um número mais próximo da sua realidade.
+<p>O <strong>benefício municipal</strong> depende do local de residência. Subtraia a <a href="https://www.portaldasfinancas.gov.pt/pt/consultarTaxasIRSMunicipiosForm.action">taxa de participação no IRS do seu município</a> a 5% para saber qual o desconto a incluir na sua simulação.
+</div>
+
+<p>Há ainda uma coisa muito importante que não foi equacionada: as rentabilidades dos fundos e dos PPR.
+
+<p>Entre 2016 e 2018, os <a href="/boletim/ppr/">PPR atualmente em comercialização</a> renderam, em média, 0,30% por ano. Dependendo do seu perfil, é possível encontrar fundos mais rentáveis. Aliás, é provável que um fundo com o mesmo nível de volatilidade de um PPR renda mais, porque os PPR tendem a suportar comissões mais elevadas.
+
+<h3>E no futuro?</h3>
+
+<p>O simulador anterior usa informação passada. Não é possível saber, por exemplo, quais os coeficientes de correção monetária no ano futuro durante o qual planeia fazer os resgates das suas aplicações. Também não é possível saber se as regras fiscais manter-se-ão nos próximos anos ou décadas.
+
+<p>Uma coisa é provável: se não tiver outros rendimentos, as mais-valias anuais de fundos até ao limite superior do segundo escalão de IRS (atualmente cerca de dez mil euros) não deverão gerar taxas efetivas de imposto superiores às dos PPR. E, mesmo no escalão seguinte, é possível que os fundos sejam fiscalmente mais económicos. Dependerá essencialmente das suas deduções à coleta.
+
+<p>Não é preciso que esteja numa situação de reforma antecipada para conseguir pagar poucos impostos. Pode ser durante a independência financeira, em particular se tiver reduzido a sua carga de trabalho (e o vencimento), ou durante a reforma estatutária, se a pensão for baixa. A soma dos rendimentos — salários, pensões e mais-valias — não deve é ir além do terceiro escalão de IRS, atualmente até cerca de vinte mil euros.
+
+<p>Não conclua que tem de viver com menos dez mil euros ou vinte mil euros para os fundos de investimento serem fiscalmente mais atraentes do que os PPR. Não se esqueça de que apenas as mais-valias são tributadas. Toda a poupança que não é mais-valia — os capitais que investiu — estão livres de impostos.
+
+&nbsp;&marker;
+
+<div style="background-color:#c0d6df; padding: .25em 1.75em">
+<p><strong>Este artigo é experimental.</strong>
+<p>As regras fiscais são complexas e foram simplificadas nesta página. Antes de tomar uma decisão, peça ajuda a um fiscalista ou estude as normas por si.
+<p>Se encontrar falhas ou se tiver sugestões para melhorar este artigo, escreva-me para <a href="mailto:davidalmas@gmail.com?subject=PPR">davidalmas@gmail.com</a>. 
+</div>
+</body>
+</html>
