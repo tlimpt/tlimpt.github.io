@@ -253,8 +253,9 @@ document.getElementById("txeng").innerHTML = txeng.toString().replace(".",",");
 var dc = document.getElementById("deducoes").value;
 var muni = document.getElementById("municipal").value / 100;
 
-var coletaliquida = ( mvf * txeng/100 - par - dc ) * (1 - muni/100);
+var coletaliquida = ( mvf * txeng/100 - par - dc ) * (1 - muni);
 if (coletaliquida<0) coletaliquida = 0;
+
 document.getElementById("imposto").innerHTML = (Math.round(coletaliquida*100)/100).toString().replace(".",",");
 
 var txeeng = coletaliquida / mv;
