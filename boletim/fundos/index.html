@@ -74,6 +74,10 @@ a = Math.round(10000 * (Math.pow((1 + a - b) / (1 + a - c), d) - 1)) / 100;
 <table style="border-collapse: collapse; border: 0; font-size: 85%" id="q">
 
 <tr>
+<td colspan="4" style="text-align: center; border: 0"><strong>Qual o mais barato?</strong> <br>Quando o fundo não tiver um dos encargos, deixe o campo vazio.
+</tr>
+
+<tr>
 <td>
 <td><strong>Fundo 1</strong>
 <td><strong>Fundo 2</strong>
@@ -93,22 +97,22 @@ a = Math.round(10000 * (Math.pow((1 + a - b) / (1 + a - c), d) - 1)) / 100;
 
 <tr>
 <td>Custo fixo na aquisição
-<td><input type="text" value="0" id="cfs1" onkeyup="calc()" tabindex="3">€
+<td><input type="text" value="" id="cfs1" onkeyup="calc()" tabindex="3">€
 <td><input type="text" value="15" id="cfs2" onkeyup="calc()" tabindex="10">€
-<td><input type="text" value="0" id="cfs3" onkeyup="calc()" tabindex="17">€
+<td><input type="text" value="" id="cfs3" onkeyup="calc()" tabindex="17">€
 </tr>
 
 <tr>
 <td>Custo variável na aquisição
-<td><input type="text" value="0" id="cvs1" onkeyup="calc()" tabindex="4">%
-<td><input type="text" value="0" id="cvs2" onkeyup="calc()" tabindex="11">%
+<td><input type="text" value="" id="cvs1" onkeyup="calc()" tabindex="4">%
+<td><input type="text" value="" id="cvs2" onkeyup="calc()" tabindex="11">%
 <td><input type="text" value="4,65" id="cvs3" onkeyup="calc()" tabindex="18">%
 </tr>
 
 <tr>
 <td>Máximo de custo variável na aquisição
-<td><input type="text" value="0" id="mcvs1" onkeyup="calc()" tabindex="5">€
-<td><input type="text" value="0" id="mcvs2" onkeyup="calc()" tabindex="12">€
+<td><input type="text" value="" id="mcvs1" onkeyup="calc()" tabindex="5">€
+<td><input type="text" value="" id="mcvs2" onkeyup="calc()" tabindex="12">€
 <td><input type="text" value="50" id="mcvs3" onkeyup="calc()" tabindex="19">€
 </tr>
 
@@ -121,16 +125,16 @@ a = Math.round(10000 * (Math.pow((1 + a - b) / (1 + a - c), d) - 1)) / 100;
 
 <tr>
 <td>Custo fixo na alienação
-<td><input type="text" value="0" id="cfr1" onkeyup="calc()" tabindex="7">€
+<td><input type="text" value="" id="cfr1" onkeyup="calc()" tabindex="7">€
 <td><input type="text" value="15" id="cfr2" onkeyup="calc()" tabindex="14">€
-<td><input type="text" value="0" id="cfr3" onkeyup="calc()" tabindex="21">€
+<td><input type="text" value="" id="cfr3" onkeyup="calc()" tabindex="21">€
 </tr>
 
 <tr>
 <td>Custo variável na alienação
-<td><input type="text" value="0" id="cvr1" onkeyup="calc()" tabindex="8">%
-<td><input type="text" value="0" id="cvr2" onkeyup="calc()" tabindex="15">%
-<td><input type="text" value="0" id="cvr3" onkeyup="calc()" tabindex="22">%
+<td><input type="text" value="" id="cvr1" onkeyup="calc()" tabindex="8">%
+<td><input type="text" value="" id="cvr2" onkeyup="calc()" tabindex="15">%
+<td><input type="text" value="" id="cvr3" onkeyup="calc()" tabindex="22">%
 </tr>
 
 <tr>
@@ -182,9 +186,9 @@ var	inv = document.getElementById("inv").value.replace(",","."),
 	r1 = document.getElementById("r1").value.replace(",",".") / 100,
 	r2 = document.getElementById("r2").value.replace(",",".") / 100,
 	r3 = document.getElementById("r3").value.replace(",",".") / 100,
-	res1 = Math.round(((inv-cfs1-Math.min(inv*cvs1,mcvs1))*(1+r1-tec1)**dur)*(1-cvr1)-cfr1),
-	res2 = Math.round(((inv-cfs2-Math.min(inv*cvs2,mcvs2))*(1+r2-tec2)**dur)*(1-cvr2)-cfr2),
-	res3 = Math.round(((inv-cfs3-Math.min(inv*cvs3,mcvs3))*(1+r3-tec3)**dur)*(1-cvr3)-cfr3);
+	res1 = "" == mcvs1 ? Math.round((inv-cfs1-inv*cvs1)*(1+r1-tec1)**dur*(1-cvr1)-cfr1) : Math.round((inv-cfs1-Math.min(inv*cvs1,mcvs1))*(1+r1-tec1)**dur*(1-cvr1)-cfr1),
+	res2 = "" == mcvs2 ? Math.round((inv-cfs2-inv*cvs2)*(1+r2-tec2)**dur*(1-cvr2)-cfr2) : Math.round((inv-cfs2-Math.min(inv*cvs2,mcvs2))*(1+r2-tec2)**dur*(1-cvr2)-cfr2),
+	res3 = "" == mcvs3 ? Math.round((inv-cfs3-inv*cvs3)*(1+r3-tec3)**dur*(1-cvr3)-cfr3) : Math.round((inv-cfs3-Math.min(inv*cvs3,mcvs3))*(1+r3-tec3)**dur*(1-cvr3)-cfr3);
 
 document.getElementById("res1").innerHTML = res1;
 document.getElementById("res2").innerHTML = res2;
@@ -195,7 +199,7 @@ document.getElementById("dif3").innerHTML = String(Math.round((res3/res1-1)*1000
 };
 </script>
 
-<p>É possível que comissões diferentes resultem em resultados semelhantes. É possível que valha a pena pagar uma comissão de subscrição, se as restantes comissões forem suficientemente baixas para compensarem essa despesa.
+<p>É possível que comissões diferentes deem em resultados semelhantes. É possível que valha a pena pagar uma comissão de subscrição, se as restantes comissões forem suficientemente baixas para compensarem essa despesa.
 
 <p>Use o simulador para descobrir os fundos que mais podem fazer pelo seu dinheiro.
 
@@ -205,23 +209,23 @@ document.getElementById("dif3").innerHTML = String(Math.round((res3/res1-1)*1000
 function preencher(){
 document.getElementById("inv").value = 100000;
 document.getElementById("cfs1").value = 5;
-document.getElementById("cfs2").value = 0;
-document.getElementById("cfs3").value = 0;
-document.getElementById("cvs1").value = 0;
-document.getElementById("cvs2").value = 0;
+document.getElementById("cfs2").value = "";
+document.getElementById("cfs3").value = "";
+document.getElementById("cvs1").value = "";
+document.getElementById("cvs2").value = "";
 document.getElementById("cvs3").value = "0,5";
-document.getElementById("mcvs1").value = 0;
-document.getElementById("mcvs2").value = 0;
+document.getElementById("mcvs1").value = "";
+document.getElementById("mcvs2").value = "";
 document.getElementById("mcvs3").value = 150;
 document.getElementById("tec1").value = "0,20";
 document.getElementById("tec2").value = "0,95";
 document.getElementById("tec3").value = "0,30";
 document.getElementById("cfr1").value = 5;
-document.getElementById("cfr2").value = 0;
-document.getElementById("cfr3").value = 0;
-document.getElementById("cvr1").value = 0;
-document.getElementById("cvr2").value = 0;
-document.getElementById("cvr3").value = 0;
+document.getElementById("cfr2").value = "";
+document.getElementById("cfr3").value = "";
+document.getElementById("cvr1").value = "";
+document.getElementById("cvr2").value = "";
+document.getElementById("cvr3").value = "";
 document.getElementById("r2").value = document.getElementById("r1").value;
 document.getElementById("r3").value = document.getElementById("r1").value;
 calc();
