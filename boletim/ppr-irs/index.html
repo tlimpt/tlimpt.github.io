@@ -19,9 +19,9 @@ header p a:first-child:hover { color: #fff; background-color: #4a6fa5; text-deco
 
 p, li { margin: 1.5em 0 }
 
-li { list-style: square }
+li { list-style: square; margin: 1em 0 }
 
-li ul li { margin: 1em 0 }
+li ul li {  }
 
 a { color: #4a6fa5; text-decoration: none }
 
@@ -30,30 +30,93 @@ a:hover { text-decoration: underline }
 input, select { font-family: inherit; font-size: 1em; width: 3em; text-align: right; border-width: 0 0 3px; border-color: #173f5f; outline: none; background-color: inherit }
 
 td { border-bottom: .1em solid #173f5f; padding: 1em 1em 1em 0;  vertical-align: top; text-align:left; width: 50%;}
-td li { margin: 0 0 .5em; }
+
 </style>
 </head>
 <body>
 <header><p><a href="/">tlim.pt</a></header>
 
-<h1>Nem sempre os PPR pagam menos impostos. Às vezes, mais vale subscrever um fundo de investimento</h1>
+<h1>PPR ou fundo de investimento? Nem sempre os benefícios fiscais valem a pena</h1>
 
-<h2>Para alguns investidores, em particular os que buscam a reforma antecipada, os fundos de investimento podem ser a opção fiscalmente mais económica.</h2>
+<h2>Se os fundos renderem um pouco mais do que os planos de reforma, podem mais do que compensar a desvantagem fiscal.</h2>
 
 <p style="font-style: italic">Por <strong style="color:#173f5f; white-space: nowrap">David Almas</strong> <span style="white-space: nowrap">a 1 de julho de 2020</span>
 
-<p>Depois dos depósitos, os planos de poupança-reforma (PPR) são os instrumentos de aforro preferidos dos portugueses: no início de 2020, tínhamos mais de 23 mil milhões de euros aplicados.
+<p>É fácil de perceber o sucesso comercial dos planos de poupança-reforma (PPR): têm uma fiscalidade muito generosa. Primeiro, há uma dedução à coleta de 20% das aplicações até ao limite anual de 400 euros por aforrador com menos de 35 anos, 350 euros entre 35 anos e 50 anos e 300 euros para os maiores de 50 anos, desde que ainda não estejam na reforma.
 
-<p>Até se percebe: à partida, os PPR têm uma fiscalidade muito generosa. Primeiro, há uma dedução à coleta de 20% das aplicações até ao limite anual de  400 euros por aforrador com menos de 35 anos, 350 euros entre 35 anos e 50 anos e 300 euros para os maiores de 50 anos, desde que ainda não estejam na reforma.
+<p>Depois, quem resgatar nas condições legais paga uma taxa de tributação de 8% sobre os rendimentos. É extraordinariamente baixa. Essas condições incluem:
+<ul>
+<li>desemprego de longa duração,
+<li>incapacidade permanente para o trabalho,
+<li>doença grave.
+</ul>
+<p>Adicionalmente, também são condições legais desde que o investimento dure mais de <strong>5 anos</strong>:
+<ul>
+<li>reforma por velhice,
+<li>ultrapassagem dos 60 anos de idade,
+<li>pagamento de prestações de crédito com hipoteca para aquisição de habitação própria e permanente.
+</ul>
 
-<p>Depois, quem resgatar nas condições legais paga até 8% sobre os rendimentos.
-É muito baixo. Essas condições incluem: desemprego de longa duração, incapacidade permanente para o trabalho e doença grave ou, se depois de cinco anos de investimento, reforma por velhice, ultrapassagem dos 60 anos de idade e utilização para o pagamento de prestações do crédito à habitação com hipoteca, desde que seja da habitação própria e permanente.
+<p>Não mergulhe, no entanto, logo nos PPR sem confirmar que ganhará mais do que num instrumento alternativo, como um fundo de investimento.
 
-<p>Mas não mergulhe logo nos PPR sem confirmar que ganhará mais do que num instrumento alternativo, como um fundo de investimento. Posso dar-lhe uma ajuda. Basta que me responda a algumas perguntas.
+<h3>Faça as suas contas</h3>
+<p>Comecemos pelo dinheiro que tem para investir hoje, <input type="text" value="2000" id="dinheiro" onkeyup="deduz();">€. É importante saber este número para contabilizar a dedução à coleta que conseguirá no IRS deste ano.
 
-<p>Para começar, quanto dinheiro tem para investir hoje? <input type="text" value="2000" id="dinheiro" onkeyup="deduz();">€. Isto é relevante, porque a dedução à coleta tem limites.
+<p>Como expliquei antes, essa dedução é, no máximo, equivalente a 20% do montante investido (<span id="deduz20">400€</span>), mas não pode ultrapassar 300 euros, 350 euros ou 400 euros, consoante a sua idade. Infelizmente, essa dedução concorre com outras deduções — como despesas de saúde e de educação, seguros de saúde e encargos com imóveis —, por isso é possível que seja inferior. Aliás, as estatísticas mais recentes mostram que os agregados familiares conseguem, em média, cerca de 150 euros.
+
+<p>Se tiver dúvidas quanto a essa dedução, use o <a href="https://irs.portaldasfinancas.gov.pt/escolherModoEntregaIRS.action">simulador</a> do Portal das Finanças. Por exemplo, pode simular a entrega de IRS do ano passado, caso tivesse declarado um investimento equivalente em PPR.
+
+<p>Avancemos com uma dedução à coleta de <input type="text" value="200" id="deduz" onkeyup="deduz();">€.
+
+<p>Nem sempre deve registar o PPR na declaração anual de IRS. Se acreditar que não conseguirá resgatar o plano nas condições legais, não o inclua. Se o fizer, terá de devolver a dedução à coleta que recebeu <em>acrescida</em> de 10% por ano desde a subscrição até ao reembolso. (Se deseja não declarar, insira <a href="#deduz" onclick="document.getElementById('deduz').value=0">zero</a> no campo anterior.)
+
+<h3>Uma questão de tempo</h3>
+<p>Um dia pode fazer muita diferença quando se investe num PPR. Basta passar 1 dia dos 5 anos após a subscrição para a taxa efetiva de tributação descer de 21,5% para 17,2%, caso o reembolso seja feito fora das condições legais. Quando o prazo atinge 8 anos e 1 dia, volta a cair para 8,6%.
+
+<p>Para estes cálculos, vamos prever uma duração do investimento de <input type="text" value="8" id="anos" style="width:2em" onkeyup="calc();">&nbsp;anos, <input type="text" value="0" id="meses" style="width:2em" onkeyup="calc();">&nbsp;meses e <input type="text" value="1" id="dias" style="width:2em" onkeyup="calc();">&nbsp;dias.
+
+<p>O retorno é, naturalmente, também muito importante. Que rentabilidade anual bruta espera do PPR? Os planos mais conservadores — aqueles que garantem o capital e uma rentabilidade anual mínima — normalmente rendem menos no longo prazo. Os mais agressivos — agora já há PPR que investem quase totalmente nos mercados acionistas — podem produzir maiores retornos para os investidores de longo prazo, mas são mais voláteis.
+
+<p>O <a href="/boletim/ppr/">desempenho histórico dos 120 PPR disponíveis para comercialização</a> pode ajudar a estimar a sua rentabilidade. Nos últimos 5 anos, renderam, em média, 1,70%. Consideremos uma rentabilidade anual de <input type="text" value="2" id="rppr" onkeyup="dif();">%.
+
+<p>As rentabilidades podem, todavia, ser truncadas pelos encargos dos PPR. Nem todos cobram comissões de subscrição e de reembolso, mas ainda há alguns que apresentam essas despesas. Pode descobrir essas percentagens nos documentos legais do PPR que eleger para o seu futuro. Descontemos uma comissão de subscrição de <input type="text" value="0,5" id="csppr" onkeyup="calc();">% e de reembolso de <input type="text" value="0" id="crppr" onkeyup="calc();">%.
+
+<p>Assim, se solicitar o reembolso na forma de capital nas condições legais, a <strong>rentabilidade anual líquida do investimento no PPR será de <span id="rappr">3,11%</span></strong>. Fora das condições legais, a rentabilidade anual do PPR desce para <span id="rbppr">3,10%</span>. Estes números assumem um desafasamento de <input type="text" value="6" id="desfasa" style="width:2em" onkeyup="calc();">&nbsp;meses no recebimento da dedução à coleta.
+
+<h3>É bom ou mau? Compare</h3>
+<p>Os PPR são frequentemente muito conservadores e carregam normalmente encargos mais altos do que produtos alternativos. É natural que os fundos de investimento no mesmo espetro de risco atinjam rentabilidades superiores. Assumamos que o fundo no qual poderá investir em alternativa ao PPR renderá <input type="text" value="4" id="rfundo" onkeyup="dif();">% por ano. Isso é <span id="diferenca">mais 2 pontos percentuais por ano do</span> que o PPR.
+
+<p>Faltam os encargos desse fundo: tem uma comissão de subscrição de <input type="text" value="0" id="csfundo" onkeyup="calc();">% e de resgate de <input type="text" value="0" id="crfundo" onkeyup="calc();">%.
+
+<p>As mais-valias dos fundos de investimento são tributados à taxa autónoma de 28%. Há, todavia, a aplicação de um coeficiente de correção monetária quando a duração do investimento ultrapassa 24 meses. Grosso modo, esses ganhos são apenas tributados na parte que ultrapassa a inflação. Incluamos uma inflação anual para efeitos do coeficiente de correção monetária de <input type="text" value="1" id="ccm" onkeyup="calc();">%.
+
+<p>Com esses números, deve esperar uma rentabilidade anual do fundo de investimento de <span id="rafundo">3,23%</span>, assumindo o pagamento do imposto <input type="text" value="6" id="desfasaf" onkeyup="calc();"> meses depois do resgate. O fundo renderá <strong id="xaram">mais</strong> do que o PPR.
+
+<h3>Legislação relevante</h3>
+<p>As regras fiscais dos PPR e dos fundos de investimento são diferentes — e complexas. Esta é a legislação mais importante:
+
+<ul>
+<li>PPR:
+	<ul>
+	<li>Decreto-Lei n.º 158/2002, de 2 de julho (<a href="https://www.bportugal.pt/sites/default/files/anexos/legislacoes/dl158ano2002c.PDF">versão consolidada</a>),
+	<li>Estatuto dos Benefícios Fiscais, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/bf_rep/Pages/ebf-artigo-21-ordm-.aspx">artigo 21.º</a> (Fundos de poupança-reforma e planos de poupança-reforma).
+	</ul>
+<li>Fundos de investimento:
+	<ul>
+ 	<li>Código do IRS, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs10.aspx">artigo 10.º</a> (Mais-valias),
+ 	<li>Código do IRS, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs43.aspx">artigo 43.º</a> (Mais-valias),
+ 	<li>Código do IRS, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs50.aspx">artigo 50.º</a> (Correção monetária),
+	<li>Código do IRS, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs71.aspx">artigo 71.º</a> (Taxas liberatórias),
+	<li>Código do IRS, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs72.aspx">artigo 72.º</a> (Taxas especiais),
+	<li>Estatuto dos Benefícios Fiscais, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/bf_rep/Pages/ebf-artigo-22-ordm-a.aspx">artigo 22.º-A</a> (Rendimentos pagos por organismos de investimento coletivo aos seus participantes).
+	</ul>
+</ul>
+
+<p>A análise anterior foi simplificada para os contribuintes singulares residentes em Portugal. A realidade é, naturalmente, mais complexa: além de os aforradores poderem ter residência no estrangeiro, é possível englobar as mais-valias no IRS, os investidores tendem a fazem vários investimentos ao longo do tempo, podem ter vários instrumentos que produzam mais ou menos-valias no mesmo ano fiscal e os fundos de investimento podem realizar distribuições de rendimentos aos participantes.
+&marker;
 
 <script>
+
 function deduz(){
 var dinheiro = document.getElementById('dinheiro').value.replace(",",".");
 var deduz20 = .2 * dinheiro;
@@ -66,25 +129,16 @@ if (deduz > mxdeduz) {
 	document.getElementById("deduz").value = deduz.toString().replace(".",",");}
 calc();
 };
-</script>
 
-<p>Qual a dedução à coleta que espera ao investir no PPR? <input type="text" value="153" id="deduz" onkeyup="deduz();">€. Não se esqueça que essa dedução é, no máximo, equivalente a 20% do montante investido (<span id="deduz20">400€</span>), mas não pode ultrapassar 300 euros, 350 euros ou 400 euros, como expliquei anteriormente. No entanto, essa dedução concorre com outras deduções — como despesas de saúde e de educação, seguros de saúde e encargos com imóveis —, por isso é possível que seja inferior.
+function dif(){
+var rppr = document.getElementById("rppr").value.replace(",",".") * 1; // rentabilidade ppr
+var rfundo = document.getElementById("rfundo").value.replace(",",".") * 1; // rentabilidade fundo
+if (rppr > rfundo) { document.getElementById("diferenca").innerHTML = 'menos ' + (Math.round((rppr - rfundo)*100)/100).toString().replace(".",",") + ' pontos percentuais por ano do'; }
+if (rppr < rfundo) { document.getElementById("diferenca").innerHTML = 'mais ' + (Math.round((rfundo - rppr)*100)/100).toString().replace(".",",") + ' pontos percentuais por ano do'; }
+if (rppr == rfundo) { document.getElementById("diferenca").innerHTML = 'o mesmo'; }
+calc();
+};
 
-<p>Se tiver dúvidas quanto a essa dedução, use o <a href="https://irs.portaldasfinancas.gov.pt/escolherModoEntregaIRS.action">simulador</a> do Portal das Finanças. Por exemplo, pode simular a entrega de IRS do ano passado, caso tivesse declarado um investimento em PPR.
-
-<p>Nem sempre deve solicitar a dedução à coleta do PPR. Se acreditar que não conseguirá resgatar o PPR nas condições legais, não a inclua no modelo anual de IRS. Se o fizer, terá de devolver o benefício fiscal acrescido de 10% por ano desde a subscrição até ao reembolso. (Se deseja não declarar, <a href="#deduz" onclick="document.getElementById('deduz').value=0">responda zero na pergunta anterior</a>.)
-
-<p>A duração da sua aplicação é relevante para calcular a sua rentabilidade potencial. Durante quanto tempo planeia manter o investimento? <input type="text" value="8" id="anos" style="width:2em" onkeyup="calc();">&nbsp;anos, <input type="text" value="0" id="meses" style="width:2em" onkeyup="calc();">&nbsp;meses e <input type="text" value="1" id="dias" style="width:2em" onkeyup="calc();">&nbsp;dias.
-
-<p>Um dia pode fazer diferença. Basta passar 1 dia dos 5 anos após a subscrição para a taxa efetiva de tributação descer de 21,5% para 17,2%, caso o reembolso seja feito fora das condições legais. Quando o prazo atinge 8 anos e 1 dia, volta a cair para 8,6%.
-
-<p>O retorno é, naturalmente, também muito importante. Que rentabilidade anual espera do PPR?  <input type="text" value="1,7" id="rppr" onkeyup="dif();">%. Os planos mais conservadores — aqueles que garantem o capital e uma rentabilidade anual mínima — normalmente rendem menos no longo prazo. Os mais agressivos — agora já há PPR que investem quase totalmente no mercado acionista — podem produzir maiores retornos para os investidores, mas são mais voláteis. O <a href="/boletim/ppr/">desempenho histórico de 120 PPR</a> pode ajudar a estimar a sua rentabilidade.
-
-<p>As rentabilidades podem ser truncadas pelos encargos dos PPR. Qual a comissão de subscrição do PPR? <input type="text" value="0" id="csppr" onkeyup="calc();">%. E de reembolso no final do seu prazo de investimento? <input type="text" value="0,5" id="crppr" onkeyup="calc();">%. Pode descobrir essas percentagens nos documentos legais do PPR.
-
-<p>Se resgatar nas condições legais, a <strong>rentabilidade anual líquida do investimento no PPR será de <span id="rappr">2,51%</span></strong>. Fora das condições legais, a rentabilidade anual do PPR desce para <span id="rbppr">2,5%</span>. Estes números assumem um desafasamento de <input type="text" value="6" id="desfasa" style="width:2em" onkeyup="calc();">&nbsp;meses no recebimento da dedução à coleta.
-
-<script>
 function calc(){
 var desf = Math.round(document.getElementById("desfasa").value.replace(",","."));
 var anos = Math.round(document.getElementById("anos").value.replace(",","."));
@@ -167,29 +221,6 @@ else { document.getElementById("xaram").innerHTML = 'menos'; }
 
 };
 </script>
-
-<p>Esse resultado é bom ou mau? É preciso comparar com a alternativa.
-
-<p>Como os PPR tendem a apresentar comissões de gestão mais elevadas, é de esperar que o fundo de investimento renda mais. Qual a rentabilidade anual que espera do fundo? <input type="text" value="5" id="rfundo" onkeyup="dif();">%. Isso é <span id="diferenca">mais 3,3% do</span> que o PPR.
-
-<script>
-function dif(){
-var rppr = document.getElementById("rppr").value.replace(",",".") * 1; // rentabilidade ppr
-var rfundo = document.getElementById("rfundo").value.replace(",",".") * 1; // rentabilidade fundo
-if (rppr > rfundo) { document.getElementById("diferenca").innerHTML = 'menos ' + (Math.round((rppr - rfundo)*100)/100).toString().replace(".",",") + ' ponto percentuais do'; }
-if (rppr < rfundo) { document.getElementById("diferenca").innerHTML = 'mais ' + (Math.round((rfundo - rppr)*100)/100).toString().replace(".",",") + ' pontos percentuais do'; }
-if (rppr == rfundo) { document.getElementById("diferenca").innerHTML = 'o mesmo'; }
-calc();
-};
-</script>
-
-<p>Faltam os encargos. Qual a comissão de subscrição do fundo de investimento? <input type="text" value="0" id="csfundo" onkeyup="calc();">%. E de resgate? <input type="text" value="0" id="crfundo" onkeyup="calc();">%.
-
-<p>As mais-valias dos fundos de investimento são normalmente tributadas à taxa autónoma de 28%. Há, todavia, a aplicação de um coeficiente de correção monetária quando a duração do investimento ultrapassa 24 meses. Grosso modo, esses ganhos são apenas tributados na parte que ultrapassa a inflação. Quanto espera que seja a inflação anual para efeitos do coeficiente de correção monetária? <input type="text" value="1" id="ccm" onkeyup="calc();">%.
-
-<p>Com esses números, deve esperar uma rentabilidade anual do fundo de investimento de <span id="rafundo">4,01%</span>, assumindo o pagamento do imposto <input type="text" value="6" id="desfasaf" onkeyup="calc();"> meses depois do resgate. O fundo renderá <strong id="xaram">menos</strong> do que o PPR.
-
-&nbsp;&marker;
 
 <div style="background-color:#c0d6df; padding: .25em 1.75em">
 <p><strong>Este artigo é experimental.</strong> Se encontrar falhas ou se tiver sugestões para melhorar este artigo, escreva-me para <a href="mailto:davidalmas@gmail.com?subject=PPR-IRS">davidalmas@gmail.com</a>.
