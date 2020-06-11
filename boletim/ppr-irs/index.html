@@ -42,18 +42,18 @@ td { border-bottom: .1em solid #173f5f; padding: 1em 1em 1em 0;  vertical-align:
 
 <p style="font-style: italic">Por <strong style="color:#173f5f; white-space: nowrap">David Almas</strong> <span style="white-space: nowrap">a 1 de julho de 2020</span>
 
-<p>É fácil de perceber o sucesso comercial dos planos de poupança-reforma (PPR): têm uma fiscalidade muito generosa. Primeiro, há uma dedução à coleta de 20% das aplicações até ao limite anual de 400 euros por aforrador com menos de 35 anos, 350 euros entre 35 anos e 50 anos e 300 euros para os maiores de 50 anos, desde que ainda não estejam na reforma.
+<p>É fácil de perceber o sucesso comercial dos planos de poupança-reforma (PPR): têm uma fiscalidade muito generosa. Primeiro, há uma dedução à coleta de 20% das aplicações até ao limite anual de 400 euros por aforrador com menos de 35 anos, 350 euros entre 35 anos e 50 anos e 300 euros para os maiores de 50 anos, desde que ainda não esteja na reforma.
 
 <p>Depois, quem resgatar nas condições legais paga uma taxa de tributação de 8% sobre os rendimentos. É extraordinariamente baixa. Essas condições incluem:
 <ul>
-<li>desemprego de longa duração,
-<li>incapacidade permanente para o trabalho,
+<li>desemprego de longa duração;
+<li>incapacidade permanente para o trabalho;
 <li>doença grave.
 </ul>
 <p>Adicionalmente, também são condições legais desde que o investimento dure mais de <strong>5 anos</strong>:
 <ul>
-<li>reforma por velhice,
-<li>ultrapassagem dos 60 anos de idade,
+<li>reforma por velhice;
+<li>ultrapassagem dos 60 anos de idade;
 <li>pagamento de prestações de crédito com hipoteca para aquisição de habitação própria e permanente.
 </ul>
 
@@ -62,7 +62,7 @@ td { border-bottom: .1em solid #173f5f; padding: 1em 1em 1em 0;  vertical-align:
 <h3>Faça as suas contas</h3>
 <p>Comecemos pelo dinheiro que tem para investir hoje, <input type="text" value="2000" id="dinheiro" onkeyup="deduz();">€. É importante saber este número para contabilizar a dedução à coleta que conseguirá no IRS deste ano.
 
-<p>Como expliquei antes, essa dedução é, no máximo, equivalente a 20% do montante investido (<span id="deduz20">400€</span>), mas não pode ultrapassar 300 euros, 350 euros ou 400 euros, consoante a sua idade. Infelizmente, essa dedução concorre com outras deduções — como despesas de saúde e de educação, seguros de saúde e encargos com imóveis —, por isso é possível que seja inferior. Aliás, as estatísticas mais recentes mostram que os agregados familiares conseguem, em média, cerca de 150 euros.
+<p>Como foi explicado antes, essa dedução é, no máximo, equivalente a 20% do montante investido (<span id="deduz20">400€</span>), mas não pode ultrapassar 300 euros, 350 euros ou 400 euros, consoante a sua idade. Infelizmente, essa dedução concorre com outras deduções — como despesas de saúde e de educação, seguros de saúde e encargos com imóveis —, por isso é possível que seja inferior. Aliás, as estatísticas mais recentes mostram que os agregados familiares conseguem, em média, cerca de 150 euros.
 
 <p>Se tiver dúvidas quanto a essa dedução, use o <a href="https://irs.portaldasfinancas.gov.pt/escolherModoEntregaIRS.action">simulador</a> do Portal das Finanças. Por exemplo, pode simular a entrega de IRS do ano passado, caso tivesse declarado um investimento equivalente em PPR.
 
@@ -88,7 +88,7 @@ td { border-bottom: .1em solid #173f5f; padding: 1em 1em 1em 0;  vertical-align:
 
 <p>Faltam os encargos desse fundo: tem uma comissão de subscrição de <input type="text" value="0" id="csfundo" onkeyup="calc();">% e de resgate de <input type="text" value="0" id="crfundo" onkeyup="calc();">%.
 
-<p>As mais-valias dos fundos de investimento são tributados à taxa autónoma de 28%. Há, todavia, a aplicação de um coeficiente de correção monetária quando a duração do investimento ultrapassa 24 meses. Grosso modo, esses ganhos são apenas tributados na parte que ultrapassa a inflação. Incluamos uma inflação anual para efeitos do coeficiente de correção monetária de <input type="text" value="1" id="ccm" onkeyup="calc();">%.
+<p>As mais-valias dos fundos de investimento são normalmente tributados à taxa autónoma de 28%. Há, todavia, a aplicação de um coeficiente de correção monetária quando a duração do investimento ultrapassa 24 meses. Grosso modo, esses ganhos são apenas tributados na parte que ultrapassa a inflação. Incluamos uma inflação anual para efeitos do coeficiente de correção monetária de <input type="text" value="1" id="ccm" onkeyup="calc();">%.
 
 <p>Com esses números, deve esperar uma rentabilidade anual do fundo de investimento de <span id="rafundo">3,23%</span>, assumindo o pagamento do imposto <input type="text" value="6" id="desfasaf" onkeyup="calc();"> meses depois do resgate. O fundo renderá <strong id="xaram">mais</strong> do que o PPR.
 
@@ -98,16 +98,16 @@ td { border-bottom: .1em solid #173f5f; padding: 1em 1em 1em 0;  vertical-align:
 <ul>
 <li>PPR:
 	<ul>
-	<li>Decreto-Lei n.º 158/2002, de 2 de julho (<a href="https://www.bportugal.pt/sites/default/files/anexos/legislacoes/dl158ano2002c.PDF">versão consolidada</a>),
+	<li>Decreto-Lei n.º 158/2002, de 2 de julho (<a href="https://www.bportugal.pt/sites/default/files/anexos/legislacoes/dl158ano2002c.PDF">versão consolidada</a>);
 	<li>Estatuto dos Benefícios Fiscais, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/bf_rep/Pages/ebf-artigo-21-ordm-.aspx">artigo 21.º</a> (Fundos de poupança-reforma e planos de poupança-reforma).
 	</ul>
 <li>Fundos de investimento:
 	<ul>
- 	<li>Código do IRS, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs10.aspx">artigo 10.º</a> (Mais-valias),
- 	<li>Código do IRS, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs43.aspx">artigo 43.º</a> (Mais-valias),
- 	<li>Código do IRS, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs50.aspx">artigo 50.º</a> (Correção monetária),
-	<li>Código do IRS, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs71.aspx">artigo 71.º</a> (Taxas liberatórias),
-	<li>Código do IRS, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs72.aspx">artigo 72.º</a> (Taxas especiais),
+ 	<li>Código do IRS, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs10.aspx">artigo 10.º</a> (Mais-valias);
+ 	<li>Código do IRS, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs43.aspx">artigo 43.º</a> (Mais-valias);
+ 	<li>Código do IRS, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs50.aspx">artigo 50.º</a> (Correção monetária);
+	<li>Código do IRS, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs71.aspx">artigo 71.º</a> (Taxas liberatórias);
+	<li>Código do IRS, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs72.aspx">artigo 72.º</a> (Taxas especiais);
 	<li>Estatuto dos Benefícios Fiscais, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/bf_rep/Pages/ebf-artigo-22-ordm-a.aspx">artigo 22.º-A</a> (Rendimentos pagos por organismos de investimento coletivo aos seus participantes).
 	</ul>
 </ul>
