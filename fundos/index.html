@@ -1,1 +1,242 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comissões dos fundos de investimento</title>
+<style>
+body { font: 1.25em/1.5em Arial, Helvetica, sans-serif; margin: 0 auto; max-width: 30em; padding: .5em .75em; color: #323232 }
 
+h1, h2 { line-height: 1.25em; color: #173f5f; letter-spacing:-.033em }
+
+h2 { color: #4a6fa5 }
+
+header p a:first-child { color: #4a6fa5; background-color: inherit; padding: .5em; border: 2px solid #4a6fa5 }
+
+header p a:first-child:hover { color: #fff; background-color: #4a6fa5; text-decoration: none }
+
+p, li { margin: 1.5em 0 }
+
+li { list-style: square }
+
+li ul li { margin: 1em 0 }
+
+a { color: #4a6fa5; text-decoration: none }
+
+a:hover { text-decoration: underline }
+
+input, select { font-family: inherit; font-size: 1em; width: 3em; text-align: right; border-width: 0 0 3px; border-color: #173f5f; outline: none; background-color: inherit }
+
+td { border-right: .1em solid #173f5f; padding: .5em ;  vertical-align: bottom; text-align:center; white-space: nowrap}
+
+td:first-child { text-align: left; padding-left: 0; white-space: normal}
+
+.nw { white-space: nowrap }
+</style>
+</head>
+<body>
+<header><p><a href="/">tlim.pt</a></header>
+
+<h1>Comissão de subscrição no fundo? Só se os outros encargos forem mais baixos</h1>
+
+<h2>Está indeciso entre três fundos de investimento que apostam no mesmo mercado. As comissões desempatam.</h2>
+
+<p style="font-style: italic">Por <strong style="color:#173f5f; white-space: nowrap">David Almas</strong> <span class="nw">a 1 de julho de 2019</span>
+
+<p>Embora o impacto não seja linear, é fácil perceber que a rentabilidade da sua carteira será menor se o seu fundo de investimento tiver encargos anuais mais elevados.
+
+<p>Se o seu fundo de investimento tiver uma taxa de encargos correntes de <span class="nw"><input type="text" value="0,5" id="tec_1" onkeyup="ff();">%</span> por ano em vez de <span class="nw"><input type="text" value="1,5" id="tec_2" onkeyup="ff();">%</span>, o seu património será <strong id="efeito">9,94% superior</strong> ao fim de <span class="nw"><input type="text" value="10" id="anos" onkeyup="ff();"> anos</span>, assumindo que os ativos do fundo rendem <span class="nw"><input type="text" value="6,5" id="renda" onkeyup="ff();">%</span> por ano e que todos os outros custos são iguais.
+
+<p>A taxa de encargos correntes inclui a comissão de gestão fixa, a comissão de depósito, a taxa de supervisão, os custos de auditoria e outros custos correntes de um fundo.
+
+<script>
+function ff() {
+var 	b = document.getElementById("tec_1").value.replace(",", ".") / 100, 
+	c = document.getElementById("tec_2").value.replace(",", ".") / 100, 
+	d = document.getElementById("anos").value.replace(",", "."), 
+	a = document.getElementById("renda").value.replace(",", ".") / 100;
+
+a = Math.round(10000 * (Math.pow((1 + a - b) / (1 + a - c), d) - 1)) / 100;
+
+0 <= a ? document.getElementById("efeito").innerHTML = String(a).replace(".", ",") + "% superior" : document.getElementById("efeito").innerHTML = String(Math.abs(a)).replace(".", ",") + "% inferior";
+};
+</script>
+
+<div style="background-color:#c0d6df; padding: .25em 1.75em">
+<p><strong>Este artigo é interativo</strong>. Todos os números sublinhados podem ser alterados para se ajustarem à sua realidade.
+<p><noscript>Infelizmente, o seu programa de navegação é dos poucos que não permite ou bloqueia JavaScript. Para si, este artigo não será interativo. Não vale a pena mudar os números.</noscript>
+</div>
+
+<p>O efeito das comissões de subscrição, de resgate e de transação (como as comissões de bolsa na compra e na venda) é mais difícil de aferir. O impacto é apenas num momento — no início ou no final do investimento — e, por isso, o resultado ao longo da vida da aplicação não é tão claro.
+
+<p>Se quiser estimar a influência dos encargos no valor futuro das suas poupanças, use o simulador em baixo. Pode comparar até três fundos com estruturas diferentes de custos.
+
+<table style="border-collapse: collapse; border: 0; font-size: 85%" id="q">
+
+<tr>
+<td colspan="4" style="text-align: center; border: 0"><strong>Qual o mais barato?</strong> <br>Quando o fundo não tiver um dos encargos, deixe o campo vazio.
+</tr>
+
+<tr>
+<td>
+<td><strong>Fundo 1</strong>
+<td><strong>Fundo 2</strong>
+<td><strong>Fundo 3</strong>
+</tr>
+
+<tr>
+<td>Investimento inicial
+<td colspan="3"><input type="text" value="1000" id="inv" onkeyup="calc()" style="width: 6em" tabindex="1">€
+</tr>
+
+<tr>
+<td>Duração do investimento
+<td colspan="3"><input type="text" value="10" id="dur" onkeyup="calc()" tabindex="2"> anos
+</tr>
+
+
+<tr>
+<td>Custo fixo na aquisição
+<td><input type="text" value="" id="cfs1" onkeyup="calc()" tabindex="3">€
+<td><input type="text" value="15" id="cfs2" onkeyup="calc()" tabindex="10">€
+<td><input type="text" value="" id="cfs3" onkeyup="calc()" tabindex="17">€
+</tr>
+
+<tr>
+<td>Custo variável na aquisição
+<td><input type="text" value="" id="cvs1" onkeyup="calc()" tabindex="4">%
+<td><input type="text" value="" id="cvs2" onkeyup="calc()" tabindex="11">%
+<td><input type="text" value="4,65" id="cvs3" onkeyup="calc()" tabindex="18">%
+</tr>
+
+<tr>
+<td>Máximo de custo variável na aquisição
+<td><input type="text" value="" id="mcvs1" onkeyup="calc()" tabindex="5">€
+<td><input type="text" value="" id="mcvs2" onkeyup="calc()" tabindex="12">€
+<td><input type="text" value="50" id="mcvs3" onkeyup="calc()" tabindex="19">€
+</tr>
+
+<tr>
+<td>Taxa anual de encargos correntes
+<td><input type="text" value="1,25" id="tec1" onkeyup="calc()" tabindex="6">%
+<td><input type="text" value="1" id="tec2" onkeyup="calc()" tabindex="13">%
+<td><input type="text" value="0,75" id="tec3" onkeyup="calc()" tabindex="20">%
+</tr>
+
+<tr>
+<td>Custo fixo na alienação
+<td><input type="text" value="" id="cfr1" onkeyup="calc()" tabindex="7">€
+<td><input type="text" value="15" id="cfr2" onkeyup="calc()" tabindex="14">€
+<td><input type="text" value="" id="cfr3" onkeyup="calc()" tabindex="21">€
+</tr>
+
+<tr>
+<td>Custo variável na alienação
+<td><input type="text" value="" id="cvr1" onkeyup="calc()" tabindex="8">%
+<td><input type="text" value="" id="cvr2" onkeyup="calc()" tabindex="15">%
+<td><input type="text" value="" id="cvr3" onkeyup="calc()" tabindex="22">%
+</tr>
+
+<tr>
+<td>Rentabilidade anual esperada dos ativos
+<td><input type="text" value="6,5" id="r1" onkeyup="calc()" tabindex="9">%
+<td><input type="text" value="6,5" id="r2" onkeyup="calc()" tabindex="16">%
+<td><input type="text" value="6,5" id="r3" onkeyup="calc()" tabindex="23">%
+</tr>
+
+<tr>
+<td>Valor acumulado no final do investimento
+<td><strong><span id="res1">1668</span>€</strong>
+<td><strong><span id="res2">1668</span>€</strong>
+<td><strong><span id="res3">1668</span>€</strong>
+</tr>
+
+<tr>
+<td>Diferença para o fundo 1
+<td>
+<td><span id="dif2">0</span>%
+<td><span id="dif3">0</span>%
+</tr>
+
+</table>
+
+<script>
+function calc(){
+
+var	inv = document.getElementById("inv").value.replace(",","."),
+	dur = document.getElementById("dur").value.replace(",","."),
+	cfs1 = document.getElementById("cfs1").value.replace(",","."),
+	cfs2 = document.getElementById("cfs2").value.replace(",","."),
+	cfs3 = document.getElementById("cfs3").value.replace(",","."),
+	cvs1 = document.getElementById("cvs1").value.replace(",",".") / 100,
+	cvs2 = document.getElementById("cvs2").value.replace(",",".") / 100,
+	cvs3 = document.getElementById("cvs3").value.replace(",",".") / 100,
+	mcvs1 = document.getElementById("mcvs1").value.replace(",","."),
+	mcvs2 = document.getElementById("mcvs2").value.replace(",","."),
+	mcvs3 = document.getElementById("mcvs3").value.replace(",","."),
+	tec1 = document.getElementById("tec1").value.replace(",",".") / 100,
+	tec2 = document.getElementById("tec2").value.replace(",",".") / 100,
+	tec3 = document.getElementById("tec3").value.replace(",",".") / 100,
+	cfr1 = document.getElementById("cfr1").value.replace(",","."),
+	cfr2 = document.getElementById("cfr2").value.replace(",","."),
+	cfr3 = document.getElementById("cfr3").value.replace(",","."),
+	cvr1 = document.getElementById("cvr1").value.replace(",",".") / 100,
+	cvr2 = document.getElementById("cvr2").value.replace(",",".") / 100,
+	cvr3 = document.getElementById("cvr3").value.replace(",",".") / 100,
+	r1 = document.getElementById("r1").value.replace(",",".") / 100,
+	r2 = document.getElementById("r2").value.replace(",",".") / 100,
+	r3 = document.getElementById("r3").value.replace(",",".") / 100,
+	res1 = "" == mcvs1 ? Math.round((inv-cfs1-inv*cvs1)*(1+r1-tec1)**dur*(1-cvr1)-cfr1) : Math.round((inv-cfs1-Math.min(inv*cvs1,mcvs1))*(1+r1-tec1)**dur*(1-cvr1)-cfr1),
+	res2 = "" == mcvs2 ? Math.round((inv-cfs2-inv*cvs2)*(1+r2-tec2)**dur*(1-cvr2)-cfr2) : Math.round((inv-cfs2-Math.min(inv*cvs2,mcvs2))*(1+r2-tec2)**dur*(1-cvr2)-cfr2),
+	res3 = "" == mcvs3 ? Math.round((inv-cfs3-inv*cvs3)*(1+r3-tec3)**dur*(1-cvr3)-cfr3) : Math.round((inv-cfs3-Math.min(inv*cvs3,mcvs3))*(1+r3-tec3)**dur*(1-cvr3)-cfr3);
+
+document.getElementById("res1").innerHTML = res1;
+document.getElementById("res2").innerHTML = res2;
+document.getElementById("res3").innerHTML = res3;
+
+document.getElementById("dif2").innerHTML = String(Math.round((res2/res1-1)*1000)/10).replace(".",",");
+document.getElementById("dif3").innerHTML = String(Math.round((res3/res1-1)*1000)/10).replace(".",",");
+};
+</script>
+
+<p>É possível que comissões diferentes deem resultados semelhantes. É possível que valha a pena pagar uma comissão de subscrição, se as restantes comissões forem suficientemente baixas para compensarem essa despesa.
+
+<p>Use o simulador para descobrir os fundos que mais podem fazer pelo seu dinheiro.
+
+<p>Pode, por exemplo, <a href="#q" onclick="preencher()">preencher</a> com a informação dos fundos <a href="https://www.blackrock.com/pt/products/251882/">iShares Core MSCI World UCITS ETF</a> (negociado na bolsa de Amesterdão através do serviço GoBulling Pro), <a href="https://lt.morningstar.com/okhysb8aoh/snapshot/snapshot.aspx?SecurityToken=F0GBR063IY]2]1]FOEUR$$ALL_593&ClientFund=1&LanguageId=pt-PT&CurrencyId=EUR">HSBC GIF Economic Scale Global Equity AC</a> (disponível no Banco Best) e <a href="https://lt.morningstar.com/3otoozvfug/snapshot/snapshot.aspx?tab=0&SecurityToken=F0GBR04SKK]2]1]FOPRT$$ALL_3601&Id=F0GBR04SKK&ClientFund=1&BaseCurrencyId=EUR&CurrencyId=EUR&LanguageId=pt-PT">Vanguard Global Stock Index Investor EUR</a> (comercializado pelo Bankinter), assumindo que os ativos rendem o mesmo no longo prazo.<span style="color:#173f5f">&nbsp;&marker;</span>
+
+<script>
+function preencher(){
+document.getElementById("inv").value = 100000;
+document.getElementById("cfs1").value = 5;
+document.getElementById("cfs2").value = "";
+document.getElementById("cfs3").value = "";
+document.getElementById("cvs1").value = "";
+document.getElementById("cvs2").value = "";
+document.getElementById("cvs3").value = "0,5";
+document.getElementById("mcvs1").value = "";
+document.getElementById("mcvs2").value = "";
+document.getElementById("mcvs3").value = 150;
+document.getElementById("tec1").value = "0,20";
+document.getElementById("tec2").value = "0,95";
+document.getElementById("tec3").value = "0,30";
+document.getElementById("cfr1").value = 5;
+document.getElementById("cfr2").value = "";
+document.getElementById("cfr3").value = "";
+document.getElementById("cvr1").value = "";
+document.getElementById("cvr2").value = "";
+document.getElementById("cvr3").value = "";
+document.getElementById("r2").value = document.getElementById("r1").value;
+document.getElementById("r3").value = document.getElementById("r1").value;
+calc();
+};
+
+window.onload = function(){ ff(); calc(); };
+</script>
+
+<div style="background-color:#c0d6df; padding: .25em 1.75em">
+<p><strong>Este artigo é experimental.</strong>
+<p>Se encontrar falhas ou se tiver sugestões para melhorar este artigo, escreva-me para <a href="mailto:davidalmas@gmail.com?subject=PPR">davidalmas@gmail.com</a>. 
+</div>
+</body>
+</html>
