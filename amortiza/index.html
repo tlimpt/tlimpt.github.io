@@ -1,1 +1,100 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantos meses posso reduzir no crédito à habitação se fizer uma amortização?</title>
+<style>
+body { font: 1.25em/1.5em Arial, Helvetica, sans-serif; margin: 0 auto; max-width: 30em; padding: .5em .75em; color: #323232 }
 
+h1, h2 { line-height: 1.25em; color: #173f5f; letter-spacing:-.033em }
+
+h2 { color: #4a6fa5 }
+
+header p a:first-child { color: #4a6fa5; background-color: inherit; padding: .5em; border: 2px solid #4a6fa5 }
+
+header p a:first-child:hover { color: #fff; background-color: #4a6fa5; text-decoration: none }
+
+p, li { margin: 1.5em 0 }
+
+li { list-style: square }
+
+li ul li { margin: 1em 0 }
+
+a { color: #4a6fa5; text-decoration: none }
+
+a:hover { text-decoration: underline }
+
+input, select { font-family: inherit; font-size: 1em; width: 3em; text-align: right; border-width: 0 0 3px; border-color: #173f5f; outline: none; background-color: inherit }
+
+td { border-right: .1em solid #173f5f; padding: .5em ;  vertical-align: bottom; text-align:center; white-space: nowrap}
+
+td:first-child { text-align: left; padding-left: 0; white-space: normal}
+
+.nw { white-space: nowrap }
+</style>
+</head>
+<body>
+<header><p><a href="/">tlim.pt</a></header>
+
+<h1>Quantos meses posso reduzir no crédito à habitação se fizer uma amortização?</h1>
+
+<h2>Este artigo é interativo. Todos os números sublinhados podem ser alterados para se ajustarem à sua realidade.</h2>
+
+<h2><noscript>Infelizmente, o seu programa de navegação é dos poucos que não permite ou bloqueia JavaScript. Para si, este artigo não será interativo. Não vale a pena mudar os números.</noscript></h2>
+
+<p style="font-style: italic">Por <strong style="color:#173f5f; white-space: nowrap">David Almas</strong> <span class="nw">a 1 de fevereiro de 2020</span>
+
+
+<p>Amortizar uma parte do crédito à habitação pode ser uma boa ideia: permite reduzir a prestação que paga mensalmente ao banco. Todavia, se os seus rendimentos conseguem suportar a prestação anterior, porque não reduzir simultaneamente o prazo do empréstimo para ficar a pagar sensivelmente o mesmo e libertar-se mais depressa do banco?
+
+<p>Assumindo que tem uma dívida de <span class="nw"><input type="text" value="100000" id="divida" style="width:4em" onkeyup="ff();">€</span> a ser paga em <span class="nw"><input type="text" value="360" id="prazo1" style="width:3em" onkeyup="ff();"> meses</span> a uma taxa de juro de <span class="nw"><input type="text" value="1,5" id="txj" onkeyup="ff();">%</span>, a sua prestação mensal é de <strong class="nw"><span id="prestacao1">345,12</span>€</strong>. Se amortizar <span class="nw"><input type="text" value="10000" id="amortiza" style="width:4em" onkeyup="ff();">€</span>, pode reduzir o prazo do empréstimo em <strong class="nw"><span id="reduz">22</span> meses</strong> para <strong class="nw"><span id="prazo2">338</span> meses</strong>. Se as operações de amortização e redução do prazo forem efetuadas em simultâneo, a prestação fica em <strong class="nw"><span id="prestacao2">344,78</span>€</strong>.
+
+<p>Não esqueça que os bancos podem cobrar uma comissão de amortização antecipada: no máximo, de 0,5% nos contratos no regime de taxa variável e de 2% nos restantes empréstimos. Em compensação, os prémios dos seguros associados ao crédito podem baixar com a redução da dívida bancária.
+
+<p>Note, ainda, que os bancos não são obrigados a aceitarem uma redução no prazo do crédito à habitação. Pode ser preciso negociar.
+
+<span style="color:#173f5f">&nbsp;&marker;</span>
+
+<script>
+function ff() {
+
+if ( document.getElementById("amortiza").value * 1 >= document.getElementById("divida").value * 1 ) {
+	document.getElementById("amortiza").value = document.getElementById("divida").value /10; }
+
+var 	c = document.getElementById("divida").value.replace(",", "."), 
+	m = document.getElementById("prazo1").value.replace(",", "."), 
+	t = document.getElementById("txj").value.replace(",", ".") / 100, 
+	a = document.getElementById("amortiza").value.replace(",", ".");
+
+var p = Math.round(100*(c/((1-Math.pow(1+t/12,-m))/(t/12))))/100;
+
+var r = Math.floor(Math.log(-(a - c - a*Math.pow(1 + t/12,m))/c)/Math.log(1 + t/12));
+
+var mm = m - r;
+
+var pp = Math.round(100*((c-a)/((1-Math.pow(1+t/12,-mm))/(t/12))))/100;
+
+
+document.getElementById("prestacao1").innerHTML = p;
+
+document.getElementById("prestacao1").innerHTML = document.getElementById("prestacao1").innerHTML.replace(".", ",");
+
+document.getElementById("reduz").innerHTML = r;
+
+document.getElementById("prazo2").innerHTML = mm;
+
+document.getElementById("prestacao2").innerHTML = pp;
+
+document.getElementById("prestacao2").innerHTML = document.getElementById("prestacao2").innerHTML.replace(".", ",");
+
+};
+
+window.onload = ff();
+</script>
+
+<div style="background-color:#c0d6df; padding: .25em 1.75em">
+<p><strong>Este artigo é experimental.</strong> Se encontrar falhas ou se tiver sugestões para melhorar este artigo, escreva-me para <a href="mailto:davidalmas@gmail.com?subject=PPR">davidalmas@gmail.com</a>. 
+</div>
+</body>
+</html>
