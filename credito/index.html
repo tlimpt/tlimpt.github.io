@@ -1,1 +1,93 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Até quanto me posso endividar no crédito à habitação?</title>
+<style>
+body { font: 1.25em/1.5em Arial, Helvetica, sans-serif; margin: 0 auto; max-width: 30em; padding: .5em .75em; color: #323232 }
 
+h1, h2 { line-height: 1.25em; color: #173f5f; letter-spacing:-.033em }
+
+h2 { color: #4a6fa5 }
+
+header p a:first-child { color: #4a6fa5; background-color: inherit; padding: .5em; border: 2px solid #4a6fa5 }
+
+header p a:first-child:hover { color: #fff; background-color: #4a6fa5; text-decoration: none }
+
+p, li { margin: 1.5em 0 }
+
+li { list-style: square }
+
+li ul li { margin: 1em 0 }
+
+a { color: #4a6fa5; text-decoration: none }
+
+a:hover { text-decoration: underline }
+
+input, select { font-family: inherit; font-size: 1em; width: 3em; text-align: right; border-width: 0 0 3px; border-color: #173f5f; outline: none; background-color: inherit }
+
+td { border-right: .1em solid #173f5f; padding: .5em ;  vertical-align: bottom; text-align:center; white-space: nowrap}
+
+td:first-child { text-align: left; padding-left: 0; white-space: normal}
+
+.nw { white-space: nowrap }
+</style>
+</head>
+<body>
+<header><p><a href="/">tlim.pt</a></header>
+
+<h1>Até quanto me posso endividar?</h1>
+
+<h2>Este artigo é interativo. Todos os números sublinhados podem ser alterados para se ajustarem à sua realidade.</h2>
+
+<h2><noscript>Infelizmente, o seu programa de navegação é dos poucos que não permite ou bloqueia JavaScript. Para si, este artigo não será interativo. Não vale a pena mudar os números.</noscript></h2>
+
+<p style="font-style: italic">Por <strong style="color:#173f5f; white-space: nowrap">David Almas</strong> <span class="nw">a 1 de dezembro de 2019</span>
+
+
+<p>Embora a prestação mensal do crédito à habitação esteja numa relação linear com o montante financiado, nem sempre é fácil desvendar o valor máximo de empréstimo que o orçamento familiar consegue suportar.
+
+<p>Se acredita que consegue suportar uma prestação mensal de <span class="nw"><input type="text" value="500" id="presta" style="width:4em" onkeyup="ff();">€</span> durante <span class="nw"><input type="text" value="30" id="anos" onkeyup="ff();">  anos</span>, então o montante de empréstimo pode ascender a <strong class="nw"><span id="credito">155764</span>€</strong>, assumindo uma taxa de juro de <span class="nw"><input type="text" value="-0,304" id="txj" onkeyup="ff();">%</span> e um <i>spread</i>, a margem de lucro do banco, de <span class="nw"><input type="text" value="1,290" id="spread" onkeyup="ff();">%</span>. 
+
+<p>Num cenário em que a taxa de juro é um ponto percentual mais elevada, o montante deve descer para <strong class="nw"><span id="credito1">135530</span>€</strong>. Se a taxa for dois pontos percentuais mais alta, o financiamento deve ser limitado a <strong class="nw"><span id="credito2">118807</span>€</strong> para respeitar o seu orçamento.
+
+<script>
+function ff() {
+var 	a = document.getElementById("presta").value.replace(",", "."), 
+	b = document.getElementById("anos").value.replace(",", ".") * 12, 
+	c = document.getElementById("txj").value.replace(",", ".") / 100, 
+	d = document.getElementById("spread").value.replace(",", ".") / 100;
+
+e = Math.floor( a * ((1-(1+(c+d)/12)**(-b))/((c+d)/12)) );
+
+f = Math.floor( a * ((1-(1+(c+d+0.01)/12)**(-b))/((c+d+0.01)/12)) );
+
+g = Math.floor( a * ((1-(1+(c+d+0.02)/12)**(-b))/((c+d+0.02)/12)) );
+
+document.getElementById("credito").innerHTML = e;
+
+document.getElementById("credito1").innerHTML = f;
+
+document.getElementById("credito2").innerHTML = g;
+
+};
+
+window.onload = ff();
+</script>
+
+<p>
+
+<p>Note, no entanto, que o banco pode impor outras limitações ao seu crédito. Entre outras coisas, os limites <a href="https://www.bportugal.pt/page/limites-ao-racio-ltv-ao-dsti-e-maturidade">indicados</a> pelo Banco de Portugal apontam para:
+
+<ul>
+<li>Um montante de empréstimo que não ultrapasse 90% do valor do imóvel dado em garantida (mínimo entre o preço de aquisição e o valor da avaliação);
+<li>Uma soma das prestações mensais dos créditos inferior a 50% dos rendimentos mensais líquidos.<span style="color:#173f5f">&nbsp;&marker;</span>
+</ul>
+
+
+<div style="background-color:#c0d6df; padding: .25em 1.75em">
+<p><strong>Este artigo é experimental.</strong> Se encontrar falhas ou se tiver sugestões para melhorar este artigo, escreva-me para <a href="mailto:davidalmas@gmail.com?subject=PPR">davidalmas@gmail.com</a>. 
+</div>
+</body>
+</html>
