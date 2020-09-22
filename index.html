@@ -13,7 +13,7 @@ header p a:first-child:hover { color: #fff; background-color: #4a6fa5; text-deco
 
 h3 { margin: 3em 0 0}
 
-p { margin: 1.5em 0; }
+p { margin: 1.5em 0 }
 
 a { color: #4a6fa5; text-decoration: none }
 
@@ -25,8 +25,7 @@ a:hover { text-decoration: underline }
 
 <p>David Almas é editor do <a href="/boletim/">boletim <strong>tlim</strong></a>.
 
-<p>Correio: <a href="mailto:davidalmas@gmail.com">davidalmas@gmail.com</a>.
-
+<p id="m">&nbsp;
 
 <h3>Artigos de referência</h3>
 
@@ -44,6 +43,8 @@ a:hover { text-decoration: underline }
 
 <p><a href="/credito/">Até quanto me posso endividar?
 
-
+<script>
+window.onload = function(){document.getElementById('m').innerHTML =atob('Q29ycmVpbzogPGEgaHJlZj0ibWFpbHRvOmRhdmlkYWxtYXNAZ21haWwuY29tIj5kYXZpZGFsbWFzQGdtYWlsLmNvbTwvYT4u');}
+</script>
 </body>
 </html>
