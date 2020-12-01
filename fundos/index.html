@@ -5,33 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Comissões dos fundos de investimento</title>
 <style>
-body { font: 1.25em/1.5em Arial, Helvetica, sans-serif; margin: 0 auto; max-width: 30em; padding: .5em .75em; color: #323232 }
+body { font-size: 1em; line-height:1.7; margin: 0 auto; max-width: 30em; padding: .5em; color: #333; background-color:#eee }
 
-h1, h2 { line-height: 1.25em; color: #173f5f; letter-spacing:-.033em }
+h1, h2 { line-height: 1.2em }
 
-h2 { color: #4a6fa5 }
+input, select { font-family: inherit; font-size: 1em; width: 3em; text-align: right; border-width: 0 0 2px; border-color: #333; outline: none; background-color: inherit }
 
-header p a:first-child { color: #4a6fa5; background-color: inherit; padding: .5em; border: 2px solid #4a6fa5 }
+div { background-color:#ccc; padding: .25em 1.75em }
 
-header p a:first-child:hover { color: #fff; background-color: #4a6fa5; text-decoration: none }
-
-p, li { margin: 1.5em 0 }
-
-li { list-style: square }
-
-li ul li { margin: 1em 0 }
-
-a { color: #4a6fa5; text-decoration: none }
-
-a:hover { text-decoration: underline }
-
-input, select { font-family: inherit; font-size: 1em; width: 3em; text-align: right; border-width: 0 0 3px; border-color: #173f5f; outline: none; background-color: inherit }
-
-td { border-right: .1em solid #173f5f; padding: .5em ;  vertical-align: bottom; text-align:center; white-space: nowrap}
+td { border-right: .1em solid #333; padding: .5em ;  vertical-align: bottom; text-align:center; white-space: nowrap}
 
 td:first-child { text-align: left; padding-left: 0; white-space: normal}
-
-.nw { white-space: nowrap }
 </style>
 </head>
 <body>
@@ -41,7 +25,7 @@ td:first-child { text-align: left; padding-left: 0; white-space: normal}
 
 <h2>Está indeciso entre três fundos de investimento que apostam no mesmo mercado. As comissões desempatam.</h2>
 
-<p style="font-style: italic">Por <strong style="color:#173f5f; white-space: nowrap">David Almas</strong> <span class="nw">a 1 de julho de 2019</span>
+<p><em>Por <strong>David Almas</strong> a 1 de julho de 2019</em>
 
 <p>Embora o impacto não seja linear, é fácil perceber que a rentabilidade da sua carteira será menor se o seu fundo de investimento tiver encargos anuais mais elevados.
 
@@ -62,7 +46,7 @@ a = Math.round(10000 * (Math.pow((1 + a - b) / (1 + a - c), d) - 1)) / 100;
 };
 </script>
 
-<div style="background-color:#c0d6df; padding: .25em 1.75em">
+<div>
 <p><strong>Este artigo é interativo</strong>. Todos os números sublinhados podem ser alterados para se ajustarem à sua realidade.
 <p><noscript>Infelizmente, o seu programa de navegação é dos poucos que não permite ou bloqueia JavaScript. Para si, este artigo não será interativo. Não vale a pena mudar os números.</noscript>
 </div>
@@ -71,7 +55,7 @@ a = Math.round(10000 * (Math.pow((1 + a - b) / (1 + a - c), d) - 1)) / 100;
 
 <p>Se quiser estimar a influência dos encargos no valor futuro das suas poupanças, use o simulador em baixo. Pode comparar até três fundos com estruturas diferentes de custos.
 
-<table style="border-collapse: collapse; border: 0; font-size: 85%" id="q">
+<table style="border-collapse: collapse; border: 0; font-size: .9" id="q">
 
 <tr>
 <td colspan="4" style="text-align: center; border: 0"><strong>Qual o mais barato?</strong> <br>Quando o fundo não tiver um dos encargos, deixe o campo vazio.
@@ -234,7 +218,7 @@ calc();
 window.onload = function(){ ff(); calc(); };
 </script>
 
-<div style="background-color:#c0d6df; padding: .25em 1.75em">
+<div>
 <p><strong>Este artigo é experimental.</strong>
 <p>Se encontrar falhas ou se tiver sugestões para melhorar este artigo, escreva-me para <a href="mailto:davidalmas@gmail.com?subject=PPR">davidalmas@gmail.com</a>. 
 </div>
