@@ -5,27 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Independência financeira e reforma antecipada: o guia para o trabalho ser facultativo</title>
 <style>
-body { font: 1.25em/1.5em Arial, Helvetica, sans-serif; margin: 0 auto; max-width: 30em; padding: .5em .75em; color: #323232 }
+body { font-size: 1em; line-height:1.7; margin: 0 auto; max-width: 30em; padding: .5em; color: #333; background-color:#eee }
 
-h1, h2 { line-height: 1.25em; color: #173f5f; letter-spacing:-.033em }
+h1, h2 { line-height: 1.2em }
 
-h2 { color: #4a6fa5 }
+input { font-family: inherit; font-size: 1em; width: 3em; text-align: right; border-width: 0 0 2px; border-color: #333; outline: none; background-color: inherit }
 
-header p a:first-child { color: #4a6fa5; background-color: inherit; padding: .5em; border: 2px solid #4a6fa5 }
+div { background-color:#ccc; padding: .25em 1.75em }
 
-header p a:first-child:hover { color: #fff; background-color: #4a6fa5; text-decoration: none }
-
-p, li { margin: 1.5em 0 }
-
-li { list-style: square }
-
-li ul li { margin: 1em 0 }
-
-a { color: #4a6fa5; text-decoration: none }
-
-a:hover { text-decoration: underline }
-
-input { font-family: inherit; font-size: 1em; width: 4em; text-align: right; border-width: 0 0 3px; border-color: #173f5f; outline: none }
+#r { border-left: .25em solid #333; padding: 0 0 0 2em; background-color:#eee }
 </style>
 </head>
 <body>
@@ -63,7 +51,7 @@ input { font-family: inherit; font-size: 1em; width: 4em; text-align: right; bor
 
 <p>Se tiver um pé-de-meia de <input type="text" value="1000000" id="pedemeia" onkeyup="document.getElementById('rendimento').innerHTML=Math.floor(document.getElementById('pedemeia').value*((1+.05)**(1/12)-1));"> euros, conseguirá retirar rendimentos mensais de <strong id="rendimento">4074</strong> <strong>euros</strong>, assumindo uma rentabilidade anual de 5%. Não será muito? Talvez se consiga viver com menos.
 
-<div style="background-color:#c0d6df; padding: .25em 1.75em">
+<div>
 <p><strong>Este artigo é interativo</strong>. Todos os números sublinhados, como o milhão de euros no parágrafo anterior, podem ser alterados. Experimente mudar para meio milhão de euros para perceber que esse novo montante permite viver mensalmente com 2037 euros.
 <p><noscript>Infelizmente, o seu programa de navegação é dos poucos que não permite ou bloqueia JavaScript. Para si, este artigo não será interativo. Não vale a pena mudar os números.</noscript>
 </div>
@@ -138,7 +126,7 @@ input { font-family: inherit; font-size: 1em; width: 4em; text-align: right; bor
 <p>Com uma estimativa de pensão consegue traçar um plano de independência financeira mais completo:
 
 
-<div id="r" style="border-left: .33em solid #4a6fa5; padding: 0 0 0 1em">
+<div id="r">
 
 <p>Tem agora, aos <input type="text" value="40" id="f-i" style="width:2em" onkeyup="document.getElementById('anos').value=this.value;f();"> anos, uma poupança de <input type="text" value="100000" id="f-p" style="width:5em" onkeyup="f();"> euros. Calcula que, quando atingir a independência financeira, aos <input type="text" value="55" id="f-iif" style="width:2em" onkeyup="document.getElementById('if').value=this.value;f();"> anos, terá uma despesa mensal de <input type="text" value="1200" id="f-d" style="width:3em" onkeyup="document.getElementById('despesa1').value=this.value;document.getElementById('despesa2').value=this.value;document.getElementById('despesa3').value=this.value;document.getElementById('despesa4').value=this.value;f();"> euros, a preços de hoje.
 
@@ -160,7 +148,7 @@ input { font-family: inherit; font-size: 1em; width: 4em; text-align: right; bor
 
 <p>Afine os campos da simulação até encontrar um plano que lhe seja confortável. Porém, não se esqueça: é apenas um plano. Muitas das previsões provavelmente revelar-se-ão erradas, especialmente o desempenho das aplicações financeiras, que, se não forem instrumentos com rendimento garantido, será volátil. Será preciso corrigir a trajetória do seu projeto várias vezes ao longo da vida.&nbsp;&marker;
 
-<div style="background-color:#c0d6df; padding: .25em 1.75em">
+<div>
 <p><strong>Este artigo é experimental</strong>. Está em constante melhoria. Se encontrar falhas ou se tiver sugestões para o melhorar, escreva-me para <a href="mailto:davidalmas@gmail.com?subject=IFRA">davidalmas@gmail.com</a>.
 </div>
 
