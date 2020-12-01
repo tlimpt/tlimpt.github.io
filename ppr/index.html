@@ -5,23 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Planos de poupança-reforma (PPR)</title>
 <style>
-body { font: 1.25em/1.5em Arial, Helvetica, sans-serif; margin: 0 auto; max-width: 30em; padding: .5em .75em; color: #323232 }
+body { font-size: 1em; line-height:1.7; margin: 0 auto; max-width: 30em; padding: .5em; color: #333; background-color:#eee }
 
-header p a:first-child { color: #4a6fa5; background-color: inherit; padding: .5em; border: 2px solid #4a6fa5 }
+table { font-size: .9em; border-collapse: collapse }
 
-header p a:first-child:hover { color: #fff; background-color: #4a6fa5; text-decoration: none }
-
-a { color: #4a6fa5; text-decoration: none }
-
-a:hover { text-decoration: underline }
-
-p, li { margin: 1.5em 0 }
-
-li { list-style: square }
-
-table { font-size: .75em; border-collapse: collapse }
-
-td { padding: 1em 1em 1em .25em; border-bottom: 1px solid grey; vertical-align: top; text-align: center; }
+td { padding: 1em 1em 1em .25em; border-bottom: 1px solid grey; vertical-align: top; text-align: center }
 
 td:nth-child(1) { text-align: left }
 
@@ -184,27 +172,18 @@ tr:nth-child(2):hover { background-color: inherit }
 <tr class="nao"><td>Seguro PerFORMA PPR — Equilibrado</td><td></td><td></td><td></td><td>não tem</td><td>2,00%</td></tr>
 <tr class="nao"><td>Sixty Degrees PPR/OICVM Flexível</td><td></td><td></td><td></td><td>não tem</td><td>não tem</td></tr>
 <tr class="nao"><td>Valor Mais PPR (71D8)</td><td></td><td></td><td></td><td>40,00%</td><td>não tem</td></tr>
-
-
 </table>
 
 <p><a href="2018.html">Versão anterior</a>
 
 <script>
-
 window.onload = document.getElementById("opta").style.display = "block";
-
-
 function toggle(displayState1, displayState2){
 var sins = document.getElementsByClassName("sim");
 var naos = document.getElementsByClassName("nao");
-
 for (var i = 0; i < sins.length; i++){ sins[i].style.display = displayState1; }
 for (var j = 0; j < naos.length; j++){ naos[j].style.display = displayState2; }
 }
-
-
-
 </script>
 </body>
 </html>
