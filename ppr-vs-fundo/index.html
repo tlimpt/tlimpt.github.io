@@ -72,7 +72,7 @@ div { background-color:#ccc; padding: .25em 1.75em }
 <p>Assim, se solicitar o reembolso na forma de capital nas condições legais, a <strong>rentabilidade anual líquida do investimento no PPR será de <span id="rappr">3,11%</span></strong>. Fora das condições legais, a rentabilidade anual do PPR desce para <span id="rbppr">3,10%</span>. Estes números assumem um desafasamento de <input type="text" value="6" id="desfasa" style="width:2em" onkeyup="calc();">&nbsp;meses no recebimento da dedução à coleta.
 
 <h3>É bom ou mau? Compare</h3>
-<p>Os PPR são frequentemente muito conservadores e carregam normalmente encargos mais altos do que produtos alternativos. É natural que os fundos de investimento no mesmo espetro de risco atinjam rentabilidades superiores. Assumamos que o fundo no qual poderá investir em alternativa ao PPR renderá <input type="text" value="4" id="rfundo" onkeyup="dif();">% por ano. Isso é <span id="diferenca">mais 2 pontos percentuais por ano do</span> que o PPR.
+<p>Os PPR são frequentemente muito conservadores e carregam normalmente encargos mais altos do que produtos alternativos. É natural que os fundos de investimento no mesmo espectro de risco atinjam rentabilidades superiores. Assumamos que o fundo no qual poderá investir em alternativa ao PPR renderá <input type="text" value="4" id="rfundo" onkeyup="dif();">% por ano. Isso é <span id="diferenca">mais 2 pontos percentuais por ano do</span> que o PPR.
 
 <p>Faltam os encargos desse fundo: tem uma comissão de subscrição de <input type="text" value="0" id="csfundo" onkeyup="calc();">% e de resgate de <input type="text" value="0" id="crfundo" onkeyup="calc();">%.
 
@@ -104,7 +104,6 @@ div { background-color:#ccc; padding: .25em 1.75em }
 &marker;
 
 <script>
-
 function deduz(){
 var dinheiro = document.getElementById('dinheiro').value.replace(",",".");
 var deduz20 = .2 * dinheiro;
