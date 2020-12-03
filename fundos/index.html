@@ -5,17 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Comissões dos fundos de investimento</title>
 <style>
-body { font-size: 1em; line-height:1.7; margin: 0 auto; max-width: 30em; padding: .5em; color: #333; background-color:#eee }
+body { font-size:1em; line-height:1.7; margin:0 auto; max-width:30em; padding:.5em; color:#333; background-color:#eee }
 
-h1, h2 { line-height: 1.2em }
+h1, h2 { line-height:1.2em }
 
-input, select { font-family: inherit; font-size: 1em; width: 3em; text-align: right; border-width: 0 0 2px; border-color: #333; outline: none; background-color: inherit }
+input, select { font-family:inherit; font-size:1em; width:3em; text-align:right; border-width:0 0 2px; border-color:#333; outline:none; background-color:inherit }
 
-div { background-color:#ccc; padding: .25em 1.75em }
+div { background-color:#ccc; padding:.25em 1.75em }
 
-td { border-right: .1em solid #333; padding: .5em ;  vertical-align: bottom; text-align:center; white-space: nowrap}
+table { border-collapse:collapse; border:0; font-size:.9em }
 
-td:first-child { text-align: left; padding-left: 0; white-space: normal}
+td { border-right:.1em solid #333; padding:.5em ;  vertical-align:bottom; text-align:center; white-space: nowrap}
+
+td:first-child { text-align:left; padding-left:0; white-space:normal}
 </style>
 </head>
 <body>
@@ -55,7 +57,7 @@ a = Math.round(10000 * (Math.pow((1 + a - b) / (1 + a - c), d) - 1)) / 100;
 
 <p>Se quiser estimar a influência dos encargos no valor futuro das suas poupanças, use o simulador em baixo. Pode comparar até três fundos com estruturas diferentes de custos.
 
-<table style="border-collapse: collapse; border: 0; font-size: .9" id="q">
+<table id="q">
 
 <tr>
 <td colspan="4" style="text-align: center; border: 0"><strong>Qual o mais barato?</strong> <br>Quando o fundo não tiver um dos encargos, deixe o campo vazio.
