@@ -12,6 +12,8 @@ header p {
 	padding:.5em 0 }
 header p span {
 	margin:0 .5em }
+header p a {
+	text-decoration:none }
 h1 {
 	line-height:1.2em }
 aside {
