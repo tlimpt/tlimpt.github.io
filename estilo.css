@@ -1,0 +1,64 @@
+body {
+	font-size:1em;
+	line-height:1.7;
+	margin:0 auto;
+	max-width:30em;
+	padding:.5em;
+	background-color:#eee;
+	color:#222 }
+header p {
+	border-bottom:.2em solid;
+	margin:0 0 2em 0;
+	padding:.5em 0 }
+header p span {
+	margin:0 1em }
+h1 {
+	line-height:1.2em }
+aside {
+	border-left:.2em solid;
+	padding:0 0 0 2em;
+	margin:2em 0;
+	border-color:#222 }
+table {
+	border-collapse:collapse;
+	border:0;
+	margin:2em auto }
+thead {
+	border-bottom:.2em solid }
+td {
+	border-bottom:.1em solid;
+	padding:1em .5em 1em 0;
+	vertical-align:top;
+	text-align:center;
+	line-height:1.2em }
+td:first-child {	
+	text-align:left }
+td:last-child {
+	padding:1em 0 }
+ul li {
+	list-style-type:square}
+input, select {
+	font-family: inherit;
+	font-size: 1em;
+	width: 3em;
+	text-align: right;
+	border-width: 0 0 .2em;
+	border-color: #222;
+	outline: none;
+	background-color: inherit;
+	display:inline;
+	color: inherit }
+.e {
+	background-color:#121212;
+	color:#eee }
+.e a {
+	color:#999fff }
+.e input, .e select {
+	border-color: #eee;
+	background-color: inherit;
+	color: inherit }
+.e aside {
+	border-color:#eee }
+
+@media print {
+	header p button { display:none } }
