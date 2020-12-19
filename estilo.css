@@ -38,7 +38,9 @@ td:first-child {
 td:last-child {
 	padding:1em 0 }
 ul li {
-	list-style-type:square}
+	list-style-type:square }
+ol li {
+	list-style-type:upper-roman}
 input, select {
 	font-family: inherit;
 	font-size: 1em;
