@@ -1,5 +1,5 @@
 window.onload = function() {
-	var b = document.createElement("button");
+	var b = document.createElement("a");
 	b.innerHTML = "★";
 	b.setAttribute("onclick", "document.body.classList.toggle('e');");
 	b.className = "flutua";

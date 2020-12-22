@@ -67,6 +67,8 @@ input, select {
 .e aside {
 	border-color:#eee }
 .flutua {
+	text-align:center;
+	line-height:2;
 	position:fixed;
 	font-size:1em;
 	bottom:.5em;
