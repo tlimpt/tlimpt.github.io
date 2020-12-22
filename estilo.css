@@ -55,38 +55,20 @@ input, select {
 	background-color: inherit;
 	display:inline;
 	color: inherit }
-.e {
-	background-color:#121212;
-	color:#eee }
-.e a {
-	color:#999fff }
-.e input, .e select {
-	border-color: #eee;
-	background-color: inherit;
-	color: inherit }
-.e aside {
-	border-color:#eee }
-.flutua {
-	text-align:center;
-	line-height:2;
-	position:fixed;
-	font-size:1em;
-	bottom:.5em;
-	left:.5em;
-	width:2em;
-	height:2em;
-	background-color:#121212;
-	color:#eee;
-	border:0;
-	margin:0;
-	padding:0;
-	border-radius:1em;
-	opacity:.5 }
-.e .flutua  {
-	background-color:#eee;
-	color:#121212 }
-.flutua:hover {
-	opacity:1 }
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color:#121212;
+		color:#eee }
+	a {
+		color:#999fff }
+	input, select {
+		border-color: #eee;
+		background-color: inherit;
+		color: inherit }
+	aside {
+		border-color:#eee }
+}
 
 @media print {
 	.flutua { display:none } }
