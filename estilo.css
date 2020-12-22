@@ -68,17 +68,17 @@ input, select {
 	border-color:#eee }
 .flutua {
 	position:fixed;
+	font-size:1em;
 	bottom:.5em;
 	left:.5em;
-	font-size:1em;
 	width:2em;
 	height:2em;
 	background-color:#121212;
-	border:0em;
 	color:#eee;
+	border:0;
 	margin:0;
-	border-radius:1.5em;
-	text-align:center;
+	padding:0;
+	border-radius:1em;
 	opacity:.5 }
 .e .flutua  {
 	background-color:#eee;
