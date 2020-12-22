@@ -12,10 +12,15 @@ header p {
 	padding:.5em 0 }
 header p span {
 	margin:0 .5em }
-header p a {
-	text-decoration:none }
-h1 {
+h1, h2, h3 {
 	line-height:1.2em }
+h2 {
+	margin-top:3em }
+h3 {
+	margin-top:2em }
+h2 + h2 {
+	margin-top:1em }
+
 aside {
 	border-left:.2em solid;
 	padding:0 0 0 2em;
@@ -37,8 +42,8 @@ td:first-child {
 	text-align:left }
 td:last-child {
 	padding:1em 0 }
-ul {
-	list-style-type:square }
+ul li {
+	list-style-type:square}
 input, select {
 	font-family: inherit;
 	font-size: 1em;
@@ -61,6 +66,26 @@ input, select {
 	color: inherit }
 .e aside {
 	border-color:#eee }
+.flutua {
+	position:fixed;
+	bottom:.5em;
+	right:0vw;
+	right:calc(0vw + .5em);
+	font-size:1em;
+	width:2em;
+	height:2em;
+	background-color:#121212;
+	border:0em;
+	color:#eee;
+	margin:0;
+	border-radius:1.5em;
+	text-align:center;
+	opacity:.5 }
+.e .flutua  {
+	background-color:#eee;
+	color:#121212 }
+.flutua:hover {
+	opacity:1 }
 
 @media print {
-	header p button { display:none } }
+	.flutua { display:none } }
