@@ -69,7 +69,7 @@ input, select {
 .flutua {
 	position:fixed;
 	bottom:.5em;
-	right:0vw;
+	left:.5em;
 	right:calc(0vw + .5em);
 	font-size:1em;
 	width:2em;
