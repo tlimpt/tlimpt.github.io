@@ -63,12 +63,7 @@ input, select {
 	a {
 		color:#999fff }
 	input, select {
-		border-color: #eee;
-		background-color: inherit;
-		color: inherit }
+		border-color: #eee }
 	aside {
 		border-color:#eee }
 }
-
-@media print {
-	.flutua { display:none } }
