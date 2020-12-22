@@ -70,7 +70,6 @@ input, select {
 	position:fixed;
 	bottom:.5em;
 	left:.5em;
-	right:calc(0vw + .5em);
 	font-size:1em;
 	width:2em;
 	height:2em;
