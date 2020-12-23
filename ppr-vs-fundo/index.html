@@ -7,13 +7,21 @@
 <script src="moment.js"></script>
 <script src="xirr.js"></script>
 <style>
-body { font-size: 1em; line-height:1.7; margin: 0 auto; max-width: 30em; padding: .5em; color: #333; background-color:#eee }
+body { font-size:1em; line-height:1.7; margin:0 auto; max-width:30em; padding:.5em; background-color:#ddd; color:#222 }
+h1, h2, h3 { line-height:1.2 }
+h3 { margin-top:2em }
+h1 + h2 { margin-top:1em }
+header p { border-bottom:.3em solid; margin:0 0 2em 0; padding:.5em 0 }
+header p span { margin:0 .5em }
+aside { border-left:.3em solid; padding:0 0 0 2em; margin:2em 0 }
+ul li { list-style-type:square }
+input { font-family: inherit; font-size: 1em; width: 3em; text-align:right; border-width:0 0 .2em; border-color: #222; background:none; color:inherit }
 
-h1, h2 { line-height: 1.2em }
-
-input, select { font-family: inherit; font-size: 1em; width: 3em; text-align: right; border-width: 0 0 2px; border-color: #333; outline: none; background-color: inherit }
-
-div { background-color:#ccc; padding: .25em 1.75em }
+@media (prefers-color-scheme: dark) {
+	body { background-color:#111; color:#eee }
+	a { color:#9999ff }
+	input { border-color: #eee }
+}
 </style>
 </head>
 <body>
@@ -23,7 +31,7 @@ div { background-color:#ccc; padding: .25em 1.75em }
 
 <h2>Se os fundos renderem um pouco mais do que os planos de reforma, podem mais do que compensar a desvantagem fiscal.</h2>
 
-<p><em>Por <strong>David Almas</strong> a 1 de julho de 2020</em>
+<p>Por <strong>David Almas</strong> a 1 de julho de 2020
 
 <p>É fácil de perceber o sucesso comercial dos planos de poupança-reforma (PPR): têm uma fiscalidade muito generosa. Primeiro, há uma dedução à coleta de 20% das aplicações até ao limite anual de 400 euros por aforrador com menos de 35 anos, 350 euros entre 35 anos e 50 anos e 300 euros para os maiores de 50 anos, desde que ainda não esteja na reforma.
 
@@ -45,10 +53,10 @@ div { background-color:#ccc; padding: .25em 1.75em }
 <h3>Faça as suas contas</h3>
 <p>Comecemos pelo dinheiro que tem para investir hoje, <input type="text" value="2000" id="dinheiro" onkeyup="deduz();">€. É importante saber este número para contabilizar a dedução à coleta que conseguirá no IRS deste ano.
 
-<div>
+<aside>
 <p><strong>Este artigo é interativo</strong>. Todos os números sublinhados podem ser alterados para se ajustar ao seu caso.
 <p><noscript>Infelizmente, o seu programa de navegação é dos poucos que não permite ou bloqueia JavaScript. Para si, este artigo não será interativo. Não vale a pena mudar os números.</noscript>
-</div>
+</aside>
 
 <p>Como foi explicado antes, essa dedução é, no máximo, equivalente a 20% do montante investido (<span id="deduz20">400€</span>), mas não pode ultrapassar 300 euros, 350 euros ou 400 euros, consoante a sua idade. Infelizmente, essa dedução concorre com outras deduções — como despesas de saúde e de educação, seguros de saúde e encargos com imóveis —, por isso é possível que seja inferior. Aliás, as estatísticas mais recentes mostram que os agregados familiares conseguem, em média, cerca de 150 euros.
 
@@ -100,8 +108,7 @@ div { background-color:#ccc; padding: .25em 1.75em }
 	</ul>
 </ul>
 
-<p>A análise anterior foi simplificada para os contribuintes singulares residentes em Portugal. A realidade é, naturalmente, mais complexa: além de os aforradores poderem ter residência no estrangeiro, é possível englobar as mais-valias no IRS, os investidores tendem a fazem vários investimentos ao longo do tempo, podem ter vários instrumentos que produzam mais ou menos-valias no mesmo ano fiscal e os fundos de investimento podem realizar distribuições de rendimentos aos participantes.
-&marker;
+<p>A análise anterior foi simplificada para os contribuintes singulares residentes em Portugal. A realidade é, naturalmente, mais complexa: além de os aforradores poderem ter residência no estrangeiro, é possível englobar as mais-valias no IRS, os investidores tendem a fazem vários investimentos ao longo do tempo, podem ter vários instrumentos que produzam mais ou menos-valias no mesmo ano fiscal e os fundos de investimento podem realizar distribuições de rendimentos aos participantes. ★
 
 <script>
 function deduz(){
@@ -209,8 +216,8 @@ else { document.getElementById("xaram").innerHTML = 'menos'; }
 };
 </script>
 
-<div>
+<aside>
 <p><strong>Este artigo é experimental.</strong> Se encontrar falhas ou se tiver sugestões para melhorar este artigo, escreva-me para <a href="mailto:davidalmas@gmail.com?subject=PPR-vs-fundo">davidalmas@gmail.com</a>.
-</div>
+</aside>
 </body>
 </html>
