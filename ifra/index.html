@@ -5,15 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Independência financeira e reforma antecipada: o guia para o trabalho ser facultativo</title>
 <style>
-body { font-size: 1em; line-height:1.7; margin: 0 auto; max-width: 30em; padding: .5em; color: #333; background-color:#eee }
-
-h1, h2 { line-height: 1.2em }
-
-input { font-family: inherit; font-size: 1em; width: 3em; text-align: right; border-width: 0 0 2px; border-color: #333; outline: none; background-color: inherit }
-
-div { background-color:#ccc; padding: .25em 1.75em }
-
-#r { border-left: .25em solid #333; padding: 0 0 0 2em; background-color:#eee }
+body { font-size:1em; line-height:1.7; margin:0 auto; max-width:30em; padding:.5em; background-color:#ddd; color:#222 }
+h1, h2, h3 { line-height:1.2 }
+h3 { margin-top:2em }
+h1 + h2 { margin-top:1em }
+header p a { text-decoration:none }
+aside { border-left:.3em solid; padding:0 0 0 2em; margin:2em 0 }
+input { font-family: inherit; font-size: 1em; width: 3em; text-align:right; border-width:0 0 .2em; border-color: #222; background:none; color:inherit }
+@media (prefers-color-scheme: dark) {
+	body { background-color:#111; color:#eee }
+	a { color:#9999ff }
+	input { border-color: #eee }
+}
 </style>
 </head>
 <body>
@@ -23,7 +26,7 @@ div { background-color:#ccc; padding: .25em 1.75em }
 
 <h2>A principal meta financeira dos portugueses deveria ser acumular o suficiente para poder deixar de trabalhar. Depois, só deixa a lida profissional quem quer.</h2>
 
-<p><em>Por <strong>David Almas</strong> a 1 de abril de 2019</em>
+<p>Por <strong>David Almas</strong> a 23 de dezembro de 2020
 
 
 <p>Não é por acaso que a palavra “trabalho” deriva do latim “tripalium”, que significa “tripálio”, um instrumento de tortura usado para forçar os escravos a produzir.
@@ -51,10 +54,10 @@ div { background-color:#ccc; padding: .25em 1.75em }
 
 <p>Se tiver um pé-de-meia de <input type="text" value="1000000" id="pedemeia" style="width: 5em" onkeyup="document.getElementById('rendimento').innerHTML=Math.floor(document.getElementById('pedemeia').value*((1+.05)**(1/12)-1));"> euros, conseguirá retirar rendimentos mensais de <strong id="rendimento">4074</strong> <strong>euros</strong>, assumindo uma rentabilidade anual de 5%. Não será muito? Talvez se consiga viver com menos.
 
-<div>
+<aside>
 <p><strong>Este artigo é interativo</strong>. Todos os números sublinhados, como o milhão de euros no parágrafo anterior, podem ser alterados. Experimente mudar para meio milhão de euros para perceber que esse novo montante permite viver mensalmente com 2037 euros.
-<p><noscript>Infelizmente, o seu programa de navegação é dos poucos que não permite ou bloqueia JavaScript. Para si, este artigo não será interativo. Não vale a pena mudar os números.</noscript>
-</div>
+<p><noscript>Infelizmente, o seu programa de navegação é dos poucos que não permite ou bloqueia interatividade. Não vale a pena mudar os números.</noscript>
+</aside>
 
 <p>Talvez seja mais intuitivo descobrir quanto dinheiro teria de acumular para conseguir garantir um determinado montante mensal.
 
@@ -126,7 +129,7 @@ div { background-color:#ccc; padding: .25em 1.75em }
 <p>Com uma estimativa de pensão consegue traçar um plano de independência financeira mais completo:
 
 
-<div id="r">
+<aside id="r">
 
 <p>Tem agora, aos <input type="text" value="40" id="f-i" style="width:2em" onkeyup="document.getElementById('anos').value=this.value;f();"> anos, uma poupança de <input type="text" value="100000" id="f-p" style="width:5em" onkeyup="f();"> euros. Calcula que, quando atingir a independência financeira, aos <input type="text" value="55" id="f-iif" style="width:2em" onkeyup="document.getElementById('if').value=this.value;f();"> anos, terá uma despesa mensal de <input type="text" value="1200" id="f-d" style="width:3em" onkeyup="document.getElementById('despesa1').value=this.value;document.getElementById('despesa2').value=this.value;document.getElementById('despesa3').value=this.value;document.getElementById('despesa4').value=this.value;f();"> euros, a preços de hoje.
 
@@ -138,7 +141,7 @@ div { background-color:#ccc; padding: .25em 1.75em }
 
 <p>Se quiser retomar ou partilhar este cálculos, use esta <a href="#r" id="hiper">hiperligação</a>.
 
-</div>
+</aside>
 
 <p>O que quer dizer “a preços de hoje”? Significa que os montantes devem ser atualizados anualmente ao mesmo ritmo do aumento dos preços, isto é, à taxa de inflação.
 
@@ -146,15 +149,13 @@ div { background-color:#ccc; padding: .25em 1.75em }
 
 <p>Experimente reduzir a despesa mensal durante a independência financeira na simulação anterior: muita vezes, basta <a href="#r" onclick="document.getElementById('f-d').value=Math.round(document.getElementById('f-d').value*.9);f();">reduzir em 10%</a> para baixar o esforço mensal de poupança em um terço.
 
-<p>Afine os campos da simulação até encontrar um plano que lhe seja confortável. Porém, não se esqueça: é apenas um plano. Muitas das previsões provavelmente revelar-se-ão erradas, especialmente o desempenho das aplicações financeiras, que, se não forem instrumentos com rendimento garantido, será volátil. Será preciso corrigir a trajetória do seu projeto várias vezes ao longo da vida.&nbsp;&marker;
+<p>Afine os campos da simulação até encontrar um plano que lhe seja confortável. Porém, não se esqueça: é apenas um plano. Muitas das previsões provavelmente revelar-se-ão erradas, especialmente o desempenho das aplicações financeiras, que, se não forem instrumentos com rendimento garantido, será volátil. Será preciso corrigir a trajetória do seu projeto várias vezes ao longo da vida. ★
 
-<div>
+<aside>
 <p><strong>Este artigo é experimental</strong>. Está em constante melhoria. Se encontrar falhas ou se tiver sugestões para o melhorar, escreva-me para <a href="mailto:davidalmas@gmail.com?subject=IFRA">davidalmas@gmail.com</a>.
-</div>
+</aside>
 
 <script>
-// Dúvidas? → davidalmas@gmail.com
-
 window.onload = function(){
 	if (void 0 !== window.location.href.split("?")[1]) {
 		var h = window.location.href.split("?")[1].split("=")[1].split("#")[0].split("+");
