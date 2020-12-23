@@ -5,15 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quantos meses posso reduzir no crédito à habitação se fizer uma amortização?</title>
 <style>
-body { font-size: 1em; line-height:1.7; margin: 0 auto; max-width: 30em; padding: .5em; color: #333; background-color:#eee }
-
-h1, h2 { line-height: 1.2em }
-
-input, select { font-family: inherit; font-size: 1em; width: 3em; text-align: right; border-width: 0 0 2px; border-color: #333; outline: none; background-color: inherit }
-
-div { background-color:#ccc; padding: .25em 1.75em }
-
+body { font-size:1em; line-height:1.7; margin:0 auto; max-width:30em; padding:.5em; background-color:#ddd; color:#222 }
+h1, h2 { line-height:1.2 }
+h1 + h2 { margin-top:1em }
+header p a { text-decoration:none }
+aside { border-left:.3em solid; padding:0 0 0 2em; margin:2em 0 }
+input { font-family: inherit; font-size: 1em; width: 3em; text-align:right; border-width:0 0 .2em; border-color: #222; background:none; color:inherit }
 .nw { white-space: nowrap }
+@media (prefers-color-scheme: dark) {
+	body { background-color:#111; color:#eee }
+	a { color:#9999ff }
+	input { border-color: #eee }
+}
 </style>
 </head>
 <body>
@@ -25,8 +28,7 @@ div { background-color:#ccc; padding: .25em 1.75em }
 
 <h2><noscript>Infelizmente, o seu programa de navegação é dos poucos que não permite ou bloqueia JavaScript. Para si, este artigo não será interativo. Não vale a pena mudar os números.</noscript></h2>
 
-<p><em>Por <strong>David Almas</strong> a 1 de fevereiro de 2020</em>
-
+<p>Por <strong>David Almas</strong> a 1 de fevereiro de 2020
 
 <p>Amortizar uma parte do crédito à habitação pode ser uma boa ideia: permite reduzir a prestação que paga mensalmente ao banco. Todavia, se os seus rendimentos conseguem suportar a prestação anterior, porque não reduzir simultaneamente o prazo do empréstimo para ficar a pagar sensivelmente o mesmo e libertar-se mais depressa do banco?
 
@@ -34,8 +36,7 @@ div { background-color:#ccc; padding: .25em 1.75em }
 
 <p>Não esqueça que os bancos podem cobrar uma comissão de amortização antecipada: no máximo, de 0,5% nos contratos no regime de taxa variável e de 2% nos restantes empréstimos. Em compensação, os prémios dos seguros associados ao crédito podem baixar com a redução da dívida bancária.
 
-<p>Note, ainda, que os bancos não são obrigados a aceitarem uma redução no prazo do crédito à habitação. Pode ser preciso negociar.
-&marker;
+<p>Note, ainda, que os bancos não são obrigados a aceitarem uma redução no prazo do crédito à habitação. Pode ser preciso negociar. ★
 
 <script>
 function ff() {
@@ -74,8 +75,8 @@ document.getElementById("prestacao2").innerHTML = document.getElementById("prest
 window.onload = ff();
 </script>
 
-<div>
+<aside>
 <p><strong>Este artigo é experimental.</strong> Se encontrar falhas ou se tiver sugestões para melhorar este artigo, escreva-me para <a href="mailto:davidalmas@gmail.com?subject=PPR">davidalmas@gmail.com</a>. 
-</div>
+</aside>
 </body>
 </html>
