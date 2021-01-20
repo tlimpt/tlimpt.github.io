@@ -169,7 +169,8 @@ function irs() {
 	escreve('imposto', coletaliquida);
 	escreve('maisvaliabruta', maisvaliabruta);
 	escreve('tributacaoefetiva2', tributacaoefetiva2);
-	if(tributacaoefetiva2 <= 10) { document.getElementById('mensagem').innerHTML = '😃'; }
+	if ( tributacaoefetiva2 <= 1 ) { document.getElementById('mensagem').innerHTML = '😲'; }
+	else if (tributacaoefetiva2 <= 10) { document.getElementById('mensagem').innerHTML = '😃'; }
 	else { document.getElementById('mensagem').innerHTML = '😞'; }
 }
 
