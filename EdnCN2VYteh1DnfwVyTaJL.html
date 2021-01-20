@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Boletim tlim n.º 25 ★ Fevereiro de 2021</title>
+<style>
+body { font-size:1em; line-height:1.7; margin:0 auto; max-width:30em; padding:.5em; background-color:#ddd; color:#222 }
+h1, h2, h3 { line-height:1.2 }
+h2, h3 { margin-top:3em }
+h2 + h2 { margin-top:1em }
+header p { border-bottom:.3em solid; margin:0 0 2em 0; padding:.5em 0 }
+header p span { margin:0 .5em }
+aside { border-left:.3em solid; padding:0 0 0 2em; margin:2em 0 }
+table { border-collapse:collapse; margin:2em auto }
+thead { border-bottom:.3em solid }
+td { border-bottom:.1em solid; padding:1em .5em 1em 0; vertical-align:top; text-align:center; line-height:1.2em }
+td:first-child { text-align:left }
+td:last-child { padding:1em 0 }
+ul li { list-style-type:square }
+input { font-family: inherit; font-size: 1em; width: 3em; text-align:right; border-width:0 0 .2em; border-color: #222; background:none; color:inherit }
+.e { text-align:center; margin-top:3em }
+@media (prefers-color-scheme: dark) {
+	body { background-color:#111; color:#eee }
+	a { color:#9999ff }
+	input { border-color: #eee }
+}
+.x td { border:0; padding:.75em }
+.x td:last-child { text-align:right; white-space: nowrap }
+.centrado { text-align:center }
+</style>
+</head>
+<body>
+<header>
+<p>Boletim <strong>tlim</strong> n.º 25 <span>★</span> Fevereiro de 2021
+</header>
+
+<p>Bom dia!
+
+<p>Tenho dito e repetido que espero uma taxa de tributação efetiva sobre as mais-valias do meu fundo em linha ou inferior à melhor tributação dos planos de poupança-reforma. Está na hora de demonstrá-lo. Leia a explicação no <a href="#1">primeiro artigo</a> desta edição do boletim <strong>tlim</strong>.
+
+<p>Mais à frente, <a href="#2">conduzo</a> uma hipotética investidora por todo um percurso que a levam da busca do melhor fundo até à concretização da subscrição. No <a href="#3">terceiro texto</a>, que, tal como o primeiro, é interativo, debruço-me sobre o impacto da inflação no património. Qual é a <em>sua</em> inflação?
+
+<p>Celebramos hoje o segundo aniversário do boletim <strong>tlim</strong>. Quem diria que esta publicação iria durar tanto tempo?
+
+<p><em>— David Almas</em>
+
+
+
+<h2 id="1"><u>1</u></h2>
+<h1>Menos de 10% de imposto sobre as mais-valias de fundos? É possível</h1>
+
+<p>Por <strong>David Almas</strong> a 1 de fevereiro de 2021 
+
+<p>Escrevi na última edição do boletim <strong>tlim</strong> a propósito do meu fundo de investimento: “Planeio vender lenta e progressivamente à medida das minhas necessidades de maneira a conseguir ter uma tributação efetiva inferior a 10%.” Alguns leitores duvidaram.
+
+<p>Este artigo resume a minha expectativa fiscal para os próximos anos. É interativo: todos os números sublinhados podem ser alterados para o caso de querer testar com a sua situação. <noscript>Infelizmente, o seu programa de navegação não permite interatividade; para si, não vale a pena mudar os números sublinhados.</noscript>
+
+<p>A ideia que defendo é que quem atingir uma reforma antecipada — um momento em que não tem rendimentos, vencimento ou pensão, vivendo apenas dos investimentos financeiros — consegue suportar uma fiscalidade muito suave na sua vida. Para simplificar, assumo que não há outros rendimentos anuais além das mais-valias de um fundo de investimento.
+
+<h3>Ajuste a sua simulação</h3>
+
+<p>Para viver confortavelmente, preciso de <input type="text" value="1000" id="mensal" onkeyup="irs();">&nbsp;euros por mês. Por isso, projeto resgatar anualmente <span id="venda">12000</span>&nbsp;euros do meu fundo de investimento. As despesas na alienação somam <input type="text" value="40" id="despesavenda" onkeyup="irs();">&nbsp;euros por ano.
+
+<p>As unidades a vender renderam cerca de <input type="text" value="10,78" id="rentabilidade" onkeyup="irs();">% por ano ao longo de <input type="text" value="8" id="duracao" onkeyup="irs();"> anos. (O valor de aquisição foi de <span id="compra">5290,42</span>&nbsp;euros.) Durante esse tempo, a inflação anual — que influencia o coeficiente de correção monetária para o cálculo das mais-valias — foi de <input type="text" value="0,42" id="inflacao" onkeyup="irs();">%. As despesas na aquisição foram de <input type="text" value="20" id="despesacompra" onkeyup="irs();">&nbsp;euros.
+
+<aside>
+<h3>Coeficiente de correção monetária</h3>
+<p>Quando a aplicação dura mais de dois anos, o preço de aquisição do fundo de investimento é multiplicado por um <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs50.aspx">coeficiente de correção monetária</a> antes de se calcular a mais-valia fiscal.
+<p>O Governo publica os coeficientes válidos para cada ano. A <a href="https://data.dre.pt/eli/port/220/2020/09/21/p/dre">Portaria n.º 220/2020</a> definiu os coeficientes para as alienações efetuadas em 2020.
+</aside>
+
+<p>Nestas condições, o fisco considera que a mais-valia totalizou <span id="maisvalia">6469,18</span> euros. Se apenas declarar esta operação, a tributação é à taxa de 28% sobre os ganhos, portanto <span id="irs">teria de pagar 1811,37 euros</span>. A taxa de tributação efetiva seria <span id="tributacaoefetiva1">de 27%</span>.
+
+<p>Porém, como não planeio ter outros rendimentos, em particular profissionais, pode compensar-me englobar as mais-valias. Desse modo, o meu rendimento global é a mais-valia fiscal. Em baixo está a minha expectativa de uma nota de liquidação de IRS.
+
+<script>
+function valor(x) { 
+	return document.getElementById(x).value.replace(",",".") * 1; }
+function escreve(y,z) { 
+	document.getElementById(y).innerHTML = String(Math.round(z*100)/100).replace(".",","); }
+function insere(s,r) {
+	document.getElementById(s).value = r; }
+
+function irs() {
+// Limites
+	if ( (valor('rentabilidade') > 20) || (valor('rentabilidade') < -20) ) { insere('rentabilidade','10,78'); }
+	if ( (valor('inflacao') > 10) || (valor('inflacao') < -10) ) { insere('inflacao','0,42'); }
+	if ( (valor('duracao') > 50) || (valor('duracao') < 0) || (isNaN(valor('duracao')))  ) { insere('duracao','8'); }
+	if ( (valor('mensal') < 0 ) || (isNaN(valor('mensal'))) ) { insere('mensal','1000'); }
+	if ( (valor('despesavenda') < 0 ) || (isNaN(valor('despesavenda'))) ) { insere('despesavenda','40'); }
+	if ( (valor('despesacompra') < 0 ) || (isNaN(valor('despesacompra'))) ) { insere('despesacompra','20'); }
+	if ( (valor('deducoesespecificas') < 0 ) || (isNaN(valor('deducoesespecificas'))) ) { insere('deducoesespecificas','0'); }
+	if ( (valor('deducoesacoleta') < 0 ) || (isNaN(valor('deducoesacoleta'))) ) { insere('deducoesacoleta','650'); }
+	if ( (valor('taxabeneficiomunicipal') < 0 ) || (isNaN(valor('taxabeneficiomunicipal'))) ) { insere('taxabeneficiomunicipal','2,5'); }
+
+// Valores
+	var mensal = valor('mensal');
+	var venda = mensal * 12;
+	var despesavenda = valor('despesavenda');
+	var rentabilidade = valor('rentabilidade') / 100;
+	var duracao = valor('duracao');
+	var compra = venda / ( (1 + rentabilidade) ** duracao);
+	var inflacao = valor('inflacao') / 100;
+	if (duracao <= 2) { inflacao = 0; }
+	var despesacompra = valor('despesacompra');
+
+// Cálculos
+	var maisvalia = Math.round((venda - compra * ((1 + inflacao)**duracao) - despesavenda - despesacompra)*100) / 100;
+	var irs = .28 * maisvalia;
+	var tributacaoefetiva1 = irs / (venda - compra) * 100;
+
+// Registo na página
+	escreve('venda', venda);
+	escreve('compra', compra);
+	escreve('maisvalia', maisvalia);
+	if (irs > 0) {
+		document.getElementById('irs').innerHTML = 'teria de pagar ' + String(Math.round(irs*100)/100).replace(".",",") + ' euros';
+	document.getElementById('tributacaoefetiva1').innerHTML = 'de ' + String(Math.round(tributacaoefetiva1*100)/100).replace(".",",")  + '%';
+ }
+	else {
+		document.getElementById('irs').innerHTML = 'não teria de pagar IRS';
+		document.getElementById('tributacaoefetiva1').innerHTML = 'nula'; }
+
+// Valores da nota de liquidação
+	var deducoesespecificas = valor('deducoesespecificas');
+	var deducoesacoleta = valor('deducoesacoleta');
+	var taxabeneficiomunicipal = valor('taxabeneficiomunicipal');
+
+// Cálculos da nota de liquidação
+	var rendimentocoletavel = Math.max(0, maisvalia - deducoesespecificas);
+	var taxa = 14.5;
+	if (rendimentocoletavel <= 7112) { taxa = 14.5; }
+		else if (rendimentocoletavel <= 10732 ) { taxa = 23; }
+		else if (rendimentocoletavel <= 20322) { taxa = 28.5; }
+		else if (rendimentocoletavel <= 25075) { taxa = 35; }
+		else if (rendimentocoletavel <= 36967) { taxa = 37; }
+		else if (rendimentocoletavel <= 80882) { taxa = 45; }
+		else if (rendimentocoletavel > 80882) { taxa = 48; }
+	var importanciaapurada = Math.max(0, rendimentocoletavel * taxa / 100);
+	var parcelaaabater = 0;
+	if (rendimentocoletavel <= 7112) { parcelaaabater = 0; }
+		else if (rendimentocoletavel <= 10732 ) { parcelaaabater = 604.54; }
+		else if (rendimentocoletavel <= 20322) { parcelaaabater = 1194.80; }
+		else if (rendimentocoletavel <= 25075) { parcelaaabater = 2515.63; }
+		else if (rendimentocoletavel <= 36967) { parcelaaabater = 3017.27; }
+		else if (rendimentocoletavel <= 80882) { parcelaaabater = 5974.54; }
+		else if (rendimentocoletavel > 80882) { parcelaaabater = 8401.21; }
+	var coletatotal = Math.max(0, importanciaapurada - parcelaaabater);
+	var beneficiomunicipal = Math.max(0, (coletatotal - deducoesacoleta) * taxabeneficiomunicipal / 100);
+	var coletaliquida = Math.max(0, coletatotal - deducoesacoleta - beneficiomunicipal);
+
+// Registo na nota de liquidação
+	escreve('rendimentoglobal', maisvalia);
+	escreve('rendimentocoletavel', rendimentocoletavel);
+	escreve('taxa', taxa);
+	escreve('importanciaapurada', importanciaapurada);
+	escreve('parcelaaabater', parcelaaabater);
+	escreve('coletatotal', coletatotal);
+	escreve('beneficiomunicipal', beneficiomunicipal);
+	escreve('coletaliquida', coletaliquida);
+
+// Cálculo no resumo
+	var maisvaliabruta = venda - compra;
+	var tributacaoefetiva2 = coletaliquida / maisvaliabruta * 100;
+
+// Registo no resumo
+	escreve('imposto', coletaliquida);
+	escreve('maisvaliabruta', maisvaliabruta);
+	escreve('tributacaoefetiva2', tributacaoefetiva2);
+	if(tributacaoefetiva2 <= 10) { document.getElementById('mensagem').innerHTML = '😃'; }
+	else { document.getElementById('mensagem').innerHTML = '😞'; }
+}
+
+window.onload = function() {
+	irs();
+	inf(); }
+</script>
+
+
+<table class="x">
+<caption><strong>Nota de liquidação de IRS</strong>
+
+<tr>
+<td>Rendimento global
+<td><span id="rendimentoglobal">6469,18</span>€
+
+<tr>
+<td>Deduções específicas
+<td><input type="text" value="0" id="deducoesespecificas" onkeyup="irs();" style="width:5em">€
+
+<tr>
+<td>Rendimento coletável 
+<td><span id="rendimentocoletavel">6469,18</span>€
+
+<tr>
+<td>Taxa
+<td><span id="taxa">14,5</span>%
+
+<tr>
+<td>Importância apurada
+<td><span id="importanciaapurada">938,03</span>€
+
+<tr>
+<td>Parcela a abater 
+<td><span id="parcelaaabater">0</span>€
+
+<tr>
+<td>Coleta total
+<td><span id="coletatotal">938,03</span>€
+
+<tr>
+<td>Deduções à coleta
+<td><input type="text" value="650" id="deducoesacoleta" onkeyup="irs();" style="width:5em">€
+
+<tr>
+<td>Benefício municipal a <input type="text" value="2,5" id="taxabeneficiomunicipal" onkeyup="irs();">%
+<td><span id="beneficiomunicipal">7,2</span>€
+
+<tr>
+<td>Coleta líquida 
+<td><span id="coletaliquida">280,83</span>€
+
+</table>
+
+<p>Um imposto de <span id="imposto">280,83</span> euros sobre uma mais-valia bruta de <span id="maisvaliabruta">6709,58</span> euros representa uma tributação efetiva de <strong><span id="tributacaoefetiva2">4,19</span>%</strong>. <span id="mensagem">😃</span>
+
+<h3>Será ainda melhor</h3>
+
+<p>Estou a ser muito conservador: não acredito que a minha rentabilidade anual continue tão elevada (o que aumentará o impacto do coeficiente de correção monetária e reduzirá o rendimento considerado pelo fisco) e estimei poucas deduções à coleta. Historicamente, tenho conseguido individualmente deduções à coleta superiores a 1000 euros por ano. Pode <a href="https://irs.portaldasfinancas.gov.pt/app/consulta">consultar</a> as suas deduções dos últimos 5 anos no Portal das Finanças.
+
+<p>Numa situação de reforma antecipada, quem tiver deduções à coleta superiores a 1031,24 euros por ano não pagará IRS enquanto as mais-valias fiscais não ultrapassarem 7112 euros, que é o limite superior do primeiro escalão  do imposto.
+
+<p>Repare que a nota de liquidação anterior é apenas para uma pessoa. As conclusões seriam as mesmas para um agregado composto por duas pessoas se os montantes das mais-valias e das deduções fossem o dobro.
+
+<p>Algumas explicações sobre os elementos da nota de liquidação:
+
+<ul>
+<li>
+<p><strong>Deduções específicas</strong>: A maioria das deduções específicas são as dos trabalhadores dependentes, o que não se aplica neste exemplo. Mas, se prevê usufruir de uma dedução específica durante a reforma antecipada, insira o montante neste campo.
+
+<li>
+<p><strong>Deduções à coleta</strong>: Mesmo na reforma antecipada, é possível ter deduções à coleta, como pelas despesas de saúde e de educação, pelos encargos com imóveis, por despesas gerais e pela exigência de fatura. Não se esqueça de incluir <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs78a.aspx">600 euros</a> por dependente. Pode haver, no entanto, <a href="https://www.e-konomista.pt/deducoes-a-coleta-de-irs/">limites</a>.
+
+<li>
+<p><strong>Benefício municipal</strong>
+<p>Os municípios podem devolver uma parte da receita de IRS aos contribuintes. Para saber a percentagem de devolução do seu concelho, subtraía a 5% a <a href="https://www.portaldasfinancas.gov.pt/pt/consultarTaxasIRSMunicipios.action">taxa local de participação no IRS</a>.
+</ul>
+
+<h3>E os PPR?</h3>
+
+<p>Estas simulações não abrangem os planos de poupança-reforma, mesmo os que assumem a modalidade de fundos de investimento. A tributação dos PPR é regida pelo <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/bf_rep/Pages/ebf-artigo-21-ordm-.aspx"> Estatuto dos Benefícios Fiscais</a>. Resumindo:
+
+<ul>
+<li>Os resgates de PPR nas condições legais são alvo de retenção na fonte à taxa de 8% sobre o rendimento;
+<li>Fora das condições legais, a taxa de retenção é decrescente com a duração do investimento:
+	<ul>
+		<li>21,5% até 5 anos;
+		<li>17,2% entre 5 anos e 1 dia e 8 anos;
+		<li>8,6% após 8 anos.
+	</ul>
+<li>Quando o reembolso do PPR é feito nas condições legais na forma de renda regular e periódica durante 10 anos ou mais, a tributação é equivalente à das pensões.
+</ul>
+
+<p>As condições legais de resgate são:
+
+<ul>
+<li>Desemprego de longa duração;
+<li>Incapacidade permanente para o trabalho;
+<li>Doença grave;
+<li>Quando o investimento tiver durado mais de 5 anos:
+	<ul>
+		<li>Reforma por velhice;
+		<li>Ultrapassagem dos 60 anos de idade;
+		<li>Pagamento de prestações de crédito com hipoteca para aquisição de habitação própria e permanente.
+	</ul>
+</ul>
+
+<p>A maioria das pessoas deve, então, almejar uma tributação efetiva de 8% ou 8,6% nos ganhos do seu PPR no longo prazo. Não será necessariamente melhor do que o imposto a pagar numa estratégia de reforma antecipada. Mesmo tendo em conta o benefício fiscal à entrada — uma dedução de até 300 euros a 400 euros por aforrador —, o PPR pode não ser a opção fiscalmente mais vantajosa.
+
+<p>Se previr que conseguirá um retorno superior no melhor fundo de investimento do que no melhor PPR, então as dúvidas que poderia ter entre a melhor escolha para a reforma antecipada ficam completamente dissipadas: vá pela porta dos fundos. ★
+
+
+
+
+
+<h2 id="2"><u>2</u></h2>
+<h1>Anita quer investir num fundo. Como fazê-lo?</h1>
+
+<p>Por <strong>David Almas</strong> a 1 de fevereiro de 2021
+
+<p>Tenho escrito alguns artigo mais avançados no boletim <strong>tlim</strong> sobre fundos de investimento. Depois de alguma análise programática, em julho de 2020, calculei que, quando se investe em fundos de ações, “7 anos é bom, mas 15 anos é melhor”. Na edição seguinte, mostrei que um fundo de obrigações não é necessariamente menos arriscado do que um fundo misto ou um fundo de ações. Em novembro, provei que, quando se tem muito dinheiro para aplicar, não se deve espalhá-lo por várias subscrições ou compras.
+
+<p>Alguns leitores pediram-me para dar um passo atrás. Antes disso tudo, como se escolhe um fundo de investimento? O que é preciso para investir? Que contas são necessárias? Este guia conduz uma pessoa — fícticia, mas baseada em várias perguntas de subscritores — por todas as decisões que tem de tomar até se tornar numa investidora. Chamemos-lhe Anita.
+
+<h3>Anita vai ao banco</h3>
+
+<p>Anita é uma rapariga nova. Trabalha há pouco tempo, mas, como vive uma vida frugal e é uma profissional numa área tecnológica em que se paga moderadamente bem, já tem uma poupança. Todos os meses consegue guardar cerca de 250 euros. Quando recebe os subsídios de férias e de Natal, o seu pé-de-meia aumenta em 500 euros.
+
+<p>A jovem sonha com a independência financeira e com a reforma antecipada, alimentada por ideias que leu nos vários fóruns de finanças pessoais que acompanha. A sua reforma antecipada seria produtiva e talvez rentável: pensa em dedicar-se à carpintaria, uma paixão que tem desde muito nova.
+
+<p>Antes de investir, a Anita precisa de um intermediário financeiro através do qual irá subscrever o fundo de investimento. Poderia selecionar um fundo no seu banco do dia-a-dia, a Caixa Geral de Depósitos, mas quer manter as aplicações longe da sua conta-corrente para não cair em tentações.
+
+<p>Primeiro, pensou que deveria escolher o melhor fundo em Portugal e, depois de o descobrir, procurar o banco ou os bancos que o comercializam. Mas isso daria muito trabalho: a página da <a href="https://www.morningstar.pt/pt/screener/fund.aspx">Morningstar</a>, uma agência especialista em fundos que conheceu num dos fóruns, tem mais de 16 mil produtos! Optou por começar pelo banco primeiro.
+
+<p>Anita calculou que teria mais probabilidades de escolher o melhor fundo disponível em Portugal no banco com a oferta mais alargada. Nas estatísticas da Comissão do Mercado de Valores Mobiliários, a entidade supervisora desta indústria em Portugal, <a href="https://www.cmvm.pt/pt/Estatisticas/EstatisticasPeriodicas/GestaoDeActivos/Documents/GA%203T%202020%20(s%C3%ADntese).pdf#page=23">descobriu</a> que o Banco Best tinha o maior número de famílias de fundos, 92, mais do dobro do segundo banco na lista. Na <a href="https://www.bancobest.pt/ptg/PesquisaMorningstar">página</a> do Best, viu que essas 92 famílias reuniam mais de 3150 fundos de investimento.
+
+<p>Recorrendo à <a href="https://www.autenticacao.gov.pt/web/guest/a-chave-movel-digital">Chave Móvel Digital</a>, a Anita abriu conta no Banco Best à distância. A Conta Digital não teria custos; a Anita não quis o cartão de débito que lhe propuseram. Assim que ficou ativa, transferiu da Caixa Geral de Depósitos os 2000 euros que não precisaria durante os meses seguintes para a sua nova conta bancária.
+
+<h3>Anita escolhe um fundo</h3>
+
+<p>A Anita já tinha decido que o seu primeiro fundo seria focado nos mercados acionistas: era nova e tinha muito tempo para aguentar os altos e os baixos das bolsas. Tinha compreendido que as ações tendem a render mais do que as obrigações e os depósitos no longo prazo. Ela queria comprar um fundo de ações e deixá-lo quieto durante mais de 20 anos.
+
+<p>Estava, no entanto, dividida: nos fóruns, a maioria dos comentadores aconselhava investir em fundos passivos, que replicassem índices de mercado; mas, ao ordenar as listas do Banco Best, encontrou fundos que renderam muito mais do que os índices. Um em particular, dedicado às ações de empresas de energias limpas e de tecnologias de eficiência energética, tinha subido mais de 150% em apenas 12 meses. Mas depois lembrou-se: e se tivesse selecionado o fundo errado há 12 meses? Reordenou a lista e descobriu que outros fundos energéticos tinham perdido mais de 30%.
+
+<p>Convenceu-se que a indexação através de um fundo barato seria o melhor. Embora o Best não tivesse nenhum filtro de pesquisa sobre a dualidade ativo-passivo, não foi difícil encontrar o que procurava: bastou ordenar pela taxa global de custos. Percebeu que os fundos das famílias Fidelity e Vanguard eram os mais económicos. Desistiu rapidamente dos da Vanguard quando olhou para a coluna do investimento mínimo: precisaria de um milhão de euros.
+
+<p>No grupo dos fundos de ações da Fidelity, havia soluções focadas na bolsa dos Estados Unidos da América, do Japão, de todo o mundo, do Pacífico excluíndo o Japão, dos mercados emergentes e da Europa.
+
+<p>Focou-se no mais abragente: o de ações mundiais. Chamava-se Fidelity MSCI World Index EUR P.
+
+<h3>Anita tem uma má surpresa</h3>
+
+<p>A <a href="https://www.bancobest.pt/ptg/start.swe?SWECmd=GotoView&SWEView=BEST+MyBank+FundDetail+NS+View&MSCode=F00001019E">página</a> do Banco Best dedicada ao Fidelity MSCI World Index EUR P tinha muita informação interessante sobre o fundo: tinha sido lançado em 2018, o gestor do fundo chamava-se Patrick Waddell, tinha mais de 1500 ações diferentes na sua carteira e custar-lhe-ia anualmente 0,12% da sua poupança. Achou barato!
+
+<p>Quando os 2000 euros ficaram disponíveis na conta do Banco Best, avançou para a subscrição: clicou no sinal de subscrever e, na página seguinte, inseriu no campo do montante ”2000”, todo o seu dinheiro. No entanto, em resposta, foi informada que não tinha dinheiro suficiente! Confirmou que o saldo estava disponível e tentou novamente, sem sucesso.
+
+<p>Quando telefonou para o Best, teve uma má surpresa: o fundo escolhido tinha uma comissão de subscrição. A Anita tinha ignorado a informação que tinha lido anteriormente que dizia que a comissão de subscrição era de 5%, no máximo. Explicaram-lhe que os detalhes sobre a comissão de subscrição estavam no ficheiro chamado “Condições Particulares do Distribuidor”. Foi uma lição: nunca subscrever sem ler tudo.
+
+<p>O documento revelou-lhe que a comissão de subscrição (tecnicamente, “comissão de transação aplicada na subscrição”) do Fidelity MSCI World Index EUR P era de 2% e ainda havia o Imposto do Selo que teria de ser pago sobre essa comissão. A Anita ficou na dúvida se esse fundo seria o mais indicado para si.
+
+<h3>Anita faz contas</h3>
+
+<p>Lembrou-se, então, de estudar os encargos do tal fundo que tinha rendido mais de 150%. Não tinha comissão de subscrição. Porém, a taxa global de custos era de 2,75%!
+
+<p>Se assumisse que, nas 2 décadas seguintes, as ações renderiam 7% por ano — que, pelo que tinha lido, era o desempenho histórico do mercado —, os seus 2000 euros valorizariam até quanto nesse fundo de energia? Graças aos seus conhecimentos universitários de matemática, a Anita sabia que se tratava de uma progressão geométrica:
+
+<p class="centrado">2000€ × (1 + 7% - 2,75%)<sup>20</sup> = 4597,81€
+
+<p>“Nada mau”, pensou. E se investisse no fundo da Fidelity? Não teria os 2000 euros, porque teria de pagar a comissão de subscrição e o Imposto do Selo de 4% sobre essa comissão. Teve de resolver uma equação para saber quanto poderia investir depois de todos os custos iniciais: 
+
+<p class="centrado"><var>x</var> + 2% × <var>x</var> + 4% × 2% × <var>x</var>  = 2000€
+
+<p>O “2% × <var>x</var>” era a comissão de subscrição que teria de pagar. O “4% × 2% × <var>x</var>” era o Imposto do Selo sobre a comissão. A simplificação da equação deu:
+
+<p class="centrado">(1 + 2,08%) × <var>x</var> = 2000€
+
+<p>ou:
+
+<p><p class="centrado"><var>x</var> = 2000€ ÷ 1,0208 ≈ 1959,24€
+
+<p>Com esta informação, já poderia estimar o valor do fundo depois de 20 anos, assumindo uma rentabilidade anual das ações de 7%:
+
+<p class="centrado"> 1959,24€ × (1 + 7% - 0,12%)<sup>20</sup> = 7413,38€
+
+<p>A Anita ficou de boca aberta a olhar para os números. Mesmo pagando uma pesada comissão de subscrição, teria mais 61% do que no fundo energético. Tudo graças à baixa taxa de custos globais.
+
+<p>Mas seria possível que o fundo de energia rendesse mais. Quanto teria de render a carteira desse fundo para gerar mais dinheiro do que o produto da Fidelity? Desta vez, teve de resolver uma inequação:
+
+<p class="centrado">1959,24€ × (1 + 7% - 0,12%)<sup>20</sup> &lt; 2000€ × (1 + <var>y</var> - 2,75%)<sup>20</sup>
+
+<p>Recorrendo ao <a href="https://www.wolframalpha.com/input/?i=solve+%282000+%2F+1.0208%29+*+%281+%2B+0.07+-+0.0012%29%5E20+%3C+2000+*+%281+%2B+y+-+0.0275%29%5E20">Wolfram Alpha</a>, concluiu que as ações escolhidas pelos gestores do fundo de energia teriam de render mais de 9,52% por ano para o investimento alcançar um resultado superior ao do fundo da Fidelity. Será que investir em energia limpa renderia mais 2,52 pontos percentuais por ano do que os índices de ações mundiais? Não sabia. Saiba apenas que, se respondesse “sim”, estaria a especular. Ela não queria especular.
+
+<p>Estava quase convencida em subscrever o Fidelity MSCI World Index EUR P. Pensou, então, que talvez houvesse um fundo de ações mundiais com uma taxa de encargos correntes baixa <em>e</em> sem comissão de subscrição. Uma nova pesquisa no Banco Best desvendou o <a href="https://www.bancobest.pt/ptg/start.swe?SWECmd=GotoView&SWEView=BEST+MyBank+FundDetail+NS+View&MSCode=F0GBR063IY">HSBC GIF Economic Scale Global Equity AC</a>: sem comissão de subscrição e com uma taxa de encargos correntes de 0,95%. Quanto é que acumularia em 20 anos?
+
+<p class="centrado">2000€ × (1 + 7% - 0,95%)<sup>20</sup> = 6475,05€
+
+<p>Continuava a ser menos do que o resultado do produto da Fidelity. Quanto teria de render a mais?
+
+<p class="centrado">1959,24€ × (1 + 7% - 0,12%)<sup>20</sup> &lt; 2000€ × (1 + <var>z</var> - 0,95%)<sup>20</sup>
+
+<p>As ações na carteira do fundo HSBC GIF Economic Scale Global Equity AC teriam de subir <a href="https://www.wolframalpha.com/input/?i=solve+%282000+%2F+1.0208%29+*+%281+%2B+0.07+-+0.0012%29%5E20+%3C+2000+*+%281+%2B+y+-+0.0095%29%5E20">7,72%</a> por ano. A Anita também sabia que seria especulação acreditar que as ações selecionadas pela sociedade gestora HSBC renderiam mais 0,72 pontos percentuais por ano do que os títulos do Fidelity MSCI World Index EUR P.
+
+<h3>Anita subscreve o seu primeiro fundo</h3>
+
+
+<p>A Anita esteve algumas semanas a pensar sobre a melhor solução de investimento para si. Convenceu-se a optar pelo fundo da Fidelity quando resumiu o seu pensamento assim: “Vou ganhar praticamente o mesmo que os mercados acionistas mundiais renderem. Os 0,12% são quase negligenciáveis. Os 2,08% é um preço justo para conseguir replicar quase perfeitamente a bolsa.”
+
+<p>Regressou à pagina de subscrição do Fidelity MSCI World Index EUR P, mas agora já sabia qual o montante a inserir: “1959,24”. Pagou automaticamente 2% desse capital (39,18 euros) como comissão de subscrição e 4% sobre essa comissão (1,57 euros) como Imposto do Selo. Sobrou-lhe 1 cêntimo na conta.
+
+<p>Três dias depois da ordem, consultou a página do Banco Best: o seu dinheiro tinha adquirido cerca de 280 unidades do Fidelity MSCI World Index EUR P. Durante algumas semanas, acompanhou a evolução do valor do seu património, mas depressa percebeu que não valia a pena. Apenas interessariam os preços de subscrição e o preço de resgate dentro de 20 anos.
+
+<p>A partir de então, o plano da Anita passaria por reforços do seu investimento sempre que o seu pé-de-meia na Caixa Geral de Depósitos ultrapassasse 1020,80 euros: 1000 euros do investimento mínimo acrescidos dos encargos de subscrição. Calculava que iria investir cerca de 3500 euros por ano.
+
+<p>Pelas suas contas, depois de aplicar 68&nbsp;500 euros, acumularia 142 mil euros em 20 anos a investir, acreditando que as ações mundiais renderiam os tais 7% por ano nessas décadas. ★
+
+
+
+
+
+
+
+<h2 id="3"><u>3</u></h2>
+<h1>Descubra a inflação do seu dinheiro</h1>
+
+<p>Por <strong>David Almas</strong> a 1 de fevereiro de 2021 
+
+<p>O meu amigo Bruno Faria Lopes, jornalista da <cite>Sábado</cite>, desafiou-me a partilhar algumas ideias para um artigo que viria a ser o tema de capa da última edição de 2020 da revista. O texto, “Como ganhar dinheiro em 2021”, trouxe muitas sugestões financeiras interessantes, mas uma pequena caixa informativa deixou-me a pensar durante semanas. Incluía estas linhas:
+
+<aside>
+<p>“A taxa de inflação oficial é calculada sobre um cabaz de bens e serviços compilados pelo Instituto Nacional de Estatística (INE), que não é igual ao padrão de consumo de cada família, sobretudo em pandemia. Durante os meses da pandemia em 2021, por exemplo, os portugueses não vão gastar tanto nos bens e serviços cujo preço está a cair — hotéis, restaurantes, cinemas, etc. —, mas vão consumir em casa mais bens alimentares, cujos preços estão mais altos.”
+</aside>
+
+<p>O que o Bruno escreveu está certíssimo: a inflação divulgada pelo INE não é obrigatoriamente a inflação que afeta o nosso poder de compra. Porque olhamos sempre para a inflação oficial?
+
+<p>Um exemplo: o tabaco foi uma das coisas cujos preços mais subiram na última década, quase 50%. O índice de preços no consumidor assume cerca de 4% das despesas das famílias em tabaco e bebidas alcoólicas. Para um fumador, que pode gastar um décimo do orçamento no seu vício, é pouco. Para um não fumador, é exagerado. Assim, a inflação oficial da última década, inferior a 10%, é  empolada para um não fumador e reduzida para um fumador, que teve de gastar muito mais do que 10% para satisfazer o mesmo nível de consumo ao longo dos 10 anos.
+
+<p>Será a inflação um elemento demasiado importante para deixar nas mãos das estatísticas oficiais?
+
+<h3>A importância da inflação</h3>
+
+<p>A inflação é o aumento dos preços dos bens e dos serviços.
+
+<p>Do ponto de vista dos consumidores, a inflação traduz-se em quantos mais euros são necessários para pagar uma determinada coisa. É, por isso, uma medida da queda do poder de compra dos consumidores. Se a inflação de um determinado cabaz de bens e serviços for de 10% num dado período, isso quer dizer que é preciso dispensar de mais 10% de dinheiro para comprar esse cabaz no final do período do que no início.
+
+<p>Se é uma medida da queda do poder de compra, a inflação também é importante na ótica da poupança e do investimento. É preciso procurar que o pé-de-meia cresça tanto ou mais do que a inflação a que o investidor está sujeito. Se crescer menos (ou decrescer), então o património perderá poder de compra. O cabaz que conseguirá comprar será menor do que o que originalmente conseguia adquirir.
+
+<p>Como a inflação corrói o impacto do retorno da poupança e do investimento, os investidores devem medir o desempenho das suas aplicações em termos reais: ao valor da rentabilidade subtrai-se a inflação.
+
+<h3>A minha inflação</h3>
+
+<p>Se a inflação não é igual para todos, que valor usar nos cálculos da rentabilidade real? O INE publica mensalmente índices de preços no consumidor para cerca de 150 tipos de bens e serviços. Se registar os seus gastos, conseguirá deduzir aproximadamente a <em>sua</em> inflação. Uma opção mais simples, cujo cálculo partilho em baixo, é usar a inflação dos 12 principais grupos de consumo.
+
+<table class="x">
+<caption><strong>Onde gasta o seu dinheiro?</strong> <br>Indique as proporções das suas despesas anuais. A percentagem do grupo “bens e serviços diversos” ajusta-se automaticamente aos valores anteriores de modo a somar 100%. <noscript>O seu programa de navegação na Internet não permite uma análise interativa; não vale a pena preencher.</noscript></caption>
+
+<tr>
+<td>Produtos alimentares e bebidas não alcoólicas<br>
+<td><input type="text" value="19,93" id="agr01" onkeyup="inf();">%
+
+<tr>
+<td>Bebidas alcoólicas e tabaco<br>
+<td><input type="text" value="3,72" id="agr02" onkeyup="inf();">%
+
+<tr>
+<td>Vestuário e calçado<br>
+<small>Inclui: Limpeza, reparação e aluguer de vestuário e calçado.</small>
+<td><input type="text" value="7,08" id="agr03" onkeyup="inf();">%
+
+<tr>
+<td>Habitação, água, eletricidade, gás e outros combustíveis<br>
+<small>Inclui: renda, saneamento e reparação de habitação.</small>
+<td><input type="text" value="9,19" id="agr04" onkeyup="inf();">%
+
+<tr>
+<td>Acessórios para o lar, equipamento doméstico e manutenção corrente da habitação<br>
+<td><input type="text" value="5,86" id="agr05" onkeyup="inf();">%
+
+<tr>
+<td>Saúde<br>
+<small>Inclui: despesas de farmácia, dentista, médicos e hospitais.</small>
+<td><input type="text" value="6,74" id="agr06" onkeyup="inf();">%
+
+<tr>
+<td>Transportes<br>
+<small>Inclui: transportes públicos, aquisição, reparação e manutenção de veículos.</small>
+<td><input type="text" value="16,27" id="agr07" onkeyup="inf();">%
+
+<tr>
+<td>Comunicações<br>
+<small>Inclui: telemóveis, serviços de telecomunicações e postais.</small>
+<td><input type="text" value="2,94" id="agr08" onkeyup="inf();">%
+
+<tr>
+<td>Lazer, recreação e cultura<br>
+<small>Inclui: jogos e apostas, férias organizadas e animais de estimação.</small>
+<td><input type="text" value="6,79" id="agr09" onkeyup="inf();">%
+
+<tr>
+<td>Educação<br>
+<td><input type="text" value="2,00" id="agr10" onkeyup="inf();">%
+
+<tr>
+<td>Restaurantes e hotéis<br>
+<td><input type="text" value="9,06" id="agr11" onkeyup="inf();">%
+
+<tr>
+<td>Bens e serviços diversos<br>
+<small>Inclui: serviços financeiros, seguros, joalharia e cabeleireiro.</small>
+<td><span id="agr12">10,42</span>%
+</table>
+
+<p>Com base nestas proporções de despesa, a inflação anualizada histórica teve o seguintes registos:
+
+<ul>
+	<li>2020: <span id="inf1">-0,05</span>% (oficial: -0,23%)
+	<li>2015-2020: <span id="inf5">0,71</span>% (oficial: 0,64%)
+	<li>2010-2020: <span id="inf10">0,89</span>% (oficial: 0,89%)
+	<li>2000-2020: <span id="inf20">1,71</span>% (oficial: 1,62%)
+</ul>
+
+
+<script>
+function inf() {
+// Valores
+	var agr01 = valor('agr01');
+	var agr02 = valor('agr02');
+	var agr03 = valor('agr03');
+	var agr04 = valor('agr04');
+	var agr05 = valor('agr05');
+	var agr06 = valor('agr06');
+	var agr07 = valor('agr07');
+	var agr08 = valor('agr08');
+	var agr09 = valor('agr09');
+	var agr10 = valor('agr10');
+	var agr11 = valor('agr11');
+	var agr12 = 100 - agr01 - agr02 - agr03 - agr04 - agr05 - agr06 - agr07 - agr08 - agr09 - agr10 - agr11;
+
+	escreve('agr12', agr12);
+
+	var inf1 = (agr01 * 2.27 + agr02 * 2.05 + agr03 * (-4.37) + agr04 * (-0.04) + agr05 * (-0.53) + agr06 * 2.87 + agr07 * (-2.50) + agr08 * (-1.12) + agr09 * (-2.12) + agr10 * (-1.49) + agr11 * 0.85 + agr12 * 1.00) / 100;
+
+	var inf5 = ((1 + (agr01 * 5.74 + agr02 * 10.24 + agr03 * (-13.90) + agr04 * 4.41 + agr05 * (-1.84) + agr06 * 4.65 + agr07 * 6.51 + agr08 * 0.20 + agr09 * (-0.50) + agr10 * 1.29 + agr11 * 9.43 + agr12 * 5.19) / 10000)**.2 - 1) * 100;
+
+	var inf10 = ((1 + (agr01 * 11.79 + agr02 * 36.76 + agr03 * (-26.40) + agr04 * 24.03 + agr05 * (-1.28) + agr06 * 14.45 + agr07 * 9.13 + agr08 * 10.30 + agr09 * (-0.28) + agr10 * 6.45 + agr11 * 18.58 + agr12 * 7.21) / 10000)**.1 - 1) * 100;
+
+	var inf20 = ((1 + (agr01 * 28.48 + agr02 * 128.89 + agr03 * (-26.11) + agr04 * 76.36 + agr05 * 18.35 + agr06 * 36.97 + agr07 * 52.59 + agr08 * (-1.56) + agr09 * 10.24 + agr10 * 75.86 + agr11 * 65.47 + agr12 * 42.58) / 10000)**.05 - 1) * 100;
+
+	escreve('inf1', inf1);
+	escreve('inf5', inf5);
+	escreve('inf10', inf10);
+	escreve('inf20', inf20);
+
+}
+</script>
+
+<h3>Informação passada</h3>
+
+<p>A inflação da minha família foi inferior às percentagens oficiais nas últimas décadas. Gastámos menos em bebidas alcoólicas e tabaco, habitação e transportes do que o assumido nos ponderadores do índice de preços no consumidor. Esses grupos de consumo foram o primeiro, segundo e quinto com as mais altas taxas de inflação dos últimos 20 anos. (A educação e os restaurantes e hotéis ficaram em terceiro e quarto.)
+
+<p>Concluo que o retorno real dos meus investimentos tem sido superior ao que estimava. Não posso, no entanto, extrapolar para o futuro: há demasiadas variáveis para se conseguir estimar com segurança a inflação familiar.  
+
+<p>Penso que a melhor postura dos consumidores e dos investidores em relação à inflação é ser conservador: esperar que a inflação individual será pior do que o estimado pelos principais organismos económico. A <a href="https://ec.europa.eu/info/business-economy-euro/economic-performance-and-forecasts/economic-performance-country/portugal/economic-forecast-portugal_en">Comissão Europeia</a> e o <a href="https://www.imf.org/en/Countries/PRT#countrydata">Fundo Monetário Internacional</a>, os dois mais pessimistas, apontam para taxas de inflação entre 0,9% e 1,5% entre 2021 e 2025. Sugiro que equacione uma taxa entre 1,5% e 2% nas suas projeções mais conservadoras. ★
+
+
+
+
+
+
+<h2 id="r"><u>Respondido</u></h2>
+<h3>“Constatei que o iShares MSCI World SRI UCITS ETF apenas é negociado na bolsa de Londres no Banco Carregosa.”</h3>
+
+<p>Na primeira edição do boletim <strong>tlim</strong> de 2021, recomendei o fundo iShares MSCI World SRI UCITS ETF no segmento eletrónico Xetra da bolsa de Francoforte (código de negociação: <a href="https://www.boerse-frankfurt.de/en/etf/ishares-msci-world-sri-ucits-etf-eur-acc">2B7K</a>). Vários leitores avisaram-me que a plataforma GoBulling Pro do Banco Carregosa não dá acesso a esse fundo no Xetra; orienta para a versão na bolsa de Londres (<a href="https://www.londonstockexchange.com/stock/SUSW/ishares/company-page">SUSW</a>).
+
+<p>O fundo é exatamente o mesmo; apenas está disponível em duas bolsas diferentes. (Na verdade, quatro: também está em <a href="https://www.borsaitaliana.it/borsa/etf/scheda/IE00BYX2JD69.html">Milão</a> e em <a href="https://www.six-group.com/en/products-services/the-swiss-stock-exchange/market-data/etf/etf-explorer/etf-detail.html?valorId=IE00BYX2JD69EUR4#/">Zurique</a>.) Em todas as praças, o fundo é transacionado em euros.
+
+<p>É pior se investir através de Londres? Pelo contrário: pode ser mais económico. Os negócios sobre fundos cotados em Londres são alvo de uma comissão mínima de 15 libras esterlinas (cerca de 16,63 euros), menos do que os 20 euros no Xetra, segundo o <a href="https://www.bancocarregosa.com/bancocarregosa/pt/precario/condicoes-de-negociacao-gobulling-pro/acoes-comissoes-de-negociacao/">preçário</a> do Banco Carregosa.
+
+<p>Além disso, o volume de negócios sobre o iShares MSCI World SRI UCITS ETF em Londres é elevado. Em janeiro passado, negociou cerca de dois milhões de euros por dia.
+
+<p>Nas transações de compra na bolsa de Londres, há imposto do selo britânico à taxa de 0,5% sobre o valor negociado. No entanto, as operações sobre os fundos cotados estão isentas, segundo o <a href="https://www.justetf.com/uk/news/passive-investing/how-etfs-are-taxed-in-the-uk.html">Just ETF</a>. 
+
+
+<p class="e">⋆★⋆
+
+<h3>“Este fundo tem alguma exposição aos mercados emergentes?”</h3>
+
+<p>Os fundos que recomendei na última edição do boletim <strong>tlim</strong> — Fidelity MSCI World Index EUR P e iShares MSCI World SRI UCITS ETF — não têm exposição direta aos mercados emergentes. Ao contrário do leitor <strong>J.N.</strong>, que me enviou a pergunta, acho desnecessário estender os investimentos para fora dos países mais desenvolvidos. Investir nos mercados desenvolvidos é o suficiente para obter exposição à economia mundial: as empresas das nações mais avançadas compram e vendem em todo o mundo.
+
+<p>Os mercados emergentes podem crescer mais, mas isso não se reflete necessariamente em mais valorizações bolsistas. Na última década, os mercados emergentes valorizaram cerca de 4,76% por ano; os mercados desenvolvidos renderam 10,75% por ano, segundo os índices da MSCI.
+
+<p>Ao não incluir os mercados emergentes, em particular a China, evita-se também o risco político e o apoio a algumas ditaduras e democracias falhadas. Não é necessário recuar muito no tempo para perceber o podre que há no governo chinês. Exemplos:
+
+<ul>
+	<li>A <a href="https://www.buzzfeednews.com/article/alison_killing/xinjiang-camps-china-factories-forced-labor">investigação aprofundada</a> da equipa do BuzzFeed aos campos de trabalhos forçados em Sinquião;
+	<li>A <a href="https://www.nytimes.com/2021/01/05/world/asia/hong-kong-arrests-national-security-law.html">limpeza</a> que a polícia está a conduzir em Hong Kong;
+	<li>O <a href="https://www.washingtonpost.com/business/2021/01/06/where-is-jack-ma/">desaparecimento de Jack Ma</a>, o quinto homem mais rico da China;
+	<li>A equipa da Organização Mundial da Saúde que foi <a href="https://www.bbc.com/news/world-asia-china-55555466">proibida</a> de investigar a origem do coronavírus.
+</ul>
+
+<p>Da mesma maneira que não lançaria um negócio na China, não invisto e não recomendo que se invista por lá. A China é o maior exemplo dos mercados emergentes: absorve cerca de 40% do valor bolsista dos mercados emergentes.
+
+<p class="e">⋆★⋆
+
+<h3>“Convém referir que [o NB Obrigações Europa] tem investimento em curtos de obrigações.”</h3>
+
+<p>O gestor do NB Obrigações Europa pode, através de contratos derivados, apostar na subida ou descida das obrigações governamentais ou de outros instrumentos. Pode fazê-lo para cobrir riscos ou para especular. É, naturalmente, um risco acrescido, como explicado nos documentos oficiais. No entanto, os desempenhos passados mostram que o gestor tem tido muito sucesso nesses negócios. Se não tivesse, o seu resultado teria sido mais próximo ou abaixo de um fundo indexado de obrigações. Isto é gestão ativa: é preciso confiar nas decisões do responsável pela administração do fundo.
+
+
+
+<p class="e">⋆★⋆
+
+<h3>“Pretendo vender algumas unidades de um fundo cotado. Vendo primeiro as que comprei com um valor mais baixou ou mais elevado?”</h3>
+
+<p>Embora algumas plataformas sugiram que, numa operação de venda, é possível escolher individualmente os títulos a alienar, é uma ilusão: os instrumentos são todos iguais e, tecnicamente, é indiferente. Para efeitos fiscais, a regra é que se vende primeiro os títulos mais antigos.
+
+
+<aside>
+<p>Se tiver dúvidas, sugestões ou correções, escreva-me para <a href="mailto:davidalmas@gmail.com">davidalmas@gmail.com</a>.
+</aside>
+
+
+
+
+<h2 id="v"><u>Visto</u></h2>
+<h1>Adeus, gurus</h1>
+<p>Não farei recomendações sobre ações de gurus da bolsa, mas proponho uma alternativa.
+
+<ul>
+
+<li>
+<p><a href="https://meetinvest.com/stockscreener">meetinvest</a>
+<p>Há um ano, desvendei ações seguindo estratégias de seis gurus da bolsa. Não as recomendei. “Espero que não use a informação deste artigo para criar uma nova carteira de ações”, apontei. Não prometi rever as carteiras na edição de fevereiro de 2021, mas sugeri que os leitores que as comprassem não lhes mexessem antes deste mês. Em baixo estão os resultados do último ano da carteiras dos gurus.
+
+<table>
+<caption><strong>Gurus 2020-2021</strong> <br>Nem todos conseguiram bater o desempenho do índice MSCI World, que foi de 8,03%
+<thead><tr><td>Guru<td>Rentabilidade<br>Fev 2020 — Jan 2021</thead>
+<tr><td>Warren Buffett<td>10,26%
+<tr><td>Benjamin Graham<td>11,03%
+<tr><td>Peter Lynch<td>3,07%
+<tr><td>William O’Neil<td>87,33%
+<tr><td>Martin Zweig<td>23,03%
+<tr><td>David Dreman<td>2,62%
+</table>
+
+<p>Não planeio voltar a escrever sobre o investimento direto em ações. Continuo a acreditar que não é a melhor opção para a esmagadora maioria das pessoas. Além disso, a pandemia impossibilita-me de ter acesso a uma plataforma profissional de pesquisa de ações.
+<p>Há, no entanto, uma solução para quem quer realmente investir em ações seguindo as estratégias de gurus da bolsa: o portal <a href="https://meetinvest.com/stockscreener">meetinvest</a>. Não é possível decidir os critérios de busca das ações, mas é possível ter acesso às listas de títulos que, segundo os autores da página, cumprem as regras dos gurus da bolsa. Pelo que consigo aferir, usam a informação bolsista da Bloomberg para selecionar as carteiras.
+<p>Se for usar o meetinvest, aconselho que, além de analisar os desempenhos históricos das estratégias, avalie atentamente a taxa de rotação das carteiras. Uma baixa revisão da carteira, como a do <a href="https://meetinvest.com/stockscreener/david-dreman">David Dreman</a>, é preferível para minimizar os encargos bolsistas, os impostos e, eventualmente, o cansaço.
+
+<li>
+<p><a href="https://bancoinvest.pt/poupanca-e-investimento/investimento/smart-invest">Smart Invest</a>, Banco Invest
+<p>O Banco Invest lançou três novos planos de poupança-reforma que, tudo indica, investem maioritariamente em fundos cotados. Há, no entanto, muita propaganda na mensagem. Baixo custo? O PPR mais agressivo (que, mesmo assim, só tem 45% da carteira exposta ao mercado acionista) tem uma taxa de encargos correntes estimada de 1,4%. Embora tenham alcançado bons resultados com o Alves Ribeiro PPR/OICVM, não é garantido que tenham sucesso nesta coleção de produtos. Afinal, a estratégia é diferente.
+
+<li>
+<p><a href="https://twitter.com/TikTokInvestors/status/1350854473598558213">“A sneak peek of one of our top secret trading strategies”</a>, TikTok Investors
+<p>É alegadamente o casal do momento no TikTok. Neste vídeo, explicam como ganham dinheiro: “Apenas negoceio ações numa aplicação chamada Robinhood. (...) Vejo uma ação a subir e compro-a e vejo-a a subir e vendo-a.” Não os critico: é a estratégia de seguir o momento; muitos gestores profissionais usam-na. Há muitos estudos académicos que demonstram que <a href="https://www.alphadroid.com/downloads/Fact-Fiction-And-Momentum-Investing.pdf">funciona</a>, mesmo desde os <a href="https://www.nber.org/papers/w14500">tempos vitorianos</a> do Reino Unido. É, no entanto, uma estratégia arriscada e muito sensível às emoções dos investidores.
+
+<li>
+<p><a href="https://www.reuters.com/article/us-portugal-airlines-tap-exclusive/exclusive-portugal-confident-it-will-get-eu-green-light-for-tap-rescue-plan-in-q1-idUSKBN29C127">“Exclusive: Portugal confident it will get EU green light for TAP rescue plan in first quarter”</a>, Reuters
+<p>Em entrevista ao Sérgio Gonçalves e à Ingrid Melander, o ministro das Finanças, João Leão, não descartou que os obrigacionistas da TAP registem perdas na operação de capitalização da companhia aérea. As <a href="https://live.euronext.com/pt/product/bonds/PTTAPBOM0007-XLIS">obrigações de retalho</a>, vendidas em 2019 a 6092 investidores, reagiram negativamente na bolsa: pelos meus cálculos, a rentabilidade potencial até à maturidade, em 2023, é, para quem comprar agora, de 12,54% por ano. Está, no entanto, muito longe do mínimo registado em março do ano passado. A esse nível, a rentabilidade potencial até à maturidade subiria para 23,92%. Desconfio que seja um preço mais justo.
+
+<p>(Dê um desconto aos meus comentários sobre a TAP: tenho uma ação em curso no tribunal contra a companhia.)
+
+
+<li>
+<p><a href="https://investorfunds.us.hsbc.com/SiteFiles/Live/documents/privatearticles/offshore/d-53/Shareholder%20Letter%20-%20Liquidation%20of%20Economic%20Scale%20Global%20Equity.pdf?c=637463302140000000">Liquidação do HSBC GIF Economic Scale Global Equity</a>, HSBC Global Asset Management
+<p>É um dos riscos de investir em fundos: a sociedade gestora pode decidir unilateralmente fechá-los, se estiver previsto no prospeto do produto. O HSBC GIF Economic Scale Global Equity, que recomendei algumas vezes no passado, será liquidado no dia 15 de abril de 2021, porque ficou demasiado pequeno. Os subscritores podem transferir o investimento para outro fundo do HSBC, resgatar as unidades ou esperar pela liquidação e receber automaticamente o montante liquidado. Penso que a terceira opção é a pior: os encargos da liquidação ficarão para os últimos a abandonar o fundo.
+
+
+<li>
+<p><a href="https://techcrunch.com/2021/01/07/bbva-says-that-it-is-shutting-down-banking-app-simple-will-transfer-users-to-bbva-usa/">“BBVA says that it is shutting down banking app Simple, will transfer users to BBVA USA”</a>, Techcrunch
+<p>Muito antes do Revolut e do N26 e de outros que se seguiram, o <a href="https://www.simple.com/">Simple</a> foi um dos primeiros neobancos. Nasceu, em 2009, bem desenhado por pessoas que tinham poucas ligações à indústria bancária. A subsidária norte-americana do BBVA, o BBVA USA, comprou o Simple por 117 milhões de dólares em 2014. Em agosto de 2020, o BBVA USA <a href="https://www.bbva.com/en/bbva-usa-announces-collaboration-with-google-to-offer-digital-bank-accounts/">anunciou</a> uma colaboração com a Google para oferecer contas bancárias digitais, à revelia do Simple.
+<p>É o fim de uma era (ou o início de outra). Por muito cuidado que se tenha na escolha do parceiro bancário para as suas finanças pessoais, a relação pode acabar a qualquer momento.
+
+<li>
+<p><a href="https://eco.sapo.pt/2021/01/06/bcp-muda-lideranca-do-activobank-apos-renuncia-de-ceo/">“BCP muda liderança do ActivoBank após renúncia de CEO”</a>, <cite>Eco</cite>
+<p>Por falar em neobancos: o ActivoBank mudou de presidente pela terceira vez em pouco mais de dois anos. Não é um bom sinal.
+<p>O jornalista Alberto Teixeira menciona que o Banco Comercial Português, o dono do ActivoBank, está a ponderar o seu potencial de internacionalização. Não é novidade: desde 2018 que a administração <a href="https://ind.millenniumbcp.pt/pt/Institucional/investidores/Documents/Plano_Estrategico_PT.pdf">diz que está a estudar a expansão</a> e ainda não se viu nada.
+<p>Esperemos que não o estraguem. Apesar de pertencer ao BCP, é um dos melhores bancos para os consumidores.
+
+
+★
+</ul>
+
+
+
+<h2 id="d"><u>Dito</u></h2>
+<h2>Matt Hougan e David Lawant:</h2>
+
+<h1>“A triste realidade é que nenhum dos modelos de avaliação [do bitcoin] propostos é tão sólido ou academicamente defensável como a análise tradicional dos fluxos de caixa descontados é para as ações ou os modelos de juros e crédito para a dívida.”</h1>
+
+<p>Num <a href="https://www.cfainstitute.org/en/research/foundation/2021/cryptoassets">longo trabalho</a> para o CFA Research Institute, Matt Hougan e David Lawant, especialistas da Bitwise Asset Management, a criadora do primeiro índice de criptoativos, analisam cinco maneiras diferentes de calcular o valor justo do bitcoin. Concluem a citar Aswath Damodaran, professor de Finanças na Universidade de Nova Iorque: “Nem tudo pode ser avaliado, mas tudo pode ter um preço.” Dizem que, no espectro dos métodos de avaliação, os criptoativos estão entre as mercadorias e os bens colecionáveis.
+
+<p>A análise de Hougan e Lawant avalia ainda o impacto de adicionar bitcoins a uma carteira dividida entre fundos de ações e obrigações. Parece-me que ainda é cedo para fazer esse estudo: analisam menos de sete anos de resultados. ⁥★
+
+
+
+<aside id="do">
+<h3>Mais literacia financeira</h3>
+<p>Obrigado por ler mais uma edição do boletim <strong>tlim</strong>. Se quiser e puder apoiar esta publicação, o donativo sugerido é de cinco euros por mês.
+
+<p>Recebo os donativos exclusivamente por transferência bancária no seguinte IBAN:
+
+<p>PT50019300001050029913574
+
+<p>O código BIC/Swift do banco é CTTVPTPL.
+
+<p>Obrigado. 
+
+<p><em>— D.A.</em>
+</aside>
+
+</body>
+</html>
