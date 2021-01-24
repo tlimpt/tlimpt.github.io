@@ -65,12 +65,6 @@ input { font-family: inherit; font-size: 1em; width: 3em; text-align:right; bord
 
 <p>As unidades a vender renderam cerca de <input type="text" value="10,78" id="rentabilidade" onkeyup="irs();">% por ano ao longo de <input type="text" value="8" id="duracao" onkeyup="irs();"> anos. (O valor de aquisição foi de <span id="compra">5290,42</span>&nbsp;euros.) Durante esse tempo, a inflação anual — que influencia o coeficiente de correção monetária para o cálculo das mais-valias — foi de <input type="text" value="0,42" id="inflacao" onkeyup="irs();">%. As despesas na aquisição foram de <input type="text" value="20" id="despesacompra" onkeyup="irs();">&nbsp;euros.
 
-<aside>
-<h3>Coeficiente de correção monetária</h3>
-<p>Quando a aplicação dura mais de dois anos, o preço de aquisição do fundo de investimento é multiplicado por um <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs50.aspx">coeficiente de correção monetária</a> antes de se calcular a mais-valia fiscal.
-<p>O Governo publica os coeficientes válidos para cada ano. A <a href="https://data.dre.pt/eli/port/220/2020/09/21/p/dre">Portaria n.º 220/2020</a> definiu os coeficientes para as alienações efetuadas em 2020.
-</aside>
-
 <p>Nestas condições, o fisco considera que a mais-valia totalizou <span id="maisvalia">6469,18</span> euros. Se apenas declarar esta operação, a tributação é à taxa de 28% sobre os ganhos, portanto <span id="irs">teria de pagar 1811,37 euros</span>. A taxa de tributação efetiva seria <span id="tributacaoefetiva1">de 27%</span>.
 
 <p>Porém, como não planeio ter outros rendimentos, em particular profissionais, pode compensar-me englobar as mais-valias. Desse modo, o meu rendimento global é a mais-valia fiscal. Em baixo está a minha expectativa de uma nota de liquidação de IRS.
@@ -227,9 +221,34 @@ window.onload = function() {
 
 <p>Um imposto de <span id="imposto">280,83</span> euros sobre uma mais-valia bruta de <span id="maisvaliabruta">6709,58</span> euros representa uma tributação efetiva de <strong><span id="tributacaoefetiva2">4,19</span>%</strong>. <span id="mensagem">😃</span>
 
+
+<h3>Coeficiente de correção monetária</h3>
+<p>Nem todos concordam que os fundos de investimento beneficiam do coeficiente de correção monetária.
+
+<p>O <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs50.aspx">artigo 50.º</a> do Código do IRS indica que, quando a aplicação dura mais de dois anos, os preços de aquisição são ajustados por esse coeficiente no caso de mais-valias em imóveis, “bem como de partes sociais no caso da alínea b)” do <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs10.aspx">artigo 10.º</a>. Essa alínea debruça-se sobre as mais-valias de “partes sociais e de outros valores mobiliários”.
+
+<p>Em rigor, os fundos de investimento são outros valores mobiliários; as partes sociais são as ações e as quotas. Penso, no entanto, que o legislador queria incluir os outros valores mobiliários. As partes sociais foram introduzidas no artigo 50.º pela <a href="https://data.dre.pt/eli/lei/82-e/2014/12/31/p/dre/pt/html ">Lei n.º 82-E/2014</a>, que procurou simplificar a tributação das famílias.
+
+<p>Mesmo que considere que os coeficientes de correção monetária são apenas aplicáveis aos imóveis, às ações e às quotas, há alguns fundos que podem ser abrangidos. O <a href="https://www.blackrock.com/pt/profissionais/literature/prospectus/ishares-iv-plc-prospectus-emea-en.pdf">prospeto</a> da iShares IV Public Limited Company, que incorpora, entre muitos outros, o fundo iShares MSCI World SRI UCITS ETF, é claro quando menciona que se trata de uma “sociedade com capital variável (...) constituída com responsabilidade limitada na Irlanda”. O capital da iShares IV Public Limited Company é representado por ações (“shares” no prospeto em inglês). Esta sociedade está <a href="https://core.cro.ie/e-commerce/company/505525">registada</a> na base de dados das autoridades irlandesas desde 2009.
+
+<p>O Fidelity MSCI World Index EUR P e o NB Obrigações Europa, que também recomendei na última edição do boletim <strong>tlim</strong>, não estão incluídos numa estrutura societária. O <a href="https://www.fidelityinternational.com/legal/documents/FIC2/en/pr.fic2.en.xx.pdf">prospeto</a> da Fidelity afirma que o Fidelity UCITS II ICAV é um veículo de investimento coletivo.
+
+<p>Se não concordar comigo, <a href="javascript:zero();">introduza um zero na inflação anual</a> nos cálculos anteriores. Os resultados ficarão alinhados com a sua crença.
+
+<p>O Governo publica os coeficientes válidos para cada ano. A <a href="https://data.dre.pt/eli/port/220/2020/09/21/p/dre">Portaria n.º 220/2020</a> definiu os coeficientes para as alienações efetuadas em 2020.
+
+<script>
+function zero() {
+	insere('inflacao','0');
+	irs();
+	window.location = '#rentabilidade';
+}
+</script>
+
+
 <h3>Será ainda melhor</h3>
 
-<p>Estou a ser muito conservador: não acredito que a minha rentabilidade anual continue tão elevada (o que aumentará o impacto do coeficiente de correção monetária e reduzirá o rendimento considerado pelo fisco) e estimei poucas deduções à coleta. Historicamente, tenho conseguido individualmente deduções à coleta superiores a 1000 euros por ano. Pode <a href="https://irs.portaldasfinancas.gov.pt/app/consulta">consultar</a> as suas deduções dos últimos 5 anos no Portal das Finanças: em cada ano, clique no botão “ver detalhe” e, posteriormente, no número de liquidação; encontra a lista anual de todas as deduções à coleta na última página da demonstração de liquidação de IRS.
+<p>Nas contas anteriores fui muito conservador: não acredito que a minha rentabilidade anual continue tão elevada (o que aumentará o impacto do coeficiente de correção monetária e reduzirá o rendimento considerado pelo fisco) e estimei poucas deduções à coleta. Historicamente, tenho conseguido individualmente deduções à coleta superiores a 1000 euros por ano. Pode <a href="https://irs.portaldasfinancas.gov.pt/app/consulta">consultar</a> as suas deduções dos últimos 5 anos no Portal das Finanças: em cada ano, clique no botão “ver detalhe” e, posteriormente, no número de liquidação; encontra a lista anual de todas as deduções à coleta na última página da demonstração de liquidação de IRS.
 
 <p>Numa situação de reforma antecipada, quem tiver deduções à coleta superiores a 1031,24 euros por ano não pagará IRS enquanto as mais-valias fiscais não ultrapassarem 7112 euros, que é o limite superior do primeiro escalão  do imposto.
 
