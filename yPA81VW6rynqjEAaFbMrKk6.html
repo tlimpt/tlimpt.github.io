@@ -70,7 +70,7 @@ input { font-family: inherit; font-size: 1em; width: 3em; text-align:right; bord
 
 <p>Se contratou um crédito à habitação entre 2010 e 2018 e ainda não lhe mexeu, está na hora de transferir o seu empréstimo. Calculo que a maioria dos devedores financiados nesses anos paga <em>spreads</em> — a margem de lucro que o banco adiciona à taxa de juro de referência — em torno de 2,5%. Os números mais recentes permitem deduzir que os <em>spreads</em> rolam agora à volta de 1,25%.
 
-<p>Se conseguir cortar o <em>spread</em> para metade, a sua vida financeira ficará muito mais leve. Com uma dívida de <input type="text" value="100000" id="montante" style="width:4em" onkeyup="p();">€ num empréstimo que se vence em <input type="text" value="30" id="dura" style="width:2em" onkeyup="p();"> anos, uma redução do <em>spread</em> de <input type="text" value="2,50" id="tx1"  onkeyup="p();">% para  <input type="text" value="1,25" id="tx2"  onkeyup="p();">% baixa a prestação de <span id="p1">369,57</span> euros para <span id="p2">310,24</span> euros, assumindo um indexante (Euribor a 12 meses) em  <input type="text" value="-0,501" id="index"  onkeyup="p();">%. Mais interessante: poupa cerca de <strong><span id="poupa">21360</span> euros</strong> em juros ao longo da vida do financiamento. (Este parágrafo é interativo: mude os números sublinhados.<noscript> Infelizmente, o seu computador não permite conteúdo interativo.</noscript>)
+<p>Se conseguir cortar o <em>spread</em> para metade, a sua vida financeira ficará muito mais leve. Com uma dívida de <input type="text" value="100000" id="montante" style="width:4em" onkeyup="p();">€ num empréstimo que se vence em <input type="text" value="30" id="dura" style="width:2em" onkeyup="p();"> anos, uma redução do <em>spread</em> de <input type="text" value="2,50" id="tx1"  onkeyup="p();">% para  <input type="text" value="1,25" id="tx2"  onkeyup="p();">% baixa a prestação de <span id="p1">370,27</span> euros para <span id="p2">310,87</span> euros, assumindo um indexante (Euribor a 12 meses) em  <input type="text" value="-0,487" id="index"  onkeyup="p();">%. Mais interessante: poupa cerca de <strong><span id="poupa">21&nbsp;380</span> euros</strong> em juros ao longo da vida do financiamento. (Este parágrafo é interativo: mude os números sublinhados.<noscript> Infelizmente, o seu computador não permite conteúdo interativo.</noscript>)
 
 <script>
 function p(){
@@ -87,19 +87,23 @@ function p(){
 	var p1 = Math.round(100*(montante/((1-Math.pow(1+t1/12,-meses))/(t1/12))))/100;
 	var p2 = Math.round(100*(montante/((1-Math.pow(1+t2/12,-meses))/(t2/12))))/100;
 
-	var poupa = p1 * 12 * dura - p2 * 12 * dura;
+	document.getElementById('p1').innerHTML = String(Math.round(p1*100)/100).replace(".",",");
+	document.getElementById('p2').innerHTML = String(Math.round(p2*100)/100).replace(".",",");
 
-	document.getElementById('p1').innerHTML =String(Math.round(p1*100)/100).replace(".",",");
-	document.getElementById('p2').innerHTML =String(Math.round(p2*100)/100).replace(".",",");
-	document.getElementById('poupa').innerHTML =String(Math.round(poupa/10)*10).replace(".",",");
+	var poupa = Math.round((p1 * 12 * dura - p2 * 12 * dura)/10)*10;
+
+	if (poupa >= 10000) { poupa = String(Math.floor(poupa/1000)) +'&nbsp;'+ String(poupa-Math.floor(poupa/1000)*1000).padStart(3,'0'); }
+
+	document.getElementById('poupa').innerHTML = poupa;
 }
+window.onload = p();
 </script>
 
-<p>A poupança que pode conseguir na transferência do crédito à habitação é potencialmente superior aos encargos que se tem ao trocar de banco. Além disso, várias instituições financeiras, como o <a href="https://www.bankinter.pt/credito-habitacao-transferencias">Bankinter</a> e o <a href="https://www.bancoctt.pt/o-seu-credito/transferencias">Banco CTT</a>, estão dispostas a cobrir essas despesas.
+<p>A poupança que pode conseguir na transferência do crédito à habitação é potencialmente superior aos encargos que se tem ao trocar de banco. Além disso, várias instituições financeiras, como o <a href="https://www.bankinter.pt/credito-habitacao-transferencias">Bankinter</a> e o <a href="https://www.bancoctt.pt/o-seu-credito/transferencias">Banco CTT</a>, estão dispostas a cobrir parte das despesas.
 
-<p>É uma boa altura para cambiar de casa aos empréstimos mas também é um bom momento para comprar uma habitação recorrendo a um novo financiamento bancário. A guerra entre os bancos está a aumentar, os <em>spreads</em> estão a descer, os montantes disponíveis nos cofres da banca continuam elevados e ainda há margem para emprestar muito mais.
+<p>É uma boa altura para cambiar de casa aos empréstimos mas também é um bom momento para comprar uma habitação recorrendo a um novo financiamento bancário. A concorrência entre os bancos está a aumentar, os <em>spreads</em> estão a descer, os montantes disponíveis nos cofres da banca continuam elevados e ainda há margem para emprestar muito mais.
 
-<p>As instituições de crédito financiam agora cerca de mil milhões de euros por mês para a compra de casa em Portugal, um valor que não se via desde 2008. Ao ritmo mais recente, falta um ano e meio para a quantia emprestada para a compra de imóveis regressar ao máximo histórico de 115 mil milhões de euros, alcançada em março de 2011.
+<p>As instituições de crédito financiam agora cerca de mil milhões de euros por mês para a compra de casa em Portugal, um valor que não se via desde 2008. Ao ritmo mais recente, falta um ano e meio para a quantia emprestada para a compra de imóveis regressar ao máximo histórico de 115 mil milhões de euros, alcançado em março de 2011.
 
 <p>As simulações que se seguem neste artigo são para novos créditos à habitação e não para transferências. No entanto, as conclusões são extensíveis a essa modalidade.
 
@@ -298,11 +302,11 @@ function p(){
 
 <p>A Anita começara a investir há pouco tempo num fundo de índice de ações mundiais, o Fidelity MSCI World Index EUR P (<em>vide</em> boletim <strong>tlim</strong> de fevereiro de 2021). Optou por resgatá-lo para não ter de pedir tanto dinheiro aos seus pais. Cobriria os principais encargos iniciais: Imposto do Selo sobre utilização do crédito, abertura de processo, avaliação do imóvel, registo de hipoteca, entre outros.
 
-<p>Custou-lhe fazer o resgate do fundo, porque optara por esse produto para o longo prazo. O Fidelity MSCI World Index EUR P tinha um encargo de subscrição de 2,08% que, no seu plano financeiro, seria diluído depois de muitos anos de investimento. Ficou, no entanto, satisfeita ao perceber que, mesmo assim, ganhara dinheiro.
+<p>Custou-lhe fazer o resgate do fundo, porque optara por esse produto para o longo prazo. O Fidelity MSCI World Index EUR P tem um encargo de subscrição de 2,08% que, no seu plano financeiro, seria diluído depois de muitos anos de investimento. Ficou, no entanto, satisfeita ao perceber que, mesmo assim, ganhara dinheiro.
 
 <p>As simulações que fez no Banco CTT, no Millennium bcp e no Banco Montepio forneceram-lhe resultados muito semelhantes. Revelavam que o custo total do empréstimo ao longo dos 40 anos seria menor no Banco CTT. No Millennium, gastaria mais 182 euros e, no Montepio, mais 1746 euros. Não lhe parecia uma diferença significativa em 4 décadas. Para desempatar, consultou os preçários das instituições financeiras e concluiu que o Banco CTT era mais barato nos serviços a que poderia recorrer no futuro. Além disso, o Banco CTT apenas lhe exigia a contratação de um cartão de débito e dos seguros de vida e multirriscos.
 
-<p>Ficou decidido: solicitou o crédito no Banco CTT, a avaliação bancária foi feita por um montante aceitável e comprou o seu apartamento de sonho. Os seus encargos mensais da habitação desceram para menos de 280 euros, o que lhe permitiu uma folga adicional de 120 euros para poupança, que, assim, aumentaria para 370 euros por mês.
+<p>Ficou decidido: solicitou o crédito no Banco CTT, a avaliação bancária foi feita por um montante aceitável e comprou o seu apartamento de sonho. Os seus encargos mensais da habitação desceram para 280 euros, o que lhe permitiu uma folga adicional de 120 euros para poupança, que, assim, aumentaria para 370 euros por mês.
 
 <p>Encerrou a sua conta do dia-a-dia na Caixa Geral de Depósitos, mas manteve a do Banco Best, aberta para investir no fundo, porque queria voltar a fazer investimentos para o longo prazo.
 
@@ -310,11 +314,11 @@ function p(){
 
 <p>O principal objetivo financeiro da jovem — a independência financeira — manteve-se. Mas uma dúvida começou a assolar os seus planos: será que se poderia considerar financeiramente independente tendo uma dívida bancária? Concluiu que não, porque estaria dependente do banco.
 
-<p>A Anita não conseguia, no entanto, convencer-se de que a melhor coisa a fazer era amortizar antecipadamente o crédito. Enquanto a Euribor a 12 meses estivesse negativa, pagaria uma taxa de juro de cerca de 1,2%. “Se investir num fundo de ações, talvez consiga ganhar 7% por ano acima da inflação”, refletiu. A palavra “talvez” ecoou nos seus pensamentos: era certo que teria de pagar mensalmente ao banco, mas não era garantido que ganharia 7% por ano.
+<p>A Anita não conseguia, no entanto, convencer-se de que a melhor coisa a fazer era amortizar antecipadamente o crédito. Enquanto a Euribor a 12 meses estivesse negativa, pagaria uma taxa de juro pouco superior a 1%. “Se investir num fundo de ações, talvez consiga ganhar 7% por ano acima da inflação”, refletiu. A palavra “talvez” ecoou nos seus pensamentos: era certo que teria de pagar mensalmente ao banco, mas não era garantido que ganharia 7% por ano.
 
 <p>Uma análise aos encargos projetados do financiamento denunciou-lhe que os prémios dos seguros iriam subir acentuadamente nas décadas seguintes. Pagaria mais 23% aos 50 anos do que aos 20 anos. Não foi a única coisa a assustá-la: o Quadro B da simulação do Banco CTT apontava para um encargo mensal de 728 euros aos 50 anos caso a Euribor a 12 meses regressasse ao máximo histórico!
 
-<p>Decidiu amortizar o empréstimo até aos 40 anos, a idade que traçou como meta para a sua independência financeira. Tentou usar os seus conhecimentos universitários de cálculo para descobrir como dividir a sua poupança mensal de 370 euros entre a amortização e o investimento de maneira que estivesse livre do crédito e o mais próximo possível da independência financeira aos 40 anos. Não conseguiu: sempre que planeava dedicar mais à amortização, poupava pouco para o seu objetivo; quando reduzida na amortização periódica, não conseguia saldar a dívida aos 40 anos.
+<p>Decidiu amortizar o empréstimo até aos 40 anos, a idade que traçou como meta para a sua independência financeira. Tentou usar os seus conhecimentos universitários de cálculo para descobrir como dividir a sua poupança mensal de 370 euros entre a amortização e o investimento de maneira que estivesse livre do crédito e o mais próximo possível da independência financeira aos 40 anos. Não conseguiu: sempre que planeava dedicar mais à amortização, poupava pouco para o seu objetivo; quando reduzia na amortização periódica, não conseguia saldar a dívida aos 40 anos.
 
 <p>Graças a uma <a href="https://tlim.pt/amortiza/">ferramenta</a> que encontrou na Internet, percebeu que teria de acumular amortizações de 47&nbsp;200 euros nos próximos 20 anos para se livrar do crédito sem nunca alterar a prestação mensal.
 
@@ -342,7 +346,7 @@ function p(){
 
 <p>A Anita manteve a confiança no fundo de investimento em ações, o Fidelity MSCI World Index EUR P comercializado pelo Banco Best. Como não queria abrir conta noutro banco, optou pelo melhor PPR disponível na oferta do mesmo banco. Pareceu-lhe ser o NB PPR/OICVM, que ganhara 6,5% por ano desde o lançamento em 1991.
 
-<p>Pelas suas contas, a Anita espera livrar-se do crédito à habitação entre os 40 e os 45 anos. Nessa altura, o seu fundo de investimento acumulará entre 118 mil e 130 mil euros, assumindo uma rentabilidade real de 7% por ano. Ela sabe que não será o suficiente para poder declarar a independência financeira, mas, a partir de então, tudo o que conseguir poupar será para chegar a esse objetivo. A meta ficará muito mais perto. ★
+<p>Pelas suas contas, a Anita espera livrar-se do crédito à habitação entre os 40 e os 45 anos. Nessa altura, o seu fundo de investimento acumulará entre 118 mil e 130 mil euros, assumindo uma rentabilidade real de cerca de 7% por ano. Ela sabe que não será o suficiente para poder declarar a independência financeira, mas, a partir de então, tudo o que conseguir poupar será para chegar a esse objetivo. Ficará muito mais perto da meta. ★
 </article>
 
 
@@ -404,7 +408,7 @@ function p(){
 
 <p>É preciso confiar no cliente para fazer um donativo à semelhança do que eu fiz. Não há maneira de comprovar que a doação foi efetuada. É, todavia, uma opção fiscalmente inteligente.
 
-<p>(A Unicef é também a entidade que aconselho para consignar o IRS na próxima declaração anual de rendimentos.)
+<p>(A Unicef é também a entidade que aconselho para consignar o IRS na declaração anual de rendimentos.)
 
 <h3>Impacto máximo</h3>
 
@@ -416,7 +420,7 @@ function p(){
 
 <p>Foi com surpresa mas também felicidade que, através da mensagem de correio eletrónico de reconhecimento e agradecimento do donativo, descobri que o GiveWell é agora uma organização de utilidade pública nos Países Baixos (<em>algemeen nut beogende instelling</em>). Isso quer dizer que os neerlandeses podem doar ao GiveWell com benefícios fiscais, como se pode confirmar numa <a href="https://www.belastingdienst.nl/rekenhulpen/anbi_zoeken/">pesquisa</a> junto da autoridade fiscal dos Países Baixos. (Na busca, use o nome legal do GiveWell, The Clear Fund, ou o seu número fiscal neerlandês, 826&nbsp;278&nbsp;516).
 
-<p>Será que vale a pena lutar para obter a equivalência do meu donativo para obter uma dedução fiscal em Portugal? Deixo a decisão para mais tarde. ★
+<p>Em 2022, tentarei introduzir o donativo na declaração anual de IRS. Confirmarei, então, se é possível obter uma dedução à coleta apoiando uma entidade estrangeira. ★
 </article>
 
 
@@ -428,7 +432,7 @@ function p(){
 <h2 id="r">Respondido</h2>
 <blockquote>Este tipo de <a href="https://www.mrmoneymustache.com/2021/01/29/margin-loan-ibkr-review/">empréstimo</a> seria uma opção para um investidor em Portugal?</blockquote>
 
-<p>Nos finais de janeiro, o Mr. Money Mustache publicou em artigo em que conta a sua experiência de compra de uma casa. A surpresa estava na maneira como se financiou: usou a margem disponibilizada pelo seu intermediário de bolsa.
+<p>Nos finais de janeiro, o Mr. Money Mustache publicou um artigo no qual conta a sua experiência de compra de uma casa. A surpresa estava na maneira como se financiou: usou a margem disponibilizada pelo seu intermediário de bolsa.
 
 <p>Muitos bancos e corretoras facilitam o empréstimo de dinheiro aos investidores para comprar ou subscrever títulos. É a chamada conta margem. O meu exemplo: tenho unidades do fundo iShares Core MSCI World UCITS ETF numa conta GoBulling Pro do Banco Carregosa; o banco poderia emprestar-me entre uma e quatro vezes o valor de mercado desses títulos, até 125 mil euros.
 
@@ -470,11 +474,13 @@ function p(){
 
 <li>
 <p><a href="https://rr.sapo.pt/2021/03/12/pais/youtuber-davidgyt-e-as-promessas-de-lucro-facil-pedro-perdeu-15-mil-euros/especial/230054/">“Youtuber DavidGYT e as promessas de lucro fácil. Pedro perdeu 15 mil euros”</a>, Rádio Renascença
-<p>A jornalista Inês Rocha relata como milhares de jovens foram conduzidos por David Alexandre Soares (conhecido por DavidGYT) a perder aceleradamente no mercado cambial.
+<p>A jornalista Inês Rocha relata como milhares de jovens foram conduzidos por David Alexandre Soares (conhecido por DavidGYT) a perder aceleradamente no mercado cambial. O jornalista Luís Varela de Almeida da TVI24 também fez uma reportagem aprofundada, <a href="https://tvi24.iol.pt/videos/sociedade/o-conto-do-vigario-como-david-gyt-tera-faturado-milhoes-a-custa-dos-clientes-que-perderam-tudo/6060e5300cf280db41007d0b">“O Conto do Vigário”</a>.
 
 <p>Na edição de agosto de 2019 do boletim <strong>tlim</strong>, escrevi o artigo “Tenho um BMW M4, roupa da Gucci e fiquei milionário a investir em <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>”. O texto falava exatamente sobre esse David Alexandre.
 
-<p>Na altura da publicação, fui criticado por vários leitores. Alguns disseram-me que o texto não era relevante. Infelizmente, eu tinha razão: o assunto é muito relevante. Haverá sempre oportunistas burlões; é preciso estar avisado nem que seja para desaconselhar amigos e familiares e evitar que aldrabões ganhem 1,2 milhões de euros num só ano.
+<p>Na altura da publicação, fui criticado por vários leitores. Alguns disseram-me que o texto não era relevante. Infelizmente, eu tinha razão: o assunto é muito relevante. Haverá sempre oportunistas e burlões; é preciso estar avisado nem que seja para desaconselhar amigos e familiares e evitar que aldrabões faturem 1,2 milhões de euros num só ano.
+
+<p>Conheço duas pessoas que enviaramDN queixas para a CMVM sobre o David Alexandre Soares há quase dois anos. É muito triste que o supervisor fique <a href="https://www.cmvm.pt/pt/SDI/IntermediariosFinanceiros/Pages/20210326c.aspx">preocupado</a> apenas após as reportagens. 
 
 <li>
 <p><a href="https://restofworld.org/2021/inside-zimbabwes-underground-forex-trade/">“Betting big with Zimbabwe’s foreign currency traders”</a>, Rest of World
@@ -514,7 +520,7 @@ function p(){
 
 <p>O artigo da Alexandra Costa é suportado por uma entrevista conduzida pela Joana Petiz ao próprio Carlos Martins: <a href="https://www.dn.pt/edicao-do-dia/20-mar-2021/claudio-martins-o-vinho-e-o-melhor-investimento-se-correr-mal-pode-se-sempre-bebe-lo-13479777.html">“O vinho é o melhor investimento. Se correr mal, pode-se sempre bebê-lo”</a>. “Eu faço questão de provar sempre os vinhos, é isso que me distingue, é a minha paixão e gosto do <em>lifestyle</em> associado a esta vida em que os negócios se fazem sobretudo à mesa do cliente.”
 
-<p>A conversa do Carlos Martins lembrou-me outra ilustre figura do universo da enologia portuguesa: o Paulo Martins. (Desconheço se há alguma relação familiar entre os dois.) Há muitos anos, esse senhor bateu-nos à porta da revista <cite>Carteira</cite>. Dizia que investir em vinho era a coisa mais segura e mais rentável do mundo. Foi também a outros órgãos de comunicação social. Em 2007, o <cite>DN</cite> publicou o artigo <a href="https://www.dn.pt/arquivo/2007/vinho-e-produto-de-investimento-sem-risco-e-com-retorno-elevado-988195.html">“Vinho é produto de investimento sem risco e com retorno elevado”</a>.
+<p>A conversa do Carlos Martins lembrou-me outra ilustre figura do universo da enologia portuguesa: o Paulo Martins. (Desconheço se há alguma relação familiar entre os dois.) Há muitos anos, esse senhor bateu-nos à porta da revista <cite>Carteira</cite>. Dizia que investir em vinho era a coisa mais segura e mais rentável do mundo. Foi também a outros órgãos de comunicação social. Em 2007, o <cite>DN</cite> publicou o artigo <a href="https://www.dn.pt/arquivo/2007/vinho-e-produto-de-investimento-sem-risco-e-com-retorno-elevado-988195.html">“Vinho é produto de investimento sem risco e com retorno elevado”</a>. Mencionava rentabilidades de 20%.
 
 <p>Na <cite>Carteira</cite>, fomos mais críticos. Em 2008, o Joaquim Madrinha escreveu, entre outras coisas, que, sem supervisão, “a possibilidade do episódio dos selos se vir a repetir é grande”, uma referência ao escândalo das burlas da Afinsa e do Fórum Filatélico que deixaram um buraco de 3,5 mil milhões de euros nos bolsos de investidores portugueses e espanhóis.
 
@@ -535,9 +541,9 @@ function p(){
 
 <li>
 <p><a href="https://jornaleconomico.sapo.pt/noticias/queremos-criar-em-portugal-uma-legiao-de-investidores-em-valor-realca-ceo-da-casa-de-investimentos-717823">“‘Queremos criar em Portugal uma legião de investidores em valor’, realça CEO da Casa de Investimentos”</a>, <cite>Jornal Económico</cite>
-<p>Em entrevista ao Ricardo Santos Ferreira, Emília Vieira, presidente da Casa de Investimentos, afirma que o desempenho das carteiras que gere — 8,43% por ano na última década — teria sido 2,5 pontos percentuais superior se a gestão tivesse sido feita numa modalidade de plano de poupança-reforma (PPR). No entanto, não explica como fez essas contas.
+<p>Em entrevista ao Ricardo Santos Ferreira, Emília Vieira, presidente da Casa de Investimentos, afirma que o desempenho das carteiras que gere — 8,43% por ano na última década — teria sido 2,5 pontos percentuais superior se a gestão tivesse sido feita numa modalidade de plano de poupança-reforma (PPR). Perguntei-lhe no r/literaciafinanceira como chegou a esse número. <a href="https://www.reddit.com/r/literaciafinanceira/comments/mgd30i/ama_ol%C3%A1_a_todos_chamome_em%C3%ADlia_vieira_e_sou/">Leia</a> a sua resposta a essa e a muitas outras perguntas colocadas pela comunidade.
 
-<p>Embora seja amigo da Emília e do seu sócio, Pedro Alves, não aprecio a maneira como fazem o lançamento comercial do Casa Global Value PPR/OICVM, que investe quase exclusivamente em ações mundiais. Através do portal <a href="https://saveandgrow.casadeinvestimentos.com/">Save & Grow</a>, os investidores podem candidatar-se ao estatuto de fundadores, o que lhes daria direito, entre outras coisas, a poderem subscrever uma classe do PPR mais barata (uma comissão de gestão de 1,4% em vez de 1,8%). Só aceitarão, porém, 1000 investidores nesse grupo restrito (e 350 já estão escolhidos, <a href="https://www.dinheirovivo.pt/empresas/casa-de-investimentos-lanca-o-seu-primeiro-fundo-13477599.html">segundo</a> o <cite>Dinheiro Vivo</cite>). Pelo que consegui apurar (sem falar com a equipa da Casa de Investimentos), um dos critérios principais de seleção é a partilha nas redes sociais. Não me parece justo.
+<p>Embora seja amigo da Emília e do seu sócio, Pedro Alves, não aprecio a maneira como fazem o lançamento comercial do Casa Global Value PPR/OICVM, que investe quase exclusivamente em ações mundiais. Através do portal <a href="https://saveandgrow.casadeinvestimentos.com/">Save & Grow</a>, os investidores podem candidatar-se ao estatuto de fundadores, o que lhes daria direito, entre outras coisas, a poderem subscrever uma classe do PPR mais barata (uma taxa estimada de encargos correntes de 1,76% em vez de 2,18%). Só aceitarão, porém, 1000 investidores nesse grupo restrito (e 350 já estão escolhidos, <a href="https://www.dinheirovivo.pt/empresas/casa-de-investimentos-lanca-o-seu-primeiro-fundo-13477599.html">segundo</a> o <cite>Dinheiro Vivo</cite>). Pelo que consegui apurar (sem falar com a equipa da Casa de Investimentos), um dos critérios principais de seleção é a partilha nas redes sociais. Não me parece justo.
 
 <li>
 <p><a href="https://www.unibanco.pt/cartoes-de-credito/cartao-atitude/">Cartão Atitude</a>, Unibanco
@@ -553,13 +559,13 @@ function p(){
 
 <li>
 <p><a href="https://anchor.fm/firetalksportugal/episodes/40---Entrevista-FIRE-David-Almas-do-boletim-tlim-pt-etg3b5">Episódio 40</a>, FIRE Talks Portugal
-<p>O Luís Lobo Jordão, o líder do grupo FIRE Talks Portugal no Facebook, convidou-me para uma conversa sobre independência financeira e reforma antecipada no seu <em>podcast</em>. Não estava à espera que ele quisesse falar tanto sobre a <em>minha</em> independência financeira.
+<p>O Luís Lobo Jordão, o líder do grupo <a href="https://www.facebook.com/groups/firetalksportugal/">FIRE Talks Portugal</a> no Facebook, convidou-me para uma conversa sobre independência financeira e reforma antecipada no seu <em>podcast</em>. Não estava à espera que ele quisesse falar tanto sobre a <em>minha</em> independência financeira.
 
-<p>Se for gastar tempo neste programa, siga a recomendação do Luís: escute ao dobro da velocidade para sofrer menos com a minha voz. O episódio tem 1 hora e 25 minutos. Haja paciência.
+<p>Se for gastar tempo neste programa, siga a recomendação do Luís: escute ao dobro da velocidade para sofrer menos com a minha voz. O episódio tem 1 hora e 25 minutos. Haja paciência!
 
-<p>#fire-club
+<p><del>#fire-club</del> <ins style="text-decoration:none">#clube-ifra</ins>
 
-<p>(Obrigado pelo convite, Luís. Espero que o vosso grupo continue a crescer. São mais de 2500!)
+<p>(Obrigado pelo convite, Luís. Espero que o vosso grupo continue a crescer. São mais de 2600!)
 
 ★
 </ul>
@@ -576,7 +582,7 @@ function p(){
 
 <p>Sei que alguns leitores tomam-me como referência nos seus projetos de independência financeira e reforma antecipada (IFRA). Sinto-me, por vezes, como um vendedor de banha da cobra. A IFRA não é garantia de felicidade. Pode ser, aliás, uma fonte de infelicidade, como foi para o bloguer do Living a FI. (Não é o meu caso, apesar da pandemia.)
 
-<p>Há muitos estudos académicos sobre a felicidade, mas a minha conclusão empírica até agora é que o nível de bem-estar está ligado às pessoas que nos rodeiam e à sensação de missão. A partir de um determinado nível, o dinheiro é irrelevante ou, mesmo, prejudicial. (“Concluímos que rendimentos elevados compram satisfação mas não felicidade“, <a href="https://www.pnas.org/content/107/38/16489.abstract">escreveram</a> Daniel Kahneman e Angus Deaton. Para que fique claro: é natural que se fique feliz com um aumento salarial, mas o efeito dilui-se com o tempo.)
+<p>Há muitos estudos académicos sobre a felicidade, mas a minha conclusão empírica até agora é que o nível de bem-estar está ligado às pessoas que nos rodeiam e à sensação de missão. A partir de um determinado nível, o dinheiro é irrelevante ou, mesmo, prejudicial. (“Concluímos que rendimentos elevados compram satisfação mas não felicidade“, <a href="https://www.pnas.org/content/107/38/16489.abstract">escreveram</a> Daniel Kahneman e Angus Deaton. Para que fique claro: é natural que se fique feliz com um aumento salarial, mas o efeito dilui-se no tempo.)
 
 <p>O lançamento do boletim <strong>tlim</strong> foi uma das melhores decisões da minha IFRA: não só sinto que ajudo os leitores (missão) como crio amizades que espero que sobrevivam à própria publicação (pessoas).
 
