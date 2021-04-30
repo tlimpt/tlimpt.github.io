@@ -31,9 +31,9 @@ input { font-family: inherit; font-size: 1em; width: 3em; text-align:right; bord
 
 <h2>Se os fundos renderem um pouco mais do que os planos de reforma, podem mais do que compensar a desvantagem fiscal.</h2>
 
-<h4>Por <strong>David Almas</strong> a 1 de julho de 2020</h4>
+<h4>Por <strong>David Almas</strong> a 1 de maio de 2021</h4>
 
-<p>Perceber facilmente o sucesso comercial dos planos de poupança-reforma (PPR): têm uma fiscalidade muito generosa. Primeiro, há uma dedução à coleta de 20% das aplicações até ao limite anual de 400 euros por aforrador com menos de 35 anos, 350 euros entre 35 anos e 50 anos e 300 euros para os maiores de 50 anos, desde que ainda não esteja na reforma.
+<p>Percebe-se facilmente o sucesso comercial dos planos de poupança-reforma (PPR): têm uma fiscalidade muito generosa. Primeiro, há uma dedução à coleta de 20% das aplicações até ao limite anual de 400 euros por aforrador com menos de 35 anos, 350 euros entre 35 anos e 50 anos e 300 euros para os maiores de 50 anos, desde que ainda não esteja na reforma.
 
 <p>Depois, quem resgatar nas condições legais paga uma taxa de tributação de 8% sobre os rendimentos. É extraordinariamente baixa. Essas condições incluem:
 <ul>
@@ -71,22 +71,22 @@ input { font-family: inherit; font-size: 1em; width: 3em; text-align:right; bord
 
 <p>Para estes cálculos, vamos prever uma duração do investimento de <input type="text" value="8" id="anos" style="width:2em" onkeyup="calc();">&nbsp;anos, <input type="text" value="0" id="meses" style="width:2em" onkeyup="calc();">&nbsp;meses e <input type="text" value="1" id="dias" style="width:2em" onkeyup="calc();">&nbsp;dias.
 
-<p>O retorno é, naturalmente, também muito importante. Que rentabilidade anual bruta espera do PPR? Os planos mais conservadores — aqueles que garantem o capital e uma rentabilidade anual mínima — normalmente rendem menos no longo prazo. Os mais agressivos — agora já há PPR que investem quase totalmente nos mercados acionistas — podem produzir maiores retornos para os investidores de longo prazo, mas são mais voláteis.
+<p>O retorno é, naturalmente, também muito importante. Que rentabilidade anual bruta espera do PPR? Os planos mais conservadores — aqueles que garantem o capital e uma rentabilidade anual mínima — normalmente rendem menos no longo prazo. Os mais agressivos — agora já há PPR que investem totalmente nos mercados acionistas — podem produzir maiores retornos para os investidores de longo prazo, mas são mais voláteis.
 
-<p>O <a href="/ppr/">desempenho histórico dos 120 PPR disponíveis para comercialização</a> pode ajudar a estimar a sua rentabilidade. Nos últimos 5 anos, renderam, em média, 1,70%. Consideremos uma rentabilidade anual de <input type="text" value="2" id="rppr" onkeyup="dif();">%.
+<p>O <a href="/ppr/">desempenho histórico dos 113 PPR disponíveis para comercialização</a> pode ajudar a estimar a sua rentabilidade. Nos últimos 5 anos, renderam, em média, 1,61%. Consideremos uma rentabilidade anual de <input type="text" value="3,22" id="rppr" onkeyup="dif();">%.
 
-<p>As rentabilidades podem, todavia, ser truncadas pelos encargos dos PPR. Nem todos cobram comissões de subscrição e de reembolso, mas ainda há alguns que apresentam essas despesas. Pode descobrir essas percentagens nos documentos legais do PPR que eleger para o seu futuro. Descontemos uma comissão de subscrição de <input type="text" value="0,5" id="csppr" onkeyup="calc();">% e de reembolso de <input type="text" value="0" id="crppr" onkeyup="calc();">%.
+<p>As rentabilidades podem, todavia, ser truncadas pelos encargos dos PPR. Nem todos cobram comissões de subscrição e de reembolso, mas ainda há alguns que apresentam essas despesas. Pode descobrir essas percentagens nos documentos legais do PPR que eleger para o seu futuro. Descontemos uma comissão de subscrição de <input type="text" value="1" id="csppr" onkeyup="calc();">% e de reembolso de <input type="text" value="0" id="crppr" onkeyup="calc();">%.
 
-<p>Assim, se solicitar o reembolso na forma de capital nas condições legais, a <strong>rentabilidade anual líquida do investimento no PPR será de <span id="rappr">3,11%</span></strong>. Fora das condições legais, a rentabilidade anual do PPR desce para <span id="rbppr">3,10%</span>. Estes números assumem um desafasamento de <input type="text" value="6" id="desfasa" style="width:2em" onkeyup="calc();">&nbsp;meses no recebimento da dedução à coleta.
+<p>Assim, se solicitar o reembolso na forma de capital nas condições legais, a <strong>rentabilidade anual líquida do investimento no PPR será de <span id="rappr">4,19%</span></strong>. Fora das condições legais, a rentabilidade anual do PPR desce para <span id="rbppr">4,17%</span>. Estes números assumem um desafasamento de <input type="text" value="6" id="desfasa" style="width:2em" onkeyup="calc();">&nbsp;meses no recebimento da dedução à coleta.
 
 <h3>É bom ou mau? Compare</h3>
-<p>Os PPR são frequentemente muito conservadores e carregam normalmente encargos mais altos do que produtos alternativos. É natural que os fundos de investimento no mesmo espectro de risco atinjam rentabilidades superiores. Assumamos que o fundo no qual poderá investir em alternativa ao PPR renderá <input type="text" value="4,2" id="rfundo" onkeyup="dif();">% por ano. Isso é <span id="diferenca">mais 2,2 pontos percentuais por ano do</span> que o PPR.
+<p>Os PPR são frequentemente muito conservadores e carregam normalmente encargos mais altos do que produtos alternativos. É natural que os fundos de investimento no mesmo espectro de risco atinjam rentabilidades superiores. Assumamos que o fundo no qual poderá investir em alternativa ao PPR renderá <input type="text" value="5,52" id="rfundo" onkeyup="dif();">% por ano. Isso é <span id="diferenca">mais 2,3 pontos percentuais por ano do</span> que o PPR.
 
 <p>Faltam os encargos desse fundo: tem uma comissão de subscrição de <input type="text" value="0" id="csfundo" onkeyup="calc();">% e de resgate de <input type="text" value="0" id="crfundo" onkeyup="calc();">%.
 
 <p>As mais-valias dos fundos de investimento são normalmente tributados à taxa autónoma de 28%. Há, por vezes, a aplicação de um coeficiente de correção monetária quando a duração do investimento ultrapassa 24 meses. Grosso modo, esses ganhos são apenas tributados na parte que ultrapassa a inflação. Incluamos uma inflação anual para efeitos do coeficiente de correção monetária de <input type="text" value="0" id="ccm" onkeyup="calc();">%. (Os fundos de investimento mobiliário &mdash; de ações, de obrigações ou misto, por exemplo &mdash; não beneficiam do coeficiente de correção monetária, por isso insira um zero se for esse o caso.)
 
-<p>Com esses números, deve esperar uma rentabilidade anual do fundo de investimento de <span id="rafundo">3,16%</span>, assumindo o pagamento do imposto <input type="text" value="6" id="desfasaf" onkeyup="calc();"> meses depois do resgate. O fundo renderá <strong id="xaram">mais</strong> do que o PPR.
+<p>Com esses números, deve esperar uma rentabilidade anual do fundo de investimento de <span id="rafundo">4,2%</span>, assumindo o pagamento do imposto <input type="text" value="6" id="desfasaf" onkeyup="calc();"> meses depois do resgate. O fundo renderá <strong id="xaram">mais</strong> do que o PPR.
 
 <h3>Legislação relevante</h3>
 <p>As regras fiscais dos PPR e dos fundos de investimento são diferentes — e complexas. Esta é a legislação mais importante:
@@ -108,7 +108,7 @@ input { font-family: inherit; font-size: 1em; width: 3em; text-align:right; bord
 	</ul>
 </ul>
 
-<p>A análise anterior foi simplificada para os contribuintes singulares residentes em Portugal. A realidade é, naturalmente, mais complexa: além de os aforradores poderem ter residência no estrangeiro, é possível englobar as mais-valias no IRS, os investidores tendem a fazem vários investimentos ao longo do tempo, podem ter vários instrumentos que produzam mais ou menos-valias no mesmo ano fiscal e os fundos de investimento podem realizar distribuições de rendimentos aos participantes. ★
+<p>A análise anterior foi simplificada para os contribuintes singulares residentes em Portugal. A realidade é, naturalmente, mais complexa: além de os aforradores poderem ter residência no estrangeiro, é possível <a href="/ifra-irs/">englobar as mais-valias no IRS</a>, os investidores tendem a fazem vários investimentos ao longo do tempo, podem ter vários instrumentos que produzam mais ou menos-valias no mesmo ano fiscal e os fundos de investimento podem realizar distribuições de rendimentos aos participantes. ★
 
 <script>
 function deduz(){
