@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Interativo. Visualize a sua reforma antecipada</title>
+<style>
+body { font-size:1.1em; font-family:sans-serif; line-height:1.7; margin:0 auto; max-width:30em; padding:.5em; background-color:#fff; color:#222 }
+header p a { text-decoration:none }
+h1 { line-height:1 }
+h2 { line-height:1.2 }
+h3 { margin-top:3em }
+h4 { font-size:1em; font-weight:normal }
+h4 + p:first-letter { float: left; line-height:.65; font-size:3.5em; font-weight:bold; padding-top:.15em; margin-right:.1em }
+aside { border-left:.3em solid; padding:0 0 0 2em; margin:2em 0 }
+ul li { list-style-type:square }
+input { font-family: inherit; font-size: 1em; width: 3em; text-align:right; border-width:0 0 .2em; border-color: #222; background:none; color:inherit }
+
+@media (prefers-color-scheme: dark) {
+	body { background-color:#000; color:#eee }
+	a { color:#9999ff }
+	input { border-color:#eee }
+}
+
+input[type=range] { cursor:pointer; width:20em; vertical-align:middle; background-color:transparent; -webkit-appearance:none }
+
+input[type=range]:focus { outline:none }
+
+input[type=range]::-webkit-slider-runnable-track { background:#ccc; width:100%; height:.3em }
+
+input[type=range]::-moz-range-track { background:#ccc; width:100%; height:.3em }
+
+input[type=range]::-webkit-slider-thumb {
+	margin-top:-.4em; width:2.5em; height:1em; background:#222; border:0; border-radius:1em; -webkit-appearance:none }
+
+input[type=range]::-moz-range-thumb { width:2.5em; height:1em; background:#222; border:0; border-radius:1.5em }
+
+.separador { display:none; padding:1.5em 0; text-align:center; line-height:2em }
+
+.titulo { float:left; list-style:none; padding:0; margin:0; width:50%; text-align:center }
+
+.dot { cursor:pointer; height:1em; width:1em; margin:0 .25em; background-color:#ccc; border-radius:50%; display: inline-block; transition:background-color 0.5s ease }
+
+.active, .dot:hover { background-color: #222 }
+</style>
+</head>
+<body>
+<header><p><a href="/">tlim.pt</a></header>
+
+<h1>Interativo. Visualize a sua reforma antecipada</h1>
+
+<h4>Por <strong>David Almas</strong></h4>
+
+<p> Cras augue dolor, ullamcorper quis tincidunt et, dapibus vel mi. Mauris fermentum tristique nisi, vitae hendrerit sem. Sed egestas malesuada dui, at dignissim ligula cursus quis. Integer at lacus hendrerit, blandit massa vitae, sodales augue. Etiam vitae lacus consectetur, eleifend nisl eget, luctus dolor. Sed sed lacus non tellus molestie malesuada vel id dui. Pellentesque ut rutrum sapien. Etiam rutrum scelerisque gravida.  Deslizando o <span style="height: 1em; width: 1em; margin:0 .1em; background-color: #ccc; border-radius: 50%; display: inline-block;"></span> kdjsfhdksh <span></span>. arrastando o <span style="width:2.5em; height:1em; background:#222; border:0; border-radius:1.5em; display: inline-block;"></span>
+
+<noscript><p>(Infelizmente, o seu programa de navegação na Internet é um dos poucos que não permite interatividade. Não vale a pena mudar os valores.)</noscript>
+
+
+<div style="font-size:.9em; margin:3em auto; padding:0; width:20em"  id="simulador">
+
+<div>
+	<ul style="padding:0; margin:0; clear:both">
+		<li class="titulo">Quanto precisa no início da reforma antecipada?</li>
+		<li class="titulo">Quanto terá no início da reforma antecipada?</li>
+	</ul>
+</div>
+
+<div>
+	<ul style="margin:0; padding:0; clear:both; height:11em; border-bottom:.3em solid #222">  
+		<li id="pif" style="top:1.4em; height:9.6em; position:relative; float:left; left:2.5em; list-style:none; width:5em; background-color:lightgreen"></li>
+		<li id="acumula" style="top:1em; height:10em; position:relative; float:left; left:7.5em; list-style:none; width:5em; background-color:lightgreen"></li>
+	</ul>
+</div>
+
+<div>
+	<ul style="padding:0; margin:.5em 0; clear:both">
+		<li id="pif2" class="titulo" alt="Quanto precisa no início da reforma antecipada?">180 073€</li>
+		<li id="acumula2" class="titulo" alt="Quanto terá no início da reforma antecipada?">187 591€</li>
+	</ul>
+</div>
+
+<div style="padding:0; margin:0; clear:both">
+	<div class="separador">
+		<label for="g-i">Idade: <span id="g-i-x">32</span> anos</label>
+		<input type="range" min="18" max="68" value="32" step="1" id="g-i" oninput="g();">
+	</div>
+	<div class="separador">
+		<label for="-g-ir">Reforma antecipada: <span id="g-ir-x">50</span> anos</label>
+		<input type="range" min="19" max="69" value="50" step="1" id="g-ir" oninput="g();"> 
+	</div>
+	<div class="separador">
+		<label for="g-iis">Idade de aposentação: <span id="g-iss-x">68</span> anos</label>
+		<input type="range" min="66" max="75" value="68" step="1" id="g-iss" oninput="g();">
+	</div>
+	<div class="separador">
+		<label for="g-ev">Esperança de vida: <span id="g-ev-x">94</span> anos</label>
+		<input type="range" min="65" max="122" value="94" step="1" id="g-ev" oninput="g();">
+	</div>
+	<div class="separador">
+		<label for="g-p">Património financeiro: <span id="g-p-x">60000</span>€</label>
+		<input type="range" min="0" max="1000000" value="60000" step="500" id="g-p" oninput="g();">
+	</div>
+	<div class="separador">
+		<label for="g-pm">Poupança periódica: <span id="g-pm-x">300</span>€/mês</label>
+		<input type="range" min="0" max="5000" value="300" step="10" id="g-pm" oninput="g();">
+	</div>
+	<div class="separador">
+		<label for="g-d">Despesa prevista: <span id="g-d-x">1000</span>€/mês</label>
+		<input type="range" min="500" max="5000" value="1000" step="10" id="g-d" oninput="g();">
+	</div>
+	<div class="separador">
+		<label for="g-ss">Pensão: <span id="g-ss-x">900</span>€/mês</label>
+		<input type="range" min="0" max="5000" value="900" step="10" id="g-ss" oninput="g();">
+	</div>
+	<div class="separador">
+		<label for="g-tx">Rentabilidade: <span id="g-tx-x">3</span>%/ano</label>
+		<input type="range" min="-10" max="10" value="3" step="0.1" id="g-tx" oninput="g();">
+	</div>
+
+	<div style="text-align:center">
+		<span class="dot" onclick="currentSlide(1)"></span>
+		<span class="dot" onclick="currentSlide(2)"></span>
+		<span class="dot" onclick="currentSlide(3)"></span>
+		<span class="dot" onclick="currentSlide(4)"></span>
+		<span class="dot" onclick="currentSlide(5)"></span>
+		<span class="dot" onclick="currentSlide(6)"></span>
+		<span class="dot" onclick="currentSlide(7)"></span>
+		<span class="dot" onclick="currentSlide(8)"></span>
+		<span class="dot" onclick="currentSlide(9)"></span>
+	</div> 
+</div>
+
+</div>
+
+<p>Algumas informações sobre as nove variáveis:
+
+<ul>
+<li><p><strong>Idade</strong>. Indique sua idade atual. Este simulador apenas funciona para quem ainda não se aposentou. Escolheu <a href="#simulador" onclick="currentSlide(1)" id="info-g-i-x">32 anos</a>.
+<li><p><strong>Reforma antecipada</strong>. Escolha a idade a partir da qual gostaria de deixar de trabalhar. Ajuste-a até conseguir um montante no início da reforma antecipada superior ao que necessita para o resto da vida, isto é, até a barra da direita ser superior à barra da esquerda. Escolheu <a href="#simulador" onclick="currentSlide(2)" id="info-g-ir-x">50 anos</a>.
+<li><p><strong>Idade de aposentação</strong>. É a idade que terá quando solicitar a pensão de velhice. Na maioria dos casos, o <a href="http://www.seg-social.pt/pensao-de-velhice">pedido</a> pode ser feito a partir dos 66 anos e meio, mas está a aumentar. Escolheu <a href="#simulador" onclick="currentSlide(3)" id="info-g-iss-x">68 anos</a>.
+<li><p><strong>Esperança de vida</strong>. Um cidadão português com a sua idade tem uma esperança de vida até aos <span id="ineev">84</span> anos, <a href="https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_indicadores&indOcorrCod=0004162&xlang=pt&contexto=bd&selTab=tab2">segundo</a> o Instituto Nacional de Estatística. Dê, no entanto, alguma folga à sua longevidade: a probabilidade de chegar os 94 anos é inferior a 10% para qualquer pessoa menor de 76 anos. Ajuste esta informação à sua situação pessoal, nomeadamente ao seu estado de saúde.  Escolheu <a href="#simulador" onclick="currentSlide(4)" id="info-g-ev-x">94 anos</a>.
+<li><p><strong>Património financeiro</strong>. Quanto dinheiro amealhou até hoje? Considere apenas as aplicações financeiras (depósitos bancários, fundos de investimento, planos de poupança-reforma, Certificados de Aforro e do Tesouro, seguros de capitalização, criptoativos, entre outros) que poderá usar para manter o seu estilo de vida durante a reforma antecipada e a aposentação estatutária. Escolheu <a href="#simulador" onclick="currentSlide(5)" id="info-g-p-x">60&nbsp;000 euros</a>.
+<li><p><strong>Poupança periódica</strong>. É o montante mensal que consegue juntar ao património financeiro que assegurará a sua reforma antecipada e a aposentação estatutária. Assuma um valor médio a preços de hoje. Escolheu <a href="#simulador" onclick="currentSlide(6)" id="info-g-pm-x">300 euros</a> por mês.
+<li><p><strong>Despesa prevista</strong>. Decida quanto gastará mensalmente após a reforma antecipada, em média. Considere um montante a preços de hoje. Escolheu <a href="#simulador" onclick="currentSlide(7)" id="info-g-d-x">1000 euros</a> por mês.
+<li><p><strong>Pensão</strong>. Estime a pensão estatutária a preços de hoje que receberá após a aposentação. Use o <a href="https://app.seg-social.pt/ptss/sip/simulador/paginaPrincipal?dswid=-3812">simulador</a> da Segurança Social Direta pode ajudar. (Olhe para o “valor correspondente nos dias de hoje”.) A pensão mínima da Segurança Social em 2021 é de 275,30 euros. Escolheu <a href="#simulador" onclick="currentSlide(8)" id="info-g-ss-x">900 euros</a>.
+<li><p><strong>Rentabilidade</strong>. É o retorno anual que espera do seu património financeiro para o resto da vida. Indique uma rentabilidade real líquida, isto é, depois de descontados os impactos da inflação e dos encargos, como comissões e impostos. Como mencionei no primeiro artigo desta edição do boletim <strong>tlim</strong>, Elroy Dimson, Paul Marsh e Mike Staunton calculam que as ações renderão, em termos reais, 3% por ano e as obrigações -0,5%. Escolheu <a href="#simulador" onclick="currentSlide(9)" id="info-g-tx-x">3%</a> por ano.
+</ul>
+
+<script>
+window.onload = function(){ g(); }
+// slides
+var slideIndex = 1;
+showSlides(slideIndex);
+function currentSlide(n) { showSlides(slideIndex = n); }
+function showSlides(n) {
+	var j;
+	var slides = document.getElementsByClassName("separador");
+	var dots = document.getElementsByClassName("dot");
+	for (j = 0; j < slides.length; j++) { slides[j].style.display = "none"; }
+	for (j = 0; j < dots.length; j++) { dots[j].className = dots[j].className.replace(" active", ""); }
+	slides[slideIndex-1].style.display = "block";
+	dots[slideIndex-1].className += " active";
+} 
+
+function valor(x) { return document.getElementById(x).value * 1; } 
+
+function escreve(y,z) {
+	if (z < 10) { document.getElementById(y).innerHTML = String(Math.round(z*100)/100).replace(".",","); }
+	else if (z > 9999) { document.getElementById(y).innerHTML = Math.round(z).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); }
+	else { document.getElementById(y).innerHTML = Math.round(z); }
+}
+
+const ineev = [ 80.93, 80.16, 79.19, 78.2, 77.21, 76.22, 75.23, 74.23, 73.24, 72.24, 71.25, 70.25, 69.26, 68.27, 67.27, 66.28, 65.29, 64.3, 63.31, 62.33, 61.35, 60.37, 59.39, 58.4, 57.43, 56.45, 55.47, 54.49, 53.51, 52.53, 51.56, 50.59, 49.62, 48.64, 47.67, 46.7, 45.73, 44.76, 43.79, 42.82, 41.86, 40.9, 39.95, 39.01, 38.06, 37.12, 36.18, 35.26, 34.33, 33.42, 32.51, 31.61, 30.72, 29.83, 28.95, 28.06, 27.19, 26.32, 25.45, 24.6, 23.75, 22.91, 22.08, 21.25, 20.42, 19.61, 18.79, 17.98, 17.17, 16.37, 15.59, 14.81, 14.03, 13.27, 12.52, 11.79, 11.07, 10.35, 9.66, 8.97, 8.31, 7.66, 7.03, 6.41, 5.83, 5.29, 4.8, 4.35, 3.94, 3.56, 3.21, 2.91, 2.63, 2.38, 2.15, 1.94, 1.76, 1.59, 1.44, 1.31, 1.19 ];
+function eev(q) {
+	if( q > 100 ) { q = 100; }
+	return ineev[q]; }
+
+function g(){
+	// Idade
+	var i = valor("g-i");
+	escreve("g-i-x", i);
+	escreve("info-g-i-x", i);
+	document.getElementById("info-g-i-x").innerHTML += " anos";
+
+	// Idade na reforma antecipada
+	document.getElementById("g-ir").min = i + 1;
+	var iif = valor("g-ir"); 
+	if (iif <= i) { iif = i + 1; }
+	escreve("g-ir-x", iif);
+	escreve("info-g-ir-x", iif);
+	document.getElementById("info-g-ir-x").innerHTML += " anos";
+
+	// idade na aposentação
+	document.getElementById("g-iss").min = Math.max(66,iif + 1);
+	var iss = valor("g-iss"); escreve("g-iss-x", iss);
+	escreve("info-g-iss-x", iss);
+	document.getElementById("info-g-iss-x").innerHTML += " anos";
+
+	// idade na esperança de vida
+	document.getElementById("g-ev").min = iss + 1;
+	var ev = valor("g-ev"); escreve("g-ev-x", ev);
+	escreve("info-g-ev-x", ev);
+	document.getElementById("info-g-ev-x").innerHTML += " anos";
+
+	escreve("ineev", eev(i) + i);
+
+	// património financeiro
+	var p = valor("g-p"); escreve("g-p-x", p);
+	escreve("info-g-p-x", p);
+	document.getElementById("info-g-p-x").innerHTML += " euros";
+
+	// poupança mensal
+	var pm = valor("g-pm"); escreve("g-pm-x", pm);
+	escreve("info-g-pm-x", pm);
+	document.getElementById("info-g-pm-x").innerHTML += " euros";
+
+	// despesa mensal na reforma antecipada e aposentação
+	var d = valor("g-d"); escreve("g-d-x", d);
+	escreve("info-g-d-x", d);
+	document.getElementById("info-g-d-x").innerHTML += " euros";
+
+	// valor da pensão mensal
+	var ss = valor("g-ss"); escreve("g-ss-x", ss);
+	escreve("info-g-ss-x", ss);
+	document.getElementById("info-g-ss-x").innerHTML += " euros";
+
+	// rentabilidade anual
+	var tx = valor("g-tx"); escreve("g-tx-x", tx);
+	escreve("info-g-tx-x", tx);
+	document.getElementById("info-g-tx-x").innerHTML += "%";
+
+	// variáveis adicionais
+	var r = Math.pow(1 + tx/100, 1/12) - 1; // rentabilidade mensal
+	var m = (iif - i) * 12; // meses até à reforma antecipada
+	var mra = (ev - iif) * 12; // meses de reforma antecipada
+	var mss = (ev - iss) * 12; // meses de pensão
+
+	// cálculos
+	var pif, acumula;
+	if( r == 0 ) {
+		pif = d * mra - ss * mss;
+		acumula = p + pm * m;
+	}
+	else {
+		pif = d * ( 1 - (1+r)**(-mra))/r - ss * (1-(1+r)**(-mss))/r * (1+r)**(-(mra - mss));
+		acumula = p * (1 + r) ** m + pm * ( (1 + r) ** m - 1 ) / r;
+//		var pif = d * mra - ss * mss;
+//		var acumula = p + pm * m;
+//		console.log(r);
+	}
+
+	// legendas
+	if( pif <= 0 ) { document.getElementById("pif2").innerHTML = "0€"; }
+	else { document.getElementById("pif2").innerHTML = Math.round(pif).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + "€"; }
+	document.getElementById("acumula2").innerHTML = Math.round(acumula).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + "€";
+
+	// barras
+	if (pif >= acumula) {
+		document.getElementById("pif").style.top = "1em";
+		document.getElementById("pif").style.height = "10em";
+		var racio = acumula / pif * 10;
+		document.getElementById("acumula").style.height = racio + "em";
+		document.getElementById("acumula").style.top = (11 - racio) + "em";
+		document.getElementById("pif").style.backgroundColor = "firebrick";
+		document.getElementById("pif").style.backgroundImage = "linear-gradient(firebrick,#ff3333)";
+		document.getElementById("acumula").style.backgroundColor = "firebrick";
+		document.getElementById("acumula").style.backgroundImage = "linear-gradient(firebrick,#ff3333)";
+	}
+	else {
+		document.getElementById("acumula").style.top = "1em";
+		document.getElementById("acumula").style.height = "10em";
+		var racio = pif / acumula * 10;
+		if (pif <= 0 ) {
+			document.getElementById("pif").style.height = "0.001em";
+			document.getElementById("pif").style.top = "11em"; }
+		else {
+			document.getElementById("pif").style.height = racio + "em";
+			document.getElementById("pif").style.top = (11 - racio) + "em"; }
+		document.getElementById("pif").style.backgroundColor = "lightgreen";
+		document.getElementById("pif").style.backgroundImage = "linear-gradient(green,lightgreen)";
+		document.getElementById("acumula").style.backgroundColor = "lightgreen";
+		document.getElementById("acumula").style.backgroundImage = "linear-gradient(green,lightgreen)";
+	}
+}
+</script>
+</body>
+</html>
