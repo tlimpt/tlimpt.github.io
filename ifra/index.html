@@ -186,7 +186,7 @@ function f(){
 	var mif4 = (document.getElementById("ev").value - document.getElementById("if").value) * 12;
 	var pif4 = 100 * Math.ceil(d4 * (1 - (1 + r4) ** (-mif4)) / r4 / 100);
 	var m4 = (document.getElementById("if").value - document.getElementById("anos").value) * 12;
-	var pm4 = pif4 / ((1 - (1 + r4) ** (-m4)) / r4);
+	var pm4 = pif4 / (   ( (1+r4) ** m4 - 1) / r4  );
 	document.getElementById('precisa').innerHTML = pif4;
 	document.getElementById('poupa').innerHTML = Math.ceil(pm4);
 	var i = document.getElementById("f-i").value;
@@ -201,8 +201,11 @@ function f(){
 	var d = document.getElementById("f-d").value; // despesa mensal na IF
 	var ss = document.getElementById("f-ss").value; // pensão
 	var mss = (ev - iss) * 12; // meses após pensão
-	var pif = (d - ss) * (1 - (1 + r) ** (-mif)) / r + ss * (1 - (1 + r) ** (-(mif - mss))) / r; // património necessário na data de IF2
-	var pm = (pif - p * (1 + r) ** m) / ((1 - (1 + r) ** (-m)) / r); // poupança mensal
+	var pif
+	if( r == 0 ) { pif = d * mif - ss * mss; }
+	else { pif = (d - ss) * (1 - (1 + r) ** (-mif)) / r + ss * (1 - (1 + r) ** (-(mif - mss))) / r; } // património necessário na data de IF2
+
+	var pm = (pif - p * (1 + r) ** m) / ( ( (1 + r) ** m - 1) / r); // poupança mensal
 	if (pm > 0){
 		document.getElementById("f-tcharam").innerHTML = "<strong>deve amealhar mensalmente cerca de " + Math.ceil(pm) + " euros até à independência financeira</strong>. Assim, terá aproximadamente " + 100 * Math.ceil(pif / 100) + " euros, a preços de hoje, quando atingir essa meta";
 	} else {
