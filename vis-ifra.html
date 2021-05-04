@@ -17,32 +17,31 @@ aside { border-left:.3em solid; padding:0 0 0 2em; margin:2em 0 }
 ul li { list-style-type:square }
 input { font-family: inherit; font-size: 1em; width: 3em; text-align:right; border-width:0 0 .2em; border-color: #222; background:none; color:inherit }
 
+input[type=range] { cursor:pointer; width:20em; vertical-align:middle; background-color:transparent; -webkit-appearance:none }
+input[type=range]:focus { outline:none }
+input[type=range]::-webkit-slider-runnable-track { background:#999; width:100%; height:.3em }
+input[type=range]::-moz-range-track { background:#999; width:100%; height:.3em }
+input[type=range]::-webkit-slider-thumb {
+	margin-top:-.4em; width:2.5em; height:1em; background:#222; border:0; border-radius:1em; -webkit-appearance:none }
+input[type=range]::-moz-range-thumb { width:2.5em; height:1em; background:#222; border:0; border-radius:1.5em }
+
+.separador { display:none; padding:1.5em 0; text-align:center; line-height:2em }
+.titulo { float:left; list-style:none; padding:0; margin:0; width:50%; text-align:center }
+.dot { cursor:pointer; height:1em; width:1em; margin:0 .25em; background-color:#999; border-radius:50%; display: inline-block; transition:background-color 0.5s ease }
+.active, .dot:hover { background-color: #222 }
+.ex-dot { height: 1em; width: 1em; margin:0 .1em; background-color: #999; border-radius: 50%; display: inline-block }
+.ex-track { width:2.5em; height:1em; background:#222; border:0; border-radius:1.5em; display: inline-block }
+
 @media (prefers-color-scheme: dark) {
 	body { background-color:#000; color:#eee }
 	a { color:#9999ff }
 	input { border-color:#eee }
+	input[type=range]::-moz-range-thumb { background: #eee }
+	input[type=range]::-moz-range-track { background:#666 }
+	.dot, .ex-dot { background:#666 }
+	.active, .dot:hover { background: #eee }
+	.ex-track { background:#eee }
 }
-
-input[type=range] { cursor:pointer; width:20em; vertical-align:middle; background-color:transparent; -webkit-appearance:none }
-
-input[type=range]:focus { outline:none }
-
-input[type=range]::-webkit-slider-runnable-track { background:#ccc; width:100%; height:.3em }
-
-input[type=range]::-moz-range-track { background:#ccc; width:100%; height:.3em }
-
-input[type=range]::-webkit-slider-thumb {
-	margin-top:-.4em; width:2.5em; height:1em; background:#222; border:0; border-radius:1em; -webkit-appearance:none }
-
-input[type=range]::-moz-range-thumb { width:2.5em; height:1em; background:#222; border:0; border-radius:1.5em }
-
-.separador { display:none; padding:1.5em 0; text-align:center; line-height:2em }
-
-.titulo { float:left; list-style:none; padding:0; margin:0; width:50%; text-align:center }
-
-.dot { cursor:pointer; height:1em; width:1em; margin:0 .25em; background-color:#ccc; border-radius:50%; display: inline-block; transition:background-color 0.5s ease }
-
-.active, .dot:hover { background-color: #222 }
 </style>
 </head>
 <body>
@@ -52,7 +51,7 @@ input[type=range]::-moz-range-thumb { width:2.5em; height:1em; background:#222; 
 
 <h4>Por <strong>David Almas</strong></h4>
 
-<p> Cras augue dolor, ullamcorper quis tincidunt et, dapibus vel mi. Mauris fermentum tristique nisi, vitae hendrerit sem. Sed egestas malesuada dui, at dignissim ligula cursus quis. Integer at lacus hendrerit, blandit massa vitae, sodales augue. Etiam vitae lacus consectetur, eleifend nisl eget, luctus dolor. Sed sed lacus non tellus molestie malesuada vel id dui. Pellentesque ut rutrum sapien. Etiam rutrum scelerisque gravida.  Deslizando o <span style="height: 1em; width: 1em; margin:0 .1em; background-color: #ccc; border-radius: 50%; display: inline-block;"></span> kdjsfhdksh <span></span>. arrastando o <span style="width:2.5em; height:1em; background:#222; border:0; border-radius:1.5em; display: inline-block;"></span>
+<p> Cras augue dolor, ullamcorper quis tincidunt et, dapibus vel mi. Mauris fermentum tristique nisi, vitae hendrerit sem. Sed egestas malesuada dui, at dignissim ligula cursus quis. Integer at lacus hendrerit, blandit massa vitae, sodales augue. Etiam vitae lacus consectetur, eleifend nisl eget, luctus dolor. Sed sed lacus non tellus molestie malesuada vel id dui. Pellentesque ut rutrum sapien. Etiam rutrum scelerisque gravida.  Deslizando o <span class="ex-dot"></span> kdjsfhdksh <span></span>. arrastando o <span class="ex-track"></span>
 
 <noscript><p>(Infelizmente, o seu programa de navegação na Internet é um dos poucos que não permite interatividade. Não vale a pena mudar os valores.)</noscript>
 
@@ -148,8 +147,7 @@ input[type=range]::-moz-range-thumb { width:2.5em; height:1em; background:#222; 
 </ul>
 
 <script>
-window.onload = function(){ g(); }
-// slides
+// diapositivos
 var slideIndex = 1;
 showSlides(slideIndex);
 function currentSlide(n) { showSlides(slideIndex = n); }
@@ -238,16 +236,10 @@ function g(){
 
 	// cálculos
 	var pif, acumula;
-	if( r == 0 ) {
-		pif = d * mra - ss * mss;
-		acumula = p + pm * m;
-	}
+	if( r == 0 ) { pif = d * mra - ss * mss; acumula = p + pm * m; }
 	else {
 		pif = d * ( 1 - (1+r)**(-mra))/r - ss * (1-(1+r)**(-mss))/r * (1+r)**(-(mra - mss));
 		acumula = p * (1 + r) ** m + pm * ( (1 + r) ** m - 1 ) / r;
-//		var pif = d * mra - ss * mss;
-//		var acumula = p + pm * m;
-//		console.log(r);
 	}
 
 	// legendas
@@ -283,6 +275,7 @@ function g(){
 		document.getElementById("acumula").style.backgroundImage = "linear-gradient(green,lightgreen)";
 	}
 }
+window.onload = function(){ g(); }
 </script>
 </body>
 </html>
