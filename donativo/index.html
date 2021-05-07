@@ -1,1 +1,72 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Donativo</title>
+<style>
+body { font-size:1.1em; font-family:sans-serif; line-height:1.7; margin:0 auto; max-width:30em; padding:.5em; background-color:#fff; color:#222 }
+header p a { text-decoration:none }
+@media (prefers-color-scheme: dark) {
+	body { background-color:#111; color:#eee }
+	a { color:#9999ff }
+}
 
+</style>
+<script src="https://js.stripe.com/v3"></script>
+</head>
+<body>
+<header><p><a href="/">tlim.pt</a>
+</header>
+
+<p>Escolha o montante do donativo que gostaria de fazer para apoiar o boletim <strong>tlim</strong>:
+
+<select id="seletor" style="font-size:1em; color:#222; padding:.1em">
+<option value="price_1IoQlTEUubZRnt9uTdlcuWyO">3€</option>
+<option value="price_1IoSqqEUubZRnt9uDqRqWUxH">4€</option>
+<option value="price_1IoQlTEUubZRnt9ujsCBdz4X" selected>5€</option>
+<option value="price_1IoSrREUubZRnt9uRFSgwGNZ">6€</option>
+<option value="price_1IoSrjEUubZRnt9uH2NeIH0T">7€</option>
+<option value="price_1IoSs4EUubZRnt9uy0KQUn1i">8€</option>
+<option value="price_1IoSsOEUubZRnt9umTQkrqcN">9€</option>
+<option value="price_1IoR34EUubZRnt9u96a8jLAo">10€</option>
+<option value="price_1IoSsnEUubZRnt9uisrCubQq">15€</option>
+<option value="price_1IoSt4EUubZRnt9uRiX6s3Nu">20€</option>
+<option value="price_1IoStQEUubZRnt9uKGly1TgS">30€</option>
+<option value="price_1IoStnEUubZRnt9unLSABYfK">40€</option>
+<option value="price_1IoSu5EUubZRnt9uBEHS838z">50€</option>
+<option value="price_1IoSuMEUubZRnt9uzhni5DCl">60€</option>
+
+</select>
+
+<button style="font-size:1em; color:#222; padding:.15em;cursor:pointer" id="botao" role="link" type="button">Pagar</button>
+
+<p>Os pagamentos são processados pela Stripe.
+
+<div id="error-message"></div>
+
+<script>
+(function() {
+	var stripe = Stripe('pk_test_51IoQgVEUubZRnt9uVA3MsYdnXjI8ynkVZsCgi66tElZo7eesdpgK1QLQR5qGUomkpF0vVfr95jWMKRg0h82GTZ8m00jecPcbIt');
+
+	var checkoutButton = document.getElementById('botao');
+	checkoutButton.addEventListener('click', function () {
+
+		var preco = document.getElementById("seletor").value;
+		stripe.redirectToCheckout({
+			lineItems: [{price: preco, quantity: 1}],
+			mode: 'payment',
+			successUrl: 'https://tlim.pt/donativo/obrigado.html',
+			cancelUrl: 'https://tlim.pt/donativo/',
+		}).then(function (result) {
+			if (result.error) {
+				var displayError = document.getElementById('error-message');
+				displayError.textContent = result.error.message;
+			}
+			});
+		});
+})();
+</script>
+</body>
+</html>
