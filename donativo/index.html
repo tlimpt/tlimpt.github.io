@@ -8,11 +8,11 @@
 <style>
 body { font-size:1.1em; font-family:sans-serif; line-height:1.7; margin:0 auto; max-width:30em; padding:.5em; background-color:#fff; color:#222 }
 header p a { text-decoration:none }
+h1 { line-height:1 }
 @media (prefers-color-scheme: dark) {
 	body { background-color:#111; color:#eee }
 	a { color:#9999ff }
 }
-
 </style>
 <script src="https://js.stripe.com/v3"></script>
 </head>
@@ -20,24 +20,14 @@ header p a { text-decoration:none }
 <header><p><a href="/">tlim.pt</a>
 </header>
 
+<h1>Donativo</h1>
+
 <p>Escolha o montante do donativo que gostaria de fazer para apoiar o boletim <strong>tlim</strong>:
 
 <select id="seletor" style="font-size:1em; color:#222; padding:.1em">
-<option value="price_1IoTKUEUubZRnt9u5UB0Fk58">3€</option>
-<option value="price_1IoTKUEUubZRnt9u5xZlvK2x">4€</option>
 <option value="price_1IoTKUEUubZRnt9uCVUGua4H" selected>5€</option>
-<option value="price_1IoTKUEUubZRnt9uNS8al049">6€</option>
-<option value="price_1IoTKUEUubZRnt9uQAqcqaSb">7€</option>
-<option value="price_1IoTKUEUubZRnt9uJ5IocgFH">8€</option>
-<option value="price_1IoTKUEUubZRnt9uNyNssQZh">9€</option>
 <option value="price_1IoTKUEUubZRnt9uI57BTrvM">10€</option>
-<option value="price_1IoTKUEUubZRnt9u9rjkVBNn">15€</option>
-<option value="price_1IoTKUEUubZRnt9u64Pw3mdQ">20€</option>
 <option value="price_1IoTKUEUubZRnt9uf72MzVyW">30€</option>
-<option value="price_1IoTKUEUubZRnt9uvkTzD9Wc">40€</option>
-<option value="price_1IoTKUEUubZRnt9uuoVDEw5r">50€</option>
-<option value="price_1IoTKUEUubZRnt9ufcHzJjJC">60€</option>
-
 </select>
 
 <button style="font-size:1em; color:#222; padding:.15em;cursor:pointer" id="botao" role="link" type="button">Pagar</button>
