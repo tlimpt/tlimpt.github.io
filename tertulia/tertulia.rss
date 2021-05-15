@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+	<title>Tertúlia de Finanças Pessoais</title>
+	<link>https://tlim.pt/tertulia</link>
+	<language>pt-pt</language>
+	<itunes:author>David Almas</itunes:author>
+	<itunes:email>davidalmas@gmail.com</itunes:email>
+	<description>Enquanto percorro Portugal continental de lés a lés, planeio ter muitas conversas sobre finanças pessoais com leitores do boletim tlim. Quer ouvir as nossas conversas?</description>
+	<itunes:type>serial</itunes:type>
+	<itunes:image href="https://tlim.pt/tertulia/tertulia.png"/>
+	<itunes:category text="Business"/>
+	<itunes:explicit>false</itunes:explicit>
+
+	<item>
+		<itunes:episodeType>full</itunes:episodeType>
+		<itunes:season>1</itunes:season>
+		<itunes:episode>1</itunes:episode>
+ 		<title>Episódio 1: &quot;Vemo-nos por aí.&quot;</title>
+		<description>A arrancar de Lisboa rumo a Setúbal.</description>
+		<enclosure length="50527449" type="audio/mpeg" url="http://tlim.pt/tertulia/s01e01.mp3"/>
+ 		<guid>http://tlim.pt/tertulia/s01e01.mp3</guid>
+		<pubDate>Sat, 10 Jul 2021 21:00:00 +0100</pubDate>
+		<itunes:duration>3124</itunes:duration>
+		<itunes:explicit>false</itunes:explicit>
+	</item>
+
+</channel>
+</rss>
