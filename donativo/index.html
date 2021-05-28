@@ -9,12 +9,23 @@
 body { font-size:1.1em; font-family:sans-serif; line-height:1.7; margin:0 auto; max-width:30em; padding:.5em; background-color:#fff; color:#222 }
 header p a { text-decoration:none }
 h1 { line-height:1 }
-@media (prefers-color-scheme: dark) {
-	body { background-color:#111; color:#eee }
-	a { color:#9999ff }
+.botao {
+	border:none;
+	color:#fff;
+	background-color:#222;
+	padding: .4em .8em;
+	margin-left:.25em;
+	text-decoration: none;
+	border-radius:.3em;
 }
+.botao:hover {
+	opacity:.75
+}
+.botao:active {
+	opacity:.5
+}
+	
 </style>
-<script src="https://js.stripe.com/v3"></script>
 </head>
 <body>
 <header><p><a href="/">tlim.pt</a>
@@ -24,39 +35,14 @@ h1 { line-height:1 }
 
 <p>Escolha o montante do donativo que gostaria de fazer para apoiar o boletim <strong>tlim</strong>:
 
-<select id="seletor" style="font-size:1em; color:#222; padding:.1em">
-<option value="price_1IoTKUEUubZRnt9uCVUGua4H" selected>5€</option>
-<option value="price_1IoTKUEUubZRnt9uI57BTrvM">10€</option>
-<option value="price_1IoTKUEUubZRnt9uf72MzVyW">30€</option>
-</select>
-
-<button style="font-size:1em; color:#222; padding:.15em;cursor:pointer" id="botao" role="link" type="button">Pagar</button>
+<a href="https://buy.stripe.com/6oEg156nceXyfDO000" class="botao">5€</a>
+<a href="https://buy.stripe.com/28o5mrdPE8zaezKdQR" class="botao">10€</a>
+<a href="https://buy.stripe.com/14kaGLfXM8za1MY6oq" class="botao">30€</a>
 
 <p>Os pagamentos são processados pela Stripe.
 
-<div id="error-message"></div>
-
 <script>
-(function() {
-	var stripe = Stripe('pk_live_51IoQgVEUubZRnt9ufsja9jziWRpCQOc9ag2beaI03scHFl24oFnw7cUjieP53kRzcBdS8PnMfZgm9gCOQ4ADQqqZ00HwrZAlv8');
 
-	var checkoutButton = document.getElementById('botao');
-	checkoutButton.addEventListener('click', function () {
-
-		var preco = document.getElementById("seletor").value;
-		stripe.redirectToCheckout({
-			lineItems: [{price: preco, quantity: 1}],
-			mode: 'payment',
-			successUrl: 'https://tlim.pt/donativo/obrigado.html',
-			cancelUrl: 'https://tlim.pt/donativo/',
-		}).then(function (result) {
-			if (result.error) {
-				var displayError = document.getElementById('error-message');
-				displayError.textContent = result.error.message;
-			}
-			});
-		});
-})();
 </script>
 </body>
 </html>
