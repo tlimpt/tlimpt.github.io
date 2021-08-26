@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Boletim tlim n.º 32 ★ Setembro de 2021</title>
+<style>
+body { font-size:1.1em; line-height:1.7; margin:0 auto; padding:.2em; max-width:30em; opacity:.9 }
+header p { border-bottom:.3em solid; margin:.5em 0 2em; padding:.5em 0 }
+h1, h2, h3 { line-height:1 }
+h1 { font-size:2em }
+h2 { text-decoration:underline }
+h2, h3 { margin-top:3em }
+aside { border-left:.3em solid; padding:0 0 0 2em; margin:2em 0 }
+blockquote { font-style:italic }
+table { border-collapse:collapse; margin:2em auto; font-size:.91em }
+table caption strong:first-child { display:block }
+thead { border-bottom:.3em solid }
+td { border-bottom:.1em solid; padding:1em .5em 1em 0; text-align:center; line-height:1.2em; vertical-align:top }
+td:first-child { text-align:left }
+td:last-child { padding:1em 0 }
+input { font-family:inherit; font-size:1em; width:2em; text-align:right; border-width:0 0 .2em; background:none; color:inherit; outline:none; }
+</style>
+</head>
+<body>
+<header>
+<p>Boletim <strong>tlim</strong> n.º 32 ★ Setembro de 2021
+</header>
+
+<p>Bom dia!
+
+<p>Naveguei por várias centenas de produtos de baixo risco disponíveis aos consumidores portugueses. Apenas cinco merecem receber o seu dinheiro. Conheça-os no <a href="#1">primeiro artigo</a> desta trigésima segunda edição do boletim <strong>tlim</strong>.
+
+<p>Para quem gosta de fundos de índice, partilho no <a href="#2">segundo artigo</a> uma métrica que uso para avaliar o seu desempenho. É melhor do que a tradicional taxa de encargos correntes na análise histórica.
+
+<p>Se regressou de férias, talvez esteja com vontade de voltar a fugir da cidade. Para o <a href="#3">terceiro texto</a> desta edição, fui à procura dos melhores municípios portugueses para viver. Descubra-os.
+
+<p>Boa leitura! 📰
+
+<p><em>— David Almas</em>
+
+
+<article>
+<h2 id="1">1</h2>
+<h1>Baixo risco. Descubra as soluções mais rentáveis para a sua poupança</h1>
+
+<p>Por <strong>David Almas</strong> a 1 de setembro de 2021
+
+<p>Encontrar aplicações de longo prazo é fácil para quem suporta volatilidade na sua carteira. O portal <a href="https://justetf.com/">JustETF</a> é perfeito para buscar fundos cotados de ações. Os bancos mais voltados para o investimento — como o ActivoBank, o Banco Best, o Banco Carregosa, o Banco Invest e o BiG — têm ferramentas para filtrar as suas ofertas de fundos. São um bom ponto de partida para a maioria dos clientes.
+
+<p>Para quem poupa, o mais difícil não é encontrar as chamadas aplicações de risco; é descobrir as soluções conservadoras mais generosas. Os depósitos a prazo — que continuam a ser, de longe, o produto mais popular em Portugal — pagam taxas de juro de 0,05%, em média.
+
+<p>É quase ofensivo. Se aplicar <input type="text" value="2733" id="montante" onkeyup="juro();" style="width:5em">&nbsp;euros à taxa anual nominal bruta (TANB) de <input type="text" value="0,05" id="tanb" onkeyup="juro();">% durante <input type="text" value="365" id="prazo" onkeyup="juro();" style="width:3em"> dias, receberá um juro líquido de <strong id="juroliquido">1 euro</strong> no final do prazo, assumindo uma taxa de tributação de 28% sobre os rendimentos. <span id="interativo"></span>
+
+<script>
+document.getElementById('interativo').innerHTML = "(Substitua os números sublinhados para recalcular o rendimento.)"
+function juro(){
+	var montante = document.getElementById('montante').value.replace(/[^\d]/g, "") * 1;
+	document.getElementById('montante').value = montante.toLocaleString('pt-PT', { maximumFractionDigits:0 });
+	var tanb = document.getElementById('tanb').value.replace(/[^\d]/g, "") / 100;
+	document.getElementById('tanb').value = tanb.toLocaleString('pt-PT',{ minimumFractionDigits:2, maximumFractionDigits:2 });
+	var prazo = document.getElementById('prazo').value.replace(/[^\d]/g, "") * 1;
+	document.getElementById('prazo').value = prazo.toLocaleString('pt-PT', { maximumFractionDigits:0 });
+
+	juroliquido = Math.round(.72 * Math.round(montante * tanb * prazo / 360))/100;
+
+	if (juroliquido == 1) {
+		document.getElementById('juroliquido').innerHTML = "1 euro"; }
+	else  {
+		document.getElementById('juroliquido').innerHTML = juroliquido.toLocaleString('pt-PT', { maximumFractionDigits:2 }) + " euros"; }
+}
+window.onload = juro();
+</script>
+
+<p>Os organismos mais credíveis a publicar estimativas para a economia portuguesa — como o Banco de Portugal e o Fundo Monetário Internacional — presumem que a inflação nacional role em torno de 1% até ao final de 2023. (Há, no entanto, algumas previsões mais pessimistas. O Conselho de Finanças Públicas <a href="https://www.cfp.pt/pt/publicacoes/perspetivas-economicas-e-orcamentais/perspetivas-economicas-e-orcamentais-2021-2025">aponta</a> uma inflação de 1,6% entre 2023 e 2025.)
+
+<p>Se os preços dos bens e dos serviços que paga aumentarem 1% por ano, é preciso que a poupança cresça, no mínimo, a esse ritmo para conseguir manter o poder de compra do seu dinheiro. Assim, recomendo aos leitores do boletim <strong>tlim</strong> que procurem contratar aplicações de baixo risco que muito provavelmente rendam mais de 1%.
+
+<p>Não é fácil. Assumindo uma taxa de tributação sobre os rendimentos a 28%, é preciso que um depósito a prazo tenha uma TANB de 1,37% ou superior para render mais de 1% ao fim de 1 ano. 
+
+<h3>No que não deve investir</h3>
+
+<p>Estudei centenas de produtos de capital e rendimento garantido disponíveis aos investidores portugueses. Quase nenhum merece uma recomendação. Em particular:
+
+<ul>
+<li>
+<p><strong>Seguros de capitalização</strong>
+<p>São os concorrentes aos depósitos a prazo que as companhias de seguros propõem aos aforradores. Todavia, rendem muito pouco e tendem a ser caros. O <a href="https://www.lusitaniavida.pt/pt/particulares/produtos-investimento/lusitania-rendimento-2021">Lusitania Rendimento 2021</a>, que tem o selo <a href="https://www.lusitaniavida.pt/contents/files/Folheto_Rendimento%202021%20SeloDeco_Web_4947.pdf">“Escolha Acertada”</a> da Deco Proteste, é apenas um exemplo: tem uma taxa de juro de 1% no primeiro ano, de 1,25% no segundo ano e de 1,5% no terceiro ano; contudo, devido à comissão de subscrição de 0,75% e à tributação, a rentabilidade anual líquida nunca será superior a 0,72%.
+
+<li>
+<p><strong>Obrigações do Tesouro</strong>
+<p>Investir diretamente em Obrigações Tesouro, recorrendo a um intermediário financeiro com ligação à bolsa, é atualmente um péssimo negócio. As taxas de juro implícitas nas cotações são baixas (ou, até, negativas) e completamente anuláveis pelos encargos bolsistas e os impostos.
+
+<p>Se comprar na <a href="https://live.euronext.com/pt/product/bonds/PTOTETOE0012-XLIS/">bolsa de Lisboa</a> as Obrigações do Tesouro que se vencem em julho de 2026  a 117% do valor nominal e se as mantiver até à maturidade, a rentabilidade será de -1,28% por ano, depois de descontar os impostos sobre os cupões mas <em>sem contabilizar as comissões de bolsa</em>, como os encargos sobre a operação de compra e a despesa sobre o pagamento de juros. Na prática, a rentabilidade líquida será ainda mais baixa.
+
+<li>
+<p><strong>Obrigações de empresas</strong>
+<p>O motivo principal para não se investir em Obrigações do Tesouro, que são garantidas pela República Portuguesa, também se aplica aos títulos de dívida de empresas. Além disso, ao contrário dos emitentes governamentais, é frequente haver falhas ou adiamentos de pagamentos de juros e, por vezes, falências. Orey Antunes, Sporting SAD e Banco Espírito Santo são alguns dos emitentes portugueses que falharam nos últimos anos.
+
+<p>Se vender as obrigações antes do vencimento, o capital não é garantido. A <a href="https://live.euronext.com/pt/product/bonds/PTTAPBOM0007-XLIS">emissão da TAP</a>, que cota agora perto de 94% do valor nominal, chegou a ser transacionada por menos de 70% quando a crise pandémica se instalou na bolsa em 2020.
+
+<p>(Se quiser ler mais sobre obrigações, consulte o artigo <a href="https://www.doutorfinancas.pt/financas-pessoais/investimentos/5-motivos-para-evitar-investir-diretamente-em-obrigacoes/">“5 motivos para evitar investir diretamente em obrigações”</a> que escrevi recentemente para o Doutor Finanças.)
+
+<li>
+<p><strong>Empréstimos em plataformas de financiamento colaborativo</strong>
+
+<p>As bancarrotas são ainda mais amiúdes entre as firmas financiadas através das plataformas de empréstimos colaborativos do que entre as grandes empresas que listam as suas obrigações da bolsa. Na Raize, a maior plataforma portuguesa, 1 em cada 39 empréstimos tornou-se incobrável desde 2014. Há ainda muitos financiamentos em recuperação que também se podem tornar incobráveis.
+
+<p>A Raize indica que a taxa média dos empréstimos é de <a href="https://www.raize.pt/investidores/como-investir">6,01%</a>, mas, além de essa estatística estar a descer, é preciso contabilizar os impostos, as comissões e a proporção dos incobráveis. Deduzo agora que a rentabilidade anual líquida deverá ser inferior a 3,5% numa carteira diversificada de empréstimos, o que é insuficiente para os riscos e para a liquidez desse mercado. Não é uma solução de baixo risco.
+
+<li>
+<p><strong>Produtos mutualistas</strong>
+<p>Os instrumentos de aforro da Montepio Geral — Associação Mutualista têm mais risco do que os dos bancos. O balanço da associação, que não é supervisionado pelo Banco de Portugal, é menos sólido. As aplicações não estão protegidas por um sistema independente, como o Fundo de Garantia de Depósitos.
+
+<p>Pior: os rendimentos dos produtos mutualista são reduzidos. Na melhor das hipóteses, o <a href="https://www.montepio.org/poupanca/poupanca-mutualista-prazo-5-1/">Poupança Mutualista Prazo 5.1. 2021-26, 9.ª Série</a>, que tem uma duração até 5 anos e 1 dia, oferece uma rentabilidade anual líquida de 0,29%.
+
+
+<li>
+<p><strong>Depósitos a prazo</strong>
+
+<p>Há mais de uma centena de instituições financeiras aptas a captar depósitos bancários em Portugal, mas apenas sete propõem aplicações a prazo com taxas anuais nominais brutas (TANB) de 1% ou superiores.
+
+<table>
+<caption><strong>Propostas condicionais</strong> Estes depósitos não estão disponíveis para todos os clientes bancários e são irrepetíveis. Esta informação foi recolhida no dia 24 de agosto de 2021.
+<thead>
+<tr><td>Banco<br>Depósito<td>Duração<td>TANB<td>Mínimo<br>Máximo
+</thead>
+<tr><td>Bankinter<br><a href="https://www.bankinter.pt/poupanca/deposito-prazo-bk-mini">BK Mini</a><td>12 meses<td>5,00%<td>100€<br>1000€
+<tr><td>Banco Best<br><a href="https://www.bancobest.pt/ptg/best_deposito-prazo-novos-clientes">Novos Clientes</a><td>90 dias<td>1,50%<td>2500€<br>25&nbsp;000€
+<tr><td>BAI Europa<br><a href="https://bancobaieuropa.pt/particulares/depositos_a_prazo">Novos Clientes</a><td>3 meses<td>1,10%<td>2500€<br>100&nbsp;000€
+<tr><td>Atlântico Europa<br><a href="https://www.atlantico.eu/DocsGenerator/Public/DownloadFile?fileName=DP16038EUR.pdf">Boas Vindas</a><td>92 dias<td>1,00%<td>500€<br>50&nbsp;000€
+<tr><td>Banco Carregosa<br><a href="https://www.bancocarregosa.com/bancocarregosa/pt/produtos/dp-banco-carregosa-bem-vindo-2-2-2/">Bem-vindo</a><td>3 meses<td>1,00%<td>25&nbsp;000€<br>50&nbsp;000€
+<tr><td>Banco Invest<br><a href="https://www.bancoinvest.pt/poupanca-e-investimento/depositos/aplicacoes-a-prazo">Invest Choice Novos Montantes</a><td>92 ou 183 dias<td>1,00%<td>2000€<br>75&nbsp;000€
+<tr><td>BiG<br><a href="https://big.pt/TaxasDepositos/TodosDepositos/Details/PTDP2020001">Superdepósito 1%</a><td>3 meses<td>1,00%<td>500€<br>50&nbsp;000€
+</table>
+
+
+<p>Note que os depósitos do quadro anterior são soluções promocionais apenas para captar novos clientes. Quando essas possibilidades são extintas, as taxas de juro das restantes aplicações a prazo nesses mesmos bancos são quase nulas. Por isso, não recomendo a contratação destes produtos.
+
+<p>O BK Mini, exclusivo para clientes do Bankinter menores de 18 anos, exige que os pais ou os tutores legais apliquem 1000 euros num plano de poupança-reforma ou num seguro de capitalização e que contratem subscrições periódicas de 50 euros por mês ou 150 euros por trimestre. Embora a taxa de juro, de 5%, seja muito generosa, o montante máximo deste depósito é de apenas 1000 euros. 
+
+<p>Todos as outras aplicações são para novos clientes ou para dinheiro fresco que entre no banco. Infelizmente, os prazos são curtos; não é possível beneficiar de taxas de 1% ou superiores além de 6 meses.
+
+
+<li>
+<p><strong>Depósitos em bancos estrangeiros</strong>
+<p>A <a href="https://www.raisin.com/our-offers/">Raisin</a> é um intermediário alemão de depósitos a prazo: os aforradores contratam um depósito junto de um banco europeu através da sua plataforma, sem custos para o consumidor. As taxas de juro não são, porém, interessantes. Para o prazo de 1 ano, a taxa de juro mais elevada é oferecida pelo checo J&T Banka: 0,6%. É mais de 10 vezes as taxas médias portuguesas, mas aquém do objetivo necessário para manter o poder de compra.
+
+<p>A tributação dos juros recebidos via Raisin é complexa: a taxa de retenção na República Checa é de 15%, mas pode ser reduzida enviando uma certificado de residência fiscal (noutros bancos na plataforma, a taxa de retenção pode ser diferente, inclusive zero); os juros devem ser incluídos na declaração anual de IRS.
+
+</ul>
+
+<p>O que sobra no leque de produtos de baixo risco? Contas à ordem, Certificados de Aforro, Certificados do Tesouro Poupança Crescimento e planos de poupança-reforma. 
+
+
+<h3>Primeira recomendação: conta à ordem</h3>
+
+<p>Se ainda não usufruiu da <a href="https://www.bankinter.pt/conta-mais-ordenado">Conta Mais Ordenado</a> do Bankinter, pondere fazê-lo. Para ter acesso, é necessário ter um vencimento ou uma pensão de 800 euros ou superior ou, em alternativa, receber nessa conta uma transferência mensal de outro banco ou um depósito mensal de numerário ou cheque de valor equivalente.
+
+<p>Quem respeita esses critérios e não tem crédito à habitação no banco recebe do Bankinter uma remuneração sobre o saldo até 5000 euros a uma taxa de juro de 5% no primeiro ano e de 2% no segundo ano. Se mantiver permanentemente 5000 euros durante 2 anos nessa conta, ganhará 252 euros em juros líquidos de impostos, o equivalente a uma rentabilidade anual de 2,5%.
+
+<p>Alguns produtos e serviços estão incluídos gratuitamente na Conta Mais Ordenado, como as transferências bancárias pela Internet e um cartão de crédito. Se aderir a outras propostas do banco, terá eventualmente de pagar encargos ao Bankinter.
+
+
+<h3>Segunda recomendação: confiar na dívida pública</h3>
+
+<p>A Conta Mais Ordenado do Bankinter tem três restrições graves: os juros apenas são pagos sobre o saldo até 5000 euros, a proposta dura apenas 2 anos e é preciso registar um fluxo de entradas na conta para ter direito aos rendimentos.
+
+<p>Embora menos generosos, os <a href="https://www.igcp.pt/pt/menu-lateral/certificados-de-aforro/descricao/">Certificados de Aforro</a> (CA) e os <a href="https://www.igcp.pt/pt/menu-lateral/ct-poupanca-crescimento/descricao/">Certificados do Tesouro Poupança Crescimento</a> (CTPC) não têm essas limitações. Ambos são instrumentos de dívida pública garantidos pela República Portuguesa; são comercializados no <a href="https://aforronet.igcp.pt/">AforroNet</a>, nos <a href="https://www.igcp.pt/fotos/editor2/Espaco_cidadao/Aviso_Moradas_Horarios_AMA_On_line_OUT2017.pdf">Espaços Cidadão</a> e alguns <a href="https://www.igcp.pt/fotos/editor2/Menu%20Lateral/Certificados%20de%20Aforro/Postos_de_Atendimento_Online_Moradas_Hor_EC_Online_01062011.pdf">balcões dos CTT</a>; e não têm encargos.
+
+<p>Em tudo o resto são diferentes:
+
+<ul>
+<li>
+<p><strong>Certificados de Aforro</strong>
+<p>São títulos de taxa variável: na subscrição da série E, o aforrador apenas conhece a remuneração dos primeiros 3 meses. Depois, os juros são calculados trimestralmente, em função dos movimentos da Euribor a 3 meses.
+
+<p>No arranque, a taxa de juro é muito baixa, cerca de 0,45%. Há, no entanto, um prémio de permanência — 0,5% do início do segundo ano até ao quinto ano e 1% do início do sexto ano até ao décimo ano — que se soma à taxa-base. Os juros líquidos de IRS são capitalizados automaticamente todos os trimestres. 
+
+<p>O resgate pode ser pedido em qualquer altura após os três primeiros meses. Recebe-se o valor investido acrescido dos juros capitalizados, mas perdem-se os rendimentos desde o último pagamento. Se não se solicitar o resgate até ao décimo aniversário, é efetuado o reembolso nessa data.
+
+<p>Não é possível saber a evolução futura da Euribor a 3 meses e, por transitividade, o retorno dos CA além do primeiro trimestre de investimento. Todavia, se assumirmos que permanecerá estável nos próximos anos, a rentabilidade anual líquida nunca será superior a 1%. Alcançará, no máximo, 0,83% ao fim de uma década.
+
+<p>A Euribor a 3 meses não é, todavia, estável. Os operadores nos mercados de futuros sobre a Euribor a 3 meses esperam que a taxa se aproxime de zero nos próximos anos, o que, se se concretizar, elevaria a rentabilidade dos CA. A Euribor a 3 meses teria de subir dos atuais -0,55% para -0,32% para a rentabilidade anual destes títulos chegar a 1% na próxima década. A última vez que esteve em -0,32% foi em junho de 2020.
+
+<p>O investimento mínimo é de 100 euros.
+
+<li>
+<p><strong>Certificados do Tesouro Poupança Crescimento</strong>
+<p>Quem não quiser ficar exposto à volatilidade da Euribor a 3 meses tem nos CTPC uma solução garantida para o seu dinheiro.
+
+<p>As taxas de juro dos CTPC são conhecidas no momento da subscrição. Para as subscrições mais recentes, são:
+
+	<ul>
+	<li>1.º ano: 0,75%
+	<li>2.º ano: 0,75%
+	<li>3.º ano: 1,05%
+	<li>4.º ano: 1,35%
+	<li>5.º ano: 1,65%
+	<li>6.º ano: 1,95%
+	<li>7.º ano: 2,25%
+	</ul>
+
+<p>Há, também, um prémio para os aforradores: a partir do segundo ano, acresce à taxa de juro uma taxa equivalente a 40% do crescimento real do produto interno bruto português; o prémio anual é limitado ao intervalo entre 0% e 1,2%.
+
+<p>Na prática, a rentabilidade anual líquida dos CTPC pode ultrapassar 1% a partir do terceiro ano.
+
+<table>
+<caption><strong>Quanto rende?</strong> A rentabilidade máxima é alcançada quando o produto interno bruto cresce 3% ou mais; a mínima, quando o crescimento é nulo ou negativo.</caption>
+<thead>
+<tr><td rowspan="2">Duração<td colspan="2">Rentabilidade anual líquida
+<tr><td style="text-align:center">Mínimo<td>Máximo
+</thead>
+<tr><td>1 ano<td>0,54%<td>0,54%
+<tr><td>2 anos<td>0,54%<td>0,97%
+<tr><td>3 anos<td>0,61%<td>1,18%
+<tr><td>4 anos<td>0,70%<td>1,34%
+<tr><td>5 anos<td>0,80%<td>1,48%
+<tr><td>6 anos<td>0,89%<td>1,60%
+<tr><td>7 anos<td>0,99%<td>1,72%
+</table>
+
+<p>Os CTPC têm duas desvantagens: não podem ser movimentados durante o primeiro ano e os juros são distribuídos anualmente para a conta à ordem do aforrador ou da aforradora, isto é, não são capitalizados.
+
+<p>É preciso cuidado no resgate antes do sétimo ano. Como se perdem os juros corridos, deve-se procurar resgatar logo após um pagamento anual. Na pior hipótese, se se resgatar um dia <em>antes</em> do segundo pagamento anual, a rentabilidade anual líquida é de 0,27%. 
+
+<p>O investimento mínimo é de 1000 euros.
+
+</ul>
+
+<p>A Conta Mais Ordenado do Bankinter está protegida até 100 mil euros por titular pelo <a href="https://fgd.es/">Fondo de Garantía de Depósitos de Entidades de Crédito</a>, uma entidade independente supervisionada pelo banco central de Espanha. Os CA e os CTPC são garantidos pelo Estado português. Estas opções são as menos arriscadas. Se não se importar com um pouco de risco é possível aumentar os retornos ou prolongar os rendimentos?
+
+<h3>Terceira recomendação: PPR garantido</h3>
+
+<p>Embora seja um produto desenhado originalmente para amealhar para a aposentação, os planos de poupança-reforma (PPR) podem ser subscritos a pensar noutros fins.
+
+<p>Se projetar que não conseguirá resgatar o PPR nas condições previstas na lei, não declare o investimento ao fisco. Não terá direito à dedução à coleta (até 20% da aplicação), mas também não será alvo de multas fiscais pelo resgate fora das condições legais. Atualmente, essas condições são:
+
+<ul>
+<li>Desemprego de longa duração.
+<li>Incapacidade permanente para o trabalho.
+<li>Doença grave.
+<li>Quando o investimento tiver durado mais de 5 anos:
+	<ul>
+	<li>Reforma por velhice.
+	<li>Ultrapassagem dos 60 anos de idade.
+	<li>Pagamento de prestações de crédito com hipoteca para aquisição de habitação própria e permanente. 
+	</ul>
+</ul>
+
+<p>A tributação no reembolso também é mais amena nas condições legais: a retenção na fonte é à taxa de 8% sobre o rendimento. Fora das condições legais, a taxa é decrescente com a duração do investimento:
+
+<ul>
+<li>21,5% até 5 anos.
+<li>17,2% entre 5 anos e 1 dia e 8 anos.
+<li>8,6% após 8 anos.
+</ul>
+
+<h3>PPR são mais arriscados</h3>
+
+<p>Os PPR que não têm a forma legal de fundo de investimento não estão abrangidos por esquemas independentes de proteção, como o Sistema de Indemnização aos Investidores. Por isso, quando uma companhia de seguros promove um PPR com capital ou rentabilidade garantida, a garantia é prestada unicamente pelo balanço da empresa.
+
+<p>Não se iluda: pode não haver volatilidade, mas há risco quando se investe num PPR garantido.
+
+<p>Na edição de junho de 2021, voltei a recomendar o <a href="http://www.grupopsn.pt/poupanca-e-aposentacao/psn-ppr/">PPR da PSN</a>. É o PPR com a mais elevada taxa garantida, de 2%. Não tem comissão de subscrição, mas, se o reembolso for pedido antes do término do contrato, há uma despesa entre 0,5% e 2% do montante sacado. 
+
+<p>A PSN é uma mútua espanhola de seguros. O <a href="https://grupo.psn.es/pt/informa%C3%A7ao-financeira-psn">relatório financeiro</a> de 2020 mostra que o grupo cumpre todos os requisitos de solvabilidade. Os auditores, a PricewaterhouseCoopers, não levantaram questões.
+
+<p>Apenas duas coisas me surpreenderam negativamente no relatório anual da PSN:
+
+<ul>
+<li>O risco de contraparte da PSN está concentrado no grupo Santander.
+<li>Cerca de um quarto da carteira estava aplicado em instrumentos estruturados.
+</ul>
+
+<p>Não são, todavia, motivos suficientes para deixar de recomendar o PPR da PSN a quem procura uma rentabilidade garantida de baixo risco. Há apenas uma eventual dificuldade: a PSN é uma mútua exclusiva dos profissionais com formação universitária. Se não tiver um curso superior, não poderá subscrever este produto.
+
+<p>Apesar de a rentabilidade anual garantida ser de 2%, o PPR tem rendido bastante mais. Aliás, em nenhum dos últimos 7 anos, o PPR da PSN rendeu menos de 2,36%.
+
+<p>Entre 2014 e 2020, a rentabilidade anual bruta do PPR da PSN foi de 4,01%. Se o contrato de 7 anos do aforrador terminou no final de 2020 dentro das condições legais, a sua rentabilidade anual líquida foi de 3,72%, sem contabilizar uma eventual dedução à coleta na subscrição. Se solicitou o reembolso no final desse ano antes de terminar o contrato e fora das condições legais, a sua rentabilidade anual líquida foi de 3,30%, o que inclui a subtração do encargo de saída.
+
+<p>Como escrevi em junho passado, a melhor alternativa ao PPR da PSN é o <a href="https://www.lusitaniavida.pt/pt/particulares/produtos-reforma/lusitania-poupanca-reforma-ppr">Lusitania Poupança Reforma PPR</a>, que tem uma taxa garantida de 1,5% para 2021.
+
+<p>Infelizmente, o PPR da Lusitania tem uma comissão de subscrição de até 2% e de reembolso de até 1% do montante. Tendo em conta esses encargos, a rentabilidade anual líquida do Lusitania Poupança Reforma PPR entre 2016 e 2020 foi de 2,87% nas condições legais e de 2,38% fora das condições legais.
+
+<p>Uma aplicação de 2000 euros no Lusitania Poupança Reforma PPR teria rendido menos 34 euros a 58 euros do que o PPR da PSN nesses 5 anos. ★
+
+</article>
+
+
+
+
+
+<article>
+<h2 id="2">2</h2>
+<h1>Quanto custa realmente o seu fundo de índice?</h1>
+
+<p>Por <strong>David Almas</strong> a 1 de setembro de 2021
+
+<p>Não é segredo: sou um investidor passivo e recomendo aos leitores do boletim <strong>tlim</strong> que privilegiem instrumentos indexados, nomeadamente os fundos de índice.
+
+<p>Um fundo de índice procura replicar um índice de valores mobiliários, como o MSCI World, que agrega ações de empresas dos principais mercados desenvolvidos. Há cinco critérios de seleção que tenho defendido que os investidores devem usar:
+
+<ul>
+<li>Replicação de um índice sobejamente conhecido.
+<li>Produto harmonizado pelas regras europeias.
+<li>Replicação física (em vez de através de contratos derivados).
+<li>Dividendos reinvestidos por motivos fiscais.
+<li>Taxa de encargos correntes baixa.
+</ul>
+
+<p>Quando se pesquisa fundos cotados de índice, aqueles que são comprados e vendidos na bolsa, recomendo mais algumas regras de seleção:
+
+<ul>
+<li>Disponível numa bolsa na qual o intermediários cobra menos nas transações.
+<li>Grande dimensão e muito negociado para garantir mais liquidez.
+<li>Preferencialmente, cotado em euros.
+</ul>
+
+<p>A taxa de encargos correntes é, todavia, o barómetro em que mais me tenho focado, em particular quando comparo fundos de índice com fundos não passivos, que procuram bater esses índices. Esta taxa resulta da divisão das comissões e das principais despesas operacionais anuais do fundo pelo valor da carteira. Indica, por isso, a proporção do valor do investimento que é desviado anualmente para pagar os encargos correntes do fundo.
+
+<p>A taxa de encargos correntes não absorve, porém, todos os eventuais custos para o investidor. Há uma métrica mais abrangente para avaliar dados históricos, a que chamo <strong>custo da replicação</strong> ou desvio da replicação, que absorve inclusivamente a taxa de encargos correntes.
+
+<p>Embora tenha avaliado esse indicador durante as minhas análises, não tenho mencionado o custo da replicação nos artigos do boletim <strong>tlim</strong> porque a maioria dos fundos de índice disponíveis aos investidores portugueses é recente. Por exemplo, o Fidelity MSCI World P EUR, que tenho recomendado, celebrou o seu terceiro aniversário em março passado.
+
+<p>O custo da replicação deve ser analisado em períodos de três ou mais anos, preferencialmente cinco anos.
+
+<h3>Como funciona?</h3>
+
+<p>É simples: subtrai-se à rentabilidade anualizada do índice de referência o desempenho anualizado do fundo de investimento. Por exemplo, o fundo Vanguard Global Stock Index Investor EUR rendeu 12,77% por ano no último quinquénio. O seu índice de referência, o MSCI World, avançou 12,90% por ano. Assim, o custo da replicação do Vanguard Global Stock Index Investor EUR foi de 0,13% por ano. Este foi o custo anual de o deter.
+
+<p>À partida, espera-se que o custo da replicação se aproxime da taxa de encargos correntes: se os gestores do produto replicarem perfeitamente o índice, o desempenho do fundo será equivalente ao do índice subtraído dos seus encargos operacionais.
+
+<p>No caso anterior, os gestores da Vanguard conseguiram atenuar o impacto da taxa de encargos correntes, que é de 0,18%, ao desviarem-se apenas 0,13% do índice. O custo efetivo de investir nesse fundo ao longo dos últimos 5 anos foi mais baixo do que os seus encargos. (Este artigo não inclui outras despesas dos investidores, como comissões de subscrição, comissões de bolsa e impostos.)
+
+<p>Nos fundos cotados, a análise é igual. O Lyxor Core MSCI World (DR) UCITS ETF rendeu 13,89%
+por ano no último triénio, exatamente o mesmo que o índice MSCI World. Logo, o custo da replicação foi nulo nos últimos 3 anos. Parece um bom resultado, mas não é particularmente positivo.
+
+
+<table>
+<caption><strong>Quem custa menos?</strong> O custo da replicação resulta da subtração da rentabilidade anualizada dos fundos ao retorno anualizado do índice MSCI World. Quase todos os gestores conseguiram mais do que compensar os encargos dos fundos. Os números são válidos a 31 de julho de 2021.
+<thead>
+<tr><td rowspan="2">Fundo <br><small>ISIN</small><td rowspan="2">Taxa de encargos correntes<td colspan="2">Custo da replicação (anualizada)
+<tr><td>3 anos<td>5 anos
+</thead>
+<tr><td colspan="4"><strong>Fundos não cotados</strong>
+<tr><td>Fidelity MSCI World Index P EUR <br><small>IE00BYX5NX33</small><td>0,12%<td>-0,03%<td>
+<tr><td>Vanguard Global Stock Index Investor EUR <br><small>IE00B03HCZ61</small><td>0,18%
+<td>0,04%<td>0,13%
+<tr><td colspan="4"><strong>Fundos cotados</strong>
+<tr><td>iShares Core MSCI World UCITS ETF (Amesterdão) <br><small>IE00B4L5Y983</small><td>0,20%<td>-0,25%<td>-0,17%
+<tr><td>Xtrackers MSCI World UCITS ETF 1C (Xetra) <br><small>IE00BJ0KDQ92<td>0,19%<td>-0,20%<td>-0,13%
+<tr><td>Amundi ETF MSCI World UCITS ETF DR (Paris) <br><small>LU1437016972</small><td>0,18%<td>-0,05%<td>
+<tr><td>Lyxor Core MSCI World (DR) UCITS ETF (Paris) <br><small>LU1781541179</small><td>0,12%<td>0,00%<td>
+</table>
+
+<p>O objetivo é, naturalmente, minimizar o custo da replicação, isto é, deseja-se que o indicador seja baixo ou, ainda melhor, negativo.
+
+<p>Um custo da replicação positivo significa que o fundo rendeu menos do que o índice, que é o mais frequente nos mercados financeiros. Quando os gestores do fundo conseguem bater o índice em mais do que os encargos correntes do produto, o custo da replicação é negativo.
+
+<p>No quadro anterior, o iShares Core MSCI World UCITS ETF alcançou os melhores desvios de replicação. Apesar de ter comissões superiores à concorrência, conseguiu bater o índice nos últimos três e cinco anos.
+
+<p>É preciso cuidado na leitura dos custos de replicação. É um barómetro histórico, isto é, não há garantia de que os gestores de um fundo consigam manter essa diferença no futuro.
+
+<p>O custo da replicação é também sensível à maneira como se calcula. Por exemplo, para contabilizar a rentabilidade do índice, usei as cotações do MSCI World em dólares norte-americanos convertidos para euros; há quem use diretamente o índice cotado em euros, o que origina dados ligeiramente diferentes. (A MSCI publica vários índices cotados em várias moedas. São efetivamente índices diferentes.) É importante fazer uma análise uniforme quando se comparam fundos.
+
+<h3>Como é possível?</h3>
+
+<p>É normal o custo da replicação ser positivo. É difícil aos gestores de fundos de índice baterem a referência que procuram replicar. Os maiores fundos europeus na bolsa que replicam índices de obrigações da Zona Euro apresentam desvios da replicação de quase 1%, em média. Os fundos de ações de mercado emergentes registam custos da replicação em torno de 0,6%.
+
+<p>Qual o segredo da BlackRock, a entidade gestora, para conseguir que o iShares Core MSCI World UCITS ETF tenha frequentemente desvios de replicação negativos? Nos últimos sete anos, este fundo registou sempre custos da replicação negativos ou, por vezes, nulos, o que significa que os participantes têm investido nas ações mundiais efetivamente sem encargos.
+
+<aside>
+<h3>Medir a consistência dos desvios</h3>
+<p>O custo da replicação (<em>tracking difference</em> em inglês) serve para aferir a capacidade da equipa de gestão do fundo se aproximar ou ultrapassar o desempenho do índice de referência. Pode ser, no entanto, uma métrica instável: num dado momento, o fundo pode ter um desvio negativo e, pouco depois, passar a positivo.
+<p>Há um outro indicador, a volatilidade da replicação (<em>tracking error</em>), que mede a variabilidade do custo da replicação. É uma medida de consistência da capacidade de aproximação ao índice. Estatisticamente, é o desvio-padrão da série de custos da replicação.
+<p>Deseja-se minimizar tanto o custo da replicação (negativo, se possível) como a volatilidade da replicação (nula, preferencialmente). Um custo negativo e uma volatilidade nula são alcançados apenas pelos fundos que batem <em>sempre</em> os índices de referência. 
+</aside>
+
+<p>A receita de empréstimos de títulos é apontada por muitos analistas como o principal motivo para chegar a custos negativos de replicação. A BlackRock pode emprestar títulos na carteira do iShares Core MSCI World UCITS ETF, o que gera rendimentos que são divididos entre os titulares do fundo (62,5% do encaixe) e a própria sociedade gestora (37,5%).
+
+<p>Em média, um décimo dos títulos na carteira do fundo são emprestados a grandes grupos bancários, como a Société Générale, o Credit Suisse, o Barclays e o UBS, que precisam deles nos seus negócios financeiros. Além de rendimento, a BlackRock exige garantias. Normalmente, o valor dessas garantias ultrapassa em mais de 10% o valor dos títulos emprestados. É uma margem de segurança. Essas garantias são tradicionalmente obrigações dos tesouros dos Estados Unidos da América, do Japão, de França ou do Reino Unido.
+
+<p>Todavia, não são os empréstimos que explicam a maior parte dos custos negativos. Essa atividade gera, em média, um retorno anual entre 0,02% e 0,03%. São os impostos a principal causa.
+
+<p>Na definição do índice MSCI World, os administradores da MSCI assumem determinadas taxas de imposto sobre os dividendos. Acreditam que os dividendos recebidos por diferentes investidores tenderão a ser taxados nesses níveis. A BlackRock consegue, todavia, taxas efetivas mais baixas do que as previstas pela MSCI. Não é um trabalho fácil, porque o fundo investe em empresas de <a href="javascript:zf()">33 zonas fiscais</a>, segundo o relatório anual mais recente<span id="zf" style="display:none">: Alemanha, Austrália, Áustria, Bélgica, Bermudas, Canadá, Curaçau, Dinamarca, Espanha, Estados Unidos da América, Finlândia, França, Hong Kong, Ilha de Man, Ilhas Caimão, Ilhas Virgem Britânicas, Irlanda, Israel, Itália, Japão, Jersey, Libéria, Luxemburgo, Noruega, Nova Zelândia, Países Baixos, Panamá, Papua Nova Guiné, Portugal, Reino Unido, Singapura, Suécia e Suíça</span>. A BlackRock contratou os especialistas fiscais da <a href="https://www.williamfry.com/about-us/overview">William Fry</a>, de Dublim.
+
+<script>
+function zf(){
+	let zf = document.getElementById('zf');
+	zf.style.display == 'inline' ? zf.style.display = 'none' : zf.style.display = 'inline';
+}
+</script>
+
+<p>A partir dos relatórios financeiros do iShares III, o organismo que inclui o fundo de ações mundiais da BlackRock, deduzo que a taxa efetiva de tributação sobre os dividendos recebidos pelo iShares Core MSCI World UCITS ETF rola entre 11% e 13%. É muito melhor do que os 20% a 22% do Fidelity MSCI World Index, por exemplo.
+
+<p>Além da estratégia fiscal, a BlackRock também atribui os custos negativos às suas técnicas de replicação. A sociedade gestora não compra exatamente todas as ações do índice MSCI World: procura otimizar a replicação de maneira a poupar nos encargos de transação mas sem se afastar da referência. O rebalanceamento da carteira é trimestral.
+
+
+<h3>Onde buscar os custos de replicação</h3>
+
+<p>O portal <a href="https://www.trackingdifferences.com/">TrackingDifferences</a> é a melhor fonte de informação sobre os custos da replicação dos fundos cotados na Europa. Os visitantes podem procurar o seu fundo introduzindo o nome ou o código ISIN do produto. Além de incluir o histórico anual do custo da replicação desse fundo, a página apresenta uma comparação com os produtos que replicam o mesmo índice.
+
+<p>Nem sempre os portais das sociedades gestoras mostram o custo de replicação. É, no entanto, possível calculá-lo a partir da informação de rentabilidade. Na <a href="https://www.blackrock.com/pt/profissionais/products/251882/">página da BlackRock</a> dirigida aos investidores do iShares Core MSCI World UCITS ETF, o primeiro quadro apresenta os retornos anuais do fundo e do índice: basta calcular a subtração. Na <a href="https://www.fidelity.pt/fundos/factsheet/IE00BYX5NX33">página da Fidelity</a>, o primeiro quadro sobre o Fidelity MSCI World Index P EUR também confronta o desempenho do fundo com o do seu índice referencial. Note, todavia, que os resultados das diferenças de retornos publicados nas páginas da BlackRock e da Fidelity não são perfeitamente comparáveis: os primeiros são em dólares norte-americanos; os segundos em euros.
+
+<p>Em várias publicações, em particular nas anglo-saxónicas, o <em>tracking difference</em> é calculado através da subtração do desempenho do índice ao retorno do fundo. Portanto, esse indicador é simétrico ao custo da replicação que defini neste artigo. A sua interpretação é, por isso, oposta: um valor negativo, o mais frequente, indica que o fundo rendeu menos do que o índice. Antes de usar essa métrica, confirme como foi computada para fazer a leitura correta. ★
+
+</article>
+
+
+
+
+
+
+<article>
+<h2 id="3">3</h2>
+<h1>Teletrabalho. Onde viver longe da cidade?</h1>
+<p>Por <strong>David Almas</strong> a 1 de setembro de 2021
+
+<p>Para muitos, a pandemia trouxe uma mudança que não se deseja que seja revertida: o teletrabalho. Embora alguns, menos organizados, não tenham encontrado a sintonia perfeita do trabalho à distância, esta modalidade pode produzir um aumento significativo de qualidade de vida.
+
+<p>Alguns leitores do boletim <strong>tlim</strong> confessaram-me que talvez já não faça sentido viver na cidade ou perto dela. Conheço muitos exemplos de trabalhadores que se refugiaram durante os meses de verão no campo, normalmente na casa de familiares, ou em casas de férias, embora estivessem a laborar.
+
+<p>Porque não tornar essa decisão definitiva? Se houver margem do empregador para continuar em teletrabalho, é possível trabalhar em qualquer ponto do mundo com um telefone e acesso à Internet. Se for um profissional independente, é lógico viver num sítio mais confortável, mesmo que seja necessário visitar física e pontualmente alguns clientes na cidade.
+
+<p>A fuga das grandes cidades faz ainda mais sentido para quem está próximo da reforma, antecipada ou não. A transição da vida profissional para o descanso familiar seria mais suave.
+
+<h3>Onde está a sua próxima casa</h3>
+
+<p>Quando se pensa no local ideal para viver, é natural que as ideias convirjam para as memórias: onde se cresceu ou onde vive a maioria dos familiares e amigos. Regressar à localidade da infância pode ser uma decisão sensata.
+
+<p>Portugal é, todavia, um pequeno país atravessado por <a href="https://eco.sapo.pt/2021/08/12/portugal-e-o-segundo-pais-europeu-com-maior-rede-de-autoestradas-por-habitante/">dezenas de autoestradas</a>. Poucas horas são suficientes para ligar por rodovia a maioria dos municípios continentais. (Embora haja exceções, como as <a href="https://goo.gl/maps/wfRvoJQ2QVQvGNbG8">quase sete horas</a> que são necessárias para ligar a Igreja de Cicouro, em Miranda do Douro, à Fortaleza de Sagres.)
+
+<p>Procurei um método científico para escolher os melhores municípios para viver. Estudei vários indicadores agrupados em 4 vetores para os mais de 300 municípios nacionais:
+
+<ul>
+<li><strong>Saúde</strong>: médicos e enfermeiros por milhar de habitantes, distância para o hospital público mais próximo com bloco operatório e urgência básica, qualidade do ar, longevidade dos cidadãos.
+<li><strong>Conforto e cultura</strong>: amplitude térmica anual, recintos de espetáculos, exposições anuais, museus.
+<li><strong>Custo de vida</strong>: preço das habitações por metro quadrado, poder de compra.
+<li><strong>Segurança</strong>: taxa de criminalidade.
+</ul>
+
+<p>Compilei dados das mais díspares fontes de informação, desde o Instituto Nacional de Estatística ao Google Maps. Com um indicador sintético obtido a partir dos vários vetores, cheguei aos dez municípios candidatos a receber os subscritores do boletim <strong>tlim</strong>.
+
+<table>
+<caption><strong>Aquém e além-mar</strong> Estes concelhos estão concentrados a norte do rio Tejo ou na ilha da Madeira. Apenas Ponte de Lima está acima do Douro.
+<thead>
+<tr>
+<td>Município<td>Distrito ou arquipélago<td>Mais positivo<td>Menos positivo
+</thead>
+<tr><td>Mealhada<td>Aveiro<td>Exposições de arte<td>Poder de compra dos residentes
+<tr><td>Miranda do Corvo<td>Coimbra<td>Baixa criminalidade<td>Qualidade do ar
+<tr><td>Penacova<td>Coimbra<td>Baixa criminalidade<td>Recintos de espetáculos
+<tr><td>Penela<td>Coimbra<td>Longevidade<td>Recintos de espetáculos
+<tr><td>Ponta do Sol<td>Madeira<td>Baixa criminalidade<td>Museus
+<tr><td>Ponte de Lima<td>Viana do Castelo<td>Qualidade do ar<td>Museus
+<tr><td>São Vicente<td>Madeira<td>Amplitude térmica, baixa criminalidade<td>Recintos de espetáculos, exposições de arte
+<tr><td>Sátão<td>Viseu<td>Baixa criminalidade<td>Amplitude térmica
+<tr><td>Tondela<td>Viseu<td>Baixa criminalidade<td>Amplitude térmica
+<tr><td>Vila Nova de Paiva<td>Viseu<td>Poder de compra dos residentes<td>Amplitude térmica
+</table>
+
+<p>A decisão de troca de residência necessita, obviamente, de mais do que números. A lista anterior é apenas um ponto de partida para quem quiser começar a estudar a mudança de vida. ★
+</article>
+
+
+
+
+
+
+<article>
+<h2 id="r">Respondido</h2>
+<blockquote>Tens algum pudor em dizer quantos subscritores tem o boletim <strong>tlim</strong>?</blockquote>
+
+<p>É o meu segredo. Gosto de não ter de ouvir outros a dizer que o boletim <strong>tlim</strong> é ou não é um sucesso baseados em números. Nem penso nesses termos: lancei-o e continuo a produzi-lo para ajudar, para aprender e para me divertir.
+
+<p>É, naturalmente, um projeto amador. Se fossem muitos subscritores, não poderia difundir o boletim através da minha caixa pessoal de correio eletrónico. Teria de investir numa plataforma paga em vez de uma solução maioritariamente gratuita.
+
+<p>O número de subscritores está lentamente a aumentar por passa-palavra. Teve dois saltos bruscos quando fui entrevistado para o <a href="https://www.reddit.com/r/literaciafinanceira/">r/literaciafinanceira</a> no Reddit. Está, todavia, muito longe doutras comunidades, como o <a href="https://www.forumfinancas.pt/">Fórum de Finanças Pessoais</a> (28 mil) e o próprio r/literaciafinanceira (19 mil). Aliás, a audiência do boletim <strong>tlim</strong> nem se mede em milhares.
+
+<p>É amador também nos rendimentos. Os donativos não crescem proporcionalmente ao número de subscritores. Penso que há dois efeitos: muitos leitores mais antigos deixam de doar e os mais recentes, tendencialmente mais novos, têm menos vontade ou margem financeira para contribuir. Não me estou a queixar: os donativos serão sempre opcionais.
+
+<p>Não estou a enriquecer à conta dos donativos. Em média, recebo mensalmente menos do que o salário mínimo nacional.
+
+<p style="text-align:center; margin:3em 0">⋆★⋆
+
+<blockquote>O Sistema de Indemnização aos Investidores garante proteção até 25 mil euros por investidor ou por combinação de investidor e instituição financeira?</blockquote> 
+
+<p>A indemnização máxima do Sistema de Indemnização aos Investidores (SII) é por investidor e intermediário financeiro. Se o investidor tiver muito azar, pode receber até 50 mil euros por ter contas em 2 instituições financeiras falidas.
+
+<p>O SII é ativado quando um intermediário financeiro — como um banco, uma corretora ou uma sociedade gestora de fundos de investimento —  não consegue disponibilizar os instrumentos financeiros aos investidores por motivos relacionados diretamente com a sua situação financeira. Por isso, nos caso dos intermediários portugueses, o Banco de Portugal tem de se pronunciar antes de o SII ser ativado. Se o intermediário for uma sucursal de uma firma estrangeira (como a XTB), o SII é acionado após receber uma declaração do supervisor do país de origem.
+
+<p>O SII apenas cobre os instrumentos financeiros, como ações, obrigações e fundos de investimento. Se o investidor tiver dinheiro à ordem ou a prazo numa conta bancária, é um fundo de garantia de depósitos que indemniza essa parte (até 100 mil euros por depositante).
+
+<p>A operação de indemnização não é rápida. Na última vez que o SII foi ativado, para compensar os investidores da Orey Financial, demorou cerca de 12 meses desde a suspensão da sua atividade pelo Banco de Portugal até ao pagamento aos seus antigos clientes. ★
+
+<aside>
+<p>Se tiver dúvidas, sugestões ou correções, escreva-me para <a href="mailto:davidalmas@gmail.com">davidalmas@gmail.com</a>.
+</aside>
+</article>
+
+
+
+
+<article>
+<h2 id="v">Visto</h2>
+<h1>Filosofia e novos fundos</h1>
+<p>Os produtos lançados no mercado não são os melhores exemplos de soluções de investimento.
+
+<ul>
+
+
+<li>
+<p><a href="https://www.ffms.pt/podcasts/fundacao-ffms-in-pertinente/5660/sociedade-o-que-e-a-felicidade">“O que é a felicidade?”</a>, [IN] Pertinente
+<p>A locutora Ana Markl conversou com o psicólogo Rui Costa Lopes sobre a felicidade. Neste episódio do podcast [IN] Pertinente da Fundação Francisco Manuel dos Santos, o especialista explica o motivo para o dinheiro não trazer felicidade a partir de um certo nível monetário. (Obrigado pela sugestão, <strong>D.F.</strong>)
+
+<li>
+<p><a href="https://slate.com/podcasts/amicus/2021/08/property-ownership-law">“The Lawlessness of Property and Ownership”</a>, Amicus
+<p>Neste episódio do programa Amicus, da jornalista Dahlia Lithwick, Michael Heller defende que a propriedade está sobreavaliada. O professor de Direito — que escreveu <a href="https://www.minethebook.com/"><cite>Mine!: How the Hidden Rules of Ownership Control Our Lives</cite></a> com James Salzman — explica como os consumidores estão a ser manipulados pelas leis da propriedade.
+
+<p>Concordo que se dá demasiada importância à posse e aos direitos sobre as coisas, mas não exatamente pelos mesmos motivos que Heller e Salzman elencam.
+
+<p>A Slate tem um <a href="https://slate.com/news-and-politics/2021/08/reclining-airline-seats-fights-ownership-rules-disney-fastpass.html">artigo</a> que resume este episódio, bem como a <a href="https://slate.com/transcripts/cUhaZWhraXB4RGdrYkRKM0JBK2xPUkxkU1RoQ29YTHF2cTlOQ1Z1T1lybz0=">transcrição completa</a>.
+
+<li>
+<p><a href="https://www.theatlantic.com/health/archive/2021/08/delta-has-changed-pandemic-endgame/619726/">“How the Pandemic Now Ends”</a>, <cite>The Atlantic</cite>
+<p>Ed Young é quem escreve melhor sobre a pandemia. É, naturalmente, enviesado para os Estados Unidos da América, mas é possível aprender com a leitura deste artigo. “A imunidade de grupo é matematicamente impossível com a vacinas que temos agora”, escreve o jornalista de ciências. Isto quer dizer que a pandemia termina quando quase todos estiverem imunizados por vacinação ou por contágio. Não será melhor obter essa imunização por vacinação?
+
+<p>As <a href="https://ourworldindata.org/mortality-risk-covid?country=~PRT">estimativas</a> mais recentes indicam que a taxa de mortalidade da infeção de covid-19 é de cerca de 2%, embora dependa muito da idade e do estado de saúde. A taxa de fatalidade das vacinas autorizadas na União Europeia é de 0,0013%, segundo as <a href="https://www.ema.europa.eu/en/human-regulatory/overview/public-health-threats/coronavirus-disease-covid-19/treatments-vaccines/vaccines-covid-19/covid-19-vaccines-authorised#safety-updates-for-authorised-covid-19-vaccines-section">estatísticas</a> mais recentes.
+
+
+<li>
+<p><a href="https://clientebancario.bportugal.pt/pt-pt/instituicoes-que-comercializam">Instituições que comercializam serviços mínimos bancários</a>, Banco de Portugal
+<p>No segundo artigo da passada edição de agosto, revelei que, se começasse a investir hoje, elegeria provavelmente o fundo Fidelity MSCI World Index EUR P e concentraria a minha atividade bancária no Banco Best, que o comercializa em exclusivo. Mencionei que pagaria, no máximo, 20,28 euros, que é o custo do cartão de débito do Banco Best.
+
+<p>Há, no entanto, uma opção mais económica: se ficasse apenas com essa conta bancária, adotaria os serviços mínimos bancários. O Banco Best cobra 35 cêntimos por mês, o equivalente a 4,20 euros anuais, segundo a <a href="https://www.bancobest.pt/ptg/bestsite/best_docs/FIN_SMB.pdf">ficha de informação normalizada</a> da sua conta de serviços mínimos. Entre outras coisas, a proposta inclui:
+
+<ul>
+<li>Conta à ordem.
+<li>Cartão de débito.
+<li>Serviço de banca eletrónica.
+<li>Depósitos e levantamentos de numerário na rede de balcões do Novo Banco.
+<li>Débitos diretos.
+<li>24 transferências a crédito SEPA+ por ano no serviço de banca eletrónica.
+</ul>
+
+
+<li>
+<p><a href="https://www.comparaja.pt/blog/distincao-credito-habitacao-mais-rapido-2021">Crédito à habitação com processo mais rápido 2020</a>, ComparaJá
+<p>Nunca elenquei a rapidez da concessão do crédito à habitação como um indicador a ter em consideração na escolha do banco financiador. O ComparaJá calculou que o Banco BPI é o mais veloz, mas, estupidamente, não divulga as instituições financeiras que ocupam as posições seguintes na velocidade.
+
+<p>Felizmente, o meu amigo Edgar Caetano tem <a href="https://observador.pt/especiais/os-bancos-mais-rapidos-a-dar-credito-a-habitacao-comprar-casa-demora-mais-um-mes-do-que-no-ano-passado/">mais números</a> (artigo para assinantes do <cite>Observador</cite>): demora 90 dias no BPI, 93 no Santander, 94 no Millennium bcp, 97 no Novo Banco e 103 dias na Caixa Geral de Depósitos.
+
+<p>Não planeio incluir a rapidez na avaliação de empréstimo para a compra de compra. Não são duas semanas que afastarão os clientes bancários das propostas mais económicas.
+
+<li>
+<p><a href="https://eco.sapo.pt/2021/07/28/carros-usados-contrariam-a-logica-e-estao-a-valorizar-com-a-pandemia/">“Carros usados contrariam a lógica e estão a valorizar com a pandemia”</a>, <cite>Eco</cite>
+<p>Alertei para esta tendência em novembro de 2020: o preço do meu pequeno carro usado estava a subir, segundo o <a href="https://volantesic.pt/">Volante SIC</a>. E continua.
+<p>O Paulo Moutinho analisou os números do Observatório Indicata para confirmar que os usados estão mais valiosos. Um exemplo: nos primeiros 7 meses de 2021, um Renault Clio, a gasolina, de 2018, apreciou 3%.
+
+<li>
+<p><a href="https://jornaleconomico.sapo.pt/noticias/bankinter-lanca-fundo-ppr-de-alto-risco-que-vai-investir-em-empresas-focadas-em-construir-o-futuro-do-planeta-e-da-humanidade-771917">“Bankinter lança fundo PPR de alto risco que vai investir em empresas focadas em construir o futuro do planeta e da humanidade”</a>, <cite>Jornal Económico</cite>
+<p>Fiquei muito desapontado quando percebi que o “TT” na designação do novo plano de poupança-reforma do Bankinter, o Bankinter Mega TT PPR/OICVM, não significa “todo-o-terreno”; é “tendências e temas”.
+
+<p>O novo fundo de poupança-reforma investe noutros fundos de investimento que apostam maioritariamente nos segmentos acionistas de “elevado potencial”: “inteligência artificial, cibersegurança, robotização, <em>fintech</em>, <em>big data</em>, infraestruturas, água, <em>smart energy</em>, <em>smart cities</em>, <em>health tech</em>, <em>biotech</em> e oncologia”. (Não sei o que são metade das coisas na lista anterior.)
+
+<p>Os produtos que investem em áreas de alto potencial são muito bons para as vendas dos bancos. Não o são necessariamente para os clientes bancários. A classe A do Bankinter Mega TT PPR/OICVM tem uma taxa de encargos correntes estimada de 1,61%, próxima da do Alves Ribeiro PPR/OICVM (1,58%) e do Casa Global Value PPR/OICVM (1,62%), que recomendei no passado mês de junho. (A classe B do Bankinter Mega TT PPR/OICVM deverá ter uma taxa de encargos correntes de 1,11%, mas é preciso 250 mil euros para investir.)
+
+<p>O fundo do Bankinter investe noutros fundos — uns ativos e outros indexados —, o que encarece a gestão do património. Os fundos setoriais de gestão ativa (isto é, que não replicam índices) tendem a ser muito caros. A classe E do BlackRock World Healthscience, que é o maior fundo setorial distribuído em Portugal, tem uma taxa de encargos correntes de 2,31%. É provável, todavia, que o Bankinter tenha acesso a fundos mais baratos.
+
+<p>Como sempre, é importante não esquecer a <strong>armadilha do crescimento</strong>: mesmo que os setores escolhidos cresçam muito, não é garantido que os preços das ações das empresas nesses negócios acompanhem a subida.
+
+<li>
+<p><a href="https://www.bizcapital.eu/">Biz Capital</a>
+<p>A Biz Capital, que, em 2020, estendeu a sua oferta dos fundos de capital de risco para os fundos de investimento, é um caso de estudo de como não lançar fundos. Ou, se preferir, é um exemplo dos males de investir constantemente em instrumentos derivados. Cronologicamente:
+
+<ol>
+<li>
+<p><strong>Biz Europa Bull</strong>: O objetivo deste fundo, lançado em novembro de 2020, é oferecer exposição aos mercados acionistas europeus. Os gestores optam por aplicar pontual e massivamente em fundos alavancados. Por exemplo, no final de junho, tinham um décimo no WisdomTree Euro Stoxx 50 3x Daily Short, um fundo tripla e inversamente alavancado. Resultado: embora as ações europeias tenham ganhado quase 20%, o fundo avançou menos de 5% nos seus primeiros 9 meses.
+
+<p>Para piorar, a comissão de gestão é de 3%! Na parte do património investido que ultrapassa 750 mil euros, a comissão desce para 1%.
+
+<li>
+<p><strong>Biz Europa Bear</strong>: Para quem tem receio de investir nas ações europeias, a Biz Capital lançou este fundo supostamente mais conservador, em janeiro passado. O fundo investe maioritariamente em obrigações europeias, mas os gestores também avançaram para os instrumentos derivados. Em junho, tinham um décimo do património no fundo Lyxor Bund Daily (-2x) Inverse, que procura replicar duplamente o movimento inverso das obrigações do tesouro alemão. Resultado: um ligeiro prejuízo em 7 meses. (O NB Obrigações Europa, que tenho recomendado, avançou 2,6% no mesmo período.)
+
+<p>A comissão de gestão é de 1,5%. Após 750 mil euros, desce para 0,5%.
+
+<li>
+<p><strong>Biz Europa PPR/OICVM</strong>: Em maio, a Biz Capital lançou o seu fundo de poupança-reforma. Pode investir até 60% da carteira em ações. No final do mês seguinte, tinha 4% da carteira no WisdomTree Euro Stoxx 50 3x Daily Short, mas 65% do património ainda estavam em depósitos a ordem.
+
+<p>A comissão de gestão é de 2,25%, mas desce para 0,75% no parte do investimento que ultrapassa 750 mil euros.
+</ol>
+
+<p>Ainda é cedo para avaliar o desempenho destes três fundos, mas não auguro bom futuro. As comissões de resgate, aplicáveis nos dois anos após a subscrição, também não ajudam.
+
+<li>
+<p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3776071">“Music Sentiment and Stock Returns Around the World”</a>, <cite>Journal of Financial Economics</cite>
+<p>Após estudarem as músicas mais tocadas no Spotify, Alex Edmans, Adrian Fernandez-Perez, Alexandre Garel e Ivan Indriawan concluíram que as bolsas tendem a subir nas semanas em que as melodias mais populares são positivas. É mais uma razão para dançar.
+
+<p>(Eu, pelo contrário, fico com vontade de vender <em>tudo</em> o que tenho e fugir para outro planeta quando me obrigam a escutar as músicas mais populares em <a href="https://spotifycharts.com/regional/pt/weekly/latest">Portugal</a> e <a href="https://spotifycharts.com/regional/global/weekly/latest">no mundo</a>. 🚀)
+
+<li>
+<p><a href="https://www.nytimes.com/2021/08/11/well/move/exercise-high-intensity-interval-training-hiit.html?unlocked_article_code=AAAAAAAAAAAAAAAACEIPuonUktbfqohkQFUaAibKUNwj6RiBm_WIzawxnHT_NyXQSTdNz6EUBZSN_VzMebsmZt0v0i6FTdsELKUmRfpzyOAaP01sV0-ovp6A0twjEhkClLiSDCkwzo6fGvcx6yPrZW20b7kizuazs0KKdWboWfDA1SUrJxJv9JZuaQn92HYIwq6SE-N0jcJsnqt0XuAMTjgGYSeLtuC5SEktfYXbMWyPr1U-SOpbWjnMnN-D67pmcAtaDVLOTHsX8n9roZoHe4tRZPCjWkZmLMnugrwRCnhqJZOpA_AyQYvTn7Zpst3duFe0mAv5TW2elXwFEXM2Cjw&smid=url-share">“Exercise Vigorously for 4 Seconds. Repeat. Your Muscles May Thank You.”</a>, <cite>The New York Times</cite>
+<p>Em pleno início de pandemia, uma das seis sugestões que apontei para melhorar as finanças sem sair de casa foi fazer exercício físico. Em maio de 2020, recomendei o <a href="https://www.nytimes.com/interactive/projects/well/workouts//">“The Scientific 7-Minute Workout”</a>, um favorito na minha casa. Posteriormente, os cientistas começaram a sugerir que o tempo de treino poderia ser encurtado, talvez para <a href="https://www.mensjournal.com/health-fitness/1-minute-workout/">1 minuto</a>. Agora, alguns estudos concluíram que bastam 4 segundos de treino intenso, repetido 5 a 30 vezes após descanso.
+
+<p>O líder da investigação mais recente afirma que se consegue músculos mais robustos (incluindo os do coração) repetindo, por exemplo, subidas de 4 segundos numa rua inclinada ou escaladas das escadas 2 a 3 degraus de cada vez em intervalos de 4 segundos. A experimentar.
+
+<li>
+<p><a href="https://sph.umich.edu/news/2021posts/small-changes-in-diet-could-help-you-live-healthier-more-sustainably.html">“Small Changes in Diet Could Help You Live Healthier, More Sustainably”</a>, School of Public Health, University of Michigan
+<p>A partir de um estudo que <a href="https://www.nature.com/articles/s43016-021-00343-4">publicou</a> com outros dois autores (Katerina Stylianou e Victor Fulgoni) na revista <cite>Nature</cite>, Olivier Jolliet traça algumas mudanças que os norte-americanos poderiam fazer nas suas dietas para se ajudarem e para melhorarem o meio ambiente. Não tem de ser drástico: “Substituir 10% da ingestão calórica diária de carne bovina e carnes processadas por uma mistura de frutas, vegetais, nozes, legumes e marisco pode reduzir a pegada de carbono na dieta em um terço e permitir que as pessoas ganhem 48 minutos saudáveis por dia”, escreve o professor de saúde ambiental. A experimentar também. ★
+
+</ul>
+</article>
+
+
+
+
+<article>
+<h2 id="d">Dito</h2>
+<h2 style="margin-top:1em;text-decoration:none">Painel Intergovernamental sobre Mudanças Climáticas:</h2>
+
+<h1>“A não ser que haja uma redução imediata, rápida e em larga escala na emissão de gases de efeito de estufa, limitar o aquecimento [global] para perto de 1,5°C ou, mesmo, 2°C estará fora do alcance.”</h1>
+
+<p>Retirei esta frase do <a href="https://www.ipcc.ch/2021/08/09/ar6-wg1-20210809-pr/">comunicado</a> do Painel Intergovernamental sobre Mudanças Climáticas relativo ao seu sexto relatório. A leitura do <a href="https://www.ipcc.ch/report/sixth-assessment-report-working-group-i/">documento completo</a> é bastante mais deprimente: antes, o Painel apresentava suspeitas; agora, estabelece factos. Para o relatório ser publicado, foi preciso que 195 representantes de governos estejam de acordo nas conclusões e na linguagem apresentada.
+
+<p>É um problema global, mas assustador nas estimativas locais. Na zona do Mediterrâneo, que inclui Portugal, a temperatura deverá aumentar 1,9°C nos <em>próximos 19 anos</em>. É muito improvável que aumente menos de 1,6°, se nada se fizer em contrário. Teremos 15 dias por ano com temperaturas acima de 35° em vez de 3, mostra o <a href="https://interactive-atlas.ipcc.ch/">mapa interativo</a>. A lista de acontecimentos é vasta, segundo o Painel, incluindo, além do aquecimento e das temperaturas extremas, o aumento das secas e da aridez, o aumento dos fogos e o aumento do nível do mar. Há também fatores positivos — menos cheias, menos vento extremo —, mas não me parece que compensem.
+
+<p>O que podemos fazer? O óbvio é reduzir o consumo de <em>tudo</em>. Trocar um carro a gasóleo por um elétrico não serve. Comprar um ar condicionado ajuda apenas o consumidor. <a href="https://www.youtube.com/watch?v=ipVxxxqwBQw">A riqueza é um dos melhores indicadores da nossa pegada carbónica</a>, mas tentemos que, no nosso caso, não o seja.
+
+<p>Penso que o mais importante é votar em pessoas que tenham esta preocupação no topo das suas agendas políticas. É inaceitável, por exemplo, que a central mais poluidora no mundo esteja na União Europeia, em <a href="https://en.wikipedia.org/wiki/Be%C5%82chat%C3%B3w_Power_Station">Bełchatów</a>, Polónia. Temos de convencer os políticos a mudar a política interna e, se possível, europeia e global.
+
+</article>
+
+
+<article>
+<aside>
+<h3>Mantenha o boletim <strong>tlim</strong></h3>
+<p>Gostou desta edição? Se sim e se tem margem financeira, contribua para a continuidade do boletim <strong>tlim</strong>. O donativo mensal sugerido é de cinco euros, mas deve ser inferior ou superior em função da utilidade de cada publicação.
+
+<p>Recebo os donativos preferencialmente por transferência bancária no seguinte IBAN: PT50019300001050029913574. O código BIC/Swift do banco é CTTVPTPL.
+
+<p>Em alternativa, aceito donativos por pagamento com cartão bancário em <a href="https://tlim.pt/donativo/">tlim.pt/donativo</a>.
+
+<p>Obrigado. 
+
+<p><em>— D.A.</em>
+</aside>
+</article>
+
+</body>
+</html>
