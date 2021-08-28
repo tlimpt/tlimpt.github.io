@@ -54,7 +54,7 @@ input { font-family:inherit; font-size:1em; width:2em; text-align:right; border-
 <p>É quase ofensivo. Se aplicar <input type="text" value="2733" id="montante" onkeyup="juro();" style="width:5em">&nbsp;euros à taxa anual nominal bruta (TANB) de <input type="text" value="0,05" id="tanb" onkeyup="juro();">% durante <input type="text" value="365" id="prazo" onkeyup="juro();" style="width:3em"> dias, receberá um juro líquido de <strong id="juroliquido">1 euro</strong> no final do prazo, assumindo uma taxa de tributação de 28% sobre os rendimentos. <span id="interativo"></span>
 
 <script>
-document.getElementById('interativo').innerHTML = "(Substitua os números sublinhados para recalcular o rendimento.)"
+document.getElementById('interativo').innerHTML = "(Substitua os números sublinhados para recalcular o juro.)"
 function juro(){
 	var montante = document.getElementById('montante').value.replace(/[^\d]/g, "") * 1;
 	document.getElementById('montante').value = montante.toLocaleString('pt-PT', { maximumFractionDigits:0 });
@@ -92,7 +92,7 @@ window.onload = juro();
 <p><strong>Obrigações do Tesouro</strong>
 <p>Investir diretamente em Obrigações Tesouro, recorrendo a um intermediário financeiro com ligação à bolsa, é atualmente um péssimo negócio. As taxas de juro implícitas nas cotações são baixas (ou, até, negativas) e completamente anuláveis pelos encargos bolsistas e os impostos.
 
-<p>Se comprar na <a href="https://live.euronext.com/pt/product/bonds/PTOTETOE0012-XLIS/">bolsa de Lisboa</a> as Obrigações do Tesouro que se vencem em julho de 2026  a 117% do valor nominal e se as mantiver até à maturidade, a rentabilidade será de -1,28% por ano, após descontar os impostos sobre os cupões mas <em>sem contabilizar as comissões de bolsa</em>, como os encargos sobre a operação de compra e a despesa sobre o pagamento de juros. Na prática, a rentabilidade líquida será ainda mais baixa.
+<p>Se comprar na <a href="https://live.euronext.com/pt/product/bonds/PTOTETOE0012-XLIS/">bolsa de Lisboa</a> as Obrigações do Tesouro que se vencem em julho de 2026  a 117% do valor nominal e se as mantiver até à maturidade, a rentabilidade será de -1,28% por ano, após descontar os impostos sobre os cupões mas <em>sem</em> contabilizar as comissões de bolsa, como os encargos sobre a operação de compra e a despesa sobre o pagamento de juros. Na prática, a rentabilidade líquida será ainda mais baixa.
 
 <li>
 <p><strong>Obrigações de empresas</strong>
@@ -105,7 +105,7 @@ window.onload = juro();
 <li>
 <p><strong>Empréstimos em plataformas de financiamento colaborativo</strong>
 
-<p>A bancarrota é ainda mais amiúde entre as firmas financiadas através das plataformas de empréstimos colaborativos do que entre as grandes empresas que listam as suas obrigações da bolsa. Na Raize, a maior plataforma portuguesa, 1 em cada 39 empréstimos tornou-se incobrável desde 2014. Há ainda muitos financiamentos em recuperação que também se podem tornar incobráveis.
+<p>A bancarrota é ainda mais amiúde entre as firmas financiadas através das plataformas de empréstimos colaborativos do que entre as grandes empresas que listam as suas obrigações na bolsa. Na Raize, a maior plataforma portuguesa, 1 em cada 39 empréstimos tornou-se incobrável desde 2014. Há ainda muitos financiamentos em recuperação que também se podem tornar incobráveis.
 
 <p>A Raize indica que a taxa média dos empréstimos é de <a href="https://www.raize.pt/investidores/como-investir">6,01%</a>, mas, além de essa estatística estar a descer, é preciso contabilizar os impostos, as comissões e a proporção dos incobráveis. Deduzo agora que a rentabilidade anual líquida deverá ser inferior a 3,5% numa carteira diversificada de empréstimos, o que é insuficiente para os riscos e para a liquidez desse mercado. Não é uma solução de baixo risco.
 
@@ -123,21 +123,21 @@ window.onload = juro();
 <table>
 <caption><strong>Propostas condicionais</strong> Estes depósitos não estão disponíveis para todos os clientes bancários e são irrepetíveis. Esta informação foi recolhida no dia 24 de agosto de 2021.
 <thead>
-<tr><td>Banco<br>Depósito<td>Duração<td>TANB<td>Mínimo<br>Máximo
+<tr><td>Banco<br>Depósito<td>Duração<td>TANB<td>Montante
 </thead>
-<tr><td>Bankinter<br><a href="https://www.bankinter.pt/poupanca/deposito-prazo-bk-mini">BK Mini</a><td>12 meses<td>5,00%<td>100€<br>1000€
-<tr><td>Banco Best<br><a href="https://www.bancobest.pt/ptg/best_deposito-prazo-novos-clientes">Novos Clientes</a><td>90 dias<td>1,50%<td>2500€<br>25&nbsp;000€
-<tr><td>BAI Europa<br><a href="https://bancobaieuropa.pt/particulares/depositos_a_prazo">Novos Clientes</a><td>3 meses<td>1,10%<td>2500€<br>100&nbsp;000€
-<tr><td>Atlântico Europa<br><a href="https://www.atlantico.eu/DocsGenerator/Public/DownloadFile?fileName=DP16038EUR.pdf">Boas Vindas</a><td>92 dias<td>1,00%<td>500€<br>50&nbsp;000€
-<tr><td>Banco Carregosa<br><a href="https://www.bancocarregosa.com/bancocarregosa/pt/produtos/dp-banco-carregosa-bem-vindo-2-2-2/">Bem-vindo</a><td>3 meses<td>1,00%<td>25&nbsp;000€<br>50&nbsp;000€
-<tr><td>Banco Invest<br><a href="https://www.bancoinvest.pt/poupanca-e-investimento/depositos/aplicacoes-a-prazo">Invest Choice Novos Montantes</a><td>92 ou 183 dias<td>1,00%<td>2000€<br>75&nbsp;000€
-<tr><td>BiG<br><a href="https://big.pt/TaxasDepositos/TodosDepositos/Details/PTDP2020001">Superdepósito 1%</a><td>3 meses<td>1,00%<td>500€<br>50&nbsp;000€
+<tr><td>Bankinter<br><a href="https://www.bankinter.pt/poupanca/deposito-prazo-bk-mini">BK Mini</a><td>12 meses<td>5,00%<td>100€ a 1000€
+<tr><td>Banco Best<br><a href="https://www.bancobest.pt/ptg/best_deposito-prazo-novos-clientes">Novos Clientes</a><td>90 dias<td>1,50%<td>2500€ a 25&nbsp;000€
+<tr><td>BAI Europa<br><a href="https://bancobaieuropa.pt/particulares/depositos_a_prazo">Novos Clientes</a><td>3 meses<td>1,10%<td>2500€ a 100&nbsp;000€
+<tr><td>Atlântico Europa<br><a href="https://www.atlantico.eu/DocsGenerator/Public/DownloadFile?fileName=DP16038EUR.pdf">Boas Vindas</a><td>92 dias<td>1,00%<td>500€ a 50&nbsp;000€
+<tr><td>Banco Carregosa<br><a href="https://www.bancocarregosa.com/bancocarregosa/pt/produtos/dp-banco-carregosa-bem-vindo-2-2-2/">Bem-vindo</a><td>3 meses<td>1,00%<td>25&nbsp;000€ a 50&nbsp;000€
+<tr><td>Banco Invest<br><a href="https://www.bancoinvest.pt/poupanca-e-investimento/depositos/aplicacoes-a-prazo">Invest Choice Novos Montantes</a><td>92 ou 183 dias<td>1,00%<td>2000€ a 75&nbsp;000€
+<tr><td>BiG<br><a href="https://big.pt/TaxasDepositos/TodosDepositos/Details/PTDP2020001">Superdepósito 1%</a><td>3 meses<td>1,00%<td>500€ a 50&nbsp;000€
 </table>
 
 
 <p>Note que os depósitos do quadro anterior são soluções promocionais apenas para captar novos clientes. Quando essas possibilidades são extintas, as taxas de juro das restantes aplicações a prazo nesses mesmos bancos são quase nulas. Por isso, não recomendo a contratação destes produtos.
 
-<p>O BK Mini, exclusivo para clientes do Bankinter menores de 18 anos, exige que os pais ou os tutores legais apliquem 1000 euros num plano de poupança-reforma ou num seguro de capitalização e que contratem subscrições periódicas de 50 euros por mês ou 150 euros por trimestre. Embora a taxa de juro, de 5%, seja muito generosa, o montante máximo deste depósito é de apenas 1000 euros. 
+<p>O BK Mini, exclusivo para clientes do Bankinter menores de 18 anos, exige que os pais ou os tutores legais apliquem 1000 euros num plano de poupança-reforma ou num seguro de capitalização e que contratem subscrições periódicas de 50 euros por mês ou 150 euros por trimestre. Embora a taxa de juro de 5% seja muito generosa, o montante máximo deste depósito é de apenas 1000 euros. 
 
 <p>Todos as outras aplicações são para novos clientes ou para dinheiro fresco que entre no banco. Infelizmente, os prazos são curtos; não é possível beneficiar de taxas de 1% ou superiores além de 6 meses.
 
@@ -164,7 +164,7 @@ window.onload = juro();
 
 <h3>Segunda recomendação: confiar na dívida pública</h3>
 
-<p>A Conta Mais Ordenado do Bankinter tem três restrições graves: os juros apenas são pagos sobre o saldo até 5000 euros, a proposta dura apenas 2 anos e é preciso registar um fluxo de entradas na conta para ter direito aos rendimentos.
+<p>A Conta Mais Ordenado do Bankinter tem 3 restrições graves: os juros apenas são pagos sobre o saldo até 5000 euros, a proposta dura apenas 2 anos e é preciso registar um fluxo de entradas na conta para ter direito aos rendimentos.
 
 <p>Embora menos generosos, os <a href="https://www.igcp.pt/pt/menu-lateral/certificados-de-aforro/descricao/">Certificados de Aforro</a> (CA) e os <a href="https://www.igcp.pt/pt/menu-lateral/ct-poupanca-crescimento/descricao/">Certificados do Tesouro Poupança Crescimento</a> (CTPC) não têm essas limitações. Ambos são instrumentos de dívida pública garantidos pela República Portuguesa; são comercializados no <a href="https://aforronet.igcp.pt/">AforroNet</a>, nos <a href="https://www.igcp.pt/fotos/editor2/Espaco_cidadao/Aviso_Moradas_Horarios_AMA_On_line_OUT2017.pdf">Espaços Cidadão</a> e alguns <a href="https://www.igcp.pt/fotos/editor2/Menu%20Lateral/Certificados%20de%20Aforro/Postos_de_Atendimento_Online_Moradas_Hor_EC_Online_01062011.pdf">balcões dos CTT</a>; e não têm encargos.
 
@@ -173,7 +173,7 @@ window.onload = juro();
 <ul>
 <li>
 <p><strong>Certificados de Aforro</strong>
-<p>São títulos de taxa variável: na subscrição da série E, o aforrador apenas conhece a remuneração dos primeiros 3 meses. Depois, os juros são calculados trimestralmente, em função dos movimentos da Euribor a 3 meses.
+<p>São títulos de taxa variável: na subscrição da série E, o aforrador apenas conhece a remuneração dos primeiros 3 meses; depois, os juros são calculados trimestralmente, em função dos movimentos da Euribor a 3 meses.
 
 <p>No arranque, a taxa de juro é muito baixa, cerca de 0,45%. Há, no entanto, um prémio de permanência — 0,5% do início do segundo ano até ao quinto ano e 1% do início do sexto ano até ao décimo ano — que se soma à taxa-base. Os juros líquidos de IRS são capitalizados automaticamente todos os trimestres. 
 
@@ -228,7 +228,7 @@ window.onload = juro();
 
 </ul>
 
-<p>A Conta Mais Ordenado do Bankinter está protegida até 100 mil euros por titular pelo <a href="https://fgd.es/">Fondo de Garantía de Depósitos de Entidades de Crédito</a>, uma entidade independente supervisionada pelo banco central de Espanha. Os CA e os CTPC são garantidos pelo Estado português. Estas opções são as menos arriscadas. Se não se importar com um pouco de risco é possível aumentar os retornos ou prolongar os rendimentos?
+<p>A Conta Mais Ordenado do Bankinter está protegida até 100 mil euros por titular pelo <a href="https://fgd.es/">Fondo de Garantía de Depósitos de Entidades de Crédito</a>, uma entidade independente supervisionada pelo banco central de Espanha. Os CA e os CTPC são garantidos pelo Estado português. Estas opções são as menos arriscadas. Se não se importar com uma pitada de risco, é possível aumentar os retornos ou prolongar os rendimentos.
 
 <h3>Terceira recomendação: PPR garantido</h3>
 
@@ -294,7 +294,7 @@ window.onload = juro();
 
 <p>Os PPR que não têm a forma legal de fundo de investimento não estão abrangidos por esquemas independentes de proteção, como o Fundo de Garantia de Depósitos e o Sistema de Indemnização aos Investidores. Por isso, quando uma companhia de seguros promove um PPR com capital ou rentabilidade garantida, a garantia é prestada unicamente pelo balanço da empresa.
 
-<p>Não se iluda: pode não haver volatilidade, mas há risco quando se investe num PPR garantido. <p>Os relatórios financeiros mais recentes da <a href="https://grupo.psn.es/pt/informa%C3%A7ao-financeira-psn">PSN</a> e da <a href="https://www.lusitaniavida.pt/pt/institucional/dados-financeiros">Lusitania Vida</a> mostram, porém, que os grupos cumpre todos os requisitos de solvabilidade. Os auditores, a PricewaterhouseCoopers em ambos os casos, não levantaram questões.
+<p>Não se iluda: pode não haver volatilidade, mas há risco quando se investe num PPR garantido. Os relatórios financeiros mais recentes da <a href="https://grupo.psn.es/pt/informa%C3%A7ao-financeira-psn">PSN</a> e da <a href="https://www.lusitaniavida.pt/pt/institucional/dados-financeiros">Lusitania Vida</a> mostram, porém, que os grupos cumprem todos os requisitos de solvabilidade. Os auditores, a PricewaterhouseCoopers em ambos os casos, não levantaram questões.
 
 <p>Apenas duas coisas me surpreenderam negativamente no relatório de 2020 da PSN:
 
