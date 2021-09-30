@@ -38,7 +38,7 @@ select { font-size:1em }
 
 <p>Pelo meio, não poderia evitar os novos Certificados do Tesouro Poupança Valor. A avaliação está no <a href="#2">segundo artigo</a> desta trigésima terceira edição do boletim <strong>tlim</strong>.
 
-<p>Divirta-se a desconfinar!
+<p>Divirta-se a desconfinar.
 
 <p><em>— David Almas</em>
 
@@ -53,7 +53,7 @@ select { font-size:1em }
 
 <p>Há uma filosofia imbuída na sociedade de relegar o arrendamento. Se se tem dinheiro (ou acesso a ele), compra-se. O mercado imobiliário não é, no entanto, estanque: há movimentos que é preciso apreçar nas decisões financeiras. 
 
-<p>Em alguns locais, onde as rendas não baixaram relativamente ao preço dos imóveis, continua a fazer sentido investir na compra da habitação. Em Trás-os-Montes, o preço das casas aumentou 2,1% nos primeiros 12 meses de pandemia, de março de 2020 a março de 2021, mas as rendas dos novos contratos de arrendamento subiram 27,1%, segundo as estatísticas oficiais.
+<p>Em alguns locais, onde as rendas não baixaram relativamente aos preços dos imóveis, continua a fazer sentido investir na compra da habitação. Em Trás-os-Montes, o preço das casas aumentou 2,1% nos primeiros 12 meses de pandemia, de março de 2020 a março de 2021, mas as rendas dos novos contratos de arrendamento subiram 27,1%, segundo as estatísticas oficiais.
 
 <p>Há regiões onde o movimento foi inverso. No Alto Alentejo, os preços das habitações familiares escalaram 10,3%, mas as rendas desceram 1%. Em Matosinhos, os imóveis para habitação apreciaram-se 16,9% nos primeiros 12 meses de pandemia, enquanto as rendas dos novos contratos de arrendamento desceram 12%. Em Lisboa, as rendas desceram 9,2%, mais do que a quebra no preço das habitações, de 7,9%. Será que o arrendamento é financeiramente mais inteligente do que a compra nestas zonas? Dificilmente.
 
@@ -382,10 +382,6 @@ select { font-size:1em }
 
 <p>Nestas condições, <span id="neg"></span>compensa adquirir a máquina de lavar roupa<span id="ciclos"> se projetar fazer mais de 85 lavagens</span>. 
 
-<script>
-
-</script>
-
 <p>Se modificar os campos interativos anteriores, verá que dificilmente as lavandarias de rua são um bom negócio para os consumidores. Mesmo quem use infrequentemente uma máquina de lavar, o investimento normalmente justifica-se. ★
 </article>
 
@@ -504,6 +500,17 @@ select { font-size:1em }
 <p>A CNBC montou um índice com as recomendações de Cramer, o <a href="https://www.cnbc.com/quotes/.CCOVID19">Mad Covid-19 Index</a>. Calculou-o retroativamente desde o início de 2020.
 
 <p>A pandemia ainda não terminou, mas, após um ano e cinco meses da recomendação, é possível fazer um primeiro balanço: o Mad Covid-19 Index rendeu 47,73%; o SPDR S&P 500 ETF Trust, o maior fundo cotado nos Estados Unidos da América, deu 57,69%. Nem preciso de puxar pelo trunfo dos encargos bolsistas.
+
+<li>
+<p><a href="https://smiportugal.pt/">Semana Mundial do Investidor</a>
+<p>A Comissão do Mercado de Valores Mobiliários, como o apoio de várias entidades, organiza um conjunto de eventos para investidores entre os dias 6 e 12 de outubro de 2021. Destaco:
+<ul>
+<li><p><em>Workshop</em> sobre começar a investir, por uma equipa da CFA Society Portugal, <a href="https://smiportugal.pt/06%20OUT%202021/#Literacia_Financeira_para_todos_Workshop_sobre_como_come%C3%A7ar_a_investir">6 de outubro</a>, às 17h30.
+<li><p>Produto individual de reforma pan-europeu, pela Autoridade de Supervisão de Seguros e Fundos de Pensões, <a href="https://smiportugal.pt/12%20OUT%202021/#Produto_Individual_de_Reforma_Pan_Europeu">12 de outubro</a>, às 14h30
+<li><p>Comportamento e segurança nos investimentos, organizado pela APFIPP, <a href="https://smiportugal.pt/07%20OUT%202021/#INVEST_TALKS_Comportamento_e_Seguran%C3%A7a_nos_Investimentos">7 de outubro</a>, às 17h, e <a href="https://smiportugal.pt/12%20OUT%202021/#INVEST_TALKS_Comportamento_e_Seguran%C3%A7a_nos_Investimentos">12 de outubro</a>, às 16h30.
+</ul>
+
+<p>É provável que a maioria dos eventos fique registada neste <a href="https://www.youtube.com/channel/UCB4EjoNgwZgvrguPHG9-h9Q">canal do YouTube</a>.
 
 <li>
 <p><a href="https://www.interactivebrokers.ie/">Interactive Brokers</a>
@@ -755,7 +762,7 @@ function i1() {
 	x('iarea').value = n(d[0]*1, 0);
 	x('iprecom2').value = n(d[1]*1, 0);
 	x('irendam2').value = n(d[2]*1, 2);
-	const adjetivo = ['maravilhoso', 'sublime', 'extraordinário', 'belo', 'admirável', 'deleitoso', 'nobre', 'distinto', 'singular', 'majestoso', 'encantador', 'esplêndido', 'ilustre', 'excelso', 'grandioso', 'lindo', 'bonito', 'estupendo', 'excecional', 'espantoso'];
+	var adjetivo = ['maravilhoso', 'sublime', 'extraordinário', 'belo', 'admirável', 'deleitoso', 'nobre', 'distinto', 'singular', 'majestoso', 'encantador', 'esplêndido', 'ilustre', 'excelso', 'grandioso', 'lindo', 'bonito', 'estupendo', 'excecional', 'espantoso'];
 	x('adjetivo').innerHTML = adjetivo[Math.floor(Math.random() * adjetivo.length)];
 	i2();
 }
