@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>IWDA</title>
+<style>
+body { font-size:1.1em; font-family:sans-serif; line-height:1.7; margin:0 auto; max-width:30em; padding:.5em; background-color:#fff; color:#222 }
+</style>
+</head>
+<body>
+<p class="message box">
+  The message will go here
+</p>
+<p>
+  <button id="getMessage">
+    Get Message
+  </button>
+</p>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+    document.getElementById('getMessage').onclick=function(){
+      // Add your code below this line
+      req=new XMLHttpRequest();
+    req.open("GET",'https://query1.finance.yahoo.com/v8/finance/chart/iwda.as',true);
+    req.send();
+    req.onload=function(){
+        json=JSON.parse(req.responseText);
+        document.getElementsByClassName('message')[0].innerHTML=JSON.stringify(json);          
+    };
+      
+      // Add your code above this line
+    };
+  });
+</script>
+</body>
+</html>
