@@ -26,5 +26,5 @@ jobs:
         with:
           http_url: https://query1.finance.yahoo.com/v8/finance/chart/iwda.as # The data to fetch every 5 minutes
           downloaded_filename: z-raw.json # The http_url gets saved and renamed in our repository as btc-price.json
-          postprocess: z-pp.js  # A postprocessing javascript or typescript file written in Deno 
+          postprocess: z-pp.js # A postprocessing javascript or typescript file written in Deno 
           # mask: true # optional param to mask the source http_url from the commit. Look at README for more options
