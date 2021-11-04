@@ -11,7 +11,7 @@ const json = await readJSON(filename)
 // Step 2: Filter specific data we want to keep and write to a new JSON file
 const p = Object.values(json.chart.result[0].meta.regularMarketPrice);
 const t = Object.values(json.chart.result[0].meta.regularMarketTime);
-const texto = 'let p = ' + p + ', t = ' + t + ';';
+const texto = 'let p = '.concat(p, ', t = ', t, ';');
 
 // Step 3. Write a new JSON file with our filtered data
 const newFilename = `z.js` // name of a new file to be saved
