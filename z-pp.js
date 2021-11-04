@@ -9,13 +9,13 @@ const filename = Deno.args[0]; // Same name as downloaded_filename `const filena
 const json = await readJSON(filename);
 
 // Step 2: Filter specific data we want to keep and write to a new JSON file
-const p = Object.values(json.chart.result[0].meta.regularMarketPrice);
-const t = Object.values(json.chart.result[0].meta.regularMarketTime);
-const texto = p.concat(t);
+const p = Object.values(json.chart.result[0].meta);
+// const t = Object.values(json.chart.result[0].meta.regularMarketTime);
+// const texto = p.concat(t);
 
 // Step 3. Write a new JSON file with our filtered data
 const newFilename = 'z.js'; // name of a new file to be saved
-await writeJSON(newFilename, texto); // create a new JSON file with just the Bitcoin price
+await writeJSON(newFilename, p); // create a new JSON file with just the Bitcoin price
 
 // Optionally delete the original file
 // await removeFile('./btc-price.json') // equivalent to removeFile('btc-price.json')
