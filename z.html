@@ -20,10 +20,13 @@ function readTextFile(file, callback) {
 
 //usage:
 readTextFile("z.json", function(text){
-    var data = JSON.parse(text);
-    document.getElementById('preco').innerHTML = data[9].replace(".",",");
-var hora = new Date(data[5]);
-    document.getElementById('hora').innerHTML = hora;
+	var data = JSON.parse(text);
+	var preco = data[9];
+	var p = preco.toString()..replace(".",",");	
+	document.getElementById('preco').innerHTML = p;
+	var hora = data[5];
+	var h = new Date(hora);
+	document.getElementById('hora').innerHTML = h;
 });
 </script>
 </head>
