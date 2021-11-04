@@ -22,7 +22,7 @@ function readTextFile(file, callback) {
 readTextFile("z.json", function(text){
 	var data = JSON.parse(text);
 	var preco = data[9];
-	var p = preco.toString()..replace(".",",");	
+	var p = preco.toString().replace(".",",");	
 	document.getElementById('preco').innerHTML = p;
 	var hora = data[5];
 	var h = new Date(hora);
