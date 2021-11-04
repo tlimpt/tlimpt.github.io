@@ -21,11 +21,14 @@ function readTextFile(file, callback) {
 //usage:
 readTextFile("z.json", function(text){
     var data = JSON.parse(text);
-    document.getElementById('preco').innerHTML = 'Preço: ' + data[9];
+    document.getElementById('preco').innerHTML = data[9].replace(".",",");
+var hora = new Date(data[5]);
+    document.getElementById('hora').innerHTML = hora;
 });
 </script>
 </head>
 <body>
-<p id="preco">Preço:
+<p id="preco">
+<p id="hora">
 </body>
 </html>
