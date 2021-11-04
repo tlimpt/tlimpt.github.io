@@ -10,9 +10,10 @@ const json = await readJSON(filename)
 console.log(json)
 
 // Step 2: Filter specific data we want to keep and write to a new JSON file
-const p = Object.values(json.regularMarketPrice);
-const t = Object.values(json.regularMarketTime);
-const texto = 'let p = ' + p + ', t = ' + t + ';';
+#const p = Object.values(json.regularMarketPrice);
+#const t = Object.values(json.regularMarketTime);
+#const texto = 'let p = ' + p + ', t = ' + t + ';';
+const texto = json;
 
 // Step 3. Write a new JSON file with our filtered data
 const newFilename = `z.json` // name of a new file to be saved
