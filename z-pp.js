@@ -9,7 +9,7 @@ const filename = Deno.args[0]; // Same name as downloaded_filename `const filena
 const json = await readJSON(filename);
 
 // Step 2: Filter specific data we want to keep and write to a new JSON file
-const p = 'data = '.concat(Object.values(json.chart.result[0].meta));
+const p = Object.values(json.chart.result[0].meta);
 
 
 // Step 3. Write a new JSON file with our filtered data
