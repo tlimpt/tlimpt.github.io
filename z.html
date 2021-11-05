@@ -23,21 +23,22 @@ function readTextFile(file, callback) {
     rawFile.send(null);
 }
 
-//usage:
 readTextFile("z.json", function(text){
 	var data = JSON.parse(text);
 	var preco = data[9];
-	var p = preco.toString().replace(".",",");	
-	document.getElementById('p1').innerHTML = p;
+	var tempo = data[5];
 
-	var hora = data[5];
-	var h = new Date(hora * 1000).toLocaleDateString('pt-PT',{hour:'numeric', minute:'numeric'} );
-	document.getElementById("p2").innerHTML = h;
+	var p = preco.toString().replace(".",",");	
+	var h = new Date(tempo * 1000);
+	var hora = h.getHours();
+	var minuto = "0" + h.getMinutes();
 
 	var q = Number(window.location.toString().split("?")[1]);
-	if (!isNaN(q)) {
-		document.getElementById('p3').innerHTML = p + " &times; " + q + " = " + Math.round(preco * q);
-	}
+
+	if (isNaN(q)) {
+		document.getElementById('p').innerHTML = p + "(" + hora + ":" + minutes.substr(-2) + ")"; }
+	else {
+		document.getElementById('p').innerHTML = p + " &times; " + q + " = " + Math.round(preco * q).toLocaleString('pt-PT') + "(" + hora + ":" + minutes.substr(-2) + ")"; }
 });
 </script>
 </body>
