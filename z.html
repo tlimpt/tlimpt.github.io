@@ -4,10 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<style>
+body { font-size:1.5em; margin:0 auto; max-width:30em; text-align:center; background-color:#111; color:#eee }
+</style>
 <title>Q</title>
 </head>
 <body>
-<p id="p"></p>
+<p id="p">77,28<br>×<br>3208<br>=<br>247 914<br><br>(10:24)</p>
 <script>
 function readTextFile(file, callback) {
     var rawFile = new XMLHttpRequest();
@@ -34,9 +37,9 @@ readTextFile("z.json", function(text){
 	var q = Number(window.location.toString().split("?")[1]);
 
 	if (isNaN(q)) {
-		document.getElementById('p').innerHTML = p + "(" + hora + ":" + minutes.substr(-2) + ")"; }
+		document.getElementById('p').innerHTML = p + "<br><br>(" + hora + ":" + minuto.substr(-2) + ")"; }
 	else {
-		document.getElementById('p').innerHTML = p + " &times; " + q + " = " + Math.round(preco * q).toLocaleString('pt-PT') + "(" + hora + ":" + minuto.substr(-2) + ")"; }
+		document.getElementById('p').innerHTML = p + "<br>×<br>" + q + "<br>=<br>" + Math.round(preco * q).toLocaleString('pt-PT') + "<br><br>(" + hora + ":" + minuto.substr(-2) + ")"; }
 });
 </script>
 </body>
