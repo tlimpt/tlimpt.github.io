@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>JSON</title>
+</head>
+<body>
+<p id="p1"></p>
+<p id="p2"></p>
 <script>
 function readTextFile(file, callback) {
     var rawFile = new XMLHttpRequest();
@@ -34,17 +38,13 @@ console.log("9: "+data[8]);
 
 	var preco = data[9];
 	var p = preco.toString().replace(".",",");	
-	document.getElementById('preco').innerHTML = p;
+	document.getElementById('p1').innerHTML = p;
 
 });
 
 	var hora = 1636100437;
 	var h = new Date(hora);
-	document.getElementById('hora').innerHTML = h;
+	document.getElementById("p2").innerHTML = h;
 </script>
-</head>
-<body>
-<p id="preco"></p>
-<p id="hora"></p>
 </body>
 </html>
