@@ -36,7 +36,7 @@ readTextFile("z.json", function(text){
 	if (isNaN(q)) {
 		document.getElementById('p').innerHTML = p + "(" + hora + ":" + minutes.substr(-2) + ")"; }
 	else {
-		document.getElementById('p').innerHTML = p + " &times; " + q + " = " + Math.round(preco * q).toLocaleString('pt-PT') + "(" + hora + ":" + minutes.substr(-2) + ")"; }
+		document.getElementById('p').innerHTML = p + " &times; " + q + " = " + Math.round(preco * q).toLocaleString('pt-PT') + "(" + hora + ":" + minuto.substr(-2) + ")"; }
 });
 </script>
 </body>
