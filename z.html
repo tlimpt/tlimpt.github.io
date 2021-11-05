@@ -41,7 +41,7 @@ console.log("9: "+data[8]);
 	document.getElementById('p1').innerHTML = p;
 
 	var hora = data[5];
-	var h = new Date(hora * 1000);
+	var h = new Date(hora * 1000).toLocaleDateString('pt-PT',{hour:'numeric', minute:'numeric'} );
 	document.getElementById("p2").innerHTML = h;
 });
 </script>
