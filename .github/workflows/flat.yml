@@ -6,7 +6,7 @@ on:
       - .github/workflows/flat.yml # Only run a new workflow every time this file (flat.yaml) file changes
   workflow_dispatch: # Required even though this is currently empty
   schedule:
-    - cron: '46 17 * * 1-5'
+    - cron: '0 8-18 * * 1-5'
 
 jobs:
   scheduled:
