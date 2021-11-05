@@ -13,4 +13,4 @@ const newFilename = 'q/q.json'; // name of a new file to be saved
 await writeJSON(newFilename, p); // create a new JSON file with just the Bitcoin price
 
 // Optionally delete the original file
-// await removeFile('./btc-price.json') // equivalent to removeFile('btc-price.json')
+await removeFile('./q-raw.json') // equivalent to removeFile('btc-price.json')
