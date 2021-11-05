@@ -10,7 +10,7 @@ body { font-size:1.5em; margin:0 auto; max-width:30em; text-align:center; backgr
 <title>Q</title>
 </head>
 <body>
-<p id="p">77,28<br>×<br>3208<br>=<br>247 914<br><br>(10:24)</p>
+<p id="p"></p>
 <script>
 function readTextFile(file, callback) {
     var rawFile = new XMLHttpRequest();
@@ -24,7 +24,7 @@ function readTextFile(file, callback) {
     rawFile.send(null);
 }
 
-readTextFile("z.json", function(text){
+readTextFile("q.json", function(text){
 	var data = JSON.parse(text);
 	var preco = data[9];
 	var tempo = data[5];
