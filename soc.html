@@ -24,10 +24,21 @@
 </body>
 <script>
 const url = document.location.href;
-const txt = document.getElementsByTagName("h1")[0].innerText;
-const twi =  "url=" + url + "&" + "text=" + txt;
+const tx1 = document.getElementsByTagName("h1")[0].innerText;
+const tx2 = document.getElementsByTagName("h2")[0].innerText;
 
-document.getElementsByTagName("h2")[0].innerHTML += "&nbsp;<a id='twitter' class='soc' target='_blank'><img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIxOS41MDQiPjxwYXRoIGQ9Ik0yNCAyLjMwOWE5LjgzIDkuODMgMCAwIDEtMi44MjguNzc1QTQuOTMyIDQuOTMyIDAgMCAwIDIzLjMzNy4zNmE5Ljg2NCA5Ljg2NCAwIDAgMS0zLjEyNyAxLjE5NUE0LjkxNiA0LjkxNiAwIDAgMCAxNi42MTYgMGMtMy4xNzkgMC01LjUxNSAyLjk2Ni00Ljc5NyA2LjA0NUExMy45NzggMTMuOTc4IDAgMCAxIDEuNjcxLjkwMWE0LjkzIDQuOTMgMCAwIDAgMS41MjMgNi41NzQgNC45MDMgNC45MDMgMCAwIDEtMi4yMjktLjYxNmMtLjA1NCAyLjI4MSAxLjU4MSA0LjQxNSAzLjk0OSA0Ljg5YTQuOTM1IDQuOTM1IDAgMCAxLTIuMjI0LjA4NCA0LjkyOCA0LjkyOCAwIDAgMCA0LjYgMy40MTlBOS45IDkuOSAwIDAgMSAwIDE3LjI5MmExMy45NCAxMy45NCAwIDAgMCA3LjU0OCAyLjIxMmM5LjE0MiAwIDE0LjMwNy03LjcyMSAxMy45OTUtMTQuNjQ2QTEwLjAyNSAxMC4wMjUgMCAwIDAgMjQgMi4zMDl6IiBzdHlsZT0iZmlsbDojMjIyIi8+PC9zdmc+Cg=='></a>";
-document.getElementById("twitter").href = "https://twitter.com/intent/tweet?" + twi;
+const soc = document.createElement("p");
+soc.innerHTML = "Partilha: " +
+	"<a class='soc' target='_blank' id='twitter'><img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIxOS41MDQiPjxwYXRoIGQ9Ik0yNCAyLjMwOWE5LjgzIDkuODMgMCAwIDEtMi44MjguNzc1QTQuOTMyIDQuOTMyIDAgMCAwIDIzLjMzNy4zNmE5Ljg2NCA5Ljg2NCAwIDAgMS0zLjEyNyAxLjE5NUE0LjkxNiA0LjkxNiAwIDAgMCAxNi42MTYgMGMtMy4xNzkgMC01LjUxNSAyLjk2Ni00Ljc5NyA2LjA0NUExMy45NzggMTMuOTc4IDAgMCAxIDEuNjcxLjkwMWE0LjkzIDQuOTMgMCAwIDAgMS41MjMgNi41NzQgNC45MDMgNC45MDMgMCAwIDEtMi4yMjktLjYxNmMtLjA1NCAyLjI4MSAxLjU4MSA0LjQxNSAzLjk0OSA0Ljg5YTQuOTM1IDQuOTM1IDAgMCAxLTIuMjI0LjA4NCA0LjkyOCA0LjkyOCAwIDAgMCA0LjYgMy40MTlBOS45IDkuOSAwIDAgMSAwIDE3LjI5MmExMy45NCAxMy45NCAwIDAgMCA3LjU0OCAyLjIxMmM5LjE0MiAwIDE0LjMwNy03LjcyMSAxMy45OTUtMTQuNjQ2QTEwLjAyNSAxMC4wMjUgMCAwIDAgMjQgMi4zMDl6IiBzdHlsZT0iZmlsbDojMjIyIi8+PC9zdmc+Cg=='></a> " +
+	"<a class='soc' target='_blank' id='facebook'>Facebook</a> " +
+	"<a class='soc' target='_blank' id='linkedin'>LinkedIn</a> " +
+	"<a class='soc' target='_blank' id='whatsapp'>WhatsApp</a>";
+
+document.getElementsByTagName("article")[0].appendChild(soc);
+
+document.getElementById("twitter").href = "https://twitter.com/intent/tweet?url=" + url + "&text=" + tx1;
+document.getElementById("facebook").href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+document.getElementById("linkedin").href = "http://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + tx1 + "&summary=" + tx2;
+
 </script>
 </html>
