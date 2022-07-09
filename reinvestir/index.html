@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reinvestir</title>
+<style>
+body { font-size:1.1em; font-family:sans-serif; line-height:1.7; margin:0 auto; max-width:30em; padding:.5em; background-color:#fff; color:#222 }
+header p a { text-decoration:none }
+h1 { line-height:1 }
+input { font-family: inherit; font-size: 1em; width: 4.5em; text-align:right; border-width:0 0 .2em; border-color: #222; background:none; color:inherit }
+</style>
+</head>
+<body>
+<header><p><a href="/">tlim.pt</a></header>
+
+<h1>Reinvestir</h1>
+
+<p>(Duvide destes cálculos.)
+
+<p>Casa vendida:
+<ul>
+<li>Preço de compra: <input type="text" value="180 000" id="compra1" onkeyup="ff();">€
+<li>Preço de venda: <input type="text" value="220 000" id="venda1" onkeyup="ff();">€
+<li>Coeficiente de correção monetária: <input type="text" value="1,00" id="coef1" style="width:2.5em" onkeyup="ff();">
+<li>Despesas dedutíveis: <input type="text" value="18 430" id="despesas1" onkeyup="ff();">€
+<li>Amortização de crédito na venda: <input type="text" value="130 000" id="amortiza1" onkeyup="ff();">€
+</ul>
+
+<p>Casa comprada:
+<ul>
+<li>Valor sem recurso a crédito: <input type="text" value="200 000" id="compra2" onkeyup="ff();">€
+</ul>
+
+<p>Resultado:
+<ul>
+<li>“Mais-valias fiscal”: <span id="mvf">0</span>€
+<li>(Tributação a 28%: <span id="trib">0</span>€)
+</ul>
+
+<script>
+function n(el, dig) {
+	var input1 = document.getElementById(el).value.replace(/[^\d]/g, "") / (10 ** dig);
+	var input2 = input1.toLocaleString("pt-PT", {minimumFractionDigits:dig, maximumFractionDigits:dig});
+	document.getElementById(el).value = input2;
+	return input1; }
+
+function e(el, n, dig) {
+	document.getElementById(el).innerText = n.toLocaleString("pt-PT", {minimumFractionDigits:dig, maximumFractionDigits:dig}); }
+
+function ff() {
+var compra1 = n('compra1', 0);
+var venda1 = n('venda1', 0);
+var coef1 = n('coef1', 2);
+var despesas1 = n('despesas1', 0);
+var amortiza1 = n('amortiza1', 0);
+var compra2 = n('compra2', 0);
+
+var mvf = (1 - Math.min(1, (compra2/(venda1-amortiza1)))) * (venda1 - compra1 * coef1 - despesas1) * 0.5;
+var trib = .28 * mvf;
+
+e('mvf', mvf, 2);
+e('trib', trib, 2);
+
+};
+window.onload = ff();
+</script>
+</body>
+</html>
