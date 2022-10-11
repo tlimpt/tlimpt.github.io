@@ -5,31 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quantos meses posso reduzir no crédito à habitação se fizer uma amortização?</title>
 <style>
-body { font-size:1.1em; font-family:sans-serif; line-height:1.7; margin:0 auto; max-width:30em; padding:.5em; background-color:#fff; color:#222 }
+body { max-width:60ch; padding:.5em; margin:0 auto; line-height:1.75; font-size:1.25em; opacity:.9 }
 header p a { text-decoration:none }
-h1 { line-height:1 }
-h2 { line-height:1.2 }
-h4 + p:first-letter { float: left; line-height:.65; font-size:3.5em; font-weight:bold; padding-top:.15em; margin-right:.1em }
+h1, h3 { line-height:1.2 }
+h3 { margin-top:3em }
 aside { border-left:.3em solid; padding:0 0 0 2em; margin:2em 0 }
-input { font-family: inherit; font-size: 1em; width: 3em; text-align:right; border-width:0 0 .2em; border-color: #222; background:none; color:inherit }
-.nw { white-space: nowrap }
-@media (prefers-color-scheme: dark) {
-	body { background-color:#000; color:#eee }
-	a { color:#9999ff }
-	input { border-color:#eee }
-}
+input { font-family:inherit; font-size:1em; width:3em; text-align:right; border-width:0 0 .2em; background:none; color:inherit; outline:none }
+.nw { white-space:nowrap }
 </style>
 </head>
+
 <body>
 <header><p><a href="/">tlim.pt</a></header>
 
 <h1>Quantos meses posso reduzir no crédito à habitação se fizer uma amortização?</h1>
 
-<h4>Por <strong>David Almas</strong> a 1 de fevereiro de 2020</h4>
+<p>Por <strong>David Almas</strong> a 11 de outubro de 2022
 
 <p>Amortizar uma parte do crédito à habitação pode ser uma boa ideia: permite reduzir a prestação que paga mensalmente ao banco. Todavia, se os seus rendimentos conseguem suportar a prestação anterior, porque não reduzir simultaneamente o prazo do empréstimo para ficar a pagar sensivelmente o mesmo e libertar-se mais depressa do banco?
 
-<p>Assumindo que tem uma dívida de <span class="nw"><input type="text" value="100000" id="divida" style="width:4em" onkeyup="ff();">€</span> a ser paga em <span class="nw"><input type="text" value="360" id="prazo1" style="width:3em" onkeyup="ff();"> meses</span> a uma taxa de juro de <span class="nw"><input type="text" value="1,5" id="txj" onkeyup="ff();">%</span>, a sua prestação mensal é de <strong class="nw"><span id="prestacao1">345,12</span>€</strong>. Se amortizar <span class="nw"><input type="text" value="10000" id="amortiza" style="width:4em" onkeyup="ff();">€</span>, pode reduzir o prazo do empréstimo em <strong class="nw"><span id="reduz">22</span> meses</strong> para <strong class="nw"><span id="prazo2">338</span> meses</strong>. Se as operações de amortização e redução do prazo forem efetuadas em simultâneo, a prestação fica em <strong class="nw"><span id="prestacao2">344,78</span>€</strong>.
+<p>Assumindo que tem uma dívida de <span class="nw"><input type="text" value="150 000" id="divida" style="width:4em" onkeyup="ff();">€</span> a ser paga em <span class="nw"><input type="text" value="360" id="prazo1" onkeyup="ff();"> meses</span> a uma taxa de juro de <span class="nw"><input type="text" value="3,46" id="txj" onkeyup="ff();">%</span>, a sua prestação mensal é de <strong class="nw"><span id="prestacao1">670,22</span>€</strong>. Se amortizar <span class="nw"><input type="text" value="10 000" id="amortiza" style="width:4em" onkeyup="ff();">€</span>, pode reduzir o prazo do empréstimo em <strong class="nw"><span id="reduz">39</span> meses</strong> para <strong class="nw"><span id="prazo2">321</span> meses</strong>. Se as operações de amortização e redução do prazo forem efetuadas em simultâneo, a prestação fica em <strong class="nw"><span id="prestacao2">669,25</span>€</strong>.
 
 <aside>
 <p><strong>Este artigo é interativo</strong>. Os números sublinhados podem ser alterados para se ajustarem à sua realidade.
@@ -41,44 +36,30 @@ input { font-family: inherit; font-size: 1em; width: 3em; text-align:right; bord
 <p>Note, ainda, que os bancos não são obrigados a aceitarem uma redução no prazo do crédito à habitação. Pode ser preciso negociar. ★
 
 <script>
+function n(el, dig) {
+	var input1 = document.getElementById(el).value.replace(/[^\d]/g, "") / (10 ** dig);
+	var input2 = input1.toLocaleString("pt-PT", {minimumFractionDigits:dig, maximumFractionDigits:dig});
+	document.getElementById(el).value = input2;
+	return input1; }
+
+function e(el, n, dig) {
+	document.getElementById(el).innerHTML = n.toLocaleString("pt-PT", {minimumFractionDigits:dig, maximumFractionDigits:dig}); }
+
+
 function ff() {
+	var 	c = n('divida', 0), m = n('prazo1', 0), t = n('txj', 2) / 100, a = n('amortiza', 0);
 
-if ( document.getElementById("amortiza").value * 1 >= document.getElementById("divida").value * 1 ) {
-	document.getElementById("amortiza").value = document.getElementById("divida").value /10; }
+	if ( a >= c ) { document.getElementById("amortiza").value = c/10; a = c/10; }
 
-var 	c = document.getElementById("divida").value.replace(",", "."), 
-	m = document.getElementById("prazo1").value.replace(",", "."), 
-	t = document.getElementById("txj").value.replace(",", ".") / 100, 
-	a = document.getElementById("amortiza").value.replace(",", ".");
+	var r = Math.floor(Math.log(-(a - c - a*Math.pow(1 + t/12,m))/c)/Math.log(1 + t/12));
+	var mm = m - r;
 
-var p = Math.round(100*(c/((1-Math.pow(1+t/12,-m))/(t/12))))/100;
-
-var r = Math.floor(Math.log(-(a - c - a*Math.pow(1 + t/12,m))/c)/Math.log(1 + t/12));
-
-var mm = m - r;
-
-var pp = Math.round(100*((c-a)/((1-Math.pow(1+t/12,-mm))/(t/12))))/100;
-
-
-document.getElementById("prestacao1").innerHTML = p;
-
-document.getElementById("prestacao1").innerHTML = document.getElementById("prestacao1").innerHTML.replace(".", ",");
-
-document.getElementById("reduz").innerHTML = r;
-
-document.getElementById("prazo2").innerHTML = mm;
-
-document.getElementById("prestacao2").innerHTML = pp;
-
-document.getElementById("prestacao2").innerHTML = document.getElementById("prestacao2").innerHTML.replace(".", ",");
-
+	e('prestacao1', (Math.round(100*(c/((1-Math.pow(1+t/12,-m))/(t/12))))/100), 2);
+	e('reduz', r, 0);
+	e('prazo2', mm, 0);
+	e('prestacao2', (Math.round(100*((c-a)/((1-Math.pow(1+t/12,-mm))/(t/12))))/100), 2);
 };
-
 window.onload = ff();
 </script>
-
-<aside>
-<p><strong>Este artigo é experimental.</strong> Se encontrar falhas ou se tiver sugestões para melhorar este artigo, <a href="/">escreva-me</a>.
-</aside>
 </body>
 </html>
