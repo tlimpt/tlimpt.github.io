@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Grémio de Finanças Pessoais — Aveiro</title>
+<style>
+body { max-width:60ch; padding:.5em; margin:0 auto; line-height:1.75; font-size:1.25em; opacity:.9 }
+header p { border-bottom:.3em solid; margin:0 0 2em; padding:.5em 0 }
+h1, h2, h3 { line-height:1 }
+h1 { font-size:2em }
+p { margin-bottom:5em }
+
+aside { border-left:.3em solid; padding:0 0 0 2em; margin:2em 0 }
+blockquote { font-style:italic }
+table { border-collapse:collapse; margin:2em auto; font-size:.8em }
+table caption strong:first-child, figcaption strong:first-child { display:block }
+figure { text-align:center; margin:2em 0; font-size:.8em; }
+thead { border-bottom:.3em solid }
+td { border-bottom:.1em solid; padding:1em .5em 1em 0; text-align:center; line-height:1.25em; vertical-align:top }
+td:first-child { text-align:left }
+td:last-child { padding:1em 0 }
+input { font-family:inherit; font-size:1em; width:3em; text-align:right; border-width:0 0 .2em; background:none; color:inherit; outline:none }
+button { font-size:.8em }
+</style>
+<script>
+function n(el, dig) {
+	var input1 = document.getElementById(el).value.replace(/[^\d]/g, '') / (10 ** dig);
+	var input2 = input1.toLocaleString('pt-PT', {minimumFractionDigits:dig, maximumFractionDigits:dig});
+	document.getElementById(el).value = input2;
+	return input1; }
+
+function e(el, n, dig) { document.getElementById(el).innerHTML = n.toLocaleString('pt-PT', {minimumFractionDigits:dig, maximumFractionDigits:dig}); }
+
+function i(el, n) { document.getElementById(el).value = n; }
+
+function c() {
+	var taxa = n('taxa', 2)/100 * document.getElementById('sinal1').value;
+	var taxax = n('taxax', 2)/100 * document.getElementById('sinal2').value;;
+	
+	var alavanca = n('alavanca', 0);
+
+	e('al1', taxa * alavanca * 100, 2);
+	e('al1x', taxax * alavanca * 100, 2);
+
+	e('al2', taxa * 100, 2); e('al3', taxax * 100, 2); e('al4', ((1+taxa)*(1+taxax)-1)*100, 2);
+
+	e('al5', taxa * alavanca * 100, 2); e('al6', taxax * alavanca * 100, 2); e('al7', ((1+taxa*alavanca)*(1+taxax*alavanca)-1)*100, 2);
+
+	e('al8', ((1+taxa*alavanca)*(1+taxax*alavanca)-1)*100, 2); e('al9', ((1+taxa)*(1+taxax)-1)*100, 2); e('al10', ((1+taxa*alavanca)*(1+taxax*alavanca)-1) / ((1+taxa)*(1+taxax)-1), 2);
+
+	e('al11', taxa * 100, 2); e('al12', taxa * alavanca * 100, 2);
+	e('al14', taxa * 100, 2); e('al13', taxa * alavanca * 100, 2);
+	e('al15', alavanca, 0);
+}
+
+function f() {
+	var quant = n('quant', 0);
+	var minimo = n('minimo', 2);
+	var maximo = n('maximo', 2);
+	var alav = n('alav', 0);
+}
+
+function d() {
+	var quant = n('quant', 0);
+	var minimo = -n('minimo', 2) * 100;
+	var maximo = n('maximo', 2) * 100;
+	var alav = n('alav', 0);
+
+	var aleatorio = [];
+	for (var g = 0; g < quant; g++) {
+		aleatorio.push( Math.floor(Math.random() * (maximo - minimo + 1) + minimo)/100   );
+	}
+
+	document.getElementById('aleatorio').innerHTML = "";
+	
+	for (var g = 0; g < aleatorio.length; g++) {
+		document.getElementById('aleatorio').innerHTML += aleatorio[g].toLocaleString('pt-PT', {minimumFractionDigits:2, maximumFractionDigits:2}) + "% ";
+	}
+
+	var simples = 0;
+	for (var g = 0; g < aleatorio.length; g++) {
+		simples = (1 + simples) * (1 + aleatorio[g]/100) - 1;
+	}
+
+	e('simples', simples, 2);
+
+
+	var alava = 0;
+	for (var g = 0; g < aleatorio.length; g++) {
+		alava = (1 + alava) * (1 + aleatorio[g]/100 *  alav) - 1;
+	}
+
+	e('alava', alava, 2);
+	e('alavax', alava / simples, 2);
+
+
+}
+</script>
+</head>
+
+<body>
+
+<p>Simples: <select style="font-size:.8em" id="sinal1" onchange="c()"><option value="1" selected>+<option value="-1">-</select>
+
+
+
+<input type="text" value="2,00" id="taxa" onkeyup="c();">%, 
+
+<select style="font-size:.8em" id="sinal2" onchange="c()"><option value="1" selected>+<option value="-1">-</select>
+<input type="text" value="1,00" id="taxax" onkeyup="c();">%
+
+<p>Alavanca: <input type="text" value="3" id="alavanca" onkeyup="c();">×
+
+<p>Alavancado: <span id="al1">6,00</span>%, <span id="al1x">3,00</span>%
+
+<p>Simples 2 dias: (1 + <span id="al2">2,00</span>%) × (1 + <span id="al3">1,00</span>%) − 1 = <span id="al4">3,02</span>%
+
+<p>Alavancado 2 dias: (1 + <span id="al5">6,00</span>%) × (1 + <span id="al6">3,00</span>%) − 1 = <span id="al7">9,18</span>%
+
+<p><strong>Efeito alavança</strong>: <span id="al8">9,18</span>% &divide; <span id="al9">3,02</span>% = <span id="al10">3,04</span>×
+
+<p>Simples <em>n</em> dias: (1 + <span id="al11">2,00</span>%)<sup>n</sup>
+<p>Alavancado <em>n</em> dias: (1 + <span id="al12">6,00</span>%)<sup>n</sup>
+
+<p><strong>Efeito alavança</strong>: [(1 + <span id="al13">6,00</span>%) &divide; (1 + <span id="al14">2,00</span>%)]<sup>n</sup> ≠ <span id="al15">3</span>×, se n > 1
+
+<h3>Simulação</h3>
+
+<p><input type="text" value="100" id="quant" onkeyup="f();"> retornos diários entre −<input type="text" value="4,00" id="minimo" onkeyup="f();">% e <input type="text" value="4,04" id="maximo" onkeyup="f();">% <button onclick="d();">Gerar</button>
+
+<p id="aleatorio"></p>
+
+<p>Capitalização simples: <span id="simples"></span>%
+<p>Capitalização alavancada a <input type="text" value="3" id="alav" onkeyup="d();">×: <span id="alava"></span>%
+<p><strong>Efeito alavança</strong>: <span id="alavax"></span>× <button onclick="d();">Gerar</button>
+
+</body>
+</html>

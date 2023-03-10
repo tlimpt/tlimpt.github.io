@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Grémio de Finanças Pessoais — Aveiro</title>
+<style>
+body { max-width:60ch; padding:.5em; margin:0 auto; line-height:1.75; font-size:1.25em; opacity:.9 }
+header p { border-bottom:.3em solid; margin:0 0 2em; padding:.5em 0 }
+h1, h2, h3 { line-height:1 }
+h1 { font-size:2em }
+
+aside { border-left:.3em solid; padding:0 0 0 2em; margin:2em 0 }
+blockquote { font-style:italic }
+table { border-collapse:collapse; margin:2em auto; font-size:.8em }
+table caption strong:first-child, figcaption strong:first-child { display:block }
+figure { text-align:center; margin:2em 0; font-size:.8em; }
+thead { border-bottom:.3em solid }
+td { border-bottom:.1em solid; padding:1em .5em 1em 0; text-align:center; line-height:1.25em; vertical-align:top }
+td:first-child { text-align:left }
+td:last-child { padding:1em 0 }
+input { font-family:inherit; font-size:1em; width:5em; text-align:right; border-width:0 0 .2em; background:none; color:inherit; outline:none }
+button { font-size:.8em }
+
+svg line { stroke:#bbb }
+svg text { font-size:.8em; opacity:.9 }
+svg polyline { opacity:.1 }
+
+
+.blink_me {  animation: blinker 1s linear infinite; }
+
+@keyframes blinker { 50% { opacity: 0; } }
+</style>
+<script>
+function n(el, dig) {
+	var input1 = document.getElementById(el).value.replace(/[^\d]/g, '') / (10 ** dig);
+	var input2 = input1.toLocaleString('pt-PT', {minimumFractionDigits:dig, maximumFractionDigits:dig});
+	document.getElementById(el).value = input2;
+	return input1; }
+
+function e(el, n, dig) { document.getElementById(el).innerHTML = n.toLocaleString('pt-PT', {minimumFractionDigits:dig, maximumFractionDigits:dig}); }
+
+function i(el, n) { document.getElementById(el).value = n; }
+</script>
+</head>
+<body>
+
+<header id="x">
+<p>Boletim <strong>tlim</strong> n.º <em>n</em> ★ <em>m</em> de 2023
+</header>
+
+<h1>Projeto Trifásico</h3>
+
+<p>Simulação histórica que inclui:
+
+<ul>
+<li>Ações, obrigações e misto.
+<li>Mais de 30 anos.
+<li>Três fases da vida: acumulação, resgate e resgate com apoio.
+</ul>
+
+<p style="margin-bottom:30em"><a href="#solucoes">Soluções?</a>
+
+
+<ol id="solucoes">
+<li><p>Base dados <a href="https://www.macrohistory.net/database/">Jordà-Schularick-Taylor</a>: ações, obrigações, imobiliário ~1870-2015.
+	<ul>
+	<li>Vantagens:
+		<ul>
+		<li>Inclui Imobiliário.
+		<li>Permite simular a 50 anos com vários ciclos económicos.
+		<li>Permite 1, 2 ou 3 fases de vida com 30 ou mais anos.
+		<li>É possível replicar aproximadamente os pesos (de hoje) do MSCI World.
+		</ul>
+	<li>Desvantagens:
+		<ul>
+		<li>Informação desagregada.
+		<li>Diversas divisas.
+		<li>Dados antigos menos confiáveis. 
+		<li>Não é uniforme.
+		<li>Não é (parcialmente) credível! (“unfortunately imperfect”).
+		<li>Termina em 2015 e não é atualizada.
+		<li>Frequência anual.
+		</ul>
+	</ul>
+
+<li><p>Base de dados <a href="http://www.econ.yale.edu/~shiller/data.htm">Shiller</a>: ações e obrigações dos EUA 1871-2023.
+	<ul>
+	<li>Vantagens:
+		<ul>
+		<li>Frequência mensal.
+		<li>Atualização mensal.
+		<li>Permite simular a 50 anos com vários ciclos económicos.
+		<li>Permite 1, 2 ou 3 fases de vida com 30 ou mais anos.
+		</ul>
+	<li>Desvantagens:
+		<ul>
+		<li>Só EUA, mas ⅔ do MSCI World é EUA.
+		<li>Série antiga menos confiáveis.
+		<li>Em dólares norte-americanos.
+	</ul>
+
+</ol>
+
+<p style="margin-bottom:30em"><a href="#simula" style="text-decoration:none">↓</a>
+
+
+
+
+
+<p id="simula">
+<strong>Carteira</strong>: 
+<input type="text" value="50" style="width:3em" id="peso" onkeyup="c();">% em ações &
+<span id="ipeso">50</span>% em obrigações<br>
+
+<strong>Fase 1</strong>:
+<input type="text" value="50 000" id="capital" onkeyup="c();">€ & 
+<select style="font-size:.8em" id="aplica-resgata1"><option value="1" selected>aplicar<option value="-1">alienar</select>
+<input type="text" value="300" style="width:3em" id="periodico1" onkeyup="c();">€/mês & 
+<input type="text" value="20" style="width:2em" id="anos1" onkeyup="c();"> anos<br>
+
+<strong>Fase 2</strong>:
+<select style="font-size:.8em" id="aplica-resgata2"><option value="1">aplicar<option value="-1" selected>alienar</select>
+<input type="text" value="1000" style="width:3em" id="periodico2" onkeyup="c();">€/mês & 
+<input type="text" value="20" style="width:2em" id="anos2" onkeyup="c();"> anos<br>
+
+<strong>Fase 3</strong>:
+<select style="font-size:.8em" id="aplica-resgata3"><option value="1">aplicar<option value="-1" selected>alienar</select>
+<input type="text" value="500" style="width:3em" id="periodico3" onkeyup="c();">€/mês & 
+<input type="text" value="20" style="width:2em" id="anos3" onkeyup="c();"> anos
+
+<br>
+<button onclick="h('figura');">Calcular</button>
+
+
+
+<figure id="figura">
+<figcaption><strong>Simulações históricas</strong>
+</figcaption>
+<svg viewBox="0 0 600 400">
+<line x1="75" y1="20" x2="585" y2="20" />
+<line x1="75" y1="340" x2="585" y2="340" />
+<line x1="80" y1="15" x2="80" y2="345" />
+<line x1="580" y1="15" x2="580" y2="345" />
+<text x="-345" y="15" text-anchor="start" transform="rotate(-90)">Valor patrimonial ⟶</text>
+<text x="80" y="390" text-anchor="start">Tempo ⟶</text>
+<text x="80" y="365" text-anchor="middle">0</text>
+<text x="580" y="365" text-anchor="middle">
+	<tspan x="580" dy="0">30</tspan>
+	<tspan x="578" dy="25">anos</tspan>
+</text>
+<text x="70" y="345" text-anchor="end">0</text>
+<text x="70" y="25" text-anchor="end">1135k</text>
+
+<text x="70" y="288.61" text-anchor="end">200 000</text>
+<line x1="75" y1="283.61" x2="585" y2="283.61" stroke-dasharray="5 5" style="stroke:#333"></line>
+</svg>
+</figure>
+
+
+<script src="shiller.js"></script>
+<script>
+function c() { n('capital', 0); n('periodico1', 0); n('anos1', 0); n('periodico2', 0); n('anos2', 0); n('periodico3', 0); n('anos3', 0); var pes = n('peso', 0); e('ipeso', 100 - pes, 0); }
+
+function decresce (a, b) {
+	return b - a;
+}
+
+function linha(dados, minimo, maximo, especial) {
+	var x = [];
+	var y = [];
+	for (var g = 0; g < dados.length; g++) {
+		x.push(80 + (580 - 80) / (dados.length - 1) * g);
+		y.push((dados[g] - maximo) * ((20 - 340)/(maximo + 0)) + 20);
+	}	
+	var pontos = "";
+	for (var g = 0; g < dados.length; g++) { pontos = pontos + " " + x[g] + "," + y[g]; }
+	let linha = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+	linha.setAttribute("points", pontos);
+	linha.setAttribute("stroke-width", "1");
+	linha.setAttribute("stroke", "black" );
+	linha.setAttribute("fill", "none");
+	document.getElementById("graf").appendChild(linha);
+
+	if (especial == 1) {
+		linha.setAttribute("stroke", "red" );
+		linha.style.opacity = "1";
+		linha.setAttribute("stroke-width", "3");
+	}
+
+	if (especial == 2) {
+		linha.setAttribute("stroke", "blue" );
+		linha.style.opacity = "1";
+		linha.setAttribute("stroke-width", "3");
+	}
+}
+
+function h(el) {
+	console.clear();
+
+	if (el !== undefined) {
+		window.scrollTo({top:document.getElementById(el).offsetTop, left:0, behavior:'smooth'}); }
+
+	var peso = n('peso', 0) / 100;
+
+	var inicio = n('capital', 0);
+	var periodico1 = n('periodico1', 0) * document.getElementById('aplica-resgata1').value;
+	var anos1 = n('anos1', 0);
+	var m1 = 12 * anos1;
+
+	var periodico2 = n('periodico2', 0) * document.getElementById('aplica-resgata2').value;
+	var anos2 = n('anos2', 0);
+	var m2 = 12 * anos2;
+
+	var periodico3 = n('periodico3', 0) * document.getElementById('aplica-resgata3').value;
+	var anos3 = n('anos3', 0);
+	var m3 = 12 * anos3;
+
+	var m = m1 + m2 + m3;
+
+
+// LIMPA E DESENHA EIXOS
+document.getElementById('figura').removeChild(document.getElementById('figura').lastElementChild);
+
+let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); svg.setAttribute('viewBox', '0 0 600 400'); svg.setAttribute('id', 'graf'); document.getElementById('figura').appendChild(svg);
+
+let l1 = document.createElementNS("http://www.w3.org/2000/svg", "line"); l1.setAttribute('x1','75'); l1.setAttribute('y1','20'); l1.setAttribute('x2','585'); l1.setAttribute('y2','20'); svg.appendChild(l1);
+
+let l2 = document.createElementNS("http://www.w3.org/2000/svg", "line"); l2.setAttribute('x1','75'); l2.setAttribute('y1','340'); l2.setAttribute('x2','585'); l2.setAttribute('y2','340'); svg.appendChild(l2);
+
+let l3 = document.createElementNS("http://www.w3.org/2000/svg", "line"); l3.setAttribute('x1','80'); l3.setAttribute('y1','15'); l3.setAttribute('x2','80'); l3.setAttribute('y2','345'); svg.appendChild(l3);
+
+let l4 = document.createElementNS("http://www.w3.org/2000/svg", "line"); l4.setAttribute('x1','580'); l4.setAttribute('y1','15');
+l4.setAttribute('x2','580'); l4.setAttribute('y2','345'); svg.appendChild(l4);
+
+let t1 = document.createElementNS("http://www.w3.org/2000/svg", "text"); t1.setAttribute('x','-345'); t1.setAttribute('y','15'); t1.setAttribute('text-anchor','start'); t1.setAttribute('transform','rotate(-90)'); t1.appendChild(document.createTextNode('Valor patrimonial ⟶')); svg.appendChild(t1);
+
+let t2 = document.createElementNS("http://www.w3.org/2000/svg", "text"); t2.setAttribute('x','80'); t2.setAttribute('y','390'); t2.setAttribute('text-anchor','start'); t2.appendChild(document.createTextNode('Tempo ⟶')); svg.appendChild(t2);
+
+let t3 = document.createElementNS("http://www.w3.org/2000/svg", "text"); t3.setAttribute('x','80'); t3.setAttribute('y','365'); t3.setAttribute('text-anchor','middle'); t3.appendChild(document.createTextNode('0')); svg.appendChild(t3);
+
+let t4 = document.createElementNS("http://www.w3.org/2000/svg", "text"); t4.setAttribute('x', '580'); t4.setAttribute('y', '365'); t4.setAttribute('text-anchor', 'middle'); svg.appendChild(t4);
+
+let t41 = document.createElementNS("http://www.w3.org/2000/svg", "tspan"); t41.setAttribute('x', '580'); t41.setAttribute('dy', '0'); t41.appendChild(document.createTextNode(anos1 + anos2 + anos3)); t4.appendChild(t41);
+
+let t42 = document.createElementNS("http://www.w3.org/2000/svg", "tspan"); t42.setAttribute('x', '578'); t42.setAttribute('dy', '25'); t42.appendChild(document.createTextNode('anos')); t4.appendChild(t42);
+
+let tmax = document.createElementNS("http://www.w3.org/2000/svg", "text"); tmax.setAttribute('x', '70'); tmax.setAttribute('y', '25'); tmax.setAttribute('text-anchor', 'end'); tmax.setAttribute('id', 'max'); svg.appendChild(tmax);
+
+let tmin = document.createElementNS("http://www.w3.org/2000/svg", "text"); tmin.setAttribute('x', '70'); tmin.setAttribute('y', '345'); tmin.setAttribute('text-anchor', 'end'); tmin.appendChild(document.createTextNode('0')); svg.appendChild(tmin);
+
+// FIM DE REDESENHO
+
+	var patrimonios = [];
+	for (var g = 0; g < shillera.length - m; g++) {
+		var i = shillera.slice(0 + g, m + g);
+		var j = shillero.slice(0 + g, m + g);
+		var patrimonio = [];
+		patrimonio.push(inicio);
+		for (var a = 0; a < m1; a++) {
+			if (patrimonio[a] < 0) { patrimonio.push(0); }
+			else {
+				if (patrimonio[a] * (1 + i[a]/100 * peso + j[a]/100 * (1-peso) ) + periodico1 < 0 ) { patrimonio.push(0); }
+				else { patrimonio.push(patrimonio[a] * (1 + i[a]/100 * peso + j[a]/100 * (1-peso)) + periodico1); }
+			}
+		}
+		for (var a = m1; a < m1 + m2; a++) {
+			if (patrimonio[a] < 0) { patrimonio.push(0); }
+			else {
+				if (patrimonio[a] * (1 + i[a]/100 * peso + j[a]/100 * (1-peso)) + periodico2 < 0 ) { patrimonio.push(0); }
+				else { patrimonio.push(patrimonio[a] * (1 + i[a]/100 * peso + j[a]/100 * (1-peso)) + periodico2); }
+			}
+		}
+		for (var a = m1 + m2; a < m1 + m2 + m3; a++) {
+			if (patrimonio[a] < 0) { patrimonio.push(0); }
+			else {
+				if (patrimonio[a] * (1 + i[a]/100 * peso + j[a]/100 * (1-peso)) + periodico3 < 0 ) { patrimonio.push(0); }
+				else { patrimonio.push(patrimonio[a] * (1 + i[a]/100 * peso + j[a]/100 * (1-peso)) + periodico3); }
+			}
+		}
+
+			patrimonios.push(patrimonio);
+	}
+
+
+
+
+	var maximo = 0;
+	for (var g = 0; g < patrimonios.length; g++) {
+		var maximot = Math.max(...patrimonios[g]);
+		if (maximot > maximo) { maximo = maximot; }
+	}
+
+	maximo = Math.ceil(maximo / 1000) * 1000;
+	if (maximo < 1000000) { tmax.appendChild(document.createTextNode(maximo.toLocaleString('pt-PT', {minimumFractionDigits:0, maximumFractionDigits:0}))); }
+	else { tmax.appendChild(document.createTextNode( (maximo/1000).toLocaleString('pt-PT', {minimumFractionDigits:0, maximumFractionDigits:0}) + 'k')); }
+
+	let origem = document.createElementNS("http://www.w3.org/2000/svg", "line");
+	origem.setAttribute('x1', '75');
+	origem.setAttribute('y1', (inicio - maximo) * ((20 - 340)/(maximo - 0)) + 20);
+	origem.setAttribute('x2', '585');
+	origem.setAttribute('y2', (inicio - maximo) * ((20 - 340)/(maximo - 0)) + 20);
+	origem.setAttribute('stroke-dasharray', '5 5');
+	origem.setAttribute('style', 'stroke:#333');
+	svg.appendChild(origem);
+
+	if ( inicio > .07 * maximo) {
+		let inicial = document.createElementNS("http://www.w3.org/2000/svg", "text");
+		inicial.setAttribute('x', '70');
+		inicial.setAttribute('y', (inicio - maximo) * ((20 - 340)/(maximo - 0)) + 20 + 5);
+		inicial.setAttribute('text-anchor', 'end');
+		svg.appendChild(inicial);
+		if (inicio < 1000000) { inicial.appendChild(document.createTextNode(inicio.toLocaleString('pt-PT', {minimumFractionDigits:0, maximumFractionDigits:0}))); }
+		else { inicial.appendChild(document.createTextNode( (inicio/1000).toLocaleString('pt-PT', {minimumFractionDigits:0, maximumFractionDigits:0}) + 'k')); }
+	}
+
+	for (var g = 0; g < patrimonios.length; g++) { 
+		if( g == 0) { linha(patrimonios[g], 0, maximo, 1); }
+		else if (g == patrimonios.length - 1 ) { linha(patrimonios[g], 0, maximo, 2); }
+
+		else { linha(patrimonios[g], 0, maximo, 'black', 0); }
+
+}
+
+	var final = [];
+	for (var g = 0; g < patrimonios.length; g++) {
+		final.push(patrimonios[g][patrimonios[g].length - 1]);
+		console.log(g + ": " + Math.round(patrimonios[g][patrimonios[g].length - 1]));
+	}
+
+	final.sort(decresce);
+
+	var p50 = final[Math.ceil(.5 * final.length)];
+
+	e('resumo', p50, 0);
+
+	var pneg = 0;
+	for (var w = 0; w < final.length; w++){ if (final[w] == 0) pneg++; }
+	pneg = pneg / final.length * 100;
+	e('resumo2',100 - pneg,0);
+
+
+	console.log("Simulações: " + final.length + " (~" + Math.round(final.length / 12) + " anos)");
+
+}
+
+// window.onload = (event) => { h(); };
+</script>
+
+<p id="resumo">
+<p id="resumo2">
+
+</body>
+</html>
