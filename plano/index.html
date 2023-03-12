@@ -135,15 +135,13 @@ function h(x) {
 }
 
 function yf() {
-const url = 'https://query2.finance.yahoo.com/v10/finance/quoteSummary/iwda.as?modules=price';
-
-const response = UrlFetchApp.fetch(url, { muteHttpExceptions: true });
-const responseCode = response.getResponseCode();
-if (responseCode === 200) {
-	const quote = JSON.parse(response.getContentText());
-	var pp = quote.quoteSummary.result[0].price.regularMarketPrice.raw;
-	h(pp);
-  }
+fetch('https://query2.finance.yahoo.com/v10/finance/quoteSummary/iwda.as?modules=price').then(function(response) {
+	response.json().then(function(dados){
+		dados.forEach(function(dados){
+			console.log(dados.name)
+    });
+  });
+}).catch(err => console.error(err));
 
 }
 
