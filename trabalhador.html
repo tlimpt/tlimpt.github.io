@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Trabalhador</title>
+<style>
+body { max-width:60ch; padding:.5em; margin:0 auto; line-height:1.75; font-size:1.25em; opacity:.9 }
+header p { border-bottom:.3em solid; margin:0 0 2em; padding:.5em 0 }
+h1, h2, h3 { line-height:1 }
+h1 { font-size:2em }
+
+aside { border-left:.3em solid; padding:0 0 0 2em; margin:2em 0 }
+blockquote { font-style:italic }
+table { border-collapse:collapse; margin:2em auto; font-size:.8em }
+table caption strong:first-child, figcaption strong:first-child { display:block }
+figure { text-align:center; margin:2em 0; font-size:.8em; }
+thead { border-bottom:.3em solid }
+td { border-bottom:.1em solid; padding:1em .5em 1em 0; text-align:center; line-height:1.25em; vertical-align:top }
+td:first-child { text-align:left }
+td:last-child { padding:1em 0 }
+input { font-family:inherit; font-size:1em; width:5em; text-align:right; border-width:0 0 .2em; background:none; color:inherit; outline:none }
+button { font-size:.8em }
+
+svg line { stroke:#bbb }
+svg text { font-size:.8em; opacity:.9 }
+svg polyline { opacity:.1 }
+</style>
+<script>
+function n(el, dig) {
+	var input1 = document.getElementById(el).value.replace(/[^\d]/g, '') / (10 ** dig);
+	var input2 = input1.toLocaleString('pt-PT', {minimumFractionDigits:dig, maximumFractionDigits:dig});
+	document.getElementById(el).value = input2;
+	return input1; }
+
+function e(el, n, dig) { document.getElementById(el).innerHTML = n.toLocaleString('pt-PT', {minimumFractionDigits:dig, maximumFractionDigits:dig}); }
+
+function i(el, n) { document.getElementById(el).value = n; }
+</script>
+</head>
+<body>
+
+<strong>Carteira</strong>: 
+<input type="text" value="50" style="width:3em" id="peso" onkeyup="c();">% em ações &
+<span id="ipeso">50</span>% em obrigações<br>
+
+<strong>Fase 1</strong>:
+<input type="text" value="50 000" id="capital" onkeyup="c();">€ & 
+<select style="font-size:.8em" id="aplica-resgata1"><option value="1" selected>aplicar<option value="-1">alienar</select>
+<input type="text" value="300" style="width:3em" id="periodico1" onkeyup="c();">€/mês & 
+<input type="text" value="20" style="width:2em" id="anos1" onkeyup="c();"> anos<br>
+
+<strong>Fase 2</strong>:
+<select style="font-size:.8em" id="aplica-resgata2"><option value="1">aplicar<option value="-1" selected>alienar</select>
+<input type="text" value="1000" style="width:3em" id="periodico2" onkeyup="c();">€/mês & 
+<input type="text" value="20" style="width:2em" id="anos2" onkeyup="c();"> anos<br>
+
+<strong>Fase 3</strong>:
+<select style="font-size:.8em" id="aplica-resgata3"><option value="1">aplicar<option value="-1" selected>alienar</select>
+<input type="text" value="500" style="width:3em" id="periodico3" onkeyup="c();">€/mês & 
+<input type="text" value="20" style="width:2em" id="anos3" onkeyup="c();"> anos
+
+<br>
+<button onclick="calcula('figura');">Calcular</button>
+
+
+<figure id="figura">
+<figcaption><strong>Simulações históricas</strong>
+</figcaption>
+<svg viewBox="0 0 600 400" id="graf">
+<line x1="75" y1="20" x2="585" y2="20" />
+<line x1="75" y1="340" x2="585" y2="340" />
+<line x1="80" y1="15" x2="80" y2="345" />
+<line x1="580" y1="15" x2="580" y2="345" />
+<text x="-345" y="15" text-anchor="start" transform="rotate(-90)">Valor patrimonial ⟶</text>
+<text x="80" y="390" text-anchor="start">Tempo ⟶</text>
+<text x="80" y="365" text-anchor="middle">0</text>
+<text x="580" y="365" text-anchor="middle">
+	<tspan x="580" dy="0" id="anos">30</tspan>
+	<tspan x="578" dy="25">anos</tspan>
+</text>
+<text x="70" y="345" text-anchor="end">0</text>
+<text x="70" y="25" text-anchor="end" id="maximo"></text>
+</svg>
+</figure>
+
+
+<script src="shiller.js"></script>
+<script id="trabalhador" type="javascript/worker">
+onmessage = function(e) {
+	var dados = JSON.parse(e.data);
+	var peso = dados['peso'];
+	var capital = dados['capital'];
+	var periodico1 = dados['periodico1'];
+	var m1 = dados['m1'];
+	var periodico2 = dados['periodico2'];
+	var m2 = dados['m2'];
+	var periodico3 = dados['periodico3'];
+	var m3 = dados['m3'];
+	var m = m1 + m2 + m3;
+	var a = dados['a'];
+	var o = dados['o'];
+
+// FASE 1: ANOS
+	var msg = {'anos': m / 12};
+	postMessage(JSON.stringify(msg));
+	
+// FASE 2: SIMULAÇÕES
+	var patrimonios = [];
+	for (var g = 0; g < a.length - m; g++) {
+		var i = a.slice(0 + g, m + g);
+		var j = o.slice(0 + g, m + g);
+		var patrimonio = [];
+		patrimonio.push(capital);
+		for (var h = 0; h < m1; h++) {
+			if (patrimonio[h] < 0) { patrimonio.push(0); }
+			else {
+				if (patrimonio[h] * (1 + i[h]/100 * peso + j[h]/100 * (1-peso) ) + periodico1 < 0 ) { patrimonio.push(0); }
+				else { patrimonio.push(patrimonio[h] * (1 + i[h]/100 * peso + j[h]/100 * (1-peso)) + periodico1); }
+			}
+		}
+		for (var h = m1; h < m1 + m2; h++) {
+			if (patrimonio[h] < 0) { patrimonio.push(0); }
+			else {
+				if (patrimonio[h] * (1 + i[h]/100 * peso + j[h]/100 * (1-peso)) + periodico2 < 0 ) { patrimonio.push(0); }
+				else { patrimonio.push(patrimonio[h] * (1 + i[h]/100 * peso + j[h]/100 * (1-peso)) + periodico2); }
+			}
+		}
+		for (var h = m1 + m2; h < m1 + m2 + m3; h++) {
+			if (patrimonio[h] < 0) { patrimonio.push(0); }
+			else {
+				if (patrimonio[h] * (1 + i[h]/100 * peso + j[h]/100 * (1-peso)) + periodico3 < 0 ) { patrimonio.push(0); }
+				else { patrimonio.push(patrimonio[h] * (1 + i[h]/100 * peso + j[h]/100 * (1-peso)) + periodico3); }
+			}
+		}
+			patrimonios.push(patrimonio);
+	}
+
+// FASE 3: MÁXIMO
+	var maximo = 0;
+	for (var h = 0; h < patrimonios.length; h++) {
+		var maximot = Math.max(...patrimonios[h]);
+		if (maximot > maximo) { maximo = maximot; }
+	}
+	maximo = Math.ceil(maximo / 1000) * 1000;
+	var msg = {'maximo': maximo};
+	postMessage(JSON.stringify(msg));	
+
+// FASE 4: LINHAS
+	for (var h = 0; h < patrimonios.length; h++) {
+		var msg = {};
+		msg['linha'] = true;
+		msg['maximo'] = maximo;
+		msg['cap'] = patrimonios[h];
+		postMessage(JSON.stringify(msg));	
+
+}
+
+// FASE 5: FIM
+	var msg = {'fim': true};
+	postMessage(JSON.stringify(msg));
+
+
+
+
+
+};
+</script>
+
+<script>
+function c() {
+	n('capital', 0);
+	n('periodico1', 0);
+	n('anos1', 0);
+	n('periodico2', 0);
+	n('anos2', 0);
+	n('periodico3', 0);
+	n('anos3', 0);
+	var pes = n('peso', 0);
+	e('ipeso', 100 - pes, 0);
+}
+
+const blob = new Blob([document.getElementById('trabalhador').textContent], { type:'text/javascript' });
+
+var trabalhador = new Worker(URL.createObjectURL(blob));
+
+function linha(dados, minimo, maximo) {
+	var x = [];
+	var y = [];
+	for (var g = 0; g < dados.length; g++) {
+		x.push(80 + (580 - 80) / (dados.length - 1) * g);
+		y.push((dados[g] - maximo) * ((20 - 340)/(maximo + 0)) + 20);
+	}	
+	var pontos = "";
+	for (var g = 0; g < dados.length; g++) { pontos = pontos + " " + x[g] + "," + y[g]; }
+	let linha = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+	linha.setAttribute("points", pontos);
+	linha.setAttribute("stroke-width", "1");
+	linha.setAttribute("stroke", "black" );
+	linha.setAttribute("fill", "none");
+	document.getElementById("graf").appendChild(linha);
+}
+
+function calcula() {
+		console.log(Math.round(performance.now()));
+
+document.querySelectorAll('polyline').forEach(e => e.remove());
+	var dados = {};
+	dados['peso'] = n('peso', 0) / 100;
+	dados['capital'] = n('capital', 0);
+	dados['periodico1'] = n('periodico1', 0) * document.getElementById('aplica-resgata1').value;
+	dados['m1'] = 12 * n('anos1', 0);
+	dados['periodico2'] = n('periodico2', 0) * document.getElementById('aplica-resgata2').value;
+	dados['m2'] = 12 * n('anos2', 0);
+	dados['periodico3'] = n('periodico3', 0) * document.getElementById('aplica-resgata3').value;
+	dados['m3'] = 12 * n('anos3', 0);
+	dados['a'] = shillera;
+	dados['o'] = shillero;
+	trabalhador.postMessage(JSON.stringify(dados));
+}
+
+trabalhador.onmessage = function(e) {
+	var msg = JSON.parse(e.data);
+	var chv = Object.keys(msg)[0];
+
+	if (chv == 'anos') {
+		document.getElementById('anos').textContent = msg['anos'];
+	}
+
+
+	else if (chv == 'maximo') {
+		var maximo = msg['maximo'];
+		if (maximo < 1000000) { 
+			document.getElementById('maximo').textContent = maximo.toLocaleString('pt-PT', {minimumFractionDigits:0, maximumFractionDigits:0}); }
+		else {
+			document.getElementById('maximo').textContent = (maximo/1000).toLocaleString('pt-PT', {minimumFractionDigits:0, maximumFractionDigits:0}) + 'k'; }
+	}
+
+	else if (chv == 'linha') {
+		linha(msg.cap, 0, msg.maximo);
+
+	}
+
+	else if (chv == 'fim') {
+		console.log(Math.round(performance.now()));
+
+	}
+
+}
+</script>
+
+</body>
+</html>
