@@ -46,8 +46,8 @@ for (var g = 0; g < d.a.length - d.m; g++) {
 	for (var h = 0; h < d.m1; h++) {
 		if (h == d.msurpresa) { sur = d.surpresa; } else { sur = 0; }
 
-		if (patrimonio[h] < 0) {
-			patrimonio.push(0 + sur); }
+		if (patrimonio[h] <= 0) {
+			patrimonio.push(0 + 0); }
 		else {
 			if ((1 - d.e1 / 12) * patrimonio[h] * (1 + a[h]/100 * d.pa1 + o[h]/100 * (1 - d.pa1) ) + d.p1 + sur < 0 ) { 
 				patrimonio.push(0); }
@@ -58,8 +58,8 @@ for (var g = 0; g < d.a.length - d.m; g++) {
 	for (var h = d.m1; h < d.m1 + d.m2; h++) {
 		if (h == d.msurpresa) { sur = d.surpresa; } else { sur = 0; }
 
-		if (patrimonio[h] < 0) {
-			patrimonio.push(0 + sur); }
+		if (patrimonio[h] <= 0) {
+			patrimonio.push(0 + 0); }
 		else {
 			if ((1 - d.e2 / 12) * patrimonio[h] * (1 + a[h]/100 * d.pa2 + o[h]/100 * (1-d.pa2)) + d.p2 + sur < 0 ) {
 				patrimonio.push(0); }
@@ -70,8 +70,8 @@ for (var g = 0; g < d.a.length - d.m; g++) {
 	for (var h = d.m1 + d.m2; h < d.m; h++) {
 		if (h == d.msurpresa) { sur = d.surpresa; } else { sur = 0; }
 
-		if (patrimonio[h] < 0) {
-			patrimonio.push(0 + sur); }
+		if (patrimonio[h] <= 0) {
+			patrimonio.push(0 + 0); }
 		else {
 			if ((1 - d.e3 / 12) * patrimonio[h] * (1 + a[h]/100 * d.pa3 + o[h]/100 * (1-d.pa3)) + d.p3 + sur < 0 ) {
 				patrimonio.push(0); }
@@ -261,9 +261,9 @@ Cada uma das <span id="xconta">0</span> linhas nesta figura representa uma simul
 </svg>
 </figure>
 
-<p id="xfigura1">Como pode confirmar na figura, nem todas as linhas terminam do lado direito acima de zero. Isto quer dizer que, historicamente, nem sempre a sua estratégia teria funcionado. Em algumas ocasiões, o património ter-se-ia esgotado antes do final do prazo.
+<p id="xfigura1">Como pode confirmar na figura, nem todas as linhas terminam acima de zero. Isto quer dizer que, historicamente, nem sempre a sua estratégia teria funcionado. Em algumas ocasiões, o património ter-se-ia esgotado antes do final do prazo.
 
-<p>O eixo vertical do gráfico mostra que, na melhor simulação, o património teria roçado <span id="xmaximo2">930&nbsp;000</span> euros, um valor muito improvável de se atingir.
+<p>O eixo vertical do gráfico mostra que, na melhor simulação, o património teria roçado <span id="xmaximo2">930&nbsp;000</span> euros, um valor muitíssimo improvável de se atingir.
 </div>
 
 <p>Metade das simulações históricas seguindo a sua estratégia terminaram com mais de <span id="xmediana">312&nbsp;700</span> euros ao fim dos <span id="xobjanos3">60</span> anos. A outra metade, obrigatoriamente, acabou com menos.
@@ -4289,7 +4289,7 @@ trabalhador.onmessage = function(e) {
 
 <table>
 <caption><strong>Investimento periódico alavancado</strong>
-Estas simulações históricas assumem o investimento num fundo alavancado a 2 vezes sobre o índice S&P 500. Para os cálculos, assumi um encargo anual de 0,60% para o fundo alavancado e de 0,07% para a replicação do S&P 500. Usei a série diária do S&P500 Net Total Return Index desde 1998.
+Estas simulações históricas assumem o investimento num fundo alavancado a 2 vezes sobre o índice S&P 500. Para os cálculos, assumi um encargo anual de 0,60% para o fundo alavancado e de 0,07% para a replicação do S&P 500. Usei a série diária do S&P500 Net Total Return Index desde 1998. Não contabilizei o custo do financiamento.
 </caption>
 <thead>
 <tr><td rowspan="2">Carteira<td colspan="5">Frequência da aplicação
@@ -4316,9 +4316,15 @@ Estas simulações históricas assumem o investimento num fundo alavancado a 2 v
 <li>Os resultados passados não garantem desempenhos futuros.
 <li>A volatilidade do índice pode subir e reverter o potencial da estratégia.
 <li>Muitos investidores não aguentam a pressão da volatilidade de um fundo alavancado. Um fundo alavancado a duas vezes tem o dobro da volatilidade do índice.
+<li>Os fundos alavancados são sintéticos e existe risco de contraparte.
 <li>As estratégias alavancadas tendem a ser mais caras do que a replicação simples.
-<li>Os fundos alavancados são sintéticos e existe risco de contraparte. ★
 </ul>
+
+<p>Embora o tenha referido na edição anterior do boletim <strong>tlim</strong>, menosprezei o último ponto. Além de os fundos alavancados terem taxas de encargos correntes mais elevadas do que os fundos indexados simples, há uma despesa adicional que é preciso contabilizar: o custo do financiamento. Até 2022, essa informação era desprezável, porque as taxas de juro rolavam perto de zero.
+
+<p>A realidade agora é outra: a <a href="https://www.newyorkfed.org/markets/reference-rates/sofr">taxa de juro de 1 dia para o dólar norte-americano</a>, a referência para os fundos alavancados sobre os índices de ações dos Estados Unidos da América, está em 4,80%. Os construtores de índices alavancados assumem que esse é o custo do empréstimo de títulos inerente à alavancagem: se se quer o dobro da exposição a um índice é preciso pedir títulos emprestados. Num fundo alavancado a 2 vezes, os investidores devem esperar ganhar diariamente o dobro do índice menos o equivalente diário da taxa anual de encargos correntes e o equivalente diário da taxa de juro anual de 1 dia.
+
+<p>Todas as simulações históricas que efetuei — nesta resposta e na edição anterior — <strong>não consideram o custo do financiamento</strong>. Portanto, se assumir que as taxas de juro se manterão elevadas no longo prazo, os cálculos podem ser demasiado otimistas. ★
 
 <aside>
 <p>Envie-me as suas dúvidas, sugestões e opiniões para <a href="mailto:davidalmas@gmail.com">davidalmas@gmail.com</a>. Todo o correio é bem-vindo.
