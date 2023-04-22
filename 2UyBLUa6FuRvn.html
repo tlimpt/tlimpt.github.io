@@ -4281,7 +4281,7 @@ trabalhador.onmessage = function(e) {
 
 <ul>
 <li><p>O efeito multiplicativo funciona apenas no curto prazo. No médio e no longo prazo, um fundo alavancado a duas vezes não rende o dobro do índice: pode ser mais ou menos. 
-<li><p>A elevada volatilidade é inimiga das estratégias alavancadas além do curto prazo. Se procura um fundo alavancado, opte por um que multiplique diariamente o retorno de um índice menos volátil, como o S&P 500.
+<li><p>A elevada volatilidade é inimiga das estratégias alavancadas além do curto prazo. Se procura um fundo alavancado, opte por um que multiplique diariamente o retorno de um índice menos volátil, como o S&P 500 e o MSCI USA.
 <li><p>É possível combinar um fundo alavancado com um fundo não alavancado para alcançar uma exposição ótima ao índice. É, todavia, caro e exige atenção do investidor.
 </ul>
 
@@ -4315,7 +4315,7 @@ Estas simulações históricas assumem o investimento num fundo alavancado a 2 v
 <ul>
 <li>Os resultados passados não garantem desempenhos futuros.
 <li>A volatilidade do índice pode subir e reverter o potencial da estratégia.
-<li>Muitos investidores não aguentam a pressão da volatilidade de um fundo alavancado. Um fundo alavancado a duas vezes tem o dobro da volatilidade do índice.
+<li>Muitos investidores não aguentam a pressão da volatilidade de um fundo alavancado. Um fundo alavancado a duas vezes tem matematicamente o dobro da volatilidade do índice.
 <li>Os fundos alavancados são sintéticos e existe risco de contraparte.
 <li>As estratégias alavancadas tendem a ser mais caras do que a replicação simples.
 </ul>
@@ -4324,8 +4324,29 @@ Estas simulações históricas assumem o investimento num fundo alavancado a 2 v
 
 <p>A realidade agora é outra: a <a href="https://www.newyorkfed.org/markets/reference-rates/sofr">taxa de juro de 1 dia para o dólar norte-americano</a>, a referência para os fundos alavancados sobre os índices de ações dos Estados Unidos da América, está em 4,80%. Os construtores de índices alavancados assumem que esse é o custo do empréstimo de títulos inerente à alavancagem: se se quer o dobro da exposição a um índice é preciso pedir títulos emprestados. Num fundo alavancado a 2 vezes, os investidores devem esperar ganhar diariamente o dobro do índice menos o equivalente diário da taxa anual de encargos correntes e o equivalente diário da taxa de juro anual de 1 dia.
 
-<p>Todas as simulações históricas que efetuei — nesta resposta e na edição anterior — <strong>não consideram o custo do financiamento</strong>. Portanto, se assumir que as taxas de juro se manterão elevadas no longo prazo, os cálculos podem ser demasiado otimistas. ★
+<p>Todas as simulações históricas que efetuei — nesta resposta e na edição anterior — <strong>não consideram o custo do financiamento</strong>. Portanto, se assumir que as taxas de juro se manterão elevadas no longo prazo, os cálculos podem ser demasiado otimistas.
 
+<p><span id="nojs">S</span>e o índice de referência ganhar diariamente a mesma percentagem até capitalizar <span style="white-space:nowrap"><input type="text" value="10,00" style="width:3em" id="yra" onkeyup="d();">%</span> em 1 ano (o equivalente a cerca de <span id="yrd0">0,037%</span> por dia), assumindo uma taxa anual de encargos correntes de <span style="white-space:nowrap"><input type="text" value="0,60" style="width:3em" id="ytec" onkeyup="d();">%</span>, uma taxa de juro de 1 dia de <span style="white-space:nowrap"><input type="text" value="4,80" style="width:3em" id="ysofr" onkeyup="d();">%</span> e 260 sessões de bolsa no ano, um fundo alavancado a <select id="yalavanca" onchange="d();"><option value="2" selected>2<option value="3">3</select> vezes sobre esse índice renderá nesse ano:
+
+<p style="text-align:center">(1 + <span id="yalavanca2">2</span> × <span id="yrd2">0,037%</span> &minus; <span id="ytec2">0,60%</span> &divide; 260 &minus; <span id="ysofr2">4,80%</span> &divide; 260)<sup>260</sup> &minus; 1 = <span id="yresultado">14,64%</span>
+
+<p>(A fórmula anterior é uma simplificação. Consulte, por exemplo, a <a href="https://www.msci.com/eqb/methodology/meth_docs/MSCI_Short_and_Leveraged_Daily_Indexes_Methodology_Aug2021.pdf">metodologia de cálculo</a> dos índices alavancados da MSCI para mais detalhe.)
+
+<p>Embora a volatilidade seja nula neste exemplo (a situação perfeita para quem investe nestes instrumentos), o efeito multiplicativo da alavancagem dificilmente aproxima-se de <span id="yalavanca3">2</span> quando o custo do financiamento não está perto de zero. ★
+
+<script>
+nojs.innerText = 'Mude os números sublinhados neste parágrafo para ajustar a simulação seguinte: s';
+function d(){
+var yra = n('yra', 2) / 100, ytec = n('ytec', 2) / 100, ysofr = n('ysofr', 2) / 100, yalavanca = document.getElementById('yalavanca').value, yrd = Math.pow((1 + yra),(1 / 260)) - 1;
+yrd0.innerText = (Math.round(yrd * 100 * 1000) / 1000).toLocaleString('pt-PT', {maximumFractionDigits:3}) + '%';
+yrd2.innerText = yrd0.innerText;
+yalavanca2.innerText = yalavanca;
+yalavanca3.innerText = yalavanca;
+ytec2.innerText = (ytec * 100).toLocaleString('pt-PT', {minimumFractionDigits:2,maximumFractionDigits:2}) + '%';
+ysofr2.innerText = (ysofr * 100).toLocaleString('pt-PT', {minimumFractionDigits:2,maximumFractionDigits:2}) + '%';
+yresultado.innerText = ((Math.pow((1 + yalavanca * yrd - ytec / 260 - ysofr / 260),260) - 1)*100).toLocaleString('pt-PT', {maximumFractionDigits:2}) + '%';
+}
+</script>
 <aside>
 <p>Envie-me as suas dúvidas, sugestões e opiniões para <a href="mailto:davidalmas@gmail.com">davidalmas@gmail.com</a>. Todo o correio é bem-vindo.
 </aside>
