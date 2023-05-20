@@ -6,20 +6,12 @@
 <title>Até quanto me posso endividar no crédito à habitação?</title>
 <title>Quantos meses posso reduzir no crédito à habitação se fizer uma amortização?</title>
 <style>
-body { font-size:1.1em; font-family:sans-serif; line-height:1.7; margin:0 auto; max-width:30em; padding:.5em; background-color:#fff; color:#222 }
+body { max-width:60ch; padding:.5em; margin:0 auto; line-height:1.75; font-size:1.25em; opacity:.9 }
 header p a { text-decoration:none }
-h1 { line-height:1 }
-h4 { font-size:1em; font-weight:normal }
-h4 + p:first-letter { float: left; line-height:.65; font-size:3.5em; font-weight:bold; padding-top:.15em; margin-right:.1em }
+h1 { line-height:1em }
 aside { border-left:.3em solid; padding:0 0 0 2em; margin:2em 0 }
-input { font-family: inherit; font-size: 1em; width: 3em; text-align:right; border-width:0 0 .2em; border-color: #222; background:none; color:inherit }
-ul li { list-style-type:square }
-.nw { white-space: nowrap }
-@media (prefers-color-scheme: dark) {
-	body { background-color:#000; color:#eee }
-	a { color:#9999ff }
-	input { border-color:#eee }
-}
+input { font-family:inherit; font-size:1em; width:3em; text-align:right; border-width:0 0 .2em; background:none; color:inherit; outline:none }
+.nw { white-space:nowrap }
 </style>
 </head>
 <body>
@@ -27,35 +19,34 @@ ul li { list-style-type:square }
 
 <h1>Até quanto me posso endividar?</h1>
 
-<h4>Por <strong>David Almas</strong> a 1 de dezembro de 2020</h4>
+<p>Por <strong>David Almas</strong> a 20 de maio de 2023
 
 <p>Embora a prestação mensal do crédito à habitação esteja numa relação linear com o montante financiado, nem sempre é fácil desvendar o valor máximo de empréstimo que o orçamento familiar consegue suportar.
 
-<p>Se acredita que consegue suportar uma prestação mensal de <span class="nw"><input type="text" value="600" id="presta" style="width:4em" onkeyup="ff();">€</span> durante <span class="nw"><input type="text" value="30" id="anos" onkeyup="ff();">  anos</span>, então o montante de empréstimo pode ascender a <strong class="nw"><span id="credito">198770</span>€</strong>, assumindo uma taxa de juro de <span class="nw"><input type="text" value="-0,539" id="txj" onkeyup="ff();">%</span> e um <i>spread</i>, a margem de lucro do banco, de <span class="nw"><input type="text" value="1,300" id="spread" onkeyup="ff();">%</span>.
+<p>Se acredita que consegue suportar uma prestação mensal de <span class="nw"><input type="text" value="600" id="presta" style="width:4em" onkeyup="ff();">€</span> durante <span class="nw"><input type="text" value="30" id="anos" onkeyup="ff();">  anos</span>, então o montante de empréstimo pode ascender a <strong class="nw"><span id="credito">198770</span>€</strong>, assumindo uma taxa de juro de <span class="nw"><input type="text" value="3,70" id="txj" onkeyup="ff();">%</span> e um <i>spread</i>, a margem de lucro do banco, de <span class="nw"><input type="text" value="1,10" id="spread" onkeyup="ff();">%</span>.
 
 <p>Num cenário em que a taxa de juro é um ponto percentual mais elevada, o montante deve descer para <strong class="nw"><span id="credito1">171906</span>€</strong>. Se a taxa for dois pontos percentuais mais alta, o financiamento deve ser limitado a <strong class="nw"><span id="credito2">149863</span>€</strong> para respeitar o seu orçamento.
 
-<script>
-function ff() {
-	var a = presta.value.replace(",", "."), 
-		b = anos.value.replace(",", ".") * 12, 
-		c = txj.value.replace(",", ".") / 100, 
-		d = spread.value.replace(",", ".") / 100;
+<aside id="interativo"></aside>
 
-	e = Math.floor( a * ((1-(1+(c+d)/12)**(-b))/((c+d)/12)) );
-	f = Math.floor( a * ((1-(1+(c+d+0.01)/12)**(-b))/((c+d+0.01)/12)) );
-	g = Math.floor( a * ((1-(1+(c+d+0.02)/12)**(-b))/((c+d+0.02)/12)) );
-	credito.innerHTML = e;
-	credito1.innerHTML = f;
-	credito2.innerHTML = g;
+<script>
+interativo.innerHTML = '<p><strong>Este artigo é interativo</strong>. Os números sublinhados podem ser alterados para se ajustarem à sua realidade.';
+function n(el, dig) {
+	var z = document.getElementById(el).value.replace(/[^\d]/g, '') / Math.pow(10, dig);
+	var y = z.toLocaleString('pt-PT', {minimumFractionDigits:dig, maximumFractionDigits:dig});
+	document.getElementById(el).value = y;
+	return z; }
+
+function ff() {
+	var a = n('presta', 0), b = n('anos', 0) * 12, c = n('txj', 2) / 100, d = n('spread', 2) / 100;
+	credito.innerHTML = (a*((1-(1+(c+d)/12)**(-b))/((c+d)/12))).toLocaleString("pt-PT", {maximumFractionDigits:0});
+	credito1.innerHTML = (a*((1-(1+(c+d+0.01)/12)**(-b))/((c+d+0.01)/12))).toLocaleString("pt-PT", {maximumFractionDigits:0});
+	credito2.innerHTML = (a*((1-(1+(c+d+0.02)/12)**(-b))/((c+d+0.02)/12))).toLocaleString("pt-PT", {maximumFractionDigits:0});
 };
 window.onload = ff();
 </script>
 
-<aside>
-<p><strong>Este artigo é interativo</strong>. Os números sublinhados podem ser alterados para se ajustarem à sua realidade.
-<p><noscript>Infelizmente, o seu programa de navegação é dos poucos que não permite ou bloqueia a interatividade. Não vale a pena mudar os números.</noscript>
-</aside>
+
 
 <p>Note, no entanto, que o banco pode impor outras limitações ao seu crédito. Entre outras coisas, os limites <a href="https://www.bportugal.pt/page/limites-ao-racio-ltv-ao-dsti-e-maturidade">indicados</a> pelo Banco de Portugal apontam para:
 
@@ -63,9 +54,5 @@ window.onload = ff();
 <li>Um montante de empréstimo que não ultrapasse 90% do valor do imóvel dado em garantida (mínimo entre o preço de aquisição e o valor da avaliação);
 <li>Uma soma das prestações mensais dos créditos inferior a 50% dos rendimentos mensais líquidos. ★
 </ul>
-
-<aside>
-<p><strong>Este artigo é experimental.</strong> Se encontrar falhas ou se tiver sugestões para melhorar este artigo, <a href="/">escreva-me</a>. 
-</aside>
 </body>
 </html>
