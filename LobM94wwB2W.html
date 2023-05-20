@@ -19,10 +19,12 @@ table caption strong:first-child, figcaption strong:first-child { display:block 
 figure { text-align:center; margin:2em 0; font-size:.8em; }
 thead { border-bottom:.3em solid }
 td { border-bottom:.1em solid; padding:1em .5em 1em 0; text-align:center; line-height:1.25em; vertical-align:top }
+tbody tr td { white-space:nowrap }
+tbody tr td:first-child { white-space:normal }
 td:first-child { text-align:left }
 td:last-child { padding:1em 0 }
 
-input { font-family:inherit; font-size:1em; width:4em; text-align:right; border-width:0 0 .25em; outline:none; border-color:darkgreen }
+input { font-family:inherit; font-size:1em; width:3.5em; text-align:right; border-width:0 0 .25em; outline:none; border-color:darkgreen }
 button, select { font-family:inherit; font-size:inherit }
 
 a, .verde { color:darkgreen }
@@ -231,12 +233,14 @@ function n(el, dig) {
 <thead>
 <tr><td><td id="w0">Dacia Spring Essential Electric 45<td id="w1">Peugeot 208 Active 1.2 PureTech<td id="w2">Peugeot 208 Active Pack 1.5 HDi
 </thead>
+<tbody>
 <tr><td>Preço de compra<td><input type="text" value="20 400" id="w00" onkeyup="w0();">€<td><input type="text" value="18 760" id="w01" onkeyup="w0();">€<td><input type="text" value="24 210" id="w02" onkeyup="w0();">€
 <tr><td>Energia<td>Eletricidade<td>Gasolina<td>Gasóleo
-<tr><td>Consumo energético por 100km<td><input type="text" value="13,9" id="w10" onkeyup="w0();">kWh<td><input type="text" value="5,3" id="w11" onkeyup="w0();">l<td><input type="text" value="4,1" id="w12" onkeyup="w0();">l
+<tr><td>Consumo energético por 100km<td><input type="text" value="13,9" id="w10" onkeyup="w0();" style="width:2.5em">kWh<td><input type="text" value="5,3" id="w11" onkeyup="w0();" style="width:2.5em">l<td><input type="text" value="4,1" id="w12" onkeyup="w0();" style="width:2.5em">l
 <tr><td>Preço da energia<td><input type="text" value="0,2347" id="p0" onkeyup="w0();">€<td><input type="text" value="1,655" id="p1" onkeyup="w0();">€<td><input type="text" value="1,447" id="p2" onkeyup="w0();">€
 <tr><td>Outros custos anuais<td><input type="text" value="0,00" id="w20" onkeyup="w0();">€<td><input type="text" value="108,32" id="w21" onkeyup="w0();">€<td><input type="text" value="154,12" id="w22" onkeyup="w0();">€
 <tr style="border-top:.3em solid"><td id="wanos2">Encargos em 16 anos<td id="w30">28&nbsp;230€<td id="w31">41&nbsp;545€<td id="w32">40&nbsp;914€
+</tbody>
 </table>
 
 <p>No quadro anterior, nos outros custos anuais, incluí apenas o IUC.<span id="wjs"></span> 
