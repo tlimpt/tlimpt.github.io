@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amortizar ou investir</title>
+<style>
+body { max-width:60ch; padding:.5em; margin:0 auto; line-height:1.75; font-size:1.25em; opacity:.9 }
+header p a { text-decoration:none }
+h1, h3 { line-height:1em }
+h3 { margin-top:3em }
+input { font-family:inherit; font-size:1em; width:3em; text-align:right; border-width:0 0 .2em; background:none; color:inherit; outline:none }
+</style>
+
+</head>
+<body>
+<header><p><a href="/">tlim.pt</a></header>
+
+<h1>Amortizar ou investir</h1>
+
+<p>Por <strong>David Almas</strong> a 27 de maio de 2023
+
+<h3 id="1">Agora</h3>
+<p>Em dívida: <input type="text" value="173 100" id="xdivida" style="width:4em" onkeyup="x();">€
+<br>Prazo: <input type="text" value="413" id="xprazo" onkeyup="x();"> meses
+<br>Taxa de juro de referência: <input type="text" value="3,498" id="xref" onkeyup="x();">%
+<br><i>Spread</i>: <input type="text" value="0,90" id="xspread" onkeyup="x();">%
+<br>Taxa de juro: <span id="xtaxa">4,398</span>%
+<br>Prestação mensal: <span id="xpresta">814,10</span>€
+<br>Montante total de prestações: <span id="xmontante">336 223,30</span>€
+
+<h3 id="2">Amortização ou investimento</h3>
+<p>Disponível para amortizar ou investir: <input type="text" value="30 000" id="xdisponivel" style="width:4em" onkeyup="x();">€
+<br>Rentabilidade potencial do investimento: <input type="text" value="3,50" id="xrenda" onkeyup="x();">% por ano
+
+<h3 id="3">Opção 1: investimento simples</h3>
+<p>Acumula no prazo: <span id="xacumula">98 020,81</span>€
+
+<h3 id="4">Opção 2: amortização simples</h3>
+<p>Prestação mensal: <span id="xpresta1">673,00</span>€ (<span id="xvarpresta1">-141,10</span>€ ou <span id="xdeltapresta1">-17,33</span>%)
+<br>Montante total de prestações: <span id="xmontante1">277 949,00</span>€ (<span id="xvarmontante1">-58 275,30</span>€ ou <span id="xdeltamontante1">-17,33</span>%)
+<br>Valor do investimento da poupança nas prestações no final do prazo: <span id="xacumulapresta1">111 437,07</span>€
+
+<h3 id="5">Opção 3: reduzir o prazo para manter a prestação</h3>
+<p>Novo prazo: <span id="xnovoprazo">283</span> meses (<span id="xreduzprazo">-130</span> meses)
+<br>Prestação mensal: <span id="xpresta2">813,27</span>€ (<span id="xvarpresta2">-0,83</span>€ ou <span id="xdeltapresta2">-0,10</span>%)
+<br>Montante total de prestações: <span id="xmontante2">230 155</span>€ (<span id="xvarmontante2">-106 068,89</span>€ ou <span id="xdeltamontante2">-31,55</span>%)
+
+<h3 id="6">Opção 4: amortizar, reduzir o prazo e investir</h3>
+<p>Proporção das disponibilidades destinada à amortização: <input type="text" value="60" id="xproporcao" onkeyup="x();">%
+<br>Amortizar: <span id="xpamortizar">18 000,00</span>€
+<br>Investir: <span id="xpinvestir">12 000,00</span>€
+<br>Reduzir o prazo em <input type="text" value="36" id="xreduzirprazo" onkeyup="x();"> meses
+<br>Novo prazo: <span id="xnovoprazo3">377</span> meses
+<br>Prestação mensal: <span id="xpresta3">759,73</span>€ (<span id="xvarpresta3">-54,37</span>€ ou <span id="xdeltapresta3">-6,68</span>%)
+<br>Montante total de prestações: <span id="xmontante3">286 418,21</span>€ (<span id="xvarmontante3">-49 806,09</span>€ ou <span id="xdeltamontante3">-14,81</span>%)
+<br>Investimento acumula no novo prazo: <span id="xacumula3">35 363,66</span>€
+<br>★
+
+<script>
+function n(el, dig) {
+	var z = document.getElementById(el).value.replace(/[^\d]/g, '') / Math.pow(10, dig);
+	var y = z.toLocaleString('pt-PT', {minimumFractionDigits:dig, maximumFractionDigits:dig});
+	document.getElementById(el).value = y;
+	return z; }
+
+function e(el, n, dig) { document.getElementById(el).innerHTML = n.toLocaleString("pt-PT", {minimumFractionDigits:dig, maximumFractionDigits:dig}); }
+
+function presta (c, t, m) { return Math.round(100* (c/((1-Math.pow(1+t/12,-m))/(t/12))))/100; }
+
+function x(){
+	var divida = n('xdivida', 0), prazo = n('xprazo', 0), taxa = (n('xref', 3) + n('xspread', 2))/100, disponivel = n('xdisponivel', 0), rendamensal = (1 + n('xrenda', 2)/100)**(1/12) - 1, proporcao = n('xproporcao', 0)/100, reduzirprazo = n('xreduzirprazo', 0);
+
+	if(reduzirprazo >= prazo) { reduzirprazo = prazo - 1; xreduzirprazo.value = prazo - 1; }
+
+	e('xtaxa', taxa * 100, 3); 
+
+	var prestacao = presta(divida, taxa, prazo);
+	var montante = prestacao * prazo;
+	e('xpresta', prestacao, 2); e('xmontante', montante, 2);
+
+
+
+	var prestacao1 = presta(divida - disponivel, taxa, prazo);
+	var montante1 = prestacao1 * prazo;
+	var varprestacao1 = prestacao1 - prestacao;
+	var deltaprestacao1 = prestacao1 / prestacao - 1;
+	var varmontante1 = montante1 - montante;
+	var deltamontante1 = montante1 / montante - 1;
+	var acumulapresta1 = 0;
+	for (var g = 0; g < prazo; g++) { acumulapresta1 = -varprestacao1 + acumulapresta1 * (1 + rendamensal); }
+	e('xpresta1', prestacao1, 2); e('xmontante1', montante1, 2);
+	e('xvarpresta1', varprestacao1, 2); e('xdeltapresta1', deltaprestacao1 * 100, 2); 
+	e('xvarmontante1', varmontante1, 2); e('xdeltamontante1', deltamontante1 * 100, 2);
+	e('xacumulapresta1', acumulapresta1, 2);
+
+	var investimento = disponivel * (1 + rendamensal)**prazo;
+	e('xacumula', investimento, 2);
+
+	var reduzprazo = Math.floor(Math.log(-(disponivel - divida - disponivel * Math.pow(1 + taxa/12,prazo))/divida)/Math.log(1 + taxa/12));
+	var novoprazo = prazo - reduzprazo;
+	var prestacao2 = presta(divida - disponivel, taxa, novoprazo);
+	var montante2 = prestacao2 * novoprazo;
+	var varprestacao2 = prestacao2 - prestacao;
+	var deltaprestacao2 = prestacao2 / prestacao - 1;
+	var deltamontante2 = montante2 / montante - 1;
+	var varmontante2 = montante2 - montante - 1;
+	e('xnovoprazo', novoprazo, 0); e('xreduzprazo', -reduzprazo, 0); e('xpresta2', prestacao2, 2); e('xmontante2', montante2, 2);
+	e('xvarpresta2', varprestacao2, 2); e('xdeltapresta2', deltaprestacao2 * 100, 2); 
+	e('xvarmontante2', varmontante2, 2); e('xdeltamontante2', deltamontante2 * 100, 2);
+
+	var pamortizar = proporcao * disponivel;
+	var pinvestir = disponivel - pamortizar;
+	e('xpamortizar', pamortizar, 2); e('xpinvestir', pinvestir, 2);
+
+	var novoprazo3 = prazo - reduzirprazo
+	var prestacao3 = presta(divida - pamortizar, taxa, novoprazo3);
+	var montante3 = prestacao3 * novoprazo3;
+	var varprestacao3 = prestacao3 - prestacao;
+	var deltaprestacao3 = prestacao3 / prestacao - 1;
+	var deltamontante3 = montante3 / montante - 1;
+	var varmontante3 = montante3 - montante - 1;
+	e('xpresta3', prestacao3, 2); e('xmontante3', montante3, 2); e('xnovoprazo3', novoprazo3, 0);
+	e('xvarpresta3', varprestacao3, 2); e('xdeltapresta3', deltaprestacao3 * 100, 2); 
+	e('xvarmontante3', varmontante3, 2); e('xdeltamontante3', deltamontante3 * 100, 2);
+	var investimento3 = pinvestir * (1 + rendamensal)**(prazo-reduzirprazo);
+	e('xacumula3', investimento3, 2);
+}
+window.onload = x();
+</script>
+</body>
+</html>
