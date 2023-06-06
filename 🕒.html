@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🕒</title>
+<style>
+body { max-width:60ch; padding:.5em; margin:0 auto; line-height:1.75; font-size:2em; opacity:.9 }
+input { font-family:inherit; font-size:1em; width:3em; text-align:right; border-width:0 0 .2em; background:none; color:inherit; outline:none }
+button { font-family:inherit; font-size:1em }
+</style>
+
+</head>
+<body>
+<p>— Quando chegas?
+<p>— Dia <input type="text" value="22" id="dia" style="width:1.5em" onkeyup="z();"> às <input type="text" value="19" id="horas" style="width:1.5em" onkeyup="z();">h<input type="text" value="00" id="minutos" style="width:1.5em" onkeyup="z();">.
+<p>— ETA: <span id="fhoras">20 horas</span><span id="ee"> e </span><span id="fminutos"> e 31 minutos</span>.
+
+<script>
+let agora = new Date();
+var futuro = new Date();
+agora.getDay() <= 5 ? futuro.setDate(agora.getDate() + 5 - agora.getDay()) : futuro.setDate(agora.getDate() + 6);
+futuro.getDate() > 9 ? document.getElementById('dia').value = futuro.getDate() : document.getElementById('dia').value = '0' + futuro.getDate();
+
+
+
+function n(el,mx, mn) {
+var z = document.getElementById(el).value.replace(/[^\d]/g, '');
+
+if (z.length < 1 ) { z = '00'; }
+else if (z.length < 2) { z = '0' + z; }
+else if (z.length > 2) { z = z.substring(1); }
+
+if (z > mx) { z = mx; }
+if (z < mn) { z = '0' + mn; }
+document.getElementById(el).value = z;
+
+return z*1; }
+
+
+function z(){
+var futuro = new Date();
+var dia = n('dia', 31, 1), horas = n('horas', 23, 0) -1 , minutos = n('minutos', 59, 0);
+futuro.setDate(dia);
+futuro.setHours(horas, minutos);
+futuro > agora ? futuro.setMonth(agora.getMonth()) : futuro.setMonth(agora.getMonth() + 1);
+
+var tempo = Math.abs(futuro - agora) / 36e5;
+
+var fhoras = Math.floor(tempo);
+var fminutos = Math.floor((tempo - fhoras)*60);
+
+if (fhoras > 1) { document.getElementById('fhoras').innerText = fhoras + ' horas'; }
+else if (fhoras == 1) { document.getElementById('fhoras').innerText = fhoras + ' hora'; }
+else { document.getElementById('fhoras').innerText = ''; }
+
+if (fminutos > 1) { document.getElementById('fminutos').innerText = fminutos + ' minutos'; }
+else if (fminutos == 1) { document.getElementById('fminutos').innerText = fminutos + ' minuto'; }
+else { document.getElementById('fminutos').innerText = ''; }
+
+if (fminutos != 0 && fhoras != 0) { document.getElementById('ee').innerText = ' e '; }
+else document.getElementById('ee').innerText = '';
+}
+
+window.onload = z;
+</script>
+</body>
+</html>
