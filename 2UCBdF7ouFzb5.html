@@ -30,7 +30,7 @@ button, select { font-family:inherit; font-size:1em }
 <script>
 function n(el, dig) { var e = document.getElementById(el), z = e.value.replace(/[^\d]/g, '')/Math.pow(10, dig); e.value = z.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig}); return z; }
 function e(el, n, dig) { document.getElementById(el).innerText = n.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig}); }
-function i(el, n, dig) { document.getElementById(el).value = n.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig}); }
+function inj(el, n, dig) { document.getElementById(el).value = n.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig}); }
 function p(c, t, m) { return t == 0 ? c / m : c / (1-Math.pow(1 + t/12, -m)) * t/12; }
 </script>
 </head>
@@ -47,7 +47,7 @@ function p(c, t, m) { return t == 0 ? c / m : c / (1-Math.pow(1 + t/12, -m)) * t
 
 <p>O <a href="#3">terceiro texto</a> deste mês é muito simples: é a compilação dos melhores investimentos para a próxima década propostos pelos subscritores do boletim <strong>tlim</strong>. São maioritariamente fundos de investimento.
 
-<p>Em reação à quantidade de perguntas sobre planos de poupança-reforma, alarguei a secção <a href="#r">Respondido</a>, de perguntas e respostas, nesta publicação, o que a tornou particularmente longa.
+<p>Em reação à quantidade de perguntas sobre planos de poupança-reforma, alarguei a secção <a href="#r">Respondido</a> nesta publicação, o que a tornou particularmente longa.
 
 <p>Espero que seja útil.
 
@@ -65,7 +65,7 @@ function p(c, t, m) { return t == 0 ? c / m : c / (1-Math.pow(1 + t/12, -m)) * t
 
 <p>O principal motivo para excluir as pensões do plano pessoal é a complexidade do cálculo. O <a href="https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-lei/2007-34524275">Decreto-Lei n.º 187/2007</a>, que define o regime de proteção na invalidez e na velhice dos beneficiários do regime geral de segurança social, é longo, denso e pejado de fórmulas matemáticas. A <a href="https://www.seg-social.pt/pensao-de-velhice">página</a> da Segurança Social dedicada às pensões de velhice é pouco mais legível.
 
-<p>Apesar da elevada complexidade, arrisco aproximar uma fórmula de cálculo da futura pensão de velhice da maioria dos portugueses:
+<p>Apesar da elevada complexidade, arrisco aproximar uma fórmula de cálculo da futura pensão de reforma da maioria dos portugueses:
 
 <p>2,15% &times; vencimento revalorizado médio &times; número de anos da carreira
 
@@ -82,7 +82,7 @@ function p(c, t, m) { return t == 0 ? c / m : c / (1-Math.pow(1 + t/12, -m)) * t
 
 <h3>Um plano com pensão</h3>
 
-<p>Imagine um contribuinte que, após 24 anos de trabalho, atingiu o pico dos seus rendimentos. Em 2022, ganhou 42 mil euros, o que se traduz num vencimento bruto mensal de 3000 euros (42&nbsp;000€ &divide; 14 meses; são 14 meses, porque incluem os subsídios de férias e de Natal), cerca de 2100 euros após IRS e descontos para a Segurança Social. Ao longo da sua carreira, os seus salários foram aumentados anualmente à taxa de 5%.
+<p>Imagine um contribuinte que, após 24 anos de trabalho, atingiu o pico dos seus rendimentos. Em 2022, ganhou 42 mil euros, o que se traduz num vencimento bruto mensal de 3000 euros (42&nbsp;000€ &divide; 14 meses; são 14 meses, porque incluem os subsídios de férias e de Natal), cerca de 2100 euros após o IRS e os descontos para a Segurança Social. Ao longo da sua carreira, os seus salários foram aumentados anualmente à taxa de 5%.
 
 <table>
 <caption><strong>Mapa de rendimentos passados</strong> A quarta coluna resulta da multiplicação da segunda pela terceira. Os montantes de vencimentos anuais podem ser obtidos na <a href="https://app.seg-social.pt/ptss/cci/carreiraContributiva/consultar_carreira_ss?dswid=-1">Segurança Social Direta</a>, por exemplo.
@@ -100,7 +100,7 @@ function p(c, t, m) { return t == 0 ? c / m : c / (1-Math.pow(1 + t/12, -m)) * t
 
 <p>A partir do quadro anterior, é fácil computar o vencimento revalorizado médio: basta somar os valores da última coluna, dividir essa soma pelo número de anos e voltar a dividir o resultado por 14 meses. Neste caso, obtém-se 2001 euros.
 
-<p>Com o vencimento revalorizado médio e a fórmula simplificada anterior, o contribuinte consegue prever a sua pensão futura caso deixe de descontar para a Segurança Social: multiplica 2,15% pelo vencimento revalorizado médio e pelo número de anos. A pensão estimada é de 1033 euros (2,15% &times; 2001€ &times; 24 anos).
+<p>Com o vencimento revalorizado médio e a fórmula simplificada anterior, o contribuinte consegue prever a sua pensão futura caso deixe agora de descontar para a Segurança Social: multiplica 2,15% pelo vencimento revalorizado médio e pelo número de anos. A pensão estimada é de 1033 euros (2,15% &times; 2001€ &times; 24 anos).
 
 <h3>Estender para o futuro</h3>
 
@@ -140,7 +140,7 @@ function p(c, t, m) { return t == 0 ? c / m : c / (1-Math.pow(1 + t/12, -m)) * t
 <tr><td>2038<td>67&nbsp;398€
 </table>
 
-<p>A partir deste último quadro, é possível obter o vencimento médio revalorizado a 2022 de toda a carreira de 40 anos de descontos (2758 euros) e, logo, estimar uma pensão futura de 2372 euros (2,15% &times; 2758€ &times; 40 anos), a preços de 2022.
+<p>A partir deste último quadro, é possível obter o vencimento médio revalorizado a 2022 de toda a carreira prevista de 40 anos de descontos (2758 euros) e, logo, estimar uma pensão futura de 2372 euros (2,15% &times; 2758€ &times; 40 anos), a preços de 2022.
 
 <p>Tal como os vencimentos nos quadros anteriores são brutos, a pensão computada é também bruta. É preciso subtrair-lhe o IRS para obter a pensão líquida mensal. À taxa de retenção de 23,3% válida em 2023, a pensão líquida seria de 1819 euros.
 
@@ -194,7 +194,7 @@ function p(c, t, m) { return t == 0 ? c / m : c / (1-Math.pow(1 + t/12, -m)) * t
 
 <p>Por <strong>David Almas</strong> a 1 de Outubro de 2023
 
-<p>Em 2020, o preço de uma casa no Algarve era o equivalente a menos de 22 anos de rendas num imóvel similar. Hoje, quem quer comprar uma habitação algarvia tem de gastar o que pagaria em rendas durante quase 28 anos. O arrendamento tornou-se mais interessante.
+<p>Em 2020, o preço de uma casa no Algarve era o equivalente a 22 anos de rendas num imóvel similar. Hoje, quem quer comprar uma habitação algarvia tem de gastar o que pagaria em rendas durante 28 anos. O arrendamento tornou-se mais interessante.
 
 <p>Embora a tendência nacional siga o oposto — as rendas subiram mais do que os preços dos imóveis —, há zonas em que o arrendamento está mais atrativo do que há três anos. A cidade de Lisboa é um exemplo: paga-se agora o equivalente a mais um ano de rendas para comprar um apartamento do que há três anos, segundo as estatísticas oficiais.
 
@@ -236,7 +236,7 @@ function p(c, t, m) { return t == 0 ? c / m : c / (1-Math.pow(1 + t/12, -m)) * t
 
 <div id="iinterativo"></div>
 
-<p>Neste caso, o preço de compra é equivalente a cerca de <span id="imetrica">22</span> anos de rendas mensais. Isto, porém, não é suficiente para tomar uma decisão. É necessário contabilizar todos os custos.
+<p>Neste caso, o preço de compra é equivalente a cerca de <span id="imetrica">22</span> anos de rendas mensais. Isto, porém, é insuficiente para tomar uma decisão. É necessário contabilizar todos os custos.
 
 <p>Além da renda mensal de <span id="irenda2">455</span> euros, que se prevê que aumentará anualmente à taxa de inflação, o <strong>arrendamento</strong> pode ter apenas estes encargos:
 
@@ -321,9 +321,9 @@ function p(c, t, m) { return t == 0 ? c / m : c / (1-Math.pow(1 + t/12, -m)) * t
 <p>Num prazo de <input type="text" value="30" id="idura"> anos, a família guardaria: 
 
 <ul>
-<li><p>O dinheiro não gasto no primeiro mês, equivalente a <span id="mesesiniciais">3</span> <span id="mesesiniciaisrendas">rendas</span> (<span id="mesesiniciaisvalor">1365</span> euros), cresceria até <span id="mesesiniciaisvf">3313</span> euros após capitalizar durante <span id="idura4">30</span> anos.
-<li><p>O dinheiro não gasto no segundo mês — uma renda (<span id="segundomes">455</span> euros) — aumentaria para <span id="segundomesvf">1102</span> euros após capitalizar durante <span id="idurax1">29</span> anos e 11 meses.
-<li><p><em>Etc</em>.
+<li><p>O dinheiro não gasto no primeiro mês, equivalente a <span id="mesesiniciais">3</span> <span id="mesesiniciaisrendas">rendas</span> (<span id="mesesiniciaisvalor">1365</span> euros), cresceria até <span id="mesesiniciaisvf">3313</span> euros após capitalizar durante <span id="idura4">30</span> anos;
+<li><p>O dinheiro não gasto no segundo mês — uma renda (<span id="segundomes">455</span> euros) — aumentaria para <span id="segundomesvf">1102</span> euros após capitalizar durante <span id="idurax1">29</span> anos e 11 meses;
+<li><p><em>etc</em>.
 </ul>
 
 <p>Ao fim de <span id="idura2">30</span> anos, todos os fluxos do arrendamento valeriam <span id="rendavf">265&nbsp;262</span> euros, a preços de hoje. É esse o montante que a família amealharia se não arrendasse.
@@ -331,17 +331,17 @@ function p(c, t, m) { return t == 0 ? c / m : c / (1-Math.pow(1 + t/12, -m)) * t
 <p>Se a família não <strong>comprasse</strong> a habitação, até quanto capitalizaria o dinheiro não gasto?
 
 <ul>
-<li><p>O valor da despesa inicial (<span id="despesainicial">28&nbsp;624</span> euros) avançaria até <span id="despesainicialvf">69&nbsp;478</span> euros após capitalizar durante <span id="idura5">30</span> anos.
-<li><p>O dinheiro dos custos do primeiro mês (<span id="despesaprimeiromes">782</span> euros) cresceriam até <span id="despesaprimeiromesvf">1898</span> euros após capitalizar durante <span id="idura6">30</span> anos.
-<li><p>O dinheiro dos custos do segundo mês (<span id="despesasegundomes">782</span> euros) cresceriam até <span id="despesasegundomesvf">1893</span> euros após capitalizar durante <span id="idurax2">29</span> anos e 11 meses.
-<li><p><em>Etc</em>.
+<li><p>O valor da despesa inicial (<span id="despesainicial">28&nbsp;624</span> euros) avançaria até <span id="despesainicialvf">69&nbsp;478</span> euros após capitalizar durante <span id="idura5">30</span> anos;
+<li><p>O dinheiro dos custos do primeiro mês (<span id="despesaprimeiromes">782</span> euros) cresceria até <span id="despesaprimeiromesvf">1898</span> euros após capitalizar durante <span id="idura6">30</span> anos;
+<li><p>O dinheiro dos custos do segundo mês (<span id="despesasegundomes">782</span> euros) cresceria até <span id="despesasegundomesvf">1893</span> euros após capitalizar durante <span id="idurax2">29</span> anos e 11 meses;
+<li><p><em>etc</em>.
 </ul>
 
 <p>Após os <span id="idura3">30</span> anos, os montantes de encargos não pagos gerariam <span id="compravf">523&nbsp;148</span> euros.
 
 <p>No final, o imóvel estaria, no entanto, avaliado em <span id="iprecovf">253&nbsp;319</span> euros, a preços de hoje, após valorizar <span id="idelta2">2,50</span>% por ano em termos reais. Portanto, não comprar a habitação pouparia à família uma despesa líquida de <span id="compravfliq">269&nbsp;829</span> euros.
 
-<p>Conclusão: <span id="conclusao">este é um dos casos em que o arrendamento vale financeira a pena, porque a família poupa mais dinheiro evitando a compra.</span>
+<p>Conclusão: <span id="conclusao">este é um dos casos em que o arrendamento vale financeiramente a pena, porque a família poupa mais dinheiro evitando a compra.</span>
 
 <h3>É apenas uma projeção</h3>
 
@@ -362,9 +362,9 @@ var adjetivo = ['maravilhoso', 'sublime', 'extraordinário', 'belo', 'admirável
 document.getElementById('adjetivo').innerText = adjetivo[Math.floor(Math.random() * adjetivo.length)];
 
 var loc = document.getElementById('ilista').value.split('|');
-i('ia', loc[0], 0);
-i('ip', loc[1], 0);
-i('ir', loc[2], 2);
+inj('ia', loc[0], 0);
+inj('ip', loc[1], 0);
+inj('ir', loc[2], 2);
 
 imo();
 }
@@ -418,7 +418,7 @@ e('cimt', cimt, 2);
 var cregisto = document.getElementById('cregisto').value * 1;
 
 // Imposto do Selo sobre crédito
-var cpcapital = n('cpcapital', 0) / 100; if (cpcapital > 1) { cpcapital = 1; i('cpcapital', 100, 0); }
+var cpcapital = n('cpcapital', 0) / 100; if (cpcapital > 1) { cpcapital = 1; inj('cpcapital', 100, 0); }
 e('cpfin', (1 - cpcapital) * 100, 0);
 
 var ccapital = cpcapital * ipreco; e('ccapital', ccapital, 0);
@@ -427,7 +427,7 @@ var cfin = ipreco - ccapital; e('cfin', cfin, 0);
 var ciscredito = .006 * cfin; e('ciscredito', ciscredito, 2);
 
 // Encargos iniciais do crédito à habitação
-if(cpcapital == 1) { i('cchabitacao', 0, 0); }
+if(cpcapital == 1) { inj('cchabitacao', 0, 0); }
 var cchabitacao = n('cchabitacao', 0);
 
 // AQUISIÇÃO PERIÓDICO
@@ -508,7 +508,7 @@ e('idelta2', idelta * 100, 2);
 var compravfliq = compravf - iprecovf; e('compravfliq', compravfliq, 0);
 
 // CONCLUSÃO
-document.getElementById('conclusao').innerText = rendavf < compravfliq ? 'este é um dos casos em que o arrendamento vale financeira a pena, porque a família poupa mais dinheiro evitando a compra.' : 'a compra de casa é a melhor opção, porque representa menos gastos para a família.';
+document.getElementById('conclusao').innerText = rendavf < compravfliq ? 'este é um dos casos em que o arrendamento vale financeiramente a pena, porque a família poupa mais dinheiro evitando a compra.' : 'a compra de casa é a melhor opção, porque representa menos gastos para a família.';
 }
 
 document.getElementById('ilista').addEventListener('change', ilista);
@@ -577,7 +577,7 @@ window.addEventListener('load', function(){
 
 <p>Penso que os meus artigos interativos são particularmente úteis, porque permitem aos leitores tirar as suas próprias conclusões, mesmo quando diferem das minhas recomendações genéricas.
 
-<p>O primeiro artigo da edição de agosto passado, “PPR no multiverso: será loucura?”, mostrou que os planos de poupança-reforma (PPR) não são tendencialmente boas opções para os aforradores, incluindo quando se contabilizam deduções à coleta. Há, no entanto, exceções, como a que o subscritor <strong>P.M.</strong> aponta: se o aforrador conseguir a dedução máxima e eleger um dos PPR mais rentáveis no futuro, é possível amealhar mais dinheiro do que aplicando numa simples carteira exposta aos mercados acionistas e obrigacionistas.
+<p>O primeiro artigo da edição de setembro passado, “PPR no multiverso: será loucura?”, mostrou que os planos de poupança-reforma (PPR) não são tendencialmente boas opções para os aforradores, incluindo quando se contabilizam deduções à coleta. Há, no entanto, exceções, como a que o subscritor <strong>P.M.</strong> aponta: se o aforrador conseguir a dedução máxima e eleger um dos PPR mais rentáveis no futuro, é possível amealhar mais dinheiro do que aplicando numa simples carteira exposta aos mercados acionistas e obrigacionistas.
 
 <p>O advérbio que usou na sua pergunta — “seriamente” — é essencial. Se eu estivesse agora no início da minha carreira profissional a ponderar comprar casa em 5 a 8 anos, não contrataria PPR, mesmo que tivesse a dedução à coleta máxima. Nessa fase da vida, o futuro é demasiado incerto, as regras dos PPR são demasiado rígidas quando se beneficia da dedução e os melhores PPR do passado não são garantidamente os melhores PPR do futuro. Por esses motivos, também dificilmente recomendaria a algum jovem a aplicação das suas poupanças na subscrição desses planos de reforma. Talvez faça mais sentido acumular uma poupança maior para fornecer uma entrada mais gorda na eventual compra de uma casa.
 
@@ -648,10 +648,10 @@ var	capital = n('capital', 0),
 	irsfundo = n('irsfundo', 0) / 100;
 
 // Controlos
-if ( capital > divida ) { capital = divida; i('capital', divida, 0); }
+if ( capital > divida ) { capital = divida; inj('capital', divida, 0); }
 document.getElementById('aviso').innerText = prazo > 60 ? '' : '(tem de ser superior a 60 meses) ';
-if (deduz > .2 * capital || deduz > 400) { deduz = Math.min(.2 * capital, 400); i('deduz', deduz, 0); }
-if (deduzprazo > 12) { deduzprazo = 12; i('deduzprazo', deduzprazo, 0); }
+if (deduz > .2 * capital || deduz > 400) { deduz = Math.min(.2 * capital, 400); inj('deduz', deduz, 0); }
+if (deduzprazo > 12) { deduzprazo = 12; inj('deduzprazo', deduzprazo, 0); }
 
 // Inicial
 var presta = p(divida, taxa, prazo);
@@ -698,7 +698,7 @@ document.getElementById('variaveis1').addEventListener('keyup', presta);
 document.getElementById('variaveis2').addEventListener('keyup', presta);
 
 window.addEventListener('load', function(){
-	i('euribor', eur12m, 3); i('spread', spread, 2);
+	inj('euribor', eur12m, 3); inj('spread', spread, 2);
 	presta();
 });
 </script>
@@ -729,7 +729,7 @@ window.addEventListener('load', function(){
 
 <p>Na edição anterior do boletim <strong>tlim</strong>, quando escrevi o “Elogio ao meu fundo favorito”, o <a href="https://www.blackrock.com/pt/profissionais/products/251882/">iShares Core MSCI World UCITS ETF</a> (IWDA), confessei: “Acredito que o IWDA continuará a gerar bons retornos para mim nas próximas décadas, embora espere rentabilidades muito mais baixas.”
 
-<p>Desde setembro de 2013, a minha carteira de unidades do IWDA — que é um fundo de ações mundiais — rendeu 11,23% por ano (excluindo encargos e impostos). Simultaneamente, a inflação portuguesa foi de 1,71% por ano. O meu ganho real foi superior a 9% por ano.
+<p>Desde setembro de 2013, a minha carteira de unidades do IWDA — que é um fundo de ações mundiais — rendeu 10,94% por ano (excluindo encargos e impostos). Simultaneamente, a inflação portuguesa foi de 1,71% por ano. O meu ganho real foi superior a 9% por ano.
 
 <p>Nos últimos 123 anos, as ações mundiais renderam 5% por ano acima da inflação, segundo o <a href="https://www.credit-suisse.com/about-us-news/en/articles/media-releases/credit-suisse-global-investment-returns-yearbook-2023-202302.html"><cite>Credit Suisse Global Investment Returns Yearbook 2023</cite></a>. Acredito que o desempenho de longo prazo do meu fundo convergirá para o desempenho de longo prazo das ações mundiais, logo o seu retorno futuro tenderá a diminuir.
 
@@ -786,7 +786,7 @@ window.addEventListener('load', function(){
 
 <li>
 <p><a href="https://www.portugal.gov.pt/pt/gc23/comunicacao/noticia?i=habitacao-prestacao-da-casa-reduzida-e-constante-durante-dois-anos">“Prestação da casa reduzida e constante durante dois anos“</a>, Governo
-<p>Aguardarei a publicação oficial do mecanismo governamental de atenuação do impacto da subida das taxas de juro para as famílias para fazer uma análise. Uma dúvida surgiu-me imediatamente após a apresentação: o que acontecerá se as taxas de juro estiverem mais elevadas dentro de quatro anos? Estão todos a contar com uma descida dos indexantes, mas isso poderá não acontecer.
+<p>Aguardarei a publicação oficial do mecanismo governamental de atenuação do impacto da subida das taxas de juro para fazer uma análise. Uma dúvida surgiu-me imediatamente após a apresentação: o que acontecerá se as taxas de juro estiverem mais elevadas dentro de quatro anos? Estão todos a contar com uma descida dos indexantes, mas isso poderá não acontecer.
 
 <li>
 <p><a href="https://www.doutorfinancas.pt/ppr-sgf-doutor-financas/">PPR SGF Doutor Finanças</a>
