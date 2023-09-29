@@ -560,10 +560,10 @@ window.addEventListener('load', function(){
 <tr><td>PA<td>iShares Core MSCI World UCITS ETF<td>IE00B4L5Y983
 <tr><td>PM<td>Ether (ETH)<td>
 <tr><td>PM<td>Vanguard FTSE All World UCITS ETF Accumulating<td>IE00BK5BQT80
+<tr><td>PM<td>BlackRock GF World Technology E2 EUR<td>LU0171310955
 <tr><td>RA<td>Amundi S&P 500 UCITS ETF EUR<td>LU1681048804
 <tr><td>RL<td>iShares Global Clean Energy UCITS ETF <td>IE000U58J0M1
 <tr><td>SS<td>ProShares Ultra QQQ<td>US74347R2067
-
 </table>
 
 <p>Daqui a 10 anos, espero comunicar a estes subscritores qual foi o ativo mais rentável entre 29 de setembro de 2023 e 30 de setembro de 2033. ★
@@ -595,27 +595,27 @@ window.addEventListener('load', function(){
 <li><p>Aplica-o imediatamente na amortização da dívida.
 </ul>
 
-<p id="variaveis0">O impacto financeiro das três medidas é, naturalmente, díspar. Imagine que esse consumidor tem <input type="text" value="2000" id="capital" style="width:4em"> euros disponíveis e um crédito à habitação de <input type="text" value="150 000" id="divida" style="width:4em"> euros a <input type="text" value="360" id="prazo" style="width:2em"> meses <span id="aviso"></span>com um indexante nos <span class="nw"><input type="text" value="4,169" id="euribor" style="width:3em">%</span> e um <i>spread</i> de <span class="nw"><input type="text" value="0,90" id="spread" style="width:2.5em">%</span>. A sua prestação mensal é de <span id="presta">812</span> euros, o que representa um custo total do empréstimo — a soma de todas as prestações até ao fim do financiamento — de <span id="custo">292&nbsp;165</span> euros.
+<p id="variaveis0">O impacto financeiro das três medidas é, naturalmente, díspar. Imagine que esse consumidor tem <input type="text" value="2000" id="capital" style="width:4em"> euros disponíveis e um crédito à habitação de <input type="text" value="150 000" id="divida" style="width:4em"> euros a <input type="text" value="360" id="prazo" style="width:2em"> meses <span id="aviso"></span>com um indexante nos <span class="nw"><input type="text" value="4,169" id="euribor" style="width:3em">%</span> e um <i>spread</i> de <span class="nw"><input type="text" value="0,90" id="spread" style="width:2.5em">%</span>. A sua prestação mensal é de <span id="presta">816,36</span> euros, o que representa um custo total do empréstimo — a soma de todas as prestações até ao fim do financiamento — de <span id="custo">293&nbsp;890</span> euros.
 
 <p>Se contratar um PPR:
 
 <ul id="variaveis1">
 <li>Após <input type="text" value="9" id="deduzprazo" style="width:1.5em"> meses, aplicará a sua dedução à coleta pela subscrição do PPR, de <input type="text" value="191" id="deduz" style="width:2.5em"> euros, na amortização da dívida.
 <li><p>Cinco anos após a subscrição, sacará <span id="ppr">2402,95</span> euros do PPR para pagar prestações, assumindo uma rentabilidade anual bruta de <span class="nw"><input type="text" value="4,04" id="rppr" style="width:3em">%</span> e uma tributação à taxa efetiva de 8%.
-<li><p>O custo do empréstimo descerá para <strong><span id="custoppr">288&nbsp;993</span> euros</strong> nos <span id="prazoppr">360</span> meses, excluindo do total as prestações pagas com o saldo do PPR.
+<li><p>O custo do empréstimo descerá para <strong><span id="custoppr">291&nbsp;118</span> euros</strong> nos <span id="prazoppr">360</span> meses, excluindo do total as prestações pagas com o saldo do PPR.
 </ul>
 
 <p>Se optar pela via do fundo de investimento:
 
 <ul id="variaveis2">
 <li><p>Cinco anos após a subscrição, resgatará <span id="fundo">2566,50</span> euros do fundo de investimento para amortizar a dívida, assumindo uma rentabilidade anual bruta de <span class="nw"><input type="text" value="6,86" id="rfundo" style="width:3em">%</span> e uma tributação à taxa efetiva de <span class="nw"><input type="text" value="28" id="irsfundo" style="width:2em">%</span>.
-<li><p>O custo do empréstimo somará <strong><span id="custofundo">274&nbsp;205</span> euros</strong> nos <span id="prazofundo">360</span> meses.
+<li><p>O custo do empréstimo somará <strong><span id="custofundo">289&nbsp;335</span> euros</strong> nos <span id="prazofundo">360</span> meses.
 </ul>
 
 <p>Se aplicar o dinheiro imediatamente numa amortização parcial da dívida:
 
 <ul>
-<li><p>As prestações somarão <strong><span id="custoamortiza">288&nbsp;270</span> euros</strong> nos <span id="prazoamortiza">360</span> meses.
+<li><p>As prestações somarão <strong><span id="custoamortiza">289&nbsp;972</span> euros</strong> nos <span id="prazoamortiza">360</span> meses.
 </ul>
 
 <p>Nesta situação, a <span id="conclui">subscrição do fundo de investimento</span> é a melhor opção, porque minimiza o custo de longo prazo do empréstimo.
@@ -629,7 +629,7 @@ window.addEventListener('load', function(){
 
 <script>
 // Valores a 30 de setembro de 2023
-const eur12m = 4.216, spread = .9;
+const eur12m = 4.221, spread = .9;
 function c(c, t, m, k) { return t == 0 ? c - c / m * k : p(c,t,m)*((1-Math.pow(1+t/12,-(m-k)))/(t/12)); }
 
 function presta() {
@@ -729,7 +729,7 @@ window.addEventListener('load', function(){
 
 <p>Na edição anterior do boletim <strong>tlim</strong>, quando escrevi o “Elogio ao meu fundo favorito”, o <a href="https://www.blackrock.com/pt/profissionais/products/251882/">iShares Core MSCI World UCITS ETF</a> (IWDA), confessei: “Acredito que o IWDA continuará a gerar bons retornos para mim nas próximas décadas, embora espere rentabilidades muito mais baixas.”
 
-<p>Desde setembro de 2013, a minha carteira de unidades do IWDA — que é um fundo de ações mundiais — rendeu 10,94% por ano (excluindo encargos e impostos). Simultaneamente, a inflação portuguesa foi de 1,71% por ano. O meu ganho real foi superior a 9% por ano.
+<p>Desde setembro de 2013, a minha carteira de unidades do IWDA — que é um fundo de ações mundiais — rendeu 10,99% por ano (excluindo encargos e impostos). Simultaneamente, a inflação portuguesa foi de 1,81% por ano. O meu ganho real foi superior a 9% por ano.
 
 <p>Nos últimos 123 anos, as ações mundiais renderam 5% por ano acima da inflação, segundo o <a href="https://www.credit-suisse.com/about-us-news/en/articles/media-releases/credit-suisse-global-investment-returns-yearbook-2023-202302.html"><cite>Credit Suisse Global Investment Returns Yearbook 2023</cite></a>. Acredito que o desempenho de longo prazo do meu fundo convergirá para o desempenho de longo prazo das ações mundiais, logo o seu retorno futuro tenderá a diminuir.
 
@@ -834,7 +834,7 @@ window.addEventListener('load', function(){
 
 <p>A Organização Mundial de Saúde <a href="https://www.who.int/news-room/fact-sheets/detail/cancer">defende</a> que “a mortalidade por cancro é reduzida quando os casos são detetados e tratados precocemente”. Promove o diagnóstico prematuro e o rastreio.
 
-<p>Se ponderarmos os custos e os riscos dos exames, será que valem a pena? Não me refiro apenas ao tempo e ao dinheiro, mas à ansiedade que provocam e, em raros casos, aos problemas que decorrem das operações e dos testes, incluindo a probabilidade de morte. No rastreio do cancro colorrectal, pode haver perfuração e hemorragia. Uma pequena percentagem das mulheres a quem é retirada a mama após uma mamografia desenvolve um coágulo ou uma infeção.
+<p>Se ponderarmos os custos e os riscos dos exames, será que valem a pena? Não me refiro apenas ao tempo, ao dinheiro e ao incómodo, mas à ansiedade que provocam e, em raros casos, aos problemas que decorrem das operações e dos testes, incluindo a probabilidade de morte. No rastreio do cancro colorrectal, pode haver perfuração e hemorragia. Uma pequena percentagem das mulheres a quem é retirada a mama após uma mamografia desenvolve um coágulo ou uma infeção.
 
 <p>Não patrocino a ausência de diagnóstico e de rastreio, mas compreendo as pessoas que preferem não os fazer.
 
