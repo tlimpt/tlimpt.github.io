@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Taxa histórica de sucesso</title>
+<style>
+body { max-width:60ch; padding:.5em; margin:0 auto; line-height:1.75; font-size:1.25em; opacity:.9 }
+header p { border-bottom:.3em solid; margin:0 0 2em; padding:.5em 0 }
+h1, h2, h3 { line-height:1 }
+h1 { font-size:2em }
+input { font-family:inherit; font-size:1em; width:2em; text-align:right; border-width:0 0 .2em; background:none; color:inherit; outline:none }
+button, select { font-family:inherit; font-size:1em }
+.nw { white-space:nowrap }
+</style>
+<script>
+function n(el, dig) { var e = document.getElementById(el), z = e.value.replace(/[^\d]/g, '')/Math.pow(10, dig); e.value = z.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig}); return z; }
+function e(el, n, dig) { document.getElementById(el).innerText = n.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig}); }
+</script>
+<script src="shiller.js"></script>
+</head>
+<body>
+<p style="position:sticky; top:0; background-color:Canvas">A <strong>taxa histórica de sucesso é de <span id="txsucesso">97</span>%</strong>, assumindo esta estratégia:
+
+<ul id="xcomponentes">
+<li><strong>Fase 1</strong>:
+<ul>
+<li>Património: <input type="text" value="5000" id="xcapital" style="width:4em"> euros.
+<li>Exposição às ações: <span class="nw"><input type="text" value="80" id="xpa1">%</span>.
+<li>Exposição às obrigações: <span id="xpo1">20</span>%.
+<li>Encargo anual: <span class="nw"><input type="text" value="0,25" id="xe1">%</span> do património.
+<li><select id="xaplicaresgata1"><option value="1" selected>Aplica<option value="-1">Aliena</select> <input type="text" value="350" style="width:3em" id="xp1"> euros por mês durante <input type="text" value="25" id="xanos1"> anos.
+</ul>
+
+<li><strong>Fase 2</strong>:
+<ul>
+<li>Exposição às ações: <span class="nw"><input type="text" value="60" id="xpa2">%</span>.
+<li>Exposição às obrigações: <span id="xpo2">40</span>%.
+<li>Encargo anual: <span class="nw"><input type="text" value="0,25" id="xe2">%</span> do património.
+<li><select id="xaplicaresgata2"><option value="1">Aplica<option value="-1" selected>Aliena</select> <input type="text" value="1000" style="width:3em" id="xp2"> euros por mês durante <input type="text" value="15" style="width:2em" id="xanos2"> anos.
+</ul>
+
+<li><strong>Fase 3</strong>:
+<ul>
+<li>Exposição às ações: <span class="nw"><input type="text" value="40" id="xpa3">%</span>.
+<li>Exposição às obrigações: <span id="xpo3">60</span>%.
+<li>Encargo anual: <span class="nw"><input type="text" value="0,25" id="xe3">%</span> do património.
+<li><select id="xaplicaresgata3"><option value="1">Aplica<option value="-1" selected>Aliena</select> <input type="text" value="500" style="width:3em" id="xp3"> euros por mês durante <input type="text" value="20" style="width:2em" id="xanos3"> anos.
+</ul>
+
+<li><strong>Opcionalmente</strong>: no início do <input type="text" value="35" style="width:2em" id="xasurpresa">.º ano terá um imprevisto: <select id="xpositivanegativa"><option value="1" selected>recebe<option value="-1">gasta</select> <input type="text" value="30 000" style="width:4em" id="xsurpresa"> euros.
+
+<li><strong>Objetivo do plano</strong>: acumular mais de <input type="text" value="0" style="width:4em" id="xcritico"> euros no final dos <span id="xobjanos1">60</span> anos.
+</ul>
+<script>
+function xload(){
+if (window.location.hash != '') {
+	var url = window.location.href.split('#')[1].split('~');
+	xcapital.value = url[0];
+	xpa1.value = url[1]
+	xe1.value = url[2] * 100;
+	if(url[3] < 0) { xaplicaresgata1.value = -1; xp1.value = -1 * url[3]; }
+	else { xaplicaresgata1.value = 1; xp1.value = url[3]; }
+	xanos1.value = url[4];
+	xpa2.value = url[5]
+	xe2.value = url[6] * 100;
+	if(url[7] < 0) { xaplicaresgata2.value = -1; xp2.value = -1 * url[7]; }
+	else { xaplicaresgata2.value = 1; xp2.value = url[7]; }
+	xanos2.value = url[8];
+	xpa3.value = url[9]
+	xe3.value = url[10] * 100;
+	if(url[11] < 0) { xaplicaresgata3.value = -1; xp3.value = -1 * url[11]; }
+	else { xaplicaresgata3.value = 1; xp3.value = url[11]; }
+	xanos3.value = url[12];
+	xasurpresa.value = url[13];
+	if(url[14] < 0) { xpositivanegativa.value = -1; xsurpresa.value = -1 * url[14]; }
+	else { xpositivanegativa.value = 1; xsurpresa.value = url[14]; }
+	xcritico.value = url[15];
+}
+xfunc();
+}
+
+function xfunc(){
+// CONTROLOS
+// Algum montante tem de ser positivo
+if ( n('xcapital', 0) + n('xp1', 0) + n('xp2', 0) + n('xp3', 0) < 1 ) { xcapital.value = 1; }
+if ( n('xpa1', 0) > 100 ) { xpa1.value = 100; }
+if ( n('xpa2', 0) > 100 ) { xpa2.value = 100; }
+if ( n('xpa3', 0) > 100 ) { xpa3.value = 100; }
+
+// Peso das obrigações calculado automaticamente
+xpo1.innerText = 100 - xpa1.value;
+xpo2.innerText = 100 - xpa2.value;
+xpo3.innerText = 100 - xpa3.value;
+
+// Simulação entre 1 ano e 80 anos
+if ( n('xanos1', 0) > 80 ) { xanos2.value = xanos3.value = 0; xanos1.value = 80; }
+else if ( n('xanos1', 0) + n('xanos2', 0) > 80 ) { xanos3.value = 0; xanos2.value = 80 - xanos1.value; }
+else if ( n('xanos1', 0) + n('xanos2', 0) + n('xanos3', 0) > 80 ) { xanos3.value = 80 - xanos1.value - xanos2.value; }
+if( n('xanos1', 0) + n('xanos2', 0) + n('xanos3', 0) < 1 ) { xanos1.value = 1 };
+
+// Anos da surpresa inferior à soma dos anos
+if ( n('xasurpresa', 0) >= xanos1.value * 1 + xanos2.value * 1 + xanos3.value * 1 ) { xasurpresa.value = xanos1.value * 1 + xanos2.value * 1 + xanos3.value * 1 - 1; }
+n('xsurpresa', 0);
+
+// ATUALIZAÇÃO
+xobjanos1.innerText = xanos1.value * 1 + xanos2.value * 1 + xanos3.value * 1;
+
+// DADOS
+var d = {};
+d.capital = n('xcapital', 0);
+d.pa1 = n('xpa1', 0) / 100;
+d.e1 = n('xe1', 2) / 100;
+d.p1 = n('xp1', 0) * xaplicaresgata1.value;
+d.m1 = 12 * n('xanos1', 0);
+d.pa2 = n('xpa2', 0) / 100;
+d.e2 = n('xe2', 2) / 100;
+d.p2 = n('xp2', 0) * xaplicaresgata2.value;
+d.m2 = 12 * n('xanos2', 0);
+d.pa3 = n('xpa3', 0) / 100;
+d.e3 = n('xe3', 2) / 100;
+d.p3 = n('xp3', 0) * xaplicaresgata3.value;
+d.m3 = 12 * n('xanos3', 0);
+d.m = d.m1 + d.m2 + d.m3;
+d.msurpresa = n('xasurpresa', 0) * 12 - 11;
+d.surpresa = n('xsurpresa', 0) * xpositivanegativa.value;
+d.critico = n('xcritico', 0);
+
+// ATUALIZA HASH
+window.location.hash = d.capital + '~' + d.pa1 * 100 + '~' + d.e1 * 100 + '~' + d.p1 + '~' + d.m1 / 12 + '~' + d.pa2 * 100 + '~' + d.e2 * 100 + '~' + d.p2 + '~' + d.m2 / 12 + '~' + d.pa3 * 100 + '~' + d.e3 * 100 + '~' + d.p3 + '~' + d.m3 / 12 + '~' + (d.msurpresa + 11) / 12 + '~' + d.surpresa + '~' + d.critico;
+
+// COMPUTAÇÃO
+var patrimonios = [];
+for (var g = 0; g < shillera.length - d.m; g++) {
+	var a = shillera.slice(0 + g, d.m + g);
+	var o = shillero.slice(0 + g, d.m + g);
+	var patrimonio = [];
+	var sur = 0;
+	patrimonio.push(d.capital);
+	for (var h = 0; h < d.m1; h++) {
+		if (h == d.msurpresa) { sur = d.surpresa; } else { sur = 0; }
+		if (patrimonio[h] < 0) { patrimonio.push(0); }
+		else { patrimonio.push((1 - d.e1/12) * patrimonio[h] * (1 + a[h]/100 * d.pa1 + o[h]/100 * (1-d.pa1)) + d.p1 + sur); }
+	}
+	for (var h = d.m1; h < d.m1 + d.m2; h++) {
+		if (h == d.msurpresa) { sur = d.surpresa; } else { sur = 0; }
+		if (patrimonio[h] < 0) { patrimonio.push(0); }
+		else { patrimonio.push((1 - d.e2/12) * patrimonio[h] * (1 + a[h]/100 * d.pa2 + o[h]/100 * (1-d.pa2)) + d.p2 + sur); }
+	}
+	for (var h = d.m1 + d.m2; h < d.m; h++) {
+		if (h == d.msurpresa) { sur = d.surpresa; } else { sur = 0; }
+		if (patrimonio[h] < 0) { patrimonio.push(0); }
+		else { patrimonio.push((1 - d.e3/12) * patrimonio[h] * (1 + a[h]/100 * d.pa3 + o[h]/100 * (1-d.pa3)) + d.p3 + sur); }
+	}
+	patrimonios.push(patrimonio[patrimonio.length - 1]);
+}
+
+var sucesso = 0;
+for (var g = 0; g < patrimonios.length; g++) { if (patrimonios[g] > d.critico) { sucesso++; } }
+sucesso /= patrimonios.length;
+sucesso = Math.round(sucesso * 100);
+e('txsucesso', sucesso, 0);
+}
+
+document.getElementById('xcomponentes').addEventListener('change', xfunc);
+document.getElementById('xcomponentes').addEventListener('keyup', xfunc);
+
+window.addEventListener('load', xload);
+</script>
+</body>
+</html>
