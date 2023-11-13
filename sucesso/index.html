@@ -21,6 +21,9 @@ function e(el, n, dig) { document.getElementById(el).innerText = n.toLocaleStrin
 <script src="shiller.js"></script>
 </head>
 <body>
+
+<noscript><p>Esta página é interativa. Ative a funcionalidade de JavaScript.</noscript>
+
 <p style="position:sticky; top:0; background-color:Canvas">A <strong>taxa histórica de sucesso é de <span id="txsucesso">97</span>%</strong>, assumindo esta estratégia:
 
 <ul id="xcomponentes">
@@ -53,6 +56,22 @@ function e(el, n, dig) { document.getElementById(el).innerText = n.toLocaleStrin
 
 <li><strong>Objetivo do plano</strong>: acumular mais de <input type="text" value="0" style="width:4em" id="xcritico"> euros no final dos <span id="xobjanos1">60</span> anos.
 </ul>
+
+<p>A taxa histórica de sucesso é a proporção de períodos em que a estratégia descrita nos pontos anteriores funcionou entre fevereiro de 1852 e setembro de 2023, assumindo os retornos mensais das ações e das obrigações implícitos na <a href="http://www.econ.yale.edu/~shiller/data.htm">base de dados</a> norte-americana de Robert Shiller.
+
+<p>Embora este modelo preveja três fase e um imprevisto financeiro, poderá assumir menos: basta introduzir um “0” nos campos dos anos que não devem fazer parte do seu plano.
+
+<p>A base de dados permitiu efetuar <span id="xsimulacoes">1107</span> simulações.
+
+<p>A taxa histórica de sucesso não é uma garantia nem uma previsão de desempenho, porque o futuro é incerto. É apenas um guia para uma estratégia de investimento. Peca, entre outros motivos, por:
+
+<ul>
+<li><p><strong>É apenas América.</strong> Embora os mercados dos Estados Unidos da América sejam agora os mais relevantes do mundo, nem sempre foi assim.
+<li><p><strong>É em dólares.</strong> É um problema, apesar de os especialistas esperarem uma convergência dos câmbios para a paridade do poder de compra.
+<li><p><strong>São índices.</strong> Nem todos os investidores replicam índices de mercado.
+<li><p><strong>Não contabiliza impostos.</strong> É possível, no entanto, transparecer essas despesas aumentando o valor dos encargos previstos nas três fases do simulador. ★
+</ul>
+
 <script>
 function xload(){
 if (window.location.hash != '') {
@@ -161,6 +180,7 @@ for (var g = 0; g < patrimonios.length; g++) { if (patrimonios[g] > d.critico) {
 sucesso /= patrimonios.length;
 sucesso = Math.round(sucesso * 100);
 e('txsucesso', sucesso, 0);
+e('xsimulacoes', patrimonios.length);
 }
 
 document.getElementById('xcomponentes').addEventListener('change', xfunc);
