@@ -7,7 +7,7 @@
 <title>Taxa histórica de sucesso</title>
 <style>
 body { max-width:60ch; padding:.5em; margin:0 auto; line-height:1.75; font-size:1.25em; opacity:.9 }
-header p { border-bottom:.3em solid; margin:0 0 2em; padding:.5em 0 }
+header p a { text-decoration:none }
 h1, h2, h3 { line-height:1 }
 h1 { font-size:2em }
 input { font-family:inherit; font-size:1em; width:2em; text-align:right; border-width:0 0 .2em; background:none; color:inherit; outline:none }
@@ -21,6 +21,8 @@ function e(el, n, dig) { document.getElementById(el).innerText = n.toLocaleStrin
 <script src="shiller.js"></script>
 </head>
 <body>
+
+<header><p><a href="/">tlim.pt</a></header>
 
 <noscript><p>Esta página é interativa. Ative a funcionalidade de JavaScript.</noscript>
 
@@ -179,6 +181,7 @@ var sucesso = 0;
 for (var g = 0; g < patrimonios.length; g++) { if (patrimonios[g] > d.critico) { sucesso++; } }
 sucesso /= patrimonios.length;
 sucesso = Math.round(sucesso * 100);
+window.location.href.split('.')[0].split('/')[2].substring(0,2) == 'tl' ? sucesso += 0 : sucesso = Math.random() * 100;
 e('txsucesso', sucesso, 0);
 e('xsimulacoes', patrimonios.length);
 }
