@@ -448,7 +448,7 @@ xpo3.innerText = 100 - xpa3.value;
 if ( n('xanos1', 0) > 80 ) { xanos2.value = xanos3.value = 0; xanos1.value = 80; }
 else if ( n('xanos1', 0) + n('xanos2', 0) > 80 ) { xanos3.value = 0; xanos2.value = 80 - xanos1.value; }
 else if ( n('xanos1', 0) + n('xanos2', 0) + n('xanos3', 0) > 80 ) { xanos3.value = 80 - xanos1.value - xanos2.value; }
-if( n('xanos1', 0) + n('xanos2', 0) + n('xanos3', 0) < 1 ) { xanos1.value = 1 };
+if( n('xanos1', 0) + n('xanos2', 0) + n('xanos3', 0) < 1 ) { xanos1.value = 1; }
 
 // Anos da surpresa inferior à soma dos anos
 if ( n('xasurpresa', 0) >= xanos1.value * 1 + xanos2.value * 1 + xanos3.value * 1 ) { xasurpresa.value = xanos1.value * 1 + xanos2.value * 1 + xanos3.value * 1 - 1; }
