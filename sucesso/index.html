@@ -17,6 +17,7 @@ button, select { font-family:inherit; font-size:1em }
 <script>
 function n(el, dig) { var e = document.getElementById(el), z = e.value.replace(/[^\d]/g, '')/Math.pow(10, dig); e.value = z.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig}); return z; }
 function e(el, n, dig) { document.getElementById(el).innerText = n.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig}); }
+function i(el, n, dig) { document.getElementById(el).value = n.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig}); }
 </script>
 <script src="shiller.js"></script>
 </head>
@@ -78,26 +79,26 @@ function e(el, n, dig) { document.getElementById(el).innerText = n.toLocaleStrin
 function xload(){
 if (window.location.hash != '') {
 	var url = window.location.href.split('#')[1].split('~');
-	xcapital.value = url[0];
-	xpa1.value = url[1]
-	xe1.value = url[2] * 100;
-	if(url[3] < 0) { xaplicaresgata1.value = -1; xp1.value = -1 * url[3]; }
-	else { xaplicaresgata1.value = 1; xp1.value = url[3]; }
-	xanos1.value = url[4];
-	xpa2.value = url[5]
-	xe2.value = url[6] * 100;
-	if(url[7] < 0) { xaplicaresgata2.value = -1; xp2.value = -1 * url[7]; }
-	else { xaplicaresgata2.value = 1; xp2.value = url[7]; }
-	xanos2.value = url[8];
-	xpa3.value = url[9]
-	xe3.value = url[10] * 100;
-	if(url[11] < 0) { xaplicaresgata3.value = -1; xp3.value = -1 * url[11]; }
-	else { xaplicaresgata3.value = 1; xp3.value = url[11]; }
-	xanos3.value = url[12];
-	xasurpresa.value = url[13];
-	if(url[14] < 0) { xpositivanegativa.value = -1; xsurpresa.value = -1 * url[14]; }
-	else { xpositivanegativa.value = 1; xsurpresa.value = url[14]; }
-	xcritico.value = url[15];
+	i('xcapital', url[0], 0);
+	i('xpa1', url[1], 0);
+	i('xe1', url[2], 2);
+	if(url[3] < 0) { xaplicaresgata1.value = -1; i('xp1', -1 * url[3], 0); }
+	else { xaplicaresgata1.value = 1; i('xp1', url[3], 0); }
+	i('xanos1', url[4], 0);
+	i('xpa2', url[5], 0);
+	i('xe2', url[6], 2);
+	if(url[7] < 0) { xaplicaresgata2.value = -1; i('xp2', -1 * url[7], 0); }
+	else { xaplicaresgata2.value = 1; i('xp2', url[7], 0); }
+	i('xanos2', url[8], 0);
+	i('xpa3', url[9], 0);
+	i('xe3', url[10], 2);
+	if(url[11] < 0) { xaplicaresgata3.value = -1; i('xp3', -1 * url[11], 0); }
+	else { xaplicaresgata3.value = 1; i('xp3', url[11], 0); }
+	i('xanos3', url[12], 0);
+	i('xasurpresa', url[13], 0);
+	if(url[14] < 0) { xpositivanegativa.value = -1; i('xsurpresa', -1 * url[14], 0); }
+	else { xpositivanegativa.value = 1; i('xsurpresa', url[14], 0); }
+	i('xcritico', url[15], 0);
 }
 xfunc();
 }
