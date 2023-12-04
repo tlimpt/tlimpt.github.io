@@ -462,17 +462,6 @@ n('xsurpresa', 0);
 xobjanos1.innerText = xanos1.value * 1 + xanos2.value * 1 + xanos3.value * 1;
 xobjetivo.innerText = xcritico.value;
 
-// ATUALIZAÇÃO URL
-var xurl0 = 'tlim.pt/sucesso/#';
-var xurl1 = n('xcapital', 0);
-var xurl2 = '~' + n('xpa1', 0) + '~' + n('xe1', 0) / 100 + '~' + xaplicaresgata1.value * n('xp1', 0) + '~' + n('xanos1',0) + '~' + n('xpa2', 0) + '~' + n('xe2', 0) / 100 + '~' + xaplicaresgata2.value * n('xp2', 0) + '~' + n('xanos2',0) + '~' + n('xpa3', 0) + '~' + n('xe3', 0) / 100 + '~' + xaplicaresgata3.value * n('xp3', 0) + '~' + n('xanos3',0) + '~' + n('xasurpresa', 0) + '~' + xpositivanegativa.value * n('xsurpresa',0) + '~' + n('xcritico', 0);
-
-utlim.href = "https://" + xurl0 + xurl1 + xurl2;
-utlim.innerText = xurl0 + xurl1 + xurl2;
-
-utlim0.innerText = "https://" + xurl0;
-utlim1.innerText = xurl2;
-
 // DADOS
 var d = {};
 d.capital = n('xcapital', 0);
@@ -526,6 +515,19 @@ sucesso = Math.round(sucesso * 100);
 e('xtxsucesso1', sucesso, 0);
 e('xtxsucesso2', sucesso, 0);
 e('xsimulacoes', patrimonios.length, 0);
+
+
+// ATUALIZAÇÃO URL
+var xurl0 = 'tlim.pt/sucesso/#';
+var xurl1 = n('xcapital', 0);
+var xurl2 = '~' + n('xpa1', 0) + '~' + xe1.value.replace(',', '.') + '~' + xaplicaresgata1.value * n('xp1', 0) + '~' + n('xanos1',0) + '~' + n('xpa2', 0) + '~' + xe2.value.replace(',', '.') + '~' + xaplicaresgata2.value * n('xp2', 0) + '~' + n('xanos2',0) + '~' + n('xpa3', 0) + '~' + xe3.value.replace(',', '.') + '~' + xaplicaresgata3.value * n('xp3', 0) + '~' + n('xanos3',0) + '~' + n('xasurpresa', 0) + '~' + xpositivanegativa.value * n('xsurpresa',0) + '~' + n('xcritico', 0);
+
+utlim.href = "https://" + xurl0 + xurl1 + xurl2;
+utlim.innerText = xurl0 + xurl1 + xurl2;
+
+utlim0.innerText = "https://" + xurl0;
+utlim1.innerText = xurl2;
+
 }
 
 document.getElementById('xcomponentes').addEventListener('change', xfunc);
