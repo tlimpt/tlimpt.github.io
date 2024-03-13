@@ -60,7 +60,7 @@ function i(el, n, dig) { document.getElementById(el).value = n.toLocaleString('p
 <li><strong>Objetivo do plano</strong>: acumular mais de <input type="text" value="0" style="width:4em" id="xcritico"> euros no final dos <span id="xobjanos1">60</span> anos.
 </ul>
 
-<p>A taxa histórica de sucesso é a proporção de períodos em que a estratégia descrita nos pontos anteriores funcionou entre fevereiro de 1852 e fevereiro de 2024, assumindo os retornos mensais das ações e das obrigações implícitos na <a href="https://shillerdata.com/">base de dados</a> norte-americana de Robert Shiller.
+<p>A taxa histórica de sucesso é a proporção de períodos em que a estratégia descrita nos pontos anteriores funcionou entre fevereiro de 1852 e março de 2024, assumindo os retornos mensais das ações e das obrigações implícitos na <a href="https://shillerdata.com/">base de dados</a> norte-americana de Robert Shiller.
 
 <p>Embora este modelo preveja três fase e um imprevisto financeiro, poderá assumir menos: basta introduzir um “0” nos campos dos anos que não devem fazer parte do seu plano.
 
@@ -161,22 +161,26 @@ for (var g = 0; g < shillera.length - d.m; g++) {
 	var sur = 0;
 	patrimonio.push(d.capital);
 	for (var h = 0; h < d.m1; h++) {
-		if (h == d.msurpresa) { sur = d.surpresa; } else { sur = 0; }
+		if (h == d.msurpresa && patrimonio[h] > 0) { sur = d.surpresa; } else { sur = 0; }
 		if (patrimonio[h] < 0) { patrimonio.push(0); }
-		else { patrimonio.push((1 - d.e1/12) * patrimonio[h] * (1 + a[h]/100 * d.pa1 + o[h]/100 * (1-d.pa1)) + d.p1 + sur); }
+		else { patrimonio.push((1 - d.e1/12) * patrimonio[h] * (1 + a[h]/100 * d.pa1 + o[h]/100 * (1-d.pa1)) + d.p1 + sur);
+
+
+}
 	}
 	for (var h = d.m1; h < d.m1 + d.m2; h++) {
-		if (h == d.msurpresa) { sur = d.surpresa; } else { sur = 0; }
+		if (h == d.msurpresa && patrimonio[h] > 0) { sur = d.surpresa; } else { sur = 0; }
 		if (patrimonio[h] < 0) { patrimonio.push(0); }
 		else { patrimonio.push((1 - d.e2/12) * patrimonio[h] * (1 + a[h]/100 * d.pa2 + o[h]/100 * (1-d.pa2)) + d.p2 + sur); }
 	}
 	for (var h = d.m1 + d.m2; h < d.m; h++) {
-		if (h == d.msurpresa) { sur = d.surpresa; } else { sur = 0; }
+		if (h == d.msurpresa && patrimonio[h] > 0) { sur = d.surpresa; } else { sur = 0; }
 		if (patrimonio[h] < 0) { patrimonio.push(0); }
 		else { patrimonio.push((1 - d.e3/12) * patrimonio[h] * (1 + a[h]/100 * d.pa3 + o[h]/100 * (1-d.pa3)) + d.p3 + sur); }
 	}
 	patrimonios.push(patrimonio[patrimonio.length - 1]);
 }
+
 
 var sucesso = 0;
 for (var g = 0; g < patrimonios.length; g++) { if (patrimonios[g] > d.critico) { sucesso++; } }
