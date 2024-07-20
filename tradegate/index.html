@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Preços na Tradegate Exchange</title>
+<style>
+body { max-width:60ch; padding:.5em; margin:0 auto; font:1.25em/1.75 sans-serif; opacity:.9 }
+header p a { text-decoration:none }
+input { font-family:inherit; font-size:1em; width:2em; border-width:0 0 .2em; background:none; color:inherit; outline:none }
+button, select { font-family:inherit; font-size:1em }
+</style>
+</head>
+<body>
+<header><p><a href="/">tlim.pt</a></header>
+
+<noscript><p>Esta página é interativa. Ative a funcionalidade de JavaScript.</noscript>
+
+<p>Melhores preços no livro de ordens da Tradegate Exchange.
+<br>Atualizado automaticamente a cada 10 segundos.
+
+<table>
+<tr><td>ISIN<td colspan="2"><input type="text" value="IE00B4L5Y983" id="isin" style="width:8em"> <small id="erro">&emsp;</small>
+<tr><td>Separador decimal<td colspan="2"><select id="decimal"><option>,<option>.</select>
+<tr><td>Venda<td id="venda" class="pr">0,000€<td><button onclick="copia('venda', 'botaov');" id="botaov">Copiar</button>
+<tr><td>Compra<td id="compra" class="pr">0,000€<td><button onclick="copia('compra', 'botaoc');" id="botaoc">Copiar</button>
+<tr><td>Médio<td id="media" class="pr">0,000€<td><button onclick="copia('media', 'botaom');" id="botaom">Copiar</button>
+<tr><td>Diferencial<td id="delta" class="pr">0,000%<td id="perigo">
+</table>
+
+<script>
+function numero(el, n, s) { document.getElementById(el).innerText = n.toLocaleString('pt-PT',{minimumFractionDigits:3, maximumFractionDigits:3}).replace(",", document.getElementById('decimal').value) + s; }
+
+async function recolhe() {
+	document.getElementById('erro').innerText = '\u2003';
+	document.getElementById('perigo').innerText = '\u2003';
+
+	let url = "https://www.tradegate.de/refresh.php?isin=" + document.getElementById('isin').value;
+	let resposta = await fetch(url).catch(error => {
+		document.getElementById('erro').innerText = '❌';
+            });
+	let json = await resposta.json();
+
+	let venda = +json.bid;
+	let compra = +json.ask;
+	let delta = (compra / venda - 1) * 100;
+	let media = (compra + venda) / 2;
+	
+	if( delta > 0.05 ) { document.getElementById('perigo').innerText = '⚠️'; }
+
+	numero('venda', venda, '€');
+	numero('compra', compra, '€');
+	numero('delta', delta, '%');
+	numero('media', media, '€');
+
+	let prs = document.querySelectorAll('.pr');
+	prs.forEach(function(element) { element.style.backgroundColor = 'lightgrey';});
+	setTimeout(function() { prs.forEach(function(element) { element.style.backgroundColor = '';});}, 500);
+}
+
+function copia(el1, el2) {
+	navigator.clipboard.writeText(document.getElementById(el1).innerText);
+	document.getElementById(el2).innerText = 'Copiado';
+	setTimeout(function() { document.getElementById(el2).innerText = 'Copiar';}, 2000);
+}
+
+window.addEventListener('load', function(){
+	recolhe();
+	setInterval(recolhe, 10000);
+});
+
+document.getElementById('isin').addEventListener('keyup', recolhe);
+document.getElementById('decimal').addEventListener('change', recolhe);
+</script>
+</body>
+</html>
