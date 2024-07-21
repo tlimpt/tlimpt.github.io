@@ -60,7 +60,8 @@ async function recolhe() {
 }
 
 function copia(el1, el2) {
-	navigator.clipboard.writeText(document.getElementById(el1).innerText);
+	let str = document.getElementById(el1).innerText;
+	navigator.clipboard.writeText(str.substring(0, str.length - 1));
 	document.getElementById(el2).innerText = 'Copiado';
 	setTimeout(function() { document.getElementById(el2).innerText = 'Copiar';}, 2000);
 }
