@@ -600,6 +600,8 @@ function freqCalc(s, d, r, g, b) {
 
 	var n = Math.round(1 + Math.sqrt(c1*c1-4*c0*c2)/Math.abs(2*c0) - c1/(2*c0));
 
+	if (isNaN(n)) n = 0;
+
 	var bestf = -1;
 	var bestn = 0;
 	for (var i=n-2; i<=n+2; i++) {
