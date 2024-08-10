@@ -535,6 +535,7 @@ function updateCalc() {
 
 	var parcelsize = Math.round(addInterest(savings, interest, interval, opt)*100)/100;
 	var timeunits = (opt == 1 ? fretxt[saveFreq] : fretxts[saveFreq]);
+	var timeunitss = fretxts[saveFreq];
 
 	var altopt = opt;
 
@@ -555,25 +556,25 @@ function updateCalc() {
 	}
 	document.getElementById('xresultado').innerHTML = output;
 
-	var fv1 = fv(savings,interval,interest,growth,brokerage,opt,10*12);
-	var fv2 = fv(savings,interval,interest,growth,brokerage,1,10*12);
-	var fv3 = fv(savings,interval,interest,growth,brokerage,opt*2,10*12);
+	var fv1 = fv(savings,interval,interest,growth,brokerage,opt,10*saveFreq);
+	var fv2 = fv(savings,interval,interest,growth,brokerage,1,10*saveFreq);
+	var fv3 = fv(savings,interval,interest,growth,brokerage,opt*2,10*saveFreq);
 
 	document.getElementById('y1').innerHTML = '' + (altopt == 1 ? '' : altopt) +' ' + timeunits + ', acumularia ' + fv1.toLocaleString('pt-PT',{minimumFractionDigits:0, maximumFractionDigits:0});
 	if (fv2 > 0 && opt > 1 && saveFreq == 52 ) { document.getElementById('y2').innerHTML = 'Se, em alternativa, escolhesse investir todas as semanas, juntaria ' + fv2.toLocaleString('pt-PT',{minimumFractionDigits:0, maximumFractionDigits:0}) + ' euros. '; }
 	else if (fv2 > 0 && opt > 1 ) { document.getElementById('y2').innerHTML = 'Se, em alternativa, escolhesse investir todos os ' + timeunits + ', juntaria ' + fv2.toLocaleString('pt-PT',{minimumFractionDigits:0, maximumFractionDigits:0}) + ' euros. '; }
 	else { document.getElementById('y2').innerHTML = ''; }
-	document.getElementById('y3').innerHTML = '' + altopt*2 + ' ' + timeunits + ', o pé-de-meia seria de ' + fv3.toLocaleString('pt-PT',{minimumFractionDigits:0, maximumFractionDigits:0});
+	document.getElementById('y3').innerHTML = '' + altopt*2 + ' ' + timeunitss + ', o pé-de-meia seria de ' + fv3.toLocaleString('pt-PT',{minimumFractionDigits:0, maximumFractionDigits:0});
 
-	var fv4 = fv(savings,interval,interest,growth,brokerage,opt,30*12);
-	var fv5 = fv(savings,interval,interest,growth,brokerage,1,30*12);
-	var fv6 = fv(savings,interval,interest,growth,brokerage,opt*2,30*12);
+	var fv4 = fv(savings,interval,interest,growth,brokerage,opt,30*saveFreq);
+	var fv5 = fv(savings,interval,interest,growth,brokerage,1,30*saveFreq);
+	var fv6 = fv(savings,interval,interest,growth,brokerage,opt*2,30*saveFreq);
 
 	document.getElementById('y4').innerHTML = fv4.toLocaleString('pt-PT',{minimumFractionDigits:0, maximumFractionDigits:0});
 	if (fv5 > 0 && opt > 1 && saveFreq == 52 ) { document.getElementById('y5').innerHTML = 'Investindo todas as semanas, a projeção de capital seria de ' + fv5.toLocaleString('pt-PT',{minimumFractionDigits:0, maximumFractionDigits:0}) + ' euros. '; }
 	else if (fv5 > 0 && opt > 1 ) { document.getElementById('y5').innerHTML = 'Investindo todos os ' + timeunits + ', juntaria ' + fv5.toLocaleString('pt-PT',{minimumFractionDigits:0, maximumFractionDigits:0}) + ' euros. '; }
 	else { document.getElementById('y5').innerHTML = ''; }
-	document.getElementById('y6').innerHTML = '' + altopt*2 + ' ' + timeunits + ', o pecúlio cresceria até ' + fv6.toLocaleString('pt-PT',{minimumFractionDigits:0, maximumFractionDigits:0});
+	document.getElementById('y6').innerHTML = '' + altopt*2 + ' ' + timeunitss + ', o pecúlio cresceria até ' + fv6.toLocaleString('pt-PT',{minimumFractionDigits:0, maximumFractionDigits:0});
 }
 
 function freqCalc(s, d, r, g, b) {
