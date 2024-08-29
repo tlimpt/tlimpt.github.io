@@ -24,14 +24,23 @@ td[rowspan] { vertical-align:top }
 input { font-family:inherit; font-size:1em; width:3em; text-align:right; border-width:0 0 .25em; outline:none }
 button, select { font-family:inherit; font-size:1em }
 .nw { white-space:nowrap }
-
 line { stroke:CanvasText; opacity:.9 }
 polyline { stroke-width:.1em; fill:none }
 </style>
 <script>
-function num(el, dig) { var e = document.getElementById(el), z = e.value.replace(/[^\d]/g, '')/Math.pow(10, dig); e.value = z.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig}); return z; }
-function esc(el, n, dig) { document.getElementById(el).innerText = n.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig}); }
-function inj(el, n, dig) { document.getElementById(el).value = n.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig}); }
+function formata(v, d) {
+	return v.toLocaleString('pt-PT', {minimumFractionDigits:d,maximumFractionDigits:d}); }
+
+function num(e, d) {
+	const z = document.getElementById(e).value.replace(/[^\d]/g, '') / Math.pow(10, d);
+	document.getElementById(e).value = formata(z, d);
+	return z; }
+
+function esc(e, n, d) {
+	document.getElementById(e).innerText = formata(n, d); }
+
+function inj(e, n, d) {
+	document.getElementById(e).value = formata(n, d); }
 </script>
 </head>
 <body>
@@ -124,10 +133,9 @@ Plataforma: Borsa Italiana
 <p>Como pode confirmar nos quadros anteriores, os melhores preços de compra e de venda não podem diferir muito entre as bolsas. Quando a divergência se acentua, alguns investidores optam pelos melhores negócios: compram na bolsa com o preço de venda mais baixo ou vendem na bolsa com o preço de compra mais elevado, pressionando essas cotações na direção da convergência.
 
 <figure>
-<figcaption><strong>Melhores preços de venda sobre o IWDA</strong> Esta foi a evolução do melhor preço de venda nos livros de ordens do IWDA na <span style="color:GrayText">Euronext Amsterdam</span>, na <span style="color:Highlight">Xetra</span>, na <span style="color:CanvasText">Borsa Italiana</span> e na <span style="color:VisitedText">Tradegate Exchange</span> ao longo da sessão bolsista do dia 16 de agosto de 2024. A figura dos melhores preços de compra é semelhante.</figcaption>
+<figcaption><strong>Melhores preços de venda sobre o IWDA</strong> Esta foi a evolução do melhor preço de venda nos livros de ordens do IWDA na <span style="color:GrayText">Euronext Amsterdam</span>, na <span style="color:Highlight">Xetra</span>, na <span style="color:CanvasText">Borsa Italiana</span> e na <span style="color:VisitedText">Tradegate Exchange</span> ao longo da sessão bolsista do dia 16 de agosto de 2024. A figura dos melhores preços de compra é semelhante. Amplie esta figura para procurar as diferenças.</figcaption>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
-
 <polyline style="stroke:VisitedText" points="61,17.04 62,22.82 63,19.19 64,22.22 65,34.72 66,32.43 67,30.50 68,38.48 70,45.19 71,40.72 72,49.25 73,49.58 74,42.50 75,39.32 76,40.06 77,39.74 78,41.19 79,48.08 80,54.41 81,54.70 82,50.68 83,49.05 84,46.46 86,41.84 87,42.24 88,45.55 89,45.15 90,45.79 91,49.05 92,50.77 93,57.06 94,60.08 95,60.34 96,66.57 97,71.24 98,65.08 99,62.97 100,62.77 102,62.32 103,63.75 104,69.80 105,70.88 106,73.22 107,69.03 108,80.51 109,85.48 110,79.31 111,82.85 112,85.15 113,90.05 114,89.76 115,88.17 117,85.28 118,83.27 119,83.40 120,86.21 121,87.29 122,91.38 123,81.78 124,79.09 125,76.82 126,60.70 127,59.17 128,56.25 129,58.10 130,63.05 131,69.29 133,59.59 134,57.00 135,61.38 136,63.81 137,62.42 138,65.98 139,61.15 140,59.08 141,64.95 142,67.93 143,75.19 144,95.01 145,92.87 146,96.41 147,102.77 149,107.92 150,107.51 151,108.73 152,112.30 153,114.24 154,105.73 155,106.05 156,105.41 157,108.24 158,103.46 159,96.24 160,94.14 161,93.97 162,86.92 163,87.94 165,95.61 166,99.41 167,95.43 168,89.76 169,86.43 170,78.57 171,74.11 172,77.03 173,74.84 174,70.14 175,71.27 176,74.76 177,72.89 178,66.73 179,67.31 181,66.49 182,66.00 183,66.81 184,71.43 185,67.30 186,63.08 187,53.35 188,51.00 189,48.57 190,49.22 191,44.19 192,47.84 193,52.54 194,56.59 195,55.62 197,54.24 198,53.64 199,56.97 200,57.81 201,63.76 202,67.01 203,70.90 204,70.54 205,63.11 206,57.24 207,57.57 208,58.69 209,53.69 210,54.18 211,54.73 213,54.89 214,54.89 215,57.28 216,67.69 217,83.94 218,86.94 219,82.28 220,75.08 221,66.73 222,63.99 223,66.57 224,66.57 225,73.01 226,71.74 228,75.57 229,79.14 230,85.28 231,92.59 232,94.69 233,95.45 234,95.12 235,95.27 236,95.94 237,100.56 238,102.65 239,109.23 240,112.44 241,110.98 242,107.43 244,102.86 245,102.31 246,103.96 247,109.51 248,113.92 249,120.24 250,126.24 251,131.59 252,128.32 253,128.19 254,128.77 255,135.32 256,143.24 257,142.82 258,145.44 260,145.57 261,159.03 262,158.27 263,157.95 264,164.15 265,169.10 266,166.01 267,164.81 268,163.52 269,163.07 270,154.77 271,156.13 272,153.76 273,157.69 274,165.78 276,170.35 277,166.78 278,174.37 279,171.71 280,163.36 281,169.25 282,173.43 283,182.72 284,179.21 285,179.40 286,184.77 287,183.00 288,176.90 289,184.30 290,187.36 292,182.59 293,183.00 294,182.69 295,178.83 296,186.76 297,196.28 298,187.52 299,187.35 300,184.51 301,182.92 302,189.97 303,193.51 304,194.39 305,191.79 306,190.35 308,191.22 309,187.52 310,188.29 311,185.37 312,183.42 313,191.38 314,195.29 315,193.30 316,190.69 317,191.56 318,189.06 319,190.17 320,197.14 321,203.40 322,194.55 324,186.11 325,185.32 326,200.53 327,204.31 328,201.44 329,201.97 330,203.43 331,213.49 332,214.78 333,214.62 334,212.03 335,209.11 336,211.22 337,209.76 339,207.16 340,200.03 341,204.73 342,207.49 343,209.27 344,213.16 345,219.16 346,213.97 347,214.95 348,222.02 349,213.83 350,213.92 351,209.46 352,199.95 353,201.63 355,200.19 356,201.91 357,216.73 358,228.26 359,232.91 360,233.21 361,223.18 362,218.82 363,223.49 364,224.84 365,223.83 366,230.67 367,237.08 368,237.73 369,234.44 371,234.10 372,224.40 373,222.79 374,223.35 375,226.82 376,226.98 377,228.79 378,222.79 379,226.69 380,232.95 381,238.36 382,237.42 383,228.50 384,222.79 385,229.41 387,237.42 388,236.58 389,241.04 390,235.90 391,237.70 392,246.92 393,255.42 394,254.65 395,263.19 396,266.43 397,271.95 398,275.68 399,268.30 400,268.62 401,269.59 403,269.27 404,274.70 405,280.05 406,273.97 407,268.30 408,266.27 409,308.19 410,323.02 411,337.22 412,341.11 413,346.86 414,323.43 415,334.49 416,347.38 417,352.49 419,345.11 420,333.46 421,338.22 422,328.01 423,325.90 424,329.50 425,321.16 426,333.94 427,346.20 428,346.04 429,358.14 430,373.04 431,370.38 432,371.59 433,373.54 435,358.62 436,360.97 437,346.95 438,346.22 439,341.42 440,347.35 441,345.94 442,340.66 443,335.40 444,322.95 445,323.27 446,322.36 447,323.92 448,319.98 450,328.48 451,329.68 452,335.72 453,329.32 454,326.18 455,325.56 456,321.15 457,325.85 458,316.85 459,311.11 460,309.17 461,303.88 462,308.40 463,314.53 464,314.95 466,306.00 467,322.34 468,334.33 469,339.81 470,314.53 471,315.99 472,293.24 473,294.57 474,284.98 475,284.61 476,294.16 477,287.94 478,271.28 479,281.61 480,280.51 482,276.05 483,268.69 484,256.57 485,260.89 486,264.15 487,282.21 488,276.96 489,272.87 490,277.14 491,279.30 492,264.49 493,251.61 494,241.44 495,244.26 496,238.85 498,250.91 499,257.90 500,254.14 501,242.06 502,244.51 503,249.50 504,204.60 505,189.50 506,177.26 507,177.75 508,182.87 509,189.39 510,187.44 511,176.16 512,196.54 514,200.38 515,180.70 516,180.76 517,178.33 518,171.55 519,168.96 520,158.94 521,139.28 522,137.46 523,133.18 524,128.35 525,119.63 526,136.82 527,133.83 528,139.09 530,138.76 531,151.02 532,148.33 533,150.21 534,150.99 535,150.65 536,155.01 537,158.00 538,175.91 539,184.79 540,182.16 541,166.86 542,158.16 543,165.39 544,179.96 546,171.70 547,179.66 548,195.99 549,191.32 550,180.36 551,190.02 552,183.37 553,177.81 554,185.19 555,189.57 556,234.00 557,230.11 558,213.41 559,182.76 561,173.76 562,206.35 563,210.41 564,199.14 565,204.49 566,212.76 567,223.54 568,219.83 569,222.41 570,218.82 571,207.76 572,216.65 573,212.43 574,211.46 575,207.81 577,205.05 578,212.11 579,221.35 580,222.16 581,220.14 582,218.32 583,208.04 584,205.70 585,217.51 586,228.75 587,224.82 588,225.10 589,227.48 590,220.93 591,217.15 593,208.99 594,202.36 595,206.58 596,207.10 597,206.42 598,206.55 599,202.67 600,202.67" />
 <polyline style="stroke:CanvasText" points="61,24.73 62,34.46 63,34.46 64,34.46 65,49.05 66,46.62 67,34.46 68,39.32 70,46.62 71,34.46 72,44.19 73,44.19 74,39.65 75,44.19 76,44.19 77,44.19 78,44.19 79,53.92 80,58.78 81,58.78 82,49.05 83,49.05 84,49.05 86,44.51 87,39.32 88,39.32 89,49.05 90,49.05 91,44.19 92,49.05 93,49.05 94,53.92 95,53.92 96,53.92 97,73.38 98,58.78 99,58.78 100,58.78 102,58.78 103,58.78 104,68.51 105,87.97 106,87.97 107,74.03 108,83.11 109,83.11 110,82.25 111,82.25 112,78.24 113,87.36 114,87.97 115,83.11 117,78.24 118,78.24 119,78.59 120,83.11 121,83.11 122,88.30 123,78.24 124,78.24 125,73.38 126,53.92 127,53.92 128,49.40 129,53.92 130,53.92 131,63.65 133,53.92 134,53.92 135,59.05 136,63.65 137,54.78 138,63.65 139,63.65 140,53.92 141,62.68 142,63.65 143,65.73 144,92.84 145,92.84 146,92.84 147,97.70 149,102.57 150,102.57 151,107.43 152,107.43 153,114.24 154,102.57 155,102.57 156,102.57 157,102.57 158,102.57 159,87.97 160,83.11 161,83.11 162,78.24 163,78.24 165,83.11 166,92.84 167,92.84 168,88.62 169,81.34 170,78.24 171,68.51 172,73.38 173,73.38 174,63.97 175,68.51 176,68.51 177,68.51 178,63.65 179,63.65 181,58.78 182,58.78 183,62.95 184,68.51 185,65.68 186,57.39 187,49.05 188,49.05 189,49.05 190,49.05 191,49.05 192,53.92 193,49.05 194,49.05 195,49.05 197,49.05 198,51.06 199,56.66 200,53.92 201,63.65 202,63.65 203,63.65 204,71.99 205,53.92 206,51.14 207,54.61 208,58.78 209,49.05 210,49.05 211,49.05 213,49.05 214,49.05 215,52.15 216,62.37 217,62.37 218,78.24 219,78.24 220,78.24 221,63.65 222,61.22 223,63.65 224,63.65 225,68.51 226,68.51 228,68.86 229,78.24 230,78.24 231,88.30 232,92.84 233,92.84 234,87.97 235,91.86 236,92.84 237,94.05 238,102.57 239,102.57 240,107.43 241,107.43 242,102.87 244,97.70 245,97.70 246,97.70 247,102.57 248,105.81 249,112.30 250,126.89 251,126.89 252,122.68 253,126.89 254,126.89 255,127.59 256,139.05 257,141.49 258,141.49 260,146.35 261,148.18 262,156.08 263,156.08 264,158.21 265,167.03 266,170.68 267,162.16 268,156.08 269,159.00 270,151.22 271,151.22 272,151.22 273,153.79 274,153.79 276,165.81 277,160.95 278,160.95 279,169.82 280,156.08 281,156.08 282,168.59 283,180.41 284,180.41 285,171.02 286,182.57 287,185.27 288,170.68 289,180.41 290,181.38 292,175.54 293,175.54 294,175.54 295,180.41 296,190.14 297,190.14 298,179.55 299,175.54 300,184.36 301,180.08 302,180.41 303,190.14 304,190.14 305,190.14 306,184.95 308,185.27 309,185.27 310,185.27 311,180.41 312,180.41 313,190.14 314,195.00 315,193.70 316,188.19 317,185.27 318,185.27 319,184.66 320,184.66 321,195.00 322,196.82 324,196.82 325,182.35 326,195.97 327,200.78 328,195.00 329,195.00 330,199.86 331,209.59 332,209.59 333,214.46 334,209.59 335,207.86 336,204.73 337,209.59 339,205.34 340,195.00 341,195.00 342,199.86 343,206.23 344,209.59 345,210.57 346,211.54 347,212.03 348,219.32 349,219.32 350,209.59 351,201.36 352,199.86 353,196.30 355,195.00 356,195.00 357,208.62 358,224.19 359,225.81 360,229.05 361,216.54 362,214.46 363,214.46 364,219.32 365,219.32 366,229.05 367,233.92 368,233.92 369,230.03 371,229.05 372,221.27 373,219.32 374,219.32 375,219.32 376,219.32 377,224.19 378,223.28 379,219.32 380,219.32 381,233.92 382,235.92 383,235.92 384,219.32 385,224.19 387,224.19 388,238.78 389,238.78 390,230.68 391,233.92 392,240.50 393,253.38 394,248.51 395,263.11 396,263.11 397,267.97 398,267.97 399,267.97 400,263.11 401,263.11 403,263.11 404,270.41 405,277.70 406,277.33 407,260.33 408,287.43 409,293.05 410,321.49 411,331.22 412,343.57 413,345.16 414,316.62 415,316.62 416,339.56 417,345.81 419,345.12 420,326.35 421,326.35 422,334.36 423,326.35 424,326.35 425,321.49 426,331.22 427,331.22 428,336.08 429,355.54 430,358.46 431,362.23 432,366.39 433,370.14 435,357.06 436,355.54 437,355.54 438,340.95 439,336.08 440,342.57 441,345.81 442,331.22 443,331.22 444,316.62 445,321.49 446,320.27 447,324.27 448,321.49 450,321.49 451,325.70 452,336.08 453,331.22 454,331.22 455,323.78 456,326.35 457,321.49 458,311.76 459,311.76 460,316.62 461,303.24 462,298.46 463,311.76 464,311.76 466,306.61 467,311.76 468,311.76 469,336.08 470,311.76 471,311.76 472,295.22 473,295.54 474,300.08 475,283.78 476,282.57 477,282.57 478,282.57 479,258.24 480,258.24 482,272.84 483,267.97 484,270.55 485,244.95 486,248.51 487,248.51 488,274.14 489,267.97 490,267.97 491,266.76 492,266.76 493,256.11 494,233.92 495,233.92 496,233.92 498,243.65 499,242.68 500,253.38 501,243.65 502,239.09 503,238.14 504,258.24 505,250.95 506,195.00 507,185.27 508,185.27 509,180.41 510,185.27 511,185.27 512,175.54 514,209.59 515,207.65 516,185.27 517,180.41 518,188.92 519,180.41 520,175.54 521,175.54 522,157.51 523,132.97 524,132.97 525,136.62 526,127.50 527,136.62 528,139.36 530,142.88 531,136.62 532,151.22 533,146.35 534,146.35 535,146.35 536,151.22 537,154.26 538,151.22 539,165.81 540,174.24 541,170.68 542,151.22 543,151.86 544,165.81 546,175.54 547,167.76 548,175.54 549,175.54 550,190.14 551,174.32 552,184.41 553,178.67 554,175.54 555,180.41 556,186.02 557,195.00 558,223.33 559,180.41 561,180.41 562,165.51 563,165.81 564,207.16 565,194.68 566,190.14 567,207.00 568,217.83 569,214.46 570,212.51 571,209.59 572,209.59 573,212.51 574,212.03 575,214.46 577,201.39 578,201.39 579,203.76 580,203.76 581,224.19 582,210.17 583,210.17 584,213.49 585,199.86 586,199.86 587,225.49 588,224.19 589,222.10 590,224.19 591,209.59 593,209.59 594,210.29 595,195.00 596,195.00 597,204.73 598,204.73 599,200.68 600,200.68" />
 <polyline style="stroke:Highlight" points="61,17.26 62,21.87 63,18.42 64,23.95 65,35.67 66,28.92 67,29.44 68,39.46 70,43.51 71,39.79 72,48.58 73,47.69 74,41.90 75,38.35 76,40.05 77,38.78 78,43.05 79,46.95 80,56.75 81,54.13 82,50.76 83,50.76 84,43.54 86,40.99 87,41.27 88,44.68 89,42.99 90,45.97 91,46.62 92,53.00 93,56.79 94,58.08 95,59.68 96,67.85 97,69.93 98,63.78 99,61.64 100,61.31 102,61.52 103,62.33 104,69.64 105,70.33 106,72.11 107,68.87 108,79.37 109,83.59 110,78.17 111,80.74 112,85.15 113,89.21 114,88.46 115,86.94 117,82.61 118,82.04 119,81.60 120,86.46 121,84.92 122,90.70 123,78.96 124,77.99 125,72.57 126,58.78 127,59.03 128,55.88 129,57.16 130,64.04 131,68.90 133,57.77 134,56.89 135,60.92 136,61.75 137,62.18 138,64.85 139,58.30 140,59.05 141,63.78 142,66.34 143,76.02 144,94.97 145,91.80 146,95.87 147,102.19 149,107.30 150,105.58 151,108.28 152,112.08 153,111.25 154,105.40 155,104.14 156,104.39 157,107.99 158,102.16 159,94.18 160,93.04 161,93.32 162,84.75 163,85.21 165,100.54 166,98.13 167,95.65 168,87.76 169,85.89 170,75.65 171,74.75 172,77.72 173,73.72 174,67.56 175,72.35 176,74.96 177,70.68 178,67.42 179,67.44 181,66.45 182,66.57 183,66.68 184,71.32 185,67.89 186,62.07 187,52.83 188,49.35 189,50.17 190,49.23 191,43.30 192,49.74 193,53.68 194,57.09 195,56.84 197,54.70 198,56.31 199,57.87 200,58.78 201,63.36 202,67.54 203,70.34 204,70.46 205,64.01 206,56.27 207,58.32 208,57.05 209,53.84 210,54.83 211,54.89 213,54.89 214,54.77 215,58.41 216,71.73 217,84.71 218,86.72 219,82.06 220,73.38 221,65.34 222,64.18 223,66.57 224,66.41 225,73.89 226,70.95 228,76.20 229,79.22 230,87.73 231,93.19 232,95.46 233,96.08 234,95.19 235,95.69 236,96.73 237,101.28 238,102.64 239,109.10 240,111.32 241,110.06 242,105.42 244,100.80 245,101.96 246,102.75 247,110.64 248,114.63 249,121.09 250,127.65 251,132.77 252,127.73 253,127.81 254,128.07 255,134.98 256,142.05 257,141.82 258,143.73 260,147.39 261,158.91 262,157.22 263,158.51 264,163.76 265,171.30 266,164.26 267,164.05 268,163.61 269,160.05 270,154.97 271,155.08 272,153.49 273,157.41 274,166.73 276,169.49 277,168.32 278,174.89 279,170.36 280,162.24 281,168.48 282,172.67 283,181.44 284,178.15 285,178.84 286,185.02 287,180.82 288,175.07 289,184.30 290,186.86 292,181.31 293,181.68 294,181.38 295,177.96 296,187.95 297,195.12 298,182.90 299,186.82 300,183.32 301,182.93 302,190.47 303,192.45 304,193.00 305,191.39 306,190.38 308,190.78 309,190.14 310,190.14 311,184.49 312,181.92 313,191.43 314,194.75 315,191.80 316,191.06 317,189.72 318,188.39 319,188.91 320,199.05 321,203.51 322,201.81 324,201.81 325,185.78 326,202.54 327,203.95 328,198.88 329,201.18 330,203.36 331,212.32 332,213.88 333,212.59 334,210.91 335,207.59 336,210.28 337,208.41 339,205.70 340,198.25 341,203.69 342,207.47 343,209.18 344,212.88 345,218.50 346,212.20 347,215.47 348,221.08 349,212.92 350,213.78 351,207.28 352,198.78 353,201.32 355,198.73 356,201.62 357,218.41 358,227.08 359,231.05 360,231.54 361,222.93 362,217.47 363,223.01 364,223.23 365,222.60 366,232.93 367,237.08 368,235.66 369,233.82 371,231.78 372,223.86 373,222.37 374,222.71 375,228.91 376,224.53 377,227.71 378,221.95 379,225.94 380,234.24 381,236.99 382,237.62 383,226.24 384,223.92 385,228.91 387,238.75 388,233.70 389,239.43 390,236.66 391,237.19 392,248.75 393,254.74 394,255.32 395,262.14 396,265.65 397,271.41 398,272.05 399,267.91 400,268.07 401,267.64 403,269.27 404,274.18 405,277.85 406,272.04 407,265.26 408,280.50 409,311.65 410,326.60 411,338.46 412,340.90 413,339.04 414,323.89 415,335.35 416,348.72 417,351.27 419,340.23 420,331.11 421,337.69 422,324.50 423,327.00 424,327.80 425,318.30 426,338.38 427,344.09 428,345.95 429,359.06 430,372.15 431,368.61 432,370.53 433,371.48 435,358.78 436,359.32 437,345.21 438,344.76 439,341.45 440,346.46 441,343.90 442,338.53 443,332.80 444,321.34 445,323.22 446,322.99 447,321.26 448,321.87 450,326.96 451,329.69 452,336.10 453,325.51 454,325.52 455,324.99 456,321.12 457,324.41 458,316.08 459,311.58 460,308.25 461,303.60 462,306.87 463,313.70 464,312.76 466,305.01 467,319.35 468,335.74 469,335.50 470,311.57 471,314.40 472,291.80 473,293.87 474,280.52 475,284.03 476,295.51 477,286.15 478,267.00 479,284.13 480,280.80 482,275.00 483,263.83 484,258.39 485,258.22 486,264.66 487,281.12 488,274.81 489,276.12 490,279.22 491,275.26 492,261.02 493,246.72 494,240.80 495,245.77 496,239.94 498,251.14 499,258.75 500,249.12 501,239.91 502,244.89 503,247.07 504,182.98 505,188.47 506,169.57 507,175.86 508,184.39 509,189.24 510,185.82 511,176.42 512,198.74 514,196.96 515,180.31 516,177.32 517,177.74 518,171.54 519,168.27 520,155.14 521,142.53 522,139.68 523,132.84 524,126.16 525,120.50 526,135.93 527,136.29 528,135.99 530,139.99 531,152.89 532,146.52 533,149.16 534,148.88 535,149.85 536,154.34 537,157.51 538,176.29 539,184.11 540,177.91 541,164.08 542,157.12 543,165.19 544,178.20 546,170.61 547,180.91 548,196.03 549,191.82 550,178.98 551,188.52 552,180.89 553,179.99 554,183.02 555,194.66 556,231.56 557,226.16 558,204.09 559,181.28 561,173.51 562,205.39 563,208.66 564,197.87 565,205.47 566,214.19 567,221.72 568,219.43 569,223.60 570,217.03 571,207.17 572,214.82 573,213.29 574,208.58 575,207.55 577,203.15 578,212.75 579,220.96 580,219.86 581,218.95 582,216.15 583,204.35 584,205.89 585,218.88 586,227.90 587,223.19 588,222.40 589,228.84 590,218.14 591,215.71 593,206.96 594,200.77 595,206.66 596,207.38 597,202.34 598,206.17 599,201.59 600,201.59" />
@@ -252,7 +260,7 @@ Plataforma: Borsa Italiana
 
 <p>Ao longo da minha análise, verifiquei, por exemplo, que o diferencial entre os melhores preços de compra e de venda sobre o IWDA na Euronext Amsterdam foi mais reduzido entre as 9h30 e as 13h30. Em média, foi de 0,01%.
 
-<p>Durante mais de hora do dia 23 de agosto passado, por exemplo, o diferencial entre os melhores preços de compra e de venda sobre o Vanguard LifeStrategy 60% Equity em Milão foi inferior a 0,05%.
+<p>Durante mais de uma hora do dia 23 de agosto passado, por exemplo, o diferencial entre os melhores preços de compra e de venda sobre o Vanguard LifeStrategy 60% Equity em Milão foi inferior a 0,05%.
 
 <p>Considere que metade do diferencial no momento da sua ordem ao melhor é um encargo de negociação, a par da eventual comissão de bolsa que tem de pagar.
 
@@ -260,23 +268,22 @@ Plataforma: Borsa Italiana
 
 <script>
 document.getElementById("aviso").innerHTML = "(Este parágrafo é interativo: mude os valores para adaptar o texto.)";
-function vwcex() {
-	var vwce1 = num('vwce1', 2) / 100 / 2;
-	esc('vwce10', vwce1 * 100, 3);
-	var vwce2 = num('vwce2', 0);
-	var vwce3 = +document.getElementById('vwce3').value;
-	var vwce4 = num('vwce4', 0);
-	var vwce5 = num('vwce5', 2) / 100;
 
-	var renda = Math.pow(1 + vwce5, 1 / vwce3) - 1;
-	
-	var acumula = 0;
-	var acumulax = 0;
-	for (var g = 0; g < vwce3 * vwce4; g++) {
+function vwcex() {
+	const vwce1 = num('vwce1', 2) / 100 / 2;
+	esc('vwce10', vwce1 * 100, 3);
+	const vwce2 = num('vwce2', 0);
+	const vwce3 = +document.getElementById('vwce3').value;
+	const vwce4 = num('vwce4', 0);
+	const vwce5 = num('vwce5', 2) / 100;
+	const renda = Math.pow(1 + vwce5, 1 / vwce3) - 1;
+	let acumula = 0;
+	let acumulax = 0;
+	for (let g = 0; g < vwce3 * vwce4; g++) {
 		acumula += vwce2;
 		acumulax += vwce2 * (1 - vwce1);
-		acumula = acumula * (1 + renda);
-		acumulax = acumulax * (1 + renda);
+		acumula *= (1 + renda);
+		acumulax *= (1 + renda);
 	}
 	esc('vwce6', acumula, 2);
 	esc('vwce7', acumulax, 2);
@@ -296,9 +303,9 @@ document.getElementById('vwce').addEventListener('change', vwcex);
 <p>Sugiro uma de duas opções:
 
 <ol>
-<li><p><strong>Registe-se gratuitamente na Börse Frankfurt.</strong> Tem acesso ao <a href="https://www.boerse-frankfurt.de/en/xetra-realtime">Xetra Real-Time</a>, que dá cotações e melhores preços em tempo real. Graças ao paralelismo das bolsas, em parte pela atividade dos criadores de mercado, mesmo que não negoceie os seus fundos na Xetra, os preços são frequentemente muito próximos. Em alguns fundos, é possível ver as dez primeiras linhas do livro de ordens em tempo real.
+<li><p><strong>Registe-se gratuitamente na Börse Frankfurt.</strong> Ganha acesso ao <a href="https://www.boerse-frankfurt.de/en/xetra-realtime">Xetra Real-Time</a>, que dá cotações e melhores preços em tempo real. Graças ao paralelismo das bolsas, em parte pela atividade dos criadores de mercado, mesmo que não negoceie os seus fundos na Xetra, os preços são frequentemente muito próximos. Em alguns fundos, é possível ver as dez primeiras linhas do livro de ordens em tempo real.
 
-<p>Tem, todavia, um problema: em alguns casos, não publica os preços com três casas decimais; arredonda-os, o que tem um impacto significativo no cálculo do diferencial.
+<p>Tem, todavia, um problema: em alguns casos, os preços são apresentados com duas casas decimais, quando as cotações oficiais incorporam três, o que tem um impacto significativo no cálculo do diferencial.
 
 <li><p><strong>Visite a <a href="https://www.tradegate.de/">Tradegate Exchange</a>.</strong> Se não quer registar-se na Börse Frankfurt, sugiro que recorra a outras praças mais pequenas, como bolsas secundárias e sistemas de negociação multilateral para obter preços em tempo real. Recomendo a Tradegate Exchange como fonte de informação para calcular o diferencial dos melhores preços em tempo real.
 </ol>
@@ -322,11 +329,11 @@ Plataforma: Tradegate Exchange
 <div id="msg"></div>
 
 <script>
-var msg01 = document.createElement('p')
+var msg01 = document.createElement('p');
 msg01.innerText = 'Os preços anteriores são atualizados automaticamente a cada dez segundos, mesmo quando o mercado está encerrado. Repare que a Tradegate Exchange opera entre as 7h e as 21h. Fora do horário normal das bolsas europeias principais, das 8h05 às 16h30, o diferencial é mais elevado.';
 document.getElementById('msg').appendChild(msg01);
 
-var msg02 = document.createElement('p')
+var msg02 = document.createElement('p');
 msg02.innerHTML = 'Pode consultar os preços do <button onclick="isin(\'IE00B4L5Y983\');">iShares Core MSCI World</button>, <button onclick="isin(\'IE00BMVB5K07\');">Vanguard LifeStrategy 20% Equity</button>, <button onclick="isin(\'IE00BMVB5M21\');">Vanguard LifeStrategy 40% Equity</button>, <button onclick="isin(\'IE00BMVB5P51\');">Vanguard LifeStrategy 60% Equity</button>, <button onclick="isin(\'IE00BMVB5R75\');">Vanguard LifeStrategy 80% Equity</button>, <button onclick="isin(\'IE0008UEVOE0\');">iShares iBonds Dec 2028 Term € Corp</button> ou de qualquer outro título cotado na Tradegate, substituindo o ISIN no <a href="#isin">campo anterior</a>.';
 document.getElementById('msg').appendChild(msg02);
 
@@ -350,14 +357,14 @@ function erro() {
 }
 
 async function recolhe() {
-	let url = "https://www.tradegate.de/refresh.php?isin=" + document.getElementById('isin').value;
-	let resposta = await fetch(url).catch(error => {
+	const url = "https://www.tradegate.de/refresh.php?isin=" + document.getElementById('isin').value;
+	const resposta = await fetch(url).catch(error => {
 		erro(); return;
-            });
-	let json = await resposta.json();
+	});
+	const json = await resposta.json();
 
-	let compra = +String(json.bid).replace(',', '.');
-	let venda = +String(json.ask).replace(',', '.');
+	const compra = +String(json.bid).replace(',', '.');
+	const venda = +String(json.ask).replace(',', '.');
 	let qcompra = +json.bidsize;
 	let qvenda = +json.asksize;
 	let dif = (venda / compra - 1) * 100;
@@ -374,12 +381,11 @@ async function recolhe() {
 	esc('qcompra', qcompra, 0);
 	numero('dif', dif, '%', 2);
 
-	let prs = document.querySelectorAll('.pr');
+	const prs = document.querySelectorAll('.pr');
 	prs.forEach(function(element) {
 		element.style.backgroundColor = 'Mark';
 	});
 	setTimeout(function() { prs.forEach(function(element) { element.style.backgroundColor = '';});}, 500);
-
 }
 
 window.addEventListener('load', function(){
@@ -485,7 +491,6 @@ document.getElementById('isin').addEventListener('keyup', recolhe);
 <p>Embora não faça sentido para o meu caso pessoal, não descarte imediatamente essa opção sem fazer algumas contas. Duvido que valha a pena, mas depende sempre da sua situação, especialmente do seu apetite pelo risco. ★
 </article>
 
-
 <article>
 <h2 id="r">Respondido</h2>
 
@@ -542,7 +547,6 @@ document.getElementById('isin').addEventListener('keyup', recolhe);
 
 <p>A verdade inconveniente mantém-se: os aforradores buscam a cenoura dos benefícios fiscais. Enquanto os retornos dos PPR não se aproximarem dos desempenhos das melhores alternativas, dificilmente valerão a pena. Duvido que algum dia consigam lá chegar, porque normalmente são caros ou são mal geridos ou, mais frequentemente, ambas as coisas.
 
-
 <p style="text-align:center; margin:3em 0">⋆★⋆
 
 <blockquote><p>“Não considera que o PPR Golden SGF ETF e o PPR SGF Doutor Finanças pela gestão passiva, pelas carteiras baseadas em ETF e pela percentagem nos mercados acionistas poderão superar esta lista de PPR [mais rentáveis] e igualar o Vanguard LifeStrategy 80% Equity?”</blockquote>
@@ -571,7 +575,6 @@ document.getElementById('isin').addEventListener('keyup', recolhe);
 <p>Envie-me as suas dúvidas, sugestões e opiniões para <a href="mailto:davidalmas@gmail.com">davidalmas@gmail.com</a>. Todo o correio é bem-vindo.
 </aside>
 </article>
-
 
 <article>
 <h2 id="v">Visto</h2>
@@ -611,10 +614,6 @@ document.getElementById('isin').addEventListener('keyup', recolhe);
 
 <p>Os restantes colaboradores não merecem também que lhes paguem as viagens diárias?
 
-
-
-
-
 <li>
 <p><a href="https://techcrunch.com/2024/07/14/synapses-collapse-has-frozen-nearly-160m-from-fintech-users-heres-how-it-happened/">“Synapse’s collapse has frozen nearly $160M from fintech users — here’s how it happened”</a>, TechCrunch
 <p>Quando desaconselho um novo serviço ou um novo intermediário financeiro, talvez não consiga verbalizar o que penso. O colapso da Synapse pode ser ilustrativo.
@@ -631,11 +630,11 @@ document.getElementById('isin').addEventListener('keyup', recolhe);
 
 <li>
 <p><a href="https://www.jornaldenegocios.pt/mercados/obrigacoes/detalhe/ctt-lancam-subscricao-online-de-certificados-de-aforro">“CTT lançam subscrição online de certificados de aforro”</a>, <cite>Jornal de Negócios</cite>
-<p>Para quem não desejava deslocar-se, a subscrição de Certificados de Aforro e do Tesouro era possível via <a href="https://aforronet.igcp.pt/">AforroNet</a> e <a href="https://big.pt/TaxasDepositos/CertificadosDeAforroETesouro">plataforma</a> do Banco de Investimento Global. Agora, os CTT, cujos resultados <a href="https://eco.sapo.pt/2024/07/29/lucro-semestral-dos-ctt-cai-24-com-fim-da-febre-dos-certificados/">dependem</a> muito da distribuição dos títulos de dívida pública, adicionou essa possibilidade às suas <a href="https://www.ctt.pt/particulares/app-ctt">aplicações eletrónicas</a>. Quem será o próximo?
+<p>Para quem não desejava deslocar-se, a subscrição de Certificados de Aforro e do Tesouro era possível via <a href="https://aforronet.igcp.pt/">AforroNet</a> (que tem registado problemas) e <a href="https://big.pt/TaxasDepositos/CertificadosDeAforroETesouro">plataforma</a> do Banco de Investimento Global. Agora, os CTT, cujos resultados <a href="https://eco.sapo.pt/2024/07/29/lucro-semestral-dos-ctt-cai-24-com-fim-da-febre-dos-certificados/">dependem</a> muito da distribuição dos títulos de dívida pública, adicionou essa possibilidade às suas <a href="https://www.ctt.pt/particulares/app-ctt">aplicações eletrónicas</a>. Quem será o próximo?
 
 <li>
 <p><a href="https://www.bankinter.pt/abrir-conta-bankinter-online">Conta Bankinter Online</a>
-<p>Confesso que não onde se encaixa esta nova conta na oferta do Bankinter. Os trabalhadores que nunca foram clientes do Bankinter deveriam optar pela <a href="https://www.bankinter.pt/conta-mais-ordenado">Conta Mais Ordenado</a>, que continua a pagar até 5% por ano.
+<p>Confesso que não sei onde se encaixa esta nova conta na oferta do Bankinter. Os trabalhadores que nunca foram clientes do Bankinter deveriam optar pela <a href="https://www.bankinter.pt/conta-mais-ordenado">Conta Mais Ordenado</a>, que continua a pagar até 5% por ano.
 
 <p>A Conta Bankinter Online é exclusiva para trabalhadores e estudantes maiores de idade. Remunera o saldo à ordem à taxa anual de 2%. Inclui a isenção na comissão de disponibilização de um cartão de débito.
 
@@ -671,11 +670,8 @@ document.getElementById('isin').addEventListener('keyup', recolhe);
 
 <li>
 <p><a href="https://www.jn.pt/6011014759/bastam-duas-fatias-de-fiambre-por-dia-para-aumentar-o-risco-de-diabetes-tipo-2/">“Bastam duas fatias de fiambre por dia para aumentar o risco de diabetes tipo 2”</a>, <cite>Jornal de Notícias</cite>
-<p>Duas fatias diárias de fiambre aumenta o risco de diabetes do tipo 2 em 15%, segundo um estudo que envolveu 2 milhões de pessoas. A Organização Mundial de Saúde <a href="https://www.who.int/news-room/questions-and-answers/item/cancer-carcinogenicity-of-the-consumption-of-red-meat-and-processed-meat">classifica</a> a carne vermelha como “provavelmente carcinogéneo” e a carne processada como “carcinogéneo” desde 2015. Precisa de mais razões para cortar?
-
- ★ </ul>
+<p>Duas fatias diárias de fiambre aumenta o risco de diabetes do tipo 2 em 15%, segundo um estudo que envolveu 2 milhões de pessoas. A Organização Mundial de Saúde <a href="https://www.who.int/news-room/questions-and-answers/item/cancer-carcinogenicity-of-the-consumption-of-red-meat-and-processed-meat">classifica</a> a carne vermelha como “provavelmente carcinogéneo” e a carne processada como “carcinogéneo” desde 2015. Precisa de mais razões para cortar? ★ </ul>
 </article>
-
 
 <article>
 <h2 id="d">Dito</h2>
@@ -696,7 +692,6 @@ document.getElementById('isin').addEventListener('keyup', recolhe);
 <p>Quando os fundos de índice nasceram para as massas nos Estados Unidos da América, um mês antes de Benjamin Graham morrer, havia muita polémica nos mercados. A citação anterior é a resposta de Graham às objeções que os fundos de índice recebiam dos gestores de ativos. ★
 </article>
 
-
 <article>
 <h2 id="donativo">Suporte este boletim</h2>
 
@@ -715,6 +710,5 @@ document.getElementById('isin').addEventListener('keyup', recolhe);
 
 <p><em>— David Almas</em>
 </article>
-
 </body>
 </html>
