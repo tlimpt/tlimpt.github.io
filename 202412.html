@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Boletim tlim n.º 63 ★ Dezembro de 2024</title>
+<style>
+body { max-width:60ch; padding:.5em; margin:0 auto; font:1.25em/1.75 sans-serif; opacity:.9 }
+header p { border-bottom:.2em solid; margin:0 0 2em; padding:.5em 0 }
+h1, h2, h3 { line-height:1 }
+h1 { font-size:2em }
+h2 { text-decoration:underline }
+h2, h3 { margin-top:3em }
+aside { border-left:.3em solid; padding:0 0 0 2em; margin:2em 0 }
+blockquote { font-style:italic }
+table { border-collapse:collapse; margin:2em auto; font-size:.8em }
+table caption strong:first-child, figcaption strong:first-child { display:block }
+figure { text-align:center; margin:2em 0; font-size:.8em }
+thead { border-bottom:.3em solid }
+td { border-bottom:.1em solid; padding:1em .5em 1em 0; text-align:center; line-height:1.25em; vertical-align:top }
+td:first-child { text-align:left }
+td:last-child { padding:1em 0 }
+input { font-family:inherit; font-size:1em; width:2em; text-align:right; border-width:0 0 .25em; outline:none }
+button, select { font-family:inherit; font-size:1em }
+.nw { white-space:nowrap }
+
+text { fill:CanvasText; opacity:.9 }
+line { stroke:CanvasText; opacity:.9 }
+rect { fill: LinkText }
+</style>
+<script>
+function num(el, dig) { var e = document.getElementById(el), z = e.value.replace(/[^\d]/g, '')/Math.pow(10, dig); e.value = z.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig}); return z; }
+function e(el, n, dig) { document.getElementById(el).innerText = n.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig}); }
+function i(el, n, dig) { document.getElementById(el).value = n.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig}); }
+</script>
+<script src="shiller.js"></script>
+</head>
+<body>
+<header>
+<p>Boletim <strong>tlim</strong> n.º 62 ★ Novembro de 2024
+</header>
+
+<p>Olá!
+
+<p>x.
+
+<p>x
+
+<p><em>— David Almas</em>
+
+<article>
+<h2 id="1">1</h2>
+<h1>x</h1>
+
+<p>Por <strong>David Almas</strong> a 1 de dezembro de 2024
+
+<p>x
+
+
+https://bpstat.bportugal.pt/serie/12710766
+https://bpstat.bportugal.pt/dados/series?mode=graphic&svid=7075&series=12710772,12710773,12710774
+
+★
+</article>
+
+
+<article>
+<h2 id="2">2</h2>
+<h1>O maior medo do investidor: viver falido</h1>
+
+<p>Por <strong>David Almas</strong> a 1 de dezembro de 2024
+
+<p>Este artigo é um pouco mórbido.
+
+" Calculo que a probabilidade de sucesso da minha estratégia — leia-se: a probabilidade de o dinheiro não se esgotar antes da minha morte — seria equivalente se a minha divisão patrimonial fosse de 80% em ações e 20% em obrigações."
+
+<p>Esperança de vida limite: https://www.nature.com/articles/d41586-024-03244-1
+
+<p>E se for um casal.
+
+<div id="vf">
+<p><span class="nw"><input type="text" value="47" id="vfidade" maxlength="2"> anos</span>.
+<p><span class="nw"><input type="text" value="180 000" id="vfcap" style="width:5em"> euros</span>.
+<p><span class="nw"><input type="text" value="1000" id="vfrsg" style="width:3em"> euros</span>.
+<p>sexo: <select id="vfsexo"><option value="H">homem<option value="M">mulher</select>.
+
+</div>
+
+<figure>
+<figcaption><strong>Vive</strong> Gráfico de Barras Simples</figcaption>
+<svg id="vive">
+</svg>
+</figure>
+
+<figure>
+<figcaption><strong>Falido</strong> Gráfico de Barras Simples</figcaption>
+<svg id="falido">
+</svg>
+</figure>
+
+<figure>
+<figcaption><strong>Vive falido</strong> Gráfico de Barras Simples</figcaption>
+<svg id="vivefalido">
+</svg>
+</figure>
+
+
+
+
+
+<script>
+// Tábuas de mortalidade: https://smi.ine.pt/Indicador/Detalhes/18097
+const lxH = [ 100000, 99728, 99704, 99678, 99661, 99644, 99636, 99622, 99616, 99607, 99598, 99589, 99580, 99573, 99555, 99544, 99513, 99492, 99461, 99416, 99370, 99317, 99265, 99221, 99167, 99107, 99060, 98998, 98939, 98880, 98827, 98768, 98703, 98629, 98546, 98464, 98384, 98301, 98187, 98071, 97964, 97840, 97713, 97556, 97397, 97199, 96982, 96759, 96498, 96202, 95868, 95488, 95078, 94625, 94089, 93522, 92863, 92217, 91485, 90726, 89889, 89007, 88099, 87103, 86011, 84915, 83708, 82454, 81134, 79711, 78240, 76690, 75150, 73473, 71678, 69762, 67672, 65540, 63163, 60491, 57702, 54765, 51616, 48264, 44437, 40071, 35084, 29932, 24808, 19954, 15531, 11613, 8349, 5747, 3769, 2342, 1372, 753, 384, 181, 78 ];
+
+const lxM = [ 100000, 99755, 99738, 99722, 99702, 99693, 99683, 99673, 99658, 99649, 99643, 99638, 99631, 99625, 99613, 99599, 99591, 99579, 99563, 99537, 99517, 99494, 99479, 99451, 99432, 99411, 99392, 99368, 99340, 99325, 99299, 99264, 99227, 99188, 99142, 99104, 99066, 99010, 98955, 98899, 98835, 98762, 98679, 98598, 98510, 98400, 98289, 98186, 98056, 97914, 97763, 97599, 97409, 97214, 97010, 96788, 96554, 96290, 96014, 95699, 95358, 94973, 94567, 94146, 93680, 93176, 92651, 92057, 91424, 90735, 89967, 89118, 88272, 87315, 86257, 85039, 83639, 82132, 80384, 78375, 76076, 73554, 70728, 67597, 63867, 59429, 54109, 48282, 42103, 35821, 29649, 23721, 18340, 13644, 9721, 6599, 4244, 2569, 1454, 763, 368 ];
+
+// Probabilidade de viver entre a idade x e a idade y
+function pvive(idadea, idadeb, sexo) {
+	if (idadeb < idadea) throw new Error('idade b < idadea');
+	const lx = (sexo === 'M') ? lxM : lxH;
+	return lx[idadeb]/lx[idadea];
+}
+
+// Desenha gráfico de barras
+function barras(el, serie, idade) {
+	const dados = serie.map(x => Math.round(x*10000)/100);
+	const svg = document.getElementById(el);
+	svg.innerHTML = '';
+
+	const largura = document.body.clientWidth * .9;
+	const altura = window.innerHeight / 2.5;
+	svg.setAttribute('width', largura);
+	svg.setAttribute('height', altura);
+	const margem = (largura -60) > dados.length ? 1 : 0; 
+	const larguraBarra = (largura -60) / dados.length - margem;
+
+	dados.forEach((valor, i) => {
+		const alturaBarra = (valor / 100) * (altura - 30);
+		const x = i * (larguraBarra + margem) + margem + 60;
+		const y = altura - alturaBarra - 30;
+		const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+		rect.setAttribute("x", x);
+		rect.setAttribute("y", y);
+		rect.setAttribute("width", larguraBarra);
+		rect.setAttribute("height", alturaBarra);
+		svg.appendChild(rect);
+	});
+
+	const eixoY = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+	eixoY.setAttribute('x1', 60);
+	eixoY.setAttribute('y1', 0);
+	eixoY.setAttribute('x2', 60);
+	eixoY.setAttribute('y2', altura -25);
+	svg.appendChild(eixoY);
+
+	const maxY = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+	maxY.setAttribute('x', 55);
+	maxY.setAttribute('y', 0);
+	maxY.setAttribute('dominant-baseline', 'hanging');
+	maxY.setAttribute('text-anchor', 'end');
+	maxY.textContent = '100%';
+	svg.appendChild(maxY);
+
+	const minY = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+	minY.setAttribute('x', 55);
+	minY.setAttribute('y', altura -30);
+	minY.setAttribute('dominant-baseline', 'middle');
+	minY.setAttribute('text-anchor', 'end');
+	minY.textContent = '0%';
+	svg.appendChild(minY);
+
+	const plicaY = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+	plicaY.setAttribute('x1', largura -1);
+	plicaY.setAttribute('y1', altura -30);
+	plicaY.setAttribute('x2', largura -1);
+	plicaY.setAttribute('y2', altura -25);
+	svg.appendChild(plicaY);
+
+	const eixoX = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+	eixoX.setAttribute('x1', 55);
+	eixoX.setAttribute('y1', altura -30);
+	eixoX.setAttribute('x2', largura);
+	eixoX.setAttribute('y2', altura -30);
+	svg.appendChild(eixoX);
+
+	const maxX = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+	maxX.setAttribute('x', largura);
+	maxX.setAttribute('y', altura -22);
+	maxX.setAttribute('dominant-baseline', 'hanging');
+	maxX.setAttribute('text-anchor', 'end');
+	maxX.textContent = '100 anos';
+	svg.appendChild(maxX);
+
+	const minX = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+	minX.setAttribute('x', 60);
+	minX.setAttribute('y', altura -22);
+	minX.setAttribute('dominant-baseline', 'hanging');
+	minX.setAttribute('text-anchor', 'start');
+	minX.textContent = idade + ' anos';
+	svg.appendChild(minX);
+
+	const plicaX = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+	plicaX.setAttribute('x1', 55);
+	plicaX.setAttribute('y1', 1);
+	plicaX.setAttribute('x2', 60);
+	plicaX.setAttribute('y2', 1);
+	svg.appendChild(plicaX);
+}
+
+function vf() {
+	var cap = num('vfcap', 0);
+	var rsg = num('vfrsg', 0);
+	var idade = num('vfidade', 0);
+	var limite = 100;
+	var dura = limite - idade;
+	var sexo = document.getElementById('vfsexo').value;
+
+	// Matriz da probabilidade de viver até mais index anos
+	var vive = [];
+	for (var m = idade; m <= limite; m++) {
+		vive.push(pvive(idade, m, sexo));
+	}
+
+	// Simulações de evolução do património
+	var patrimonios = [];
+	for (var g = 0; g <= shillera.length - dura * 12; g++) {
+		var a = shillera.slice(0 + g, dura * 12 + g);
+		var patrimonio = [];
+		patrimonio.push(cap);
+		for (var h = 0; h < dura * 12; h++) {
+			if (patrimonio[h] <= 0) { patrimonio.push(0); }
+			else patrimonio.push(patrimonio[h] * (1 + a[h]/100) - rsg);
+		}
+		patrimonio = patrimonio.filter((_, index) => index === 0 || index % 12 === 0);
+		patrimonios.push(patrimonio);
+	}
+
+	// Matriz da probabilidade de falência com a estratégia
+	var falido = [0];
+	for (var q = 1; q <= dura; q++) {
+		var falencia = 0;
+		for (var n = 0; n < patrimonios.length - 1; n++) {
+			if (patrimonios[n][q] <= 0) falencia++;
+		}
+		falencia = falencia / patrimonios.length;
+		falido.push(falencia);
+	}
+
+	var vivefalido = [];
+	for (var r = 0; r < vive.length; r++) {
+		vivefalido.push(vive[r] * falido[r]);
+	}
+
+	var maximo = Math.max(...vivefalido);
+	var indicemaximo = vivefalido.reduce((indice, valorcorrente, indicecorrente) => { return valorcorrente > vivefalido[indice] ? indicecorrente : indice; }, 0);
+
+console.log(indicemaximo + idade, Math.round(maximo*100));
+
+
+	barras('vive', vive, idade);
+	barras('falido', falido, idade);
+	barras('vivefalido', vivefalido, idade);
+}
+
+document.getElementById('vf').addEventListener('change', vf);
+document.getElementById('vf').addEventListener('keyup', vf);
+window.addEventListener('resize', vf);
+window.addEventListener('load', vf);
+</script>
+
+
+<p>klsdhflksdh. ★
+</article>
+
+
+<article>
+<h2 id="r">Respondido</h2>
+
+<blockquote><p>“xx”</blockquote>
+
+<p>x
+
+<p style="text-align:center; margin:3em 0">⋆★⋆
+
+<blockquote><p>“x”</blockquote>
+
+<p>x. ★
+
+<aside>
+<p>Envie-me as suas dúvidas, sugestões e opiniões para <a href="mailto:davidalmas@gmail.com">davidalmas@gmail.com</a>. Todo o correio é bem-vindo.
+</aside>
+</article>
+
+<article>
+<h2 id="v">Visto</h2>
+<h1>x</h1>
+<p>x.
+
+<ul>
+<li>
+<p><a href="">“x”</a>, x
+<p>x.
+
+
+★ </ul>
+</article>
+
+<article>
+<h2 id="d">Dito</h2>
+<h3 style="margin-top:1em">x:</h3>
+
+<h1>“x”</h1>
+
+<p>x. ★
+</article>
+
+<article>
+<h2 id="donativo">Promova a literacia financeira</h2>
+
+<p>Contribua para a continuidade do nosso boletim <strong>tlim</strong>. Embora esta publicação seja gratuita, solicito um donativo a quem tiver margem financeira para ajudar esta causa.
+
+<p>O donativo sugerido é de 6 euros por edição.
+
+<p>Recebo os donativos preferencialmente por transferência bancária na seguinte conta:
+
+<ul>
+<li>IBAN: PT50002300004565454612994
+<li>Código BIC/Swift: ACTVPTPL
+</ul>
+
+<p>Aceito, em alternativa, pagamento com cartão bancário, em <a href="https://tlim.pt/donativo/">tlim.pt/donativo</a>.
+
+<p>Agradeço o seu apoio.
+
+<p><em>— David Almas</em>
+</article>
+</body>
+</html>
