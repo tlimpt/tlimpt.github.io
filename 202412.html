@@ -128,8 +128,8 @@ function barras(el, serie, idade) {
 	const svg = document.getElementById(el);
 	svg.innerHTML = '';
 
-	const largura = 300;
-	const altura = 300;
+	const largura = document.body.clientWidth * .9;
+	const altura = window.innerHeight / 2.5;
 	svg.setAttribute('width', largura);
 	svg.setAttribute('height', altura);
 	const margem = (largura -60) > dados.length ? 1 : 0; 
