@@ -641,7 +641,7 @@ window.addEventListener('load', function() {
 
 <p>Como pode confirmar no mapa em baixo, eis o candidato mais económico para as suas próximas férias estivais: <strong id="fcandidato">Egito</strong>. Os encargos básicos — bilhetes de avião, alojamento, aluguer automóvel, combustível, alimentação — deverão somar perto de <strong><span id="fcdespesa">1801</span> euros</strong>.
 
-<p><span id="fcandidato2">Roménia</span> e <span id="fcandidato3">Letónia</span> são as melhores alternativas ao <span id="fcandidato1">Egito</span>.
+<p><span id="fcandidato2">Roménia</span> e <span id="fcandidato3">Letónia</span> são as melhores alternativas.
 
 <figure>
 <figcaption><strong>Marque o seu destino</strong> As geografias com os tons mais escuros&nbsp;<span style="color:LinkText; opacity:1">●</span> reúnem os destinos mais económicos para as suas férias. Os países pintados a claro&nbsp;<span style="color:LinkText; opacity:.2">●</span> são os mais caros. As regiões a cinzento&nbsp;<span style="color:GrayText; opacity:.2">●</span> não foram avaliadas neste artigo.</figcaption>
@@ -951,7 +951,6 @@ function fcalc() {
 	esc('macpt', 4.95 * fmul, 2);
 	document.getElementById('fcandidato').innerText = destinos[0].nom;
 	esc('fcdespesa', destinos[0].som, 0);
-	document.getElementById('fcandidato1').innerText = destinos[0].nom;
 	document.getElementById('fcandidato2').innerText = destinos[1].nom;
 	document.getElementById('fcandidato3').innerText = destinos[2].nom;
 
