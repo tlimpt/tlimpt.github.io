@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Boletim tlim n.º 64 ★ Janeiro de 2025</title>
+<style>
+body { max-width:60ch; padding:.5em; margin:0 auto; font:1.25em/1.75 sans-serif; opacity:.9 }
+header p { border-bottom:.2em solid; margin:0 0 2em; padding:.5em 0 }
+h1, h2, h3 { line-height:1 }
+h1 { font-size:2em }
+h2 { text-decoration:underline }
+h2, h3 { margin-top:3em }
+aside { border-left:.3em solid; padding:0 0 0 2em; margin:2em 0 }
+blockquote { font-style:italic }
+table { border-collapse:collapse; margin:2em auto; font-size:.8em }
+table caption strong:first-child, figcaption strong:first-child { display:block }
+figure { text-align:center; margin:2em 0; font-size:.8em }
+thead { border-bottom:.3em solid }
+td { border-bottom:.1em solid; padding:1em .5em 1em 0; text-align:center; line-height:1.25em; vertical-align:top }
+td:first-child { text-align:left }
+td:last-child { padding:1em 0 }
+input { font-family:inherit; font-size:1em; width:3em; text-align:right; border-width:0 0 .25em; outline:none }
+button, select { font-family:inherit; font-size:1em }
+img { max-width:100% }
+</style>
+<script>
+function num(el, dig) {
+	const e = document.getElementById(el),
+	z = e.value.replace(/[^\d]/g,'')/Math.pow(10,dig);
+	e.value = z.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig});
+	return z; }
+
+function esc(el, n, dig) {
+	const e = document.getElementById(el);
+	const x = n.toLocaleString('pt-PT',{minimumFractionDigits:dig,maximumFractionDigits:dig});
+	const t = e.tagName.toLowerCase();
+	t === 'input' ? e.value = x : e.innerText = x; }
+</script>
+</head>
+<body>
+<header>
+<p>Boletim <strong>tlim</strong> n.º 64 ★ Janeiro de 2025
+</header>
+
+<p>Olá!
+
+<p>Sem delongas, eis o esperado “Onde investir em 2025”.
+
+<p><em>— David Almas</em>
+
+<article>
+<h2 id="1">1</h2>
+<h1>Onde investir em 2025</h1>
+
+<p>Por <strong>David Almas</strong> a 1 de janeiro de 2025
+
+<p>Este “Onde investir em&hellip;” — o sétimo que publico no boletim <strong>tlim</strong> — é diferente: não listo exaustivamente as várias categorias de investimento; respondo, ao invés, a dúvidas que os subscritores desta publicação podem ter neste momento.
+
+<p>Tentei que o diálogo fosse fluído, próximo, claro e direto. As hipotéticas perguntas estão a negrito.
+
+<p id="interativo"></p>
+
+<p>Para elaborar as análises e responder às perguntas, as principais fontes de informação usadas foram a <a href="https://www.apfipp.pt/">Associação Portuguesa de Fundos de Investimento, Pensões e Patrimónios</a>, a <a href="https://www.cmvm.pt/">Comissão do Mercado de Valores Mobiliários</a>, as bolsas de valores, a <a href="https://curvo.eu/backtest/en">Curvo</a>, a <a href="https://www.justetf.com/en/search.html">JustETF</a>, a <a href="https://www.morningstar.pt/pt/">Morningstar</a>, <a href="https://shillerdata.com/">Robert Shiller</a>, a <a href="https://www.spglobal.com/spdji/">S&P Dow Jones Indices</a>, a <a href="https://www.trackingdifferences.com/">TrackingDifferences</a>, as entidades comercializadoras e as sociedades gestoras, bem como as investigações académicas citadas ao longo do texto.
+
+<p>Os cálculos foram realizados com a informação disponível no dia 31 de dezembro de 2024. Para os fundos cotados em várias bolsas, contabilizei os preços no segmento Xetra da Börse Frankfurt.
+
+<script>
+window.addEventListener('load', function(){
+document.getElementById('interativo').innerText = 'Algumas respostas são interativas: mude os seletores e os números sublinhados para personalizar o texto.'; 
+const inpsel = document.querySelectorAll('input, select'); inpsel.forEach(y => { y.disabled = false; });	
+});
+</script>
+
+<p><strong>Por que devo investir?</strong>
+<br>Poupar é transportar dinheiro no tempo. O que não se consume agora será consumido no futuro. Investir é potencialmente o melhor modo de transporte da poupança: dota o dinheiro de crescimento.
+
+<p><strong>Não chega poupar?</strong>
+<br>Não. Se tivesses poupado 93 cêntimos há 5 anos para comprar um quilograma de arroz, que era o <a href="https://observatorioagroalimentar.gov.pt/setor/arroz/">preço médio na altura</a>, hoje não terias dinheiro suficiente para a compra, porque custaria 1,47 euros. A inflação do arroz, de 58% nos últimos 5 anos, teria corroído o valor da poupança: os 93 cêntimos não teriam o mesmo poder de compra.
+
+<p>É preciso investir para o dinheiro crescer e compensar, pelo menos, o aumento dos preços.
+
+<p>Felizmente, a inflação agregada dos bens e serviços em Portugal foi muito inferior à do arroz. Os preços subiram, em média, 17% nos últimos 5 anos. A maioria dos bons produtos de investimento rendeu mais.
+
+<p><strong>Qual é a tua principal recomendação?</strong>
+<br>Recomendo aos leitores do boletim <strong>tlim</strong> que, primeiro, pensem bem para que querem o dinheiro: se o estão a guardar é para algum objetivo. Posteriormente, sugiro que descubram a volatilidade que suportam, procurem investir sem emoções em um ou dois fundos de investimento baratos e que mantenham a carteira durante o máximo de tempo.
+
+<p><strong>Por que é preciso pensar para que se quer o dinheiro?</strong>
+<br>Esse raciocínio ajuda a definir a volatilidade a que se pode sujeitar a carteira de investimentos. Em teoria, quanto mais volatilidade, maior o retorno potencial da estratégia. Nem todos os investidores têm, contudo, estômago para mais volatilidade e nem todos os prazos de aforro recomendam carteiras mais agressivas.
+
+<p><strong>Podes exemplificar?</strong>
+<br>Claro. Desde 1900, as ações mundiais renderam, em média, 5,1% por ano acima da inflação. As obrigações dos tesouros mundiais avançaram 1,8% por ano acima da inflação. Os mercados acionistas foram provavelmente o maior gerador de riqueza das últimas décadas.
+
+<p>É, todavia, mais arriscado apostar em ações numa perspetiva de curto ou de médio prazo. Um quarto das pessoas que investiu em ações mundiais durante 1 ano perdeu dinheiro, mas apenas um sexto dos aforradores que teve obrigações durante 1 ano registou prejuízos, segundo as estatísticas dos últimos 40 anos.
+
+<table>
+<caption><strong>Mais obrigações ou mais ações?</strong>
+As rentabilidades anuais históricas acima da inflação foram deduzidas do desempenho das ações e das obrigações entre 1900 e 2023, como publicado na última edição do <a href="https://www.ubs.com/global/en/investment-bank/insights-and-data/2024/global-investment-returns-yearbook.html"><cite>UBS Global Investment Returns Yearbook</cite></a>. As proporções de períodos negativos das carteiras foram calculadas a partir dos desempenhos mensais dos fundos iShares Core MSCI World UCITS ETF (ações) e Xtrackers Global Government Bond UCITS ETF 1C EUR Hedged (obrigações) entre janeiro de 1985 e dezembro de 2024, incluindo simulações históricas fornecidas pela Curvo. Quando nunca houve um período negativo, o campo está vazio.
+<thead>
+<tr><td rowspan="2"><td colspan="6">Percentagem da carteira em ações
+<tr><td style="text-align:center">0%<td>20%<td>40%<td>60%<td>80%<td>100%
+</thead>
+<tr><td>Rentabilidade anual histórica acima da inflação<td>1,8%<td>2,5%<td>3,1%<td>3,8%<td>4,4%<td>5,1%
+<tr><td>Duração<td colspan="6">Proporção de períodos negativos
+<tr><td>1 ano<td>18%<td>12%<td>17%<td>21%<td>24%<td>26%
+<tr><td>2 anos<td>11%<td>6%<td>13%<td>16%<td>17%<td>19%
+<tr><td>3 anos<td>9%<td>7%<td>9%<td>14%<td>17%<td>19%
+<tr><td>4 anos<td>8%<td>5%<td>3%<td>12%<td>16%<td>19%
+<tr><td>5 anos<td>8%<td><td><td>5%<td>12%<td>19%
+<tr><td>6 anos<td>8%<td><td><td><td>5%<td>12%
+<tr><td>7 anos<td>8%<td><td><td>2%<td>6%<td>9%
+<tr><td>8 anos<td>8%<td><td><td>4%<td>7%<td>8%
+<tr><td>9 anos<td>7%<td><td><td>3%<td>6%<td>8%
+<tr><td>10 anos<td>6%<td><td><td>1%<td>7%<td>10%
+<tr><td>11 anos<td>2%<td><td><td><td>4%<td>11%
+<tr><td>12 anos<td><td><td><td><td>2%<td>6%
+<tr><td>13 anos<td><td><td><td><td><td>3%
+</table>
+
+<p>Nunca houve um período de 14 anos ou mais em que os investidores em ações e obrigações perderam dinheiro nos últimos 40 anos.
+
+<p>Um investidor deve decidir a divisão da sua carteira entre ações e obrigações consoante o seu prazo de investimento e a sua resistência à volatilidade, que, no quadro anterior, está representada pela proporção de períodos negativos.
+
+<p><strong>Uma análise de 40 anos não é curta?</strong>
+<br>Talvez. Repara que a análise de 40 anos inclui 468 períodos de 1 ano: o primeiro começa em janeiro de 1985, o segundo em fevereiro de 1985 e o último em dezembro de 2023. Inclui 324 períodos de 13 anos.
+
+<p>É o mais longo que consigo com dados realistas.
+
+<p>Se usar a base de dados de Robert Shiller, que recebeu o Prémio Nobel da Economia em 2013 pelo seu contributo no estudo dos preços dos ativos, consigo avaliar 1692 períodos de 13 anos desde 1871. São, todavia, índices de mercado.
+
+<table>
+<caption><strong>Mais obrigações ou mais ações? (versão América)</strong>
+As proporções de períodos negativos das carteiras foram calculadas a partir dos desempenhos mensais dos índices de ações e de obrigações do Tesouro dos Estados Unidos da América entre janeiro de 1871 e dezembro de 2024, segundo a investigação de Robert Shiller. Quando nunca houve um período negativo, o campo está vazio.
+<thead>
+<tr><td rowspan="2"><td colspan="6">Percentagem da carteira em ações
+<tr><td style="text-align:center">0%<td>20%<td>40%<td>60%<td>80%<td>100%
+</thead>
+<tr><td>Duração<td colspan="6">Proporção de períodos negativos
+<tr><td>1 ano<td>12%<td>13%<td>19%<td>22%<td>25%<td>28%
+<tr><td>2 anos<td>7%<td>5%<td>11%<td>16%<td>18%<td>20%
+<tr><td>3 anos<td>4%<td>3%<td>4%<td>9%<td>13%<td>15%
+<tr><td>4 anos<td>2%<td>1%<td>2%<td>5%<td>9%<td>12%
+<tr><td>5 anos<td>2%<td><td>2%<td>3%<td>6%<td>10%
+<tr><td>6 anos<td>1%<td><td>1%<td>2%<td>4%<td>6%
+<tr><td>7 anos<td>1%<td><td><td><td>2%<td>4%
+<tr><td>8 anos<td>1%<td><td><td><td>1%<td>2%
+<tr><td>9 anos<td><td><td><td><td>1%<td>2%
+<tr><td>10 anos<td><td><td><td><td>1%<td>3%
+<tr><td>11 anos<td><td><td><td><td>1%<td>2%
+<tr><td>12 anos<td><td><td><td><td>1%<td>2%
+<tr><td>13 anos<td><td><td><td><td>1%<td>1%
+<tr><td>14 anos<td><td><td><td><td><td>1%
+</table>
+
+<p>Estes resultados são um pouco mais otimistas. Note, todavia, que os índices de Shiller são exclusivamente compostos por ações norte-americanas e obrigações do Tesouro norte-americano.
+
+<p>Nunca houve um período de 15 anos ou mais em que os investidores em ações e obrigações dos Estados Unidos da América perderam dinheiro nos últimos 153 anos. 
+
+<p><strong>Não sei se li bem: a proporção de períodos negativos baixa se adicionar ações a uma carteira de obrigações?</strong>
+<br>Sim. A baixa correlação entre as ações e as obrigações dá essa borla: a rentabilidade potencial sobe e a volatilidade da carteira desce. É por isso que não recomendo carteiras compostas unicamente por exposição aos mercados obrigacionistas: é melhor adicionar uma pitada de ações.
+
+<p><strong>Por que rendem mais as ações?</strong>
+<br>Ser acionista de uma empresa significa ser dono do negócio, independentemente da quantidade de ações detidas. Os acionistas têm o direito de definir o futuro da sociedade. São remunerados via dividendos.
+
+<p>As obrigações representam um empréstimo ao emitente, que pode ser uma empresa, um estado soberano, uma agência pública, entre outros. Não é uma ligação de propriedade como nas ações; é uma relação contratual. A sua remuneração é composta geralmente pelos cupões dos títulos: os obrigacionistas recebem um juro periódico.
+
+<p>As empresas pagam os cupões das suas emissões de dívida antes de calcularem os lucros e, logo, antes de pagarem os dividendos. Assim, os cupões são mais garantidos do que os dividendos. Além disso, caso a sociedade enfrente dificuldades, os obrigacionistas, como credores da firma, estão na linha da frente na reclamação de capitais.
+
+<p>É, assim, natural que as obrigações sejam menos voláteis. É também natural que os acionistas exijam remunerações mais elevadas pelo seu risco.
+
+<p><strong>É sempre assim?</strong>
+<br>Não. O mercado de dívida não é uniforme. O espectro de risco é muito largo: é possível optar por títulos extremamente conservadores até segmentos mais voláteis do que as ações. No agregado global, é, porém, verdade: os mercados acionistas são mais voláteis do que os obrigacionistas; historicamente, renderam mais.
+
+<p><strong>Posso confiar nos números dos quadros anteriores para extrapolar a minha estratégia de investimento?</strong>
+<br>A informação dos quadros é histórica; não é uma garantia de evolução futura. Edward McQuarrie, professor jubilado da Universidade de Santa Clara, na Califórnia estado-unidense, <a href="https://doi.org/10.1080/0015198X.2023.2268556">publicou</a> recentemente o mais longo estudo dos desempenhos bolsistas. A sua base de dados norte-americana, que se estende desde 1792, confirma que as ações tendem a render mais do que as obrigações, embora menos do que se pensava anteriormente. “As ações e as obrigações são ativos de risco capazes de sobre e subdesempenhos em qualquer prazo temporal humano”, escreveu McQuarrie.
+
+<p><strong>Com tanta incerteza, não é mais seguro investir apenas em obrigações de baixo risco?</strong>
+<br>Depende da definição de segurança. Uma coisa é certa: as obrigações de baixo risco são mais fracas a proteger contra a inflação. As séries históricas de Robert Shiller revelam que, desde 1871, as obrigações do Tesouro estado-unidense renderam menos do que a inflação em 28% dos períodos de 10 anos. As ações norte-americanas ficaram aquém da inflação em 11% das décadas.
+
+<p>Nunca houve um par de décadas em que as ações norte-americanas renderam menos do que a inflação. Em quase um quarto dos períodos de 20 anos, as obrigações do Tesouro apresentaram retornos abaixo da inflação.
+
+<p><strong>No que devo investir?</strong>
+<br>Recomendo aos leitores do boletim <strong>tlim</strong> que invistam numa perspetiva de longo prazo numa carteira muito diversificada de ações e de obrigações. Sugiro que a exposição aos mercados acionistas esteja entre 20% e 80%; o remanescente deve estar exposto aos mercados obrigacionistas.
+
+<p><strong>Longo prazo?</strong>
+<br>Recomendo carteiras diversificadas de ações e obrigações unicamente para quem acredita que conseguirá permanecer investido durante 5 anos ou mais. Quanto mais, melhor: a probabilidade potencial de perda dilui-se com o tempo.
+
+<p>Se a estratégia for maioritariamente acionista, o investidor deverá pensar em 10 anos ou mais.
+
+<p><strong>Como decido a percentagem de exposição acionista?</strong>
+<br>Espero que os quadros anteriores ajudem os aforradores iniciados, mas a experiência é a melhor conselheira neste campo.
+
+<p>A minha recomendação não é inovadora: Benjamin Graham, o pai da ciência da avaliação de títulos, defendeu algo semelhante no seu livro <a href="https://www.editoraself.pt/product/o-investidor-inteligente/"><cite>O Investidor Inteligente</cite></a>, de 1949. “A proporção em obrigações não deve ser inferior a 25% nem superior a 75%, com o inverso a ser necessariamente verdadeiro para a componente de ações; a escolha mais simples seria manter uma proporção de 50-50 entre os dois”, escreveu.
+
+<p>Penso que, hoje, “a escolha mais simples” seria ter 60% em ações e 40% em obrigações.
+
+<p><strong>Porquê?</strong>
+<br>Porque a Vanguard não tem nenhum fundo misto que divida a carteira igualmente pelas ações e obrigações mundiais.
+
+<p>Os fundos LifeStrategy da Vanguard são os melhores que podem ser adquiridos para ganhar exposição simultaneamente aos mercados acionistas e obrigacionistas. Recomendo quatro: <a href="https://www.ie.vanguard/products/etf/lifestrategy/9490/lifestrategy-20-equity-ucits-etf-eur-accumulating">Vanguard LifeStrategy 20% Equity UCITS ETF (EUR) Accumulating</a>, <a href="https://www.ie.vanguard/products/etf/lifestrategy/9492/lifestrategy-40-equity-ucits-etf-eur-accumulating">Vanguard LifeStrategy 40% Equity UCITS ETF (EUR) Accumulating</a>, <a href="https://www.ie.vanguard/products/etf/lifestrategy/9494/lifestrategy-60-equity-ucits-etf-eur-accumulating">Vanguard LifeStrategy 60% Equity UCITS ETF (EUR) Accumulating</a> e <a href="https://www.ie.vanguard/products/etf/lifestrategy/9496/lifestrategy-80-equity-ucits-etf-eur-accumulating">Vanguard LifeStrategy 80% Equity UCITS ETF (EUR) Accumulating</a>.
+
+<p>As percentagens nas designações destes fundos representam a proporção da exposição às ações mundiais. Os remanescentes estão expostos às obrigações mundiais.
+
+<p><strong>Não seria melhor ter um fundo de ações e um fundo de obrigações?</strong>
+<br>Não. Além de ser mais simples acompanhar um único fundo em vez de dois, dá muito menos trabalho: ao ter dois fundos, se os seus retornos divergirem, os pesos na carteira podem mudar drasticamente, o que obriga a fazer acertos, alienando um e adquirindo o outro. Por exemplo, um património dividido igualmente entre um fundo de ações e um fundo de obrigações passará a ter dois terços nos mercados acionistas e um terço nos obrigacionistas, se as ações renderem 100% e as obrigações 0%.
+
+<p>Sempre que se mexe na carteira, sujeita-se-a a despesas: além das comissões bancárias, a venda ou o resgate de uma porção da carteira com mais-valia pode gerar imposto a pagar.
+
+<p><strong>Por que são os Vanguard LifeStrategy os melhores fundos mistos?</strong>
+<br>Porque são os mais baratos, os maiores e os mais diversificados.
+
+<p>Para compor as carteiras dos fundos LifeStrategy, os gestores da Vanguard selecionam outros fundos geridos pela companhia, como o <a href="https://www.ie.vanguard/products/etf/equity/9505/ftse-all-world-ucits">Vanguard FTSE All-World UCITS ETF (USD) Accumulating</a>, que investe em ações mundiais, e o <a href="https://www.ie.vanguard/products/etf/bond/9443/global-aggregate-bond-ucits">Vanguard Global Aggregate Bond UCITS ETF EUR Hedged Accumulating</a>, que seleciona obrigações de elevada qualidade em todo o mundo.
+
+<p>Na prática, os fundos Vanguard LifeStrategy estão expostos a milhares de ações e obrigações. O Vanguard LifeStrategy 60% Equity UCITS ETF, por exemplo, tem, indiretamente, mais de 24 mil títulos diferentes, incluindo ações da Apple e da EDP e obrigações emitidas pela República Portuguesa e pela Volkswagen.
+
+<p>Apesar da ultradiversificação, são ultrabaratos: os encargos correntes absorvem anualmente 25 cêntimos por cada 100 euros investidos. Não se encontram fundos multiativos com taxas anuais de encargos correntes de 0,25% na banca; os custos anuais são tendencialmente superiores a 1,5%. 
+
+<p><strong>Isso reflete-se em maiores ganhos?</strong>
+<br>Se cobram menos, mais sobra para os investidores.
+
+<p>Os Vanguard LifeStrategy celebraram recentemente o seu quarto aniversário. Ainda não têm cinco anos, que, como disse há pouco, é o prazo mínimo que recomendo para investir nestes produtos. Todavia, como as suas carteiras são estáveis, é possível extrapolar o seu comportamento.
+
+
+<table>
+<caption><strong>Mais ganhos</strong> Capitalizei os retornos dos Vanguard LifeStrategy com os desempenhos dos principais fundos nas suas carteiras para sintetizar o desempenho de cinco anos.
+<thead>
+<tr><td><td colspan="4">Vanguard LifeStrategy
+<tr><td><td>20% Equity<td>40% Equity<td>60% Equity<td>80% Equity
+</thead>
+<tr><td>ISIN<td>IE00BMVB5K07<td>IE00BMVB5M21<td>IE00BMVB5P51<td>IE00BMVB5R75
+<tr><td>Tipo<td colspan="4">Fundo cotado
+<tr><td>Disponibilidade<td>Bolsas oficiais: Amesterdão (<a href="https://live.euronext.com/pt/product/etfs/ie00bmvb5k07-xams/vanguard-ls20eqacc/v20a">V20A</a>), Milão (<a href="https://www.borsaitaliana.it/borsa/etf/scheda/IE00BMVB5K07.html">VNGA20</a>), Xetra (<a href="https://www.boerse-frankfurt.de/en/etf/vanguard-lifestrategy-20-equity-ucits-etf-eur-acc">V20A</a>)
+<td>Bolsas oficiais: Amesterdão (<a href="https://live.euronext.com/pt/product/etfs/ie00bmvb5m21-xams/vanguard-ls40eqacc/v40a">V40A</a>), Milão (<a href="https://www.borsaitaliana.it/borsa/etf/scheda/IE00BMVB5M21.html">VNGA40</a>), Xetra (<a href="https://www.boerse-frankfurt.de/en/etf/vanguard-lifestrategy-40-equity-ucits-etf-eur-acc">V40A</a>)
+<td>Bolsas oficiais: Amesterdão (<a href="https://live.euronext.com/pt/product/etfs/ie00bmvb5p51-xams/vanguard-ls60eqacc/v60a">V60A</a>), Milão (<a href="https://www.borsaitaliana.it/borsa/etf/scheda/IE00BMVB5P51.html">VNGA60</a>), Xetra (<a href="https://www.boerse-frankfurt.de/en/etf/vanguard-lifestrategy-60-equity-ucits-etf-eur-acc">V60A</a>)
+<td>Bolsas oficiais: Amesterdão (<a href="https://live.euronext.com/pt/product/etfs/ie00bmvb5r75-xams/vanguard-ls80eqacc/v80a">V80A</a>), Milão (<a href="https://www.borsaitaliana.it/borsa/etf/scheda/IE00BMVB5R75.html">VNGA80</a>), Xetra (<a href="https://www.boerse-frankfurt.de/en/etf/vanguard-lifestrategy-80-equity-ucits-etf-eur-acc">V80A</a>)
+<tr><td>Encargo de aquisição e de alienação<td colspan="4" style="vertical-align:middle">Depende do intermediário
+<tr><td>Investimento mínimo e reforço mínimo<td>1 unidade<br><small>24,52€</small><td>1 unidade<br><small>28,065€</small><td>1 unidade<br><small>32,135€</small><td>1 unidade<br><small>36,69€</small>
+<tr><td>Taxa anual de encargos correntes<td colspan="4">0,25%
+<tr><td>Rentabilidade anualizada de 1 ano<td>5,40%<td>10,27%<td>15,27%<td>20,49%
+<tr><td>Rentabilidade anualizada de 3 anos<td>-1,68%<td>0,88%<td>3,54%<td>6,16%
+<tr><td>Rentabilidade anualizada de 5 anos<br>(simulada)<td>0,44%<td>3,09%<td>6,16%<td>8,70%
+<tr><td>Indicador de risco<br><small>1 = baixo; 7 = alto</small><td>3<td>3<td>3<td>4
+</table>
+
+<p>Ao contrário da maioria dos fundos oferecidos pela banca portuguesa, os Vanguard LifeStrategy são fundos passivos: não procuram a liderança dos retornos. Estão desenhados para renderem o que os mercados mundiais tiverem para oferecer.
+
+<p>A maioria dos fundos da banca são ativos: querem bater a concorrência e os índices de mercado que os fundos passivos normalmente refletem. Algumas vezes conseguem; frequentemente, falham. Por exemplo, 92% dos fundos de ações europeias geridos na Europa registaram um desempenho inferior aos índices europeus nos últimos 10 anos, segundo <a href="https://www.spglobal.com/spdji/en/research-insights/spiva/#europe">os estudos mais recentes</a> da S&P Dow Jones Indices. Mais de 95% dos fundos de ações globais geridos na Europa renderam menos do que os índices globais nos últimos 3 anos.
+
+<p>Acredito que os fundos passivos, como os Vanguard LifeStrategy, continuarão a render mais do que a maioria das alternativas.
+
+<p><strong>Se há fundos ativos que rendem mais do que os índices, por que não escolhê-los? Um dos 8% que bateram os índices europeus?</strong>
+<br>Não há persistência nos resultados. <a href="https://www.spglobal.com/spdji/en/spiva/article/europe-persistence-scorecard/">Nenhum</a> dos gestores dos fundos de ações europeias que mais ganharam em 2019 conseguiu permanecer no topo nos quatro anos seguintes.
+
+<p>Há um ano, entre os fundos mistos no mesmo nível de risco, o Carmignac Portfolio Patrimoine Europe era o que mais se aproximava do resultado do Vanguard LifeStrategy 60% Equity UCITS ETF. Hoje, é o nono mais rentável nos últimos 5 anos. O mais rentável foi o Invesco Sustainable Allocation: avançou 5,23% por ano no último quinquénio, menos do que o fundo da Vanguard.
+
+<p>Ninguém pode ter a certeza de qual será o fundo que liderará no próximo ano. Tendo em conta que as carteiras dos Vanguard LifeStrategy refletem indiretamente índices de ações e de obrigações, que os índices representam a média de todos os investidores e que os LifeStrategy são mais baratos do que as alternativas, é muito provável que os seus desempenhos sejam permanentemente superiores à média dos resultados da concorrência.
+
+<p><strong>Como se investe num Vanguard LifeStrategy?</strong>
+<br>São fundos cotados na bolsa, o que frequentemente se chama de ETF, de <i>exchange-traded funds</i>. Compram-se e vendem-se numa bolsa de valores. Junto do intermediário de bolsa, pesquisa-se pelo ISIN — o código de identificação inequívoco dos instrumentos financeiros — ou pelo código de negociação na bolsa. Estão indicados no quadro anterior. 
+
+<p>A bolsa de Amesterdão — a Euronext Amsterdam — e a bolsa de Milão — Borsa Italiana — incorporam o mesmo grupo da bolsa de Lisboa, a Euronext. O Xetra é o segmento eletrónico da bolsa de Francoforte — Börse Frankfurt. 
+
+<p>Há outros Vanguard LifeStrategy que não incluo nas minhas recomendações: os que, em vez de reinvestirem os dividendos e os juros recebidos, distribuem-nos periodicamente aos investidores. Como expliquei há pouco, o melhor é minimizar as entradas e as saídas da carteira para controlar os custos e incrementar a rentabilidade de longo prazo.
+
+<p><strong>Não sei investir na bolsa.</strong>
+<br>Não é preciso complicar. Embora haja muitas opções na transmissão de ordens de bolsa, a mais simples pode ser a melhor.
+
+<p>No verão passado, investiguei se as ordens de mercado não seriam frequentemente boas escolhas. Além de serem as mais rápidas a serem satisfeitas, as ordens de mercado (ou ordens ao melhor) são as mais simples: não é necessário definir um preço de compra ou de venda; aceita-se a melhor proposta que esteja disponível na bolsa.
+
+<p>Concluí que o custo implícito numa ordem de mercado quando se negoceiam os fundos Vanguard LifeStrategy era normalmente inferior a 0,1% do montante negociado. Sugeri procurar reduzir esse custo evitando os momentos mais voláteis nas sessões bolsistas: os primeiros minutos após a abertura das principais bolsas (em Portugal continental: 8h05-8h20 para as bolsas europeias; 14h30-14h45 para as norte-americanas) e as horas e as meias horas certas (que é quando são normalmente divulgados os principais indicadores macroeconómicos).
+
+<p>No passado mês de dezembro, voltei a conduzir a investigação, embora em menor escala, e as conclusões mantiveram-se.
+
+<p>Tecnicamente, assumo que o custo implícito na ordem de mercado é igual a metade da diferença entre o preço mais elevado das ordens de compra e o preço mais baixo das ordens de venda pendentes na bolsa.
+
+<p><strong>Não sei se percebi. Como dou uma ordem de mercado?</strong>
+<br>Na página do intermediário de bolsa, pesquisa-se o fundo e define-se a quantidade de títulos que se deseja comprar ou vender. Para calcular essa quantidade, após subtrair o encargo de bolsa esperado na operação, divide-se o montante da operação pelo preço mais recente.
+
+<p>Por exemplo, se eu tivesse 1650 euros disponíveis na minha conta de negociação no Banco Carregosa e se o preço mais recente do Vanguard LifeStrategy 60% Equity UCITS ETF fosse de 32,64 euros, poderia lançar uma ordem de compra ao melhor para adquirir 50 títulos do Vanguard LifeStrategy 60% Equity UCITS ETF na bolsa de Amesterdão, na qual a comissão de bolsa que pagaria seria de 7,50 euros: (1650€ &minus; 7,50€) &divide; 32,64€ ≈ 50.
+
+<figure>
+<figcaption><strong>Ordem de compra de mercado</strong> Uma hipotética ordem de mercado no serviço GoBulling Pro sobre o Vanguard LifeStrategy 60% Equity UCITS ETF na bolsa de Amesterdão.</figcaption>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXkAAAHdCAYAAAD4jgnFAAAAw3pUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjabVBBDsMgDLvzij0BkgDJc9jopP1gz59pQCrbLGG7SeuGhOP9eobbACUJkqsWKyUCYmLUYDQ62skpysknqk2X9nrofVqCMpS9ocU1rfr8YGlqcPkSpI/ZuO8NE1fSryBy4THR8H0G2Qxi8kaaAc2vFYtpvV7hfsQd6icMEt3H/nmu2F7P+A8THZw4gpnFB+BxJHBDg8CRDS+C4TNqo77CsJB/e1oIH4CZWYI1Z503AAABhWlDQ1BJQ0MgcHJvZmlsZQAAeJx9kTtIw0Acxr+mig8qHewg4pChOtnBB+JYq1CECqFWaNXB5NIXNGlIUlwcBdeCg4/FqoOLs64OroIg+ABxdnBSdJES/5cUWsR4x3E/vvt/H3f/A4RGhWlWVxzQdNtMJxNiNrcq9rwihD6aEwjLzDLmJCkF3/F1jwDf72I8y7/uzzGg5i0GBETiODNMm3iDeGbTNjjvE0dYSVaJz4nHTbog8SPXFY/fOBddFnhmxMyk54kjxGKxg5UOZiVTI54mjqqaTvlC1mOV8xZnrVJjrXvyF4by+soy12mNIIlFLEGCCAU1lFGBjRjtOikW0nSe8PEPu36JXAq5ymDkWEAVGmTXD/4Hv3trFaYmvaRQAuh+cZyPUaBnF2jWHef72HGaJ0DwGbjS2/5qA5j9JL3e1qJHQHgbuLhua8oecLkDDD0Zsim7UpCWUCgA72f0TTlg8BboX/P61jrH6QOQoV6lboCDQ2CsSNnrPu/u7ezbvzWt/v0AiK1yrxGRmvYAAA14aVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/Pgo8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJYTVAgQ29yZSA0LjQuMC1FeGl2MiI+CiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIKICAgIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiCiAgICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iCiAgICB4bWxuczpHSU1QPSJodHRwOi8vd3d3LmdpbXAub3JnL3htcC8iCiAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgeG1wTU06RG9jdW1lbnRJRD0iZ2ltcDpkb2NpZDpnaW1wOjhkZjIzMzc5LWMyMTgtNGUyZi04YWYwLTdlMGVkYzAyNjkyZSIKICAgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4ZjAyMzZlNC1hZTRiLTQ4ZTYtYjFkMS0yNGY0ZGJlOGVmODYiCiAgIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5MGUyODUyNS03YWRkLTQ3NzgtYmY0Yi01NThlYzlhMDc4MzYiCiAgIGRjOkZvcm1hdD0iaW1hZ2UvcG5nIgogICBHSU1QOkFQST0iMi4wIgogICBHSU1QOlBsYXRmb3JtPSJMaW51eCIKICAgR0lNUDpUaW1lU3RhbXA9IjE3MzM3Mzc4NzA1NzY3MzUiCiAgIEdJTVA6VmVyc2lvbj0iMi4xMC4zNCIKICAgdGlmZjpPcmllbnRhdGlvbj0iMSIKICAgeG1wOkNyZWF0b3JUb29sPSJHSU1QIDIuMTAiCiAgIHhtcDpNZXRhZGF0YURhdGU9IjIwMjQ6MTI6MDlUMDk6NTE6MTArMDA6MDAiCiAgIHhtcDpNb2RpZnlEYXRlPSIyMDI0OjEyOjA5VDA5OjUxOjEwKzAwOjAwIj4KICAgPHhtcE1NOkhpc3Rvcnk+CiAgICA8cmRmOlNlcT4KICAgICA8cmRmOmxpCiAgICAgIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiCiAgICAgIHN0RXZ0OmNoYW5nZWQ9Ii8iCiAgICAgIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ODQyMDIwNjEtMzYwZi00MDFhLWE1NDYtN2ZkOTQzYTdiZWI4IgogICAgICBzdEV2dDpzb2Z0d2FyZUFnZW50PSJHaW1wIDIuMTAgKExpbnV4KSIKICAgICAgc3RFdnQ6d2hlbj0iMjAyNC0xMi0wOVQwOTo1MToxMCswMDowMCIvPgogICAgPC9yZGY6U2VxPgogICA8L3htcE1NOkhpc3Rvcnk+CiAgPC9yZGY6RGVzY3JpcHRpb24+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgCjw/eHBhY2tldCBlbmQ9InciPz6pDYqZAAAABmJLR0QADQAVAB7hMSM2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH6AwJCTMKlVQmZQAAIABJREFUeNrsnWd4VEUXgN/dTe+9kt4gkEYPLfTeu4AgIEVEEekooIIKIgoCgn4iAlIs9Bp675AEEiCFkISQ3nvb3e/HJpssISE0Rb3v80TZO/VOOTPnzNwZkb65vRwBAQEBgX8lYqEIBAQEBAQhLyAgICAgCHkBAQEBAUHICwgICAgIQl5AQEBAQBDyAgICAgKCkBcQEBAQhLyAgICAgCDkBQQEBAQEIS8gICAgIAj52rh9/RzdunR8otupwL2MHzPyX1Uhm/63lonjRj/RrU2rlkTculJj2J9/+I55M6cpf1uYm7N143ruBl1i7Jsj6pS+k4M9P675htvXz3Hn5kU2/W8tDeq7/6s7gZmZKetWLefOzYtcO3+MD6ZORiQSKd1FIhEfvv8ONy6cIOzmBb5b8SWGBgYqccyfPZ2r546xa8cmDPT1lc/btm7JiUO7UFdX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">
+</figure>
+
+<p>Se tivesse clicado no botão “Colocar ordem”, teria comprado quase instantaneamente 50 títulos do Vanguard LifeStrategy 60% Equity UCITS ETF a 32,65 euros, o melhor preço naquela bolsa naquele momento.
+
+<p><strong>Em que bolsa devo comprar?</strong>
+<br>Deves optar pela bolsa que permita minimizar a despesa agregada da operação: a soma do encargo de negociação cobrado pelo intermediário de bolsa e do custo implícito da ordem de mercado.
+
+<p>Na minha investigação, a bolsa de Milão é que a comporta custos implícitos mais baixos, seguida do Xetra e, posteriormente, de Amesterdão. As diferenças são, contudo, marginais.
+
+<p>Os intermediários de bolsa não têm de oferecer o acesso a todas as bolsas e a todos os instrumentos cotados. Por exemplo, o serviço GoBulling Pro do Banco Carregosa lista apenas o Vanguard LifeStrategy 60% Equity UCITS ETF na bolsa de Amesterdão. Os clientes podem, todavia, solicitar aos seus intermediários a adição de novos títulos às suas ofertas bolsistas.
+
+<p><strong>O Banco Carregosa é o melhor intermediário de bolsa?</strong>
+<br>Não necessariamente.
+
+<p>À maioria dos investidores portugueses, aqueles que transacionam pontualmente, recomendo três serviços de bolsa: Best Trading Pro do Banco Best, GoBulling Pro do Banco Carregosa e Invest Trader do Banco Invest. São os únicos que normalmente não taxam os seus clientes com encargos periódicos, como a comissão de guarda de títulos e a comissão da conta à ordem de suporte à conta de investimentos.
+
+<table>
+<caption><strong>Encargos sobre a transação de fundos cotados</strong> As contas de negociação nestas três plataformas não são alvo de comissões de guarda de títulos. As percentagens são aplicadas aos montantes transacionados. Os encargos incluem impostos.
+<thead>
+<tr><td>Plataforma<td><a href="https://www.bancobest.pt/ptg/best-trading-pro">Best Trading Pro</a><td><a href="https://www.bancocarregosa.com/pt/plataformas-negociacao-gobulling/etfs/">GoBulling Pro</a><td><a href="https://bancoinvest.pt/poupanca-e-investimento/titulos/etfs">Invest Trader</a>
+<tbody>
+<tr><td colspan="4"><strong>Bolsa</strong>
+<tr><td>— Amesterdão<td rowspan="2" style="vertical-align:middle">0,083%, mínimo de 10,40€<td>0,08%, mínimo de 10€<td>0,104%, mínimo de 9,88€
+<tr><td>— Francoforte<td rowspan="2" style="vertical-align:middle">0,15%, mínimo de 20€<td>0,156%, mínimo de 13€
+<tr><td>— Milão<td>0,135%, mínimo de 18,72€<td>não disponível
+</table>
+
+<p>Embora Milão seja a bolsa onde os custos implícitos das ordens de mercado são menores nos Vanguard LifeStrategy, talvez compense transacionar em Amesterdão, porque os encargos de bolsa são inferiores. Por exemplo, comprar 2000 euros de títulos em Milão através do Best Trading Pro tem um encargo de 18,72 euros, mas em Amesterdão a despesa seria de 10,40 euros.
+
+<p>Aos investidores que planeiam transacionar todos os meses, a <a href="https://www.activobank.pt/etfs">proposta do ActivoBank</a> é interessante: custa 3,69 euros por mês pelo serviço de bolsa, o que inclui gratuitamente, entre outras coisas, a primeira ordem de bolsa do mês; as seguintes em Amesterdão, Milão e Xetra custam 5,20 euros.
+
+<p>Entre os intermediários internacionais, recomendo apenas a <a href="https://www.degiro.pt/investir/comprar-etfs">Degiro</a> aos investidores com menor capacidade de aforro, porque os custos pesam menos: transacionar os Vanguard LifeStrategy tem um encargo de 3 euros por operação; anualmente, este intermediário germano-holandês cobra 2,50 euros por cada bolsa usada nas operações nos 12 meses anteriores.
+
+<p><strong>E o recente <a href="https://www.novobanco.pt/particulares/investimento/plataforma-de-trading">Serviço Trading Pro</a> do Novobanco?</strong>
+<br>Embora o preçário seja semelhante ao do Banco Best, não recomendo o Novobanco para investir na bolsa. Tem duas grandes desvantagens: primeiro, a conta à ordem de suporte à conta de investimentos não é normalmente gratuita; segundo, o Serviço Trading Pro não permite a transferência de títulos para outra instituição. O Best é completamente controlado pelo Novobanco.
+
+<p>Os clientes do Novobanco e do Banco Best enfrentam um risco adicional: o processo de venda do grupo será <a href="https://eco.sapo.pt/2024/12/09/lone-star-quer-lancar-venda-do-novobanco-em-maio/">alegadamente</a> iniciado no próximo mês de maio; o comprador ou os compradores dos bancos poderão eventualmente alterar as ofertas comerciais.
+
+<p><strong>Para que serve a transferência de títulos?</strong>
+<br>Se ficares insatisfeito com o teu intermediário de bolsa — pode, por exemplo, aumentar os encargos unilateralmente —, é razoável ter sempre a opção de transferir a carteira para outra entidade.
+
+<p>Se souberem que a sua proposta é boa para os clientes, os intermediários não têm motivos para bloquear a saída dos títulos para a concorrência.
+
+<p>Excluindo os títulos americanos e britânicos no Banco Invest, é possível transferir a carteira nos intermediários que recomendo. Essa transferência tem, no entanto, custos. 
+
+<table>
+<caption><strong>Encargo mínimo sobre a transferência de títulos para outro intermediário</strong> Esta despesa é por título cotado na bolsa. As percentagens aplicam-se sobre os montantes transferidos. Inclui IVA a 23% sobre as comissões, exceto na Degiro.
+<tr><td>ActivoBank<td>0,738%, mínimo 59,66€
+<tr><td>Best Trading Pro<td>1,23%, mínimo de 36,90€
+<tr><td>Degiro<td>20€
+<tr><td>GoBulling Pro<td>0,308%, mínimo de 12,30€
+<tr><td>Invest Trader<td>0,246%, mínimo de 24,60€
+</table>
+</ul>
+
+<p>Geralmente, é melhor transferir os títulos do que vendê-los no intermediário antigo e comprá-los no novo intermediário. Evita-se, por exemplo, a tributação das mais-valias.
+
+<p><strong>Ainda mais barato do que todos os outros: na Revolut, o <a href="https://www.revolut.com/pt-PT/etfs/#163863e5-6782-4c08-b2a9-e4182066e4d2">plano de investimento em ETF</a> é gratuito.</strong>
+<br>É interessante: ao programar uma frequência e um montante de investimento nos fundos cotados, os clientes da Revolut ficam isentos de comissões de bolsa.
+
+<p>Tenho, todavia, receios sobre a execução das ordens. A Revolut recorre à <a href="https://upvest.co/">Upvest Securities</a> nas operações. A Upvest transaciona exclusivamente na <a href="https://www.tradegate.de/">Tradegate Exchange</a>, uma bolsa secundária.
+
+<p>A Tradegate Exchange está a crescer, mas ainda é menos transparente do que a Euronext e a Börse Frankfurt. A Tradegate e a Börse Frankfurt fazem parte do mesmo grupo, o Deutsche Börse.
+
+<p>Na Revolut, a transferência de títulos custa 35 dólares norte-americanos, cerca de 33 euros.
+
+<p>É importante minimizar os custos de bolsa, mas não a qualquer preço. Se quiseres baixar os encargos, reduz a frequência das transações.
+
+<p><strong>Como assim?</strong>
+<br>Se pagares um valor fixo por operação de bolsa, reduzes para metade os encargos se negociares metade das vezes pelo dobro do valor.
+
+<p id="freq">É possível otimizar a frequência do investimento. Imagine um investidor que consegue amealhar <input type="text" value="300" id="freqs" style="width:2.5em" disabled> euros por <span class="nw"><select id="freqd" disabled><option value="365">dia<option value="52">semana<option value="12" selected>mês<option value="4">trimestre<option value="2">semestre<option value="1">ano</select>.</span> Tem um encargo de <input type="text" value="10,00" id="freqb" disabled> euros por operação de bolsa. Se investir, espera alcançar uma rentabilidade de <span class="nw"><input type="text" value="6,22" id="freqg" disabled>%</span> por ano. Se não investir, recebe uma taxa de juro anual bruta de <span class="nw"><input type="text" value="3,00" style="width:2.5em" id="freqr" disabled>%</span> no seu banco preferido.
+
+<p>Neste caso, <span id="freqresultado">deve investir 1505,41 euros a cada 5 meses, distribuídos entre o montante a investir e o encargo da operação. O valor anterior inclui juros bancários acumulados, de 5,41 euros, reduzidos pelo IRS a 28%.</span>
+
+<script>
+var fretxt = { '365': 'dia', '52': 'semana', '12': 'mês', '4': 'trimestre', '2': 'semestre', '1': 'ano' };
+var fretxts = { '365': 'dias', '52': 'semanas', '12': 'meses', '4': 'trimestres', '2': 'semestres', '1': 'anos' };
+
+function atualizafreqCalc() {
+	var savings = num('freqs',0);
+	var saveFreq = +document.getElementById('freqd').value;
+	var interval = 1.0/saveFreq;
+	var interest = num('freqr',2)/100;
+	var growth = num('freqg',2)/100;
+	var brokerage = num('freqb',2);
+
+	var opt = freqCalc(savings, interval, interest, growth, brokerage);
+
+	var parcelsize = Math.round(addInterest(savings, interest, interval, opt)*100)/100;
+	var timeunits = (opt == 1 ? fretxt[saveFreq] : fretxts[saveFreq]);
+	var timeunitss = fretxts[saveFreq];
+
+	var altopt = opt;
+
+	var output;
+	if (altopt == 0) {
+		output = "é melhor não investir, porque o retorno esperado do investimento é inferior ou igual aos juros bancários.";
+	}
+	else {
+		output = "deve aplicar "+parcelsize.toLocaleString('pt-PT',{minimumFractionDigits:0, maximumFractionDigits:2})+" euros a cada " + (altopt == 1 ? '' : altopt) + " " + timeunits;
+		if (brokerage > 0) {
+			output += ', distribuídos entre o montante a investir e o encargo da operação.'; }
+		else {
+			output += '.'; }
+		var hasinterest = (parcelsize > opt*savings);
+		if (hasinterest) {
+			output += ' O valor anterior inclui juros bancários acumulados, de '+(parcelsize-opt*savings).toLocaleString('pt-PT',{minimumFractionDigits:0, maximumFractionDigits:2})+' euros, reduzidos pelo IRS a 28%.';
+		}
+	}
+	document.getElementById('freqresultado').innerHTML = output;
+}
+
+function freqCalc(s, d, r, g, b) {
+	if (s <= 0) return 0;
+	if (b == 0) return 1;
+	if (g < 0) return 0;
+	var R = Math.pow(1+.72*r/12, 12*d);
+	var G = Math.pow(1+g, d);
+	if (R>G) return 0;
+	var alpha = (s-b+b*R)*Math.log(G);
+	var beta = s*Math.log(G/R);
+	var gamma = s*Math.log(R);
+	if (r == 0) {
+		var delta = 1-b/s-1/Math.log(G);
+		var c0 = (Math.pow(Math.log(G),2)*G*beta*delta + 2*Math.log(G)*G*beta)/2;
+		var c1 = Math.log(G)*G*beta*delta+G*beta;
+		var c2 = G*beta*delta + s;
+	} else {
+		var c0 = (alpha * G/R * Math.pow(Math.log(G/R),2) - beta * Math.pow(Math.log(G),2))/2;
+		var c1 = alpha * G/R * Math.log(G/R) - beta * G * Math.log(G);
+		var c2 = alpha * G/R - beta * G - gamma;
+	}
+	var n = Math.round(1 + Math.sqrt(c1*c1-4*c0*c2)/Math.abs(2*c0) - c1/(2*c0));
+	if (isNaN(n)) n = 0;
+	var bestf = -1;
+	var bestn = 0;
+	for (var i=n-2; i<=n+2; i++) {
+		if (i<1) continue;
+		var f = fv(s,d,r,g,b,i,Math.round(20/d));
+		if (f >= bestf) {
+			bestf = f;
+			bestn = i;
+		}
+	}
+	return bestn;
+}
+
+function fv(s, d, r, g, b, n, t) {
+	var R = Math.pow(1+r/12*.72, 12*d);
+	var G = Math.pow(1+g, d);
+	if (r == 0) { return (n*s-b)*(1-Math.pow(G,t))/(1-Math.pow(G,n)); }
+	return (s*(1-Math.pow(R,n))-b*(1-R))*(1-Math.pow(G,t))/((1-R)*(1-Math.pow(G,n)));
+}
+
+function addInterest(s, r, d, n) {
+	var R = Math.pow(1+r/12*.72, 12*d);;
+	if (r == 0) return s*n;
+	return s*(1-Math.pow(R,n))/(1-R); 
+}
+
+document.getElementById('freq').addEventListener('keyup', atualizafreqCalc);
+document.getElementById('freq').addEventListener('change', atualizafreqCalc);
+window.addEventListener('load', atualizafreqCalc);
+</script>
+
+<p><strong>Há mais custos?</strong>
+<br>Para investir num dos Vanguard LifeStrategy que recomendei, os principais custos são os que elenquei: primeiro, a taxa anual de encargos correntes de 0,25%, deduzida automaticamente ao valor da carteira do fundo; segundo, os encargos de transação na bolsa cobrados pelo intermediário financeiro; terceiro; os custos implícitos nas ordens de bolsa, que se refletem em preços ligeiramente mais elevados na compra ou mais baixos na venda.
+
+<p>Após a alienação, poderá haver IRS a pagar sobre as mais-valias. 
+
+<p>Paralelamente, os intermediários podem cobrar por outros serviços. Por exemplo, os clientes do Banco Invest pagam até 52 cêntimos por transferência interbancária eletrónica. O ActivoBank, o Banco Best, o Banco Carregosa e a Degiro não cobram nessas transferências interbancárias até 10 mil euros.
+
+<p><strong>Recomendas fundos mistos de ações e obrigações, mas, pelo que revelaste em edições anteriores do boletim <strong style="font-weight:normal">tlim</strong> não segues esta sugestão.</strong>
+<br>É verdade: mais de 99% do meu património financeiro é composto por unidades do <a href="https://www.blackrock.com/pt/profissionais/products/251882/">iShares Core MSCI World UCITS ETF</a>, um fundo de ações dos mercados desenvolvidos conhecido por “IWDA”, o seu código na bolsa de Amesterdão.
+
+<p><strong>Porquê?</strong>
+<br>Tenho-o desde 2013. Sigo o meu conselho: mexo o menos possível na carteira. Estou aposentado desde 2018. Negoceio-o apenas quando tenho de vender unidades para financiar o meu quotidiano, o que é normalmente uma vez por trimestre.
+
+<p>Uma mudança seria catastrófica para as minhas finanças, especialmente na tributação. Tenho mais-valias potenciais muito elevadas. Na minha próxima operação de bolsa, venderei unidades que me custaram menos de um terço do preço mais recente na bolsa.
+
+<p>Tenho exposição acionista desde o ano 2000. Quase sempre o meu horizonte temporal foi para sempre. Não tenho motivos para mudar.
+
+<p>Além de o ter na minha carteira, recomendei o IWDA durante muitos anos. Hoje, deixa, contudo, de fazer parte das minhas recomendações. Não é o melhor fundo cotado de ações dos mercados desenvolvidos.
+
+<p><strong>Que recomendas agora?</strong>
+<br>Para uma exposição unicamente acionista, recomendo dois fundos: o <a href="https://www.fidelity.pt/fundos/factsheet/IE00BYX5NX33/">Fidelity MSCI World Index EUR P Acc</a> para quem investe menos de 750 euros em cada operação e o <a href="https://www.ssga.com/ie/en_gb/intermediary/etfs/spdr-msci-world-ucits-etf-sppw-gy">SPDR MSCI World UCITS ETF</a> para os restantes.
+
+<p>Em Portugal, o Fidelity MSCI World Index EUR P Acc é <a href="https://www.bancobest.pt/ptg/start.swe?SWECmd=GotoView&SWEView=BEST+MyBank+FundDetail+NS+View&MSCode=F00001019E">subscrito</a> exclusivamente junto do Banco Best. É possível subscrever uma única unidade, que vale agora cerca de 12 euros.
+
+<p >A única complexidade que pode surgir durante a subscrição prende-se com a despesa da operação, que é de 2,08% do montante investido. Divida o montante que tem disponível para aplicar por 1,0208 para descobrir o valor que deve introduzir no campo da subscrição. Assim, se tiver <input type="text" value="1020,80" style="width:4em" id="fidelity1" disabled> euros, deve indicar um montante a subscrever de <span id="fidelity2">1000,00</span> euros. A diferença, <span id="fidelity3">20,80</span> euros, é o encargo de subscrição.
+
+<script>
+function fidelity() {
+	let tmax = num('fidelity1', 2);
+	let tmin = Math.round(tmax / 1.03 * 100) / 100;
+	esc('fidelity2', tmax, 2); esc('fidelity3', 0, 2);
+	while (tmin < tmax) {
+		var com = Math.round(0.02 * tmin * 100)/100;
+		var is = Math.round(0.04 * com * 100) / 100;
+		if ( Math.round(100 * (tmax - tmin - com - is)) / 100 === 0 ) { 
+			esc('fidelity2', tmin, 2);
+			esc('fidelity3', tmax - tmin, 2);
+			break;
+		}
+	tmin += 0.01;
+	}
+}
+document.getElementById('fidelity1').addEventListener('keyup', fidelity);
+window.addEventListener('load', fidelity);
+</script>
+
+<p>O SPDR MSCI World UCITS ETF transaciona-se em euros em Amesterdão, Milão e Xetra. As operações de compra e de venda estão, assim, sujeitas aos encargos dos intermediários de bolsa. Também está disponível em libras esterlinas e dólares norte-americanos na London Stock Exchange e na SIX Swiss Exchange; não recomendo estas opções.
+
+<p>O Fidelity MSCI World Index EUR P Acc e o SPDR MSCI World UCITS ETF procuram replicar o desempenho do índice <a href="https://www.msci.com/indexes/index/990100">MSCI World</a>, composto por ações de quase 1400 empresas dos mercados desenvolvidos. A taxa anual de encargos correntes é, em ambos os casos, de 0,12%.
+
+<p><strong>Por que sugeres estes fundos?</strong>
+<br>São muito baratos e replicam física e eficientemente um dos índices acionistas mais reconhecidos.
+
+<p>Não aconselho exposição aos mercados emergentes, porque são mais arriscados, não representam necessariamente maiores retornos, o impacto da diversificação é reduzido, encarecem o investimento e assentam parcialmente em democracias falhadas ou ditaduras.
+
+<p>Não recomendo fundos focados nos princípios das finanças sustentáveis, responsáveis ou éticas, porque não são necessariamente mais rentáveis, não há homogeneidade nos critérios de sustentabilidade e envolvem essencialmente propaganda.
+
+<p><strong>São muito melhores do que o IWDA?</strong>
+<br>Não. São apenas marginalmente melhores.
+
+<table>
+<caption><strong>Comparar fundos de ações para o longo prazo</strong> Estes fundos procuram replicar o índice MSCI World, composto por cerca de 1400 ações de empresas de 23 mercados desenvolvidos. São fundos de acumulação, isto é, reinvestem os dividendos recebidos das ações na carteira. Recomendo apenas o Fidelity MSCI World Index EUR P e o SPDR MSCI World UCITS ETF.
+<thead>
+<tr><td><td>Fidelity MSCI World Index EUR P<td>iShares Core MSCI World UCITS ETF<td>SPDR MSCI World UCITS ETF
+</thead>
+<tr><td>ISIN<td>IE00BYX5NX33<td>IE00B4L5Y983<td>IE00BFY0GT14
+<tr><td>Tipo<td>Fundo tradicional<td colspan="2">Fundo cotado
+<tr><td>Disponibilidade<td><a href="https://www.bancobest.pt/ptg/start.swe?SWECmd=GotoView&SWEView=BEST+MyBank+FundDetail+NS+View&MSCode=F00001019E">Banco Best</a><td>Bolsas oficiais: Amesterdão (<a href="https://live.euronext.com/pt/product/etfs/IE00B4L5Y983-XAMS">IWDA</a>), Milão (<a href="https://www.borsaitaliana.it/borsa/etf/scheda/IE00B4L5Y983.html">SWDA</a>), Xetra (<a href="https://www.boerse-frankfurt.de/en/etf/ishares-core-msci-world-ucits-etf">EUNL</a>)<td>Bolsas oficiais: Amesterdão (<a href="https://live.euronext.com/pt/product/etfs/ie00bfy0gt14-xams">SWRD</a>), Milão (<a href="https://www.borsaitaliana.it/borsa/etf/scheda/IE00BFY0GT14.html">SWRD</a>), Xetra (<a href="https://www.boerse-frankfurt.de/en/etf/spdr-msci-world-ucits-etf">SPPW</a>)
+<tr><td>Encargo de aquisição<td>2,08%<td rowspan="2" colspan="2" style="vertical-align:middle">Depende do intermediário
+<tr><td>Encargo de alienação<td>Não tem
+<tr><td>Investimento mínimo e reforço mínimo<td>1 unidade<br><small>11,6169€</small><td>1 unidade<br><small>104,24€</small><td>1 unidade<br><small>38,042€</small>
+<tr><td>Taxa anual de encargos correntes<td>0,12%<td>0,20%<td>0,12%
+<tr><td>Rentabilidade anualizada de 1 ano<td>27,11%<td>27,31%<td>27,40%
+<tr><td>Rentabilidade anualizada de 3 anos<td>9,81%<td>9,64%<td>9,83%
+<tr><td>Rentabilidade anualizada de 5 anos<td>13,02%<td>13,04%<td>13,10%
+<tr><td>Custo da replicação<br><small>5 anos anualizado</small><td>-0,04%<td>-0,02%<td>-0,13%
+<tr><td>Indicador de risco<br><small>1 = baixo; 7 = alto</small><td>4<td>4<td>4
+</table>
+
+<p>Normalmente, há um custo de replicação — a diferença entre a rentabilidade do índice e a do fundo — nos fundos indexados: os encargos da gestão da carteira roubam um pouco do desempenho do produto. O custo da replicação tende para a taxa de encargos correntes.
+
+<p>Isso não acontece, todavia, com os três fundos descritos no quadro anterior: o custo da replicação tem sido negativo, o que significa que os retornos têm sido superiores aos do índice de referência.
+
+<p>Nos seus relatórios, os gestores da Fidelity International (Fidelity MSCI World Index EUR P), da BlackRock (iShares Core MSCI World UCITS ETF) e da State Street Global Advisors (SPDR MSCI World UCITS ETF) explicam que conseguem bater o índice graças especialmente à otimização da gestão da carteira e à eficiência fiscal. Conseguem que os dividendos recebidos sejam menos tributados do que o previsto pelos administradores do índice.
+
+<p>Uma nota adicional sobre os quadros anteriores: embora seja possível comprar apenas uma unidade dos fundos cotados, não o aconselho, porque os encargos de bolsa teriam um impacto demasiado elevado na rentabilidade líquida do investimento.
+
+<p><strong>O custo implícito nas ordens de bolsa sobre o SPDR MSCI World UCITS ETF é menor do que sobre o iShares Core MSCI World UCITS ETF?</strong>
+<br>Não, mas é muito baixo: tende a ser inferior a 0,02% por operação nas 3 bolsas oficiais.
+
+<p><strong>Tens alguma recomendação para quem quer investir em obrigações?</strong>
+<br>Sim, desde que inserida numa carteira diversificada exposta simultaneamente aos mercados acionistas e obrigacionistas.
+
+<p>Tal como nas ações, aconselho a máxima diversificação para o longo prazo: escolher um fundo passivo barato de acumulação que invista em todos os tipos de obrigações desde que apresentem elevada qualidade creditícia, com todos os tipos de maturidade (curta até longa) e emitida por todo o tipo de entidades nos mercados desenvolvidos. Aconselho um fundo com cobertura cambial para euros.
+
+<p>Recomendo o <a href="https://www.blackrock.com/pt/profissionais/products/291770/ishares-core-global-aggregate-bond-ucits-etf">iShares Core Global Aggregate Bond UCITS ETF EUR Hedged</a>: é, simultaneamente, o maior, o mais barato e o mais diversificado que cumpre quase todas as condições anteriores. Infelizmente, não investe apenas nos mercados desenvolvidos; abrange também os mercados emergentes. Tem 10% da carteira em obrigações chinesas.
+
+<table>
+<caption><strong>Fundo de obrigações para o longo prazo</strong> Este fundo procura replicar o índice Bloomberg Global Aggregate Bond, em euros. Tem mais de 16 mil emissões obrigacionistas. É um fundo de acumulação, isto é, reinveste os juros recebidos das obrigações na carteira.
+<thead>
+<tr><td><td>iShares Core Global Aggregate Bond UCITS ETF EUR Hedged
+</thead>
+<tr><td>ISIN<td>IE00BDBRDM35
+<tr><td>Tipo<td>Fundo cotado
+<tr><td>Disponibilidade<td>Bolsas oficiais: Amesterdão (<a href="https://live.euronext.com/pt/product/etfs/ie00bdbrdm35-xams">AGGH</a>), Milão (<a href="https://www.borsaitaliana.it/borsa/etf/scheda/IE00BDBRDM35.html">AGGH</a>), SIX (<a href="https://www.six-group.com/en/market-data/etf/etf-explorer/etf-detail.IE00BDBRDM35EUR4.html">AGGH</a>), Xetra (<a href="https://www.boerse-frankfurt.de/en/etf/ishares-core-global-aggregate-bond-ucits-etf-eur-hedged-acc">EUNA</a>)
+<tr><td>Encargo de aquisição e de alienação<td>Depende do intermediário
+<tr><td>Investimento mínimo e reforço mínimo<td>1 unidade<br><small>4,818€</small>
+<tr><td>Taxa anual de encargos correntes<td>0,10%
+<tr><td>Rentabilidade anualizada de 1 ano<td>1,74%
+<tr><td>Rentabilidade anualizada de 3 anos<td>-2,84%
+<tr><td>Rentabilidade anualizada de 5 anos<td>-1,46%
+<tr><td>Custo da replicação<br><small>5 anos anualizado</small><td>-0,04%
+<tr><td>Indicador de risco<br><small>1 = baixo; 7 = alto</small><td>2
+</table>
+
+<p>Recomendo que os investidores detenham exposição obrigacionista durante 5 anos ou mais. Repare, todavia, que, apesar de o iShares Core Global Aggregate Bond UCITS ETF EUR Hedged estar numa categoria de risco reduzido, é possível registar perdas em períodos de 5 anos.
+
+<p>No último quinquénio, este fundo de obrigações, à semelhança da maioria dos fundos que investem em dívida, desvalorizou. Ainda recupera das perdas que se alastraram entre dezembro de 2020 e outubro de 2023, que refletiram as subidas das taxas diretoras dos principais bancos centrais.
+
+<p>O custo implícito nas ordens de bolsa sobre o iShares Core Global Aggregate Bond UCITS ETF EUR Hedged tende para 0,05% da operação. É mais baixo em Milão e no Xetra.
+
+<p><strong>Independente de escolher um Vanguard, um Fidelity, um SPDR ou um iShares, não é arriscado ter tudo num único fundo?</strong>
+<br>Há sempre o risco de desvalorização dos investimentos. Paralelamente, há o risco das entidades envolvidas nas operações. Os investidores devem analisar particularmente duas firmas: o seu intermediário financeiro, que guarda os títulos, e a entidade depositária da carteira do fundo, que guarda os títulos do fundo que pertence aos investidores.
+
+<p>ActivoBank, Banco Carregosa, Banco Best, Banco Invest e flatexDegiro (que controla a Degiro): as contas destas entidades são públicas e não vejo motivos para duvidar da sua estabilidade financeira. 
+
+<p>A State Street Custodial Services é o depositário do SPDR MSCI World UCITS ETF e do iShares Core Global Aggregate Bond UCITS ETF EUR Hedged. A Brown Brothers Harriman é o depositário dos Vanguard LifeStrategy e do Fidelity MSCI World Index. São dois dos maiores custodiantes do mundo. Também não há motivos para duvidar da sua solidez.
+
+<p>Se seguir as minhas recomendações, não me parece que tenha motivos para se preocupar: além de o património dos fundos estar segregado das sociedades gestoras, depositárias, comercializadoras e corretoras, estas firmas são supervisionadas por bancos centrais e autoridades dos mercados de capitais na União Europeia e as suas contas revelam saúde financeira. Atribuo uma probabilidade ignorável de se registar fraude, má-fé ou negligência nestes fundos de investimento.
+
+<p><strong>E se, após investir no Vanguard LifeStrategy 60% Equity, perceber que a minha exposição às ações deveria ser de 40% ou de 80%?</strong>
+<br>Vejamos o caso da aforradora que investiu periodicamente no Vanguard LifeStrategy 60% Equity. Percebeu que não suporta a volatilidade deste fundo. Gostaria de reduzir a exposição acionista. Passa, então, a investir periodicamente no Vanguard LifeStrategy 20% Equity. Quando tiver o mesmo montante aplicado em cada fundo, terá uma exposição acionista de 40% na sua carteira de fundos.
+
+<p>Em alternativa, se percebeu que suportaria mais ações, poderia passar a investir no Vanguard LifeStrategy 80% Equity ou no SPDR MSCI World UCITS ETF, por exemplo.
+
+<p>É por isso que digo que os investidores devem procurar investir sem emoções em um <em>ou</em> dois fundos de investimento baratos.
+
+<p><strong>Não recomendas nada mais agressivo do que um fundo de ações mundiais?</strong>
+<br>Não recomendo aplicações agressivas para o curto prazo. Não recomendo apostas setoriais, geográficas ou temáticas para o longo prazo. Não recomendo estratégias alavancadas de longo prazo, embora possam fazer matematicamente sentido para investidores muito experientes e muito conhecedores.
+
+<p><strong>E investir diretamente em ações ou em obrigações?</strong>
+<br>Para já, não recomendo. Como os leitores mais atentos do boletim <strong>tlim</strong> sabem, estou a desenvolver uma <a href="https://tlim.pt/bb/">análise de longo prazo</a> sobre este tema. Ainda não tenho resultados.
+
+<p>Investir diretamente em ações e obrigações é muito caro: envolve muitas comissões e gera frequentemente faturas fiscais. Esses encargos diluem os potenciais retornos mais elevados.
+
+<p><strong>Por que não preferes fundos na modalidade de planos de poupança-reforma?</strong>
+<br>Os PPR têm vantagens fiscais — é possível deduzir até 20% da aplicação à coleta de IRS e, no resgate, é possível pagar IRS de apenas 8% sobre os ganhos —, mas, infelizmente, tendem a ser caros e mal geridos e, logo, pouco rentáveis.
+
+<p>Na edição de agosto passado do boletim <strong>tlim</strong>, publiquei várias estatísticas desanimadoras sobre a indústria dos PPR usando os retornos desses instrumentos até junho passado. Após estudar mais de uma centena de produtos — os PPR na modalidade de fundos de investimento, fundos de pensões e seguros ligados a fundos —, concluí, por exemplo, que os oito planos mais rentáveis nos últimos cinco, oito e dez anos renderam muito menos do que os índices de referência para as suas carteiras.
+
+<p>Partilho apenas um exemplo atualizado: o PPR mais rentável nos últimos 5 anos foi provavelmente o <a href="https://www.bancobpi.pt/particulares/poupar-investir/ppr/bpi-reforma-global-equities-ppr/oicvm">BPI Reforma Global Equities PPR/OICVM</a>, que investe exclusivamente em ações mundiais. Embora tenha sido o <em>melhor</em> PPR, ficou muito <em>pior</em> do que os fundos de ações que recomendo: ganhou 8,02% por ano, enquanto as minhas escolhas avançaram mais de 13% por ano.
+
+<p><strong>Mas pagar 8% nos ganhos dos PPR é muito menos do que os 28% dos fundos de investimento.</strong>
+<br>O saldo das mais-valias e menos-valias dos fundos de investimento são alvo da <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs72.aspx">taxa autónoma de 28%</a>. Quando a duração da aplicação é longa, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs43.aspx">parte das mais-valias não é tributada</a>: 30% após 8 anos, 20% entre 5 e 8 anos e 10% entre 2 e 5 anos. Além disso, alguns fundos beneficiam da <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs50.aspx">correção monetária</a>, o que, grosso modo, significa que apenas é tributado o ganho acima da inflação.
+
+<p>Os contribuintes podem ainda optar pelo <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs22.aspx">englobamento das mais-valias</a>, deixando-as à mercê das taxas gerais de IRS. Por vezes, compensa. É o meu caso: após a minha próxima declaração de IRS, espero que a taxa de tributação efetiva sobre as minhas mais-valias de 2024 seja muito inferior a 8%. Será, provavelmente, inferior a 1%.
+
+<p><strong>Convenceste-me. Qual a melhor maneira de mudar a minha carteira para refletir as tuas recomendações?</strong>
+<br>Calma. Acredito que os instrumentos financeiros que listo ao longo desta análise são as melhores opções neste início de ano. Todavia, as mudanças drásticas na carteira geram frequentemente encargos e impostos que mutilam os retornos futuros do património.
+
+<p>Se ponderares alterações à tua estratégia de investimento após leres este artigo, calcula o impacto financeiro dessas mudanças. Confirma que os benefícios esperados no longo prazo são superiores aos custos estimados da troca.
+
+<p>Como expliquei antes, eu não planeio trocar o meu fundo, que já não recomendo, por qualquer um dos que aconselho agora. 
+
+<p><strong>Não recomendas imobiliário?</strong>
+<br>Sete em cada dez famílias portuguesas vive em casa própria. Para a maioria, a habitação é o maior ativo. Três das dez famílias têm ainda outros imóveis. Por isso, tendo a não recomendar exposição adicional ao mercado imobiliário.
+
+<p>Penso que o investimento direto em imóveis — para arrendar ou, simplesmente, para valorizar — é menos rentável e mais arriscado do que a maioria julga. Há uma recente área de investigação académica sobre os riscos idiossincráticos do investimento imobiliário. No seu estudo sobre o mercado californiano, Marco Giacoletti, da Universidade do Sul da Califórnia, <a href="https://doi.org/10.1093/rfs/hhab033">concluiu</a> que o risco idiossincrático representa a maioria do risco do imobiliário residencial. “A contabilização do risco idiossincrático altera substancialmente a avaliação da relação risco-retorno na habitação”, escreveu.
+
+<p>A diversificação é a única maneira de minimizar os riscos específicos de cada imóvel. Para a maioria dos investidores, não é possível diversificar com o investimento direto em imóveis. A alternativa são os fundos de investimento.
+
+<p><strong>Qual o melhor?</strong>
+<br>Os fundos imobiliários portugueses são fracos: são caros (o AF Portfolio Imobiliário, do Millennium bcp, tem uma comissão de subscrição de até 2% e uma comissão de resgate de até 5%), são difíceis de resgatar (espera-se normalmente entre 6 meses e 1 ano e meio) e rendem pouco (após contabilizar encargos, o Valor Prime, do Montepio, rendeu 1,77% por ano na última década).
+
+<p>O único oásis no deserto dos fundos imobiliários é o <a href="https://www.squaream.pt/pt/products-services/patrimonio-crescente/">CA Património Crescente</a>: não tem comissão de subscrição e a de resgate é nula após 1094 dias (3 anos) de investimento; o reembolso demora entre 2 e 4 meses; é o mais diversificado com quase 1 quilómetro quadrado de imóveis em Portugal e Espanha; foi o mais rentável ao ganhar 5% por ano no último quinquénio e 4,61% por ano na última década.
+
+<p>Um prédio na Avenida da Boavista, no Porto, a sede do Crédito Agrícola, em Lisboa, e os centros comerciais de Loures e de Telheiras são os ativos mais valiosos do CA Património Crescente.
+
+<p>Recomendo o CA Património Crescente para o longo prazo exclusivamente aos investidores que tenham pouca ou nenhuma exposição ao imobiliário. Se forem clientes do Crédito Agrícola, a entidade comercializadora do fundo, podem subscrever a partir de 5 unidades, que valem cerca de 112 euros. Se não forem clientes do Crédito Agrícola, sugiro que invistam, pelo menos, 12&nbsp;500 euros, o montante a partir do qual o Crédito Agrícola não cobra comissão de manutenção da conta à ordem de suporte ao investimento.
+
+<p>Após a subscrição, os investidores não podem movimentar as unidades de participação do fundo durante um ano.
+
+<p>A Square Asset Management é a entidade gestora do CA Património Crescente e o depositário é a Caixa Central de Crédito Agrícola Mútuo. 
+
+<p><strong>Só tens recomendações para o longo prazo?</strong>
+<br>Não.
+
+<p>Para as aplicações de curto e de médio prazo e para os aforradores que não têm estômago para os altos e baixos bolsistas, recomendo aplicações de baixo risco. 
+
+<p><strong>Quais?</strong>
+<br>A opção mais fácil é depositar o dinheiro no <a href="https://traderepublic.com/pt-pt">Trade Republic Bank</a>. Este banco alemão paga o equivalente à taxa de juro da facilidade permanente de depósito, a remuneração que os bancos comerciais da Zona Euro recebem quando depositam os seus fundos junto do Banco Central Europeu. Na última revisão, em dezembro passado, a autoridade monetária baixou a taxa de juro para 3%; o Trade Republic repercutiu essa nova taxa nos saldos não investidos dos seus clientes.
+
+<p id="tr">Os juros no Trade Republic são calculados diariamente e pagos mensalmente. Se tiver <input type="text" value="50 000" id="trm" style="width:4em" disabled> euros permanentemente na conta ao longo de um mês de <select id="trd" disabled><option>28<option>29<option>30<option selected>31</select> dias, receberá <span id="trr">161,51</span> euros no início do mês seguinte, graças à taxa de juro de 3%.
+
+<script>
+function tr() {
+	let trm = num('trm',0), trd = +document.getElementById('trd').value;
+	if (trm > 50000) { trm = 50000; }
+	var trr = Math.round(trm * .03 / 360 * 100) / 100 * trd;
+	esc('trr', trr, 2);
+}
+
+document.getElementById('tr').addEventListener('keyup', tr);
+document.getElementById('tr').addEventListener('change', tr);
+window.addEventListener('load', tr);
+</script>
+
+<p>A remuneração do Trade Republic traduz-se numa rentabilidade anual líquida de 2,21%, assumindo um depósito de 50 mil euros e uma tributação dos juros à taxa de 28% a meio do ano seguinte ao recebimento do rendimento.
+
+<p>O Trade Republic limita a remuneração aos saldos até 50 mil euros. Quem lá tiver mais, não receberá juros sobre o remanescente.
+
+<p><strong>Se é para levar o dinheiro para o estrangeiro, prefiro a Trading 212.</strong>
+<br>Desaconselho. As taxas de juro apregoadas são mais elevadas, de <a href="https://www.trading212.com/pt/interest-on-cash">3,7% por ano</a>, mas não se trata de depósitos bancários. A Trading 212 aplica os saldos dos seus clientes em fundos do mercado monetário. Embora sejam aplicações potencialmente conservadoras, não estão protegidas por sistemas independentes de garantia de capital.
+
+<p>Os saldos no Trade Republic estão protegidos pelo <a href="https://edb-banken.de/ueber-die-edb/zugeordnete-institute/">Entschädigungseinrichtung deutscher Banken</a>, o fundo de garantia de depósitos da Alemanha: em caso de indisponibilidade financeira, essa entidade devolve até 100 mil euros por titular no prazo de 7 dias. 
+
+<p><strong>Não há depósitos mais rentáveis em Portugal do que o do Trade Republic?</strong>
+<br>Há alguns, mas valem raramente a pena.
+
+<p>A <a href="https://www.bankinter.pt/documents/20182/501707/FIN+Conta+Mais+Ordenado.pdf/ac9ba24e-1890-4021-ae96-60428b6fecf5">Conta Mais Ordenado</a> do Bankinter continua a ser a mais generosa, mas é exigente: é preciso receber 800 euros (salário, por exemplo) em, pelo menos, 2 de cada 3 meses; exige a permanência durante 6 meses, no mínimo; não pode estar associada a crédito à habitação; é preciso aderir a um cartão bancário e efetuar 5 operações a crédito por semestre. A remuneração, de 5% no primeiro ano e de 2% no segundo, está limitada a um saldo máximo diário de 10 mil euros.
+
+<p>Normalmente, os depósitos a prazo mais generosos são curtos e não são repetíveis. É o caso do <a href="https://www.big.pt/TaxasDepositos/DepositosPrazo/FIN?DepositCode=PTDP2024010">Super Depósito 3 Meses</a> e do <a href="https://www.big.pt/TaxasDepositos/DepositosPrazo/FIN?DepositCode=PTDP2024081">Super Depósito 6 Meses</a> do BiG (4% e 3,5%, respetivamente) e do <a href="https://www.bancobest.pt/ptg/bestsite/best_docs/FIN_NovosClientes.pdf">Depósito Novos Clientes</a> do Banco Best (3,5% a 90 dias).
+
+<p>Noutras situações, os encargos do banco anulam as vantagens das taxas de juro. É o caso do <a href="https://directus-cms-uploads.s3-eu-west-1.amazonaws.com/dev-bpg-cms-v3/873acde2-b981-43f9-a73a-764b935d8138.pdf">bpg save</a> do Banco Português de Gestão, um depósito a 1 ano com uma taxa de 3,3%: a rentabilidade é inferior à do Trade Republic em aplicações até 11&nbsp;500 euros, se se contabilizar os encargos da conta à ordem e a tributação sobre os juros e sobre as comissões.
+
+<p><strong>Não há bons depósitos mais longos?</strong>
+<br>Num cenário de descida de taxas de juro, como se vive agora na Zona Euro, pode ser uma boa ideia fixar a remuneração durante um período mais longo. Na minha busca pela banca a operar em Portugal, o melhor que encontrei foi o <a href="https://bisonbank.com/wp-content/uploads/2024/11/IMP_015729-FIN-DP-Bison-Rendimento-Premium_V6-1-002.pdf">Rendimento Premium</a> do Bison Bank: a taxa de juro para o prazo 24 meses é de 3,25%.
+
+<p>A conta à ordem associada à aplicação Rendimento Premium é gratuita. No vencimento, o depósito é renovado por outros 24 meses à taxa não promocional no banco (atualmente, 2,25%). No caso de mobilização antecipada, perdem-se os juros acumulados. Se a mobilização for total, a conta é encerrada automaticamente.
+
+<p>A aplicação mínima é de 25 mil euros.
+
+<p><strong>Recomendas?</strong>
+<br>Recomendo apenas a quem tem a certeza de que não precisará do dinheiro durante 2 anos. Se não tiver certeza, a proposta do Trade Republic é melhor.
+
+<p>É importante não esquecer que a proteção dos fundos de garantia de depósitos é até 100 mil euros por titular. Se quiseres segurança, convém não depositar mais do que esse montante em cada instituição financeira.
+
+<p>Se o Banco Espírito Santo não tivesse sido alvo de resolução pelo Banco de Portugal em 2014, os aforradores particulares e as pequenas e médias empresas teriam perdido <a href="https://eco.sapo.pt/2024/12/09/banco-de-portugal-lembra-perdas-estimadas-com-resolucao-ou-liquidacao-do-novobanco/">5,8 mil milhões de euros</a> por não estarem cobertos pelo <a href="https://www.fgd.pt/">Fundo de Garantia de Depósitos</a>.
+
+<p><strong>Por que não juntar tudo no Trade Republic: depósito bancário e fundos cotados de longo prazo? Seria mais simples.</strong>
+<br>Má ideia. Embora os encargos de negociação sejam baixos, não recomendo o Trade Republic para investir na bolsa. Tenho dois motivos: primeiro, as ordens são <a href="https://support.traderepublic.com/en-nl/705">executadas</a> no Lang & Schwarz Exchange, o sistema eletrónico de negociação da Bolsa de Hamburgo, que não é uma das principais na Europa; segundo, o banco <a href="https://assets.traderepublic.com/assets/files/CA_EE-en.pdf">admite</a> receber pagamentos pelo encaminhamento das ordens dos clientes. Esta informação é pouco transparente: diz receber normalmente até 3 euros por ordem, mas não revela se esse é o custo do cliente por registar operações a preços menos vantajosos.
+
+<p><strong>Tens alternativa às contas bancárias?</strong>
+<br>Recomendo <a href="https://www.igcp.pt/pt/aforristas/produtos-de-aforro/certificados-de-aforro">Certificados de Aforro</a>, que podem ser subscritos no <a href="https://aforronet.igcp.pt/">AforroNet</a>, em <a href="http://appserver2.ctt.pt/feapl_2/app/open/stationSearch/stationSearch.jspx?request_locale=pt">algumas estações dos Correios</a>, nos <a href="https://www.igcp.pt/sites/default/files/2024-11/PROPOSTA_Aviso_Moradas_Horarios_AMA_On_line_SET2024_LINKS.pdf">Espaços Cidadão</a> e no <a href="https://big.pt/campanha/certificados-aforro/">portal do BiG</a>.
+
+<p>A remuneração dos Certificados de Aforro — que são títulos de dívida pública — está indexada à Euribor a 3 meses. A partir do segundo aniversário da subscrição, a taxa de juro é majorada com prémios de permanência.
+
+<p id="certa">Se a Euribor a 3 meses estabilizar em <span style="white-space:nowrap"><input type="text" value="2,772" id="ca01" style="width:3em">%</span> (o que não acontecerá), um subscritor que invista agora <input type="text" value="1000" id="ca02" style="width:3.5em"> euros em Certificados de Aforro durante <select id="ca03"><option>1<option>2<option>3<option>4<option>5<option>6<option>7<option>8<option>9<option>10<option>11<option>12<option>13<option>14<option selected>15</select> <span id="c07">anos</span> receberá <span id="ca04">1421,49</span> euros em capital e juros. A sua rentabilidade líquida de impostos seria de <span style="white-space: nowrap"><span id="ca05">2,37</span>%</span> por ano, assumindo uma taxa de tributação de 28%.
+
+<script>
+function fca() {
+let euribor = num('ca01', 3), montante = num('ca02', 0), trimestres = +document.getElementById('ca03').value*4;
+let serief = Math.min(Math.max(euribor, 0), 2.5) / 100;
+
+document.getElementById('c07').innerText = trimestres == 4 ? "ano" : "anos";
+
+let taxaf = [];
+for (let g = 0; g < 60; g++) {
+	if (g < 4) { taxaf[g] = serief; }
+	else if (g < 20) { taxaf[g] = (serief + 0.25 / 100); }
+	else if (g < 36) { taxaf[g] = (serief + 0.5 / 100); }
+	else if (g < 44) { taxaf[g] = (serief + 1 / 100); }
+	else if (g < 52) { taxaf[g] = (serief + 1.5 / 100); }
+	else { taxaf[g] = (serief + 1.75 / 100); }
+}
+
+let montantef = montante;
+for (let g = 0; g < trimestres; g++) {
+	montantef = montantef + Math.round(montantef * taxaf[g] / 4 * 100) / 100 - Math.round((.28 * Math.round(montantef * taxaf[g] / 4 * 100) / 100) * 100) / 100;
+}
+
+esc('ca04', montantef, 2);
+
+var caj = (Math.pow(montantef/montante,1/(trimestres/4))-1)*100;
+
+esc('ca05', caj, 2);
+}
+
+document.getElementById('certa').addEventListener('keyup',fca);
+document.getElementById('certa').addEventListener('change',fca);
+window.addEventListener('load', fca);
+</script>
+
+<p>A Euribor a 3 meses, a referência dos Certificados de Aforro, e a taxa diretora do Banco Central Europeu, que o Trade Republic Bank replica, navegam normalmente muito próximas. A Euribor a 3 meses cota agora perto de 2,8%; a taxa do BCE é de 3%.
+
+<p>Os Certificados de Aforro têm, porém, um teto: a taxa-base, excluindo os prémios de permanência, não pode ser superior a 2,5%. Assim, a conta do Trade Republic é agora mais rentável.
+
+<p>Se, à semelhança dos operadores do mercado de futuros, esperar que a Euribor a 3 meses e a taxa do BCE desçam para perto de 2% em 2025 e 2026, então os Certificados de Aforro são uma opção de longo prazo mais inteligente: renderão até 2,01% por ano quando o dinheiro no Trade Republic estiver a render 1,47% por ano, em termos líquidos de IRS.
+
+<p>Não se podem resgatar os Certificados de Aforro durante os primeiros três meses. Se se resgatar entre dois pagamentos, perdem-se os juros corridos desde a última distribuição.
+
+<p><strong>O Bitcoin ultrapassou 100 mil euros. Ainda vou a tempo de ganhar?</strong>
+<br>Bitcoin, ouro, diamantes, selos, vinho e cartas de Pokemóns não são investimentos.
+
+<p>O que difere aplicações especulativas de investimentos são os rendimentos. As ações têm os dividendos. As obrigações pagam cupões. O imobiliário gera rendas. Os rendimentos são a base de uma análise financeira.
+
+<p>Os únicos dividendos que se podem retirar da compra de joias, de Legos, de arte ou de automóveis clássicos são emocionais. Compreendo que se gaste dinheiro nessas coisas pelo prazer que fornecem, mas não são investimentos.
+
+<p>Apenas vislumbro um potencial dividendo emocional que se possa captar dos Bitcoins: o obtido pela participação num sistema financeiro alternativo.
+
+<p>Na última vez que me debrucei sobre os criptoativos, não recomendei Bitcoins. Muito mudou desde então; não foi apenas o preço. Como esta edição do boletim <strong>tlim</strong> já está muito longa. Reservarei as próximas semanas para reavaliar a minha opinião sobre o Bitcoin. Partilharei as minhas conclusões na próxima publicação.
+
+<h3>Resumo</h3>
+
+<p>Neste artigo, recomendei as seguintes aplicações financeiras:
+
+<ul>
+<li>Comprar o <strong>Vanguard LifeStrategy 20% Equity UCITS ETF (EUR) Accumulating</strong> (preço: 24,520€).
+<li>Comprar o <strong>Vanguard LifeStrategy 40% Equity UCITS ETF (EUR) Accumulating</strong> (preço: 28,065€).
+<li>Comprar o <strong>Vanguard LifeStrategy 60% Equity UCITS ETF (EUR) Accumulating</strong> (preço: 32,135€).
+<li>Comprar o <strong>Vanguard LifeStrategy 80% Equity UCITS ETF (EUR) Accumulating</strong> (preço: 36,690€).
+<li>Subscrever o <strong>Fidelity MSCI World Index EUR P Acc</strong> (preço: 11,6169€).
+<li>Comprar o <strong>SPDR MSCI World UCITS ETF </strong> (preço: 38,042€).
+<li>Comprar o <strong>iShares Core Global Aggregate Bond UCITS ETF EUR Hedged </strong> (preço 4,818€).
+<li>Subscrever o <strong>CA Património Crescente</strong> (preço: 22,4618€).
+<li>Depositar no <strong>Trade Republic Bank</strong>.
+<li>Contratar o depósito a prazo <strong>Bison Rendimento Premium</strong>.
+<li>Subscrever <strong>Certificados de Aforro</strong>.
+</ul>
+
+<p>A minha principal recomendação é investir no fundo Vanguard LifeStrategy que mais se concilia com o seu conforto perante a volatilidade. Essa aplicação pode ser complementada com Certificados de Aforro na componente da sua carteira que planeia resgatar no curto ou no médio prazo.
+
+<p>Simplificar é o segredo do sucesso dos investidores. ★
+
+<aside>
+<p>David Almas é analista financeiro independente registado na CMVM. O autor detém unidades de participação no iShares Core MSCI World UCITS ETF USD (Acc). Saiba mais em <a href="https://tlim.pt/analista/">tlim.pt/analista</a>.
+</aside>
+
+</article>
+
+
+<article>
+<h2 id="r">Respondido</h2>
+
+
+<blockquote><p>“Se tivermos uma parte dos investimentos em fundos distributivos, a possibilidade de morrer na falência é bem menor, pois, como não estamos a vender o ativo mas a viver dos dividendos, à partida o dinheiro nunca acaba.”</blockquote>
+
+<p>O subscritor <strong>J.V.</strong> escreveu-me após a publicação da edição anterior do boletim <strong>tlim</strong>, na qual desenvolvi uma ferramenta que testa a probabilidade histórica de um investidor chegar à falência seguindo uma estratégia de investimento.
+
+<p>A sua ideia está errada.
+
+<p>Para simplificar o raciocínio, assumamos o seguinte:
+
+<ul>
+<li>O investidor tem 150 mil euros.
+<li>Prevê gastar 1500 euros por mês. Por isso, resgata 18 mil euros no início de todos os anos.
+<li>Quer aplicar no Vanguard LifeStrategy 60% Equity UCITS ETF. Pode escolher a <a href="https://www.ie.vanguard/products/etf/lifestrategy/9494/lifestrategy-60-equity-ucits-etf-eur-accumulating">versão de acumulação</a>, que recomendei no artigo anterior, ou a <a href="https://www.ie.vanguard/products/etf/lifestrategy/9495/lifestrategy-60-equity-ucits-etf-eur-distributing">de distribuição</a>.
+<li>Os dividendos semestrais da versão de distribuição manter-se-ão para sempre iguais ao último pagamento, o que equivale a uma taxa anual de 2,3%. (Na realidade, os dividendos semestrais são voláteis: desde 2021, variaram entre 20,25 cêntimos e 35,74 cêntimos por unidade.)
+<li>Logo após o investimento, os mercados acionistas e obrigacionistas estabilizam nos níveis atuais.
+</ul>
+
+<p>O que aconteceria se optasse pelo fundo de acumulação? Teria inicialmente uma carteira avaliada em 150 mil euros. As cotações das ações e das obrigações não mexeriam, mas continuaria a haver distribuição de dividendos e de juros desses títulos. Os gestores do fundo encaixariam esses rendimentos e comprariam mais ações e obrigações. Logo, a sua carteira cresceria 2,3% por ano.
+
+<table>
+<caption><strong>Opção de acumulação</strong>
+<thead>
+<tr><td>Ano<td>Valor inicial<td>Resgate anual<td>Valor após resgate<td>Valor final (+2,3%)
+</thead>
+<tr><td>1<td>150&nbsp;000€<td><td>150&nbsp;000€<td>153&nbsp;450€
+<tr><td>2<td>153&nbsp;450€<td>18&nbsp;000€<td>135&nbsp;450€<td>138&nbsp;565€
+<tr><td>3<td>138&nbsp;565€<td>18&nbsp;000€<td>120&nbsp;565€<td>123&nbsp;338€
+<tr><td>4<td>123&nbsp;338€<td>18&nbsp;000€<td>105&nbsp;338€<td>107&nbsp;761€
+<tr><td>5<td>107&nbsp;761€<td>18&nbsp;000€<td>89&nbsp;761€<td>91&nbsp;826€
+<tr><td>6<td>91&nbsp;826€<td>18&nbsp;000€<td>73&nbsp;826€<td>75&nbsp;524€
+<tr><td>7<td>75&nbsp;524€<td>18&nbsp;000€<td>57&nbsp;524€<td>58&nbsp;847€
+<tr><td>8<td>58&nbsp;847€<td>18&nbsp;000€<td>40&nbsp;847€<td>41&nbsp;786€
+<tr><td>9<td>41&nbsp;786€<td>18&nbsp;000€<td>23&nbsp;786€<td>24&nbsp;333€
+<tr><td>10<td>24&nbsp;333€<td>18&nbsp;000€<td>6&nbsp;333€<td>6&nbsp;479€
+<tr><td>11<td>6&nbsp;479€<td>6&nbsp;479€<td><td>		
+</table>
+
+<p>Nestas circunstâncias, o seu pé-de-meia esgotar-se-ia no 11.º ano.
+
+<p>E se escolhesse o fundo de distribuição? No início de cada ano, o investidor saberia que os dividendos distribuídos não seriam suficientes para as suas despesas. Teria, assim, de vender também uma parte da carteira. A venda seria menor, graças às distribuições, mas o fundo não cresceria, porque os rendimentos passariam semestralmente para o investidor.
+
+<table>
+<caption><strong>Opção de distribuição</strong>
+<thead>
+<tr><td>Ano<td>Valor inicial<td>Distribuição anual (2,3%)<td>Resgate anual<td>Valor após resgate<td>Valor final
+</thead>
+<tr><td>1<td>150&nbsp;000€<td>3&nbsp;450€<td>14&nbsp;550€<td>135&nbsp;450€<td>135&nbsp;450€
+<tr><td>2<td>135&nbsp;450€<td>3&nbsp;115€<td>14&nbsp;885€<td>120&nbsp;565€<td>123&nbsp;338€
+<tr><td>3<td>123&nbsp;338€<td>2&nbsp;837€<td>15&nbsp;163€<td>108&nbsp;175€<td>110&nbsp;663€
+<tr><td>4<td>110&nbsp;663€<td>2&nbsp;545€<td>15&nbsp;455€<td>95&nbsp;208€<td>97&nbsp;398€
+<tr><td>5<td>97&nbsp;398€<td>2&nbsp;240€<td>15&nbsp;760€<td>81&nbsp;638€<td>83&nbsp;516€
+<tr><td>6<td>83&nbsp;516€<td>1&nbsp;921€<td>16&nbsp;079€<td>67&nbsp;437€<td>68&nbsp;988€
+<tr><td>7<td>68&nbsp;988€<td>1&nbsp;587€<td>16&nbsp;413€<td>52&nbsp;575€<td>53&nbsp;784€
+<tr><td>8<td>53&nbsp;784€<td>1&nbsp;237€<td>16&nbsp;763€<td>37&nbsp;021€<td>37&nbsp;872€
+<tr><td>9<td>37&nbsp;872€<td>871€<td>17&nbsp;129€<td>20&nbsp;743€<td>21&nbsp;221€
+<tr><td>10<td>21&nbsp;221€<td>488€<td>17&nbsp;512€<td>3&nbsp;709€<td>3&nbsp;794€
+<tr><td>11<td>3&nbsp;794€<td>87€<td>3&nbsp;794€<td><td>
+</table>
+
+<p>A poupança também esgotar-se-ia no 11.º ano.
+
+<p>Em teoria, é indiferente receber dividendos num fundo de distribuição ou alienar um montante equivalente aos dividendos num fundo de acumulação. Na prática, os fundos acumulativos são escolhas mais inteligentes, porque os encargos tendem a ser mais baixos, especialmente as despesas fiscais.
+
+<p>Em Portugal, os dividendos de fundos são alvo de <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs71.aspx">retenção na fonte a título definitivo à taxa liberatória de 28%</a>; o saldo das mais e menos-valias de fundos fica à mercê da taxa liberatória de 28%, mas a tributação efetiva é eventualmente amenizada pelo efeito da correção monetária e pela exclusão parcial nas aplicações de longo prazo, como expliquei na análise principal desta edição. Em ambos os casos, é possível optar pelo englobamento dos rendimentos.
+
+<p>A ideia de que “o dinheiro nunca acaba”, como escreveu o leitor, é enganadora. À taxa de distribuição de 2,3%, o investidor necessitaria de uma carteira de 783 mil euros para viver apenas dos dividendos. Se aplicasse esse montante num fundo de acumulação, também poderia resgatar 18 mil euros por ano à conta do crescimento oferecido pelos dividendos, assumindo que as cotações estabilizam.
+
+<p>A bolsa não é, porém, estável. Se o fundo de acumulação desvalorizar, o fundo de distribuição também cairá. Se a taxa de dividendos se mantiver, 2,3% do valor da carteira deixará de gerar 18 mil euros por ano. O investidor que opta por fundos de distribuição terá de resgatar uma parte das poupanças para compensar a descida dos rendimentos.
+
+<p>O aforrador poderá prometer que apenas viverá dos dividendos do fundo de distribuição, mas é o mesmo que um investidor num fundo de acumulação garantir que apenas resgatará o equivalente aos dividendos anuais das ações e das obrigações na carteira do fundo.
+
+<p>Não há volta a dar: para a realidade portuguesa, os fundos de acumulação são melhores.
+
+<p style="text-align:center; margin:3em 0">⋆★⋆
+
+<blockquote><p>“No <a href="https://pt.investing.com/">Investing.com</a>, o que significa o ‘Vol.’? São montantes de compra e de venda?”</blockquote>
+
+<p>O “vol.” ou “volume” que surge nos sítios anglófonos com cotações de bolsa representa a quantidade de títulos negociados. Se não houver indicação em contrário, representa a quantidade transacionada na sessão bolsista em curso ou na sessão anterior, se a bolsa estiver encerrada.
+
+<p>Um título é negociado quando um comprador e um vendedor concordam num preço de troca. Dir-se-ia que esse título muda de mãos, embora a liquidação da operação — o comprador recebe os títulos; o vendedor recebe o dinheiro — ocorra normalmente um ou dois dias úteis mais tarde.
+
+<p>Nas bolsas modernas, o acordo de preço é automatizado no livro eletrónico de ordens, que compila permanentemente todas as propostas de compra e de venda.
+
+<p>O Investing.com apresenta, além da quantidade do dia, a quantidade média negociada nos últimos três meses (“Average Vol. (3m)”).
+
+<p>Para alguns investidores mais ativos, a informação do Investing.com é relevante: reporta, além das cotações, a quantidade transacionada em tempo real.
+
+<p>O Investing.com não divulga os montantes negociados na sessão de bolsa — a informação que o leitor <strong>A.S.</strong> procura —, isto é, as quantidades transacionadas multiplicadas pelos preços dos negócios. As bolsas costumam incluir essa informação como “turnover”. ★
+
+<aside>
+<p>Envie-me as suas dúvidas, sugestões e opiniões para <a href="mailto:davidalmas@gmail.com">davidalmas@gmail.com</a>. Todo o correio é bem-vindo.
+</aside>
+</article>
+
+<article>
+<h2 id="v">Visto</h2>
+<h1>O risco de alavancar os investimentos</h1>
+<p>Como perde um autoaclamado empresário e investidor (e candidato presidencial) 200 mil euros numa aplicação garantida? Com o dinheiro dos outros.
+
+<ul>
+
+<li>
+<p><a href="https://observador.pt/especiais/tubarao-tim-vieira-perdeu-milhares-em-investimento-arriscado-e-acusa-o-banco-de-o-enganar/">“‘Tubarão’ Tim Vieira perdeu milhares em investimento arriscado e acusa o banco de o enganar”</a>, <cite>Observador</cite>
+<p>O meu amigo Edgar Caetano publicou esta deliciosa investigação (de acesso pago) sobre a estupidez que Tim Vieira, um dos financiadores no programa português <cite>Shark Tank</cite> e <a href="https://www.forbespt.com/tim-vieira-revela-a-forbes-que-e-candidato-a-presidencia-da-republica-em-2026/">potencial candidato à Presidência da República</a>, fez.
+
+<p>Imagine que eu investiria agora no <a href="https://www.blackrock.com/lu/intermediaries/products/339299/">iShares iBonds Dec 2033 Term € Corp UCITS ETF</a>. Este fundo investe numa carteira de obrigações empresariais de baixo risco que se vencem em 2033. A minha expectativa seria que, salvo pontuais solavancos, o fundo subisse paulatinamente até ao seu fim, em dezembro de 2033. As obrigações na carteira pagariam periodicamente juros, que seriam reinvestidos, e, quando chegassem ao vencimento, o valor nominal dos títulos seria devolvido ao fundo e, posteriormente, passado aos subscritores.
+
+<p>O iShares iBonds Dec 2033 Term € Corp UCITS ETF não é um fundo garantido, mas é muito provável que os emitentes das obrigações não falhem pagamentos. É tão provável que, em alguns fundos deste tipo, a BlackRock, a sociedade gestora, publica diariamente a rentabilidade estimada até à maturidade</a>.
+
+<p>(Nesta edição do boletim <strong>tlim</strong>, no “Onde investir em 2025”, não recomendei nenhum fundo deste género, como em publicações anteriores: os retornos estimados são agora reduzidos, em torno de 2% por ano para maturidades entre dezembro de 2025 e dezembro de 2034.)
+
+<p>Se, a meio caminho para 2033, acontecesse um evento que tivesse um impacto bolsista como a pandemia de covid-19, esperaria uma queda temporária no preço da unidade de participação — quiçá, 20% —, mas continuaria a aguardar a convergência para a rentabilidade estimada até à maturidade.
+
+<p>Se fosse estúpido, confiante na rentabilidade estimada, em vez de investir apenas o meu dinheiro, poderia agora solicitar ao meu banco um empréstimo para aplicar mais no iShares iBonds Dec 2033 Term € Corp UCITS ETF. A taxa de juro do financiamento seria mais do que compensada pelo retorno da aplicação. O banco não me cobraria muito, porque eu daria as unidades do fundo quase garantido como colateral.
+
+<p>Eu entraria com 2000 euros; o banco emprestar-me-ia 18&nbsp;000 euros para a soma do meu investimento ser de 20&nbsp;000 euros. Quando o evento catastrófico ocorresse, os 20&nbsp;000 euros passariam a valer 16&nbsp;000 euros. Todo o meu colateral seria dizimado. Nesta situação, o banco poderia fazer duas coisas: pedir-me mais colateral ou alienar a posição. Na primeira opção, eu ainda conseguiria recuperar alguma coisa até à maturidade; na segunda escolha, eu perderia os meus 2000 euros e ainda ficaria a dever 2000 euros à instituição financeira.
+
+<p>Se o evento negativo não acontecesse, o negócio era espetacular: em vez de ganhar 2% por ano, a rentabilidade anual seria de 12% por ano, menos os encargos do financiamento.
+
+<p>Tim Vieira aceitou um negócio semelhante proposto pelo Deutsche Bank em 2015, mas pior: o seu fundo, o <a href="https://www.servicios.deutsche-bank.es/documentacionfondos/getDocumento?codDoc=LU1095508682&idioma=ES&codSus=FMDB&codCont=NA">DWS Fixed Maturity Global Bonds Dynamic Plus 2024 II</a>, era ainda menos garantido do que o iShares iBonds Dec 2033 Term € Corp UCITS ETF; tinha uma parte da carteira em ações boas pagadoras de dividendos, por exemplo. Além disso, o seu negócio com o banco alemão multiplica o meu hipotético investimento por 100. Investiu 2 milhões de euros.
+
+<p>O fundo do Deutsche Bank foi liquidado em agosto passado cumprindo a sua promessa: rendeu cerca de 2% por ano. Foi o que o gestor bancário de Tim Vieira lhe prometeu, segundo ele próprio: “o rendimento [anual] podia variar mas o capital estava sempre garantido, desde que não saísse do produto antes do final”.
+
+<p>Em caso de dúvida, não alavanque os seus investimentos.
+
+<li>
+<p><a href="https://gfp.realvidaseguros.pt/ficheiros/documentos/39/carteiras/CartRRJ202411.pdf">Relatório da carteira do Real Reforma Jovem</a>, Real Vida
+<p>Nas minhas navegações natalícias, acabei a analisar a carteira do meu fundo de pensões, o Real Reforma Jovem. Fiquei boquiaberto quando descobrir que o único segmento em que este fundo tem agregadamente mais-valias latentes é no imobiliário. Está a perder no investimento direto em ações e obrigações e nos fundos de ações.
+
+<p>Fiquei deprimido quando constatei que o gestor do Real Reforma Jovem decidiu que a maior posição no início de dezembro passado deveria ser em ações da ASML Holding. Eu aprecio o negócio da companhia neerlandesa — produz máquinas que fazem circuitos integrados —, mas não me parece boa ideia que 7,44% da carteira esteja exposta a essa empresa. Fiquei ainda mais deprimido quando descobri o fundo Ark Innovation ETF — um produto que abomino — a perder 27% na carteira do Real Reforma Jovem.
+
+<p>A depressão passou-me depressa quando me lembrei que tenho menos de 1% do meu património financeiro nesse fundo e que é, de longe, o mais rentável fundo de pensões aberto. Ganhou 5,65% por ano nos últimos 5 anos; os restantes, avançaram, em média, 1,74% por ano.
+
+<p>O que o seu fundo de pensões tem dentro?
+
+<li>
+<p><a href="https://eco.sapo.pt/especiais/os-ppr-continuam-incapazes-de-bater-os-certificados-de-aforro-mas-ha-poucas-excecoes/">“Os PPR continuam a ser incapazes de bater os Certificados de Aforro. Mas há (poucas) exceções”</a>, <cite>Eco</cite>
+<p>Munido com uma ferramenta que invejo — a base de dados da Lipper —, Luís Leitão atualizou os desempenhos dos planos de poupança-reforma. Confirmou, naturalmente, o que tenho dito incessantemente no boletim <strong>tlim</strong> e nas publicações que o antecederam: “Nos últimos cinco anos, apenas 15% dos PPR foram capazes de bater o seu índice de referência, com 74% dos produtos a alcançar uma rendibilidade anualizada nominal abaixo dos 2%.”
+
+<p>Nos próximos meses, os números serão ainda mais negativos, porque a Autoridade de Supervisão de Seguros e Fundos de Pensões <a href="https://eco.sapo.pt/2024/12/12/asf-lanca-plataforma-de-comparacao-de-ppr-em-abril-de-2025/">recomeçará</a> a publicar as estatísticas para os PPR na modalidade de seguros de vida, tradicionalmente menos rentáveis.
+
+<li>
+<p><a href="https://pt.linkedin.com/posts/bluecrowcapital_bluecrow-global-opportunities-ppr-activity-7273306229945290753-6tg2">BlueCrow Global Opportunities PPR</a>
+<p>Quando as bolsas sobem, floresce o número de soluções de investimento acionista. O BlueCrow Global Opportunities PPR é o mais recente plano de poupança-reforma voltado para as ações dos mercados desenvolvidos.
+
+<p>Não compreendo por quer uma sociedade de capital de risco — a <a href="https://bluecrowcapital.com/">BlueCrow</a> — um PPR na sua lista de fundos.
+
+<p>Ainda é muito cedo para aferir a capacidade de gestão da equipa da BlueCrow, porque o PPR foi lançado em setembro passado. Não posso deixar de notar, todavia, que, em cerca de 2 meses e meio, este fundo perdeu cerca de 13%, praticamente o simétrico do avanço dos mercados acionistas mundiais.
+
+<p>Espero que consigam melhores resultados.
+
+<li>
+<p><a href="https://www.cmjornal.pt/economia/detalhe/tribunal-anula-dezenas-de-clausulas-com-exigencias-abusivas">“Banco condenado por letras pequenas nos contratos”</a>, <cite>Correio da Manhã</cite>
+<p>O Tribunal Judicial da Comarca de Lisboa anulou cláusulas de contratos de crédito do BNP Paribas Personal Finance, que, além da sua própria marca Cetelem, concede financiamento através de parceiros comerciais. A jornalista Raquel Oliveira relata neste artigo (de acesso condicionado) que o processo era de 2011. Atualmente, os contratos não podem ter letras pequenas.
+
+<li>
+<p><a href="https://expresso.pt/economia/2024-12-13-anacom-digi--ainda--nao-e-uma-alternativa-mas-um-complemento-aos-operadores-historicos-9f353126">“Anacom: Digi (ainda) não é uma alternativa mas um complemento aos operadores históricos”</a>, <cite>Expresso</cite>
+<p>A presidente da Anacom, Sandra Maximiano, defende que a Digi ainda não é uma alternativa à Meo, Nos e Vodafone, porque tem um serviço limitado.
+
+<p>Está, no entanto, a ser muito útil às famílias que renegoceiam os seus contratos de telecomunicações. A minha experiência com o serviço móvel foi interessante: tentei negociar com o meu antigo fornecedor, a Uzo (da Meo), mas todas as propostas incluíam fidelização de 24 meses; após solicitar a portabilidade do número para a Amigo (Vodafone), telefonaram-me da Meo com uma solução 1 cêntimo mais económica, que não aceitei. 
+
+<li>
+<p><a href="https://www.propublica.org/article/delusion-advanced-chemical-plastic-recycling-pyrolysis">“Selling a Mirage”</a>, <cite>ProPublica</cite>
+<p>Esta investigação de Lisa Song para a <cite>ProPublica</cite> é reveladora sobre a indústria do plástico. Vale a pena ler todo o texto, mas resume-se em duas ideias: a maioria do plástico que entra no sistema de reciclagem não se torna plástico; a maioria do chamado “plástico reciclado” não é composto por material reciclado. É, essencialmente, propaganda.
+
+<p>Os estudos nos países desenvolvidos mostram que a 70% a 80% do vidro e do alumínio é reciclado, mas menos de 10% do plástico consegue ser reaproveitado.
+
+<p>Em 2022, em Portugal, 53% dos resíduos urbanos foram dirigidos para alguma unidade de reciclagem, de tratamento ou de valorização, segundo o relatório mais recente da Entidade Reguladora dos Serviços de Águas e Resíduos. Todavia, 74% do destino final do lixo — após os resíduos passarem por todos os processos — são os aterros e as incineradoras, incluindo o que pomos nos ecopontos.
+
+<p>Temos de nos libertar da nossa dependência do plástico. ★ </ul>
+</article>
+
+<article>
+<h2 id="d">Dito</h2>
+<h3 style="margin-top:1em">Paul Samuelson:</h3>
+
+<h1>“Classifico esta invenção de Bogle a par da invenção da roda, do alfabeto, da imprensa de Gutenberg, do vinho e do queijo.”</h1>
+
+<p>Para preparar o “Onde investir em 2025”, li alguns artigos contrários à minha opinião de analista financeiro, especialmente na área do investimento passivo. Um deles foi <a href="https://harpers.org/archive/2024/06/what-goes-up-andrew-lipstein-401k-doomsday-index-fund-catastrophe/">“What Goes Up”</a>, escrito por Andrew Lipstein para a edição de junho passado da <cite>Harper’s</cite>.
+
+<p><a href="https://alipstein.com/">Lipstein</a> não é jornalista; é um romancista. O texto é divertido, mas não deixa de conseguir explicar os motivos para alguns acreditarem que o investimento passivo cria uma bolha financeira.
+
+<p>A meio do artigo, descobri esta pérola de Paul Samuelson, um dos primeiros laureados com o Prémio Nobel da Economia e o coautor do primeiro livro de Economia que comprei (que se chamava apropriadamente <cite>Economia</cite>). A invenção de Bogle a que Samuelson se referia era o fundo indexado.
+
+<p>Concordo que é uma invenção muitíssimo valiosa, mas nunca a poria ao nível do queijo. Nem do vinho. ★
+</article>
+
+<article>
+<h2 id="donativo">Mais literacia financeira</h2>
+
+<p>Peço-lhe, se tiver possibilidade, um donativo para compensar o meu trabalho e ajudar no desenvolvimento das próximas edições do boletim <strong>tlim</strong>. Se desejar e puder contribuir para a continuidade desta publicação, o donativo sugerido é de 6 euros por mês, mas sinta-se à vontade para dar um valor inferior ou superior, consoante a sua situação financeira e a satisfação que esta publicação lhe traz.
+
+<p>Recebo os donativos preferencialmente por transferência bancária na seguinte conta:
+
+<ul>
+<li>IBAN: PT50002300004565454612994
+<li>Código BIC/Swift: ACTVPTPL
+</ul>
+
+<p>Aceito, em alternativa, pagamento com cartão bancário, em <a href="https://tlim.pt/donativo/">tlim.pt/donativo</a>.
+
+<p>Agradeço o seu apoio.
+
+<p><em>— David Almas</em>
+</article>
+</body>
+</html>
