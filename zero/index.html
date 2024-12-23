@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Probabilidade histórica de falência em vida</title>
+<style>
+body { max-width:60ch; padding:.5em; margin:0 auto; font:1.25em/1.75 sans-serif; opacity:.9 }
+header p a { text-decoration:none }
+h1, h2, h3 { line-height:1 }
+h1 { font-size:2em }
+input { font-family:inherit; font-size:1em; width:2em; text-align:right; border-width:0 0 .2em; background:none; color:inherit; outline:none }
+button, select { font-family:inherit; font-size:1em }
+.nw { white-space:nowrap }
+</style>
+</head>
+<body>
+
+<header><p><a href="/">tlim.pt</a></header>
+
+<noscript><p>Esta página é interativa. Ative a funcionalidade de JavaScript.</noscript>
+
+<p style="position:sticky; top:0; background-color:Canvas">A <strong>probabilidade histórica de falência em vida é de <span id="zero">97</span>%</strong>, assumindo esta estratégia:
+
+<ul id="vf">
+
+<li><select id="vfsexo"><option value="H">Homem<option value="M" selected>Mulher</select> de <span class="nw"><input type="text" value="47" id="vfidade" maxlength="2" style="width:1.5em"> anos</span>.
+
+<li><strong>Fase 1</strong>:
+<ul>
+<li>Património: <input type="text" value="62 000" id="vfcap" style="width:4em"> euros.
+<li>Exposição às ações: <span class="nw"><input type="text" value="80" id="vfpa1" maxlength="3">%</span>.
+<li>Exposição às obrigações: <span class="nw"><span id="vfpo1">20</span>%</span>.
+<li>Encargo anual: <span class="nw"><input type="text" value="0,25" id="vfe1">%</span> do património.
+<li><select id="vfaplicaresgata1"><option value="1" selected>Aplica<option value="-1">Aliena</select> <input type="text" value="350" style="width:2.5em" id="vfp1"> euros por mês durante <input type="text" value="15" id="vfanos1" maxlength="2"> anos.
+</ul>
+
+<li><strong>Fase 2</strong>:
+<ul>
+<li>Exposição às ações: <span class="nw"><input type="text" value="60" id="vfpa2" maxlength="3">%</span>.
+<li>Exposição às obrigações: <span class="nw"><span id="vfpo2">40</span>%</span>.
+<li>Encargo anual: <span class="nw"><input type="text" value="0,25" id="vfe2">%</span> do património.
+<li><select id="vfaplicaresgata2"><option value="1">Aplica<option value="-1" selected>Aliena</select> <input type="text" value="1250" style="width:2.5em" id="vfp2"> euros por mês durante <input type="text" value="5" id="vfanos2" maxlength="2"> anos.
+</ul>
+
+<li><strong>Fase 3</strong>:
+<ul>
+<li>Exposição às ações: <span class="nw"><input type="text" value="50" id="vfpa3" maxlength="3">%</span>.
+<li>Exposição às obrigações: <span class="nw"><span id="vfpo3">50</span>%</span>.
+<li>Encargo anual: <span class="nw"><input type="text" value="0,25" id="vfe3">%</span> do património.
+<li><select id="vfaplicaresgata3"><option value="1">Aplica<option value="-1" selected>Aliena</select> <input type="text" value="500" style="width:2.5em" id="vfp3"> euros por mês.
+</ul>
+</ul>
+
+
+<p>A probabilidade histórica de falência em vida é a proporção de períodos em que o património teria chegado a zero durante a vida do investidor entre fevereiro de 1871 e <span id="fim">dezembro de 2024</span>, assumindo as <a href="https://smi.ine.pt/Indicador/Detalhes/18097">tábuas de mortalidade portuguesas</a> e os retornos mensais das ações e das obrigações implícitos na <a href="https://shillerdata.com/">base de dados</a> norte-americana de Robert Shiller.
+
+<p>A probabilidade histórica de falência em vida não é uma garantia nem uma previsão de desempenho, porque o futuro é incerto. É apenas um guia para uma estratégia de investimento. Peca, entre outros motivos, por:
+
+<ul>
+<li><p><strong>A expectativa de vida depende de si.</strong> As tábuas de mortalidade representam estatísticas conjuntas da população portuguesa.
+
+<li><p><strong>É só América.</strong> A base de dados inclui apenas os Estados Unidos da América, enviesando positivamente os resultados históricos.
+
+<li><p><strong>É em dólares.</strong> É um problema, apesar de os especialistas esperarem uma convergência dos câmbios para a paridade do poder de compra.
+
+<li><p><strong>São índices.</strong> Os índices de mercado resultam de médias e, logo, sumarizam todos os investidores. Não é possível simular estratégias mais específicas.
+
+<li><p><strong>Há mais obrigações.</strong> O índice obrigacionista inclui unicamente títulos do Tesouro norte-americano. O mercado de obrigações é mais vasto e tendencialmente mais rentável e mais volátil.
+
+<li><p><strong>Não contabiliza impostos.</strong> É possível, no entanto, transparecer essas despesas aumentando o valor dos encargos previstos, incrementado os montantes mensais de resgate ou reduzindo os valores mensais de reforço. ★
+</ul>
+
+<script src="../shiller.js"></script>
+<script>
+// Tábuas de mortalidade
+const lxH = [ 100000, 99728, 99704, 99678, 99661, 99644, 99636, 99622, 99616, 99607, 99598, 99589, 99580, 99573, 99555, 99544, 99513, 99492, 99461, 99416, 99370, 99317, 99265, 99221, 99167, 99107, 99060, 98998, 98939, 98880, 98827, 98768, 98703, 98629, 98546, 98464, 98384, 98301, 98187, 98071, 97964, 97840, 97713, 97556, 97397, 97199, 96982, 96759, 96498, 96202, 95868, 95488, 95078, 94625, 94089, 93522, 92863, 92217, 91485, 90726, 89889, 89007, 88099, 87103, 86011, 84915, 83708, 82454, 81134, 79711, 78240, 76690, 75150, 73473, 71678, 69762, 67672, 65540, 63163, 60491, 57702, 54765, 51616, 48264, 44437, 40071, 35084, 29932, 24808, 19954, 15531, 11613, 8349, 5747, 3769, 2342, 1372, 753, 384, 181, 78 ];
+
+const lxM = [ 100000, 99755, 99738, 99722, 99702, 99693, 99683, 99673, 99658, 99649, 99643, 99638, 99631, 99625, 99613, 99599, 99591, 99579, 99563, 99537, 99517, 99494, 99479, 99451, 99432, 99411, 99392, 99368, 99340, 99325, 99299, 99264, 99227, 99188, 99142, 99104, 99066, 99010, 98955, 98899, 98835, 98762, 98679, 98598, 98510, 98400, 98289, 98186, 98056, 97914, 97763, 97599, 97409, 97214, 97010, 96788, 96554, 96290, 96014, 95699, 95358, 94973, 94567, 94146, 93680, 93176, 92651, 92057, 91424, 90735, 89967, 89118, 88272, 87315, 86257, 85039, 83639, 82132, 80384, 78375, 76076, 73554, 70728, 67597, 63867, 59429, 54109, 48282, 42103, 35821, 29649, 23721, 18340, 13644, 9721, 6599, 4244, 2569, 1454, 763, 368 ];
+
+// Probabilidade de viver entre a idade a e a idade b
+function pvive(idadea, idadeb, sexo) {
+	const lx = (sexo === 'M') ? lxM : lxH;
+	return lx[idadeb]/lx[idadea];
+}
+
+function num(el, dig) {
+	const e = document.getElementById(el),
+	z = e.value.replace(/[^\d]/g,'')/Math.pow(10,dig);
+	e.value = z.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig});
+	return z; }
+
+function esc(el, n, dig) {
+	const e = document.getElementById(el);
+	const x = n.toLocaleString('pt-PT',{minimumFractionDigits:dig,maximumFractionDigits:dig});
+	const t = e.tagName.toLowerCase();
+	t === 'input' ? e.value = x : e.innerText = x; }
+
+function vf() {
+	let vf = {};
+		vf.sexo = document.getElementById('vfsexo').value;
+		vf.idade = num('vfidade', 0);
+		vf.limite = 100;
+		vf.dura = vf.limite - vf.idade;
+		vf.cap = num('vfcap', 0);
+		vf.pa1 = num('vfpa1', 0) / 100;
+		vf.e1 = num('vfe1', 2) / 100;
+		vf.p1 = num('vfp1', 0) * +vfaplicaresgata1.value;
+		vf.a1 = num('vfanos1', 0);
+		vf.pa2 = num('vfpa2', 0) / 100;
+		vf.e2 = num('vfe2', 2) / 100;
+		vf.p2 = num('vfp2', 0) * +vfaplicaresgata2.value;
+		vf.a2 = num('vfanos2', 0);
+		vf.pa3 = num('vfpa3', 0) / 100;
+		vf.e3 = num('vfe3', 2) / 100;
+		vf.p3 = num('vfp3', 0) * +vfaplicaresgata3.value;
+		vf.a3 = vf.dura - vf.a1 - vf.a2;
+
+	// Atualiza texto
+	esc('vfpo1', 100 - vf.pa1 * 100, 0);
+	esc('vfpo2', 100 - vf.pa2 * 100, 0);
+	esc('vfpo3', 100 - vf.pa3 * 100, 0);
+
+	// Controlos
+	if ( vf.cap <= 0 ) { vf.cap = .01; } 
+	if ( vf.pa1 > 1 ) { esc('vfpa1', 100, 0); vf.pa1 = 1; }
+	if ( vf.pa2 > 1 ) { esc('vfpa2', 100, 0); vf.pa2 = 1; }
+	if ( vf.pa3 > 1 ) { esc('vfpa3', 100, 0); vf.pa3 = 1; }
+	if ( vf.idade + vf.a1 + vf.a2 > 99 ) {
+		if( vf.idade + vf.a1 <= 99 ) { vf.a2 = 99 - vf.idade - vf.a1; }
+		else  { vf.a1 = 99 - vf.idade; vf.a2 = 0; }
+		esc('vfanos1', vf.a1, 0);
+		esc('vfanos2', vf.a2, 0);
+	}
+
+	// Atualiza hash
+	window.location.hash = vf.sexo + '~' + vf.idade + '~' + vf.cap + '~' + vf.pa1 + '~' + vf.e1 + '~' + vf.p1 + '~' + vf.a1 + '~' + vf.pa2 + '~' + vf.e2 + '~' + vf.p2 + '~' + vf.a2 + '~' + vf.pa3 + '~' + vf.e3 + '~' + vf.p3;
+
+	// Matriz da probabilidade de viver até mais index anos
+	const vive = new Array(vf.limite - vf.idade + 1);
+	for (let m = vf.idade; m <= vf.limite; m++) {
+		vive[m - vf.idade] = pvive(vf.idade, m, vf.sexo);
+	}
+	vf.vive = vive;
+
+	vf.shillera = shillera;
+	vf.shillero = shillero;
+
+
+	// Cria trabalhador
+	const blob = new Blob([xtrabalhador.textContent], { type:'text/javascript'});
+	var trabalhador = new Worker(URL.createObjectURL(blob));
+	trabalhador.postMessage(JSON.stringify(vf));
+
+	trabalhador.onmessage = function(e) {
+		let vf = JSON.parse(e.data);
+
+		let maximo = -Infinity;
+		let indicemaximo = -1;
+		for (let r = 0; r < vf.vivefalido.length; r++) {
+			if (vf.vivefalido[r] > maximo) { maximo = vf.vivefalido[r]; indicemaximo = r; }
+		}
+
+		esc('zero', maximo*100, 0);
+
+		console.log(Math.round(maximo*10000)/100);
+	}
+
+}
+
+document.getElementById('vf').addEventListener('change', vf);
+document.getElementById('vf').addEventListener('keyup', vf);
+window.addEventListener('load', function() {
+	document.getElementById('fim').innerText = fim;
+
+	if (window.location.hash != '') {
+		var url = window.location.href.split('#')[1].split('~');
+		document.getElementById('vfsexo').value = url[0];
+		esc('vfidade', url[1], 0)	
+		esc('vfcap', url[2], 0);
+		esc('vfpa1', url[3], 0);
+		esc('vfe1', url[4], 2);
+		if(url[5] < 0) {
+			document.getElementById('vfaplicaresgata1').value = -1; 
+			esc('vfp1', -1 * url[5], 0); }
+		else {
+ 			document.getElementById('vfaplicaresgata1').value = 1; 
+			esc('vfp1', url[5], 0); }
+		esc('vfanos1', url[6], 0);
+
+		esc('vfpa2', url[7], 0);
+		esc('vfe2', url[8], 2);
+		if(url[9] < 0) {
+			document.getElementById('vfaplicaresgata2').value = -1; 
+			esc('vfp2', -1 * url[9], 0); }
+		else {
+ 			document.getElementById('vfaplicaresgata2').value = 1; 
+			esc('vfp2', url[9], 0); }
+		esc('vfanos2', url[10], 0);
+
+		esc('vfpa3', url[11], 0);
+		esc('vfe3', url[12], 2);
+		if(url[13] < 0) {
+			document.getElementById('vfaplicaresgata3').value = -1; 
+			esc('vfp3', -1 * url[13], 0); }
+		else {
+ 			document.getElementById('vfaplicaresgata3').value = 1; 
+			esc('vfp3', url[13], 0); }
+	}
+
+	vf(); }
+);
+</script>
+<script id="xtrabalhador">
+onmessage = function(e) {
+	let vf = JSON.parse(e.data);
+
+	// Simulações de evolução do património
+	let patrimonios = [];
+	for (let g = 0; g <= vf.shillera.length - vf.dura * 12; g++) {
+		let patrimonio = new Array(vf.dura * 12);
+		patrimonio[0] = vf.cap;
+		for (let h = 0; h < vf.a1 * 12; h++) {
+			if (patrimonio[h] <= 0) { patrimonio[h + 1] = 0; }
+			else patrimonio[h + 1] =
+				patrimonio[h]
+				* (1 - vf.e1/12)
+				* ( 1 + vf.shillera[g + h]/100 * vf.pa1 + vf.shillero[g + h]/100 * (1-vf.pa1) )
+				+ vf.p1;
+		}
+		for (let h = vf.a1 * 12; h < (vf.a1 + vf.a2) * 12; h++) {
+			if (patrimonio[h] <= 0) { patrimonio[h + 1] = 0; }
+			else patrimonio[h + 1] =
+				patrimonio[h]
+				* (1 - vf.e2/12)
+				* ( 1 + vf.shillera[g + h]/100 * vf.pa2 + vf.shillero[g + h]/100 * (1-vf.pa2) )
+				+ vf.p2;
+		}
+		for (let h = (vf.a1 + vf.a2) * 12; h < vf.dura * 12; h++) {
+			if (patrimonio[h] <= 0) { patrimonio[h + 1] = 0; }
+			else patrimonio[h + 1] = 
+				patrimonio[h]
+				* (1 - vf.e3/12)
+				* ( 1 + vf.shillera[g + h]/100 * vf.pa3 + vf.shillero[g + h]/100 * (1-vf.pa3) )
+				+ vf.p3;
+		}
+		patrimonio = patrimonio.filter((_, index) => index === 0 || index % 12 === 0);
+		patrimonios.push(patrimonio);
+	}
+
+	// Matriz da probabilidade de falência com a estratégia
+	let falido = new Array(vf.dura + 1);
+	falido[0] = 0;
+	const obs = patrimonios.length;
+	for (let q = 1; q <= vf.dura; q++) {
+		let falencia = 0;
+		for (let n = 0; n < obs; n++) { if (patrimonios[n][q] <= 0) falencia++; }
+	falido[q] = falencia / obs;
+	}
+
+	let vivefalido = new Array(vf.vive.length);
+	for (let r = 0; r < vf.vive.length; r++) { vivefalido[r] = vf.vive[r] * falido[r]; }
+	let json = {};
+	json.idade = vf.idade;
+	json.ex = vf.ex;
+	json.falido = falido;
+	json.vivefalido = vivefalido;
+	json.vive = vf.vive;
+	let msg = JSON.stringify(json);
+	postMessage(msg);
+};
+</script>
+</body>
+</html>
