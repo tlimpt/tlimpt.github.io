@@ -135,7 +135,7 @@ function vf() {
 	}
 
 	// Atualiza hash
-	window.location.hash = vf.sexo + '~' + vf.idade + '~' + vf.cap + '~' + vf.pa1*100 + '~' + vf.e1 + '~' + vf.p1 + '~' + vf.a1 + '~' + vf.pa2*100 + '~' + vf.e2 + '~' + vf.p2 + '~' + vf.a2 + '~' + vf.pa3*100 + '~' + vf.e3 + '~' + vf.p3;
+	window.location.hash = vf.sexo + '~' + vf.idade + '~' + vf.cap + '~' + vf.pa1*100 + '~' + vf.e1*100 + '~' + vf.p1 + '~' + vf.a1 + '~' + vf.pa2*100 + '~' + vf.e2*100 + '~' + vf.p2 + '~' + vf.a2 + '~' + vf.pa3*100 + '~' + vf.e3*100 + '~' + vf.p3;
 
 	// Matriz da probabilidade de viver até mais index anos
 	const vive = new Array(vf.limite - vf.idade + 1);
