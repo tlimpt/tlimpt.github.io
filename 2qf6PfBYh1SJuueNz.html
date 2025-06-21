@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Boletim tlim n.º 70 ★ Julho de 2025</title>
+<style>
+body { max-width:60ch; padding:.5em; margin:0 auto; font:1.25em/1.75 sans-serif; opacity:.9 }
+header p { border-bottom:.2em solid; margin:0 0 2em; padding:.5em 0 }
+h1, h2, h3 { line-height:1 }
+h1 { font-size:2em }
+h2 { text-decoration:underline }
+h2, h3 { margin-top:3em }
+aside { border-left:.3em solid; padding:0 0 0 2em; margin:2em 0 }
+blockquote { font-style:italic }
+table { border-collapse:collapse; margin:2em auto; font-size:.8em }
+table caption strong:first-child, figcaption strong:first-child { display:block }
+figure { text-align:center; margin:2em 0; font-size:.8em }
+thead { border-bottom:.3em solid }
+td { border-bottom:.1em solid; padding:1em .5em 1em 0; text-align:center; line-height:1.25em; vertical-align:top }
+td:first-child { text-align:left }
+td:last-child { padding:1em 0 }
+input { font-family:inherit; font-size:1em; width:3em; text-align:right; border-width:0 0 .25em; outline:none }
+button, select { font-family:inherit; font-size:1em }
+
+#ppr td { width: 20% }
+</style>
+<script>
+function num(el, dig) {
+	const e = document.getElementById(el),
+	z = e.value.replace(/[^\d]/g,'')/Math.pow(10,dig);
+	e.value = z.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig});
+	return z; }
+
+function esc(el, n, dig) {
+	const e = document.getElementById(el);
+	const x = n.toLocaleString('pt-PT',{minimumFractionDigits:dig,maximumFractionDigits:dig});
+	const t = e.tagName.toLowerCase();
+	t === 'input' ? e.value = x : e.innerText = x; }
+function p(c, t, m) { return t == 0 ? c / m : c / (1-Math.pow(1 + t/12, -m)) * t/12; }
+</script>
+</head>
+<body>
+<header>
+<p>Boletim <strong>tlim</strong> n.º 70 ★ Julho de 2025
+</header>
+
+<p>Olá!
+
+<p>Há quatro meses, radicalizei a minha posição sobre o crédito à habitação: os consumidores devem priorizar a eliminação de todos os empréstimos. E se, em vez de traçar um plano de amortização acelerado, optar por arrendar, o que lhe permitiria vender o imóvel e eliminar completamente a dívida? Ou, para os que estão no início da vida adulta, nunca contratar um financiamento?
+
+<p>Nesta septuagésima edição do boletim <strong>tlim</strong>, <a href="#1">mergulhei</a> no mercado imobiliário: usando as estatísticas oficiais, descobri alguns municípios onde arrendar é a opção financeira mais inteligente.
+
+<p>No <a href="#2">segundo artigo</a>, foquei-me na independência do ponto de vista das finanças pessoais: independência bancária, independência económica e independência financeira.
+
+<p><em>— David Almas</em>
+
+<article>
+<h2 id="1">1</h2>
+
+<h1>Comprar ou arrendar? Descubra onde ser inquilino é melhor</h1>
+
+<p>Por <strong>David Almas</strong> a 1 de julho de 2025
+
+<p>Os residentes em Barcelos e em Santa Maria da Feira devem considerar seriamente o arrendamento. Quem vive no Funchal, em Guimarães e em Leiria deve ponderar essa opção. Os gondomarenses e os famalicenses não devem descartar essa hipótese.
+
+<p><p>Em Portugal, o arrendamento não é uma tradição: três em cada quatro famílias são donas das suas residências. O estudo que elaborei nas últimas semanas — usando as estatísticas mais recentes dos preços e das rendas das casas nos concelhos mais populosos e dos encargos dessas escolhas — mostra, porém, que arrendar pode ser agora a opção financeiramente mais inteligente em alguns municípios e em alguns casos particulares noutras zonas.
+
+<h3>Despesas crescentes na compra</h3>
+
+<p>Acompanhemos uma família com uma oportunidade de comprar ou de arrendar a mesma habitação. Está indecisa.
+
+<p>A casa, com <input type="text" value="100" id="ia"> metros quadrados, localiza-se no <span id="adjetivo">maravilhoso</span> município de <select id="ilista">
+<option value="100|2784|11,91">Almada
+<option value="100|2600|12,61">Amadora
+<option value="102|1330|5,53">Barcelos
+<option value="102|1723|7,83">Braga
+<option value="100|4201|15,50">Cascais
+<option value="99|1930|7,96">Coimbra
+<option value="81|3693|11,42">Funchal
+<option value="80|1883|8,08">Gondomar
+<option value="102|1471|6,23">Guimarães
+<option value="100|1567|6,48">Leiria
+<option value="100|4425|16,04">Lisboa
+<option value="100|2732|11,05">Loures
+<option value="80|2103|9,43">Maia
+<option value="80|2713|11,28">Matosinhos
+<option value="100|2894|11,53">Odivelas
+<option value="100|3622|14,56">Oeiras
+<option value="80|3011|13,04">Porto
+<option value="80|1392|6,15">Santa Maria da Feira
+<option value="100|2285|10,25">Seixal
+<option value="100|2120|9,95">Setúbal
+<option value="100|2315|10,82">Sintra
+<option value="100|2212|10,08">Vila Franca de Xira
+<option value="102|1490|6,51">Vila Nova de Famalicão
+<option value="80|2136|10,10">Vila Nova de Gaia
+<option value="92|1870|8,43">resto de Portugal
+</select>. Ao preço por metro quadrado de <input type="text" value="2784" id="ip"> euros, custa <span id="ipreco">278&nbsp;400</span> euros. Em alternativa, a renda por metro quadrado é de <input type="text" value="11,91" id="ir"> euros, logo a renda mensal do imóvel é de <span id="irenda">1191</span> euros.
+
+<div id="iinterativo"></div>
+
+<p>Neste caso, o preço de compra é equivalente a cerca de <span id="imetrica">19</span> anos de rendas mensais. Isto, porém, é insuficiente para tomar uma decisão. É necessário contabilizar todos os custos.
+
+<p>Além da renda mensal de <span id="irenda2">1191</span> euros, que se prevê que aumentará anualmente à taxa de inflação, o <strong>arrendamento</strong> pode ter apenas estes encargos:
+
+<ul>
+<li><p>Uma caução equivalente a <select id="irendacaucao">
+<option value="0">0</option>
+<option value="1" selected>1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select> <span id="irendacaucaomes">mês</span> de rendas (<span id="icaucao">1191</span> euros). Assumamos que a família não provoca danos no imóvel e, logo, essa caução é devolvida no final do contrato.
+<li><p>A antecipação das rendas de <select id="irendaantecipa">
+<option value="0">0</option>
+<option value="1" selected>1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select> <span id="irendaantecipames">mês</span>. <span id="iantecipa">O último mês na habitação não é, portanto, pago.</span>
+</ul>
+
+<p>A lista de despesas na <strong>compra</strong> de uma habitação é mais extensa. Os custos na altura de aquisição são:
+
+<ul id="compra1">
+<li><p>Escritura: <input type="text" value="700" id="cescritura"> euros. O encargo da escritura depende de onde se faz o ato (junto de um advogado ou solicitador, num notário público ou privado ou no serviço Casa Pronta) e a modalidade (apenas compra ou aquisição com hipoteca). No <a href="https://justica.gov.pt/Servicos/Balcao-Casa-Pronta">Balcão Casa Pronta</a>, a escritura de compra custa 375 euros e a compra com financiamento bancário 700 euros, por exemplo.
+
+<li><p>Imposto do Selo sobre a compra: <input type="text" value="2227,20" id="cis" style="width:5em"> euros. Alguns compradores estão isentos, como <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/selo/Pages/selo7a.aspx">os que têm até 35 anos</a>.
+
+<li><p>Imposto Municipal sobre as Transmissões Onerosas de Imóveis: <input type="text" value="9235,08" id="cimt" style="width:5em"> euros, assumindo que o imóvel está em <span class="nw"><select id="clocal">
+<option value="0">Açores</option>
+<option value="0">Madeira</option>
+<option value="1" selected>Portugal continental</option>
+</select>,</span> que o valor patrimonial tributário é inferior ao preço de compra e que a compra é para habitação própria e permanente. Algumas pessoas podem estar isentas, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cimt/Pages/cimt9.aspx">como os compradores até 35 anos</a>.
+
+<li><p>Registo: <select id="cregisto">
+<option value="225">225</option>
+<option value="250">250</option>
+<option value="450">450</option>
+<option value="500" selected>500</option>
+</select> euros. O registo predial de um prédio urbano custa 250 euros, mas, se incluir uma declaração de hipoteca, o encargo sobe para 500 euros. Através do portal <a href="https://www.predialonline.pt/">Predial Online</a>, do Ministério da Justiça, há um desconto de 10% nos emolumentos.
+
+<li><p>Imposto do Selo sobre o crédito à habitação: <span id="ciscredito">1336,32</span> euros, tendo em conta que <span class="nw"><input type="text" value="20" id="cpcapital">%</span> do preço de aquisição do imóvel (<span id="ccapital">55&nbsp;680</span> euros) sairá do património familiar e que os restantes <span class="nw"><span id="cpfin">80</span>%</span> (<span id="cfin">222&nbsp;720</span> euros) serão financiados por uma instituição bancária. Assume que o empréstimo contratado durará mais de 5 anos.
+
+<li><p>Encargos iniciais do crédito à habitação: <input type="text" value="1300" id="cchabitacao"> euros, o que inclui comissões de estudo ou dossiê, de avaliação e de formalização, entre outros. Deduzo que, em média, estes custos somam entre 1200 euros e 1600 euros a partir de uma análise às fichas de informação normalizada dos maiores bancos.
+</ul>
+
+<p>Após a aquisição da habitação, os proprietários têm outras despesas:
+
+<ul id="compra2">
+<li id="lipresta"><p>Prestação do crédito à habitação: <span id="cpresta">927,03</span> euros por mês. É este o montante que o banco cobrará mensalmente à família pelo empréstimo. O crédito terá uma taxa de juro média de <span class="nw"><input type="text" value="2,90" id="ctaxa">%</span> ao longo de <input type="text" value="30" id="cdur"> anos.
+
+<li id="lisvida"><p>Prémio de seguro de vida: <input type="text" value="40" id="csvida"> euros por mês. Este encargo depende da instituição financeira, da companhia de seguros e, especialmente, da idade dos mutuários.
+
+<li><p>Prémio de seguro contra incêndios ou de seguro multirriscos: <input type="text" value="20" id="csmulti"> euros por mês. Apenas o seguro contra incêndios é obrigatório por lei, mas os bancos financiadores e as próprias companhias de seguros forçam a contratação de seguros multirriscos para a habitação.
+
+<li id="lidbanca"><p>Outras despesas bancárias: <input type="text" value="10" id="cdbanco"> euros por mês. É frequente os bancos fazerem vendas associadas à concessão do empréstimo para compra de casa: conta-ordenado, cartão de débito e de crédito, subscrição de um plano de poupança-reforma ou de um seguro contra desemprego, por exemplo. Todas as despesas que a família não teria sem financiamento devem ser apuradas, incluindo as comissões de manutenção de conta.
+
+<li><p>Condomínio: <input type="text" value="20" id="ccond"> euros por mês. Nem todos os imóveis estão incluídos num condomínio, mas, quando há essa despesa, é preciso contabilizar os custos periódicos.
+
+<li><p>Manutenção do imóvel: <input type="text" value="2700" id="cmanut"> euros por ano. Vários especialistas recomendam a reserva anual de aproximadamente 1% do valor do imóvel (<span id="cmanut1">2784</span> euros) para as despesas de manutenção e reparação da casa. Suspeito que a percentagem correta varia consoante o tipo, a dimensão e a localização do imóvel.
+
+<li><p>Imposto Municipal sobre Imóveis: <input type="text" value="197" id="cimi"> euros por ano. As taxas de IMI são <a href="https://www.portaldasfinancas.gov.pt/pt/main.jsp?body=/imi/consultarTaxasIMIForm.jsp">fixadas</a> pelos municípios. Para os prédios urbanos, variam normalmente entre 0,3% e 0,45% sobre o valor patrimonial tributário do imóvel. Além disso, alguns municípios dão um desconto em função do número de filhos dos proprietários. Por exemplo, os donos de um apartamento avaliado pelo fisco em 100&nbsp;000 euros em Lisboa pagam, em 2025, 300 euros (0,3% &times; 100&nbsp;000 euros). Se tiverem 1, 2 ou mais filhos, o IMI reduz-se para 270 euros, 230 euros ou 160 euros, respetivamente.
+
+</ul>
+
+<p>Resumindo: a compra da casa pela família exige-lhe <span id="cinicio">70&nbsp;979</span> euros no início e, posteriormente, <span id="cmensal">1258</span> euros, em média, por mês.
+
+<h3>Quanto apreciará a casa?</h3>
+
+<p>Um dos mais fortes motivos para os portugueses preferirem a compra da sua habitação ao arrendamento é a expectativa de uma valorização substancial desse ativo. A história mostra que, no longo prazo, a subida dos preços não foi tão extraordinária como nos últimos anos. O último quinquénio — os preços nacionais aumentaram 6,56% por ano acima da inflação — foi estatisticamente anómalo.
+
+<p>Em 2019, muitos investigadores ligados a instituições prestigiadas como a Reserva Federal, o banco central da Alemanha e as universidades de Bona e da Califórnia publicaram o estudo <a href="https://doi.org/10.1093/qje/qjz012">“The Rate of Return on Everything, 1870–2015”</a> no <cite>The Quarterly Journal of Economics</cite>. É uma das melhores e mais extensas análises académicas sobre o desempenho de ativos financeiros e imobiliários.
+
+<p>Um dos cálculos mais importantes dessa investigação foi o da apreciação imobiliária nas 16 economias avaliadas: 2,06% acima da inflação. Desde 1950, a valorização real das habitações foi de 2,50%. Em Portugal, a valorização anual das habitações foi de 0,69% acima da inflação desde 1948, segundo os académicos.
+
+<p>Se a família do nosso exemplo planeia compra uma casa para o longo prazo, deve estimar uma apreciação do imóvel de <input type="text" value="2,00" id="idelta">% por ano acima da inflação.
+
+<h3>Impactos na vida financeira</h3>
+
+<p>Se a família <strong>não arrendasse a habitação</strong>, quanto acumularia no longo prazo? Depende do retorno que conseguisse nessa sua poupança.
+
+<p>Elroy Dimson, Paul Marsh e Mike Staunton, o trio de académicos que mais estuda as rentabilidades de longo prazo dos mercados financeiros, apontam para retornos reais (acima da inflação) entre 1,8% por ano e 5,1% por ano para carteiras compostas por obrigações e ações desde 1900, mostram os números do seu <a href="https://www.ubs.com/global/en/investment-bank/insights-and-data/2024/global-investment-returns-yearbook.html">mais recente relatório.</a>
+
+<p>Assumamos que a família alcançará, em média, uma rentabilidade real de <span class="nw"><input type="text" value="3,80" id="iretorno">%</span> por ano no longo prazo.
+
+<p>Num prazo de <input type="text" value="30" id="idura"> anos, essa família guardaria:
+
+<ul>
+<li><p>O dinheiro não gasto no primeiro mês, equivalente a <span id="mesesiniciais">3</span> <span id="mesesiniciaisrendas">rendas</span> (<span id="mesesiniciaisvalor">3573</span> euros), cresceria até <span id="mesesiniciaisvf">10&nbsp;938</span> euros após capitalizar durante <span id="idura4">30</span> anos;
+<li><p>O dinheiro não gasto no segundo mês — uma renda (<span id="segundomes">1191</span> euros) — aumentaria para <span id="segundomesvf">3635</span> euros após capitalizar durante <span id="idurax1">29</span> anos e 11 meses;
+<li><p><em>etc</em>.
+</ul>
+
+<p>Ao fim de <span id="idura2">30</span> anos, todos os fluxos do arrendamento valeriam <span id="rendavf">796&nbsp;079</span> euros, a preços de hoje. É esse o montante que a família amealharia se não arrendasse.
+
+<p>Se a família não <strong>comprasse</strong> a habitação, até quanto capitalizaria o dinheiro não gasto?
+
+<ul>
+<li><p>O valor da despesa inicial (<span id="despesainicial">70&nbsp;979</span> euros) avançaria até <span id="despesainicialvf">217&nbsp;295</span> euros após capitalizar durante <span id="idura5">30</span> anos;
+<li><p>O dinheiro dos custos do primeiro mês (<span id="despesaprimeiromes">1258</span> euros) cresceria até <span id="despesaprimeiromesvf">3851</span> euros após capitalizar durante <span id="idura6">30</span> anos;
+<li><p>O dinheiro dos custos do segundo mês (<span id="despesasegundomes">1258</span> euros) cresceria até <span id="despesasegundomesvf">3839</span> euros após capitalizar durante <span id="idurax2">29</span> anos e 11 meses;
+<li><p><em>etc</em>.
+</ul>
+
+<p>Após os <span id="idura3">30</span> anos, os montantes de encargos não pagos gerariam <span id="compravf">1&nbsp;052&nbsp;975</span> euros.
+
+<p>No final, o imóvel estaria, no entanto, avaliado em <span id="iprecovf">504&nbsp;283</span> euros, a preços de hoje, após valorizar <span id="idelta2">2,00</span>% por ano em termos reais. Portanto, não comprar a habitação pouparia à família uma despesa líquida de <span id="compravfliq">548&nbsp;692</span> euros.
+
+<p>Conclusão: <span id="conclusao">a compra de casa é a melhor opção, porque representa menos gastos para a família.</span>
+
+<h3>A resposta está na diferença</h3>
+
+<p>Após conduzir várias simulações nos parágrafos anteriores, deduzo que a decisão financeira entre comprar e arrendar resume-se à expectativa de apreciação do imobiliário e de rentabilidade da carteira de investimentos. Aliás, basta ter uma ideia da diferença futura de retornos.
+
+<table>
+<caption><strong>Onde o arrendamento é mais interessante</strong> Estime quão mais renderá a sua carteira de investimento do que a apreciação do imobiliário no seu município. Use a diferença, em pontos percentuais (p.p.), para descobrir se deve ponderar o arrendamento.</caption>
+<thead>
+<tr><td>Diferença na rentabilidade anual<br>superior a…<td>Municípios
+<tbody>
+<tr><td>5,5 p.p.<td>Amadora
+<tr><td>5,0 p.p.<td>Setúbal<br>Sintra
+<tr><td>4,5 p.p.<td>Almada<br>Oeiras<br>Porto<br>Seixal<br>Vila Franca de Xira<br>Vila Nova de Gaia
+<tr><td>4,0 p.p.<td>Braga<br>Cascais<br>Lisboa<br>Loures<br>Odivelas
+<tr><td>3,5 p.p.<td>Coimbra<br>Maia<br>Matosinhos
+<tr><td>3,0 p.p.<td>Gondomar<br>Vila Nova de Famalicão
+<tr><td>2,5 p.p.<td>Funchal<br>Guimarães<br>Leiria
+<tr><td>2,0 p.p.<td>Barcelos
+<tr><td>1,5 p.p.<td>Santa Maria da Feira
+</table>
+
+<p>Por exemplo, os bracarenses devem ponderar o arrendamento apenas se esperarem que a sua carteira de títulos renda mais quatro pontos percentuais por ano do que a apreciação esperada das casas no seu município. Se acreditarem que o imobiliário crescerá 3% por ano, têm de projetar uma valorização dos investimentos de 7% ou mais para considerem o arrendamento.
+
+<p>Se alguém previr que o imobiliário renderá mais do que os seus investimentos financeiro, deve sempre comprar a habitação.
+
+<p>Para chegar aos números do quadro anterior, assumi os valores que introduzi por defeito no simulador descrito nos parágrafos anteriores. Personalize esses cálculos com os seus números para chegar a uma resposta individualizada.
+
+<p>O mais difícil nesta análise é atribuir uma rentabilidade esperada às habitações e à carteira. Pessoalmente, declaro-me ignorante: apesar dos retornos de duplos dígitos no mercado imobiliário e acionista nos anos mais recentes, não extrapolo esses valores para o futuro; opto pelas estatísticas de longo prazo dos estudos académicos.
+
+<p>Assumo, assim, uma valorização real de 2% a 2,5% para as residências e de 5,1% para a minha carteira, composta quase exclusivamente por exposição aos mercados acionistas. A diferença, de 2,6 a 3,1 pontos percentuais, (ainda) não é suficiente para considerar o arrendamento em Lisboa, onde resido e quero continuar a viver.
+
+<h3>São apenas números</h3>
+
+<p>Encare o simulador e o quadro anterior apenas como pontos de partida numa decisão entre a compra e o arrendamento de uma habitação. É impossível simular todos os impactos financeiros que provêm dessa escolha. Esta análise pode não incluir aspetos essenciais, como a fiscalidade: pelas regras atuais, é possível deduzir à coleta de IRS até 15% das rendas; as prestações dos créditos à habitação apenas são dedutíveis se definidas em contratos anteriores a 2012.
+
+<p>Além disso, a frieza dos números não abarca critérios subjetivos, como a preferência pela flexibilidade do arrendamento ou a estabilidade da propriedade.
+
+<p>É, todavia, importante não fechar imediatamente a porta às várias opções que temos à nossa disposição. Eu, por exemplo, estou cada vez mais enamorado pela ideia de arrendar. ★
+
+<script>
+function ilista(){
+
+var adjetivo = ['maravilhoso', 'sublime', 'extraordinário', 'belo', 'admirável', 'deleitoso', 'nobre', 'distinto', 'singular', 'majestoso', 'encantador', 'esplêndido', 'ilustre', 'excelso', 'grandioso', 'lindo', 'bonito', 'estupendo', 'excecional', 'espantoso'];
+document.getElementById('adjetivo').innerText = adjetivo[Math.floor(Math.random() * adjetivo.length)];
+
+var loc = document.getElementById('ilista').value.split('|');
+esc('ia', loc[0], 0);
+esc('ip', loc[1], 0);
+esc('ir', loc[2], 2);
+
+imo();
+}
+
+function imo(){
+var ia = num('ia', 0), ip = num('ip', 0), ir = num('ir', 2), ipreco = Math.round(ia * ip), irenda = Math.round(ia * ir), imetrica = Math.round(ipreco / (irenda * 12));
+
+esc('ipreco', ipreco, 0); esc('irenda', irenda, 0); esc('irenda2', irenda, 0); esc('imetrica', imetrica, 0);
+
+// ARRENDAMENTO
+var irendacaucao = document.getElementById('irendacaucao').value * 1;
+document.getElementById('irendacaucaomes').innerText = irendacaucao == 1 ? 'mês' : 'meses';
+var icaucao = irendacaucao * irenda; esc('icaucao', icaucao, 0);
+
+var irendaantecipa = document.getElementById('irendaantecipa').value * 1;
+document.getElementById('irendaantecipames').innerText = irendaantecipa == 1 ? 'mês' : 'meses';
+if (irendaantecipa == 0) { document.getElementById('iantecipa').innerText = ''; }
+else if (irendaantecipa == 1) { document.getElementById('iantecipa').innerText = 'O último mês na habitação não é, portanto, pago.'; }
+else document.getElementById('iantecipa').innerText = 'Os últimos meses na habitação não são, portanto, pagos.';
+
+// AQUISIÇÃO
+// Escritura
+var cescritura = num('cescritura', 0);
+
+// Imposto do Selo
+var cis = num('cis', 2);
+if (cis == 0) { cis = 0; }
+else { cis = Math.round(.8 * ipreco) / 100; }
+esc('cis', cis, 2);
+
+// IMT: Ofício-circulado n.º 40128/2025, de 10/01
+var cimt = num('cimt',2);
+if (cimt == 0) { cimt = 0; }
+else {
+	if (document.getElementById('clocal').value == 0) {
+		if (ipreco > 1410359 ) { cimt = 0.075 * ipreco; }
+		else if (ipreco > 810028) { cimt = 0.06 * ipreco; }
+		else if(ipreco > 405073) { cimt = 0.08 * ipreco - 16866.90; }
+		else if(ipreco > 243073) { cimt = 0.07 * ipreco - 12816.17; }
+		else if(ipreco > 178273) { cimt = 0.05 * ipreco - 795471; }
+		else if(ipreco > 130326) { cimt = 0.02 * ipreco - 2606.52; }
+		else cimt = 0;
+	}
+	else {
+		if (ipreco > 1128287) { cimt = 0.075 * ipreco; }
+		else if (ipreco > 648022) { cimt = 0.06 * ipreco; }
+		else if(ipreco > 324058) { cimt = 0.08 * ipreco - 13493.50; }
+		else if(ipreco > 194458) { cimt = 0.07 * ipreco - 10252.92; }
+		else if(ipreco > 142618) { cimt = 0.05 * ipreco - 6363.76; }
+		else if(ipreco > 104261) { cimt = 0.02 * ipreco - 2085.22; }
+		else cimt = 0; }
+	}
+esc('cimt', cimt, 2);
+
+// Registo
+var cregisto = document.getElementById('cregisto').value * 1;
+
+// Imposto do Selo sobre crédito
+var cpcapital = num('cpcapital', 0) / 100; if (cpcapital > 1) { cpcapital = 1; esc('cpcapital', 100, 0); }
+esc('cpfin', (1 - cpcapital) * 100, 0);
+
+var ccapital = cpcapital * ipreco; esc('ccapital', ccapital, 0);
+var cfin = ipreco - ccapital; esc('cfin', cfin, 0);
+
+var ciscredito = .006 * cfin; esc('ciscredito', ciscredito, 2);
+
+// Encargos iniciais do crédito à habitação
+if(cpcapital == 1) { esc('cchabitacao', 0, 0); }
+var cchabitacao = num('cchabitacao', 0);
+
+// AQUISIÇÃO PERIÓDICO
+// Prestação
+var ctaxa = num('ctaxa', 2) / 100, cdur = num('cdur', 0);
+
+var cpresta = p(cfin, ctaxa, cdur * 12); esc('cpresta', cpresta, 2);
+
+// Outros
+var csvida = num('csvida', 0), csmulti = num('csmulti', 0), cdbanco = num('cdbanco', 0), ccond = num('ccond', 0), cmanut = num('cmanut', 0), cimi = num('cimi', 0);
+
+esc('cmanut1', ipreco / 100, 0);
+
+// RESUMINDO
+var cinicio = Math.round(cescritura + cis + cimt + cregisto + ciscredito + cchabitacao + ccapital); esc('cinicio', cinicio, 0);
+
+var cmensal = Math.round(cpresta + csvida + csmulti + cdbanco + ccond + cmanut / 12 + cimi / 12); esc('cmensal', cmensal, 0);
+
+var cmensal2 = csmulti + ccond + cmanut / 12 + cimi / 12;
+
+// Capitalização arrendamento
+var idelta = num('idelta', 2) / 100, iretorno = num('iretorno', 2) / 100, rm = Math.pow(1 + iretorno, 1/12)-1, idura = num('idura', 0) * 12;
+
+esc('mesesiniciais', (1 + irendacaucao + irendaantecipa), 0);
+document.getElementById('mesesiniciaisrendas').innerText = (1 + irendacaucao + irendaantecipa) == 1 ? 'rendas' : 'rendas';
+esc('mesesiniciaisvalor', irenda * (1 + irendacaucao + irendaantecipa) , 0);
+esc('mesesiniciaisvf', irenda * (1 + irendacaucao + irendaantecipa) * Math.pow(1 + rm, idura), 0);
+esc('segundomes', irenda, 0);
+esc('segundomesvf', irenda * Math.pow(1 + rm, idura - 1), 0);
+esc('idura4', idura / 12, 0);
+esc('idurax1', idura/12 - 1, 0);
+esc('idura2', idura / 12, 0);
+
+
+var rendavf = 0;
+for (var i = 0 ; i < idura - irendaantecipa; i++) {
+	rendavf += irenda * Math.pow( 1 + rm, idura - i); }
+rendavf += (irendacaucao + irendaantecipa) * irenda * Math.pow( 1 + rm, idura );
+rendavf += -irendacaucao * irenda;
+esc('rendavf', rendavf, 0);
+
+// Capitaliza compra
+esc('despesainicial', cinicio, 0);
+esc('idura5', idura / 12, 0);
+var despesainicialvf = cinicio * Math.pow( 1 + rm, idura ); esc('despesainicialvf', despesainicialvf, 0);
+
+esc('despesaprimeiromes', cmensal, 0);
+var despesaprimeiromesvf = cmensal * Math.pow( 1 + rm, idura ); esc('despesaprimeiromesvf', despesaprimeiromesvf, 0);
+esc('idura6', idura / 12, 0);
+
+esc('despesasegundomes', cmensal, 0);
+var despesasegundomesvf = cmensal * Math.pow( 1 + rm, idura - 1 ); esc('despesasegundomesvf', despesasegundomesvf, 0);
+esc('idurax2', idura / 12 - 1, 0);
+
+esc('idura3', idura / 12, 0);
+
+var compravf = despesainicialvf;
+if (idura >= cdur * 12) { // Crédito terminado antes
+	for (var ii = 0; ii < cdur * 12; ii++) {
+			compravf += cmensal * Math.pow( 1 + rm, idura - ii);
+	}
+	for (var iii = cdur * 12; iii < idura; iii++) {
+			compravf += cmensal2 * Math.pow( 1 + rm, idura - iii);
+	}
+}
+else {
+	for (var iv = 0; iv < idura; iv++) {
+			compravf += cmensal * Math.pow( 1 + rm, idura - iv);
+	}
+	compravf += cpresta * ( (1 - Math.pow(1 + ctaxa / 12, -cdur*12 + idura)) / (ctaxa / 12) ) * 1.005;
+}
+
+esc('compravf', compravf, 0);
+
+var iprecovf = ipreco * Math.pow( 1 + idelta, idura / 12); esc('iprecovf', iprecovf, 0);
+esc('idelta2', idelta * 100, 2);
+
+var compravfliq = compravf - iprecovf; esc('compravfliq', compravfliq, 0);
+
+// CONCLUSÃO
+document.getElementById('conclusao').innerText = rendavf < compravfliq ? 'este é um dos casos em que o arrendamento vale financeiramente a pena, porque a família poupa mais dinheiro evitando a compra.' : 'a compra de casa é a melhor opção, porque representa menos gastos para a família.';
+
+// console.log(rendavf < compravfliq ? 'renda' : 'compra');
+
+}
+
+document.getElementById('ilista').addEventListener('change', ilista);
+document.getElementById('ia').addEventListener('keyup', imo);
+document.getElementById('ip').addEventListener('keyup', imo);
+document.getElementById('ir').addEventListener('keyup', imo);
+document.getElementById('irendacaucao').addEventListener('change', imo);
+document.getElementById('irendaantecipa').addEventListener('change', imo);
+document.getElementById('compra1').addEventListener('change', imo);
+document.getElementById('compra1').addEventListener('keyup', imo);
+document.getElementById('compra2').addEventListener('keyup', imo);
+document.getElementById('idelta').addEventListener('keyup', imo);
+document.getElementById('iretorno').addEventListener('keyup', imo);
+document.getElementById('idura').addEventListener('keyup', imo);
+
+
+window.addEventListener('load', function(){
+	document.getElementById('iinterativo').innerHTML = '<aside><p><strong>Este artigo é interativo.</strong><p>A mudança de município no seletor anterior povoa estes números iniciais com informação das estatísticas oficiais mais recentes. Há apenas informação detalhada para os municípios com mais habitantes. <p>Pode substituir todos os números sublinhados neste artigo para ajustar à sua situação.';
+	ilista();
+});
+</script>
+
+</article>
+
+<article>
+<h2 id="2">2</h2>
+<h1>Busque a independência</h1>
+
+<p>Por <strong>David Almas</strong> a 1 de julho de 2025
+
+<p>Em breve, celebrarei o sétimo aniversário da minha independência financeira. Em 2018, após um arrufo com o meu último empregador, o <cite>Observador</cite>, orcei a minha situação financeira e concluí que apenas teria de continuar de trabalhar se assim o desejasse.
+
+<p>Surpreendi-me. Bastaram alguns simples truques — limitar a inflação do estilo de vida à medida que subia na escada profissional, amortizar agressivamente o crédito à habitação e investir progressiva, económica e simplesmente — para, começando do zero, chegar à independência financeira em menos de duas décadas.
+
+<p>Tive sorte em vários ângulos das minhas finanças pessoais, mas não foi sempre fácil. A rentabilidade dos mercados acionistas, o principal destino das minhas aplicações, foi de 5% por ano desde que comecei a investir no ano 2000. Está longe do par de dígitos que muitos pensam conseguir no longo prazo. O meu apartamento, localizado no centro de Lisboa, valorizou-se provavelmente à taxa anual de 4% desde que o comprei, há quase 20 anos. É o dobro da inflação nacional, mas também está afastado do que o que muitos acreditam será o retorno natural do imobiliário.
+
+<p>Em 2018, não desejei continuar a trabalhar. A minha independência financeira permitiu-me tomar a decisão de deixar o emprego. Declarei, nesse mês de julho, a minha independência financeira e reforma antecipada, a IFRA, ao que muitos chamam de “FIRE”, de <i>financial independence, retire early</i>.
+
+<h3>Mais do que finanças</h3>
+
+<p>Sempre que penso em independência, penso em liberdade: estar livre de restrições e opressões para tomar decisões. Sempre que penso em liberdade, penso na Nina Simone, que partilhou a melhor <a href="https://youtu.be/nPD8f2m8WGI">definição</a>: “Digo-te o que é para mim liberdade: não ter medo.”
+
+<p>Por transitividade, a independência é a capacidade de agir ou de decidir sem medo. A independência pode tomar vários ângulos — moral, intelectual, cultural, tecnológica, energética, por exemplo —, mas, como este é um boletim de finanças pessoais, foco-me em apenas três.
+
+<ul>
+<li><p><strong>Independência bancária</strong>. O sistema bancário é essencial à vida moderna. O quotidiano seria muito mais complexo sem os bancos.
+
+<p>Não é, porém, inteligente ficar dependente de uma instituição financeira. Todos os bancos querem aumentar os lucros dos seus acionistas (incluindo o banco de capitais públicos); os dependentes são os melhores alimentadores do negócio bancário.
+
+<p>Um dos motivos para recomendar a liquidação acelerada de todos os créditos, incluindo o para a compra de casa, é a independência. Embora seja teoricamente possível transferir o empréstimo para outra instituição financeira, o processo não é simples e não é gratuito. Ter uma dívida bancária é uma limitação à liberdade de movimentação das finanças.
+
+<p>Felizmente, há dois tomos legislativos que contribuem para a independência bancária:
+
+<ul>
+<li><p><strong>Serviços mínimos bancários</strong>. A <a href="https://www.bportugal.pt/page/o-que-e-uma-conta-de-servicos-minimos-bancarios">conta de serviços mínimos bancários</a>, que quase todos os bancos são obrigados a oferecer aos clientes, fornece um conjunto alargado de serviços bancários a um preço reduzido. Inclui, por exemplo, conta à ordem, cartão de débito, transferências bancárias e movimentação e operações pela Internet e nos balcões da instituição financeira.
+
+<p>No máximo, custa anualmente o equivalente a 1% do Indexante de Apoios Sociais (agora, 5,22 euros). O <a href="https://www.activobank.pt/pt/Pages/servicos-minimos-bancarios.aspx">ActivoBank</a> e o <a href="https://atlantico.eu/particulares/contas">Atlântico Europa</a> são os únicos que não cobram atualmente pela conta de serviços mínimos bancários.
+
+<p>A conta de serviços mínimos bancários tem de ser a única conta de depósito à ordem do titular no sistema financeiro português. Isso não impede os clientes bancários de aderirem a outros serviços bancários, como contratar um cartão de crédito ou investir via plataforma de bolsa.
+
+<li><p><strong>Mudança de conta</strong>. Os consumidores podem sempre solicitar a <a href="https://clientebancario.bportugal.pt/pt-pt/mudanca-de-conta">mudança da sua conta de pagamentos</a>, como uma de depósito à ordem, para outra instituição financeira. Essa mudança pode incluir a informação sobre as transferências recorrentes, sobre as ordens permanentes e sobre as autorizações de débito direto, a transferência do saldo na conta e o encerramento da conta antiga.
+
+<p>As instituições financeiras podem cobrar em algumas situações, desde que seja um encargo razoável, mas não pela prestação de informações sobre este serviço e pelo encerramento da conta.
+</ul>
+
+<p>Se procura a independência bancária — o que não é sinónimo de não ter conta num banco —, tenha sempre um plano de fuga: uma tática de mudança, caso se farte ou deixe de confiar no seu banco.
+
+<p>Eu tenho conscientemente ligações a três instituições financeiras: a conta-corrente está no ActivoBank, o cartão de crédito na Cofidis e a conta de investimento no Banco Carregosa.
+
+<p>Se o ActivoBank falhasse ou introduzisse comissões no seu preçário, cambiaria facilmente para outro banco económico e sólido, como a solução Moey do Crédito Agrícola. Se a Cofidis cancelasse o meu cartão de crédito, não seria grave: tenho outro cartão bancário, o de débito do ActivoBank. Se o Carregosa subisse as comissões de bolsa, transferiria a carteira para outro intermediário: sei exatamente quanto me custaria a mudança, porque negociei esse encargo com o meu gestor de conta.
+
+<li><p><strong>Independência económica</strong>. Esta versão do conceito de independência económica resume-se à capacidade de gerar rendimentos que não dependem de uma única entidade.
+
+<p>A única fonte de rendimentos de um trabalhador pode ser o vencimento que o seu empregador lhe paga. Deve, todavia, ter consciência dos rendimentos que conseguiria se esse empregador deixasse de lhe pagar o salário. Teria subsídio de desemprego? Durante quanto tempo? Quantos meses demoraria a encontrar outro emprego? Conseguiria manter os rendimentos anteriores?
+
+<p>Considero que um trabalhador é economicamente independente se souber que poderá mudar de emprego rapidamente sem ameaçar a sua qualidade de vida.
+
+<p>Esta ideia está intimamente relacionada com a diversificação de rendimentos. Um trabalhador estará mais próximo da independência económica se tiver rendimentos de outras fontes, como rendas de imobiliário ou dividendos da carteira de investimentos.
+
+<p>Atualmente, tenho apenas uma fonte de rendimentos — as mais-valias do meu fundo de investimento —, mas prevejo que, em duas décadas, terei outra: uma magra pensão da Segurança Social.
+
+<li><p><strong>Independência financeira</strong>. É a capacidade de uma pessoa conseguir cobrir as suas despesas recorrendo exclusivamente aos seus recursos financeiros. Não envolve necessariamente a reforma antecipada: essa pessoa pode ter dinheiro suficiente para deixar de trabalhar, mas continuar a fazê-lo.
+
+<p>A equação da independência financeira tem dois componentes: de um lado, o património; do outro, as despesas. A gestão eficaz dos gastos — antes e após alcançar a independência financeira — é tão importante como a acumulação da fortuna.
+
+<p>É discutível, mas penso que não é se atinge a IFRA quando os rendimentos patrimoniais derivam de uma gestão ativa do património. Um magnata do imobiliário cuja vida é administrar imóveis tem uma profissão; não está aposentado. Um especulador que passe horas a acompanhar a bolsa e a avaliar investimentos não está aposentado; é um gestor de fortunas. Por vezes, a linha que separa a reforma antecipada de um intenso passatempo é fina.
+</ul>
+
+<p><p>Defendo que a independência financeira é a melhor meta para as finanças pessoais da maioria das pessoas, mesmo as que não desejam uma aposentação precoce. Porém, não se deixe absorver excessivamente por essa ideia, especialmente aderindo a um dos cultos que propagam nas redes sociais. Como <a href="https://collabfund.com/blog/pure-independence/">escreveu</a> Morgan Housel, um dos melhores pensadores modernos de Finanças, é um modo de pobreza: “Em vez de precisar de trabalhar por dinheiro, fica em dívida por precisar de pensar de uma determinada forma.”
+
+<p>Embora defenda que, em geral, a independência deve ser procurada, há algumas dependências que, quando bem geridas, são saudáveis. A dependência emocional de outras pessoas é a minha preferida. ★
+
+</article>
+
+
+<article>
+<h2 id="r">Respondido</h2>
+
+<blockquote><p>“Tenho Vanguard LifeStrategy 60% Equity na Degiro, mas gostava de passar para o ActivoBank. Recomenda que faça o resgate (quando não estiver em perda) e invista esse dinheiro na plataforma portuguesa?”</blockquote>
+
+<p>Não é apenas o subscritor <strong>P.R.</strong> que tem esta ideia: apenas se deve vender as aplicações quando não estão em perda. É errado, especialmente quando se planeia reinvestir a receita no mesmo instrumento financeiro noutra plataforma.
+
+<p>Recomendo exatamente o oposto: se, por algum motivo, quiser reestruturar a sua carteira, aliene quando tiver prejuízos. Não espere pela subida.
+
+<p>A explicação é muito simples: por definição, os prejuízos não pagam imposto sobre o rendimento. Portanto, vender uma aplicação com perdas para a comprar noutro lado, não tem impacto fiscal negativo. (Poderá ter um efeito positivo, quando se abate esses prejuízos às mais-valias de outros instrumentos.)
+
+<p>Vender uma aplicação com ganhos para a comprar noutro lado pode ter um impacto fiscal negativo, porque as mais-valias são tributadas.
+
+<p style="text-align:center; margin:3em 0">⋆★⋆
+
+<blockquote><p>“Descobri que existe um ETF, o UBS Core MSCI World UCITS ETF USD, cuja taxa de encargos correntes é mais baixa do que a do SPDR MSCI World UCITS ETF.”</blockquote>
+
+<p>Em maio passado, a UBS Fund Management, a subsidiária irlandesa do banco UBS, reduziu a taxa anual de encargos correntes do <a href="https://www.ubs.com/pt/pt/assetmanagement/funds/etf/ie00bd4txv59-ubs-core-msci-world-ucits-etf-usd-acc-pd001.html">UBS Core MSCI World UCITS ETF USD</a> para 0,06%. Como salienta o subscritor <strong>A.F.</strong>, é metade da do <a href="https://www.ssga.com/ie/en_gb/intermediary/etfs/spdr-msci-world-ucits-etf-sppw-gy">SPDR MSCI World UCITS ETF</a>, um dos fundos de ações que recomendei na edição do boletim <strong>tlim</strong> de janeiro de 2025.
+
+<p>A taxa de encargos correntes, que inclui as comissões de gestão e de depósito, não abrange, todavia, todos os custos dos investidores.
+
+<p>Reflexo da sua reduzida dimensão e popularidade, o volume de negócios bolsistas sobre o UBS Core MSCI World UCITS ETF USD é menor. No segmento Xetra da Börse Frankfurt, o UBS Core MSCI World UCITS ETF USD, que usa o código de negociação “<a href="https://www.boerse-frankfurt.de/en/etf/ubs-core-msci-world-ucits-etf-usd-acc">UETW</a>”, movimenta normalmente um quarto do volume de negócios do SPDR MSCI World UCITS ETF, com o código “<a href="https://www.boerse-frankfurt.de/en/etf/spdr-msci-world-ucits-etf">SPPW</a>”.
+
+<p>O volume mais baixo traduz-se frequentemente em negócios menos bons para os investidores. Por exemplo, num determinado momento, a diferença entre o melhor preço de compra e o melhor preço de venda no Xetra poderá ser de 0,02% para o SPPW e de 0,06% para o UETW. Se assumirmos que o preço justo está entre o melhor preço de compra e o melhor preço de venda, esse diferencial é um encargo dividido entre os compradores e os vendedores.
+
+<p>A quantidade de títulos disponíveis parar comprar ou para vender nas melhores propostas também poderá ser inferior.
+
+<p>Adicionalmente, há outros elementos a considerar, como a capacidade fiscal das entidades gestoras e os rendimentos de empréstimos de títulos. Em ambos os casos, a UBS aparenta ser ligeiramente melhor do que a SPDR.
+
+<p>A carteira de ambos os fundos é custodiada pela State Street Custodial Services da Irlanda.
+
+<p>Até agora, porém, o UETW não foi mais rentável do que o SPPW.
+
+<table>
+<caption><strong>À frente</strong> O fundo que recomendei em janeiro continua a liderar. Usei as cotações no Xetra como referência para os cálculos.</caption>
+<thead>
+<tr><td>Rentabilidade anualizada<td>UBS Core MSCI World UCITS ETF USD<td>SPDR MSCI World UCITS ETF
+<tbody>
+<tr><td>1 ano<td>3,94%<td>4,00%
+<tr><td>3 anos<td>13,48%<td>13,54%
+<tr><td>5 anos<td>13,37%<td>13,58%
+</table>
+
+<p>Estarei atento aos desempenhos do UETW. É possível que as mudanças recentes se reflitam num aumento da sua popularidade e numa superioridade futura.
+
+<p style="text-align:center; margin:3em 0">⋆★⋆
+
+<blockquote><p>“Como projetas os investimentos para saber que serão mais rentáveis após uma década?”</blockquote>
+
+<p>Alguns subscritores do boletim <strong>tlim</strong> ficaram curiosos com esta passagem da edição anterior:
+
+<blockquote><p>“Se a diferença de retornos entre o fundo de índice e o PPR da Casa de Investimentos se mantiver no futuro, a rentabilidade anual líquida de impostos da primeira escolha ultrapassa a do PPR após menos de uma década de investimento, assumindo as condições fiscais mais favoráveis para o PPR e mais desfavoráveis para o fundo.”</blockquote>
+
+<p>Para fazer aquela afirmação, assumi:
+
+<ul>
+<li><p>A rentabilidade anualizada do Save & Grow PPR/OICVM Founders desde o seu lançamento, em outubro de 2020, e do fundo de índice SPDR MSCI World UCITS ETF no mesmo período.
+<li><p>Um capital disponível de 2000 euros.
+<li><p>Os encargos de ambas as aplicações. Considerei uma comissão de bolsa de 10 euros na compra e na venda do fundo de índice.
+<li><p>A dedução à coleta máxima, de 400 euros, com o PPR.
+<li><p>A tributação dos rendimentos dos PPR à taxa efetiva de 8%, conforme o <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/bf_rep/Pages/ebf-artigo-21-ordm-.aspx">artigo 21.º</a> do Estatuto dos Benefícios Fiscais.
+<li><p>A tributação das mais-valias do fundo de índice à taxa autonóma de 28%, seguindo o <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs72.aspx">artigo 72.º</a> do Código do IRS, mas considerando as exclusões de tributação previstas no número 5 do <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs43.aspx">artigo 43.º</a>.
+</ul>
+
+<p>Desenhei os fluxos financeiros das duas opções e, recorrendo a uma folha de cálculo, calculei as taxas internas de rentabilidade: a taxa anual que, aplicada às despesas do investimento, devolve o retorno da aplicação. Quanto mais elevada, mais rentável é a aplicação financeira.
+
+<p>Para ficar claro, anexei a minha folha de cálculo, atualizada com cotações mais recentes do PPR e do fundo de índice, a esta edição: <a href="data:application/vnd.oasis.opendocument.text;base64,
+UEsDBBQAAAgAACJS1VqFbDmKLgAAAC4AAAAIAAAAbWltZXR5cGVhcHBsaWNhdGlvbi92bmQub2FzaXMub3BlbmRvY3VtZW50LnNwcmVhZHNoZW
+V0UEsDBBQAAAgAACJS1VoAAAAAAAAAAAAAAAAaAAAAQ29uZmlndXJhdGlvbnMyL3Rvb2xwYW5lbC9QSwMEFAAACAAAIlLVWgAAAAAAAAAAAAAA
+ABwAAABDb25maWd1cmF0aW9uczIvcHJvZ3Jlc3NiYXIvUEsDBBQAAAgAACJS1VoAAAAAAAAAAAAAAAAYAAAAQ29uZmlndXJhdGlvbnMyL21lbn
+ViYXIvUEsDBBQAAAgAACJS1VoAAAAAAAAAAAAAAAAYAAAAQ29uZmlndXJhdGlvbnMyL2Zsb2F0ZXIvUEsDBBQAAAgAACJS1VoAAAAAAAAAAAAA
+AAAaAAAAQ29uZmlndXJhdGlvbnMyL3BvcHVwbWVudS9QSwMEFAAACAAAIlLVWgAAAAAAAAAAAAAAAB8AAABDb25maWd1cmF0aW9uczIvaW1hZ2
+VzL0JpdG1hcHMvUEsDBBQAAAgAACJS1VoAAAAAAAAAAAAAAAAYAAAAQ29uZmlndXJhdGlvbnMyL3Rvb2xiYXIvUEsDBBQAAAgAACJS1VoAAAAA
+AAAAAAAAAAAcAAAAQ29uZmlndXJhdGlvbnMyL2FjY2VsZXJhdG9yL1BLAwQUAAAIAAAiUtVaAAAAAAAAAAAAAAAAGgAAAENvbmZpZ3VyYXRpb2
+5zMi9zdGF0dXNiYXIvUEsDBBQACAgIACJS1VoAAAAAAAAAAAAAAAAMAAAAbWFuaWZlc3QucmRmzZPNboMwEITvPIVlzthALwUFcijKuWqfwDWG
+WAUv8poS3r6Ok1ZRpKrqn9TjrkYz3460m+1hHMiLsqjBVDRjKSXKSGi16Ss6uy65pds62ti2Kx+aHfFqg6WfKrp3bio5X5aFLTcMbM+zoih4mv
+M8T7wiwdU4cUgMxrSOCAkejUJp9eR8GjnO4glmV1F066CQefcgPYvdOqmgsgphtlK9h7YgkYFAjQlMyoR0gxy6TkvFM5bzUTnBoe3ix2C904Oi
+PGDwK47P2N6IDKblXuC9sO5cg998lWh67mN6ddPF8d8jlGCcMu5P6rs7ef/n/i7P/xnir7R2RGxAzqNn+pDntPIfVUevUEsHCLT3aNIFAQAAgw
+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
+BAAA/U8AAAAA
+" download="tir.ods">tir.ods</a>. Criei-a com o LibreOffice Calc, mas outras soluções, como o Microsoft Excel, o Google Sheets e o Microsoft 365, deverão abri-la sem problemas.
+
+<p>Este tipo de construções financeiras são perfeitas para perceber a sensibilidade das rentabilidades às variáveis, como a dedução à coleta e a duração do investimento. Basta mudar os valores na folha de cálculo para assistir ao efeito.
+
+<table id="ppr">
+<caption><strong>Taxas internas de rentabilidade</strong> Partindo das assunções anteriores, estes são as rentabilidades anuais do investimento no Save & Grow PPR/OICVM e no SPDR MSCI World UCITS ETF.</caption>
+<thead>
+<tr><td rowspan="3">Duração<td colspan="3">Save & Grow PPR/OICVM<td rowspan="3">SPDR MSCI World UCITS ETF
+<tr><td colspan="3" style="text-align:center; border-bottom:0; padding-bottom:0">Dedução à coleta:
+<tr><td style="text-align:center">0%<td>10%<td>20%
+<tbody>
+<tr><td>5 anos<td style="opacity:.3">9,32%<td style="opacity:.63">11,45%<td style="opacity:1">13,78%<td style="opacity:.6">11,22%
+<tr><td>10 anos<td style="opacity:.32">9,44%<td style="opacity:.49">10,51%<td style="opacity:.67">11,69%<td style="opacity:.73">12,07%
+<tr><td>15 anos<td style="opacity:.33">9,53%<td style="opacity:.45">10,25%<td style="opacity:.57">11,03%<td style="opacity:.79">12,42%
+<tr><td>20 anos<td style="opacity:.35">9,60%<td style="opacity:.43">10,14%<td style="opacity:.52">10,73%<td style="opacity:.82">12,67%
+<tr><td>30 anos<td style="opacity:.36">9,70%<td style="opacity:.42">10,06%<td style="opacity:.48">10,46%<td style="opacity:.87">12,97%
+</table>
+
+<p>A rentabilidade anualizada do PPR com deduções à coleta desce com o tempo, mas, no fundo de índice, aumenta.
+
+<p>Reforço, porém, uma ideia: não acredito que o Save & Grow PPR/OICVM Founders renderá 9,32% por ano e o SPDR MSCI World UCITS ETF 13,21% por ano na próxima década. Se tivesse de apostar, argumentaria percentagens mais baixas. Acredito, porém, que o fundo de índice ganhará mais do que o PPR. É essa a conclusão que gostaria que os leitores tirassem da edição anterior do boletim <strong>tlim</strong>: não há motivos para defender o oposto.
+
+<p>Trabalho para casa: em vez de assumir o retorno anual do Save & Grow PPR/OICVM PPR, use o desempenho das carteiras de gestão individual da Casa de Investimento desde novembro de 2010, que encontra no <a href="https://www.casadeinvestimentos.pt/">portal</a> da sociedade gestora, como referência para o PPR. Compare-o com o fundo <a href="https://live.euronext.com/pt/product/etfs/IE00B4L5Y983-XAMS">iShares Core MSCI World UCITS ETF</a>, que é mais antigo (e mais caro) do que o SPDR MSCI World UCITS ETF. Será que as conclusões mudam?
+
+<p>Uma ajuda: no encerramento das sessões bolsistas de 15 de novembro de 2010 e de 31 de março de 2025, a unidade de participação desse fundo de índice valia 20,32 euros e 97,125 euros, respetivamente. ★
+
+<aside>
+<p>Envie-me as suas dúvidas, sugestões e opiniões para <a href="mailto:davidalmas@gmail.com">davidalmas@gmail.com</a>. Todo o correio é bem-vindo.
+</aside>
+</article>
+
+<article>
+<h2 id="v">Visto</h2>
+<h1>Trampa de Trump</h1>
+<p>As várias maneiras do presidente dos EUA esticar a definição de “ético”.
+
+<ul>
+
+<li>
+<p><a href="https://www.theverge.com/cryptocurrency/674327/trump-coin-short-sell-hedge-contest-dinner-winner">“How a crypto bro shorted <span style="font-variant:small-caps">$trump</span> coin — and scored a dinner with the President”</a>, The Verge
+<p>O presidente dos Estados Unidos da América, Donald Trump, pensa que é o maior nos negócios. Afinal, “escreveu” a bíblia <a href="https://www.penguinrandomhouse.com/books/180675/trump-the-art-of-the-deal-by-donald-j-trump-with-tony-schwartz/"><cite>The Art of the Deal</cite></a>.<sup>1</sup>
+
+<p>Parece, porém, que é tão bom nos negócios quanto é bom presidente. Tina Nguyen relata um episódio recente que exemplifica como Trump é tão aldrabado como tenta aldrabar.
+
+<p>Trump organizou um jantar privado em que os convidados seriam os maiores detentores de <span style="font-variant:small-caps">$trump</span>, o criptoativo que lançou para enriquecer. Claramente, uma tática pouco ética de inflar o preço desse instrumento.
+
+<p>Mais de metade dos participantes no jantar perdeu dinheiro, muitos milhões, segundo uma <a href="https://www.theguardian.com/us-news/2025/may/22/trump-crypto-sweepstakes-dinner">análise</a> do <cite>The Guardian</cite>. Não todos: alguém mais esperto do que Trump constituiu uma grande carteira de <span style="font-variant:small-caps">$trump</span>, mas cobriu essa posição no mercado de derivados de criptoativos. “Aposto que 10% dos participantes no jantar estão a fazer isto”, disse a Tina Nguyen.
+
+<p style="font-size:.8em"><sup>1</sup> Menos de nove anos após a publicação de <cite>The Art of the Deal</cite>, <a href="https://www.newyorker.com/magazine/2016/07/25/donald-trumps-ghostwriter-tells-all">soubemos</a> pelo escritor-fantasma que Trump não escreveu uma linha nesse livro. Ao investigar essa obra, descobri que Trump também “escreveu” dois livros com Robert Kiyosaki, o autor de <cite>Pai Rico, Pai Pobre</cite> e <a href="https://www.youtube.com/watch?v=HTuNMgQwdsc">outro notório aldrabão</a>.
+
+<li>
+<p><a href="https://www.thedailyupside.com/etf/thematics-sectors/trumps-truth-social-files-for-bitcoin-etf/">“Trump’s Truth Social Files for Bitcoin ETF”</a>, <cite>The Daily Upside</cite>
+<p>As barreiras éticas não interessam a Donald Trump. O seu grupo, Trump Media and Technology Group, submeteu um <a href="https://www.sec.gov/Archives/edgar/data/2071486/000110465925056683/tm2517117-1_s1.htm">prospeto</a> para o lançamento de um fundo de Bitcoins, usando a marca da sua rede social, Truth Social.
+
+<li>
+<p><a href="https://www.reuters.com/business/finance/trump-media-launches-fintech-services-brand-2025-01-29/">“Trump Media launches FinTech services brand amid crypto boom”</a>, Reuters
+<p>O fundo de Bitcoins de Trump é o primeiro avanço de uma estratégia anunciada logo após a tomada de posse como presidente dos Estados Unidos da América. O plano é lançar uma plataforma, a Truth.fi, para vender produtos financeiros.
+
+<li>
+<p><a href="https://trumpcard.gov/">Trump Card</a>
+<p>Não é ético um presidente em funções aumentar a sua fortuna recorrendo à sua imagem argumentando que é um negócio pessoal. Trump usa essa mesma imagem para promover oficialmente o programa governamental de residência para estrangeiros ricos. Até tem o seu nome.
+
+<li>
+<p><a href="https://www.blackrock.com/pt/profissionais/products/332876/ishares-ibonds-dec-2028-term-corp-ucits-etf">iShares iBonds Dec 2028 Term € Corp UCITS ETF</a>, BlackRock
+<p>Na edição de dezembro de 2023, apresentei aos leitores do boletim <strong>tlim</strong> os fundos de obrigações de prazo definido. A estreia europeia dos iShares iBonds tinha sido alguns meses antes. Estes fundos investem em obrigações que se vencem numa altura específica. Por exemplo, o iShares iBonds Dec 2028 Term € Corp UCITS ETF tem títulos empresariais cuja maturidade ocorre em 2028.
+
+<p>Nas versões de acumulação, são soluções interessantes para quem quer ganhar com uma elevada certeza as taxas de rentabilidade até à maturidade do mercado obrigacionista, empurrando a tributação para o final desse ano-limite.
+
+<p>Em 2023, escrevi:
+
+<blockquote><p>“Como os fundos iShares iBonds ainda são recentes, não é possível aferir historicamente o sucesso da BlackRock a readquirir os impostos retidos na fonte. A experiência noutros fundos de obrigações da sociedade gestora mostra, porém, que o impacto fiscal dos impostos sobre os cupões é marginal.”</blockquote>
+
+<p>Agora que a BlackRock, a sociedade gestora, publicou o primeiro relatório e contas de um exercício anual completo, posso confirmar que o efeito da tributação sobre os cupões das obrigações na carteira não poderia ser mais marginal: o iShares iBonds Dec 2028 Term € Corp UCITS ETF, por exemplo, recebeu mais de 13 milhões de euros em juros; não pagou nada sobre esses rendimentos.
+
+<p>No “Onde investir em 2024”, que publiquei na edição do boletim <strong>tlim</strong> de janeiro desse ano, recomendei o iShares iBonds Dec 2028 Term € Corp UCITS ETF a quem queria uma solução de baixo risco para cerca de 5 anos. Na altura, a carteira prometia uma rentabilidade anual líquida de 2,20%, mais do que qualquer depósito não promocional em Portugal e do que os Certificados de Aforro.
+
+<p>No “Onde investir em 2025”, que partilhei na primeira edição deste ano, não incorporei nenhum fundo de obrigações de prazo definido, porque os retornos estimados eram reduzidos, em torno de 2% por ano.
+
+<p>Os fundos de obrigações de prazos definidos mais longos recomeçam a ficar atraentes. O <a href="https://www.blackrock.com/lu/intermediaries/products/339299/">iShares iBonds Dec 2033 Term € Corp UCITS ETF</a> aponta agora a uma rentabilidade anual líquida de 2,8% por ano para quem o mantenha até dezembro de 2033, assumindo uma taxa de tributação de 28% sobre as mais-valias.
+
+<li>
+<p><a href="https://jornalpt50.pt/noticia/banco-carregosa-lanca-proposta-exclusiva-para-atrair-jovens-investidores/">“Banco Carregosa lança proposta exclusiva para atrair jovens investidores”</a>, Jornal PT50
+<p>Simplificando todo o blá-blá-blá do departamento de <i>marketing</i> do Banco Carregosa: a <a href="https://www.bancocarregosa.com/nextgen/pt/">nova proposta</a>, exclusiva para clientes até 30 anos, oferece isenção de comissões na conta à ordem, taxas ligeiramente mais altas nos depósitos a prazo e transações de bolsa por cinco euros ou cinco dólares norte-americanos.
+
+<p>Duvido que o Banco Carregosa consiga convencer a juventude, que consegue comissões muito mais baixas noutros intermediários com aplicações mais amigáveis. (Em 2025, abrir conta à distância não é uma vantagem; é uma obrigação.)
+
+<p>O Carregosa lançou também uma nova plataforma de negociação, o <a href="https://www.bancocarregosa.com/nextgen/pt/gobulling-investor/">GoBulling Investor</a>, mas não está reservada aos “jovens”. Para os maiores de 30 anos, os encargos são iguais aos da plataforma GoBulling Pro.
+
+<p>Experimentei-a: a GoBulling Investor é uma versão simplificada da GoBulling Pro. Para os investidores que, como eu, apenas querem aplicar em um ou dois fundos cotados na bolsa, é suficiente. Adiciono, assim, o GoBulling Investor ao GoBulling Pro nas minhas recomendações de intermediação financeira.
+
+<li>
+<p><a href="https://observador.pt/2025/06/13/novo-banco-vendido-a-franceses-do-bpce-por-64-mil-milhoes-fundo-lone-star-recebe-75-o-restante-vai-para-o-estado/">“Novo Banco vendido a franceses do BPCE por 6,4 mil milhões. Estado assume venda e diz que se evitou ‘desnecessária concentração geográfica’”</a>, <cite>Observador</cite>
+<p>O presidente do BPCE, Nicolas Namias, sugere que a <i>expertise</i> francesa ajudará o Novo Banco. Talvez seja mais ao contrário: após consultar os portais do <a href="https://www.caisse-epargne.fr/">Caisse d'Épargne</a> e do <a href="https://www.banquepopulaire.fr/">Banque Populaire</a>, parece-me que o Novo Banco e o Banco Best (sobre o qual não li nenhum comentário de Namias) estão mais avançados na oferta de retalho.
+
+<li>
+<p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5187645">“The Research Behavior of Individual Investors”</a>, Social Science Research Network
+<p>Toomas Laarits e Jeffrey Wurgler, da Universidade de Nova Iorque, inspecionaram os movimentos na Internet de dezenas de milhares de investidores norte-americanos. Conclusão: “O investidor individual mediano gasta aproximadamente seis minutos a investigar [um título] antes de negociar na bolsa.”
+
+<p>Embora o estudo tenha sido publicado em março passado, os dados — oito milhões de cliques — são de 2007. Quiçá, agora os investidores sejam mais rápidos a decidir uma compra na bolsa.
+
+<p>Não me revejo nessa rapidez. Há alguns anos, contei a um jornalista que demorava mais tempo a escolher um fundo de investimento do que um frigorífico.
+
+<li>
+<p><a href="https://www.theguardian.com/technology/2025/may/30/is-memecoin-scam-crypto-trump">“Is every memecoin just a scam? Experts on whether Andrew Tate and Trump are fleecing their followers”</a>, <cite>The Guardian</cite>
+<p>Matt Shea, o autor deste artigo e coautor do livro <a href="https://www.quercusbooks.co.uk/titles/jamie-tahsin/clown-world/9781529437843/"><cite>Clown World</cite></a>, que relata quatro anos de investigação a Andrew Tate, um dos líderes da promoção da misoginia, tornou-se o alvo do seu alvo. Paralelamente, os seguidores de Tate criaram múltiplos criptoativos críticos de Shea. Conclusão: os “investidores” nesses criptoativos perderam milhões.
+
+<p>Gostei particularmente de uma das respostas de um especialista à pergunta de Shea, “são todos os <i>memecoins</i> fraudes?” Respondeu: “Basicamente, literalmente, sim.”
+
+★
+</ul>
+</article>
+
+
+<article>
+<h2 id="d">Dito</h2>
+<h3 style="margin-top:1em">Erica Chenoweth:</h3>
+
+<h1>“Não houve campanhas [não-violentas] que tenham falhado após terem atingindo uma participação de 3,5% durante um evento.”</h1>
+
+<p>Donald Trump acelerou a construção da infraestrutura de uma ditadura. As manifestações — maioritariamente pacíficas — são “invasões” ou “insurreições”. Essa emergência justificou o uso de força contra a população e jornalistas. Os agentes militarizados conduzem detenções sem mandado de captura. São criadas prisões e campos de detenção para os novos alegados criminosos. Próximo passo: lei marcial e, posteriormente, o estado policial.
+
+<p>O povo norte-americano deve protestar, se não estiver de acordo, mas não deve recorrer à violência, como se assistiu em alguns locais durante o passado mês de junho.
+
+<p>Após estudar mais de um século de manifestações públicas, <a href="https://www.ericachenoweth.com/">Erica Chenoweth</a>, uma cientista política e professora na Harvard Kennedy School, percebeu que os protestos não-violentos são mais eficazes do que o recurso à violência. Cunhou a “regra dos 3,5%”: se, pelo menos, 3,5% da população participar num protesto não-violento sustentado, conduzirá provavelmente a uma mudança política ou à acomodação das exigências pelas autoridades, como <a href="https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world">explicou</a> à BBC em 2019.
+
+<p>Em Portugal, seria necessária uma manifestação de 320 mil pessoas. É quase equivalente ao número de eleitores residentes em Portugal que votaram na Iniciativa Liberal, a quarta força política no Parlamento.
+
+<p>Espero que os EUA mudem pela via pacífica. ★
+</article>
+
+<article>
+<h2 id="donativo">Sustente esta publicação</h2>
+
+<p>Não depende de publicidade. Não depende de acionistas. Depende apenas de nós. O boletim <strong>tlim</strong> é editorialmente independente. Contribua para garantir que assim continue.
+
+<p>Recebo os donativos preferencialmente por transferência bancária no seguinte IBAN:
+
+<ul>
+<li>IBAN: PT50002300004565454612994
+<li>Código BIC/Swift: ACTVPTPL
+</ul>
+
+<p>Aceito, em alternativa, pagamento com cartão bancário, em <a href="https://tlim.pt/donativo/">tlim.pt/donativo</a>.
+
+<p>Agradeço a sua contribuição.
+
+<p><em>— David Almas</em>
+</article>
+</body>
+</html>
