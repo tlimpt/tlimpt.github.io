@@ -102,6 +102,7 @@ function p(c, t, m) { return t == 0 ? c / m : c / (1-Math.pow(1 + t/12, -m)) * t
 <div id="iinterativo">
 <aside><p><strong>Este artigo deveria ser interativo.</strong>
 <p>Infelizmente, o seu sistema não permite interatividade. Não vale a pena substituir os números e os campos, porque o texto não se adaptará à sua situação.
+</aside>
 </div>
 
 <p>Neste caso, o preço de compra é equivalente a cerca de <span id="imetrica">19</span> anos de rendas mensais. Isto, porém, é insuficiente para tomar uma decisão. É necessário contabilizar todos os custos.
@@ -431,7 +432,7 @@ document.getElementById('idura').addEventListener('keyup', imo);
 
 
 window.addEventListener('load', function(){
-	document.getElementById('iinterativo').innerHTML = '<aside><p><strong>Este artigo é interativo.</strong><p>A mudança de município no seletor anterior povoa estes números iniciais com informação das estatísticas oficiais mais recentes. Há apenas informação detalhada para os municípios com mais habitantes. <p>Pode substituir todos os números sublinhados neste artigo para ajustar à sua situação.';
+	document.getElementById('iinterativo').innerHTML = '<aside><p><strong>Este artigo é interativo.</strong><p>A mudança de município no seletor anterior povoa estes números iniciais com informação das estatísticas oficiais mais recentes. Há apenas informação detalhada para os municípios com mais habitantes. <p>Pode substituir todos os números sublinhados neste artigo para ajustar à sua situação.</aside>';
 	ilista();
 });
 </script>
