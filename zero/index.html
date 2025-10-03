@@ -54,7 +54,7 @@ button, select { font-family:inherit; font-size:1em }
 </ul>
 
 
-<p>A probabilidade histórica de falência em vida é a proporção de períodos em que o património teria chegado a zero durante a vida do investidor entre fevereiro de 1871 e <span id="fim">dezembro de 2024</span>, assumindo as <a href="https://smi.ine.pt/Indicador/Detalhes/18097">tábuas de mortalidade portuguesas</a> e os retornos mensais das ações e das obrigações implícitos na <a href="https://shillerdata.com/">base de dados</a> norte-americana de Robert Shiller.
+<p>A probabilidade histórica de falência em vida é a proporção de períodos em que o património teria chegado a zero durante a vida do investidor entre fevereiro de 1871 e <span id="fim">dezembro de 2024</span>, assumindo as <a href="https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUESdest_boui=706999624&DESTAQUESmodo=2">tábuas de mortalidade portuguesas</a> e os retornos mensais das ações e das obrigações implícitos na <a href="https://shillerdata.com/">base de dados</a> norte-americana de Robert Shiller.
 
 <p>A probabilidade histórica de falência em vida não é uma garantia nem uma previsão de desempenho, porque o futuro é incerto. É apenas um guia para uma estratégia de investimento. Peca, entre outros motivos, por:
 
@@ -75,9 +75,9 @@ button, select { font-family:inherit; font-size:1em }
 <script src="../shiller.js"></script>
 <script>
 // Tábuas de mortalidade
-const lxH = [ 100000, 99728, 99704, 99678, 99661, 99644, 99636, 99622, 99616, 99607, 99598, 99589, 99580, 99573, 99555, 99544, 99513, 99492, 99461, 99416, 99370, 99317, 99265, 99221, 99167, 99107, 99060, 98998, 98939, 98880, 98827, 98768, 98703, 98629, 98546, 98464, 98384, 98301, 98187, 98071, 97964, 97840, 97713, 97556, 97397, 97199, 96982, 96759, 96498, 96202, 95868, 95488, 95078, 94625, 94089, 93522, 92863, 92217, 91485, 90726, 89889, 89007, 88099, 87103, 86011, 84915, 83708, 82454, 81134, 79711, 78240, 76690, 75150, 73473, 71678, 69762, 67672, 65540, 63163, 60491, 57702, 54765, 51616, 48264, 44437, 40071, 35084, 29932, 24808, 19954, 15531, 11613, 8349, 5747, 3769, 2342, 1372, 753, 384, 181, 78 ];
+const lxH = [ 100000, 99715, 99692, 99670, 99652, 99638, 99627, 99618, 99612, 99606, 99597, 99588, 99575, 99569, 99557, 99550, 99525, 99502, 99470, 99422, 99369, 99313, 99249, 99208, 99161, 99105, 99041, 98979, 98933, 98876, 98815, 98745, 98684, 98613, 98545, 98449, 98368, 98275, 98166, 98048, 97953, 97837, 97718, 97588, 97422, 97231, 97021, 96811, 96549, 96269, 95948, 95600, 95193, 94744, 94247, 93708, 93097, 92465, 91750, 90999, 90224, 89365, 88419, 87429, 86384, 85275, 84102, 82891, 81632, 80274, 78848, 77264, 75632, 74049, 72355, 70431, 68380, 66298, 63958, 61496, 58717, 55859, 52801, 49552, 45838, 41602, 36800, 31790, 26744, 21874, 17344, 13241, 9734, 6861, 4614, 2946, 1775, 1003, 528, 257, 115 ];
 
-const lxM = [ 100000, 99755, 99738, 99722, 99702, 99693, 99683, 99673, 99658, 99649, 99643, 99638, 99631, 99625, 99613, 99599, 99591, 99579, 99563, 99537, 99517, 99494, 99479, 99451, 99432, 99411, 99392, 99368, 99340, 99325, 99299, 99264, 99227, 99188, 99142, 99104, 99066, 99010, 98955, 98899, 98835, 98762, 98679, 98598, 98510, 98400, 98289, 98186, 98056, 97914, 97763, 97599, 97409, 97214, 97010, 96788, 96554, 96290, 96014, 95699, 95358, 94973, 94567, 94146, 93680, 93176, 92651, 92057, 91424, 90735, 89967, 89118, 88272, 87315, 86257, 85039, 83639, 82132, 80384, 78375, 76076, 73554, 70728, 67597, 63867, 59429, 54109, 48282, 42103, 35821, 29649, 23721, 18340, 13644, 9721, 6599, 4244, 2569, 1454, 763, 368 ];
+const lxM = [ 100000, 99764, 99748, 99730, 99714, 99705, 99697, 99689, 99676, 99668, 99664, 99656, 99645, 99641, 99632, 99621, 99612, 99601, 99585, 99563, 99540, 99523, 99510, 99496, 99470, 99447, 99425, 99402, 99373, 99353, 99332, 99301, 99265, 99232, 99194, 99148, 99104, 99040, 98986, 98937, 98876, 98807, 98729, 98656, 98574, 98474, 98365, 98251, 98124, 97975, 97822, 97654, 97472, 97290, 97091, 96859, 96624, 96357, 96067, 95751, 95423, 95065, 94666, 94257, 93815, 93319, 92799, 92238, 91629, 90979, 90264, 89443, 88619, 87691, 86599, 85388, 84066, 82591, 80935, 79016, 76782, 74334, 71602, 68572, 64946, 60622, 55457, 49767, 43694, 37463, 31277, 25268, 19743, 14856, 10715, 7369, 4805, 2952, 1697, 906, 445 ];
 
 // Probabilidade de viver entre a idade a e a idade b
 function pvive(idadea, idadeb, sexo) {
@@ -123,7 +123,7 @@ function vf() {
 	esc('vfpo3', 100 - vf.pa3 * 100, 0);
 
 	// Controlos
-	if ( vf.cap <= 0 ) { vf.cap = .01; } 
+	if ( vf.cap <= 0 ) { vf.cap = .01; }
 	if ( vf.pa1 > 1 ) { esc('vfpa1', 100, 0); vf.pa1 = 1; }
 	if ( vf.pa2 > 1 ) { esc('vfpa2', 100, 0); vf.pa2 = 1; }
 	if ( vf.pa3 > 1 ) { esc('vfpa3', 100, 0); vf.pa3 = 1; }
@@ -177,35 +177,35 @@ window.addEventListener('load', function() {
 	if (window.location.hash != '') {
 		var url = window.location.href.split('#')[1].split('~');
 		document.getElementById('vfsexo').value = url[0];
-		esc('vfidade', url[1], 0)	
+		esc('vfidade', url[1], 0)
 		esc('vfcap', url[2], 0);
 		esc('vfpa1', url[3], 0);
 		esc('vfe1', url[4], 2);
 		if(url[5] < 0) {
-			document.getElementById('vfaplicaresgata1').value = -1; 
+			document.getElementById('vfaplicaresgata1').value = -1;
 			esc('vfp1', -1 * url[5], 0); }
 		else {
- 			document.getElementById('vfaplicaresgata1').value = 1; 
+ 			document.getElementById('vfaplicaresgata1').value = 1;
 			esc('vfp1', url[5], 0); }
 		esc('vfanos1', url[6], 0);
 
 		esc('vfpa2', url[7], 0);
 		esc('vfe2', url[8], 2);
 		if(url[9] < 0) {
-			document.getElementById('vfaplicaresgata2').value = -1; 
+			document.getElementById('vfaplicaresgata2').value = -1;
 			esc('vfp2', -1 * url[9], 0); }
 		else {
- 			document.getElementById('vfaplicaresgata2').value = 1; 
+ 			document.getElementById('vfaplicaresgata2').value = 1;
 			esc('vfp2', url[9], 0); }
 		esc('vfanos2', url[10], 0);
 
 		esc('vfpa3', url[11], 0);
 		esc('vfe3', url[12], 2);
 		if(url[13] < 0) {
-			document.getElementById('vfaplicaresgata3').value = -1; 
+			document.getElementById('vfaplicaresgata3').value = -1;
 			esc('vfp3', -1 * url[13], 0); }
 		else {
- 			document.getElementById('vfaplicaresgata3').value = 1; 
+ 			document.getElementById('vfaplicaresgata3').value = 1;
 			esc('vfp3', url[13], 0); }
 	}
 
@@ -239,7 +239,7 @@ onmessage = function(e) {
 		}
 		for (let h = (vf.a1 + vf.a2) * 12; h < vf.dura * 12; h++) {
 			if (patrimonio[h] <= 0) { patrimonio[h + 1] = 0; }
-			else patrimonio[h + 1] = 
+			else patrimonio[h + 1] =
 				patrimonio[h]
 				* (1 - vf.e3/12)
 				* ( 1 + vf.shillera[g + h]/100 * vf.pa3 + vf.shillero[g + h]/100 * (1-vf.pa3) )
