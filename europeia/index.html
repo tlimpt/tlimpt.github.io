@@ -510,15 +510,6 @@ document.addEventListener('keydown', (evento) => {
 	localStorage.setItem('atual', atual);
 });
 
-window.addEventListener('wheel', (event) => {
-	if (event.deltaY > 0) {
-		if (atual < diapositivos.length - 1) atual++; }
-	else {
-		if (atual > 0) atual--; }
-    diapositivos[atual].scrollIntoView({ behavior: 'smooth' });
-    localStorage.setItem('atual', atual);
-});
-
 
 function num(el, dig) {
 	const e = document.getElementById(el),
