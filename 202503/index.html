@@ -1,1 +1,191 @@
-.
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Livre-se do seu crédito à habitação</title>
+<style>
+body { max-width:60ch; padding:.5em; margin:0 auto; font:1.25em/1.75 sans-serif; opacity:.9 }
+header p a { text-decoration:none }
+h1, h2, h3 { line-height:1 }
+h1 { font-size:2em }
+h2 { text-decoration:underline }
+h2, h3 { margin-top:3em }
+aside { border-left:.3em solid; padding:0 0 0 2em; margin:2em 0 }
+blockquote { font-style:italic }
+table { border-collapse:collapse; margin:2em auto; font-size:.8em }
+table caption strong:first-child, figcaption strong:first-child { display:block }
+figure { text-align:center; margin:2em 0; font-size:.8em }
+thead { border-bottom:.3em solid }
+td { border-bottom:.1em solid; padding:1em .5em 1em 0; text-align:center; line-height:1.25em; vertical-align:top }
+td:first-child { text-align:left }
+td:last-child { padding:1em 0 }
+input { font-family:inherit; font-size:1em; width:4em; text-align:right; border-width:0 0 .25em; outline:none }
+button, select { font-family:inherit; font-size:1em }
+</style>
+<script>
+function num(el, dig) {
+    const e = document.getElementById(el),
+    z = e.value.replace(/[^\d]/g,'')/Math.pow(10,dig);
+    e.value = z.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig});
+    return z; }
+
+function esc(el, n, dig) {
+    const e = document.getElementById(el);
+    const x = n.toLocaleString('pt-PT',{minimumFractionDigits:dig,maximumFractionDigits:dig});
+    const t = e.tagName.toLowerCase();
+    t === 'input' ? e.value = x : e.innerText = x; }
+</script>
+</head>
+<body>
+<header><p><a href="/">tlim.pt</a></header>
+
+<article>
+<h1>Livre-se do seu crédito à habitação</h1>
+
+<p>Por <strong>David Almas</strong> a 1 de março de 2025
+
+<p>Não ignore os encargos do seu crédito à habitação: são demasiado robustos para serem desprezados.
+
+<p>Uma cliente de 30 anos do Bankinter que contrate agora um crédito à habitação de 200 mil euros pagará mais de 36 mil euros durante 40 anos em custos que não se prendem com a amortização de capital, pagamentos de juros e impostos. É um décimo de todas as suas despesas bancárias ao longo desse empréstimo.
+
+<p>Não são os encargos iniciais da compra da casa que mais pesam; são os custos periódicos: a comissão de manutenção da conta à ordem e os prémios dos seguros de vida e do imóvel. Não espere que essas despesas se mantenham: no segundo ano do crédito, a cliente do Bankinter gastará 613 euros; no trigésimo ano, os encargos serão mais do que o dobro.
+
+<p>Quando estão indecisos entre amortizar os empréstimos da casa e investir para o futuro, muitos aforradores tendem para a segunda opção, porque a taxa de juro da dívida é tendencialmente inferior aos retornos de longo prazo dos investimentos. Devem, todavia, contabilizar todas as despesas paralelas aos créditos.
+
+<p>Mesmo que apreciem a cobertura oferecida pelos seguros associados aos empréstimos para a compra de casa, serão provavelmente mais bem servidos longe do banco financiador. Para o caso da cliente do Bankinter, encontrará, sem grande esforço, um seguro equiparável para o imóvel com um prémio anual inferior a metade da cobrança prevista pela Generali, a parceira desse banco na concessão de crédito.
+
+<p>Os encargos são pesados em todas as instituições de crédito. Em média, um oitavo das despesas ao longo de 40 anos de um casal de 29 anos que solicite agora um crédito à habitação de 200 mil euros à Caixa Geral de Depósitos, ao Millennium bcp, ao Santander, ao Banco BPI ou ao Novobanco será respeitante aos encargos da conta e aos seguros associados ao financiamento.
+
+<p>As despesas paralelas ao crédito pesam mais quando o prazo é mais longo. No caso inicial, da cliente do Bankinter, se a duração do empréstimo fosse de 30 anos, esses encargos somariam o equivalente a 8% da totalidade que pagaria ao longo dessa dívida.
+
+<p>Quando se celebra um contrato de crédito à habitação, o banco apresenta uma simulação de todos os encargos ao longo do financiamento. As despesas podem, porém, subir mais depressa. Na última década, os preços dos serviços financeiros aumentaram 31,4%, segundo o Instituto Nacional de Estatística, mais do que a inflação geral dos bens e serviços, de 23,1%.
+
+<h3>Corte na duração</h3>
+
+<p>A única solução para amenizar o impacto dos encargos do crédito à habitação é reduzir agressivamente a duração do financiamento.
+
+<div id="interativo">
+
+<p>Imaginemos que tem agora em dívida <input type="text" value="150 000" id="d0" disabled> euros a pagar em <input type="text" value="360" id="n0" style="width:2em" disabled> meses. A sua taxa de juro é de <span class="nw"><span id="r0">3,514</span>%</span>, o resultado da soma da atualização mais recente do indexante (<span class="nw"><input type="text" value="2,614" id="t0" style="width:3em" disabled>%</span>) e do <i>spread</i> (<span class="nw"><input type="text" value="0,90" id="s0" style="width:2.5em" disabled>%</span>). A sua prestação mensal — excluindo outros encargos, como os prémios de seguros — é de <span id="p0a">674,74</span> euros. <span id="inter"></span>
+
+<p>Em 2023 e 2024, suportou durante muito tempo prestações mais elevadas. Provavelmente, consegue pagar mais do que <span id="p0b">674,74</span> euros. Apontemos até <input type="text" value="740,68" id="p1a" style="width:4em" disabled> euros por mês.
+
+<p id="reduz">Nesse caso, solicite ao seu credor <strong>uma redução de 52 meses na duração do seu crédito à habitação</strong>. Assim, cortando o prazo do crédito para 308 meses, a prestação mensal ficará em 739,88 euros.
+
+<p>Não se esperam subidas dos indexantes nos próximos anos. Os intervenientes nos mercados de derivados sobre taxas de juros projetam que as Euribores continuem a cair até ao início de 2026 e, posteriormente, demorem 9 anos a regressar aos valores mais recentes. Dê, todavia, uma folga nas suas finanças; é possível que esses especialistas estejam enganados.
+
+<p>O banco não é obrigado a reduzir o prazo do seu empréstimo. É natural que lhe exijam comprovativos atualizados de rendimentos, como cópias dos recibos de vencimento e da declaração anual de IRS: têm de confirmar que consegue pagar a nova prestação.
+
+<p>Se a instituição financeira se recusar a reduzir o prazo, pode fazer uma de duas coisas:
+
+<ol>
+<li><p><strong>Mudar de banco.</strong> É trabalhoso, mas é possível encontrar agora condições mais vantajosas para o seu crédito à habitação. Faça simulações na concorrência assumindo o corte no prazo do empréstimo.
+<li><p><strong>Optar por amortizar agressivamente.</strong> No longo prazo, a poupança é muito semelhante. Amealhe mensalmente a diferença entre a prestação que gostaria de ter e a prestação que paga agora. Use a poupança para amortizar antecipadamente o capital em dívida duas, três ou quatro vezes por ano. Os bancos não podem recusar pedidos de amortização parcial.
+</ol>
+
+<h3>Amortização tática</h3>
+
+<p>Assumamos que, por algum motivo, nunca corta a duração do empréstimo da casa. Talvez o banco não aceite o seu pedido de redução do prazo. Talvez receie uma subida acelerada e imprevista das taxas de juro.
+
+<p>Uma estratégia possível é amortizar periodicamente a poupança que consegue acumular na sua conta à ordem. Chegará um momento, antes do prazo previsto contratualmente, em que o montante que tem para abater é superior à dívida remanescente.
+
+<p>Todos os meses, reserva, por exemplo, <input type="text" value="1000" id="m0" style="width:3em" disabled> euros para pagar a prestação mensal do crédito à habitação e para aforrar com o intuito de amortizar antecipadamente a dívida. Como a última atualização do indexante colocou a sua prestação em <span id="p0c">674,74</span> euros, <span id="deltapositivo">deixa a diferença, <span id="delta">325,26</span> euros, a repousar na sua conta à ordem</span>.
+
+<p id="deltapositivo0">Após <select id="freq" disabled><option>3<option>4<option>5<option>6<option>7<option>8<option>9<option>10<option>11<option>12</select> meses, terá <span id="acumula">975,78</span> euros. Ao usar esse dinheiro para realizar uma amortização parcial, a prestação descerá para <span id="p2a">670,33</span> euros, assumindo a estabilização das taxas de juro. A partir de então, a sua poupança mensal passará a somar <span id="delta2">329,67</span> euros (<span class="nw"><span id="m0a">1000,00</span>€</span> &minus; <span class="nw"><span id="p2b">670,33</span>€<span class="nw">).
+
+<p id="deltapositivo1">Se continuar esta tática, na <span class="nw"><span id="amortiza">67</span>.ª</span> amortização acabará com o seu empréstimo, <span id="meses">159</span> meses antes do previsto.
+
+<p>Esta estratégia é muito simples: em alguns bancos, basta deixar o dinheiro na conta à ordem e, cerca de uma semana antes do pagamento da prestação, enviar uma mensagem de correio eletrónico para o gestor de conta a solicitar o reembolso parcial do empréstimo da casa.
+
+<p>Os cálculos anteriores não contabilizam o encargo de amortização antecipada, que, no caso dos empréstimos de taxa variável, está legalmente limitado a 0,5% do montante amortizado. Nos restantes, pode chegar a 2%.
+
+<p>Até ao final de 2025, os créditos de taxa indexada estão, porém, <a href="https://data.dre.pt/eli/dec-lei/80-a/2022/p/cons/20250106/pt/html">isentos</a> da comissão de reembolso antecipado, se o montante em dívida não ultrapassar 300 mil euros e se o financiamento se destinar à aquisição de habitação própria e permanente. Aproveite. ★
+</div>
+<script>
+function p(c, t, m) { return t == 0 ?  c / m : c / (1-Math.pow(1 + t/12, -m)) * t/12; }
+function c(c, t, m, k){ return t == 0 ? c - c / m * k : p(c,t,m)*((1-Math.pow(1 + t/12,-(m-k)))/(t/12)); }
+
+function p0(){
+	let	d0 = num('d0', 0),
+		n0 = num('n0', 0),
+		t0 = num('t0', 3),
+		s0 = num('s0', 2),
+		p0 = Math.round(p(d0, (t0 + s0)/100, n0)*100)/100;
+		p1 = num('p1a', 2),
+		m0 = num('m0', 0),
+		delta = m0 - p0,
+		freq = +document.getElementById('freq').value,
+		acumula = delta * freq,
+		p2 = Math.round(p(c(d0, (t0+s0)/100, n0, freq) - acumula, (t0+s0)/100, n0 - freq)*100)/100,
+		delta2 = m0 - p2;
+
+	esc('r0', t0 + s0, 3);
+	esc('p0a', p0, 2); esc('p0b', p0, 2); esc('p0c', p0, 2);
+	esc('acumula', acumula, 2);
+	esc('p2a', p2, 2); esc('p2b', p2, 2);
+	esc('m0a', m0, 2);
+	esc('delta2', delta2, 2);
+
+
+	let	n1 = Math.ceil(-Math.log(1-(d0)*(t0+s0)/1200/p1)/Math.log(1+(t0+s0)/1200));
+	if(n0 - n1 > 0) {
+		document.getElementById('reduz').innerHTML =
+			'Nesse caso, solicite ao seu credor <strong>uma redução de '
+			+ (n0-n1)
+			+ ((n0-n1) == 1 ? ' mês' : ' meses')
+			+ ' na duração do seu crédito à habitação</strong>. Assim, cortando o prazo do crédito para '
+			+ n1
+			+ ' meses, a prestação mensal ficará em '
+			+ p(d0, (t0+s0)/100, n1).toLocaleString('pt-PT',{minimumFractionDigits:2,maximumFractionDigits:2})
+			+ ' euros.';
+	}
+	else {
+		document.getElementById('reduz').innerHTML = 'Nesse caso, não é possível reduzir a duração do empréstimo.'
+	}
+
+	if(m0 <= p0) {
+		document.getElementById('deltapositivo0').style.display = 'none';
+		document.getElementById('deltapositivo1').style.display = 'none';
+		document.getElementById('deltapositivo').innerHTML =
+			'esse montante não é suficiente para pagar a prestação';
+	}
+	else {
+		document.getElementById('deltapositivo0').style.display = '';
+		document.getElementById('deltapositivo1').style.display = '';
+		document.getElementById('deltapositivo').innerHTML =
+			'deixa a diferença, '
+			+ delta.toLocaleString('pt-PT',{minimumFractionDigits:2,maximumFractionDigits:2})
+			+ ' euros, a repousar na sua conta à ordem';
+	}
+
+	let emdivida = [d0];
+	let poupa = 0;
+	for (let i = 1; i <= n0; i++){
+		poupa += Math.round((m0 - p(emdivida[emdivida.length - 1], (t0+s0)/100, n0 - i + 1))*100)/100;
+		if ( i % freq !== 0) {
+			emdivida.push(c(emdivida[emdivida.length - 1], (t0+s0)/100, n0 - i + 1, 1));
+		}
+		else {
+			emdivida.push(c(emdivida[emdivida.length - 1], (t0+s0)/100, n0 - i + 1, 1) - 0 - poupa);
+			poupa = 0;
+		}
+	}
+	let amortiza = emdivida.findIndex(x => x < 0);
+	esc('amortiza', amortiza / freq, 0);
+	esc('meses', n0 - amortiza, 0);
+
+}
+
+window.addEventListener('load', function(){
+	document.getElementById('inter').innerText = '(Esta análise é interativa: altere os números sublinhados para ajustar o texto à sua situação.)';
+	const inpsel = document.querySelectorAll('input, select'); inpsel.forEach(y => { y.disabled = false; });
+	p0();
+});
+document.getElementById('interativo').addEventListener('keyup', p0);
+document.getElementById('interativo').addEventListener('change', p0);
+</script>
+</article>
+</body>
+</html>
