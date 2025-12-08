@@ -1,23 +1,4 @@
 <html>
 <p>x
-<script>
-let apiKey = 'c9e21582697f6eeea0e4cef95dbd455035174a4b60eec16aaf0710861788d2c8';
-function countVisits() {
-    fetch(`https://letscountapi.com/api/count`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-      },
-      body: JSON.stringify({
-        url: 'banana',
-      })
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.log('Error:', error));
-  }
-
-countVisits();
-</script>
+<script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 </html>
