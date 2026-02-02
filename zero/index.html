@@ -106,15 +106,15 @@ function vf() {
 		vf.cap = num('vfcap', 0);
 		vf.pa1 = num('vfpa1', 0) / 100;
 		vf.e1 = num('vfe1', 2) / 100;
-		vf.p1 = num('vfp1', 0) * +vfaplicaresgata1.value;
+		vf.p1 = num('vfp1', 0) * +document.getElementById('vfaplicaresgata1').value;
 		vf.a1 = num('vfanos1', 0);
 		vf.pa2 = num('vfpa2', 0) / 100;
 		vf.e2 = num('vfe2', 2) / 100;
-		vf.p2 = num('vfp2', 0) * +vfaplicaresgata2.value;
+		vf.p2 = num('vfp2', 0) * +document.getElementById('vfaplicaresgata2').value;
 		vf.a2 = num('vfanos2', 0);
 		vf.pa3 = num('vfpa3', 0) / 100;
 		vf.e3 = num('vfe3', 2) / 100;
-		vf.p3 = num('vfp3', 0) * +vfaplicaresgata3.value;
+		vf.p3 = num('vfp3', 0) * +document.getElementById('vfaplicaresgata3').value;
 		vf.a3 = vf.dura - vf.a1 - vf.a2;
 
 	// Atualiza texto
@@ -211,6 +211,12 @@ window.addEventListener('load', function() {
 
 	vf(); }
 );
+
+window.addEventListener('load', function() {
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", "https://abacus.jasoncameron.dev/hit/Dsg0Nlb9bzeUmD0R/UCjZbNu9AXMf4quO");
+		xhr.send();
+});
 </script>
 <script id="xtrabalhador">
 onmessage = function(e) {
