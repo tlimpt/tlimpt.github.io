@@ -129,9 +129,9 @@ Saiba pagar menos IRS na reforma antecipada
 
 
 <ul id="irs">
-<li><p><strong>Venda</strong>: Em 2026, os encaixes das vendas de partes sociais somam <input type="text" value="23 110,50" id="irs-v" disabled> euros.
+<li><p><strong>Venda</strong>: Em 2026, os encaixes das vendas de partes sociais somam <input type="text" value="23 110,50" id="irs-v" inputmode="numeric" disabled> euros.
 
-<li><p><strong>Compra</strong>: Essas partes sociais vendidas custaram <input type="text" value="9301,60" id="irs-c" disabled> euros.
+<li><p><strong>Compra</strong>: Essas partes sociais vendidas custaram <input type="text" value="9301,60" id="irs-c" inputmode="decimal" disabled> euros.
 
 <li><p><strong>Despesas</strong>: As operações anteriores acumularam <input type="text" value="27,50" id="irs-d" disabled> euros em encargos dedutíveis às mais-valias, como comissões de bolsa.
 
@@ -253,7 +253,9 @@ const	v = num(dom.v),
 		if (bm > 5) { bm = 5; esc(dom.bm, bm); }
 
 const	ben = Math.max(0, (ct - dc) * bm / 100),
-		cl = Math.max(0, ct - dc - ben),
+		cl = Math.max(0, ct - dc - ben);
+		if (cl < 25) cl = 25;
+
     	trib = v > c ? (cl / (v - c)) * 100 : 0;
 
 esc(dom.coef, irscoef);
@@ -273,14 +275,9 @@ window.addEventListener('load', function(){
 	'(Este artigo é interativo: mude os números sublinhados e o seletor para ajustar o cálculo ao seu caso.)';
     document.querySelectorAll('input, select').forEach(e => e.disabled = false);
 	dom.irs.addEventListener('input', (e) => {
-        if (e.target.tagName === 'INPUT') {
-            const val = num(e.target);
-            esc(e.target, val);
-        }
+        if (e.target.tagName === 'INPUT') { esc(e.target, num(e.target)); }
         irs();
     });
-
-
 	irs();
 });
 
