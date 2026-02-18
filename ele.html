@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preços Energia REN (Hora Atual e Futura)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0056b3;
+            font-size: 1.5rem;
+        }
+        .status {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .price-list {
+            list-style: none;
+            padding: 0;
+        }
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .price-item:last-child {
+            border-bottom: none;
+        }
+        .time {
+            font-weight: bold;
+        }
+        .value {
+            color: #00704A; /* Cor da REN */
+            font-weight: bold;
+        }
+        /* Destaque para a hora atual */
+        .current-hour {
+            background-color: #e7f3ff;
+            border-left: 4px solid #0056b3;
+            padding-left: 8px;
+        }
+        .current-hour .time::after {
+            content: " (Agora)";
+            font-size: 0.8em;
+            color: #0056b3;
+        }
+        /* Estilo para preços do dia seguinte */
+        .next-day-header {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 2px solid #ccc;
+            font-size: 1.2rem;
+            color: #555;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Preços Mercado Diário (REN)</h1>
+    <div id="status" class="status">A carregar dados...</div>
+    <div id="error" class="error"></div>
+
+    <ul id="price-list" class="price-list">
+        <!-- Os itens serão inseridos aqui via JS -->
+    </ul>
+</div>
+
+<script>
+    const API_URL = 'https://servicebus.ren.pt/datahubapi/electricity/ElectricityMarketPricesDaily';
+
+    async function fetchPrices(dateStr) {
+        // Parâmetros: culture=pt-PT e date=YYYY-MM-DD
+        const url = `${API_URL}?culture=pt-PT&date=${dateStr}`;
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Erro HTTP: ${response.status}`);
+            }
+            return await response.json();
+        } catch (error) {
+            console.error(`Erro ao buscar dados para ${dateStr}:`, error);
+            return null;
+        }
+    }
+
+    function formatDate(date) {
+        return date.toISOString().split('T')[0];
+    }
+
+    function formatHour(hour) {
+        // A API geralmente retorna 1-24 ou 0-23. Ajustamos para visualização.
+        return `${String(hour).padStart(2, '0')}:00`;
+    }
+
+    // Tenta encontrar o valor do preço no objeto retornado
+    // A estrutura pode variar (ex: {Hour: 1, Price: 10} ou {Hora: 1, Valor: 10})
+    function getPriceValue(item) {
+        // Possíveis nomes de campos baseados em APIs comuns
+        const priceKeys = ['PrecoMercado', 'Price', 'Valor', 'Preco', 'Value'];
+        for (let key of priceKeys) {
+            if (item[key] !== undefined) return item[key];
+        }
+        return 'N/A';
+    }
+
+    function getHourValue(item) {
+        // Possíveis nomes de campos para a hora
+        const hourKeys = ['Hora', 'Hour', 'Periodo'];
+        for (let key of hourKeys) {
+            if (item[key] !== undefined) return item[key];
+        }
+        return null;
+    }
+
+    async function main() {
+        const listContainer = document.getElementById('price-list');
+        const statusDiv = document.getElementById('status');
+        const errorDiv = document.getElementById('error');
+
+        const now = new Date();
+        const todayStr = formatDate(now);
+        const tomorrow = new Date(now);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const tomorrowStr = formatDate(tomorrow);
+
+        const currentHour = now.getHours(); // 0-23
+
+        // 1. Buscar dados de hoje
+        statusDiv.textContent = `A obter preços de hoje (${todayStr})...`;
+        const todayData = await fetchPrices(todayStr);
+
+        // 2. Buscar dados de amanhã
+        statusDiv.textContent = `A obter preços de amanhã (${tomorrowStr})...`;
+        const tomorrowData = await fetchPrices(tomorrowStr);
+
+        statusDiv.textContent = ''; // Limpar status
+
+        if (!todayData && !tomorrowData) {
+            errorDiv.textContent = "Não foi possível obter dados da API da REN. Verifique a consola (F12) para detalhes (possível erro de CORS ou API indisponível).";
+            statusDiv.textContent = "Erro na conexão.";
+            return;
+        }
+
+        // Processar dados de Hoje
+        if (todayData) {
+            // A API pode retornar um objeto com uma propriedade 'Data' ou diretamente um array
+            const pricesToday = Array.isArray(todayData) ? todayData : (todayData.Data || []);
+
+            if (pricesToday.length > 0) {
+                // Ordenar por hora caso venha desordenado
+                pricesToday.sort((a, b) => getHourValue(a) - getHourValue(b));
+
+                pricesToday.forEach(item => {
+                    const hour = getHourValue(item);
+                    // A API da REN geralmente usa 1-24 para horas.
+                    // Se a API usar 1-24, convertemos para 0-23 para comparar com JS Date
+                    const hourIndex = (hour === 24) ? 0 : hour;
+
+                    // Só mostrar se for a hora atual ou futura
+                    // Nota: Se a API usa 1-24, a lógica precisa de ajuste fino.
+                    // Assumindo que 'hour' é a hora de início do período.
+                    // Ex: Hour 14 = 14:00-15:00.
+
+                    if (hour > currentHour || (hour === 24 && currentHour === 23)) {
+                        addPriceItem(item, false);
+                    } else if (hour === (currentHour + 1)) {
+                        // Algumas APIs retornam a hora seguinte já, outras a atual.
+                        // Vamos incluir a hora atual.
+                         addPriceItem(item, false);
+                    }
+                });
+            } else {
+                listContainer.innerHTML += '<li class="error">Nenhum dado disponível para hoje.</li>';
+            }
+        }
+
+        // Processar dados de Amanhã
+        if (tomorrowData) {
+            const pricesTomorrow = Array.isArray(tomorrowData) ? tomorrowData : (tomorrowData.Data || []);
+
+            if (pricesTomorrow.length > 0) {
+                // Adicionar cabeçalho
+                listContainer.innerHTML += `<div class="next-day-header">Amanhã (${tomorrowStr})</div>`;
+
+                pricesTomorrow.forEach(item => {
+                    addPriceItem(item, false);
+                });
+            }
+        }
+    }
+
+    function addPriceItem(item, highlightNextDay) {
+        const listContainer = document.getElementById('price-list');
+        const li = document.createElement('li');
+        li.className = 'price-item';
+
+        const hour = getHourValue(item);
+        const price = getPriceValue(item);
+
+        const timeStr = formatHour(hour);
+        const priceStr = typeof price === 'number' ? price.toFixed(2) + ' €/MWh' : price;
+
+        // Verificar se é a hora atual para destacar
+        const now = new Date();
+        const currentHour = now.getHours();
+        // A API geralmente conta horas 1-24. JS conta 0-23.
+        // Se a API retorna 13 para 13:00.
+        const isCurrent = (hour === currentHour + 1) || (hour === currentHour);
+
+        if (isCurrent) {
+            li.classList.add('current-hour');
+        }
+
+        li.innerHTML = `<span class="time">${timeStr}</span><span class="value">${priceStr}</span>`;
+        listContainer.appendChild(li);
+    }
+
+    // Iniciar
+    main();
+</script>
+
+</body>
+</html>
