@@ -1,0 +1,1160 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,noarchive,nofollow">
+<title>Boletim tlim n.º 79 ★ Abril de 2026</title>
+<style>
+body { max-width:60ch; padding:.5em; margin:0 auto; font:1.25em/1.75 sans-serif; opacity:.9 }
+header p { border-bottom:.2em solid; margin:0 0 2em; padding:.5em 0 }
+h1, h2 { line-height:1 }
+h1 { font-size:2em; margin-block: 0.67em }
+h2 { font-size: 1.2em; margin-top:3em }
+h1 span { text-decoration:underline; margin:3em 0 1em; font-size:.75em; display:block }
+aside { border-left:.3em solid; padding:0 0 0 2em; margin:2em 0 }
+blockquote { font-style:italic }
+table { border-collapse:collapse; margin:2em auto; font-size:.8em }
+table caption strong:first-child, figcaption strong:first-child { display:block }
+figure { text-align:center; margin:2em 0; font-size:.8em }
+thead { border-bottom:.3em solid }
+td { border-bottom:.1em solid; padding:1em .5em 1em 0; text-align:center; line-height:1.25; vertical-align:top}
+td:first-child { text-align:left }
+td:last-child { padding:1em 0 }
+input { font-family:inherit; font-size:1em; width:2em; text-align:right; border-width:0 0 .25em; outline:0 }
+button, select { font-family:inherit; font-size:1em }
+
+svg { padding-top:1em }
+text { fill:CanvasText;}
+line { stroke:GrayText; }
+rect { fill: LinkText }
+</style>
+</head>
+<body>
+<header>
+<p>Boletim <strong>tlim</strong> n.º 79 ★ Abril de 2026
+</header>
+
+<p>Olá!
+
+<p>Muito programei nas últimas semanas: no <a href="#1">primeiro texto</a> desta septuagésima nona edição do boletim <strong>tlim</strong> estendo a análise interativa da probabilidade de falência em vida para incluir o risco de doença e de saúde; no <a href="#2">segundo artigo</a>, traço definitiva e interativamente o potencial dos fundos alavancados de ações para o longo prazo.
+
+<p>Espero que goste.
+
+<p><em>— David Almas</em>
+
+<article id="1">
+<h1>
+<span>1</span>
+Na saúde e na doença: adapte o seu plano de investimento
+</h1>
+
+<p>Por <strong>David Almas</strong> a 1 de abril de 2026
+
+<p>Publiquei um dos trabalhos que mais me orgulham, “Carteira a zero. Qual a probabilidade de ver essa calamidade?”, na última edição do boletim <strong>tlim</strong> de 2024. Nesse artigo, cruzei a probabilidade de continuar a viver e a probabilidade de falência da estratégia de investimento para ajudar os leitores a perceberem se arriscam ficar sem dinheiro ao longo da sua vida.
+
+<p>Considerei aquela análise tão importante que a simplifiquei numa página, <a href="https://tlim.pt/zero/">tlim.pt/zero</a>, que atualizo mensalmente com os desempenhos mais recente dos mercados financeiros e anualmente com as revisões das tábuas portuguesas de mortalidade.
+
+<h2>Recapitulemos</h2>
+
+<div id="vf">
+
+<p>Assumamos <span id="vfcaso">este</span> caso, se não se importar: <select id="vfsexo" disabled><option value="M" selected>uma mulher<option value="H">um homem</select> de <span class="nw"><input type="text" value="25" id="vfidade" maxlength="2" style="width:1.5em" disabled> anos</span>, que investe para o longo prazo.
+
+<div id="vfinterativo"></div>
+
+<p>A maioria dos planos financeiros tem até três fases distintas. Nos primeiros anos, um jovem trabalhador, por exemplo, pouco investe: dedica uma grande fatia do orçamento para a casa e para a diversão. Posteriormente, após subir na escada laboral, a sua capacidade de aforro aumenta. Na aposentação, começa a resgatar dos seus investimentos para complementar a sua pensão.
+
+<p id="recalcula">Para a análise da estratégia <span id="vfsexo2">da mulher</span> de <span id="vfidade2">25</span> anos, imaginemos este plano de investimentos:
+
+<ol>
+<li>
+<p>A primeira fase, que começa agora, arranca com <span class="nw"><input type="text" value="2000" id="vfcap" style="width:4.5em" disabled> euros</span>. Durante <input type="text" value="20" id="vfanos1" maxlength="2" disabled> anos, a carteira estará dividida com <span class="nw"><input type="text" value="60" id="vfpa1" maxlength="3" disabled>%</span> em ações e <span class="nw"><span id="vfpo1">40</span>%</span> em obrigações.
+
+<p>Os encargos anuais desta estratégia somam <span class="nw"><input type="text" value="0,25" id="vfe1" disabled>%</span> do património.
+
+<p>Ao longo desta fase, <select id="vfaplicaresgata1" disabled><option value="1" selected>aplicará<option value="-1">alienará</select> <input type="text" value="150" style="width:2.5em" id="vfp1" disabled> euros por mês.
+
+<li>
+<p>Na segunda etapa do plano, que durará <input type="text" value="23" id="vfanos2" maxlength="2" disabled> anos, terá <span class="nw"><input type="text" value="40" id="vfpa2" maxlength="3" disabled>%</span> da carteira exposta aos mercados acionistas e  <span class="nw"><span id="vfpo2">60</span>%</span> aos obrigacionistas.
+
+<p>Mensalmente, <select id="vfaplicaresgata2" disabled><option value="1" selected>reforçará<option value="-1">resgatará</select> <input type="text" value="250" style="width:2.5em" id="vfp2" disabled> euros.
+
+<p>As despesas somarão anualmente <span class="nw"><input type="text" value="0,25" id="vfe2" disabled>%</span> do património.
+
+<li>
+<p>Na última fase, que persistirá para o resto da vida, terá <span class="nw"><input type="text" value="20" id="vfpa3" maxlength="3" disabled>%</span> em ações e  <span class="nw"><span id="vfpo3">80</span>%</span> em obrigações, o que representará encargos anuais de  <span class="nw"><input type="text" value="0,25" id="vfe3" disabled>%</span> do património.
+
+<p><select id="vfaplicaresgata3" disabled><option value="1">Aplicará<option value="-1" selected>Alienará</select> <input type="text" value="1000" style="width:2.5em" id="vfp3" disabled> euros por mês.
+</ol>
+</div>
+
+<div id="vfinsira"></div>
+
+<p>Note que todos os valores na lista anterior são a preços de hoje. Todos os cálculos nesta análise são corrigidos pelo efeito inflacionista, isto é, os números são a preços constantes. Interprete todos os montantes a preços de 2026.
+
+<p>A estratégia de investimento descrita atrás carrega alguma probabilidade de falhar?
+
+<figure>
+<figcaption><strong>Probabilidade de bancarrota</strong> Esta figura mostra a frequência com que o plano de investimento teria chegado a zero em qualquer período entre 1852 e 2026, usando a <a href="https://shillerdata.com/">base de dados</a> de Robert Shiller como referência. Por exemplo, houve falência aos <span id="vfgex">84</span> anos em <span class="nw"><span id="vfgf">2</span>%</span> das simulações.</figcaption>
+<svg id="falido" width="735" height="262">
+<line x1="50" y1="231.6" x2="735.3" y2="231.6"/>
+<line x1="50" y1="208.54" x2="735.3" y2="208.54"/>
+<line x1="50" y1="185.48" x2="735.3" y2="185.48"/>
+<line x1="50" y1="162.42" x2="735.3" y2="162.42"/>
+<line x1="50" y1="139.36" x2="735.3" y2="139.36"/>
+<line x1="50" y1="116.3" x2="735.3" y2="116.3"/>
+<line x1="50" y1="93.24" x2="735.3" y2="93.24"/>
+<line x1="50" y1="70.18" x2="735.3" y2="70.18"/>
+<line x1="50" y1="47.12" x2="735.3" y2="47.12"/>
+<line x1="50" y1="24.06" x2="735.3" y2="24.06"/>
+<line x1="50" y1="1" x2="735.3" y2="1"/>
+<rect x="583.009" y="226.32" width="8.017" height="5.28"/>
+<rect x="592.026" y="212.609" width="8.017" height="18.991"/>
+<rect x="601.043" y="206.819" width="8.017" height="24.781"/>
+<rect x="610.061" y="197.925" width="8.017" height="33.675"/>
+<rect x="619.078" y="193.131" width="8.017" height="38.469"/>
+<rect x="628.095" y="190.236" width="8.017" height="41.364"/>
+<rect x="637.112" y="185.419" width="8.017" height="46.181"/>
+<rect x="646.129" y="166.173" width="8.017" height="65.427"/>
+<rect x="655.146" y="153.203" width="8.017" height="78.397"/>
+<rect x="664.163" y="139.238" width="8.017" height="92.362"/>
+<rect x="673.18" y="115.684" width="8.017" height="115.916"/>
+<rect x="682.197" y="98.615" width="8.017" height="132.985"/>
+<rect x="691.214" y="84.905" width="8.017" height="146.695"/>
+<rect x="700.232" y="74.784" width="8.017" height="156.816"/>
+<rect x="709.249" y="65.659" width="8.017" height="165.941"/>
+<rect x="718.266" y="63.482" width="8.017" height="168.118"/>
+<rect x="727.283" y="51.716" width="8.017" height="179.884"/>
+<text x="45" y="1" dominant-baseline="hanging" text-anchor="end">100%</text>
+<text x="45" y="231.6" dominant-baseline="auto" text-anchor="end">0%</text>
+<text x="734.3" y="239.6" dominant-baseline="hanging" text-anchor="end">100 anos</text>
+<text x="50" y="239.6" dominant-baseline="hanging" text-anchor="start">25 anos</text>
+<line x1="45" x2="50" y1="1" y2="1"/>
+<line x1="45" x2="50" y1="231.6" y2="231.6"/>
+<line x1="50" x2="50" y1="231.6" y2="1"/>
+<line x1="734.3" x2="734.3" y1="231.6" y2="1"/>
+</svg>
+</figure>
+
+<p>A figura anterior não é, todavia, a mais importante. Como expliquei atrás, a probabilidade de falência deve interessar apenas quando combinada com a probabilidade de sobrevivência.
+
+<figure>
+<figcaption><strong>Probabilidade de viver</strong> Esta figura mostra a frequência com que <span id="vfgsexo">as mulheres</span> de <span id="vfgidade">25</span> anos chegam a idades mais avançadas, segundo as mais recentes <a href="https://smi.ine.pt/Indicador/Detalhes/18097">tábuas de mortalidade</a> publicadas pelo Instituto Nacional de Estatística.</figcaption>
+<svg id="vive" width="735" height="262">
+<line x1="50" y1="231.6" x2="735.3" y2="231.6"/>
+<line x1="50" y1="208.54" x2="735.3" y2="208.54"/>
+<line x1="50" y1="185.48" x2="735.3" y2="185.48"/>
+<line x1="50" y1="162.42" x2="735.3" y2="162.42"/>
+<line x1="50" y1="139.36" x2="735.3" y2="139.36"/>
+<line x1="50" y1="116.3" x2="735.3" y2="116.3"/>
+<line x1="50" y1="93.24" x2="735.3" y2="93.24"/>
+<line x1="50" y1="70.18" x2="735.3" y2="70.18"/>
+<line x1="50" y1="47.12" x2="735.3" y2="47.12"/>
+<line x1="50" y1="24.06" x2="735.3" y2="24.06"/>
+<line x1="50" y1="1" x2="735.3" y2="1"/>
+<rect x="51" y="0" width="8.017" height="231.6"/>
+<rect x="60.017" y="0.046" width="8.017" height="231.554"/>
+<rect x="69.034" y="0.116" width="8.017" height="231.484"/>
+<rect x="78.051" y="0.162" width="8.017" height="231.438"/>
+<rect x="87.068" y="0.208" width="8.017" height="231.392"/>
+<rect x="96.086" y="0.278" width="8.017" height="231.322"/>
+<rect x="105.103" y="0.347" width="8.017" height="231.253"/>
+<rect x="114.12" y="0.417" width="8.017" height="231.183"/>
+<rect x="123.137" y="0.51" width="8.017" height="231.09"/>
+<rect x="132.154" y="0.579" width="8.017" height="231.021"/>
+<rect x="141.171" y="0.695" width="8.017" height="230.905"/>
+<rect x="150.188" y="0.787" width="8.017" height="230.813"/>
+<rect x="159.205" y="0.95" width="8.017" height="230.65"/>
+<rect x="168.222" y="1.065" width="8.017" height="230.535"/>
+<rect x="177.239" y="1.181" width="8.017" height="230.419"/>
+<rect x="186.257" y="1.32" width="8.017" height="230.28"/>
+<rect x="195.274" y="1.482" width="8.017" height="230.118"/>
+<rect x="204.291" y="1.668" width="8.017" height="229.932"/>
+<rect x="213.308" y="1.853" width="8.017" height="229.747"/>
+<rect x="222.325" y="2.038" width="8.017" height="229.562"/>
+<rect x="231.342" y="2.27" width="8.017" height="229.33"/>
+<rect x="240.359" y="2.524" width="8.017" height="229.076"/>
+<rect x="249.376" y="2.779" width="8.017" height="228.821"/>
+<rect x="258.393" y="3.08" width="8.017" height="228.52"/>
+<rect x="267.411" y="3.428" width="8.017" height="228.172"/>
+<rect x="276.428" y="3.775" width="8.017" height="227.825"/>
+<rect x="285.445" y="4.169" width="8.017" height="227.431"/>
+<rect x="294.462" y="4.609" width="8.017" height="226.991"/>
+<rect x="303.479" y="5.026" width="8.017" height="226.574"/>
+<rect x="312.496" y="5.489" width="8.017" height="226.111"/>
+<rect x="321.513" y="6.022" width="8.017" height="225.578"/>
+<rect x="330.53" y="6.577" width="8.017" height="225.023"/>
+<rect x="339.547" y="7.203" width="8.017" height="224.397"/>
+<rect x="348.564" y="7.874" width="8.017" height="223.726"/>
+<rect x="357.582" y="8.616" width="8.017" height="222.984"/>
+<rect x="366.599" y="9.38" width="8.017" height="222.22"/>
+<rect x="375.616" y="10.214" width="8.017" height="221.386"/>
+<rect x="384.633" y="11.14" width="8.017" height="220.46"/>
+<rect x="393.65" y="12.09" width="8.017" height="219.51"/>
+<rect x="402.667" y="13.109" width="8.017" height="218.491"/>
+<rect x="411.684" y="14.267" width="8.017" height="217.333"/>
+<rect x="420.701" y="15.471" width="8.017" height="216.129"/>
+<rect x="429.718" y="16.791" width="8.017" height="214.809"/>
+<rect x="438.736" y="18.204" width="8.017" height="213.396"/>
+<rect x="447.753" y="19.732" width="8.017" height="211.868"/>
+<rect x="456.77" y="21.377" width="8.017" height="210.223"/>
+<rect x="465.787" y="23.299" width="8.017" height="208.301"/>
+<rect x="474.804" y="25.221" width="8.017" height="206.379"/>
+<rect x="483.821" y="27.375" width="8.017" height="204.225"/>
+<rect x="492.838" y="29.923" width="8.017" height="201.677"/>
+<rect x="501.855" y="32.748" width="8.017" height="198.852"/>
+<rect x="510.872" y="35.829" width="8.017" height="195.771"/>
+<rect x="519.889" y="39.256" width="8.017" height="192.344"/>
+<rect x="528.907" y="43.101" width="8.017" height="188.499"/>
+<rect x="537.924" y="47.571" width="8.017" height="184.029"/>
+<rect x="546.941" y="52.782" width="8.017" height="178.818"/>
+<rect x="555.958" y="58.479" width="8.017" height="173.121"/>
+<rect x="564.975" y="64.848" width="8.017" height="166.752"/>
+<rect x="573.992" y="71.912" width="8.017" height="159.688"/>
+<rect x="583.009" y="80.342" width="8.017" height="151.258"/>
+<rect x="592.026" y="90.417" width="8.017" height="141.183"/>
+<rect x="601.043" y="102.437" width="8.017" height="129.163"/>
+<rect x="610.061" y="115.707" width="8.017" height="115.893"/>
+<rect x="619.078" y="129.835" width="8.017" height="101.765"/>
+<rect x="628.095" y="144.356" width="8.017" height="87.244"/>
+<rect x="637.112" y="158.762" width="8.017" height="72.838"/>
+<rect x="646.129" y="172.75" width="8.017" height="58.85"/>
+<rect x="655.146" y="185.627" width="8.017" height="45.973"/>
+<rect x="664.163" y="196.999" width="8.017" height="34.601"/>
+<rect x="673.18" y="206.657" width="8.017" height="24.943"/>
+<rect x="682.197" y="214.438" width="8.017" height="17.162"/>
+<rect x="691.214" y="220.414" width="8.017" height="11.186"/>
+<rect x="700.232" y="224.721" width="8.017" height="6.879"/>
+<rect x="709.249" y="227.64" width="8.017" height="3.96"/>
+<rect x="718.266" y="229.492" width="8.017" height="2.108"/>
+<rect x="727.283" y="230.558" width="8.017" height="1.042"/>
+<text x="45" y="1" dominant-baseline="hanging" text-anchor="end">100%</text>
+<text x="45" y="231.6" dominant-baseline="auto" text-anchor="end">0%</text>
+<text x="734.3" y="239.6" dominant-baseline="hanging" text-anchor="end">100 anos</text>
+<text x="50" y="239.6" dominant-baseline="hanging" text-anchor="start">25 anos</text>
+<line x1="45" x2="50" y1="1" y2="1"/>
+<line x1="45" x2="50" y1="231.6" y2="231.6"/>
+<line x1="50" x2="50" y1="231.6" y2="1"/>
+<line x1="734.3" x2="734.3" y1="231.6" y2="1"/>
+</svg>
+</figure>
+
+<p>A partir da representação anterior, é possível, por exemplo, concluir que <span id="vfsexo100">uma mulher</span> de <span id="vfidade100">25</span> anos deve atribuir uma probabilidade de <span class="nw"><span id="vfp100">0,45</span>%</span> de viver até aos 100 anos.
+
+<p>Se é improvável viver até aos 100 anos, o seu plano de investimento deverá menosprezar a probabilidade de ficar sem dinheiro nessa altura. Deverá privilegiar evitar a bancarrota nos anos anteriores.
+
+<p>No desenho da sua estratégia de aforro, a pergunta que deve explorar é: qual a probabilidade futura de estar simultaneamente <span id="falidaviva">falida e viva</span>?
+
+<figure>
+<figcaption><strong>Probabilidade de viver na falência</strong> Na estratégia perfeita, quase não verá barras na figura em baixo. Significaria que a probabilidade da carteira de investimentos chegar a zero durante a vida é mínima.</figcaption>
+<svg id="vivefalido" width="735" height="262">
+<line x1="50" y1="231.6" x2="735.3" y2="231.6"/>
+<line x1="50" y1="208.54" x2="735.3" y2="208.54"/>
+<line x1="50" y1="185.48" x2="735.3" y2="185.48"/>
+<line x1="50" y1="162.42" x2="735.3" y2="162.42"/>
+<line x1="50" y1="139.36" x2="735.3" y2="139.36"/>
+<line x1="50" y1="116.3" x2="735.3" y2="116.3"/>
+<line x1="50" y1="93.24" x2="735.3" y2="93.24"/>
+<line x1="50" y1="70.18" x2="735.3" y2="70.18"/>
+<line x1="50" y1="47.12" x2="735.3" y2="47.12"/>
+<line x1="50" y1="24.06" x2="735.3" y2="24.06"/>
+<line x1="50" y1="1" x2="735.3" y2="1"/>
+<rect x="583.009" y="228.149" width="8.017" height="3.451"/>
+<rect x="592.026" y="220.02" width="8.017" height="11.58"/>
+<rect x="601.043" y="217.797" width="8.017" height="13.803"/>
+<rect x="610.061" y="214.74" width="8.017" height="16.86"/>
+<rect x="619.078" y="214.693" width="8.017" height="16.907"/>
+<rect x="628.095" y="216.013" width="8.017" height="15.587"/>
+<rect x="637.112" y="217.079" width="8.017" height="14.521"/>
+<rect x="646.129" y="214.971" width="8.017" height="16.629"/>
+<rect x="655.146" y="216.036" width="8.017" height="15.564"/>
+<rect x="664.163" y="217.797" width="8.017" height="13.803"/>
+<rect x="673.18" y="219.117" width="8.017" height="12.483"/>
+<rect x="682.197" y="221.734" width="8.017" height="9.866"/>
+<rect x="691.214" y="224.513" width="8.017" height="7.087"/>
+<rect x="700.232" y="226.945" width="8.017" height="4.655"/>
+<rect x="709.249" y="228.774" width="8.017" height="2.826"/>
+<rect x="718.266" y="230.071" width="8.017" height="1.529"/>
+<rect x="727.283" y="230.789" width="8.017" height="0.811"/>
+<text x="45" y="1" dominant-baseline="hanging" text-anchor="end">100%</text>
+<text x="45" y="231.6" dominant-baseline="auto" text-anchor="end">0%</text>
+<text x="734.3" y="239.6" dominant-baseline="hanging" text-anchor="end">100 anos</text>
+<text x="50" y="239.6" dominant-baseline="hanging" text-anchor="start">25 anos</text>
+<line x1="45" x2="50" y1="1" y2="1"/>
+<line x1="45" x2="50" y1="231.6" y2="231.6"/>
+<line x1="50" x2="50" y1="231.6" y2="1"/>
+<line x1="734.3" x2="734.3" y1="231.6" y2="1"/>
+</svg>
+</figure>
+
+<p id="vfconclui">No máximo, esta estratégia de investimento prevê uma probabilidade histórica de falência em vida de <strong>7%</strong>, o que acontece aos 88 anos. Se quiser afinar o seu plano financeiro, <a href="#recalcula">volte atrás</a> para mudar os campos sublinhados. Pode ser que consiga baixar esta probabilidade.
+
+<h2>Problemas de médias</h2>
+
+<p>O raciocínio anterior, embora desenhado para a simplicidade, sofre de um problema: embrulha todas as leitoras na mesma tábua de mortalidade e os leitores noutra tábua de mortalidade. Não é realista: uma pessoa que sofra de uma doença crónica pode ter uma esperança de vida mais curta; outra pessoa que seja muito saudável deve esperar viver mais.
+
+<p>Traçar pragmaticamente a probabilidade de viver é essencial para o plano financeiro. Se viver mais do que o orçamentado, poderá ficar sem dinheiro nos últimos anos de vida. Se viver menos do que o planeado, poderia ter gastado mais ao longo da vida.
+
+<p>As finanças não são uma ciência exata, mas devemos maximizar a sua credibilidade.
+
+<p>Um fumador, por exemplo, tem o dobro de risco de morte em cada idade relativamente à tábua de mortalidade de referência, como mostrou um <a href="https://doi.org/10.1371/journal.pmed.1004561">vasto estudo recente</a>.
+
+<p>Como as tábuas de mortalidade do INE incluem toda a população portuguesa — abrangendo também os fumadores —, os não fumadores têm menos risco de morte do que essa referência. Os seus multiplicadores de mortalidade rondam, talvez, 0,8. (Números abaixo da unidade representam menor risco de morte.)
+
+<p>Há muitas outras situações em que se pode ajustar a tábua de mortalidade. Tal como os fumadores, os doentes de 40 anos a 64 anos com covid-19 persistente também têm <a href="https://doi.org/10.1016/j.ijid.2025.108223">o dobro da taxa de mortalidade</a>. Quem segue <a href="https://doi.org/10.1001/jama.292.12.1433">uma dieta mediterrânica</a>, <a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2772939">pratica atividade física</a> ou <a href="https://doi.org/10.1001/jama.2016.4226">tem um estatuto socioeconómico elevado</a> tem menos risco de morte.
+
+<p>Na prática, quem tem mais risco de mortalidade tem de amealhar menos. Quem tem menos risco de morte, tem de poupar mais para o longo prazo.
+
+<p>Note que o multiplicador de mortalidade é um fator que ajusta o risco de morte em cada idade relativamente a uma tábua de referência. É aplicado à taxa de mortalidade e não diretamente às probabilidades de morte. (Um multiplicador de dois não significa que uma pessoa tem o dobro da probabilidade de morrer num dado ano.)
+
+<p>Penso que um multiplicador de 1 deve ser o mais frequente entre os leitores do boletim <strong>tlim</strong>. Apontaria para 0,7 nos indivíduos muito saudáveis e privilegiados. No limite, consideraria um multiplicador de mortalidade de 3 para quem tem uma doença muito grave, um fumador muito frequente ou alguém com obesidade grave.
+
+<p>Continuando o nosso exercício de descobrir a probabilidade de viver na falência seguindo a estratégia de investimento descrita na secção anterior, assumamos um multiplicador de mortalidade de <input type="text" value="0,9" id="vfmmortalidade" disabled>.
+
+<figure>
+<figcaption><strong>Probabilidade de viver na falência, ajustado pelo multiplicador de mortalidade</strong> As barras <span id="vfmcm">cresceram</span>, porque o multiplicador de mortalidade é <span id="vfsii">inferior</span> à unidade.</figcaption>
+<svg id="vivefalidomortalidade" width="735" height="262">
+<line x1="50" y1="230" x2="735.3" y2="230"/>
+<line x1="50" y1="207.1" x2="735.3" y2="207.1"/>
+<line x1="50" y1="184.2" x2="735.3" y2="184.2"/>
+<line x1="50" y1="161.3" x2="735.3" y2="161.3"/>
+<line x1="50" y1="138.4" x2="735.3" y2="138.4"/>
+<line x1="50" y1="115.5" x2="735.3" y2="115.5"/>
+<line x1="50" y1="92.6" x2="735.3" y2="92.6"/>
+<line x1="50" y1="69.7" x2="735.3" y2="69.7"/>
+<line x1="50" y1="46.8" x2="735.3" y2="46.8"/>
+<line x1="50" y1="23.9" x2="735.3" y2="23.9"/>
+<line x1="50" y1="1" x2="735.3" y2="1"/>
+<rect x="583.009" y="226.412" width="8.017" height="3.588"/>
+<rect x="592.026" y="217.925" width="8.017" height="12.075"/>
+<rect x="601.043" y="215.464" width="8.017" height="14.536"/>
+<rect x="610.061" y="212.06" width="8.017" height="17.94"/>
+<rect x="619.078" y="211.761" width="8.017" height="18.239"/>
+<rect x="628.095" y="212.934" width="8.017" height="17.066"/>
+<rect x="637.112" y="213.808" width="8.017" height="16.192"/>
+<rect x="646.129" y="211.071" width="8.017" height="18.929"/>
+<rect x="655.146" y="211.83" width="8.017" height="18.17"/>
+<rect x="664.163" y="213.44" width="8.017" height="16.56"/>
+<rect x="673.18" y="214.498" width="8.017" height="15.502"/>
+<rect x="682.197" y="217.304" width="8.017" height="12.696"/>
+<rect x="691.214" y="220.478" width="8.017" height="9.522"/>
+<rect x="700.232" y="223.422" width="8.017" height="6.578"/>
+<rect x="709.249" y="225.768" width="8.017" height="4.232"/>
+<rect x="718.266" y="227.562" width="8.017" height="2.438"/>
+<rect x="727.283" y="228.62" width="8.017" height="1.38"/>
+<text x="45" y="1" dominant-baseline="hanging" text-anchor="end">100%</text>
+<text x="45" y="230" dominant-baseline="auto" text-anchor="end">0%</text>
+<text x="734.3" y="238" dominant-baseline="hanging" text-anchor="end">100 anos</text>
+<text x="50" y="238" dominant-baseline="hanging" text-anchor="start">25 anos</text>
+<line x1="45" x2="50" y1="1" y2="1"></line>
+<line x1="45" x2="50" y1="230" y2="230"></line>
+<line x1="50" x2="50" y1="230" y2="1"></line>
+<line x1="734.3" x2="734.3" y1="230" y2="1"></line>
+</svg>
+</figure>
+
+<P>Agora, a probabilidade histórica de falência em vida é de <strong id="vfidadem">8%</strong>, no máximo, o que acontece aos <span id="vfidademaxm">91</span> anos.
+
+<p>O multiplicador de mortalidade é algo muito pessoal. As ciências médicas não são a minha especialidade para conseguir aconselhar os leitores sobre números mais indicados para os seus planos financeiros. Sugiro que use duas fontes de informação para decidir o seu multiplicador: estudos académicos e médicos especialistas.
+
+<p>A investigação académica evolui constantemente o conhecimento sobre a mortalidade. Procure estudos clínicos sobre a sua condição em plataformas reputáveis, como o <a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a> e o <a href="https://scholar.google.com/">Google Académico</a>. Combine a designação da doença em inglês com as expressões “<i>hazard ratio</i>” (“razão de risco”) e “<i>mortality</i>” (“mortalidade”); por exemplo, “diabetes hazard ratio mortality”. (A razão de risco não é o multiplicador de mortalidade, mas é frequentemente uma boa aproximação.)
+
+<p>Os médicos especialistas estão a par dos estudos mais recentes sobre o efeito da doença na mortalidade. Se for a uma consulta, não receie perguntar pelo multiplicador de mortalidade ou pela razão de risco; explique-lhe que deseja atualizar o seu plano financeiro.
+
+<p>O risco de morte não é constante ao longo da vida. Um fumador pode deixar de fumar. Um doente pode curar-se. Uma pessoa pode tornar-se obesa. Por isso, em breve, reverei o <a href="https://tlim.pt/zero/">tlim.pt/zero</a> para incluir este novo campo: o multiplicador de mortalidade.
+
+<h2>Não é o futuro</h2>
+
+<p>Embora melhoradas, as simulações anteriores continuam longe de serem perfeitas:
+
+<ul>
+<li><p><strong>É só América.</strong> Se investir para o longo prazo, sugiro que opte por carteiras globais ou dos mercados desenvolvidos. A diversificação internacional reduz o risco das aplicações. A base de dados que apliquei nos cálculos, desenvolvida por Robert Shiller, inclui apenas os Estados Unidos da América, enviesando positivamente os resultados históricos. As bolsas norte-americanas estão entre as mais rentáveis do último século.
+
+<li><p><strong>É em dólares.</strong> Os índices que suportam as simulações anteriores são baseados em retornos em dólares norte-americanos, o que poderá não ser o melhor para os investidores da Zona Euro.
+
+<p>É, todavia, possível que esse seja um problema menor: no longo prazo, os câmbios convergem para a <a href="https://pt.wikipedia.org/wiki/Paridade_do_poder_de_compra">paridade de poder de compra</a>.
+
+<li><p><strong>São índices.</strong> Os índices de mercado resultam de médias e, logo, sumarizam todos os investidores. Não é possível simular estratégias mais específicas, como carteiras focadas em ações de pequenas empresas ou de boas pagadoras de dividendos, obrigações de alto risco ou táticas de negociação diária.
+
+<p>Se não investir em fundos de índice, é natural que as suas decisões e os seus instrumentos gerem retornos superiores ou inferiores aos índices de referência.
+
+<li><p><strong>Há mais obrigações.</strong> O índice obrigacionista aplicado nos cálculos inclui unicamente títulos do Tesouro norte-americano. O mercado de obrigações é mais vasto e tendencialmente mais rentável e mais volátil. O resultado da aplicação em fundos de obrigações pode divergir dos avanços na dívida pública.
+
+<li><p><strong>São números antigos.</strong> Robert Shiller construiu retroativamente os seus índices acionista e obrigacionista. Quão mais remotos os dados, menos credíveis são. Há menos confiança no retorno do S&P Composite em 1871 do que em 2026.
+
+<li><p><strong>Não contabiliza impostos.</strong> A fiscalidade é um tema indispensável na análise dos investimentos. É também um assunto pouco uniforme — a tributação varia com o perfil do investidor — e pouco estável — não há garantias da manutenção das regras fiscais no longo prazo.
+
+<p>Há duas opções para quem quiser refletir a fiscalidade nas simulações: primeira, pode aumentar a percentagem das despesas anuais; segunda, pode aumentar os montantes mensais de resgate ou diminuir os valores mensais de reforço de modo a transparecer os custos superiores nessa fase da vida.
+</ul>
+
+<p>Não aceite os resultados das simulações como promessas de resultados futuros. Os investimentos e a esperança de vida são incertos e, por isso, também estes cálculos falharão se os usar como projeções.
+
+<p>A probabilidade de falência em vida não é uma garantia; é um guia para o seu plano de investimento. ★
+
+<script>
+function num(el, dig) {
+	const e = document.getElementById(el),
+	z = e.value.replace(/[^\d]/g,'')/Math.pow(10,dig);
+	e.value = z.toLocaleString('pt-PT',{minimumFractionDigits:dig, maximumFractionDigits:dig});
+	return z; }
+
+function esc(el, n, dig) {
+	const e = document.getElementById(el);
+	const x = n.toLocaleString('pt-PT',{minimumFractionDigits:dig,maximumFractionDigits:dig});
+	const t = e.tagName.toLowerCase();
+	t === 'input' ? e.value = x : e.innerText = x; }
+</script>
+
+<script id="xtrabalhador">
+const shillera = [-1.18,1.42,7.20,5.38,1.19,-1.42,3.35,-0.88,-6.18,1.56,0.31,2.99,0.87,2.20,0.99,0.45,0.21,1.36,-1.44,-2.03,3.16,-2.81,4.44,1.29,-0.91,-0.28,-0.86,2.94,2.14,0.33,0.54,-7.11,-5.99,0.18,7.51,4.42,3.59,-0.89,-0.64,-1.24,2.59,-0.19,1.65,2.18,2.03,2.33,-0.05,0.60,0.38,1.92,1.05,-0.86,0.26,0.82,0.19,0.53,-1.02,3.10,1.45,3.53,1.91,0.33,-2.36,0.44,2.71,-0.60,-4.44,-6.35,-1.68,-2.12,-1.63,-1.90,-2.72,0.06,-9.11,-1.08,-1.15,4.13,11.86,7.87,2.70,0.97,0.18,3.59,-0.65,4.56,4.37,4.12,4.89,1.35,-1.53,2.47,0.41,1.28,2.18,3.01,2.88,-0.07,4.92,4.93,2.10,1.23,1.14,0.58,5.37,0.36,-2.81,1.23,2.10,1.30,1.93,-4.75,2.90,5.00,3.99,-0.82,3.30,4.58,3.44,7.45,-0.96,1.51,-0.94,5.93,1.60,-4.08,-3.87,-2.57,-2.10,2.02,-2.48,-1.05,-2.66,0.29,-0.46,-1.65,-0.96,7.07,2.51,4.22,-1.38,-2.94,1.94,-0.06,-2.70,2.67,3.54,-0.28,4.38,0.94,-4.06,2.64,-2.22,3.06,-2.71,-2.48,3.23,0.13,-2.00,-5.58,-3.51,1.69,6.87,-1.54,-1.62,0.80,1.52,-1.72,2.47,3.13,-0.84,1.73,2.48,3.00,6.10,0.38,6.26,5.65,-2.70,2.77,2.30,-0.52,0.23,0.88,6.29,0.61,-0.14,2.96,2.88,2.80,-3.47,-3.10,-1.55,2.69,2.63,2.06,-1.39,-0.92,-3.31,0.28,-4.12,1.12,-2.47,0.00,0.97,-3.40,1.97,2.96,-1.55,1.78,2.52,2.85,-1.36,-2.83,-1.54,5.97,2.73,-0.52,0.17,5.64,2.04,-1.69,1.67,1.50,-1.48,-0.59,-1.43,4.01,-0.77,-0.41,2.43,3.32,-0.39,-0.39,-5.52,-2.49,-4.17,-4.68,-1.95,6.90,0.39,-2.64,2.49,1.16,0.75,-0.05,3.74,9.84,0.34,0.09,3.40,4.84,0.52,4.13,1.51,0.34,-0.19,-2.29,0.47,-2.14,2.37,-2.53,-1.96,-1.51,-2.60,-0.90,1.62,-7.32,-1.88,-6.49,2.13,3.37,2.10,4.74,-1.73,1.16,3.29,6.42,1.77,-3.29,-0.93,-1.64,1.27,0.59,0.06,0.41,0.92,-0.76,-1.01,0.41,0.34,4.43,0.93,2.16,3.24,0.97,-1.12,-3.03,-4.21,0.62,6.10,-1.22,2.76,1.39,0.03,-6.13,-5.31,5.65,-0.40,4.13,-3.31,3.31,-0.59,0.60,-1.29,2.39,5.02,4.80,2.19,2.20,-1.52,-3.22,2.47,3.06,-1.30,-4.20,-1.39,-0.13,11.57,2.15,4.06,0.12,-1.78,3.62,5.02,7.91,1.21,1.69,0.14,-3.90,-3.29,2.38,1.49,-4.54,-1.43,0.92,-7.67,1.63,0.90,1.12,1.60,-2.08,-1.43,-0.85,3.01,-3.16,5.31,8.23,7.73,2.00,4.19,3.94,10.11,-4.72,10.30,-7.57,0.46,-1.39,-0.80,1.25,-2.45,3.71,1.19,0.45,2.51,-1.09,-1.43,2.58,4.20,-0.63,-9.19,-0.28,-3.06,4.28,-0.26,-0.31,-3.74,0.72,-5.15,-4.20,-2.79,-3.11,-1.67,1.97,5.08,-0.23,-4.46,1.27,4.09,0.62,0.58,4.57,2.58,3.60,6.23,3.38,1.30,2.50,4.70,4.31,-0.92,-3.53,1.49,3.45,2.84,1.78,1.70,-1.38,1.61,3.75,-0.42,-2.15,-1.05,-3.42,1.64,1.12,5.32,2.26,-4.78,1.29,-1.63,-1.46,-4.83,-8.49,0.89,-5.06,-3.78,4.28,-7.06,-0.59,-11.30,-1.30,8.00,5.97,-2.05,4.63,4.74,5.87,0.59,2.99,4.73,-0.68,0.55,6.04,1.56,1.78,-3.52,1.75,2.71,2.64,1.10,1.79,1.74,-0.54,-1.21,-1.09,0.57,-0.83,-3.20,0.91,-2.95,0.62,-3.50,-4.64,3.87,2.10,8.22,2.38,-2.37,2.86,5.41,-1.80,3.25,2.58,2.42,-1.08,-7.36,-6.00,1.03,5.55,1.93,-0.51,-1.47,1.22,0.50,0.31,1.41,0.52,1.70,-0.06,0.20,-0.71,-2.24,-1.39,-3.12,-1.45,0.34,-1.27,-5.54,0.82,3.16,0.41,-2.70,-3.03,1.38,4.60,2.81,-1.43,-0.94,0.06,-0.03,-6.03,-1.49,0.47,1.46,-0.52,-2.89,2.25,0.12,4.09,6.92,-2.87,1.58,0.07,4.69,4.14,4.92,2.88,0.59,-2.14,-0.99,-0.86,-1.60,1.69,0.48,-0.94,0.30,2.67,1.73,0.98,-4.39,-2.70,-7.51,3.65,-5.68,-4.34,1.04,-0.65,-3.85,-6.33,-6.14,-7.60,-4.01,4.57,3.09,-0.57,-1.62,1.78,-0.53,-1.19,-0.37,-1.78,2.93,1.26,-2.59,-0.04,2.85,2.37,2.03,6.19,3.19,0.77,-7.84,1.51,3.85,-4.60,-4.52,-2.58,-8.72,6.49,-3.25,-7.15,-2.62,0.90,-0.99,5.68,1.18,-4.05,-6.50,7.24,3.14,-1.43,2.15,5.97,-6.91,-0.26,-0.62,4.27,1.95,6.56,4.69,2.77,2.73,5.53,6.59,4.39,-0.46,0.59,5.50,3.07,2.05,-5.08,-0.34,2.46,4.75,2.08,-3.62,-4.25,-3.88,-3.97,1.63,0.57,-1.51,3.54,3.92,3.79,1.54,-0.84,-1.21,0.17,2.42,4.54,4.55,-1.06,-1.38,6.09,5.26,4.59,1.88,-2.75,-0.03,3.07,1.07,2.06,1.79,2.75,3.73,1.80,2.61,1.93,0.56,-5.85,-2.90,1.73,5.82,5.86,5.00,1.37,-2.39,1.17,2.71,0.90,2.97,2.56,2.88,3.28,0.55,4.41,6.34,5.45,-1.73,3.25,2.72,0.77,0.33,5.75,6.67,2.84,-4.00,1.09,3.59,6.14,2.96,7.08,1.29,7.70,0.81,2.65,0.29,1.20,1.61,7.94,5.96,4.25,-10.32,-26.19,4.98,2.42,7.26,4.74,6.06,-5.09,-9.23,-0.58,-0.29,-0.26,-12.85,-6.23,-4.44,4.85,9.51,3.03,-8.50,-7.98,-1.40,3.85,-2.49,-13.81,-12.17,3.43,-17.55,1.20,1.34,1.84,-22.70,-10.06,-11.79,6.14,52.43,11.16,-12.59,0.39,-1.93,6.18,-9.87,1.12,11.24,29.31,16.65,5.15,-5.37,-0.49,-9.38,2.80,2.32,6.09,6.94,-4.80,2.02,-9.83,0.94,-4.35,-3.51,-3.45,1.96,3.21,1.81,-1.07,-3.33,-5.93,7.15,8.26,4.93,5.60,7.10,2.43,2.99,8.92,0.30,5.83,6.04,3.16,0.42,-5.01,3.83,5.48,1.58,1.45,5.57,3.12,-1.38,2.73,3.31,-0.47,-6.27,-4.74,-3.32,5.65,1.42,-14.36,-14.09,-7.63,-0.32,4.69,-1.11,-6.02,-4.13,2.26,2.92,20.46,1.04,-4.10,12.38,0.43,-2.58,-1.16,0.26,0.27,-11.60,4.10,2.17,2.84,-1.06,8.70,2.12,-1.40,-1.96,0.57,-0.94,-0.14,1.42,-13.34,-8.74,4.62,2.66,4.76,1.47,2.85,-4.27,0.72,-5.72,0.47,-3.22,-2.27,1.98,5.71,-1.26,-0.47,-4.69,-4.70,-6.49,1.30,-3.10,-5.96,-4.06,0.61,5.74,3.73,-0.57,1.65,6.67,1.54,0.45,6.50,6.43,2.20,2.59,3.77,2.18,3.06,-3.98,1.97,-0.50,-4.20,1.77,3.67,-0.24,3.24,-1.87,2.21,4.55,2.44,-1.05,-1.22,2.88,-0.28,2.02,3.39,3.74,0.32,2.90,3.58,1.06,-1.69,0.71,7.18,4.51,3.61,1.46,4.30,1.14,-3.74,6.19,-0.03,-1.40,-7.96,-3.57,-15.26,-3.76,-2.36,2.44,0.92,4.27,-5.43,-3.29,-1.35,3.46,5.74,-2.87,-4.29,3.04,-1.15,-2.38,-2.12,-3.63,2.36,6.37,4.89,3.72,-3.16,-2.88,-0.67,3.62,-4.31,0.27,2.06,-2.51,1.50,0.00,0.24,-5.30,7.16,3.74,1.45,4.03,1.54,4.13,3.07,2.53,0.95,3.39,3.48,1.74,-7.87,5.78,3.70,3.89,-0.01,-0.99,6.32,3.10,-1.49,1.93,0.25,-1.14,2.36,4.96,2.34,-0.37,-3.01,3.21,3.84,-0.58,0.75,-0.17,0.46,2.86,2.59,0.88,-1.11,-1.62,3.66,4.50,1.37,-0.40,0.58,-4.47,0.63,-3.47,1.91,0.52,-4.11,3.14,3.09,1.84,3.03,2.68,2.58,4.84,4.03,1.22,4.46,2.40,3.12,2.72,4.31,5.35,2.17,3.71,-0.43,3.81,-0.08,6.15,7.25,-0.30,4.43,-4.72,7.07,1.62,-2.38,0.96,7.21,1.11,-3.19,-0.99,4.98,0.08,-3.44,-1.32,-0.72,1.43,-1.86,-4.34,1.25,2.28,3.79,1.59,1.60,-5.20,-3.74,-5.89,-2.14,0.32,1.61,0.70,1.71,0.54,3.56,2.73,2.72,4.41,2.94,4.36,2.97,2.52,3.90,-0.92,2.81,1.59,1.77,-0.95,3.87,-0.32,-4.03,-0.16,0.67,3.46,-1.14,-3.93,-1.07,1.24,-0.62,3.64,-2.20,1.49,-2.72,-2.33,3.54,2.69,5.43,4.37,3.40,2.92,1.26,-1.08,-0.69,4.19,-0.87,1.35,4.77,1.17,-3.49,1.57,0.34,-3.27,-7.18,-11.41,2.38,3.02,-0.92,-2.85,7.20,4.63,4.15,1.60,-0.43,4.98,2.27,-0.11,-1.54,3.03,2.89,0.18,-0.30,2.06,3.33,1.48,2.07,1.69,1.22,-0.67,3.63,-0.91,1.64,1.97,0.62,-1.49,2.82,0.98,0.02,1.24,1.73,-5.11,0.10,2.12,3.60,2.18,1.08,-0.52,1.98,-1.05,-4.16,2.68,-5.01,-0.86,-0.29,-6.34,-3.22,-1.17,5.32,0.72,4.13,3.73,2.32,1.68,1.75,-1.29,1.69,1.55,1.35,-0.20,-3.17,2.81,-0.60,-4.54,-1.85,7.35,2.26,2.35,-0.52,-2.21,3.21,2.14,1.50,1.00,-4.25,-0.80,-2.73,1.71,3.23,-5.49,-4.73,-0.82,0.36,0.80,0.46,-5.53,-0.85,-3.71,1.48,-3.51,-11.43,-0.78,0.01,3.26,5.78,1.97,-0.30,6.62,4.11,3.89,2.57,3.42,-1.60,-2.32,-0.71,-1.76,2.49,-2.10,-4.37,6.64,4.42,1.59,2.37,1.01,-1.01,0.28,-0.98,3.54,-1.44,-0.06,5.01,2.07,0.75,-4.00,-2.26,-2.31,-3.23,-2.65,0.98,-3.38,1.77,3.32,-7.46,-7.41,0.83,-3.71,3.26,-5.21,-3.91,-0.36,-12.06,-4.92,-11.08,1.38,2.94,-6.82,8.22,9.97,4.58,1.10,6.11,2.13,-0.68,-7.17,-1.40,4.40,1.30,-1.54,9.35,3.81,0.62,0.74,-1.09,0.37,2.13,-1.08,2.08,-3.61,-0.53,3.44,-1.04,-3.36,-0.72,-2.01,-0.43,0.24,0.79,-2.39,-1.49,-2.51,0.50,-0.40,-4.00,-1.60,-0.52,4.01,4.53,-0.40,-0.82,6.84,-0.35,-3.64,-5.86,1.47,3.27,-2.20,1.32,1.27,-3.12,1.29,0.32,4.02,0.46,-4.12,-1.24,3.32,1.86,2.94,-10.14,-2.26,4.01,5.70,4.97,2.76,1.98,2.35,3.76,-2.16,-0.79,-4.06,3.44,0.61,-2.38,-0.03,-3.08,0.04,-9.19,1.51,2.72,0.86,-5.10,-2.22,-2.64,5.03,-0.37,-6.44,-0.27,0.59,11.87,8.55,4.71,1.77,3.71,2.03,3.87,3.46,3.79,1.45,0.31,-2.70,2.80,0.35,-1.34,-0.23,0.98,-5.57,0.25,0.02,-0.54,-2.13,-1.29,8.79,0.93,-0.69,1.29,-0.71,4.50,5.29,-0.85,0.55,2.35,2.23,2.06,-2.03,-2.16,1.12,6.13,5.01,0.48,5.99,6.67,2.93,0.22,2.57,-1.80,2.10,-2.90,-0.18,3.44,1.62,6.00,6.08,3.91,-1.38,-0.18,4.13,2.85,5.90,-3.54,-12.08,-12.38,-1.33,3.98,3.06,2.79,-1.39,-2.52,5.55,-0.73,-2.13,1.25,3.46,-2.10,2.16,3.00,2.88,-0.73,2.89,3.53,3.15,2.55,4.53,0.14,-0.19,-2.04,2.58,-3.21,-2.98,2.15,0.04,3.61,2.62,-0.21,-8.70,-5.13,-2.90,2.76,4.59,-1.28,11.44,2.89,2.11,-0.47,0.05,0.63,2.38,-0.74,0.04,-0.28,0.86,7.20,-0.96,-1.51,0.12,1.92,-1.68,1.70,0.66,0.09,-1.53,2.61,3.34,-0.35,1.37,1.80,-1.62,0.59,0.73,0.06,1.48,1.15,0.83,-0.06,0.89,1.46,-0.42,-1.76,-3.48,0.99,0.77,-0.79,2.67,0.55,-0.51,-0.50,-1.02,2.04,3.41,2.22,2.88,3.15,2.98,3.55,0.25,3.52,0.59,2.43,3.46,-0.42,5.56,-0.71,-0.19,2.16,1.21,-3.66,2.88,1.70,3.79,4.85,1.20,2.93,4.03,-0.87,-3.53,9.29,5.21,5.60,0.16,0.94,1.39,-1.09,2.76,0.05,6.21,5.12,3.22,-0.40,-0.01,4.34,-7.08,-5.01,1.04,10.97,4.17,4.79,-0.19,2.61,3.50,-0.10,-0.61,4.21,-4.00,-1.07,-1.45,7.04,2.81,-0.41,-3.05,3.09,1.37,-2.95,2.62,0.62,0.94,-1.59,-5.38,-0.83,-3.26,-0.18,-2.53,-9.29,0.05,6.40,-2.55,-2.39,-2.05,-11.65,3.53,5.23,1.87,-0.52,-3.73,4.36,-4.05,-2.82,-5.97,-10.86,0.80,-4.92,-1.53,6.63,-0.82,-0.66,-7.13,0.70,5.51,5.48,5.59,0.49,-0.54,2.83,2.14,1.49,3.18,4.43,0.55,-2.19,0.65,-3.13,2.53,-2.08,-1.44,2.57,-0.42,4.72,3.11,-1.55,1.10,-1.03,-3.06,1.44,2.13,1.34,-0.20,-0.93,-2.82,4.81,2.56,0.70,-0.22,0.93,-0.05,-1.28,-2.90,0.42,2.09,3.04,4.18,2.16,2.00,0.39,1.06,-3.35,3.51,2.77,0.15,0.60,-4.02,2.79,2.77,-5.37,1.31,-7.10,-1.85,-3.46,3.62,1.71,-5.20,-6.57,2.52,-4.72,-19.38,-6.82,0.69,-1.53,-7.17,-5.92,12.04,6.35,1.99,1.43,7.87,3.58,2.30,2.02,2.40,1.01,-2.92,5.51,3.91,-5.95,-3.45,-0.18,0.73,3.31,4.45,2.45,3.54,2.97,2.65,-2.07,1.57,0.19,-3.56,3.01,-10.65,-0.94,3.23,1.86,1.81,4.33,3.71,2.11,-0.34,-2.98,-1.01,3.09,2.82,2.57,-0.18,-2.37,2.45,3.96,1.50,2.46,1.56,4.39,-1.35,3.22,0.13,1.08,2.38,4.07,1.53,0.60,-0.50,2.07,-0.13,1.18,3.01,1.54,-0.26,1.70,-2.40,6.28,1.21,-0.64,2.38,-0.53,0.67,0.47,-0.78,-0.09,-2.28,-4.36,4.37,3.15,-0.76,-6.57,-0.63,5.91,2.35,-0.71,0.74,3.47,1.11,-0.68,-0.63,1.36,3.91,0.85,2.26,1.67,-0.45,1.61,1.69,1.06,-0.05,1.12,2.80,1.59,2.94,4.29,-3.32,-0.16,-2.05,1.54,1.95,1.58,2.40,1.56,-4.02,-1.75,-5.26,1.54,5.38,1.38,3.18,-1.74,1.39,3.66,-3.13,3.01,-0.22,4.49,2.56,2.95,-0.15,-18.74,5.02,5.89,5.93,2.95,5.56,-0.77,1.68,4.02,4.16,2.36,1.93,0.11,5.16,-0.04,0.87,2.58,1.98,-0.35,-0.37,4.23,-0.04,-2.87,-3.78,-2.20,-0.44,-8.88,-4.68,0.48,6.49,-7.48,-3.48,5.39,0.32,0.57,2.58,-2.91,3.47,0.48,4.60,3.68,-1.43,-1.20,-3.00,4.81,5.28,2.35,3.56,2.62,-1.39,2.35,3.52,2.26,-1.05,2.56,3.03,2.54,1.43,-1.07,0.65,-5.98,-5.71,8.11,3.53,4.37,1.60,2.57,2.27,0.51,1.78,0.74,-0.69,-0.44];
+const shillero = [-2.56,-1.05,4.22,2.75,2.00,0.42,2.03,-1.93,-1.12,0.42,-1.85,0.42,0.31,-1.18,-1.87,0.31,1.04,1.80,-0.42,-0.41,2.57,-2.59,1.80,0.32,-1.63,0.53,0.53,2.75,3.58,0.53,0.53,0.53,2.87,3.74,-1.83,-1.02,0.71,0.71,2.28,1.50,3.14,-0.11,1.51,0.69,2.34,1.52,0.69,0.68,0.73,0.73,-0.10,3.27,2.44,0.72,-0.14,1.58,0.71,1.58,1.58,1.59,0.48,0.47,1.36,4.16,3.32,0.47,-0.47,-0.46,-1.36,-0.44,-1.31,-1.28,3.13,5.14,-2.30,-1.35,6.13,-0.50,4.34,1.42,0.44,2.45,0.44,3.54,1.49,2.58,1.52,3.79,2.72,-0.69,-0.68,0.44,1.56,1.58,2.77,-0.72,-0.66,1.64,1.65,0.48,1.66,-0.69,0.48,-2.91,-4.87,-4.60,-2.48,-2.40,0.55,-0.40,4.49,3.59,2.62,0.54,0.54,-0.49,0.54,-0.48,-0.47,1.55,-0.64,0.36,-0.63,1.36,0.36,-0.63,-1.59,-3.39,-0.57,1.30,0.36,0.36,-0.63,0.29,-0.63,-0.62,-0.61,1.21,-0.61,3.08,1.23,1.24,1.25,0.30,-0.64,1.26,1.27,1.28,3.32,2.36,0.31,1.34,0.31,1.35,-0.72,0.31,0.37,0.37,2.48,2.53,0.37,1.46,0.37,1.47,1.48,2.65,1.52,0.36,-0.74,2.73,-0.76,2.76,2.81,-0.80,0.39,1.60,0.39,-0.81,-1.95,2.78,0.18,1.38,1.40,2.68,1.45,-1.07,-1.05,0.18,0.18,0.19,-1.04,-2.20,-0.99,0.19,0.19,0.19,1.39,1.40,-1.00,1.40,-1.00,-0.98,-2.10,-0.94,1.61,0.46,1.62,1.64,1.65,-0.73,0.45,0.45,-0.72,-0.71,0.44,4.03,1.52,1.53,0.31,2.82,0.31,0.31,0.31,-0.93,0.31,0.31,-0.92,2.81,0.15,0.15,0.15,-1.09,0.15,0.15,-3.42,-1.02,0.16,2.57,0.16,1.38,-0.89,-0.88,-0.86,1.51,2.76,1.55,0.31,1.57,0.31,1.58,0.31,2.92,0.20,2.87,1.55,0.20,0.20,-2.44,-1.10,0.20,0.20,-2.33,-1.05,-3.41,-0.85,2.79,1.59,1.60,2.92,2.99,4.47,-3.62,-0.96,3.02,1.70,3.13,1.89,3.39,0.47,0.47,0.47,0.47,-2.36,-0.93,3.33,0.46,1.92,0.46,0.19,0.19,-3.98,-1.18,-1.16,1.57,1.59,0.20,0.20,0.20,1.61,1.63,1.89,0.44,1.91,1.93,1.96,0.43,0.43,0.43,-2.53,-2.44,0.43,3.38,0.32,0.32,1.82,1.84,0.32,0.32,-4.05,-2.51,1.75,0.32,0.31,0.31,-0.96,0.45,0.45,-6.16,7.52,1.88,0.45,0.44,0.44,0.44,-0.98,0.44,-2.52,0.22,-1.13,0.22,-1.11,-1.09,-1.08,-3.53,-1.01,-1.00,-0.98,0.23,-0.90,0.30,0.30,2.74,1.53,-0.93,1.53,-0.93,1.53,0.29,1.55,-0.94,1.45,0.20,1.47,0.20,0.20,-1.05,-1.03,-1.02,0.21,-1.00,-0.99,1.42,0.18,0.18,-1.01,-1.00,-0.98,0.18,1.36,-0.98,-6.35,3.57,-0.92,-0.91,0.20,3.62,0.21,2.54,0.21,0.21,0.21,-0.94,1.38,1.39,0.21,-2.09,-2.02,1.37,1.38,2.59,0.23,0.23,-0.93,-0.92,0.23,-2.02,0.23,0.23,0.32,1.46,0.32,1.48,0.32,0.32,-0.82,1.48,0.32,-0.82,-0.80,0.32,0.12,0.12,0.12,-0.99,0.13,3.58,-2.12,-0.98,-2.04,-0.94,-0.93,1.22,-1.94,1.23,0.17,-1.92,-0.86,0.18,0.18,0.18,-0.84,4.44,2.36,1.29,1.51,0.40,-0.71,0.40,0.39,-0.70,0.39,0.39,-0.69,-0.68,-0.67,1.46,-0.85,0.21,-1.85,-0.81,-0.80,0.22,-0.79,-0.77,-1.73,-0.74,-0.73,1.19,0.28,-1.61,-0.66,2.19,1.24,0.28,1.25,1.26,3.32,2.35,0.28,0.28,3.51,-0.74,3.58,0.31,0.31,-0.77,-2.82,-0.72,0.31,1.36,1.37,-0.73,-1.00,-1.98,-2.90,0.05,1.04,0.05,-0.92,-0.91,0.06,0.07,1.05,-0.90,0.56,0.56,0.56,1.60,-0.47,-0.46,0.55,-0.45,0.55,-0.45,1.55,0.54,1.31,0.29,1.32,-0.72,0.29,-0.71,-1.67,0.30,1.29,-0.69,1.29,0.30,1.49,1.50,-0.53,-0.52,0.48,0.48,0.47,0.47,-0.51,-0.51,0.47,-0.50,0.22,-0.74,-0.73,-0.72,-0.71,0.22,-0.70,-1.58,-1.55,-1.52,-0.64,-0.63,-2.38,0.13,-4.64,-1.43,-1.41,1.70,-1.40,-2.12,-1.34,0.15,-1.31,-1.99,-0.28,1.14,-0.99,-1.65,-0.94,-2.24,-1.53,-1.49,-1.46,-1.43,-0.79,0.42,1.92,-1.15,-1.73,-1.11,0.08,-2.79,-1.61,-0.47,-1.57,-2.07,-2.02,-1.97,-0.69,-0.68,-2.63,-1.12,-1.10,0.82,2.81,1.85,0.85,0.85,2.41,2.46,4.23,1.49,2.04,3.21,1.50,0.35,0.91,2.06,0.91,1.48,1.48,3.28,0.32,1.52,0.32,0.32,0.32,-0.28,1.53,0.32,-0.28,-0.28,-0.27,0.92,0.56,0.56,-0.03,0.56,-0.03,-0.61,1.14,-0.03,-0.03,0.55,0.55,0.54,1.06,1.06,1.06,0.47,0.47,-0.12,1.06,-0.12,-0.12,0.46,-0.12,0.46,1.03,-0.14,1.03,-0.14,-0.71,-0.70,0.44,0.44,0.44,-1.24,0.99,0.43,0.54,1.10,-0.02,1.10,1.10,1.68,1.11,-0.05,-0.05,-0.04,0.52,1.67,0.86,0.86,0.29,-0.29,-0.85,2.02,0.87,-0.29,-0.29,0.86,0.28,0.28,1.26,0.09,0.09,-0.49,0.68,0.10,0.10,-1.05,0.69,0.11,0.69,0.11,0.52,1.10,1.11,-0.08,-0.08,-0.66,0.50,0.50,0.50,0.50,1.08,1.08,0.83,0.83,-0.35,0.83,0.84,1.45,0.85,-0.36,0.85,0.85,2.11,1.50,1.31,0.68,0.69,1.36,1.38,0.05,0.06,0.73,0.73,1.43,0.75,2.17,1.99,1.28,1.28,2.02,1.29,0.55,1.29,1.30,1.30,1.30,1.31,2.10,1.99,1.21,0.41,0.41,-0.39,-2.66,-0.36,0.40,0.40,0.40,0.40,0.40,-0.26,0.49,0.49,0.49,-0.26,0.48,0.48,-1.00,1.22,0.48,1.22,-1.00,-0.40,0.33,-0.40,0.33,1.06,0.33,0.33,0.33,0.33,-0.40,0.32,0.32,0.20,0.93,0.20,0.20,-0.53,-0.52,-0.52,0.20,0.20,0.20,0.20,-0.51,0.31,-0.40,-0.39,-0.39,0.31,-0.39,0.31,-0.38,0.30,0.99,1.00,1.71,1.07,0.36,-0.35,1.07,0.35,0.35,0.35,0.35,1.07,0.35,0.35,0.35,1.03,0.31,1.03,0.30,0.30,0.30,0.30,-1.83,1.02,0.30,0.30,1.02,-0.34,0.38,0.37,0.37,-0.34,1.09,0.37,0.37,0.36,0.36,-0.35,0.36,-0.22,-0.92,-0.91,-0.90,-2.24,-0.20,-1.53,-1.51,-1.49,-0.83,-0.82,-1.44,-0.44,-1.05,-0.42,-1.03,0.20,-0.41,-0.41,0.20,-1.00,-0.40,-0.39,0.20,0.20,-1.55,-0.95,-0.37,0.20,0.77,0.78,-0.38,0.20,0.20,0.20,0.20,0.29,0.29,-0.29,0.29,-0.29,-0.28,0.28,0.28,0.28,0.28,-0.28,0.28,0.33,0.33,0.33,-0.23,-0.78,0.32,0.32,0.32,0.32,0.32,-0.23,0.32,0.69,-0.96,-0.41,-0.40,-0.93,-5.42,-1.84,-0.84,-1.78,-2.21,-0.79,0.14,0.05,-1.78,0.05,0.05,-0.40,-0.85,-1.28,-2.12,0.06,-0.37,-1.22,-1.20,1.15,0.73,-1.39,-0.12,-0.54,-0.94,-0.12,0.29,0.70,1.12,0.71,0.71,1.03,0.19,-0.23,0.61,-0.23,1.03,-0.24,-0.23,1.03,-0.24,1.03,0.61,0.01,-0.41,0.01,-0.41,-0.40,-1.23,-0.80,-0.39,-0.79,-0.38,-1.17,-1.55,-1.03,-0.25,0.14,-0.25,0.14,0.14,0.14,-0.63,-0.24,-0.62,-0.24,0.14,0.88,0.12,-0.26,0.12,-0.26,-0.63,0.12,0.12,0.12,0.12,0.13,0.50,0.87,0.11,-0.27,-2.01,-0.63,1.81,-0.30,0.94,1.69,0.42,1.01,1.18,0.29,1.09,1.28,-0.89,0.11,0.91,-0.34,0.39,-0.24,-0.24,0.32,-0.66,-0.13,-0.04,-0.38,0.14,0.06,-1.17,-0.36,-0.13,1.02,0.15,0.01,0.76,0.76,-0.79,-1.99,0.83,0.11,-1.41,-1.24,-0.51,0.25,-0.98,-0.90,1.39,0.93,-0.67,-0.66,-1.06,-1.70,-1.45,0.33,0.41,-0.08,2.04,4.64,0.58,0.60,0.15,0.76,-0.10,-0.19,-2.04,-2.24,-1.52,-0.02,0.47,-0.33,-1.33,1.18,0.08,-1.07,-1.19,-0.23,-0.46,0.13,-1.95,1.24,0.38,-0.89,0.50,1.88,2.31,-0.23,-0.21,1.64,2.40,1.15,0.32,-1.09,0.00,1.07,0.32,0.82,0.65,-0.02,0.90,-1.09,-0.67,-0.32,0.49,0.82,0.16,-0.65,0.18,0.33,1.24,0.73,0.07,-0.01,-0.82,0.58,0.00,0.74,0.41,0.82,0.57,-0.42,-0.08,0.00,0.66,-0.49,-0.24,0.50,-0.32,-0.23,0.26,-0.06,0.02,0.51,-0.22,0.27,0.60,0.27,-0.14,0.67,-0.05,0.43,0.35,0.10,0.27,0.19,0.03,0.11,0.27,-0.28,0.43,-0.05,0.03,-0.44,-0.44,-1.29,0.46,-1.96,-0.22,0.73,0.16,-0.15,-1.54,-1.73,0.74,1.14,-0.74,2.95,2.47,-0.02,0.80,-0.32,-1.96,-1.22,-0.96,-0.79,-0.01,-1.23,-1.87,0.56,1.17,-0.06,-1.18,0.94,-1.54,1.04,1.57,0.78,-0.14,-1.02,-0.72,-2.26,0.15,-1.16,-1.12,0.93,-0.86,-1.83,-1.08,0.23,-3.03,0.48,-0.23,-3.46,-0.59,3.98,1.28,-2.42,-3.20,0.62,2.78,0.13,1.09,0.52,3.61,3.35,1.64,1.23,3.35,-0.75,-4.10,-1.15,-1.22,1.40,3.81,1.83,1.40,-0.90,0.34,-0.95,0.34,-0.62,0.72,0.42,0.03,-0.47,-2.19,0.58,1.77,-0.30,-0.44,-1.46,-0.88,0.15,-1.42,-0.47,-1.28,-3.05,2.59,1.85,0.34,-0.16,-2.07,-0.48,-2.43,-1.90,-1.10,0.09,-2.03,-2.11,-0.52,0.64,1.39,1.60,-0.25,0.62,-2.11,-3.11,1.27,1.28,-1.81,-1.79,-0.05,2.11,0.56,0.65,2.28,-0.06,0.88,1.46,-2.40,0.40,0.33,0.54,1.55,1.37,1.29,3.27,-2.33,-1.67,-0.55,0.41,-0.51,1.22,-0.24,-0.21,0.71,-0.97,-0.28,-0.45,-1.84,-0.45,-0.19,-0.86,-1.59,-1.11,-1.25,1.80,-0.12,-1.65,-0.84,-1.01,-0.72,-0.41,-0.38,-0.77,-0.95,1.86,-0.62,-0.73,-2.24,-5.99,-2.19,1.42,-3.01,-9.54,-2.36,7.42,7.92,2.26,-2.10,-4.93,-2.31,-1.38,-5.04,-0.77,1.77,-3.37,0.80,-2.60,-1.87,3.69,-4.22,-2.96,-1.65,1.93,10.54,-0.98,-3.71,1.73,4.38,0.68,1.55,-3.67,2.54,5.88,4.98,9.34,3.33,1.35,1.16,-0.81,2.18,0.83,0.38,-2.28,-2.63,-2.08,1.65,1.32,-0.11,0.06,1.32,-0.51,-1.95,-1.20,-3.49,0.01,1.83,4.31,1.71,2.82,4.48,1.38,1.48,-0.29,-1.45,3.05,4.08,4.91,-0.27,0.55,0.33,1.30,3.48,3.89,0.95,4.30,7.56,4.22,-2.50,-0.53,4.17,1.34,-1.81,0.67,1.80,1.51,0.17,-0.97,0.16,-5.16,-3.60,1.77,0.10,-1.86,-4.02,-0.12,5.05,-0.11,2.61,3.57,-0.82,-2.12,-2.02,1.44,-0.59,-0.96,1.92,1.60,-0.40,-0.40,0.39,-0.17,-1.03,1.29,2.29,4.40,2.22,-0.10,-0.19,1.42,1.39,0.70,-2.85,-1.52,-0.64,-0.76,0.70,2.05,0.39,-2.05,-1.02,1.26,2.71,2.81,0.01,2.17,-1.26,1.00,0.17,-1.04,0.61,2.93,1.94,1.33,1.10,2.89,0.87,-1.95,-1.28,0.90,1.11,1.17,3.40,2.10,1.51,-1.05,-1.60,1.36,1.30,2.70,2.26,0.29,-0.16,0.96,1.63,1.19,2.72,0.26,-2.57,0.10,0.36,-1.50,-3.56,-3.09,-0.97,0.82,-1.08,0.63,-1.20,-1.38,-0.99,1.70,0.46,2.41,2.19,1.26,3.50,3.75,-0.30,-1.27,2.48,1.38,1.39,2.22,0.34,-1.05,-3.41,-1.61,-1.31,-0.72,0.67,2.05,-1.13,2.43,2.79,-0.22,-1.82,1.40,-1.66,-1.00,1.94,2.04,2.41,-0.26,0.94,1.61,1.69,1.14,2.35,0.05,-0.33,0.36,0.21,1.49,0.64,1.25,4.49,2.38,-1.98,1.89,-0.41,-1.91,-1.66,0.09,-2.31,-2.24,1.02,-0.88,0.17,-1.09,1.05,-1.34,-2.52,0.98,1.62,2.48,-2.91,2.52,0.65,2.16,0.19,0.76,0.57,4.24,0.42,0.49,1.84,-1.92,-1.93,1.13,1.03,2.55,1.85,2.01,-0.09,-2.65,0.59,1.04,-2.99,0.42,0.82,2.17,2.52,3.19,3.39,-0.42,-0.57,0.72,-0.27,0.79,0.46,-0.70,3.75,2.21,-5.14,-3.80,1.49,0.30,0.55,0.71,0.84,0.37,1.74,-4.17,-3.13,0.00,2.39,2.10,1.36,0.06,-0.44,0.39,0.22,0.18,-3.05,0.98,2.09,1.44,-1.58,-0.81,-0.38,-1.93,0.54,1.35,0.01,-1.03,-1.35,-2.54,-1.01,0.23,0.28,1.87,2.17,0.86,1.58,0.55,-1.50,0.18,0.75,-1.29,-0.69,-2.51,1.23,3.22,1.31,0.08,2.85,0.82,2.81,0.02,1.36,-1.71,-2.16,-2.45,0.55,1.73,2.12,0.33,4.66,11.22,-1.11,-3.29,0.43,-0.96,-3.08,-4.11,1.81,-0.18,1.83,0.27,0.13,-1.13,-1.20,0.62,-0.43,-0.85,3.85,2.25,1.87,2.80,0.60,1.06,-1.74,-4.41,-1.04,-1.79,0.74,-0.77,2.27,1.83,0.16,6.16,2.91,-1.15,1.52,0.69,-0.18,-0.27,-2.36,0.95,2.56,1.95,1.13,-1.79,-0.67,-0.09,1.54,-0.23,-1.86,-1.28,0.08,2.09,-1.56,-3.35,-2.29,-1.29,-0.49,2.15,-0.45,-1.31,0.21,1.17,-0.50,-0.02,1.18,-0.32,0.78,1.44,-0.84,2.51,0.47,1.84,3.66,-1.17,-0.96,0.87,-2.65,-1.57,0.54,1.67,0.34,1.12,-1.31,0.71,1.36,2.91,-1.27,0.41,-0.25,1.37,1.59,-0.52,-0.75,-1.17,-3.10,-2.93,0.15,-0.02,-0.41,1.50,0.11,1.08,-0.90,0.87,-0.25,-1.17,0.28,-0.19,-1.91,-2.64,0.18,-0.42,-1.08,0.66,0.41,0.19,-0.82,-1.20,0.86,3.09,1.09,0.06,0.62,0.03,1.14,3.23,3.93,0.14,-0.58,-0.18,-0.71,-0.21,0.67,2.26,6.34,2.78,-0.04,-1.06,0.61,-0.55,-0.37,-1.03,-0.63,-0.59,-1.75,-2.12,-3.78,-0.95,-0.48,0.12,1.50,0.28,-1.00,-2.62,-0.18,0.65,-3.33,-2.28,-2.92,-5.72,-2.14,-3.13,2.34,0.28,-5.15,-3.86,1.17,2.89,0.25,-2.07,0.73,1.47,-0.88,-1.51,-1.11,-2.29,-1.58,-2.91,3.00,4.40,-0.53,-1.49,-0.29,-2.66,0.69,1.71,0.73,3.40,1.40,-2.89,-1.70,0.09,-2.18,1.38,1.51,0.05,-0.97,0.35,0.13,1.13,1.24,0.70,0.43,-0.04,-0.59,0.82,0.90];
+
+onmessage = function(e) {
+	let vf = JSON.parse(e.data);
+
+	// Simulações de evolução do património
+	let patrimonios = [];
+	for (let g = 0; g <= shillera.length - vf.dura * 12; g++) {
+		let patrimonio = new Array(vf.dura * 12);
+		patrimonio[0] = vf.cap;
+		for (let h = 0; h < vf.a1 * 12; h++) {
+			if (patrimonio[h] <= 0) { patrimonio[h + 1] = 0; }
+			else patrimonio[h + 1] =
+				patrimonio[h]
+				* (1 - vf.e1/12)
+				* ( 1 + shillera[g + h]/100 * vf.pa1 + shillero[g + h]/100 * (1-vf.pa1) )
+				+ vf.p1;
+		}
+		for (let h = vf.a1 * 12; h < (vf.a1 + vf.a2) * 12; h++) {
+			if (patrimonio[h] <= 0) { patrimonio[h + 1] = 0; }
+			else patrimonio[h + 1] =
+				patrimonio[h]
+				* (1 - vf.e2/12)
+				* ( 1 + shillera[g + h]/100 * vf.pa2 + shillero[g + h]/100 * (1-vf.pa2) )
+				+ vf.p2;
+		}
+		for (let h = (vf.a1 + vf.a2) * 12; h < vf.dura * 12; h++) {
+			if (patrimonio[h] <= 0) { patrimonio[h + 1] = 0; }
+			else patrimonio[h + 1] =
+				patrimonio[h]
+				* (1 - vf.e3/12)
+				* ( 1 + shillera[g + h]/100 * vf.pa3 + shillero[g + h]/100 * (1-vf.pa3) )
+				+ vf.p3;
+		}
+		patrimonio = patrimonio.filter((_, index) => index === 0 || index % 12 === 0);
+		patrimonios.push(patrimonio);
+	}
+
+	// Matriz da probabilidade de falência com a estratégia
+	let falido = new Array(vf.dura + 1);
+	falido[0] = 0;
+	const obs = patrimonios.length;
+	for (let q = 1; q <= vf.dura; q++) {
+		let falencia = 0;
+		for (let n = 0; n < obs; n++) { if (patrimonios[n][q] <= 0) falencia++; }
+	falido[q] = falencia / obs;
+	}
+
+	let vivefalido = new Array(vf.vive.length);
+	let vivefalidom = new Array(vf.vivem.length);
+	for (let r = 0; r < vf.vive.length; r++) {
+		vivefalido[r] = vf.vive[r] * falido[r];
+		vivefalidom[r] = vf.vivem[r] * falido[r];
+	}
+	let json = {};
+	json.idade = vf.idade;
+	json.ex = vf.ex;
+	json.falido = falido;
+	json.vivefalido = vivefalido;
+	json.vivefalidom = vivefalidom;
+	json.vive = vf.vive;
+	let msg = JSON.stringify(json);
+	postMessage(msg);
+};
+</script>
+
+<script>
+// Tábuas de mortalidade: https://smi.ine.pt/Indicador/Detalhes/18097
+const lxH = [100000, 99715, 99692, 99670, 99652, 99638, 99627, 99618, 99612, 99606, 99597, 99588, 99575, 99569, 99557, 99550, 99525, 99502, 99470, 99422, 99369, 99313, 99249, 99208, 99161, 99105, 99041, 98979, 98933, 98876, 98815, 98745, 98684, 98613, 98545, 98449, 98368, 98275, 98166, 98048, 97953, 97837, 97718, 97588, 97422, 97231, 97021, 96811, 96549, 96269, 95948, 95600, 95193, 94744, 94247, 93708, 93097, 92465, 91750, 90999, 90224, 89365, 88419, 87429, 86384, 85275, 84102, 82891, 81632, 80274, 78848, 77264, 75632, 74049, 72355, 70431, 68380, 66298, 63958, 61496, 58717, 55859, 52801, 49552, 45838, 41602, 36800, 31790, 26744, 21874, 17344, 13241, 9734, 6861, 4614, 2946, 1775, 1003, 528, 257, 115];
+
+const lxM = [100000, 99764, 99748, 99730, 99714, 99705, 99697, 99689, 99676, 99668, 99664, 99656, 99645, 99641, 99632, 99621, 99612, 99601, 99585, 99563, 99540, 99523, 99510, 99496, 99470, 99447, 99425, 99402, 99373, 99353, 99332, 99301, 99265, 99232, 99194, 99148, 99104, 99040, 98986, 98937, 98876, 98807, 98729, 98656, 98574, 98474, 98365, 98251, 98124, 97975, 97822, 97654, 97472, 97290, 97091, 96859, 96624, 96357, 96067, 95751, 95423, 95065, 94666, 94257, 93815, 93319, 92799, 92238, 91629, 90979, 90264, 89443, 88619, 87691, 86599, 85388, 84066, 82591, 80935, 79016, 76782, 74334, 71602, 68572, 64946, 60622, 55457, 49767, 43694, 37463, 31277, 25268, 19743, 14856, 10715, 7369, 4805, 2952, 1697, 906, 445];
+
+const TxH= [7873019, 7773193, 7673489, 7573809, 7474148, 7374503, 7274871, 7175248, 7075633, 6976023, 6876422, 6776829, 6677248, 6577675, 6478112, 6378559, 6279021, 6179508, 6080022, 5980576, 5881181, 5781840, 5682559, 5583330, 5484146, 5385013, 5285940, 5186930, 5087974, 4989070, 4890224, 4791444, 4692729, 4594080, 4495501, 4397004, 4298595, 4200274, 4102054, 4003947, 3905946, 3808051, 3710273, 3612620, 3515115, 3417788, 3320662, 3223747, 3127067, 3030658, 2934549, 2838775, 2743379, 2648411, 2553915, 2459938, 2366535, 2273754, 2181647, 2090272, 1999661, 1909866, 1820975, 1733051, 1646144, 1560315, 1475626, 1392130, 1309869, 1228916, 1149355, 1071298, 994850, 920009, 846807, 775413, 706008, 638669, 573541, 510814, 450707, 393419, 339090, 287913, 240218, 196498, 157297, 123002, 93735, 69426, 49816, 34523, 23035, 14738, 9000, 5220, 2860, 1471, 706, 314, 128];
+
+const TxM = [8395882, 8296027, 8196271, 8096532, 7996810, 7897100, 7797399, 7697705, 7598023, 7498351, 7398685, 7299025, 7199375, 7099731, 7000094, 6900467, 6800851, 6701245, 6601652, 6502077, 6402526, 6302994, 6203478, 6103975, 6004491, 5905033, 5805597, 5706184, 5606796, 5507433, 5408090, 5308774, 5209491, 5110243, 5011030, 4911859, 4812733, 4713661, 4614648, 4515686, 4416779, 4317937, 4219169, 4120476, 4021861, 3923337, 3824917, 3726609, 3628422, 3530372, 3432474, 3334736, 3237173, 3139792, 3042602, 2945626, 2848885, 2752394, 2656182, 2560273, 2464686, 2369442, 2274577, 2180116, 2086079, 1992512, 1899454, 1806935, 1715002, 1623698, 1533076, 1443223, 1354192, 1266037, 1178892, 1092899, 1008172, 924843, 843080, 763104, 685205, 609647, 536678, 466591, 399833, 337049, 279009, 226397, 179666, 139087, 104717, 76444, 53939, 36639, 23853, 14811, 8723, 4844, 2520, 1218, 543];
+
+// Probabilidade de viver entre a idade a e a idade b
+function pvive(idadea, idadeb, sexo) {
+	const lx = (sexo === 'M') ? lxM : lxH;
+	return lx[idadeb]/lx[idadea];
+}
+
+function pvivem(idadea, idadeb, sexo, m) {
+	const lx = (sexo === 'M') ? lxM : lxH;
+	let sobrevivencia = 1;
+	for (let x = idadea; x < idadeb; x++) {
+		const q = 1 - lx[x+1] / lx[x];
+		const mu = -Math.log(1 - q);
+		const muNovo = mu * m;
+		const qNovo = 1 - Math.exp(-muNovo);
+		sobrevivencia *= (1 - qNovo);
+	}
+	return sobrevivencia;
+}
+
+// Esperança de vida à idade a
+function ex(idadea, sexo) {
+	const lx = (sexo === 'M') ? lxM : lxH;
+	const Tx = (sexo === 'M') ? TxM : TxH;
+	return Tx[idadea]/lx[idadea];
+}
+
+// Desenha gráfico de barras
+function barras(el, serie, idade) {
+	const dados = serie.map(x => Math.round(x*10000)/100);
+	const svg = document.getElementById(el);
+
+	const largura = (document.body.clientWidth * .95);
+	const altura = (window.innerHeight / 2.5);
+	svg.setAttribute('width', largura);
+	svg.setAttribute('height', altura);
+
+	const margem = (largura - 50) > dados.length ? 1 : 0;
+	const larguraBarra = (largura - 50) / dados.length - margem;
+	const base = altura - 30;
+
+	let els = '';
+	for (let i = 0; i <= 10; i++) {
+		els +=
+		`<line x1="50" y1="${base - i*(base - 1)/10}" x2="${largura}" y2="${base - i*(base -1)/10}"/>`;
+	}
+	for (let i = 0; i < dados.length; i++) {
+		const alturaBarra = (dados[i] / 100) * (altura - 30);
+		const x = i * (larguraBarra + margem) + margem + 50;
+		const y = altura - alturaBarra - 30;
+		els += `<rect x="${x}" y="${y}" width="${larguraBarra}" height="${alturaBarra}"/>`;
+	}
+
+	els +=
+	`<text x="45" y="1" dominant-baseline="hanging" text-anchor="end">100%</text>
+	<text x="45" y="${base}" dominant-baseline="auto" text-anchor="end">0%</text>
+	<text x="${largura-1}" y="${altura-22}" dominant-baseline="hanging" text-anchor="end">100 anos</text>
+	<text x="50" y="${altura-22}" dominant-baseline="hanging" text-anchor="start">${idade} anos</text>
+	<line x1="45" x2="50" y1="1" y2="1"/>
+	<line x1="45" x2="50" y1="${base}" y2="${base}"/>
+	<line x1="50" x2="50" y1="${base}" y2="1"/>
+	<line x1="${largura-1}" x2="${largura-1}" y1="${base}" y2="1"/>`;
+	svg.innerHTML = els;
+}
+
+function vf() {
+	let vf = {};
+		vf.idade = num('vfidade', 0);
+		vf.limite = 100;
+		vf.dura = vf.limite - vf.idade;
+		vf.sexo = document.getElementById('vfsexo').value;
+		vf.cap = num('vfcap', 0);
+		vf.pa1 = num('vfpa1', 0) / 100;
+		vf.e1 = num('vfe1', 2) / 100;
+		vf.p1 = num('vfp1', 0) * +vfaplicaresgata1.value;
+		vf.a1 = num('vfanos1', 0);
+		vf.pa2 = num('vfpa2', 0) / 100;
+		vf.e2 = num('vfe2', 2) / 100;
+		vf.p2 = num('vfp2', 0) * +vfaplicaresgata2.value;
+		vf.a2 = num('vfanos2', 0);
+		vf.pa3 = num('vfpa3', 0) / 100;
+		vf.e3 = num('vfe3', 2) / 100;
+		vf.p3 = num('vfp3', 0) * +vfaplicaresgata3.value;
+		vf.a3 = vf.dura - vf.a1 - vf.a2;
+		vf.ex = Math.round(ex(vf.idade, vf.sexo) + vf.idade);
+		vf.mmortalidade = num('vfmmortalidade', 1);
+
+
+	// Controlos
+	if ( vf.cap <= 0 ) { vf.cap = .01; }
+	if ( vf.pa1 > 1 ) { esc('vfpa1', 100, 0); vf.pa1 = 1; }
+	if ( vf.pa2 > 1 ) { esc('vfpa2', 100, 0); vf.pa2 = 1; }
+	if ( vf.pa3 > 1 ) { esc('vfpa3', 100, 0); vf.pa3 = 1; }
+	if ( vf.idade + vf.a1 + vf.a2 > 99 ) {
+		if( vf.idade + vf.a1 <= 99 ) { vf.a2 = 99 - vf.idade - vf.a1; }
+		else  { vf.a1 = 99 - vf.idade; vf.a2 = 0; }
+		esc('vfanos1', vf.a1, 0);
+		esc('vfanos2', vf.a2, 0);
+	}
+
+	// Atualiza o texto
+	document.getElementById('vfgsexo').innerText =
+		vf.sexo === 'H' ? 'os homens' : 'as mulheres';
+	esc('vfgidade', vf.idade, 0);
+
+	document.getElementById('vfsexo100').innerText =
+		vf.sexo === 'H' ? 'um homem' : 'uma mulher';
+
+	document.getElementById('vfsexo2').innerText =
+		vf.sexo === 'H' ? 'do homem' : 'da mulher';
+
+	document.getElementById('falidaviva').innerText =
+		vf.sexo === 'H' ? 'falido e vivo' : 'falida e viva';
+
+	esc('vfidade100', vf.idade, 0);
+
+	esc('vfidade2', vf.idade, 0);
+
+	esc('vfp100', pvive(vf.idade, 100, vf.sexo)*100, 2);
+
+	esc('vfpo1', 100 - vf.pa1 * 100, 0);
+	esc('vfpo2', 100 - vf.pa2 * 100, 0);
+	esc('vfpo3', 100 - vf.pa3 * 100, 0);
+
+	// Matriz da probabilidade de viver até mais index anos
+	const vive = new Array(vf.limite - vf.idade + 1);
+	const vivem = new Array(vf.limite - vf.idade + 1);
+	for (let i = vf.idade; i <= vf.limite; i++) {
+		vive[i - vf.idade] = pvive(vf.idade, i, vf.sexo);
+		vivem[i - vf.idade] = pvivem(vf.idade, i, vf.sexo, vf.mmortalidade);
+	}
+	vf.vive = vive;
+	vf.vivem = vivem;
+
+	// Cria trabalhador
+	const blob = new Blob([xtrabalhador.textContent], { type:'text/javascript'});
+	var trabalhador = new Worker(URL.createObjectURL(blob));
+	trabalhador.postMessage(JSON.stringify(vf));
+
+	trabalhador.onmessage = function(e) {
+		let vf = JSON.parse(e.data);
+
+		esc('vfgf', vf.falido[vf.ex-vf.idade]*100, 0);
+		esc('vfgex', vf.ex, 0);
+
+		barras('vive', vf.vive, vf.idade);
+		barras('falido', vf.falido, vf.idade);
+		barras('vivefalido', vf.vivefalido, vf.idade);
+		barras('vivefalidomortalidade', vf.vivefalidom, vf.idade);
+
+		let maximo = -Infinity;
+		let maximom = -Infinity;
+		let indicemaximo = -1;
+		let indicemaximom = -1;
+		for (let r = 0; r < vf.vivefalido.length; r++) {
+			if (vf.vivefalido[r] > maximo) { maximo = vf.vivefalido[r]; indicemaximo = r; }
+			if (vf.vivefalidom[r] > maximom) { maximom = vf.vivefalidom[r]; indicemaximom = r; }
+		}
+
+		let idade = Math.round(maximo*100)+'%';
+		let idadem = Math.round(maximom*100)+'%';
+		let idademax = Math.round(indicemaximo + vf.idade);
+		let idademaxm = Math.round(indicemaximom + vf.idade);
+		let scroll = '<a href="#" onclick="event.preventDefault(); document.getElementById(\'recalcula\').scrollIntoView({ behavior: \'smooth\' });">volte atrás</a>';
+		let conclui = '';
+		if ( maximo < .05 ) {
+			conclui = `No máximo, esta estratégia de investimento prevê uma probabilidade histórica de falência em vida de apenas <strong>${idade}</strong>, o que acontece aos ${idademax} anos. Mantenha o foco neste plano financeiro.`; }
+		else if (maximo < .1 ) {
+			 conclui = `No máximo, esta estratégia de investimento prevê uma probabilidade histórica de falência em vida de <strong>${idade}</strong>, o que acontece aos ${idademax} anos. Se quiser afinar o seu plano financeiro, ${scroll} para mudar os campos sublinhados. Pode ser que consiga baixar esta probabilidade.`; }
+		else conclui = `Este plano é arriscado. No máximo, a sua estratégia de investimento prevê uma probabilidade histórica de falência em vida de <strong>${idade}</strong>, o que acontece aos ${idademax} anos. Sugiro que ${scroll} e afine o seu modelo de aforro mudando os valores nos campos sublinhados. Pode ser que consiga baixar esta probabilidade.`;
+		document.getElementById('vfconclui').innerHTML = conclui;
+		esc('vfidadem', idadem, 0);
+		esc('vfidademaxm', idademaxm, 0);
+
+		console.log(idade, idademax, idadem, idademaxm);
+	};
+
+if(vf.mmortalidade == 1) {
+	document.getElementById('vfmcm').innerText = 'mantiveram-se';
+	document.getElementById('vfsii').innerText = 'igual'; }
+else if(vf.mmortalidade < 1) {
+	document.getElementById('vfmcm').innerText = 'cresceram';
+	document.getElementById('vfsii').innerText = 'inferior'; }
+else {
+	document.getElementById('vfmcm').innerText = 'mirraram';
+	document.getElementById('vfsii').innerText = 'superior'; }
+}
+
+document.getElementById('vf').addEventListener('input', vf);
+document.getElementById('vfmmortalidade').addEventListener('input', vf);
+window.addEventListener('resize', vf);
+window.addEventListener('load', function() {
+
+	// Mensagem interativas
+	document.getElementById('vfcaso').innerText = 'o seu';
+	document.getElementById('vfinterativo').innerHTML = '<aside><p><strong>Este artigo é interativo.</strong> Mude os seletores e os campos sublinhados para personalizar o conteúdo.</aside>';
+	document.getElementById('vfinsira').innerHTML = '<p>Insira um zero nos campos da duração das fases que não quiser usar na sua projeção financeira.';
+
+	// Ativa input e select
+	document.querySelectorAll('input, select').forEach(el => {
+		el.disabled = false;
+		if (el.tagName === 'INPUT') el.inputMode = 'numeric';
+	});
+
+	// Calcula
+	vf();
+});
+</script>
+</article>
+
+<article id="2">
+<h1>
+<span>2</span>
+Fundos alavancados para o longo prazo? Uma resposta definitiva
+</h1>
+
+<p>Por <strong>David Almas</strong> a 1 de abril de 2026
+
+<p>No IV Grémio de Finanças Pessoais, a mais recente edição dos encontros de leitores do boletim <strong>tlim</strong>, não tive tempo suficiente para completar a minha apresentação sobre fundos alavancados. Nesse evento, que decorreu em dezembro passado em Lisboa, prometi aprofundar o tema.
+
+<p>A premissa dessa apresentação e deste artigo é simples:
+
+<blockquote>
+<p>Se as ações são os instrumentos que tendem a mais render no longo prazo, por que não alavancar esse investimento?
+</blockquote>
+
+<p>A alavancagem financeira é uma técnica para multiplicar a rentabilidade de uma aplicação via endividamento. Muitos portugueses alavancam o seu maior investimento, a casa: se pedirem emprestado 80% do valor do imóvel no crédito à habitação, alavancam a compra a 5 vezes.
+
+<p>A maneira mais simples de alavancar uma aposta acionista é com um fundo alavancado, como o <a href="https://www.amundietf.fr/fr/particuliers/produits/equity/amundi-euro-stoxx-50-daily-2x-leveraged-ucits-etf-acc/fr0010468983">Amundi Euro Stoxx 50 Daily (2x) Leveraged UCITS ETF</a>. Recorrendo a instrumentos derivados, os gestores deste produto — que pode ser transacionado no segmento Xetra da bolsa de Francoforte (código: <a href="https://www.boerse-frankfurt.de/en/etf/lyxor-euro-stoxx-50-daily-2x-leveraged-ucits-etf-acc">LYMZ</a>) e na bolsa de Paris (<a href="https://live.euronext.com/pt/product/etfs/FR0010468983-XPAR">LVE</a>), entre outras — procuram oferecer <em>diariamente</em> o dobro do desempenho do índice <a href="https://www.stoxx.com/data-index-details?symbol=SX5T">Euro Stoxx 50 Net Return</a>, composto pelas ações das maiores companhias da Zona Euro.
+
+<p>Funciona? Normalmente, o resultado diário é muito próximo do prometido. No passado dia 3 de março, um dos piores para as bolsas mundiais, o LYMZ caiu 7,14%, o equivalente a 1,99 vezes a descida do Euro Stoxx 50, de 3,59%. No dia seguinte, o LYMZ ascendeu 3,53%, 2,05 vezes a recuperação do índice, de 1,72%. As ligeiras diferenças explicam-se essencialmente com os encargos do fundo e os arredondamentos das cotações.
+
+<p>A replicação alavancada não funciona, todavia, além de um dia; no curto prazo, no médio prazo ou no longo prazo o efeito da alavancagem não é perfeito. Pode render mais ou menos do que o dobro. Até àquele dia de queda acentuada de março passado, o LYMZ perdera 1,45% desde o início do ano, mais do sêxtuplo da descida do índice, 0,23%.
+
+<p>Muitos investidores são, porém, levados pelas expectativas extremamente positivas de longo prazo. O Euro Stoxx 50 rendeu 1137% entre meados de novembro de 1987 e o início de março de 2000, quando estourou a bolha tecnológica. Se houvesse um fundo que duplicasse diariamente o desempenho desse índice, teria rendido <em>10&nbsp;376%</em>, assumindo unicamente uma taxa de encargos correntes de 0,40% por ano.
+
+<h2>Divergência temporal</h2>
+
+<p>Não é preciso aplicar muita álgebra para perceber o motivo para a divergência de retornos quando passa mais de um dia de investimento num fundo alavancado. Analisar duas sessões bolsistas é suficiente para compreender como o efeito multiplicativo pode divergir da alavancagem.
+
+<div id="alg">
+<p>Se, no primeiro dia, o preço do ativo subjacente variar <span style="white-space:nowrap"><select id="sinal1" disabled><option value="1" selected>+<option value="-1">-</select><input type="text" value="2,00" id="dia1" style="width:3em" disabled>%</span> e, no segundo dia, <span style="white-space:nowrap"><select id="sinal2" disabled><option value="1">+<option value="-1" selected>-</select><input type="text" value="2,02" id="dia2" style="width:3em" disabled>%</span>, o seu resultado acumulado seria de:
+
+<p style="text-align:center">
+(1 + <span id="eq11">2,00</span>%) × (1 + <span id="eq12">-2,02</span>%) − 1 = <span id="eq13">-0,06</span>%
+
+<p>Se, todavia, investir com uma alavancagem a <select id="alavanca" disabled><option value="2" selected>2<option value="3">3</select> vezes, o resultado dos 2 dias é de:
+</div>
+
+<p style="text-align:center">
+(1 + <span id="eq21">4,00</span>%) × (1 + <span id="eq22">-4,04</span>%) − 1 = <span id="eq23">-0,20</span>%
+
+<p>O efeito multiplicativo da alavanca é de <span id="ealavanca">3,33</span> vezes<span id="ealavancax"> e não de 2 vezes, como se poderia esperar</span>.
+
+<div id="algebrai"></div>
+
+<script>
+document.getElementById('algebrai').innerHTML =
+'<aside><p><strong>Este artigo é interativo.</strong> Altere os seletores e os números sublinhados neste texto para recalcular os resultados.</aside>';
+
+function arr(v) { return Math.round(v * 100) / 100; }
+
+function algebra() {
+	const sinal1 = +document.getElementById('sinal1').value;
+	const sinal2 = +document.getElementById('sinal2').value;
+	const alavanca = +document.getElementById('alavanca').value;
+	const dia1 = num('dia1',2)/100 * sinal1;
+	const dia2 = num('dia2',2)/100 * sinal2;
+	esc('eq11', dia1*100, 2);
+	esc('eq12', dia2*100, 2);
+	const simples = arr(((1+dia1)*(1+dia2)-1)*100);
+	esc('eq13', simples, 2);
+	const d1a = dia1*alavanca;
+	const d2a = dia2*alavanca;
+	esc('eq21', d1a*100, 2);
+	esc('eq22', d2a*100, 2);
+	const complexo = arr(((1+d1a)*(1+d2a)-1)*100);
+	esc('eq23', complexo, 2);
+	const ealavanca = arr(complexo/simples);
+	document.getElementById('ealavanca').innerHTML = ealavanca.toLocaleString('pt-PT',{maximumFractionDigits:2});
+	document.getElementById('ealavancax').innerHTML = (ealavanca!=alavanca)
+      ? ' e não de '+alavanca+' vezes, como se poderia esperar' : '';
+}
+
+document.getElementById('alg').addEventListener('input', algebra);
+window.addEventListener('load', algebra);
+</script>
+
+<p>A divergência deve-se à volatilidade. Se fosse mínima, a multiplicação seria quase perfeita. Por exemplo, se o índice ganhar 0,01% por dia durante 22 sessões bolsistas, cerca de um mês, então acumularia:
+
+<p style="text-align:center">(1 + 0,01%)<sup>22</sup> − 1 = 0,220%
+
+<p>O fundo alavancado a 2 ganharia:
+
+<p style="text-align:center">(1 + 2 × 0,01%)<sup>22</sup> − 1 = 0,441%
+
+<p>O fundo alavancado ganharia 2,005 vezes (0,441% ÷ 0,220% = 2,005) a variação do índice.
+
+<p>A realidade é que os mercados são muito voláteis e, por isso, os fundos não conseguem alcançar perfeitamente o efeito multiplicador em períodos mais longos do que um dia.
+
+<p>Se acreditar que um índice de ações renda 5% por ano, não espere que um fundo alavancado a 2 vezes renda 10% por ano. Isso provavelmente não acontecerá.
+
+<p>Uma coisa é certa: a volatilidade de um fundo alavancado é matematicamente igual ao dobro (ou ao triplo) da volatilidade do índice de referência.
+
+<h2>Chegada do messias</h2>
+
+<p>Após procurar os melhores índices acionistas que poderiam servir como referência para o melhor fundo alavancado, escrevi na edição do boletim <strong>tlim</strong> de abril de 2023:
+
+<blockquote>
+<p>Seria possível construir um fundo alavancado de índice acionista mais interessante? Sim. Se houvesse um fundo que gerasse diariamente o dobro do desempenho do MSCI World, um popular índice de ações dos mercados desenvolvidos, o binómio rentabilidade-volatilidade seria mais atrativo.
+</blockquote>
+
+<p>O primeiro fundo alavancado sobre o MSCI World nasceu na Europa no passado mês de setembro de 2025, o <a href="https://www.amundietf.es/es/individual/products/equity/amundi-msci-world-2x-leveraged-ucits-etf-acc/fr0014010hv4">Amundi MSCI World (2x) Leveraged UCITS ETF</a>. Está listado no Xetra (<a href="https://live.deutsche-boerse.com/en/etf/amundi-msci-world-2x-leveraged-ucits-etf-acc?currency=EUR">LVWC</a>) e na Euronext Paris (<a href="https://live.euronext.com/pt/product/etfs/FR0014010HV4-XPAR">LWLD</a>).
+
+<p>Há, todavia, uma coisa que mudou drasticamente desde que escrevi sobre fundos alavancados: os custos de financiamento dispararam.
+
+<p>Tal como no alavancamento no crédito à habitação, investir num fundo alavancado tem um custo financeiro. As sociedades gestoras indexam essa despesas a uma taxa do mercado monetário, como a <a href="https://www.newyorkfed.org/markets/reference-rates/sofr">Secured Overnight Financing Rate</a> (SOFR).
+
+<p>Entre os dois artigos anteriores sobre fundos alavancados que publiquei no boletim <strong>tlim</strong> (março de 2020 e abril de 2023), a SOFR esteve metade do tempo abaixo de 0,08%, quase negligenciável. Está agora perto de 3,70%, o que absorve uma fatia substancial dos potenciais ganhos.
+
+<h2>Simule</h2>
+
+<p>Usando a série diária do índice MSCI World com os dividendos líquidos reinvestidos desde 1998, sintetizei 2 fundos de investimento (em dólares norte-americanos):
+
+<div id="ialavanca">
+<ol>
+<li><p><strong>UETW<sup>*</sup></strong>, que replica o MSCI World com uma taxa anual de encargos correntes de <input type="text" value="0,06" id="tecuetw" style="width:2.5em" disabled>% (como o <a href="https://www.ubs.com/pt/en/assetmanagement/funds/etf/ie00bd4txv59-ubs-core-msci-world-ucits-etf-pd001.html">UBS Core MSCI World UCITS ETF</a>, que recomendei na edição de janeiro passado); e
+<li><p><strong>LVWC<sup>*</sup></strong>, que replica o MSCI World alavancado diariamente a 2 vezes com uma taxa anual de encargos correntes de <input type="text" value="0,60" id="teclvwc" style="width:2.5em" disabled>% e um custo anual de financiamento de <input type="text" value="3,70" id="cflvwc" style="width:2.5em" disabled>% (como o <a href="https://www.amundietf.es/es/individual/products/equity/amundi-msci-world-2x-leveraged-ucits-etf-acc/fr0014010hv4">Amundi MSCI World (2x) Leveraged UCITS ETF</a>).
+</ol>
+
+<p>Que resultados seriam normalmente alcançados após <select id="duracao" disabled><option value="260">1 ano<option value="1302">5 anos<option value="2604" selected>10 anos<option value="3906">15 anos<option value="5209">20 anos</select>?
+</div>
+
+<table>
+<caption><strong>Alavancar ou não?</strong> Estas estatísticas são calculadas a partir de <span id="numperiodos">4482</span> períodos de <span id="duracaodias">2604</span> sessões de bolsa desde 1998.
+<thead>
+<tr><td><td>UETW<sup>*</sup><td>LVWC<sup>*</sup>
+</thead>
+<tr><td colspan="3">Rentabilidade anualizada
+<tr><td>— Média<td><span id="uetwmedia">6,76</span>%<td><span id="lvwcmedia">6,47</span>%
+<tr><td>— Mediana<td><span id="uetwmediana">7,18</span>%<td><span id="lvwcmediana">6,83</span>%
+<tr><td>— Máxima<td><span id="uetwmax">13,95</span>%<td><span id="lvwcmax">22,04</span>%
+<tr><td>— Mínima<td><span id="uetwmin">-3,90</span>%<td><span id="lvwcmin">-14,05</span>%
+<tr><td>Proporção de positivos<td><span id="uetwpositivos">94</span>%<td><span id="lvwcpositivos">82</span>%
+<tr><td>Proporção de resultados superiores<td><span id="uetwmelhor">54</span>%<td><span id="lvwcmelhor">46</span>%
+</table>
+
+<p>Consulte o quadro anterior para decidir se um investimento alavancado merece o seu dinheiro.
+
+<p>As simulações mostram que, quando o custo de financiamento está muito afastado de zero (como agora), as receitas do fundo alavancado não são sustentadamente superiores às do fundo tradicional.
+
+<p>Usando como referência a SOFR média dos últimos 8 anos (2,62%), o LVWC<sup>*</sup> tende a render mais do que o UETW<sup>*</sup>. Quando a bolsa não sopra favoravelmente, as quedas são, contudo, mais acentuadas.
+
+<p>Por exemplo, no pior cenário de uma década e meia desde 1998, o fundo simples teria um resultado positivo (2,68% por ano), mas o fundo alavancado teria perdido (-0,66% por ano), assumindo o custo do financiamento estável em 2,62% por ano.
+
+<p>Quando a taxa de juro é quase nula, o fundo alavancado tende a render mais do que o outro fundo, mas o efeito da alavanca chega raramente a dois.
+
+<p>No curto prazo, a alavancagem é uma lotaria; no longo prazo, funciona frequentemente se o custo do financiamento for reduzido. Contudo, como as taxas de juro se movimentam por ciclos, não é razoável esperar que esse encargo seja sempre baixo ao longo de uma ou duas décadas.
+
+<p>Alavancar para o longo prazo é uma estratégia arriscada. Para alguns investidores mais agressivos, aplicar no Amundi MSCI World (2x) Leveraged UCITS ETF pode fazer sentido, desde que tenham consciência da elevada volatilidade e dos riscos acrescidos de potenciais prejuízos. Não o recomendo. ★
+
+<script>
+// MSCI World Net Total Return USD Index 31/12/1998 — 17/03/2026
+const ndduwi = [ 2293.354,2293.196,2316.371,2339.975,2384.291,2376.712,2374.983,2354.361,2314.566,2283.380,2267.651,2301.968,2321.997,2327.576,2341.098,2313.909,2278.503,2289.568,2313.082,2302.969,2323.727,2343.238,2344.546,2334.731,2332.123,2305.206,2288.815,2284.697,2242.284,2244.035,2283.055,2270.376,2270.504,2277.310,2256.490,2267.251,2264.909,2303.909,2311.469,2299.404,2289.826,2280.572,2261.438,2249.825,2243.828,2260.098,2316.686,2324.042,2329.887,2348.922,2364.314,2371.898,2387.567,2393.086,2388.092,2396.178,2395.317,2386.315,2337.654,2331.699,2365.814,2347.660,2383.947,2376.389,2375.193,2390.186,2387.262,2408.551,2423.006,2439.855,2468.348,2471.247,2480.847,2481.726,2465.910,2447.181,2444.000,2420.878,2418.545,2444.749,2473.764,2479.183,2488.916,2505.903,2491.714,2476.199,2468.493,2488.254,2468.351,2476.487,2476.243,2477.671,2477.177,2483.183,2483.926,2487.813,2445.858,2425.583,2428.711,2439.764,2441.223,2428.763,2405.327,2375.915,2388.802,2357.043,2378.958,2377.959,2379.597,2383.781,2390.879,2422.522,2438.826,2435.538,2443.008,2427.763,2432.620,2418.345,2426.296,2456.420,2474.210,2480.610,2491.767,2477.630,2460.928,2438.649,2444.759,2458.943,2477.892,2488.537,2521.183,2539.516,2556.698,2549.524,2545.400,2537.314,2545.939,2543.682,2531.527,2545.109,2571.441,2572.750,2564.417,2534.088,2529.699,2500.614,2481.795,2475.381,2492.675,2502.655,2476.000,2480.736,2476.418,2470.074,2454.724,2442.579,2424.967,2419.309,2394.721,2411.898,2427.360,2462.714,2479.359,2489.648,2486.136,2476.415,2506.206,2541.519,2539.306,2557.606,2532.461,2520.286,2501.439,2475.990,2505.338,2490.199,2535.564,2546.037,2532.326,2524.820,2543.560,2542.911,2534.806,2524.756,2503.238,2490.240,2502.906,2511.196,2489.483,2477.748,2450.245,2430.018,2438.323,2442.441,2427.290,2451.644,2457.058,2484.177,2483.339,2510.809,2516.037,2528.998,2533.073,2509.794,2468.125,2469.101,2423.498,2411.213,2433.216,2464.932,2459.597,2486.494,2479.582,2474.156,2478.239,2532.299,2578.744,2570.620,2565.087,2572.075,2590.818,2592.194,2595.921,2591.911,2611.515,2626.852,2635.473,2640.247,2665.435,2666.330,2687.772,2685.650,2686.576,2678.619,2680.711,2694.304,2704.072,2692.705,2650.956,2669.477,2681.303,2722.786,2731.815,2728.659,2718.187,2726.831,2734.969,2731.130,2713.490,2715.931,2738.805,2746.686,2754.177,2763.819,2784.628,2825.444,2833.203,2827.214,2836.411,2848.712,2861.982,2865.199,2868.097,2779.670,2741.901,2710.879,2775.058,2805.829,2796.249,2779.464,2804.353,2828.225,2840.695,2806.994,2796.110,2785.231,2776.635,2737.587,2728.801,2734.222,2737.629,2692.019,2700.790,2721.095,2736.278,2781.594,2785.924,2773.917,2808.345,2787.204,2783.853,2754.321,2744.168,2731.724,2725.064,2738.274,2690.920,2671.343,2685.229,2708.717,2700.647,2688.789,2685.871,2707.750,2744.021,2767.513,2794.346,2778.148,2738.846,2735.001,2778.204,2774.406,2735.218,2712.902,2724.611,2814.038,2827.475,2833.468,2872.498,2872.140,2902.721,2925.789,2927.570,2922.526,2918.564,2869.772,2894.570,2884.801,2872.829,2852.791,2873.249,2896.655,2890.675,2867.420,2835.481,2798.978,2689.688,2697.869,2752.767,2744.799,2757.064,2756.120,2757.882,2800.097,2791.134,2771.897,2771.849,2791.466,2788.882,2728.184,2723.248,2746.791,2729.320,2703.995,2666.291,2688.585,2723.615,2749.782,2773.796,2724.902,2714.409,2662.296,2638.251,2623.788,2634.045,2635.310,2638.486,2649.989,2710.992,2701.344,2748.258,2817.412,2814.316,2817.683,2821.388,2808.224,2796.634,2791.269,2812.176,2818.428,2808.570,2799.312,2824.242,2827.849,2820.148,2787.984,2769.894,2774.539,2777.705,2791.143,2771.136,2791.969,2817.302,2816.100,2791.872,2797.238,2828.867,2832.031,2832.554,2840.878,2832.309,2849.723,2852.483,2818.819,2802.767,2823.474,2795.612,2779.216,2788.480,2768.117,2747.180,2697.784,2713.038,2726.518,2721.863,2712.553,2731.036,2755.068,2753.371,2753.578,2748.212,2756.169,2780.592,2784.100,2785.155,2791.622,2784.031,2784.674,2785.270,2792.126,2800.657,2810.128,2819.920,2810.266,2793.158,2800.953,2834.482,2841.247,2804.624,2772.222,2774.538,2750.665,2733.214,2715.488,2714.387,2715.786,2694.987,2658.112,2675.242,2658.938,2648.091,2661.323,2658.296,2642.060,2637.817,2668.202,2651.690,2657.791,2648.871,2651.668,2655.177,2622.155,2595.898,2581.542,2536.642,2494.332,2538.040,2533.798,2497.520,2475.161,2530.656,2547.511,2552.648,2571.590,2523.685,2518.204,2550.034,2565.926,2606.936,2620.366,2630.754,2635.891,2644.628,2642.633,2613.441,2593.513,2548.130,2513.618,2561.202,2572.713,2540.700,2531.298,2486.627,2487.108,2439.593,2444.157,2472.432,2498.620,2478.761,2480.802,2448.334,2464.291,2475.918,2541.205,2517.241,2505.569,2535.541,2563.541,2551.914,2535.151,2510.843,2466.837,2478.005,2459.109,2399.417,2401.756,2439.754,2447.757,2458.054,2483.325,2489.218,2487.614,2487.614,2448.197,2500.507,2499.878,2467.819,2458.663,2445.318,2449.707,2471.715,2469.263,2466.535,2470.080,2484.502,2513.682,2505.330,2505.827,2522.897,2519.216,2514.061,2510.011,2519.313,2533.967,2535.516,2545.727,2506.524,2511.842,2506.911,2484.892,2461.964,2434.866,2462.040,2443.455,2428.684,2438.630,2406.166,2404.608,2369.657,2338.330,2330.330,2314.034,2345.311,2343.264,2320.954,2319.588,2305.372,2316.379,2344.108,2350.446,2352.309,2313.238,2230.396,2225.979,2176.344,2194.597,2144.323,2162.639,2147.818,2122.216,2071.400,2122.504,2171.765,2218.170,2176.440,2155.682,2168.117,2146.214,2093.263,2107.554,2171.277,2152.069,2162.125,2197.572,2198.174,2225.394,2224.350,2212.459,2219.968,2287.312,2320.801,2311.661,2284.175,2267.541,2290.881,2307.728,2327.357,2327.938,2358.674,2360.546,2330.877,2354.644,2355.532,2341.387,2327.120,2337.289,2318.980,2303.469,2316.829,2352.379,2366.374,2367.396,2393.414,2389.085,2363.053,2364.520,2343.039,2343.490,2328.330,2296.340,2297.603,2300.911,2311.288,2332.140,2313.052,2322.028,2307.410,2282.223,2268.138,2262.739,2239.335,2225.799,2210.786,2213.488,2218.750,2236.740,2230.551,2225.856,2212.906,2204.481,2217.281,2225.293,2247.199,2237.551,2230.030,2198.966,2156.136,2167.126,2154.278,2145.951,2180.681,2189.554,2175.982,2176.620,2173.000,2189.849,2182.627,2153.900,2132.688,2147.936,2161.504,2172.637,2176.014,2195.549,2208.126,2223.218,2210.730,2192.730,2197.670,2167.429,2156.709,2164.224,2166.087,2175.500,2175.743,2169.079,2139.698,2142.352,2137.737,2151.899,2141.342,2174.097,2168.835,2141.131,2123.534,2085.422,2089.841,2075.938,2081.204,2065.540,2026.128,1997.000,1990.174,1960.293,1951.377,1962.305,1945.543,1893.673,1885.555,1866.355,1808.408,1761.403,1827.390,1849.732,1848.979,1865.281,1905.414,1897.093,1918.365,1939.741,1957.857,1960.419,1951.542,1938.439,1970.304,1994.573,1992.610,1977.838,1992.785,1986.836,1961.913,1953.913,1975.133,1985.764,1989.766,1996.345,2009.854,1974.260,1941.516,1941.798,1975.097,1978.116,2003.574,2023.973,2021.884,2036.076,2031.127,2013.630,2041.759,2047.387,2053.747,2057.828,2076.630,2062.564,2051.143,2057.880,2065.428,2077.936,2063.948,2034.188,2045.631,2056.379,2034.441,2057.919,2105.062,2108.108,2089.226,2053.931,2049.275,2053.280,2020.418,2019.789,2044.263,2052.837,2053.244,2040.063,2045.863,2040.863,2040.214,2044.671,2069.727,2078.275,2069.098,2069.098,2076.342,2098.602,2110.497,2096.148,2080.221,2071.818,2066.509,2056.324,2038.106,2046.441,2015.923,2032.265,2021.589,2018.464,2004.131,2015.995,2025.847,2017.633,2022.819,1978.599,1980.393,2006.204,1995.944,1962.589,1946.199,1933.354,1938.330,1958.452,1985.326,1983.196,1997.887,2003.115,1985.415,1980.564,1944.883,1953.532,1945.895,1953.640,1977.874,1979.077,1989.956,1988.559,2025.752,2076.129,2065.202,2089.150,2100.826,2108.247,2112.108,2095.529,2080.742,2087.331,2108.749,2105.910,2117.315,2090.914,2088.473,2080.353,2055.302,2061.887,2068.600,2080.138,2076.155,2079.168,2068.257,2058.560,2055.776,2050.267,2040.673,2031.465,2052.869,2014.871,2020.505,2019.257,2060.663,2066.134,2064.281,2063.973,2043.641,2034.012,2025.455,2024.446,2003.969,1991.231,2005.587,2020.098,2014.857,2006.497,1983.292,1967.636,2022.419,2004.679,1982.743,2005.930,2029.661,2036.418,2045.902,2063.579,2046.252,2031.652,2037.158,2045.921,2034.297,2031.723,2022.734,2014.241,2007.433,2008.931,1980.044,1969.686,1970.541,1949.433,1937.731,1940.357,1924.397,1920.668,1899.949,1881.225,1923.090,1926.643,1898.506,1878.333,1858.935,1855.662,1846.102,1838.549,1861.856,1886.694,1864.055,1824.197,1815.233,1823.388,1881.320,1874.851,1849.653,1792.904,1778.592,1774.337,1749.417,1731.289,1752.365,1736.552,1676.259,1615.569,1573.495,1614.009,1626.252,1634.031,1707.613,1719.340,1727.499,1676.910,1655.439,1608.025,1637.510,1660.719,1709.161,1725.967,1710.651,1693.510,1727.332,1751.375,1754.703,1784.694,1762.417,1784.230,1806.277,1775.608,1782.826,1779.770,1739.730,1729.908,1730.449,1722.260,1662.410,1675.357,1658.765,1684.043,1687.951,1703.371,1712.400,1673.121,1663.800,1659.847,1639.060,1620.951,1589.470,1586.163,1557.502,1532.035,1558.336,1596.033,1568.873,1539.926,1576.339,1565.174,1548.500,1518.003,1488.845,1494.342,1468.543,1505.691,1563.835,1566.800,1640.639,1611.399,1644.263,1648.543,1665.756,1648.270,1642.203,1637.370,1654.840,1656.141,1627.531,1649.003,1653.394,1667.960,1693.746,1709.825,1712.593,1685.716,1671.636,1642.404,1656.043,1649.283,1678.040,1691.931,1684.367,1678.035,1693.762,1733.115,1731.654,1730.443,1698.492,1736.015,1746.499,1742.287,1738.727,1714.147,1705.449,1686.160,1694.526,1661.103,1676.755,1681.612,1675.417,1658.978,1692.056,1682.638,1655.616,1647.987,1665.437,1669.930,1667.851,1667.381,1667.163,1640.470,1651.738,1657.636,1657.636,1697.840,1703.199,1735.634,1720.215,1694.207,1720.974,1725.681,1726.137,1738.703,1719.102,1714.174,1692.976,1684.661,1666.002,1647.494,1659.929,1628.778,1593.705,1604.575,1612.260,1596.581,1607.121,1621.972,1600.966,1602.692,1585.523,1571.067,1572.310,1572.395,1556.029,1555.448,1580.259,1588.373,1609.332,1595.229,1586.717,1600.195,1578.478,1567.139,1554.882,1566.219,1578.994,1578.729,1557.412,1564.716,1550.733,1548.611,1513.535,1502.918,1492.322,1537.546,1554.427,1596.220,1601.847,1614.857,1619.063,1650.765,1606.518,1621.239,1618.546,1611.320,1603.876,1573.782,1590.639,1625.957,1622.525,1629.488,1646.325,1638.056,1623.696,1626.329,1620.892,1643.803,1660.526,1647.206,1668.501,1668.731,1664.251,1692.297,1706.986,1695.705,1672.913,1698.951,1702.138,1713.248,1716.848,1733.058,1736.603,1759.133,1750.679,1731.652,1752.771,1770.911,1768.177,1767.562,1778.267,1781.380,1743.575,1743.439,1743.819,1760.721,1766.464,1768.284,1789.327,1795.800,1799.929,1810.790,1827.532,1828.292,1850.002,1862.302,1865.786,1849.656,1857.978,1885.230,1889.732,1875.318,1908.750,1917.176,1913.315,1887.699,1889.795,1862.191,1855.736,1852.923,1856.133,1848.460,1841.901,1849.265,1874.600,1873.538,1868.961,1899.299,1900.887,1892.942,1872.259,1881.906,1898.680,1888.206,1875.403,1850.874,1865.377,1850.374,1862.617,1870.370,1874.557,1893.009,1896.878,1886.942,1876.779,1879.089,1864.355,1864.652,1847.888,1841.821,1853.620,1859.773,1869.297,1882.905,1880.969,1895.839,1896.997,1909.886,1912.788,1914.577,1917.397,1902.975,1900.389,1897.605,1901.748,1910.724,1919.456,1930.777,1943.423,1957.183,1960.500,1957.170,1975.694,1967.644,1947.095,1950.157,1957.911,1955.010,1976.745,1980.033,2002.910,1999.505,1978.879,1985.086,1964.028,1950.414,1936.350,1946.424,1931.008,1970.943,1981.506,2004.668,2010.183,2020.345,2011.709,2025.407,2030.741,2041.963,2047.796,2045.836,2053.945,2037.757,2045.559,2049.725,2025.347,2011.630,2009.583,2017.829,2040.181,2047.489,2049.377,2045.405,2054.251,2055.086,2048.596,2049.552,2055.840,2046.356,2036.804,2058.485,2068.045,2062.447,2036.788,2033.817,2035.884,2028.920,2032.921,2053.264,2058.964,2073.402,2075.497,2076.320,2102.452,2104.758,2107.577,2111.294,2101.869,2108.032,2101.223,2092.072,2105.655,2117.877,2119.348,2121.876,2123.971,2143.656,2146.558,2154.947,2162.286,2164.095,2164.246,2167.586,2188.964,2197.762,2206.423,2206.423,2210.291,2239.746,2244.982,2240.472,2256.154,2250.509,2253.184,2245.966,2256.857,2250.544,2256.751,2259.194,2268.204,2284.320,2286.896,2282.725,2287.323,2278.330,2260.897,2245.194,2241.827,2249.021,2253.574,2233.702,2240.082,2267.484,2271.520,2279.590,2293.788,2297.691,2289.813,2292.095,2314.384,2307.532,2301.048,2282.958,2282.303,2276.510,2276.535,2273.640,2279.367,2305.935,2292.644,2281.582,2291.881,2308.964,2294.862,2285.707,2251.784,2213.766,2224.154,2199.042,2219.503,2241.303,2244.066,2229.415,2200.246,2197.146,2191.247,2221.166,2222.418,2249.900,2256.951,2264.242,2284.231,2294.742,2302.724,2299.943,2298.249,2295.381,2291.959,2300.345,2276.934,2259.367,2255.771,2273.105,2273.842,2256.414,2250.954,2271.636,2276.006,2276.246,2277.364,2244.168,2233.091,2217.867,2231.166,2247.238,2257.600,2231.569,2196.344,2146.136,2161.368,2169.486,2163.692,2158.944,2137.831,2152.818,2175.215,2163.399,2179.960,2183.626,2205.816,2217.056,2240.581,2236.374,2238.074,2236.007,2243.718,2228.667,2240.768,2279.961,2282.286,2258.904,2267.629,2260.042,2239.255,2252.276,2261.116,2262.771,2270.336,2266.836,2263.267,2276.811,2288.192,2277.479,2286.123,2280.609,2284.019,2271.240,2267.640,2261.252,2247.080,2254.538,2246.383,2253.025,2255.307,2251.532,2246.566,2232.496,2234.893,2231.658,2235.802,2215.812,2210.384,2186.860,2178.541,2186.364,2189.421,2203.503,2209.446,2215.032,2211.143,2200.476,2180.852,2160.442,2153.924,2175.994,2164.668,2148.827,2152.375,2172.160,2177.723,2193.450,2198.806,2204.923,2204.172,2199.826,2211.921,2218.024,2225.342,2213.420,2219.157,2229.709,2245.135,2233.844,2242.011,2253.048,2249.958,2247.182,2262.791,2270.001,2274.990,2252.664,2259.603,2267.843,2259.149,2277.279,2254.354,2247.893,2246.435,2234.303,2245.210,2254.643,2261.138,2293.507,2300.664,2303.933,2313.684,2298.567,2296.933,2298.162,2281.418,2270.272,2260.245,2269.344,2274.121,2271.859,2269.240,2277.022,2266.574,2260.664,2281.007,2306.566,2316.361,2316.469,2322.776,2329.979,2355.154,2380.341,2394.352,2392.562,2388.353,2387.018,2403.354,2426.545,2430.519,2419.284,2438.524,2436.084,2423.559,2422.104,2425.344,2437.261,2449.936,2449.836,2449.330,2438.156,2464.844,2468.305,2475.365,2472.030,2456.017,2446.234,2443.711,2440.651,2465.665,2472.967,2489.284,2479.844,2465.201,2480.173,2488.757,2500.839,2509.951,2517.166,2516.906,2527.365,2523.508,2532.605,2531.228,2514.416,2487.033,2472.917,2472.773,2468.060,2477.306,2470.846,2481.350,2465.984,2470.901,2475.425,2482.551,2471.868,2449.229,2443.240,2443.628,2444.232,2464.442,2464.473,2454.836,2474.239,2486.490,2496.846,2484.915,2508.872,2505.139,2500.621,2490.525,2505.717,2521.570,2533.298,2541.424,2536.202,2531.644,2535.200,2535.648,2521.734,2517.438,2527.939,2553.452,2552.618,2559.772,2555.997,2557.936,2587.733,2587.529,2589.146,2573.692,2568.914,2565.398,2563.767,2557.749,2546.250,2543.452,2539.907,2524.475,2514.399,2493.192,2490.949,2492.149,2490.365,2478.502,2496.866,2503.068,2496.672,2484.388,2499.035,2506.996,2522.242,2509.655,2514.018,2510.833,2500.834,2474.923,2445.567,2430.931,2451.734,2434.897,2459.680,2460.186,2469.553,2452.923,2447.541,2429.303,2448.528,2453.520,2457.773,2485.584,2486.235,2486.849,2489.828,2473.113,2471.643,2453.568,2440.188,2445.222,2454.335,2477.549,2491.652,2484.146,2499.256,2500.391,2492.450,2501.390,2506.918,2509.821,2492.031,2510.741,2515.076,2506.218,2508.322,2515.303,2516.545,2510.815,2508.661,2507.139,2513.106,2520.407,2530.655,2551.602,2543.887,2546.150,2548.210,2531.226,2515.266,2509.372,2524.439,2524.351,2513.595,2511.697,2510.955,2520.842,2516.836,2506.324,2531.587,2556.922,2568.739,2564.050,2572.994,2569.200,2562.624,2568.438,2575.040,2581.086,2587.779,2580.420,2578.294,2590.513,2605.480,2601.399,2610.016,2629.870,2638.643,2624.424,2601.819,2606.426,2620.495,2637.685,2656.219,2648.034,2646.700,2626.891,2622.290,2604.824,2611.520,2628.462,2616.863,2607.611,2607.553,2598.207,2598.736,2591.274,2621.001,2646.283,2648.650,2654.298,2673.954,2678.233,2667.301,2689.218,2683.113,2665.504,2667.839,2664.960,2679.748,2671.061,2668.019,2652.808,2646.681,2644.009,2659.440,2651.635,2665.439,2683.596,2689.078,2681.309,2671.973,2637.959,2622.321,2623.001,2610.373,2611.638,2598.221,2579.119,2601.142,2600.726,2574.392,2582.445,2565.034,2566.719,2594.747,2603.570,2599.559,2583.094,2599.167,2623.838,2625.862,2650.606,2666.306,2653.934,2659.161,2654.136,2652.331,2662.421,2675.543,2669.540,2657.755,2657.595,2687.019,2699.936,2715.443,2720.738,2737.491,2735.916,2736.819,2726.852,2725.051,2711.263,2740.010,2751.564,2751.643,2758.171,2748.617,2749.786,2758.409,2775.971,2785.625,2799.098,2785.310,2792.333,2782.931,2779.928,2786.573,2797.624,2799.902,2801.793,2784.835,2793.957,2790.604,2771.330,2774.349,2823.247,2853.932,2854.574,2882.914,2885.720,2874.301,2890.879,2882.129,2880.204,2881.682,2855.281,2832.790,2857.791,2825.167,2835.990,2841.354,2845.892,2868.662,2891.610,2891.573,2895.079,2898.305,2876.395,2857.971,2861.790,2843.641,2842.330,2853.883,2848.178,2837.000,2853.764,2859.081,2875.342,2872.493,2873.769,2874.445,2888.093,2895.178,2898.552,2911.940,2890.770,2906.667,2902.043,2896.795,2890.263,2867.949,2863.080,2870.517,2881.104,2901.289,2929.035,2940.560,2949.661,2958.813,2962.277,2944.875,2956.632,2940.919,2952.775,2949.219,2939.708,2947.792,2971.383,2954.334,2972.664,2988.826,3001.713,3007.208,2980.114,2982.344,2960.503,2952.519,2955.891,2956.056,2965.700,2998.056,3019.531,3020.732,3034.654,3025.052,3022.844,3034.652,3046.313,3044.030,3048.115,3071.284,3054.402,3069.333,3104.943,3111.085,3120.361,3113.603,3088.667,3049.096,3028.462,3021.699,2968.117,2943.884,2937.062,2907.117,2920.637,2903.806,2933.088,2961.436,2966.469,2933.694,2940.049,2961.939,2986.185,2949.356,2904.803,2888.350,2839.401,2856.736,2825.044,2768.233,2783.773,2842.084,2844.398,2824.395,2827.613,2849.540,2848.531,2843.756,2852.295,2837.084,2835.389,2892.918,2939.187,2957.676,2963.829,2926.945,2940.511,2938.495,2940.205,2936.206,2909.264,2873.768,2839.875,2820.759,2809.363,2863.294,2870.248,2851.601,2887.112,2905.310,2905.512,2927.111,2959.561,2957.530,2938.639,2966.103,2958.457,2977.651,2952.525,2952.267,2959.440,2949.203,2941.136,2951.718,2986.811,3016.863,3023.485,3023.872,3022.735,3022.369,3010.094,3010.183,3002.584,3014.857,3021.926,3033.858,3034.299,3048.412,3066.053,3061.222,3028.127,2999.517,3002.792,2987.790,3013.725,3023.617,3030.535,3027.222,3032.887,3026.710,3037.172,3038.926,3026.293,3032.625,3050.799,3071.444,3075.909,3070.479,3075.437,3070.323,3088.481,3109.680,3094.514,3098.342,3103.386,3097.876,3119.745,3126.911,3142.722,3126.610,3135.546,3145.676,3152.835,3163.919,3165.002,3179.166,3198.909,3187.485,3178.396,3183.174,3175.742,3170.415,3164.167,3193.875,3213.698,3208.349,3198.029,3205.769,3202.339,3217.104,3226.680,3229.319,3224.510,3215.455,3223.978,3246.398,3247.640,3243.940,3210.023,3212.378,3250.245,3261.124,3256.299,3276.607,3289.041,3293.218,3292.062,3293.840,3292.949,3298.292,3305.957,3326.252,3326.333,3317.819,3317.796,3326.451,3317.127,3302.921,3301.650,3307.194,3333.477,3334.271,3327.426,3327.426,3351.622,3339.081,3329.492,3296.851,3300.742,3303.780,3287.400,3310.219,3337.321,3350.270,3343.275,3344.441,3338.154,3351.053,3343.395,3357.841,3379.077,3355.448,3337.340,3341.227,3358.760,3366.707,3398.176,3401.864,3394.538,3406.039,3417.677,3405.455,3398.705,3381.898,3406.859,3444.585,3456.161,3451.215,3457.259,3459.452,3446.418,3450.221,3457.148,3463.706,3377.834,3349.188,3329.066,3303.438,3253.023,3298.595,3306.305,3336.240,3340.360,3352.142,3305.487,3276.258,3310.115,3306.609,3344.383,3367.936,3402.890,3431.436,3435.998,3432.024,3418.924,3401.388,3414.167,3410.496,3419.547,3451.813,3465.017,3475.265,3474.383,3471.433,3492.161,3479.985,3490.834,3501.492,3542.197,3548.583,3552.482,3538.695,3569.360,3562.253,3555.335,3581.513,3577.627,3574.490,3560.942,3556.559,3579.703,3589.559,3607.704,3625.939,3605.193,3620.693,3580.628,3602.065,3600.916,3604.097,3613.568,3607.779,3628.895,3632.292,3636.165,3648.866,3614.075,3620.110,3624.221,3634.772,3641.891,3660.680,3679.831,3690.893,3678.582,3641.656,3590.163,3592.819,3605.128,3575.107,3601.356,3632.298,3668.848,3669.655,3670.685,3651.273,3649.601,3621.901,3611.594,3598.852,3600.221,3618.801,3632.444,3665.576,3682.895,3689.848,3682.781,3699.418,3709.427,3680.340,3685.560,3733.465,3752.973,3751.286,3746.319,3728.499,3753.454,3724.727,3732.976,3680.552,3662.692,3581.859,3528.549,3548.215,3551.999,3531.327,3550.994,3499.619,3527.505,3548.899,3608.658,3530.491,3477.334,3495.862,3445.752,3394.958,3346.990,3403.513,3424.852,3438.146,3480.452,3499.418,3528.061,3518.725,3456.140,3493.106,3501.081,3549.304,3551.762,3575.140,3537.311,3554.064,3507.206,3487.117,3536.421,3546.381,3567.852,3562.502,3534.427,3592.296,3661.408,3661.938,3671.369,3666.309,3663.376,3679.266,3712.855,3718.093,3753.495,3756.312,3751.006,3752.889,3787.646,3768.142,3795.863,3802.903,3814.158,3814.423,3790.580,3752.008,3764.159,3770.013,3705.735,3676.995,3719.756,3707.120,3724.506,3777.967,3809.244,3789.459,3832.133,3766.255,3752.339,3724.346,3762.760,3715.367,3694.517,3642.271,3592.532,3651.194,3665.718,3613.994,3605.212,3547.653,3581.886,3518.418,3529.000,3574.011,3543.632,3562.859,3632.536,3654.085,3675.491,3659.887,3634.834,3673.788,3705.990,3720.079,3745.446,3696.709,3704.029,3654.973,3611.124,3544.224,3553.523,3543.528,3554.161,3608.379,3628.883,3635.812,3649.054,3631.050,3641.725,3628.073,3628.073,3604.056,3600.268,3524.567,3510.485,3487.502,3493.959,3494.500,3462.733,3495.610,3413.090,3357.140,3309.753,3284.675,3187.637,3179.018,3192.031,3289.936,3287.733,3297.911,3331.954,3311.832,3350.817,3399.408,3392.046,3282.130,3257.699,3238.343,3234.008,3233.837,3288.016,3305.483,3306.625,3291.941,3306.659,3324.025,3301.299,3311.068,3314.781,3367.424,3403.247,3428.439,3399.374,3331.423,3300.021,3279.966,3309.928,3275.358,3233.197,3186.398,3255.284,3279.287,3274.096,3226.943,3159.677,3265.176,3210.433,3219.818,3225.716,3248.891,3321.138,3320.151,3313.446,3295.292,3299.491,3369.417,3400.711,3410.574,3427.097,3440.970,3414.503,3392.165,3399.199,3357.501,3334.094,3347.314,3427.488,3420.252,3458.608,3477.680,3456.271,3459.588,3451.739,3484.352,3493.010,3474.647,3472.906,3489.111,3523.047,3522.201,3539.767,3508.376,3518.393,3487.998,3517.934,3517.468,3529.232,3563.625,3587.744,3601.449,3572.750,3538.400,3542.741,3504.335,3491.736,3494.753,3500.318,3512.848,3525.863,3503.486,3487.979,3478.727,3511.440,3460.341,3443.119,3397.154,3360.668,3347.296,3376.432,3394.199,3396.896,3369.487,3354.277,3308.712,3295.181,3287.481,3304.815,3247.364,3234.120,3244.648,3222.932,3183.316,3177.396,3163.987,3159.316,3161.938,3152.477,3148.365,3115.028,3106.168,3065.262,3096.886,3148.854,3154.788,3170.199,3189.780,3207.976,3159.036,3150.758,3116.286,3133.638,3184.206,3165.368,3131.356,3100.789,3151.924,3172.913,3133.619,3146.650,3174.452,3145.225,3110.432,3123.571,3113.887,3096.391,3048.128,3067.932,3079.851,3102.938,3072.049,3066.797,3087.097,3126.444,3120.898,3099.633,3083.407,3060.176,2976.295,2946.383,3012.757,2936.970,2935.694,2933.314,2979.900,2872.602,2852.173,2767.057,2826.346,2988.180,2938.470,2903.161,2890.223,2932.432,2907.571,2705.719,2749.710,2754.209,2654.675,2648.379,2495.644,2418.258,2335.039,2228.874,2118.039,2319.761,2379.256,2211.352,2180.508,2212.348,2302.688,2262.036,2117.340,2119.376,2028.513,1941.040,2076.400,2151.460,2216.478,2228.363,2238.334,2345.786,2289.375,2154.839,2188.243,2191.786,2111.476,2027.878,2083.855,2050.440,2002.475,2008.917,1916.336,1799.780,1854.320,1981.663,2014.357,2046.635,2064.994,2084.124,1938.092,1976.514,2008.383,1971.963,1980.903,2089.588,2072.757,2099.580,2083.933,2067.790,2081.591,2141.966,2167.845,2147.597,2118.411,2085.346,2075.259,2074.844,2077.815,2087.871,2106.060,2141.026,2150.990,2150.990,2211.462,2209.854,2220.195,2197.034,2194.619,2157.403,2110.625,2079.898,2016.435,1995.706,2024.917,2010.382,1923.854,1961.065,1942.424,1930.633,1969.375,1998.748,2056.080,2007.238,1962.551,1939.533,1974.361,1985.258,1996.994,2038.939,2053.484,1982.080,1979.348,1962.262,1960.782,1946.926,1866.535,1854.775,1852.343,1811.850,1775.685,1800.455,1791.490,1791.510,1761.666,1674.872,1654.963,1695.330,1643.936,1637.233,1616.502,1702.539,1716.464,1750.872,1776.462,1797.392,1828.877,1853.167,1886.796,1855.865,1950.565,1936.324,1949.128,1979.561,1940.141,1864.926,1894.511,1923.787,2006.766,2011.944,1997.086,1960.573,1967.284,2028.344,2029.739,2040.274,2029.630,2033.540,2062.179,2075.575,2000.017,2017.319,2020.422,2036.546,2080.021,2066.363,2042.668,2090.109,2107.036,2114.610,2175.429,2178.111,2207.879,2206.503,2253.005,2229.790,2226.048,2175.236,2178.362,2178.253,2215.637,2243.094,2257.665,2220.349,2229.128,2232.520,2269.518,2255.399,2262.239,2297.947,2356.052,2369.574,2330.063,2337.564,2328.752,2312.096,2329.824,2341.542,2363.941,2358.127,2296.723,2276.627,2258.787,2273.235,2288.246,2227.870,2225.865,2256.312,2271.843,2286.797,2303.479,2287.579,2308.826,2249.254,2247.184,2233.132,2207.113,2186.785,2199.797,2187.527,2219.376,2245.354,2308.377,2328.204,2332.756,2364.036,2385.689,2387.029,2433.225,2439.839,2451.173,2441.565,2430.564,2467.162,2481.331,2531.042,2533.936,2522.634,2517.044,2526.489,2519.243,2493.905,2516.612,2546.363,2529.565,2459.325,2485.266,2499.084,2528.805,2570.477,2587.746,2594.721,2585.347,2583.540,2603.650,2583.697,2538.638,2520.757,2533.507,2560.123,2583.676,2615.557,2634.204,2654.431,2665.204,2663.098,2666.928,2710.863,2720.432,2713.625,2693.467,2723.307,2710.338,2674.849,2658.655,2687.964,2683.199,2686.679,2627.262,2596.049,2621.201,2674.117,2677.810,2712.659,2718.064,2732.618,2723.693,2772.569,2782.308,2757.544,2792.003,2781.036,2775.258,2775.353,2751.310,2718.983,2698.910,2645.499,2690.515,2638.880,2646.248,2633.953,2661.593,2692.885,2702.160,2763.546,2761.708,2775.145,2752.176,2766.483,2807.640,2793.811,2799.422,2752.681,2737.904,2786.173,2772.665,2798.127,2760.344,2735.989,2746.712,2801.624,2806.512,2798.630,2794.662,2786.152,2752.938,2747.271,2759.647,2763.357,2785.724,2769.071,2787.927,2739.378,2736.414,2764.345,2772.894,2790.021,2804.035,2802.582,2814.437,2818.536,2802.731,2796.035,2796.035,2846.213,2854.576,2856.517,2855.086,2867.904,2889.364,2870.536,2876.081,2891.337,2861.897,2868.037,2880.272,2835.415,2793.406,2752.710,2750.555,2737.291,2729.989,2701.509,2680.472,2703.976,2741.500,2727.664,2649.773,2623.769,2617.232,2637.766,2639.206,2655.699,2653.629,2654.062,2696.007,2717.963,2730.378,2719.776,2732.797,2705.854,2717.606,2695.837,2718.258,2735.924,2757.493,2777.116,2773.289,2809.013,2819.394,2818.062,2833.564,2839.623,2850.928,2838.062,2866.259,2887.679,2873.789,2859.552,2866.087,2884.026,2858.905,2862.436,2866.627,2886.555,2887.870,2886.601,2914.927,2916.410,2927.516,2929.366,2918.420,2913.549,2942.585,2957.221,2949.326,2981.630,2987.663,2940.939,2930.043,2955.531,2949.256,2933.446,2949.804,2957.616,2894.956,2875.674,2909.873,2887.006,2896.650,2822.873,2791.695,2714.154,2652.649,2782.846,2762.786,2796.800,2782.201,2712.790,2694.523,2684.884,2646.258,2569.370,2593.605,2571.064,2533.674,2545.353,2621.998,2611.572,2610.465,2585.766,2610.156,2638.709,2564.610,2519.053,2529.070,2541.049,2601.511,2614.804,2640.620,2682.133,2688.949,2693.081,2699.016,2711.781,2674.779,2652.228,2619.783,2612.861,2620.628,2537.151,2520.962,2508.446,2509.914,2502.979,2546.218,2595.451,2627.309,2643.446,2643.359,2685.931,2695.805,2695.912,2639.688,2638.303,2648.490,2636.263,2688.971,2706.779,2736.570,2739.411,2735.887,2733.583,2725.344,2791.755,2793.772,2793.568,2794.869,2793.185,2807.599,2776.615,2698.600,2682.318,2676.320,2683.115,2714.160,2716.633,2685.740,2653.911,2652.747,2618.486,2606.028,2614.590,2643.829,2630.607,2623.593,2698.642,2717.288,2747.301,2759.085,2728.742,2741.249,2761.008,2766.668,2804.717,2813.680,2816.294,2811.285,2808.918,2846.686,2841.671,2844.478,2826.941,2874.856,2868.988,2879.994,2879.776,2868.232,2880.495,2859.034,2916.586,2932.524,2935.054,2943.371,2945.059,2938.704,2973.581,2983.363,2977.094,2987.897,2941.646,2973.534,2981.065,2976.355,2992.763,2978.454,2954.666,2972.955,2975.147,2977.796,3003.818,3004.211,3076.395,3079.673,3072.341,3066.371,3046.474,3040.984,3012.915,3010.597,2955.344,2961.009,3008.689,3011.712,3002.386,2951.826,2979.375,2983.819,2951.503,2928.676,2910.915,2967.656,3018.280,3042.165,3036.352,3047.624,3041.129,3052.643,3065.590,3087.328,3093.180,3073.669,3074.709,3069.360,3074.214,3102.401,3108.542,3108.151,3110.441,3106.840,3113.462,3122.449,3116.691,3124.941,3144.210,3147.512,3137.594,3134.380,3128.898,3114.811,3131.006,3170.779,3187.618,3196.582,3192.890,3214.295,3196.579,3163.081,3181.310,3204.944,3201.906,3220.379,3227.362,3180.987,3195.540,3249.759,3256.438,3249.673,3253.890,3272.929,3292.713,3281.383,3270.509,3278.367,3288.255,3287.072,3306.245,3325.103,3332.361,3321.385,3272.680,3252.803,3246.684,3281.845,3307.424,3281.181,3274.520,3309.584,3300.888,3277.746,3283.328,3280.606,3216.868,3221.034,3187.382,3115.307,3087.024,3134.994,3153.236,3203.073,3212.013,3213.637,3244.286,3248.887,3238.527,3247.163,3277.352,3274.807,3291.115,3301.981,3297.171,3310.580,3301.786,3317.304,3310.551,3274.296,3286.677,3281.650,3285.450,3234.375,3253.133,3316.807,3343.952,3344.135,3335.489,3358.380,3370.585,3404.136,3413.929,3422.514,3401.210,3373.655,3335.312,3345.866,3332.796,3364.001,3343.458,3328.662,3309.627,3294.425,3276.739,3308.542,3317.917,3296.128,3240.617,3245.778,3257.053,3274.094,3302.882,3302.564,3343.106,3297.334,3272.465,3259.578,3234.212,3239.533,3214.968,3230.012,3182.273,3182.782,3225.709,3171.784,3146.282,3163.624,3166.255,3216.364,3210.963,3166.616,3151.607,3167.237,3204.018,3247.643,3290.219,3321.631,3332.524,3327.064,3317.757,3343.605,3320.774,3250.816,3232.204,3264.729,3241.234,3247.014,3207.179,3255.395,3274.362,3322.924,3335.345,3316.206,3319.827,3262.258,3246.812,3230.560,3208.891,3140.181,3124.967,2990.628,2955.307,2804.191,2883.450,2798.793,2888.660,2924.064,2983.944,2963.840,2974.011,2844.044,2804.044,2803.326,2868.954,2896.061,2861.638,2882.578,2952.147,2965.467,3002.944,2983.182,2914.097,2860.781,2831.944,2910.772,2901.371,2814.719,2785.212,2815.315,2841.295,2902.054,2918.343,2870.361,2883.821,2822.490,2703.747,2717.748,2753.825,2830.113,2789.068,2807.138,2743.578,2670.985,2670.324,2724.688,2793.599,2799.360,2874.894,2881.741,2922.915,2906.845,2949.588,2913.580,2927.755,2921.574,2901.623,2969.806,3013.606,2973.638,2985.197,3110.608,3119.114,3027.365,2921.684,2958.618,3002.289,2993.122,2998.751,3026.073,2938.950,2935.700,3001.788,2974.798,2966.666,2937.274,2896.796,2883.999,2818.220,2809.025,2748.647,2741.058,2736.161,2822.434,2841.153,2953.450,2953.122,2961.107,2990.340,2976.270,2985.730,2929.255,2960.909,2915.268,2891.819,2841.233,2850.845,2859.914,2832.208,2903.774,2904.468,2928.052,2949.979,2951.504,2953.417,2915.124,2939.164,2951.809,2960.497,3010.636,3004.698,2988.258,2975.271,2977.356,3015.127,3007.136,3014.825,2999.069,3002.765,3025.650,3052.268,3079.355,3085.963,3103.615,3089.822,3105.812,3124.056,3112.678,3094.907,3099.940,3141.887,3147.791,3182.499,3181.812,3193.871,3201.699,3209.312,3172.905,3197.068,3184.024,3187.303,3201.423,3221.276,3242.632,3238.254,3224.437,3238.078,3253.825,3248.828,3261.387,3251.368,3265.972,3251.068,3235.148,3168.704,3182.917,3232.652,3236.461,3230.951,3278.981,3272.226,3294.208,3310.539,3322.578,3300.186,3289.676,3269.617,3279.541,3317.539,3315.034,3293.971,3276.462,3293.169,3324.485,3306.265,3243.493,3239.941,3237.276,3214.988,3162.853,3181.362,3225.804,3186.279,3183.003,3233.766,3226.012,3210.761,3221.235,3178.111,3197.286,3232.656,3252.899,3266.743,3255.772,3263.376,3250.104,3232.666,3184.634,3174.858,3149.167,3126.133,3138.108,3131.935,3086.904,3061.124,3038.420,3005.629,2973.298,3006.760,3028.200,2996.726,3007.472,3000.541,3004.561,3033.576,2983.656,2974.721,2912.555,2908.204,2926.195,2991.189,3009.326,3004.794,2992.902,3012.695,3008.840,3023.605,3055.275,3063.736,3102.313,3109.003,3052.006,3048.997,3005.268,3010.816,3040.127,3035.783,3126.299,3138.500,3166.464,3163.520,3143.862,3111.298,3098.082,3084.650,3084.864,3056.187,3102.143,3101.659,3111.196,3136.630,3158.901,3117.242,3068.398,3045.292,3042.596,3108.671,3164.980,3174.908,3166.489,3160.539,3127.369,3190.034,3210.950,3232.640,3233.653,3238.523,3239.999,3235.019,3238.410,3237.885,3265.404,3272.100,3271.479,3281.034,3267.078,3260.647,3262.333,3264.346,3258.690,3256.623,3228.492,3246.765,3251.067,3235.671,3232.731,3294.871,3331.838,3317.394,3331.184,3344.352,3376.983,3423.042,3409.705,3396.684,3407.873,3390.240,3399.316,3383.852,3372.545,3330.405,3357.933,3335.965,3354.791,3356.626,3355.397,3381.086,3395.816,3374.813,3342.008,3321.121,3330.733,3323.620,3340.823,3383.201,3409.614,3409.398,3365.492,3361.945,3308.884,3306.104,3316.349,3309.891,3301.607,3314.954,3313.422,3343.218,3324.421,3318.436,3338.942,3283.575,3252.356,3251.267,3246.997,3241.118,3204.593,3196.400,3195.169,3265.700,3266.951,3275.097,3290.873,3327.663,3322.070,3313.842,3325.840,3353.744,3355.850,3352.840,3352.273,3356.317,3366.054,3370.324,3373.567,3393.964,3400.408,3388.963,3383.646,3408.621,3441.099,3443.677,3451.490,3424.176,3417.560,3419.358,3411.935,3413.133,3389.159,3418.961,3419.095,3493.078,3485.501,3500.133,3491.958,3480.499,3493.067,3522.094,3531.070,3526.645,3533.374,3523.904,3542.430,3547.445,3551.209,3561.683,3560.343,3568.623,3592.471,3586.312,3605.945,3603.270,3593.121,3622.106,3578.391,3592.532,3600.982,3585.096,3606.967,3594.914,3615.803,3617.248,3611.764,3599.963,3604.372,3633.761,3609.181,3563.705,3589.380,3561.812,3549.503,3584.191,3599.054,3590.367,3598.965,3638.322,3644.279,3651.643,3661.638,3677.428,3673.565,3665.935,3692.569,3703.638,3669.361,3658.611,3678.768,3659.427,3674.061,3659.708,3675.560,3668.959,3683.623,3683.356,3666.871,3685.869,3661.139,3652.663,3644.794,3664.631,3681.521,3731.712,3758.878,3743.301,3678.543,3698.468,3652.216,3634.332,3656.773,3669.455,3712.808,3731.567,3753.637,3750.709,3779.133,3799.348,3774.876,3783.625,3816.718,3815.634,3842.245,3873.704,3854.841,3855.376,3860.154,3882.965,3896.786,3889.734,3903.018,3917.655,3923.667,3904.403,3854.433,3853.003,3844.898,3864.468,3845.103,3851.917,3800.783,3803.081,3805.091,3747.746,3758.288,3797.894,3805.694,3780.640,3766.880,3784.070,3783.116,3817.102,3832.842,3811.917,3680.328,3673.405,3621.642,3651.655,3686.061,3713.486,3707.130,3735.239,3736.927,3726.002,3745.780,3748.004,3770.333,3798.692,3811.401,3871.928,3876.161,3882.977,3881.927,3889.533,3909.731,3915.971,3934.376,3932.282,3928.710,3927.050,3923.141,3904.256,3908.192,3902.295,3946.475,3969.648,3961.131,3954.952,3933.673,3956.044,3954.012,3946.736,3955.228,3956.278,3907.643,3909.485,3890.863,3889.051,3861.402,3882.563,3910.564,3900.218,3848.463,3837.687,3840.757,3819.235,3841.564,3854.386,3881.510,3885.077,3897.779,3933.087,3967.448,3984.938,3978.144,3980.235,4013.523,4015.425,4052.610,4082.951,4057.349,4043.578,4037.930,4033.420,4043.907,4039.587,4010.245,4035.987,4029.840,4008.483,4020.775,3991.934,3957.907,3949.557,4017.748,4047.472,4061.569,4049.660,4081.414,4123.845,4153.781,4157.957,4186.840,4163.506,4179.847,4179.975,4185.871,4196.681,4190.434,4167.220,4154.219,4169.759,4158.564,4181.612,4132.494,4153.351,4165.298,4159.476,4168.480,4198.187,4220.850,4224.531,4208.241,4195.514,4208.700,4226.641,4228.114,4223.676,4231.700,4242.341,4241.278,4222.988,4202.262,4180.561,4165.365,4201.418,4214.514,4205.758,4169.273,4140.031,4137.435,4165.050,4150.916,4205.646,4218.011,4239.581,4267.788,4274.151,4274.353,4291.699,4312.744,4318.122,4331.022,4331.090,4290.004,4292.306,4279.574,4296.518,4303.578,4293.676,4316.469,4291.351,4307.877,4329.708,4328.009,4322.781,4322.251,4328.513,4334.713,4305.375,4221.675,4186.729,4203.517,4184.027,4194.080,4170.608,4101.374,4096.264,4103.223,4157.033,4206.939,4220.029,4266.361,4276.225,4290.740,4308.993,4318.353,4336.907,4323.485,4326.319,4336.605,4359.093,4362.095,4350.774,4360.991,4379.393,4327.614,4386.304,4390.368,4409.698,4397.021,4384.995,4373.756,4358.158,4322.108,4294.567,4328.269,4358.573,4339.308,4329.718,4327.661,4308.508,4334.138,4331.029,4331.077,4354.084,4385.731,4411.704,4422.087,4416.248,4393.460,4349.136,4361.456,4392.197,4342.091,4296.079,4312.552,4318.845,4366.733,4379.991,4382.051,4386.800,4412.316,4405.943,4411.114,4384.237,4389.554,4415.412,4430.671,4437.749,4434.961,4438.004,4421.692,4424.655,4432.799,4424.581,4456.013,4464.939,4458.835,4426.601,4430.870,4437.381,4417.152,4440.344,4456.111,4471.063,4485.013,4496.968,4493.564,4512.665,4517.844,4523.895,4520.220,4526.001,4546.889,4570.664,4574.760,4573.109,4563.149,4548.596,4553.179,4552.633,4557.322,4581.475,4609.762,4607.224,4604.374,4582.226,4583.572,4582.103,4591.839,4598.664,4628.959,4634.972,4653.933,4652.161,4629.525,4595.300,4607.192,4576.730,4580.913,4610.036,4595.271,4622.107,4578.990,4603.290,4592.308,4620.531,4629.543,4635.249,4614.107,4614.120,4603.630,4593.415,4525.272,4502.630,4514.352,4483.054,4471.071,4449.233,4464.793,4494.257,4488.425,4515.086,4533.625,4529.980,4564.893,4585.596,4588.837,4605.089,4589.617,4614.354,4624.748,4629.663,4613.205,4624.988,4624.174,4621.460,4635.068,4626.245,4631.687,4615.398,4586.073,4593.371,4597.166,4577.377,4570.465,4585.551,4593.063,4612.911,4606.592,4570.139,4543.410,4563.255,4508.824,4524.251,4509.350,4499.461,4448.818,4419.304,4438.758,4450.813,4401.912,4434.615,4380.388,4310.996,4276.443,4268.843,4227.872,4221.033,4276.572,4309.742,4376.269,4366.068,4400.442,4421.423,4418.666,4465.667,4470.687,4478.520,4528.568,4504.758,4502.496,4525.118,4529.000,4528.588,4549.127,4555.142,4551.052,4554.876,4557.681,4551.878,4587.568,4578.408,4580.829,4612.404,4620.066,4627.589,4641.760,4633.071,4619.324,4593.984,4610.350,4620.757,4612.655,4617.749,4586.068,4574.151,4511.795,4514.133,4450.404,4396.252,4398.840,4443.794,4534.045,4562.483,4579.387,4581.732,4587.479,4586.311,4596.339,4603.162,4574.978,4544.837,4544.859,4532.065,4443.234,4398.381,4419.786,4504.834,4477.268,4458.430,4462.582,4428.566,4420.983,4454.836,4472.768,4481.821,4506.163,4549.287,4542.024,4554.849,4536.355,4493.254,4505.732,4462.486,4507.262,4562.839,4563.137,4596.719,4578.738,4562.022,4593.040,4582.457,4635.852,4665.230,4667.198,4672.864,4684.338,4689.966,4709.617,4715.729,4728.192,4734.032,4726.884,4723.937,4734.239,4713.368,4693.447,4702.407,4644.726,4644.567,4566.701,4562.690,4611.220,4587.807,4642.057,4632.859,4679.705,4672.868,4735.341,4744.733,4730.044,4687.660,4657.247,4660.340,4693.892,4649.991,4643.162,4673.762,4676.204,4714.242,4714.065,4720.751,4735.464,4755.941,4736.376,4757.201,4767.934,4775.798,4729.104,4756.957,4764.861,4777.887,4793.859,4814.498,4819.260,4824.434,4804.775,4759.045,4783.157,4793.174,4747.160,4746.488,4738.362,4807.181,4793.576,4782.979,4797.593,4834.845,4845.178,4850.509,4837.659,4838.714,4857.941,4838.781,4839.664,4779.028,4812.893,4807.688,4775.439,4773.031,4784.299,4804.922,4766.473,4726.296,4704.751,4703.352,4770.905,4779.327,4754.568,4719.481,4737.221,4733.078,4783.225,4767.819,4825.103,4824.930,4797.374,4786.392,4773.213,4669.631,4664.399,4695.981,4696.396,4689.075,4648.472,4636.323,4588.318,4616.864,4686.367,4727.838,4756.688,4753.265,4790.468,4787.557,4791.265,4779.704,4749.713,4739.731,4693.248,4661.259,4697.526,4734.539,4732.334,4748.125,4736.342,4730.184,4741.352,4715.385,4701.231,4753.164,4707.907,4689.079,4688.727,4695.423,4709.821,4697.475,4648.604,4571.504,4447.170,4281.710,4266.847,4355.012,4447.153,4467.716,4433.920,4313.561,4354.288,4374.043,4300.832,4308.862,4385.762,4389.283,4382.324,4387.208,4369.238,4406.331,4459.811,4457.645,4397.931,4393.330,4317.465,4306.548,4281.598,4301.361,4211.090,4185.259,4270.377,4286.934,4338.936,4421.006,4430.493,4464.849,4492.347,4519.955,4521.626,4485.923,4464.280,4525.825,4546.847,4537.075,4530.656,4518.324,4563.418,4610.118,4605.738,4582.149,4630.705,4610.936,4608.780,4634.151,4640.224,4631.365,4623.945,4607.169,4573.163,4570.718,4574.717,4520.720,4474.260,4510.303,4534.117,4576.081,4600.923,4607.423,4592.611,4587.733,4594.391,4610.869,4601.699,4585.848,4628.601,4591.463,4542.876,4587.687,4565.667,4522.835,4505.932,4504.873,4434.692,4419.797,4458.873,4518.718,4482.448,4424.342,4438.732,4469.409,4527.371,4534.227,4532.335,4524.893,4566.815,4542.098,4505.241,4505.241,4419.220,4418.565,4363.773,4272.136,4231.914,4221.408,4232.593,4185.647,4198.639,4122.668,4103.839,4121.318,4043.607,4060.439,4166.038,4123.648,4163.275,4151.948,4155.715,4235.718,4247.887,4173.021,4178.856,4201.142,4133.454,4064.922,4038.134,4033.888,3986.138,4033.976,4081.501,4125.759,4192.198,4191.366,4177.171,4231.199,4184.353,4168.198,4221.804,4223.625,4204.194,4280.707,4315.857,4344.896,4371.453,4370.548,4333.007,4346.446,4343.269,4422.949,4426.692,4404.065,4410.608,4469.786,4477.130,4472.430,4472.469,4439.273,4414.919,4419.003,4429.680,4455.741,4502.290,4489.486,4468.343,4470.398,4409.889,4451.293,4420.355,4449.290,4449.813,4482.841,4543.136,4559.470,4555.548,4568.921,4616.996,4622.937,4610.871,4599.434,4590.118,4598.735,4600.104,4577.902,4560.526,4574.430,4528.323,4489.062,4482.849,4488.966,4488.523,4542.158,4518.871,4511.003,4473.379,4508.347,4490.860,4490.051,4454.236,4488.116,4477.391,4528.843,4568.899,4578.428,4589.819,4592.012,4586.140,4581.764,4585.111,4598.343,4620.054,4641.832,4655.997,4627.593,4563.430,4510.358,4468.867,4478.241,4463.100,4484.239,4562.274,4575.265,4572.941,4638.520,4411.078,4309.570,4385.687,4482.888,4534.751,4554.443,4556.200,4514.275,4501.931,4510.923,4561.391,4599.575,4639.476,4649.800,4674.130,4666.843,4676.147,4661.901,4685.738,4680.521,4684.914,4676.638,4682.351,4683.614,4687.317,4726.337,4715.030,4684.613,4676.821,4689.567,4714.333,4723.478,4747.206,4745.106,4770.025,4771.234,4780.719,4757.771,4760.637,4775.355,4761.996,4764.174,4780.646,4760.598,4750.140,4746.878,4746.120,4741.167,4730.265,4741.579,4772.163,4779.869,4803.435,4808.388,4800.305,4699.953,4721.610,4664.710,4658.532,4692.795,4669.348,4688.211,4688.702,4739.674,4791.876,4762.017,4721.356,4735.459,4755.111,4739.050,4755.392,4747.807,4734.192,4744.197,4736.898,4720.426,4739.421,4687.166,4674.214,4657.999,4669.291,4653.163,4689.722,4705.567,4698.591,4690.667,4704.833,4690.992,4687.496,4673.370,4663.386,4663.361,4644.191,4613.742,4598.596,4579.883,4650.248,4668.163,4681.339,4695.671,4683.828,4671.858,4698.741,4689.928,4713.819,4687.562,4723.952,4731.221,4722.065,4732.253,4753.222,4731.874,4739.153,4730.416,4721.039,4721.888,4747.487,4774.417,4834.274,4844.611,4864.467,4864.941,4903.365,4875.088,4849.763,4850.451,4861.904,4869.434,4865.976,4860.068,4863.908,4862.066,4867.835,4840.965,4848.327,4843.607,4848.788,4862.390,4907.025,4930.561,4933.027,4916.005,4923.516,4919.671,4934.307,4947.568,4935.220,4932.739,4940.917,4914.306,4932.891,4929.481,4954.888,4997.074,4991.413,4990.590,4959.539,4960.508,4963.695,4968.921,4997.896,4977.750,4975.353,4989.758,5004.907,5024.871,5049.444,5050.830,5078.659,5088.445,5088.376,5089.305,5106.766,5105.532,5115.326,5103.416,5105.924,5098.130,5147.671,5127.893,5128.400,5119.416,5105.399,5089.938,5093.745,5121.506,5133.750,5114.329,5145.560,5174.326,5171.794,5164.985,5126.002,5115.669,5122.297,5124.822,5123.123,5161.301,5159.566,5169.281,5152.435,5139.465,5142.718,5131.842,5134.998,5132.041,5136.509,5139.939,5126.357,5099.139,5096.789,5135.329,5111.256,5105.351,5137.914,5125.372,5208.087,5237.291,5238.654,5236.252,5228.726,5240.506,5251.587,5243.748,5254.006,5283.080,5286.163,5275.640,5283.740,5272.630,5278.003,5303.312,5317.787,5252.730,5249.522,5288.260,5317.286,5322.422,5325.898,5345.259,5339.038,5337.809,5333.577,5339.337,5372.073,5406.023,5396.612,5380.879,5384.228,5376.874,5373.003,5361.907,5390.616,5395.905,5357.298,5376.115,5413.379,5374.395,5367.602,5372.046,5381.789,5388.785,5361.243,5402.001,5368.585,5359.880,5371.734,5367.084,5371.276,5340.568,5352.283,5363.271,5359.280,5407.570,5419.063,5450.261,5451.756,5454.809,5479.932,5493.380,5480.696,5469.932,5486.063,5489.749,5494.784,5485.951,5488.155,5514.271,5514.600,5511.190,5508.722,5519.964,5506.392,5492.858,5435.253,5428.486,5470.319,5461.491,5476.129,5427.088,5410.762,5415.958,5452.567,5444.438,5437.730,5451.781,5456.744,5453.825,5461.470,5495.883,5513.163,5506.358,5482.071,5494.840,5511.249,5511.221,5560.259,5578.154,5573.927,5565.537,5577.916,5586.224,5601.749,5609.161,5585.885,5597.904,5582.668,5566.505,5583.170,5596.153,5619.234,5630.922,5644.948,5648.790,5664.091,5658.907,5656.373,5680.144,5688.659,5686.688,5698.995,5704.327,5697.242,5705.985,5714.276,5720.907,5705.484,5709.266,5687.174,5693.502,5718.679,5718.898,5725.429,5737.748,5744.033,5750.529,5754.478,5754.568,5765.678,5743.572,5738.498,5726.548,5716.383,5686.407,5729.420,5722.125,5729.553,5761.862,5770.287,5779.757,5797.498,5787.147,5817.638,5817.088,5849.485,5827.099,5828.915,5811.304,5796.131,5811.739,5839.851,5861.813,5868.207,5870.918,5852.251,5874.897,5927.186,5905.773,5903.597,5918.649,5915.343,5916.333,5914.671,5926.430,5938.055,5928.591,5928.654,5964.195,5991.295,6040.050,6079.084,6082.959,6094.559,6095.998,6122.974,6161.136,6185.497,6169.898,6202.461,6193.801,6223.968,6262.519,6288.113,6294.585,6300.457,6341.535,6300.258,6243.908,6241.621,6240.563,6125.117,5933.592,5920.369,5926.727,5768.989,5786.354,5857.021,5870.688,5942.953,6015.681,6035.595,6030.078,6002.888,5980.878,5978.947,6046.205,6099.818,6046.441,5983.047,5904.945,5904.882,5952.255,5984.690,5979.895,6007.635,6075.760,6089.783,6062.679,6034.973,6032.669,6035.188,5968.578,5970.101,5965.684,5863.847,5761.304,5853.530,5815.391,5798.046,5848.908,5852.638,5772.586,5801.792,5837.565,5893.294,5815.519,5840.144,5922.262,5901.163,5925.330,5920.255,5951.975,5999.250,6020.080,5998.743,5953.239,5946.422,5902.400,5889.723,5935.230,5946.230,5919.891,5912.245,5892.470,5878.648,5930.895,5952.974,5948.092,5990.555,6031.918,6057.474,6070.040,6024.900,6034.186,6043.153,6030.795,6059.843,6054.835,6038.379,6024.045,6004.695,5994.928,5927.368,5977.275,5956.988,6003.658,6039.906,6033.139,6082.744,6086.253,6086.924,6105.601,6109.044,6094.600,6100.891,6078.741,6055.151,6014.426,6032.478,5999.319,6024.961,5941.485,5949.519,5915.692,5926.243,5954.146,5933.680,5933.650,5934.038,5974.616,6024.820,6075.243,6088.782,6035.843,6074.778,6085.445,6080.417,6095.727,6107.400,6086.559,6099.013,6099.910,6133.235,6163.832,6164.625,6148.061,6126.075,6140.115,6129.489,6124.918,6147.562,6153.513,6180.689,6178.877,6174.561,6107.310,6072.038,6100.723,6040.005,6085.449,6105.911,6126.621,6145.650,6157.820,6139.015,6174.502,6227.265,6234.719,6258.706,6233.038,6216.086,6210.251,6180.317,6151.717,6128.356,6110.270,6124.776,6139.430,6153.864,6183.385,6194.967,6177.727,6211.493,6227.268,6278.788,6291.275,6271.441,6275.217,6264.962,6264.013,6250.698,6262.762,6249.776,6249.808,6198.697,6158.648,6136.257,6122.524,5981.288,5855.382,5908.578,5884.822,5988.263,5983.501,5912.184,5906.185,5880.765,5824.906,5695.410,5746.045,5676.243,5658.579,5720.477,5791.723,5846.304,5834.411,5845.900,5874.677,5971.545,5967.865,5913.007,5814.523,5808.951,5777.105,5810.654,5826.514,5763.188,5669.638,5692.352,5690.887,5665.411,5734.863,5737.603,5823.033,5838.418,5857.516,5930.032,5787.669,5763.986,5713.873,5640.837,5605.259,5610.614,5671.580,5667.930,5576.769,5495.953,5478.768,5434.644,5348.917,5268.945,5177.200,5315.022,5349.148,5374.159,5412.122,5404.223,5324.486,5471.032,5515.793,5561.917,5606.424,5626.484,5624.983,5599.444,5643.987,5652.354,5678.924,5751.280,5751.487,5688.519,5692.424,5701.385,5755.019,5718.575,5719.833,5781.749,5833.217,5836.583,5860.258,5899.389,5887.448,5829.805,5812.220,5815.306,5883.213,5905.877,5892.961,5947.893,5965.316,5975.002,5997.789,5981.167,6008.896,6023.286,6023.310,6025.071,6008.621,6039.195,6022.832,6014.591,5989.411,5942.563,5913.212,5981.103,6006.506,6042.156,6045.383,6081.455,6108.114,6115.580,6091.522,6138.002,6042.848,6020.704,6065.677,6045.833,6050.238,6087.541,6157.190,6157.164,6189.884,6190.556,6211.532,6220.536,6193.527,6207.841,6207.339,6241.904,6247.972,6253.694,6247.817,6246.012,6246.455,6250.061,6287.899,6271.972,6262.843,6287.860,6293.970,6303.401,6278.420,6253.983,6302.736,6271.944,6182.213,6172.082,6138.130,6159.579,6044.866,6081.333,6115.831,6163.882,6136.862,6103.998,6142.722,6125.840,6056.233,6078.763,6083.220,6048.870,5992.056,5997.772,5939.689,5936.417,6031.296,6084.429,6109.703,6175.928,6201.080,6213.716,6198.309,6206.855,6189.787,6189.587,6248.147,6279.330,6342.938,6328.012,6328.213,6286.332,6271.536,6296.298,6331.084,6371.520,6389.976,6433.728,6439.086,6411.479,6379.743,6377.824,6399.675,6411.952,6433.441,6438.332,6420.237,6390.763,6392.379,6381.486,6390.593,6425.287,6449.261,6417.960,6443.666,6434.413,6408.317,6362.444,6320.940,6253.766,6100.893,6135.653,6149.851,6248.116,6215.003,6163.954,6213.237,6074.133,6065.993,6141.264,6209.488,6174.071,6220.761,6210.083,6102.290,6133.537,6132.682,6153.515,6215.905,6232.303,6226.825,6199.097,6266.048,6338.981,6352.666,6351.553,6354.765,6398.692,6420.783,6433.258,6404.402,6421.653,6419.607,6430.502,6409.851,6398.894,6365.115,6372.378,6369.454,6351.612,6364.933,6302.159,6194.123,6224.015,6289.644,6283.840,6203.083,6243.380,6280.606,6366.165,6354.365,6416.706,6413.207,6432.695,6413.371,6454.543,6439.866,6451.786,6473.403,6494.276,6519.562,6522.678,6537.389,6526.904,6581.340,6608.869,6602.564,6608.961,6626.208,6633.054,6626.330,6637.461,6632.597,6625.559,6677.306,6686.268,6683.839,6655.334,6642.486,6652.849,6702.292,6714.504,6738.016,6735.890,6708.680,6662.536,6623.751,6660.287,6670.355,6722.637,6711.733,6703.372,6719.081,6761.562,6792.480,6844.472,6842.177,6832.712,6854.581,6881.729,6884.298,6888.118,6912.938,6927.427,6894.184,6909.660,6961.251,6924.025,6928.356,6922.604,6935.890,6974.677,6968.134,6999.288,7000.342,7010.897,7052.536,7079.987,7078.778,7062.013,7064.866,7053.107,7021.584,6906.625,6954.845,6957.837,6954.057,6867.603,6893.858,6987.247,7050.845,7085.526,7051.803,7076.754,7100.851,7141.143,7128.393,7133.226,7131.274,7104.472,7133.990,7102.373,7051.480,6840.685,6660.772,6629.232,6392.674,6287.117,6496.587,6400.927,6588.023,6440.969,6314.628,5862.356,6029.166,5794.766,5220.980,5530.735,5005.156,5211.462,4944.958,4981.854,4854.303,4710.780,5124.261,5251.880,5515.939,5373.875,5507.080,5455.063,5244.805,5308.507,5232.131,5540.304,5580.410,5713.853,5804.275,5808.056,5763.334,5911.101,5773.998,5786.442,5943.246,5874.101,5692.447,5798.823,5817.275,5856.720,5960.441,5963.010,6103.314,6050.997,5909.753,5889.392,5949.909,5919.111,5975.631,6081.664,6078.399,6000.574,5895.943,5901.324,5927.186,6106.751,6084.747,6175.827,6123.533,6117.666,6147.005,6242.870,6309.743,6344.020,6343.310,6390.871,6459.454,6564.822,6553.525,6696.194,6759.274,6721.896,6698.595,6365.653,6396.202,6417.088,6557.926,6554.468,6548.070,6529.276,6555.938,6609.950,6444.680,6484.170,6377.243,6435.908,6511.097,6539.444,6588.830,6585.251,6697.450,6635.367,6663.464,6629.543,6685.366,6668.102,6718.740,6801.992,6772.573,6787.834,6844.348,6869.834,6888.322,6830.528,6781.781,6841.143,6806.506,6865.150,6819.277,6822.597,6879.235,6917.000,6973.585,6986.293,6975.410,6990.055,6985.909,7082.080,7079.139,7062.163,7091.235,7107.752,7093.949,7078.829,7087.902,7162.361,7180.072,7248.695,7239.306,7281.769,7278.444,7313.537,7393.548,7192.204,7114.624,7139.886,6981.081,7098.029,7021.314,7022.474,7107.218,7141.722,7128.624,7069.602,7023.556,6909.577,6950.835,6838.884,6823.466,6902.629,7019.964,7004.558,7027.344,7066.009,7013.771,7136.247,7074.280,7153.994,7208.482,7269.131,7358.700,7317.904,7286.849,7234.525,7247.082,7181.120,7195.384,7180.987,7190.794,7219.402,7099.255,7074.287,6851.500,6887.094,6811.780,6898.657,7038.756,7179.433,7328.643,7339.426,7435.157,7450.705,7513.687,7458.689,7518.606,7614.482,7605.912,7561.733,7570.830,7552.231,7573.101,7693.220,7700.732,7702.493,7736.576,7682.745,7760.374,7775.396,7798.083,7852.990,7841.875,7860.409,7817.460,7820.933,7801.141,7794.463,7866.855,7899.789,7960.246,7935.059,7871.718,7866.351,7891.298,7914.424,7967.290,7983.967,7996.331,8008.468,7949.446,7991.971,8037.680,8141.861,8199.244,8129.984,8142.943,8159.298,8154.507,8085.247,8081.521,8138.257,8224.672,8237.129,8207.683,8211.412,8203.235,8025.451,8074.045,7928.875,8036.698,8138.245,8156.065,8215.575,8263.097,8330.046,8338.605,8345.048,8365.281,8400.392,8432.723,8429.156,8393.433,8355.455,8366.288,8311.920,8315.436,8354.967,8230.907,8132.047,8301.846,8255.842,8177.010,8075.357,8141.463,8123.857,8241.441,8282.093,8374.506,8378.887,8422.793,8428.459,8437.817,8365.987,8348.075,8388.463,8323.875,8262.240,8286.709,8406.004,8396.307,8382.336,8402.617,8488.285,8493.369,8586.852,8597.210,8612.038,8656.560,8700.302,8691.867,8724.795,8711.424,8796.229,8831.216,8804.801,8720.890,8772.514,8746.117,8812.726,8842.884,8830.896,8831.058,8866.101,8793.676,8823.501,8745.514,8777.033,8836.444,8919.991,8867.720,8768.321,8614.613,8663.609,8802.255,8789.319,8773.733,8721.249,8816.458,8819.468,8890.475,8888.263,8900.370,8904.347,8931.092,8920.353,8939.298,8951.934,8913.737,8987.271,8998.295,9001.011,8985.664,9018.421,9034.176,9056.818,9049.347,9023.062,8987.425,8860.680,8944.804,9001.905,8992.597,9039.661,9074.543,9075.333,9074.535,9053.309,9086.626,9140.875,9152.297,9130.918,9152.064,9071.007,9163.764,9209.227,9182.255,9180.713,9135.646,9079.013,8931.895,9022.997,9115.646,9145.698,9223.570,9247.770,9213.156,9215.067,9276.753,9215.480,9239.121,9285.379,9265.439,9315.478,9303.540,9300.871,9308.211,9339.826,9360.735,9389.474,9380.476,9315.486,9249.894,9207.029,9257.765,9356.022,9384.560,9396.276,9350.113,9420.611,9460.137,9444.838,9476.285,9508.612,9516.374,9533.923,9502.016,9466.215,9433.819,9392.009,9404.181,9375.144,9410.312,9395.100,9317.020,9165.554,9175.653,9249.910,9346.654,9338.072,9314.270,9125.768,9118.701,9052.683,9101.626,9012.466,9083.109,9082.397,9175.773,9167.415,9130.750,9110.127,9153.298,9291.142,9366.096,9380.076,9446.974,9481.671,9496.025,9492.612,9519.085,9541.857,9495.629,9578.585,9565.432,9613.140,9628.698,9678.990,9716.800,9740.510,9757.258,9727.912,9649.892,9651.675,9718.143,9726.677,9743.578,9711.524,9728.354,9708.985,9654.314,9640.552,9644.509,9657.921,9445.555,9517.605,9355.825,9314.534,9385.485,9311.125,9404.378,9606.190,9643.243,9571.763,9619.388,9540.343,9468.906,9580.812,9557.638,9474.750,9356.358,9513.052,9608.015,9676.171,9678.565,9771.818,9776.598,9791.327,9771.508,9755.694,9785.231,9805.748,9669.990,9614.788,9594.403,9559.987,9642.276,9705.279,9608.967,9581.887,9591.160,9434.253,9357.040,9308.043,9135.488,9076.634,8986.113,8998.890,8925.594,9078.007,9239.512,9322.800,9405.064,9219.987,9247.914,9241.892,9295.394,9440.305,9329.275,9182.436,9099.245,9229.113,9248.263,9094.679,9018.242,8995.107,8915.954,8794.159,8786.726,9011.986,9005.833,8863.334,8964.874,8899.829,8761.279,8528.649,8463.454,8718.645,8689.932,8594.976,8554.968,8674.371,8888.154,9026.090,9114.824,9113.534,9205.465,9122.373,9210.165,9233.977,9272.140,9421.171,9384.405,9252.984,9265.203,9339.048,9242.835,9130.459,9137.531,9132.716,9013.002,8975.090,9052.576,8978.711,8975.774,8959.039,9052.847,9083.060,8978.657,8744.057,8730.080,8528.473,8518.568,8683.539,8484.307,8488.024,8529.446,8695.397,8452.812,8387.903,8114.470,8131.253,8057.208,8020.553,8208.677,8187.054,8348.341,8100.785,8061.645,8075.135,8217.851,8152.170,8212.122,8345.948,8525.008,8562.455,8490.733,8429.150,8562.560,8456.700,8489.650,8537.161,8470.350,8283.955,8040.190,7746.057,7689.058,7782.970,7582.307,7567.955,7596.155,7743.829,7725.320,7761.549,7976.093,7987.604,7869.029,7840.681,7755.249,7797.238,7821.593,7780.094,7802.268,7927.525,7932.658,7837.398,7782.172,7753.284,7681.388,7826.798,7824.066,8009.060,8056.651,8117.644,8078.024,8079.430,7998.008,8152.233,8258.741,8370.987,8379.847,8315.990,8398.249,8418.826,8390.128,8410.749,8364.962,8547.324,8546.516,8646.011,8670.596,8676.794,8612.210,8624.813,8506.834,8350.075,8332.695,8350.105,8449.666,8224.445,8145.875,8075.078,8021.014,7971.570,7956.589,7930.911,7895.460,7984.691,8052.990,8196.167,8306.500,8002.615,7998.666,7920.423,7851.142,7885.659,7804.659,7690.934,7607.914,7452.596,7360.739,7347.083,7454.138,7344.573,7275.382,7432.325,7682.885,7647.628,7582.487,7396.999,7329.385,7270.318,7244.105,7379.320,7272.235,7441.123,7520.832,7464.057,7433.826,7535.404,7629.198,7765.473,7759.946,7723.082,7838.178,7797.848,7793.862,7651.248,7554.152,7675.377,7756.765,7821.927,7684.596,8073.600,8188.694,8128.129,8203.135,8140.805,8095.557,8146.524,8090.866,8198.329,8265.723,8292.644,8285.669,8177.756,8162.261,8340.036,8402.938,8378.627,8266.144,8161.714,8138.195,8187.627,8165.069,8228.587,8326.766,8296.390,8087.089,7992.597,7930.984,7952.520,8057.492,7960.630,7991.327,7992.222,7978.598,7899.523,8014.155,7985.857,8000.080,7980.870,8052.994,7962.738,8131.836,8173.893,8198.545,8289.329,8349.243,8397.352,8397.898,8399.654,8329.344,8243.266,8366.385,8457.445,8460.615,8463.190,8527.582,8552.985,8471.969,8550.905,8627.510,8744.050,8661.129,8578.125,8660.834,8604.084,8569.623,8550.524,8631.365,8639.748,8649.711,8574.537,8542.293,8552.824,8421.170,8392.455,8413.874,8320.342,8366.563,8345.354,8321.782,8363.183,8481.326,8502.146,8379.782,8382.067,8280.221,8176.676,8134.419,8230.009,8119.729,8243.456,8176.573,8244.720,8348.345,8269.747,8303.594,8290.978,8321.673,8329.063,8435.998,8505.144,8603.223,8641.182,8620.463,8582.309,8602.583,8603.445,8590.854,8624.384,8620.255,8725.218,8715.013,8719.733,8746.494,8738.795,8706.008,8707.876,8721.649,8607.536,8577.882,8690.028,8754.033,8746.846,8653.211,8632.774,8581.695,8714.854,8732.423,8696.388,8719.463,8697.989,8682.940,8715.666,8663.258,8721.634,8782.860,8791.347,8802.286,8713.746,8627.145,8652.345,8748.858,8756.694,8743.196,8666.638,8764.078,8893.625,8884.223,8908.339,8873.318,8922.339,8933.403,8996.637,9070.308,9102.127,9186.275,9173.710,9151.479,9103.281,9067.203,9076.029,8989.263,8966.441,9047.848,9059.392,9088.826,9190.777,9207.703,9206.959,9173.673,9061.878,9061.621,9082.904,9151.433,9257.119,9358.644,9353.304,9365.804,9429.559,9446.548,9390.282,9387.224,9414.668,9439.573,9437.536,9406.197,9479.348,9499.521,9451.109,9302.275,9270.835,9260.160,9313.904,9265.397,9229.229,9258.014,9221.401,9234.979,9146.826,9077.877,9005.397,8992.469,9032.989,9029.009,9117.647,9020.651,9038.995,9112.821,9236.757,9287.604,9272.618,9283.743,9286.095,9234.501,9179.928,9154.268,9159.848,9224.189,9182.208,9185.392,9267.298,9200.024,9185.153,9169.768,9124.454,8968.332,8949.114,8949.005,8840.659,8828.341,8880.555,8872.612,8827.670,8706.281,8741.237,8759.545,8849.771,8891.842,8982.727,9019.044,8971.629,8903.504,8975.834,8986.016,8871.764,8786.958,8683.774,8669.876,8717.304,8624.726,8527.910,8500.203,8580.258,8615.166,8705.140,8876.819,8974.287,8992.130,8985.862,8989.242,8961.558,9030.131,9042.633,9227.065,9264.724,9260.120,9298.407,9360.757,9345.334,9360.797,9373.667,9393.955,9371.626,9385.941,9391.047,9422.856,9476.420,9432.762,9422.544,9415.777,9467.975,9498.567,9527.289,9562.338,9666.896,9754.993,9746.661,9762.970,9831.940,9734.154,9807.141,9829.508,9830.238,9861.944,9903.708,9912.908,9885.464,9885.691,9811.843,9719.292,9715.070,9735.132,9838.396,9818.551,9863.960,9851.187,9885.854,9876.018,9816.539,9736.775,9808.294,9908.922,9952.061,9957.803,9997.491,10025.143,10037.358,10100.254,10102.050,10004.094,10071.379,10136.678,10092.797,10127.223,10191.449,10195.456,10244.132,10242.898,10116.341,10196.835,10273.904,10260.267,10265.708,10226.889,10220.821,10402.089,10415.301,10389.861,10409.105,10381.236,10428.244,10512.664,10507.341,10429.256,10491.778,10602.796,10568.482,10527.775,10622.383,10619.423,10579.427,10518.897,10574.222,10613.984,10682.402,10745.102,10725.741,10701.142,10682.790,10754.990,10760.287,10722.699,10656.232,10675.945,10603.736,10654.201,10674.232,10686.016,10584.777,10621.376,10497.263,10392.993,10329.178,10278.999,10276.382,10200.140,10285.132,10412.570,10415.540,10364.077,10454.503,10492.983,10363.552,10328.208,10416.480,10541.326,10635.248,10669.334,10650.636,10703.332,10732.129,10737.442,10782.647,10900.394,10892.419,10905.161,10920.956,10930.614,10885.982,10826.293,10875.979,10895.156,10884.853,10776.853,10747.491,10826.306,10853.027,10854.328,10947.970,10969.243,10935.127,10946.940,10939.817,11054.309,11017.343,10979.837,11031.563,11077.218,11080.537,11068.262,11031.220,11035.336,11072.400,11070.777,11077.372,11072.593,11128.056,11206.110,11228.678,11265.861,11271.686,11261.250,11369.948,11346.692,11413.947,11421.020,11463.113,11352.461,11264.691,11182.990,11280.810,11268.869,11064.722,10985.896,11090.992,11098.813,11060.742,11241.266,11073.386,10855.625,10522.156,10642.448,10615.596,10791.245,10854.855,10851.466,11026.576,11091.374,11238.906,11290.538,11398.993,11390.946,11438.700,11366.532,11498.798,11474.676,11492.423,11441.910,11445.787,11538.378,11532.733,11332.123,11284.275,11245.322,11091.873,11180.424,11198.373,11282.459,11386.278,11461.844,11481.596,11481.014,11447.029,11636.275,11596.365,11632.793,11676.992,11656.952,11735.266,11760.983,11749.691,11656.738,11633.343,11601.779,11673.379,11611.388,11660.755,11729.959,11713.969,11781.002,11849.098,11770.499,11792.349,11800.626,11848.954,11808.902,11780.732,11674.345,11704.889,11700.641,11734.827,11738.873,11702.758,11516.614,11557.630,11545.644,11662.063,11849.081,11961.209,11974.995,11988.156,11919.137,11900.168,11856.198,11724.030,11766.873,11816.240,11797.016,11863.744,11903.443,11953.582,11980.928,11967.918,11978.406,12045.072,12069.991,12109.476,12171.643,12168.155,12189.751,12135.602,12069.640,12150.800,12099.304,12072.287,12103.920,12056.983,11767.181,11690.449,11776.714,11846.348,11950.018,11953.034,11880.490,11765.523,11731.170,11715.330,11825.987,11907.620,11814.153,11810.102,11809.998,11640.779,11630.327,11654.246,11851.118,11858.941,11957.168,11990.761,12082.320,12148.601,12205.621,12208.141,12070.854,12143.417,12118.751,12198.248,12145.147,12018.736,12113.214,12183.841,12232.561,12134.176,12202.499,12205.385,12184.616,12331.025,12347.832,12358.301,12386.457,12374.713,12334.802,12174.973,12128.058,12084.452,12105.989,11936.581,12057.736,11947.472,11803.176,11971.482,11825.984,11856.829,11576.314,11487.571,11550.832,11414.263,11625.052,11725.496,11647.639,11740.764,11715.210,11704.420,11850.142,11885.713,11766.571,11727.331,11539.099,11520.919,11587.606,11648.404,11217.756,10563.245,10375.238,10335.090,11003.800,10870.072,11027.750,11164.113,11192.762,11020.277,11038.537,10880.966,11086.106,11245.180,11431.430,11503.327,11535.600,11595.937,11623.306,11649.654,11844.179,11791.391,11727.455,11760.838,11795.392,11809.502,12072.356,12166.674,12191.910,12231.746,12300.526,12338.854,12326.085,12198.575,12164.313,12113.869,12150.064,12326.698,12252.915,12306.927,12311.311,12369.270,12411.308,12441.741,12397.078,12477.714,12492.618,12543.212,12525.548,12574.147,12436.191,12549.395,12440.567,12433.345,12394.479,12377.603,12454.994,12620.887,12596.334,12706.358,12786.111,12842.581,12827.338,12874.565,12961.046,12956.023,12872.253,12856.027,12938.656,12965.523,12910.905,12925.808,12861.649,12876.256,12955.236,12972.161,12993.241,13002.477,13131.052,13160.177,13170.828,13144.328,13092.287,13069.504,13007.899,12837.923,12997.822,12968.030,13063.678,13080.258,13168.079,13129.834,13268.639,13337.533,13327.701,13331.112,13319.423,13270.021,13250.976,13198.733,13393.037,13333.623,13344.119,13355.737,13417.691,13347.216,13345.836,13238.552,13288.511,13386.424,13394.364,13436.899,13465.052,13499.156,13600.206,13592.266,13659.926,13649.265,13633.746,13680.207,13726.751,13776.568,13726.812,13674.735,13594.964,13671.981,13716.845,13776.274,13828.045,13843.770,13875.848,13923.129,13858.093,13924.316,13878.664,13559.610,13713.504,13687.906,13766.932,13734.689,13748.653,13906.879,13893.277,13833.847,13900.176,13989.158,14141.134,14164.966,14161.077,14022.561,14052.148,14066.932,13915.141,13945.244,13840.593,13845.612,14037.881,14101.309,14136.070,13952.759,13910.141,13788.626,13636.205,13657.157,13508.250,13590.312,13762.637,13886.007,14008.079,14017.357,14028.480,14052.802,14106.690,14158.586,14160.302,14117.335,14101.820,14180.858,14243.748,14127.324,14131.149,14080.737,13950.310,14047.826,14148.627,14241.547,14309.987,14342.811,14344.071,14340.395,14303.295,14294.115,14205.752,14206.379,14253.600,14358.535,14451.278,14398.804,14379.847,14466.010,14503.264,14492.800,14460.197,14490.381,14481.707,14463.223,14235.134,14335.905,14433.691,14450.780,14544.951,14629.173,14603.678,14583.074,14523.663,14559.340,14510.212,14452.498,14282.489,14529.418,14664.294,14663.800,14658.980,14489.266,14471.285,14466.190,14467.037,14575.418,14535.734,14622.045,14501.017,14575.617,14697.121,14658.285,14552.931,14310.328,14408.957,14316.836,14153.800,14189.025,14256.012,14218.152,14017.544,13912.072,14041.378,14098.968 ];
+
+function cria(ndduwi, tec1, tec2, alavanca, cf) {
+	const 	diasporano = 260,
+			tec1d = tec1 / diasporano,
+			tec2d = tec2 / diasporano,
+			cfd = cf / diasporano;
+	const uetw = [100], lvwc = [100];
+	for (let i = 1; i < ndduwi.length; i++) {
+		const 	Δ = ndduwi[i] / ndduwi[i - 1] - 1,
+				Δuetw = Δ - tec1d,
+				Δlvwc = Δ * alavanca - tec2d - cfd;
+		uetw.push(uetw[i - 1] * (1 + Δuetw));
+		lvwc.push(lvwc[i - 1] * (1 + Δlvwc));
+	}
+	return { uetw, lvwc };
+}
+
+function rola(series, janela) {
+	const	diasporano = 260,
+			resultados = [];
+	for (let i = 0; i + janela < series.length; i++) {
+		const inicio = series[i];
+		const fim = series[i + janela];
+		const anualiza = Math.pow(fim / inicio, diasporano / janela) - 1;
+		resultados.push(anualiza);
+	}
+	return resultados;
+}
+
+function estatisticas(arr) {
+	arr.sort((a, b) => a - b);
+	const 	media = arr.reduce((a, b) => a + b, 0) / arr.length,
+			mediana = arr[Math.floor(arr.length / 2)],
+			min = arr[0],
+			max = arr[arr.length - 1],
+			positivos = arr.filter(x => x > 0).length / arr.length;
+	return { media, mediana, min, max, positivos };
+}
+
+function compara(a, b) {
+	let melhor = 0;
+	for (let i = 0; i < a.length; i++) {
+		if (a[i] > b[i]) melhor++;
+	}
+	return melhor / a.length;
+}
+
+function analiza(ndduwi, dias, tec1, tec2, alavanca, cf) {
+	const	{ uetw, lvwc } = cria(ndduwi, tec1, tec2, alavanca, cf),
+			ru = rola(uetw, dias),
+			rl = rola(lvwc, dias),
+			estatisticasu = estatisticas(ru),
+			estatisticasl = estatisticas(rl),
+			melhoru = compara(ru, rl),
+			melhorl = 1 - melhoru;
+	return { dias, uetw: estatisticasu, lvwc: estatisticasl, melhoru, melhorl };
+}
+
+function falavanca(){
+	const 	tecuetw = num('tecuetw', 2)/100,
+			teclvwc = num('teclvwc', 2)/100,
+			alavancagem = 2,
+			cflvwc = num('cflvwc', 2)/100,
+			duracao = +document.getElementById('duracao').value;
+	esc('duracaodias', duracao, 0);
+	esc('numperiodos', ndduwi.length - duracao, 0);
+	const resultados = analiza(ndduwi, duracao, tecuetw, teclvwc, alavancagem, cflvwc);
+	esc('uetwmedia', resultados.uetw.media * 100, 2);
+	esc('lvwcmedia', resultados.lvwc.media * 100, 2);
+	esc('uetwmediana', resultados.uetw.mediana * 100, 2);
+	esc('lvwcmediana', resultados.lvwc.mediana * 100, 2);
+	esc('uetwmax', resultados.uetw.max * 100, 2);
+	esc('lvwcmax', resultados.lvwc.max * 100, 2);
+	esc('uetwmin', resultados.uetw.min * 100, 2);
+	esc('lvwcmin', resultados.lvwc.min * 100, 2);
+	esc('uetwpositivos', resultados.uetw.positivos * 100, 0);
+	esc('lvwcpositivos', resultados.lvwc.positivos * 100, 0);
+	esc('uetwmelhor', resultados.melhoru * 100, 0);
+	esc('lvwcmelhor', resultados.melhorl * 100, 0);
+}
+
+document.getElementById('ialavanca').addEventListener('input', falavanca);
+window.addEventListener('load', falavanca);
+</script>
+</article>
+
+<article id="r">
+<h1>
+<span>Respondido</span>
+</h1>
+
+
+<blockquote><p>“Intuitivamente, sei que os fundos de acumulação são fiscalmente mais eficientes e poupam-me trabalho todos os anos na declaração de IRS. Mas quão melhor são na prática? É possível estimar quanto se perde ao optar por fundos distributivos?”</blockquote>
+
+<p>Não sou fiscalista e este tema é complexo; leia esta resposta com desconfiança. Os cálculos baseiam-se na minha interpretação das leis.
+
+<p>Ao investirem o património dos subscritores, os gestores de fundos de investimento detêm ações, obrigações, depósitos e outras aplicações financeiras. Essas coisas podem conferir direito a rendimentos: dividendos, cupões, juros. Que fazer a esses dinheiros novos? Os gestores podem reinvesti-los em novas ações, obrigações, depósitos e outras aplicações — os chamados “fundos de acumulação” — ou podem distribuí-los periodicamente aos subscritores — os “fundos de distribuição”.
+
+<p>Na prática, muitas sociedades gestoras optam por gerir dois fundos paralelos — um de acumulação e um de distribuição —, deixando aos subscritores a decisão de qual é o melhor para as suas finanças. Teoricamente, são igualmente rentáveis, porque as carteiras são semelhantes. Na prática, a fiscalidade pode mutilar e separar os retornos.
+
+<p>Há dois tipos de tributação a aplicar aos investidores em fundos de investimento:
+
+<ol>
+<li><p><strong>Sobre os dividendos recebidos</strong>: O <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs71.aspx">artigo 71.º</a> do Código do IRS avisa que os rendimentos de capitais “estão sujeitos a retenção na fonte a título definitivo, à taxa liberatória de 28%”. Assegura, porém, que os contribuintes podem optar pelo englobamento.
+<li><p><strong>Sobre as mais-valias</strong>: O <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs72.aspx">artigo 72.º</a>  indica que a taxa de tributação autónoma a aplicar ao “saldo positivo entre as mais-valias e menos-valias” é de 28%. O artigo ressalva que esses rendimentos “podem ser englobados por opção dos respetivos titulares residentes em território português”. (O englobamento não é voluntário quando o investimento que gerou a mais-valia de um contribuinte no último escalão de IRS durou menos de um ano.)
+</ol>
+
+<p>Se o fundo for estrangeiro, a autoridade fiscal da nação de residência do produto podem também exigir uma retenção na fonte, gerando uma dupla tributação que, frequentemente, pode ser minimizada acionando um mecanismo de crédito de imposto.
+
+<p>Todos os fundos estrangeiros que recomendei no “Onde investir em 2026”, publicado em janeiro passado, são irlandeses. Geralmente, não há retenção na fonte sobre fundos na Irlanda para os investidores não residentes. Portanto, assumamos exclusivamente a retenção em Portugal.
+
+<p>Assim, é aparentemente indiferente obter ganhos via dividendos ou via mais-valias, porque a taxa de tributação é de 28%. Optando pelo englobamento também: ao englobar as mais-valias ou os dividendos, o investidor indica à autoridade fiscal que deseja que esses ganhos sejam adicionados aos restantes rendimentos (se os houver) e, conjuntamente, enquadrados e tributados num escalão de IRS.
+
+<p>A pergunta do leitor <strong>D.F.</strong> é pertinente: por que recomendo apenas fundos de acumulação? Porque a tributação dos dividendos é proporcional a <em>todas</em> as unidades do fundo; nos fundos de acumulação, a tributação reflete-se apenas sobre as unidades vendidas.
+
+<p>Pode ficar claro com um exemplo realista.
+
+<p>Imagine que, no final de 2020, um investidor estava interessado no fundo Vanguard LifeStrategy 60% Equity UCITS ETF (EUR): poderia escolher a versão de distribuição (<a href="https://www.ie.vanguard/products/etf/lifestrategy/9495/lifestrategy-60-equity-ucits-etf-eur-distributing">V60D</a>) ou de acumulação (<a href="https://www.ie.vanguard/products/etf/lifestrategy/9494/lifestrategy-60-equity-ucits-etf-eur-accumulating">V60A</a>). Queria investir 500 mil euros para sacar, pelo menos, 3000 euros por semestre.
+
+<p>Cinco anos e três meses depois, parece que o resultado foi equivalente: ambos renderam 6,60% por ano, segundo a sociedade gestora.
+
+<p>Contabilizemos a tributação. Assumamos que o investidor não quer englobar, porque está num escalão elevado de IRS.
+
+<p>Se tivesse optando pelo V60D, teria recebido 6250 euros de dividendos brutos no dia 30 de junho de 2021, o que, após a retenção de 28% (1750 euros), lhe daria 4500 euros. Para conseguir o mesmo encaixe líquido com o V60A, teria de vender 0,8% das unidades de participação, que tinham valorizado 8% no semestre. Receberia 4598 euros: 98 euros adicionais para pagar a tributação das mais-valias no ano seguinte: 28% sobre 8% sobre 0,8% da carteira de 500 mil euros.
+
+<p>Percebe-se ao primeiro dividendo a desvantagem do fundo distributivo: para receber 4500 euros pagaria 1750 euros de IRS; no acumulativo, 98 euros.
+
+<p>Mais tarde, no dia 28 de dezembro de 2022, receberia do fundo de distribuição 4750 euros, o que, após a retenção, desceria para 3420 euros. Se tivesse escolhido o fundo de acumulação, teria de vender 0,69% das unidades iniciais para receber 3420 euros: nesse ano não teria de vender mais para pagar IRS, porque a cotação tinha descido desde a compra inicial. Nas menos-valias, não há tributação.
+
+<p>Eis o balanço após cinco anos e três meses:
+
+<ul>
+<li><p><strong>V60D</strong>: teria recebido 44&nbsp;562 euros em dividendos líquidos, teria pagado 17&nbsp;330 euros em IRS, a carteira valeria agora 611&nbsp;378 euros. A sua rentabilidade anual líquida seria de 5,39%.
+<li><p><strong>V60A</strong>: teria encaixado 44&nbsp;562 euros nas vendas líquidas de IRS, teria pagado 1711 euros em IRS, a carteira valeria agora 630&nbsp;286 euros. A sua rentabilidade anual líquida seria de 5,98%.
+</ul>
+
+<p>Elegendo o fundo de distribuição, o seu esforço fiscal seria dez vezes superior.
+
+<p>Adicionalmente, há três ajustamentos que reduzem a tributação das mais-valias, que não calculei no exemplo anterior:
+
+<ol>
+<li><p><strong>É possível abater as comissões de compra e de venda.</strong> “As despesas necessárias e efetivamente suportadas, inerentes à aquisição e alienação” dos fundos de investimento <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs51.aspx">são</a> acrescidas ao valor de aquisição, reduzindo a mais-valia considerada para efeitos fiscais. Não há nada equivalente para os dividendos; se pagar comissões ao intermediário financeiro para receber dividendos, não as poderá abater.
+
+<li><p><strong>A tributação pode ser apenas sobre o ganho acima da inflação.</strong> Se os fundos de investimento assumirem a forma legal de sociedade representada por ações, os valores de aquisição <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs50.aspx">são</a> multiplicados por um coeficiente de correção monetária quando o investimento durou mais de 24 meses. Esta multiplicação atualiza os preços de compra à taxa de inflação, ou seja, são apenas tributados os ganhos reais dos investimentos.
+
+<p>Em 2026, um investidor que tenha ganhado 100% no seu fundo de investimento representado por ações nos últimos 10 anos verá a sua mais-valia fiscal reduzia em 22% à conta do coeficiente de correção monetária.
+
+<li><p><strong>Há exclusão da tributação após dois anos.</strong> Genericamente, quando as mais-valias são de títulos cotados ou de fundos de investimento, <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs43.aspx">são</a> excluídos de tributação:
+
+<ul>
+<li><p>10% dos rendimentos quando resultem de ativos detidos por um período superior a 2 anos e inferior a 5 anos;
+<li><p>20% dos rendimentos quando resultem de ativos detidos por um período igual ou superior a 5 anos e inferior a 8 anos;
+<li><p>30% dos rendimentos quando resultem de ativos detidos por um período igual ou superior a 8 anos.
+</ul>
+
+</ol>
+
+<p>Conjuntamente, estes ajustamentos podem ter um efeito brutal na redução da tributação das mais-valias.
+
+<p>Além dos efeitos fiscais, privilegio a simplicidade dos fundos de acumulação: vende-se apenas quando se precisa, esticando-se ao máximo a capitalização do aforro. Fácil e eficaz. ★
+
+<aside>
+<p>Envie-me as suas dúvidas, sugestões e opiniões para <a href="mailto:davidalmas@gmail.com">davidalmas@gmail.com</a>. Todo o correio é bem-vindo.
+</aside>
+</article>
+
+<article id="visto">
+<h1>
+<span>Visto</span>
+Matemática ou finanças?
+</h1>
+
+<p>Primeiro, a matemática, sempre.
+
+<ul>
+
+<li><p><a href="https://tlim.pt/dm/20260401.html">“Sal, suor e saldo”</a>, D.M.
+<p>Conheci pessoalmente <strong>D.M.</strong> no mais recente Grémio de Finanças Pessoais, em dezembro passado. Após muitas mensagens trocadas, convenci-o a apresentar à nossa audiência o risco de sequência de retornos, um tema que investigou muito mais aprofundadamente do que eu.
+
+<p>Após mais algumas mensagens trocadas, convidei-o a escrever uma análise para o boletim <strong>tlim</strong>, mas cedo percebi que um artigo não seria suficiente. Acordei com <strong>D.M.</strong>, que deseja permanecer anónimo, uma série de textos, a publicar em <a href="https://tlim.pt/dm/">tlim.pt/dm</a> mensalmente a partir de agora.
+
+<p><strong>D.M.</strong> atingiu a independência financeira entre 2024 e 2025. Namora agora a melhor altura para a reforma antecipada. Espero que os seus pensamentos ajudem também os restantes leitores do boletim <strong>tlim</strong> que vivem situações semelhantes.
+
+<p>Neste primeiro artigo, <strong>D.M.</strong> paraleliza o crescimento do seu património financeiro ao desporto que pratica, a corrida. É, em ambos os casos, uma questão de treino.
+
+<p>(Obrigado, <strong>D.M.</strong>)
+
+<li><p><a href="https://eco.sapo.pt/2026/03/11/cmvm-repete-na-impresa-o-guiao-que-castiga-os-pequenos-investidores-ha-decadas/">“CMVM repete na Impresa o guião que castiga os pequenos investidores há décadas”</a>, <cite>Eco</cite>
+<p>O jornalista Luís Leitão ouviu as queixas de Nuno Matos, presidente da Associação de Investidores e Analistas Técnicos, sobre o tratamento pelo regulador dos pequenos acionistas no acordo entre a Impreger e a MFE no controlo da Imprensa.
+
+<p>É um dos riscos de investir diretamente na bolsa: os pequenos são acionistas de segunda linha. Luís Leitão elenca vários casos portugueses em que essa situação se confirmou: desde a Cimpor em 2012 à Lisgráfica em 2022.
+
+<li>
+<p><a href="https://www.ubs.com/global/en/wealthmanagement/insights/2026/global-investment-returns-yearbook.html">“Global Investment Returns Yearbook 2026”</a>, UBS
+<p>Na edição deste ano do “Global Investment Returns Yearbook” — a publicação em que os académicos Elroy Dimson, Paul Marsh e Mike Staunton atualizam os desempenhos de longo prazo dos principais instrumentos financeiros — aprendi duas coisas:
+
+<ol>
+<li><p>Desde 1900, as obrigações governamentais bateram as ações quando se investiu durante um cenário de baixo crescimento e de baixa inflação. A diferença foi, contudo, reduzidíssima.
+<li><p>Não houve relação entre risco geopolítico e desempenho acionista após um mês e um ano.
+</ol>
+
+<p>Portanto, se a história se repetir, mais uma guerra no cardápio global não deveria ser preocupante para quem investe na bolsa; apenas se se transformar num problema económico.
+
+<p>A atualização de Dimson, Marsh e Staunton confirma várias ideias partilhadas frequentemente no boletim <strong>tlim</strong>:
+
+<ol>
+<li><p>As ações tendem a bater as obrigações.
+<li><p>A combinação de ações e obrigações reduz o risco de perda acentuada.
+<li><p>Os mercados desenvolvidos ganharam aos mercados emergentes (8,5% por ano contra 6,9% por ano desde 1900).
+<li><p>O ouro não protege contra a inflação.
+<li><p>Os investidores portugueses estão entre os que mais ganham em diversificar internacionalmente a carteira.
+</ol>
+
+<li>
+<p><a href="https://www.casadeinvestimentos.pt/blog/artigos/algumas-coisas-de-que-tenho-quase-certeza">“Algumas Coisas de Que Tenho Quase Certeza”</a>, Morgan Housel
+
+<p>Morgan Housel, responsável pela obra <a href="https://www.presenca.pt/products/a-psicologia-do-dinheiro-1"><cite>A Psicologia do Dinheiro</cite></a>, é um dos meus autores favoritos na área financeira. Quando li este artigo, contudo, senti uma estaca a perfurar-me o coração.
+
+<p>A Casa de Investimentos traduziu Housel a negrito:
+
+<blockquote><p>“Uma regra de ouro da matemática é que 50% da população tem de estar abaixo da média.”</blockquote>
+
+<p>(Ai! Quase faleci a copiar a frase anterior.)
+
+<p>Até compreendo a <a href="https://collabfund.com/blog/a-few-things-im-pretty-sure-about-2026/">versão original</a>: em inglês, <i>average</i> pode ser interpretado como média aritmética ou como outra medida de valor central (mediana e moda, por exemplo).
+
+<p>Em português, não: média é média. Em Portugal, as crianças de 12 anos têm de distinguir entre média e mediana. Muitas vezes, a média é diferente da mediana. Veja-se, por exemplo, o <a href="https://iave.pt/wp-content/uploads/2020/04/PF-Mat92-F1-2017-Cad1.pdf#page=4">terceiro exercício</a> da Prova Final de Matemática que entregaram na primeira fase de 2017 aos alunos do 9.º ano: em nenhum caso são iguais!
+
+<p>Consultemos o saldo bancário de 6 pessoas: 1400 euros, 1400 euros, 1500 euros, 1700 euros, 2400 euros, 9000 euros. O saldo médio é de 2900 euros e <sup>5</sup>/<sub>6</sub> da população (83,3%) está abaixo dessa média, o que viola aquela falsa regra de ouro. A mediana é de 1600 euros: metade dos saldos está abaixo desse montante.
+
+<p>A Casa de Investimentos deveria traduzir Housel assim:
+
+<blockquote><p>“Uma regra de ouro da matemática é que 50% da população tem de estar abaixo da mediana.”</blockquote>
+
+<p>Por que partilho consigo a minha dor? Para voltar a aconselhar prudência quando lê, ouve e vê especialistas e “especialistas”. Duvide. Procure. Discorde. Discuta. Oponha-se.
+
+<p>Esta sugestão também se aplica, naturalmente, ao boletim <strong>tlim</strong>.
+
+<li>
+<p><a href="https://stoik.pt/podcasts/40-entrevista-fire-david-almas-do-boletim-tlim-pt">Entrevista FIRE: David Almas do boletim tlim.pt</a>, Fire Talks Portugal
+<p>Há pouco mais de cinco anos, anui ao convite do Luís Lobo Jordão de participar no seu <i>podcast</i>. Alguns leitores do boletim <strong>tlim</strong> pediram-me agora para fazer o balanço da aposta que fiz com o Luís; tinha a duração de cinco anos.
+
+<p>Na verdade, não houve aposta: não chegámos a acordar nos termos. Eu queria uma aposta a 15 anos; o Luís queria a 5 anos. Eu investiria exclusivamente no <a href="https://www.blackrock.com/pt/profissionais/products/251882/">iShares Core MSCI World UCITS ETF</a> (IWDA). O Luís apostaria no plano de poupança-reforma (PPR) que gere, o <a href="https://stoik.pt/ppr">PPR SGF Stoik</a>: investiria 2000 euros e, posteriormente, quando recebesse o reembolso do IRS, de 400 euros, aplicaria num fundo de índice de ações mundiais, como o IWDA.
+
+<p>Começando no dia 24 de março de 2021, quando gravámos este episódio, a estratégia do Luís — aplicar 2000 euros no PPR SGF Stoik, investir 400 euros no IWDA a meio do ano seguinte, pagar agora 8% sobre o ganho do PPR e 25,2% sobre a mais-valia do fundo a meio do próximo ano — teria rendido 6,80% por ano. A minha tática — investir 2000 euros no IWDA com um encargo na compra e na venda de 10 euros e liquidar 22,4% de IRS sobre a mais-valia a meio do próximo ano — teria ganhado 10,19% por ano.
+
+<p>Apesar de considerar o máximo da vantagem fiscal do PPR, o fundo de índice de ações foi imbatível: enquanto o PPR SGF Stoik (que pode investir até 75% nos mercados acionistas) avançou 15,26% nos 5 anos, o IWDA ganhou 73,90%.
+
+<p>A conversa sobre a potencial aposta começa em torno do 52.º minuto.
+
+<li>
+<p><a href="https://eco.sapo.pt/2026/03/16/a-literacia-financeira-tem-de-ser-uma-prioridade-total-diz-governador-do-banco-de-portugal/">“‘A literacia financeira tem de ser uma prioridade total’, diz governador do Banco de Portugal”</a>, <cite>Eco</cite>
+<p>Concordo que a literacia financeira é crucial, como defendeu Álvaro Santos Pereira. O governador do Banco de Portugal acrescentou:
+
+<blockquote><p>“É tão importante ter literacia financeira como termos também literacia ao nível da matemática, da ciência e do português.”</blockquote>
+
+<p>Não pode ser <em>tão</em> importante. Corremos o risco de os aforradores não saberem ler a documentação de um produto financeiro ou distinguir entre média e mediana, por exemplo.
+
+<li>
+<p><a href="https://www.theguardian.com/environment/2026/mar/14/nissan-leaf-app-shutdown-nissanconnect-ev-app">“‘Shockingly bad’: Nissan Leaf drivers voice anger over app shutdown”</a>, <cite>The Guardian</cite>
+<p>Os condutores dos mais antigos Nissans Leaf deixarão de poder usar a aplicação móvel para se conectarem aos seus veículos. É mais um ponto na senda do emerdamento dos produtos.
+
+<p>Faça um favor ao seu futuro eu: evite subscrições e ligações digitais sempre que possível; favoreça botões e manípulos. ★
+</ul>
+</article>
+
+
+<article id="dito">
+<h1>
+<span>Dito</span>
+</h1>
+
+<h2 style="margin-top:1em">Derek Sivers:</h2>
+
+<p style="font-size:2em; font-weight:bold; line-height:1">“Fui insensível, mas agora estou em todo o lado.”
+
+<p>Não consigo deixar de pensar no que <a href="https://sive.rs/socials">escreveu recentemente Derek Sivers</a>, um dos pensadores modernos que frequentemente acompanho: “Se tens algo que merece ser partilhado, é uma atitude atenciosa divulgá-lo amplamente para chegar às pessoas através do meio que preferem.”
+
+<p>Esta ideia levou Sivers a criar conta em múltiplas redes sociais, do Substack ao TikTok, passando pelo YouTube e pelo Telegram.
+
+<p>Deveria também eu aderir a redes sociais? Abomino-as e, por vezes, enojam-me. A maioria dos meus leitores (e os potenciais leitores) estão, porém, por lá. É insensível eu não estar?
+
+<p>Até agora, foi assim que resolvi este dilema: não sou eu quem deve decidir se o que tenho para oferecer merece ser partilhado; são os leitores.
+
+<p>Não é presunção acreditar que o que se faz merece uma partilha? Suponho que as redes sociais abarrotam de conteúdo que não vale um chavo. Não quero contribuir para a expansão desse grande nada. ★
+</article>
+
+
+<article id="donativo">
+<h1>
+<span>Deveria fazer um donativo</span>
+</h1>
+
+<p>Se aprecia a leitura do boletim <strong>tlim</strong> e tem margem financeira para apoiar este projeto, solicito-lhe um pequeno donativo. Sugiro 6 euros por mês, mas o montante pode ser superior ou inferior em função da utilidade da leitura e da disponibilidade financeira dos subscritores.
+
+<p>Recebo os donativos preferencialmente por transferência bancária no seguinte IBAN:
+
+<ul>
+<li>IBAN: PT50002300004565454612994
+<li>Código BIC/Swift: ACTVPTPL
+</ul>
+
+<p>Aceito, em alternativa, pagamento com cartão bancário e MB Way, em <a href="https://tlim.pt/donativo/">tlim.pt/donativo</a>.
+
+
+<p>Agradeço o seu apoio.
+
+<p><em>— David Almas</em>
+</article>
+</body>
+</html>
