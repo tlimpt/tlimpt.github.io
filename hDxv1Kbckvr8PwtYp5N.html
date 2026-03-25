@@ -375,7 +375,7 @@ Na saúde e na doença: adapte o seu plano de investimento
 
 <p>É, todavia, possível que esse seja um problema menor: no longo prazo, os câmbios convergem para a <a href="https://pt.wikipedia.org/wiki/Paridade_do_poder_de_compra">paridade de poder de compra</a>.
 
-<li><p><strong>São índices.</strong> Os índices de mercado resultam de médias e, logo, sumarizam todos os investidores. Não é possível simular estratégias mais específicas, como carteiras focadas em ações de pequenas empresas ou de boas pagadoras de dividendos, obrigações de alto risco ou táticas de negociação diária.
+<li><p><strong>São índices.</strong> Os índices de mercado resultam de médias e, logo, sumarizam todos os investidores. Não é possível simular estratégias mais específicas, como carteiras focadas em ações de pequenas empresas ou de boas pagadoras de dividendos, obrigações de alto risco, táticas de negociação diária ou investimentos imobiliários.
 
 <p>Se não investir em fundos de índice, é natural que as suas decisões e os seus instrumentos gerem retornos superiores ou inferiores aos índices de referência.
 
@@ -724,18 +724,18 @@ Fundos alavancados para o longo prazo? Uma resposta definitiva
 <p>Não é preciso aplicar muita álgebra para perceber o motivo para a divergência de retornos quando passa mais de um dia de investimento num fundo alavancado. Analisar duas sessões bolsistas é suficiente para compreender como o efeito multiplicativo pode divergir da alavancagem.
 
 <div id="alg">
-<p>Se, no primeiro dia, o preço do ativo subjacente variar <span style="white-space:nowrap"><select id="sinal1" disabled><option value="1" selected>+<option value="-1">-</select><input type="text" value="2,00" id="dia1" style="width:3em" disabled>%</span> e, no segundo dia, <span style="white-space:nowrap"><select id="sinal2" disabled><option value="1">+<option value="-1" selected>-</select><input type="text" value="2,02" id="dia2" style="width:3em" disabled>%</span>, o seu resultado acumulado seria de:
+<p>Se, no primeiro dia, o preço do ativo subjacente variasse <span style="white-space:nowrap"><select id="sinal1" disabled><option value="1" selected>+<option value="-1">-</select><input type="text" value="2,00" id="dia1" style="width:3em" disabled>%</span> e, no segundo dia, <span style="white-space:nowrap"><select id="sinal2" disabled><option value="1">+<option value="-1" selected>-</select><input type="text" value="2,02" id="dia2" style="width:3em" disabled>%</span>, o seu resultado acumulado seria de:
 
 <p style="text-align:center">
 (1 + <span id="eq11">2,00</span>%) × (1 + <span id="eq12">-2,02</span>%) − 1 = <span id="eq13">-0,06</span>%
 
-<p>Se, todavia, investir com uma alavancagem a <select id="alavanca" disabled><option value="2" selected>2<option value="3">3</select> vezes, o resultado dos 2 dias é de:
+<p>Se, todavia, investisse com uma alavancagem a <select id="alavanca" disabled><option value="2" selected>2<option value="3">3</select> vezes, o resultado dos 2 dias seria de:
 </div>
 
 <p style="text-align:center">
 (1 + <span id="eq21">4,00</span>%) × (1 + <span id="eq22">-4,04</span>%) − 1 = <span id="eq23">-0,20</span>%
 
-<p>O efeito multiplicativo da alavanca é de <span id="ealavanca">3,33</span> vezes<span id="ealavancax"> e não de 2 vezes, como se poderia esperar</span>.
+<p>O efeito multiplicativo da alavanca seria de <span id="ealavanca">3,33</span> vezes<span id="ealavancax"> e não de 2 vezes, como se poderia esperar</span>.
 
 <div id="algebrai"></div>
 
@@ -809,15 +809,15 @@ window.addEventListener('load', algebra);
 
 <div id="ialavanca">
 <ol>
-<li><p><strong>UETW<sup>*</sup></strong>, que replica o MSCI World com uma taxa anual de encargos correntes de <input type="text" value="0,06" id="tecuetw" style="width:2.5em" disabled>% (como o <a href="https://www.ubs.com/pt/en/assetmanagement/funds/etf/ie00bd4txv59-ubs-core-msci-world-ucits-etf-pd001.html">UBS Core MSCI World UCITS ETF</a>, que recomendei na edição de janeiro passado); e
-<li><p><strong>LVWC<sup>*</sup></strong>, que replica o MSCI World alavancado diariamente a 2 vezes com uma taxa anual de encargos correntes de <input type="text" value="0,60" id="teclvwc" style="width:2.5em" disabled>% e um custo anual de financiamento de <input type="text" value="3,70" id="cflvwc" style="width:2.5em" disabled>% (como o <a href="https://www.amundietf.es/es/individual/products/equity/amundi-msci-world-2x-leveraged-ucits-etf-acc/fr0014010hv4">Amundi MSCI World (2x) Leveraged UCITS ETF</a>).
+<li><p><strong>UETW<sup>*</sup></strong>, que replica o MSCI World com uma taxa anual de encargos correntes de <input type="text" value="0,06" id="tecuetw" style="width:2.5em" disabled>%. (O <a href="https://www.ubs.com/pt/en/assetmanagement/funds/etf/ie00bd4txv59-ubs-core-msci-world-ucits-etf-pd001.html">UBS Core MSCI World UCITS ETF</a>, que recomendei na edição de janeiro passado, tem uma taxa anual de encargos correntes de 0,06%.); e
+<li><p><strong>LVWC<sup>*</sup></strong>, que replica o MSCI World alavancado diariamente a 2 vezes com uma taxa anual de encargos correntes de <input type="text" value="0,60" id="teclvwc" style="width:2.5em" disabled>% e um custo anual de financiamento de <input type="text" value="3,70" id="cflvwc" style="width:2.5em" disabled>% (O <a href="https://www.amundietf.es/es/individual/products/equity/amundi-msci-world-2x-leveraged-ucits-etf-acc/fr0014010hv4">Amundi MSCI World (2x) Leveraged UCITS ETF</a> tem uma taxa anual de encargos correntes de 0,60% e um custo de financiamento indexado à SOFR.)
 </ol>
 
 <p>Que resultados seriam normalmente alcançados após <select id="duracao" disabled><option value="260">1 ano<option value="1302">5 anos<option value="2604" selected>10 anos<option value="3906">15 anos<option value="5209">20 anos</select>?
 </div>
 
 <table>
-<caption><strong>Alavancar ou não?</strong> Estas estatísticas são calculadas a partir de <span id="numperiodos">4482</span> períodos de <span id="duracaodias">2604</span> sessões de bolsa desde 1998.
+<caption><strong>Alavancar ou não?</strong> Estas estatísticas são calculadas a partir de <span id="numperiodos">4482</span> conjuntos de <span id="duracaodias">2604</span> sessões de bolsa desde 1998.
 <thead>
 <tr><td><td>UETW<sup>*</sup><td>LVWC<sup>*</sup>
 </thead>
@@ -943,34 +943,34 @@ window.addEventListener('load', falavanca);
 
 <p>Não sou fiscalista e este tema é complexo; leia esta resposta com desconfiança. Os cálculos baseiam-se na minha interpretação das leis.
 
-<p>Ao investirem o património dos subscritores, os gestores de fundos de investimento detêm ações, obrigações, depósitos e outras aplicações financeiras. Essas coisas podem conferir direito a rendimentos: dividendos, cupões, juros. Que fazer a esses dinheiros novos? Os gestores podem reinvesti-los em novas ações, obrigações, depósitos e outras aplicações — os chamados “fundos de acumulação” — ou podem distribuí-los periodicamente aos subscritores — os “fundos de distribuição”.
+<p>Ao investirem o património dos subscritores, os gestores de fundos de investimento detêm ações, obrigações, depósitos e outras aplicações financeiras. Essas coisas podem conferir direito a rendimentos: dividendos, cupões, juros. Que fazer a esses dinheiros novos que entram na carteira do fundo? Os gestores podem reinvesti-los em novas ações, obrigações, depósitos e outras aplicações — os chamados “fundos de acumulação” — ou podem distribuí-los periodicamente aos subscritores — os “fundos de distribuição”.
 
 <p>Na prática, muitas sociedades gestoras optam por gerir dois fundos paralelos — um de acumulação e um de distribuição —, deixando aos subscritores a decisão de qual é o melhor para as suas finanças. Teoricamente, são igualmente rentáveis, porque as carteiras são semelhantes. Na prática, a fiscalidade pode mutilar e separar os retornos.
 
-<p>Há dois tipos de tributação a aplicar aos investidores em fundos de investimento:
+<p>Há dois tipos de tributação a aplicar aos ganhos dos investidores em fundos de investimento:
 
 <ol>
 <li><p><strong>Sobre os dividendos recebidos</strong>: O <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs71.aspx">artigo 71.º</a> do Código do IRS avisa que os rendimentos de capitais “estão sujeitos a retenção na fonte a título definitivo, à taxa liberatória de 28%”. Assegura, porém, que os contribuintes podem optar pelo englobamento.
 <li><p><strong>Sobre as mais-valias</strong>: O <a href="https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs72.aspx">artigo 72.º</a>  indica que a taxa de tributação autónoma a aplicar ao “saldo positivo entre as mais-valias e menos-valias” é de 28%. O artigo ressalva que esses rendimentos “podem ser englobados por opção dos respetivos titulares residentes em território português”. (O englobamento não é voluntário quando o investimento que gerou a mais-valia de um contribuinte no último escalão de IRS durou menos de um ano.)
 </ol>
 
-<p>Se o fundo for estrangeiro, a autoridade fiscal da nação de residência do produto podem também exigir uma retenção na fonte, gerando uma dupla tributação que, frequentemente, pode ser minimizada acionando um mecanismo de crédito de imposto.
+<p>Se o fundo for estrangeiro, a autoridade fiscal da nação de residência do produto pode também exigir uma retenção na fonte, gerando uma dupla tributação que, frequentemente, pode ser minimizada acionando um mecanismo de crédito de imposto.
 
 <p>Todos os fundos estrangeiros que recomendei no “Onde investir em 2026”, publicado em janeiro passado, são irlandeses. Geralmente, não há retenção na fonte sobre fundos na Irlanda para os investidores não residentes. Portanto, assumamos exclusivamente a retenção em Portugal.
 
-<p>Assim, é aparentemente indiferente obter ganhos via dividendos ou via mais-valias, porque a taxa de tributação é de 28%. Optando pelo englobamento também: ao englobar as mais-valias ou os dividendos, o investidor indica à autoridade fiscal que deseja que esses ganhos sejam adicionados aos restantes rendimentos (se os houver) e, conjuntamente, enquadrados e tributados num escalão de IRS.
+<p>Assim, é aparentemente indiferente obter ganhos via dividendos ou via mais-valias, porque a taxa de tributação é de 28%. Optando pelo englobamento também: ao englobar as mais-valias ou os dividendos, o investidor indica à autoridade fiscal que deseja que esses ganhos sejam adicionados aos restantes rendimentos (salários e pensões, por exemplo, se os houver) e, conjuntamente, enquadrados e tributados num escalão de IRS.
 
 <p>A pergunta do leitor <strong>D.F.</strong> é pertinente: por que recomendo apenas fundos de acumulação? Porque a tributação dos dividendos é proporcional a <em>todas</em> as unidades do fundo; nos fundos de acumulação, a tributação reflete-se apenas sobre os ganhos das unidades vendidas.
 
 <p>Pode ficar claro com um exemplo realista.
 
-<p>Imagine que, no final de 2020, um investidor estava interessado no fundo Vanguard LifeStrategy 60% Equity UCITS ETF (EUR): poderia escolher a versão de distribuição (<a href="https://www.ie.vanguard/products/etf/lifestrategy/9495/lifestrategy-60-equity-ucits-etf-eur-distributing">V60D</a>) ou de acumulação (<a href="https://www.ie.vanguard/products/etf/lifestrategy/9494/lifestrategy-60-equity-ucits-etf-eur-accumulating">V60A</a>). Queria investir 500 mil euros para sacar, pelo menos, 3000 euros por semestre.
+<p>Imagine que, no final de 2020, um investidor estava interessado no fundo Vanguard LifeStrategy 60% Equity UCITS ETF (EUR): poderia escolher a versão de distribuição (<a href="https://www.ie.vanguard/products/etf/lifestrategy/9495/lifestrategy-60-equity-ucits-etf-eur-distributing">V60D</a>) ou de acumulação (<a href="https://www.ie.vanguard/products/etf/lifestrategy/9494/lifestrategy-60-equity-ucits-etf-eur-accumulating">V60A</a>). Queria investir 503 mil euros para sacar, pelo menos, 3000 euros por semestre.
 
-<p>Cinco anos e três meses depois, parece que o resultado foi equivalente: ambos renderam 6,60% por ano, segundo a sociedade gestora.
+<p>Cinco anos e três meses depois, parece que o resultado foi equivalente: ambos renderam 6,66% por ano, segundo os números mais recentes publicados pela sociedade gestora.
 
 <p>Contabilizemos a tributação. Assumamos que o investidor não quer englobar, porque está num escalão elevado de IRS.
 
-<p>Se tivesse optando pelo V60D, teria recebido 6250 euros de dividendos brutos no dia 30 de junho de 2021, o que, após a retenção de 28% (1750 euros), lhe daria 4500 euros. Para conseguir o mesmo encaixe líquido com o V60A, teria de vender 0,8% das unidades de participação, que tinham valorizado 8% no semestre. Receberia 4598 euros: 98 euros adicionais para pagar a tributação das mais-valias no ano seguinte: 28% sobre 8% sobre 0,8% da carteira de 500 mil euros.
+<p>Se tivesse optando pelo V60D, teria recebido 6250 euros de dividendos brutos no dia 30 de junho de 2021, o que, após a retenção de 28% (1750 euros), lhe daria 4500 euros. Para conseguir o mesmo encaixe líquido com o V60A, teria de vender 0,84% das unidades de participação, que tinham valorizado 8,24% no semestre. Receberia 4598 euros: 98 euros adicionais para pagar a tributação das mais-valias no ano seguinte: 28% sobre 8,24% sobre 0,84% da carteira de 503 mil euros.
 
 <p>Percebe-se ao primeiro dividendo a desvantagem do fundo distributivo: para receber 4500 euros pagaria 1750 euros de IRS; no acumulativo, 98 euros.
 
@@ -979,8 +979,8 @@ window.addEventListener('load', falavanca);
 <p>Eis o balanço após cinco anos e três meses:
 
 <ul>
-<li><p><strong>V60D</strong>: teria recebido 44&nbsp;562 euros em dividendos líquidos, teria pagado 17&nbsp;330 euros em IRS, a carteira valeria agora 611&nbsp;378 euros. A sua rentabilidade anual líquida seria de 5,39%.
-<li><p><strong>V60A</strong>: teria encaixado 44&nbsp;562 euros nas vendas líquidas de IRS, teria pagado 1711 euros em IRS, a carteira valeria agora 630&nbsp;286 euros. A sua rentabilidade anual líquida seria de 5,98%.
+<li><p><strong>V60D</strong>: teria recebido 44&nbsp;562 euros em dividendos líquidos, teria pagado 17&nbsp;330 euros em IRS, a carteira valeria agora 600&nbsp;400 euros. A sua rentabilidade anual líquida seria de 5,02%.
+<li><p><strong>V60A</strong>: teria encaixado 44&nbsp;562 euros nas vendas líquidas de IRS, teria pagado 1711 euros em IRS, a carteira valeria agora 618&nbsp;851 euros. A sua rentabilidade anual líquida seria de 5,61%.
 </ul>
 
 <p>Elegendo o fundo de distribuição, o seu esforço fiscal seria dez vezes superior.
@@ -1091,11 +1091,15 @@ Matemática ou finanças?
 
 <p>Na verdade, não houve aposta: não chegámos a acordar nos termos. Eu queria uma aposta a 15 anos; o Luís queria a 5 anos. Eu investiria exclusivamente no <a href="https://www.blackrock.com/pt/profissionais/products/251882/">iShares Core MSCI World UCITS ETF</a> (IWDA). O Luís apostaria no plano de poupança-reforma (PPR) que gere, o <a href="https://stoik.pt/ppr">PPR SGF Stoik</a>: investiria 2000 euros e, posteriormente, quando recebesse o reembolso do IRS, de 400 euros, aplicaria num fundo de índice de ações mundiais, como o IWDA.
 
-<p>Começando no dia 24 de março de 2021, quando gravámos este episódio, a estratégia do Luís — aplicar 2000 euros no PPR SGF Stoik, investir 400 euros no IWDA a meio do ano seguinte, pagar agora 8% sobre o ganho do PPR e 25,2% sobre a mais-valia do fundo a meio do próximo ano — teria rendido 6,80% por ano. A minha tática — investir 2000 euros no IWDA com um encargo na compra e na venda de 10 euros e liquidar 22,4% de IRS sobre a mais-valia a meio do próximo ano — teria ganhado 10,19% por ano.
+<p>Começando no dia 24 de março de 2021, quando gravámos este episódio, a estratégia do Luís — aplicar 2000 euros no PPR SGF Stoik, investir 400 euros no IWDA a meio do ano seguinte, pagar agora 8% sobre o ganho do PPR e 25,2% sobre a mais-valia do fundo a meio do próximo ano — teria rendido 6,20% por ano. A minha tática — investir 2000 euros no IWDA com um encargo na compra e na venda de 10 euros e liquidar 22,4% de IRS sobre a mais-valia a meio do próximo ano — teria ganhado 9,64% por ano.
 
-<p>Apesar de considerar o máximo da vantagem fiscal do PPR, o fundo de índice de ações foi imbatível: enquanto o PPR SGF Stoik (que pode investir até 75% nos mercados acionistas) avançou 15,26% nos 5 anos, o IWDA ganhou 73,90%.
+<p>Apesar de considerar o máximo da vantagem fiscal do PPR, o fundo de índice de ações foi imbatível: enquanto o PPR SGF Stoik (que pode investir até 75% nos mercados acionistas) avançou 11,82% <em>nos 5 anos</em>, o IWDA ganhou 11,11% <em>por ano</em>.
 
 <p>A conversa sobre a potencial aposta começa em torno do 52.º minuto.
+
+<li>
+<p><a href="https://www.publico.pt/2026/03/24/economia/noticia/revolut-iguala-bcp-aproximase-cgd-clientes-digitais-portugal-2168956">“Revolut iguala BCP e aproxima-se da CGD nos clientes digitais em Portugal”</a>, <cite>Público</cite>
+<p>O jornalista Diogo Cavaleiro fez as contas: a Revolut, que atua em Portugal maioritariamente via sucursal, ultrapassou o Millennium bcp; é agora o segundo banco com mais clientes digitais. Faltará pouco para chegar ao nível da Caixa Geral de Depósitos.
 
 <li>
 <p><a href="https://eco.sapo.pt/2026/03/16/a-literacia-financeira-tem-de-ser-uma-prioridade-total-diz-governador-do-banco-de-portugal/">“‘A literacia financeira tem de ser uma prioridade total’, diz governador do Banco de Portugal”</a>, <cite>Eco</cite>
@@ -1103,7 +1107,7 @@ Matemática ou finanças?
 
 <blockquote><p>“É tão importante ter literacia financeira como termos também literacia ao nível da matemática, da ciência e do português.”</blockquote>
 
-<p>Não pode ser <em>tão</em> importante. Corremos o risco de os aforradores não saberem ler a documentação de um produto financeiro ou distinguir entre média e mediana, por exemplo.
+<p>Não pode ser <em>tão</em> importante. Corremos o risco de os aforradores não saberem ler a documentação de um produto financeiro ou não distinguirem entre média e mediana, por exemplo.
 
 <li>
 <p><a href="https://www.theguardian.com/environment/2026/mar/14/nissan-leaf-app-shutdown-nissanconnect-ev-app">“‘Shockingly bad’: Nissan Leaf drivers voice anger over app shutdown”</a>, <cite>The Guardian</cite>
@@ -1123,7 +1127,7 @@ Matemática ou finanças?
 
 <p style="font-size:2em; font-weight:bold; line-height:1">“Fui insensível, mas agora estou em todo o lado.”
 
-<p>Não consigo deixar de pensar no que <a href="https://sive.rs/socials">escreveu recentemente Derek Sivers</a>, um dos pensadores modernos que frequentemente acompanho: “Se tens algo que merece ser partilhado, é uma atitude atenciosa divulgá-lo amplamente para chegar às pessoas através do meio que preferem.”
+<p>Não consigo deixar de matutar sobre o que <a href="https://sive.rs/socials">escreveu recentemente Derek Sivers</a>, um dos pensadores modernos que frequentemente acompanho: “Se tens algo que merece ser partilhado, é uma atitude atenciosa divulgá-lo amplamente para chegar às pessoas através do meio que preferem.”
 
 <p>Esta ideia levou Sivers a criar conta em múltiplas redes sociais, do Substack ao TikTok, passando pelo YouTube e pelo Telegram.
 
